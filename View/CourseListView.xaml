@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="De.SealingSchool.View.CourseListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Courses}"  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Label" Binding="{Binding Label}" />
+                <DataGridTextColumn Header="Titel" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Beschreibung" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Start" Binding="{Binding StartDate}" />
+                <DataGridTextColumn Header="Ende" Binding="{Binding EndDate}" />
+                <DataGridTextColumn Header="Dauer" Binding="{Binding Duration}" />
+                <DataGridTextColumn Header="Kapazität" Binding="{Binding Capacity}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Kurs hinzufügen" Command="{Binding AddCourseCommand}" Grid.Row="1" />
+    </Grid>
+</UserControl>
