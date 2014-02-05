@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace De.SealingSchool.ViewModelBase
+namespace SealingSchoolWPF.ViewModel
 {
     public abstract class ViewModel : IViewModel
     {

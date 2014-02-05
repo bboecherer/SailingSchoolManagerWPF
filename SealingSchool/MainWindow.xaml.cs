@@ -1,4 +1,5 @@
-﻿using System;
+﻿using De.SealingSchool.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace De.SealingSchool.View
+namespace De.SealingSchool.StartApplication
 {
     /// <summary>
-    /// Interaction logic for CustomerView.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class StudentView : UserControl
+    public partial class MainWindow : Window
     {
-        public StudentView()
+        public MainWindow()
         {
             InitializeComponent();
+           
         }
     }
 }

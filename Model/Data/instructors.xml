@@ -1,0 +1,10 @@
+﻿<instructors>
+  <instructor lastName="Smith"      firstName="Josh"     Label="instructor1" />
+  <instructor lastName="Bujak"      firstName="Greg"     Label="instructor2" />
+  <instructor lastName="Crafton"    firstName="Jim"      Label="instructor3" />
+  <instructor lastName="Nolan"      firstName="Jordan"   Label="instructor4" />
+  <instructor lastName="Hinkson"    firstName="Grant"    Label="instructor5" />
+  <instructor lastName="Shifflett"  firstName="Karl"     Label="instructor6" />
+  <instructor lastName="Walker"     firstName="Wilfred"  Label="instructor7" />
+  <instructor lastName="McCort"     firstName="Denise"   Label="instructor8" />
+</instructors>

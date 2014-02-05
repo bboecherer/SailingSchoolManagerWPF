@@ -53,14 +53,7 @@ namespace De.SealingSchool.StartApplication
 
         private void SetupBindings()
         {
-            var viewModel1 = new StudentListViewModel();
-            studentListView.DataContext = viewModel1;
-
-            var viewModel2 = new CourseListViewModel();
-            courseListView.DataContext = viewModel2;
-
-            var viewModel3 = new InstructorListViewModel();
-            instructorListView.DataContext = viewModel3;
+           
         }
     }
 }

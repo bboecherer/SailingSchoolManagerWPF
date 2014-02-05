@@ -1,47 +1,54 @@
-﻿<Window xmlns:my="clr-namespace:De.SealingSchool.View;assembly=View"  x:Class="De.SealingSchool.StartApplication.MainWindow"
+﻿<Window x:Class="De.SealingSchool.StartApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Sealing School Manager" Height="350" Width="525" x:Name="Window">
-    <!--
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <my:StudentListView Name="studentListView" Grid.Row="0"/>
-        <my:InstructorListView Name="instructorListView" Grid.Row="1"/>
-        <my:CourseListView Name="courseListView" Grid.Row="2"/>
-    </Grid>
-    -->
-    <Window.CommandBindings>
-        <CommandBinding Command="Close" CanExecute="Close_CanExecute" Executed="Close_Executed" />
-    </Window.CommandBindings>
-    <Grid x:Name="LayoutRoot"
-          DataContext="{Binding ElementName=Window}">
-        <DockPanel>
-            <Menu IsMainMenu="True" DockPanel.Dock="Top">
-                <MenuItem Header="Datei" IsEnabled="True">
-                    <MenuItem x:Name="CloseMenuItem" Header="Beenden" Command="Close" IsEnabled="True" />
-                </MenuItem>
-                <MenuItem Header="Hilfe" >
-                    <MenuItem x:Name="AboutMenuItem" Header="Über" />
-                </MenuItem>
-            </Menu>
-            <!-- Anzeige der Daten -->
-            <TabControl>
-                <TabItem Header="Teilnehmer" x:Name="StudentTab" >
-                    <my:StudentListView Name="studentListView" />
-                </TabItem>
-                <TabItem Header="Kursleiter" x:Name="InstructorTab">
-                    <my:InstructorListView Name="instructorListView"/>
-                </TabItem>
-                <TabItem Header="Kurse" x:Name="CourseTab">
-                    <my:CourseListView Name="courseListView"/>
-                </TabItem>
-         
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml" />
+    </Window.Resources>
 
-            </TabControl>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" KeyboardNavigation.TabNavigation="None">
+            <Menu KeyboardNavigation.TabNavigation="Cycle">
+                <MenuItem Header="_File">
+                    <MenuItem Header="E_xit" Command="{Binding Path=CloseCommand}" />
+                </MenuItem>
+                <MenuItem Header="_Edit" />
+                <MenuItem Header="_Options" />
+                <MenuItem Header="_Help" />
+            </Menu>
         </DockPanel>
-    </Grid>
+
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="4" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border 
+        Grid.Column="0" 
+        Style="{StaticResource MainBorderStyle}"
+        Width="170"
+        >
+                <HeaderedContentControl
+          Content="{Binding Path=Commands}"
+          ContentTemplate="{StaticResource CommandsTemplate}"
+          Header="Control Panel"
+          Style="{StaticResource MainHCCStyle}"
+          />
+            </Border>
+
+            <Border
+        Grid.Column="2" 
+        Style="{StaticResource MainBorderStyle}"
+        >
+                <HeaderedContentControl 
+          Content="{Binding Path=Workspaces}"
+          ContentTemplate="{StaticResource WorkspacesTemplate}"
+          Header="Workspaces"
+          Style="{StaticResource MainHCCStyle}"
+          />
+            </Border>
+        </Grid>
+    </DockPanel>
 </Window>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace De.SealingSchool.View
 {
     /// <summary>
-    /// Interaction logic for CustomerView.xaml
+    /// Interaction logic for AllCustomersView.xaml
     /// </summary>
-    public partial class StudentView : UserControl
+    public partial class AllStudentsView : UserControl
     {
-        public StudentView()
+        public AllStudentsView()
         {
             InitializeComponent();
         }
