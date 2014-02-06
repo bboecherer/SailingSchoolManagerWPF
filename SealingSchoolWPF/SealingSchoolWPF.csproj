@@ -63,22 +63,39 @@
     <Compile Include="Content\SettingsInvoice.xaml.cs">
       <DependentUpon>SettingsInvoice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\CourseList.cs" />
+    <Compile Include="Data\InstructorList.cs" />
     <Compile Include="Data\StudentList.cs" />
+    <Compile Include="Pages\ButtonsToWork.xaml.cs">
+      <DependentUpon>ButtonsToWork.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CourseListView.xaml.cs">
+      <DependentUpon>CourseListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InstructorListView.xaml.cs">
+      <DependentUpon>InstructorListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\MessagesResource.Designer.cs">
       <DependentUpon>MessagesResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
+    <Compile Include="ViewModel\Course\CourseViewModel.cs" />
     <Compile Include="ViewModel\General\CommandViewModel.cs" />
     <Compile Include="ViewModel\General\IViewModel.cs" />
     <Compile Include="ViewModel\General\RelayCommand.cs" />
     <Compile Include="ViewModel\General\ViewModel.cs" />
-    <Compile Include="ViewModel\Student\Model.cs" />
+    <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
+    <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Student\StudentListViewModel.cs" />
     <Compile Include="ViewModel\Student\StudentViewModel.cs" />
+    <Compile Include="Pages\StudentListView.xaml.cs">
+      <DependentUpon>StudentListView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Content\SettingsBusinessUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,7 +108,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="DataAccess\StudentAddedEventArgs.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -110,8 +126,16 @@
     <Compile Include="Content\SettingsAppearance.xaml.cs">
       <DependentUpon>SettingsAppearance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\SettingsAppearanceViewModel.cs" />
+    <Compile Include="ViewModel\Settings\SettingsAppearanceViewModel.cs" />
+    <Page Include="Pages\ButtonsToWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Calendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CourseListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InstructorListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,15 +222,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\StudentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\instructors.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\students.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\MessagesResource.resx">

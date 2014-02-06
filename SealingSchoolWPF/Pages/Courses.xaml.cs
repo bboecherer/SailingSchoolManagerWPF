@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.Course;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace SealingSchoolWPF.Pages
         public Courses()
         {
             InitializeComponent();
+            SetupBindings();
+        }
+
+        private void SetupBindings()
+        {
+            var viewModel = new CourseListViewModel();
+
+            courseList.DataContext = viewModel;
         }
     }
 }

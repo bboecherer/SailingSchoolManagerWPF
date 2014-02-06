@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.ViewModel.Student
+namespace SealingSchoolWPF.ViewModel.Instructor
 {
-    class StudentViewModel : ViewModel<SealingSchoolWPF.Model.Student>
+    public class InstructorViewModel : ViewModel<SealingSchoolWPF.Model.Instructor>
     {
-        public StudentViewModel(SealingSchoolWPF.Model.Student model)
+        public InstructorViewModel(SealingSchoolWPF.Model.Instructor model)
             : base(model)
         {
         }
@@ -140,7 +140,6 @@ namespace SealingSchoolWPF.ViewModel.Student
                 }
             }
         }
-
         public string Country
         {
             get

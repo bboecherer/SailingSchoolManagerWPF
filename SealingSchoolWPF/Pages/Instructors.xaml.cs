@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.Instructor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace SealingSchoolWPF.Pages
         public Instructors()
         {
             InitializeComponent();
+            SetupBindings();
+        }
+
+        private void SetupBindings()
+        {
+            var viewModel = new InstructorListViewModel();
+
+            instructorList.DataContext = viewModel;
         }
     }
 }
