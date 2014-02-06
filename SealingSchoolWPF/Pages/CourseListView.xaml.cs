@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace De.SealingSchool.View
+namespace SealingSchoolWPF.Pages
 {
     /// <summary>
-    /// Interaction logic for AllCustomersView.xaml
+    /// Interaction logic for CourseListView.xaml
     /// </summary>
-    public partial class AllStudentsView : UserControl
+    public partial class CourseListView : UserControl
     {
-        public AllStudentsView()
+        public CourseListView()
         {
             InitializeComponent();
         }
