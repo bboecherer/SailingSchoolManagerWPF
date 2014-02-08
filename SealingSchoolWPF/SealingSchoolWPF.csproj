@@ -238,7 +238,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\BBO\Downloads\WpfScheduler-Source-code-1.1\WpfScheduler.csproj">
+    <ProjectReference Include="WpfScheduler\WpfScheduler.csproj">
       <Project>{F9954C26-6234-43F5-8D96-8EC6E03C03B9}</Project>
       <Name>WpfScheduler</Name>
     </ProjectReference>

@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SealingSchoolWPF", "SealingSchoolWPF\SealingSchoolWPF.csproj", "{9D9B15BC-FAEC-4B9B-8FD5-C5BFCA11D4E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScheduler", "C:\Users\BBO\Downloads\WpfScheduler-Source-code-1.1\WpfScheduler.csproj", "{F9954C26-6234-43F5-8D96-8EC6E03C03B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScheduler", "SealingSchoolWPF\WpfScheduler\WpfScheduler.csproj", "{F9954C26-6234-43F5-8D96-8EC6E03C03B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
