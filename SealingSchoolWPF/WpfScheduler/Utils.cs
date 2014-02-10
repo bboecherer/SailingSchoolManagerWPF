@@ -8,6 +8,7 @@ namespace WpfScheduler
 {
     public class Utils
     {
+        // Test
         //public static int DaysBetweenDates(DateTime d1, DateTime d2)
         //{
         //    DateTime d1Aux = new DateTime(d1.Year, d1.Month, d1.Day);
