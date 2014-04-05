@@ -9,7 +9,6 @@ namespace SealingSchoolWPF.Data
 {
     interface IPersistenceMgr<T> where T : SealingSchoolObject
     {
-
         IList<T> GetAll();
 
         void Delete(T entity);
@@ -19,6 +18,5 @@ namespace SealingSchoolWPF.Data
         void Update(T entity);
 
         T GetById(int id);
-
     }
 }
