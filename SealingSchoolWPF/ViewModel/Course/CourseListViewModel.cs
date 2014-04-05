@@ -12,6 +12,9 @@ namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CourseListViewModel : ViewModel
     {
+
+        private CourseMgr courseMgr = new CourseMgr();
+
         private ObservableCollection<CourseViewModel> courses;
 
         public ObservableCollection<CourseViewModel> Courses
@@ -32,7 +35,8 @@ namespace SealingSchoolWPF.ViewModel.Course
 
         public CourseListViewModel()
         {
-            courses = new ObservableCollection<CourseViewModel>(CourseList.Courses.Select(p => new CourseViewModel(p)));
+            IList<SealingSchoolWPF.Model.Course> coursesList = courseMgr.GetAll();
+            courses = new ObservableCollection<CourseViewModel>(coursesList.Select(p => new CourseViewModel(p)));
             courses.CollectionChanged += Students_CollectionChanged;
         }
 
@@ -42,19 +46,15 @@ namespace SealingSchoolWPF.ViewModel.Course
             {
                 foreach (CourseViewModel vm in e.NewItems)
                 {
-                    CourseList.Courses.Add(vm.Model);
+                    courseMgr.Create(vm.Model);
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 foreach (CourseViewModel vm in e.OldItems)
                 {
-                    CourseList.Courses.Remove(vm.Model);
+                    courseMgr.Delete(vm.Model);
                 }
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Reset)
-            {
-                CourseList.Courses.Clear();
             }
         }
 

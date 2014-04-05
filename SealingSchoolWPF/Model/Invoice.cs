@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class Invoice: InvoiceAddress
+    public class Invoice
     {
         public int Id { get; set; }
         public Boolean Printed { get; set; }
-        public InvoiceAddress InvoiceAddress = new InvoiceAddress();
+
         public DateTime PaymentTargetDate { get; set; }
         public DateTime PaidDate { get; set; }
         public Decimal NetPrice { get; set; }

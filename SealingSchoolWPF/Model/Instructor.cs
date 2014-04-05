@@ -9,13 +9,27 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class Instructor : SealingSchoolObject, IAddressable, IDataErrorInfo
+    public class Instructor : SealingSchoolObject, IDataErrorInfo
     {
         public int Id { get; set; }
         public string LastName { get; set; }
+        public string Label { get; set; }
         public string FirstName { get; set; }
         public DateTime EnrollmentDate { get; set; }
-        public IAddressable PrimaryAddress { get; set; }
+
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string AddressLine3 { get; set; }
+        public string ZipCode { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
+        public string BankNo { get; set; }
+        public string BankName { get; set; }
+        public string AccountNo { get; set; }
+        public string Bic { get; set; }
+        public string Iban { get; set; }
+        public bool Sepa { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
@@ -24,21 +38,6 @@ namespace SealingSchoolWPF.Model
         {
             return "Kursleiter: " + this.Label;
         }
-
-
-        public string AddressLine1 { get; set; }
-
-        public string AddressLine2 { get; set; }
-
-        public string AddressLine3 { get; set; }
-
-        public string ZipCode { get; set; }
-
-        public string City { get; set; }
-
-        public string Country { get; set; }
-
-        public string State { get; set; }
 
         string IDataErrorInfo.Error { get { return null; } }
 

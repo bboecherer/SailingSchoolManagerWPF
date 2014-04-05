@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class Student : SealingSchoolObject, IAddressable
-    {
 
+    public class Student : SealingSchoolObject
+    {
         public int Id { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
@@ -22,11 +22,11 @@ namespace SealingSchoolWPF.Model
         public string City { get; set; }
         public string Country { get; set; }
         public string State { get; set; }
-
-        public override string ToString()
-        {
-            return "Teilnehmer: " + this.Label;
-        }
-
+        public string BankNo { get; set; }
+        public string BankName { get; set; }
+        public string AccountNo { get; set; }
+        public string Bic { get; set; }
+        public string Iban { get; set; }
+        public bool Sepa { get; set; }
     }
 }

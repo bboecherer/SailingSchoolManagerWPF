@@ -109,6 +109,7 @@ namespace SealingSchoolWPF.ViewModel
         /// <remarks></remarks>
         public event PropertyChangedEventHandler PropertyChanged;
 
+
         /// <summary>
         /// Invoked when this object is being removed from the application
         /// and will be subject to garbage collection.

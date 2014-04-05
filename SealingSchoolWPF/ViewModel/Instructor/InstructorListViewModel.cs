@@ -12,7 +12,7 @@ namespace SealingSchoolWPF.ViewModel.Instructor
 {
     class InstructorListViewModel : ViewModel
     {
-
+        private InstructorMgr instructorMgr = new InstructorMgr();
         private ObservableCollection<InstructorViewModel> instructors;
 
         public ObservableCollection<InstructorViewModel> Instructors
@@ -33,7 +33,8 @@ namespace SealingSchoolWPF.ViewModel.Instructor
 
         public InstructorListViewModel()
         {
-            instructors = new ObservableCollection<InstructorViewModel>(InstructorList.Instructors.Select(p => new InstructorViewModel(p)));
+            IList<SealingSchoolWPF.Model.Instructor> instructorsList = instructorMgr.GetAll();
+            instructors = new ObservableCollection<InstructorViewModel>(instructorsList.Select(p => new InstructorViewModel(p)));
             instructors.CollectionChanged += Students_CollectionChanged;
         }
 
@@ -43,19 +44,15 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             {
                 foreach (InstructorViewModel vm in e.NewItems)
                 {
-                    InstructorList.Instructors.Add(vm.Model);
+                    instructorMgr.Create(vm.Model);
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 foreach (InstructorViewModel vm in e.OldItems)
                 {
-                    InstructorList.Instructors.Remove(vm.Model);
+                    instructorMgr.Delete(vm.Model);
                 }
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Reset)
-            {
-                InstructorList.Instructors.Clear();
             }
         }
 

@@ -31,10 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -65,39 +72,151 @@
     <Compile Include="Content\SettingsInvoice.xaml.cs">
       <DependentUpon>SettingsInvoice.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\CourseList.cs" />
-    <Compile Include="Data\InstructorList.cs" />
-    <Compile Include="Data\StudentList.cs" />
-    <Compile Include="Pages\ButtonsToWork.xaml.cs">
-      <DependentUpon>ButtonsToWork.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calendar.xaml.cs">
+    <Compile Include="Data\IPersistenceMgr.cs" />
+    <Compile Include="Data\SchoolDataContext.cs" />
+    <Compile Include="Data\InstructorMgr.cs" />
+    <Compile Include="Data\CourseMgr.cs" />
+    <Compile Include="Data\StudentMgr.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CourseListView.xaml.cs">
+    <Compile Include="Pages\Courses\Controls\CreateButtons.xaml.cs">
+      <DependentUpon>CreateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Controls\CourseButtons.xaml.cs">
+      <DependentUpon>CourseButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\Buttons.xaml.cs">
+      <DependentUpon>Buttons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Create\Financial.xaml.cs">
+      <DependentUpon>Financial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Create\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Create\CreateCourse.xaml.cs">
+      <DependentUpon>CreateCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Create\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Create\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\General\CourseListView.xaml.cs">
       <DependentUpon>CourseListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\InstructorListView.xaml.cs">
+    <Compile Include="Pages\Courses\General\Course.xaml.cs">
+      <DependentUpon>Course.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Controls\CreateButtons.xaml.cs">
+      <DependentUpon>CreateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Controls\InstructorButtons.xaml.cs">
+      <DependentUpon>InstructorButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\Bankdata.xaml.cs">
+      <DependentUpon>Bankdata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\CreateInstructor.xaml.cs">
+      <DependentUpon>CreateInstructor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\General\InstructorListView.xaml.cs">
       <DependentUpon>InstructorListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Controls\CreateButtons.xaml.cs">
+      <DependentUpon>CreateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Controls\StudentButtons.xaml.cs">
+      <DependentUpon>StudentButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Create\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Create\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Create\Bankdata.xaml.cs">
+      <DependentUpon>Bankdata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Create\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Create\CreateStudent.xaml.cs">
+      <DependentUpon>CreateStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\General\StudentView.xaml.cs">
+      <DependentUpon>StudentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Update\Bankdata.xaml.cs">
+      <DependentUpon>Bankdata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Update\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Update\UpdateStudent.xaml.cs">
+      <DependentUpon>UpdateStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Update\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Student\Update\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\MessagesResource.Designer.cs">
       <DependentUpon>MessagesResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\Language\Resource.Designer.cs">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Language\Resource.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.de-DE.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language\Resource.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.en-US.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />
+    <Compile Include="ViewModel\Course\CreateCourseViewModel.cs" />
+    <Compile Include="ViewModel\Course\CourseButtonViewModel.cs" />
     <Compile Include="ViewModel\General\CommandViewModel.cs" />
     <Compile Include="ViewModel\General\IViewModel.cs" />
     <Compile Include="ViewModel\General\RelayCommand.cs" />
     <Compile Include="ViewModel\General\ViewModel.cs" />
+    <Compile Include="ViewModel\Instructor\InstructorButtonViewModel.cs" />
+    <Compile Include="ViewModel\Instructor\CreateInstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
-    <Compile Include="ViewModel\Student\StudentListViewModel.cs" />
-    <Compile Include="ViewModel\Student\StudentViewModel.cs" />
-    <Compile Include="Pages\StudentListView.xaml.cs">
+    <Compile Include="ViewModel\StudentVM\UpdateStudentViewModel.cs" />
+    <Compile Include="ViewModel\StudentVM\CreateStudentViewModel.cs" />
+    <Compile Include="ViewModel\StudentVM\StudentButtonViewModel.cs" />
+    <Compile Include="ViewModel\StudentVM\StudentListViewModel.cs" />
+    <Compile Include="Pages\Student\General\StudentListView.xaml.cs">
       <DependentUpon>StudentListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\StudentVM\StudentViewModel.cs" />
     <Page Include="Content\SettingsBusinessUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,47 +248,103 @@
       <DependentUpon>SettingsAppearance.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Settings\SettingsAppearanceViewModel.cs" />
-    <Page Include="Pages\ButtonsToWork.xaml">
+    <Page Include="Pages\Calendar\Calendar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Calendar.xaml">
+    <Page Include="Pages\Courses\Controls\CreateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Controls\CourseButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Create\Financial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Create\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Create\CreateCourse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Create\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Create\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\General\CourseListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\General\Course.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Controls\CreateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Controls\InstructorButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\Bankdata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\CreateInstructor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\CreditNotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CourseListView.xaml">
+    <Page Include="Pages\General\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Courses.xaml">
+    <Page Include="Pages\Instructor\General\InstructorListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CreditNotes.xaml">
+    <Page Include="Pages\Instructor\General\Instructors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Home.xaml">
+    <Page Include="Pages\Invoicing\Invoices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\InstructorListView.xaml">
+    <Page Include="Pages\Invoicing\Offerings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Instructors.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Invoices.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Offerings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Settings.xaml">
+    <Page Include="Pages\General\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,57 +354,104 @@
     <Compile Include="Model\Currency.cs" />
     <Compile Include="Model\Enrollment.cs" />
     <Compile Include="Model\Grade.cs" />
-    <Compile Include="Model\IAddressable.cs" />
     <Compile Include="Model\Instructor.cs" />
     <Compile Include="Model\Invoice.cs" />
-    <Compile Include="Model\InvoiceAddress.cs" />
     <Compile Include="Model\InvoiceItem.cs" />
     <Compile Include="Model\InvoiceStatus.cs" />
     <Compile Include="Model\PaymentStatus.cs" />
     <Compile Include="Model\SealingSchoolObject.cs" />
     <Compile Include="Model\Student.cs" />
-    <Compile Include="Pages\Courses.xaml.cs">
-      <DependentUpon>Courses.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CreditNotes.xaml.cs">
+    <Compile Include="Pages\Invoicing\CreditNotes.xaml.cs">
       <DependentUpon>CreditNotes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Home.xaml.cs">
+    <Compile Include="Pages\General\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Instructors.xaml.cs">
+    <Compile Include="Pages\Instructor\General\Instructors.xaml.cs">
       <DependentUpon>Instructors.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Invoices.xaml.cs">
+    <Compile Include="Pages\Invoicing\Invoices.xaml.cs">
       <DependentUpon>Invoices.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Offerings.xaml.cs">
+    <Compile Include="Pages\Invoicing\Offerings.xaml.cs">
       <DependentUpon>Offerings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Settings.xaml.cs">
+    <Compile Include="Pages\General\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Students.xaml.cs">
-      <DependentUpon>Students.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TrainingsActivities.xaml.cs">
+    <Compile Include="Pages\Courses\TrainingsActivities.xaml.cs">
       <DependentUpon>TrainingsActivities.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Page Include="Pages\Students.xaml">
+    <Page Include="Pages\Student\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Controls\CreateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Controls\StudentButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Create\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Create\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Create\Bankdata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Create\Base.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TrainingsActivities.xaml">
+    <Page Include="Pages\Student\Create\CreateStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\StudentListView.xaml">
+    <Page Include="Pages\Courses\TrainingsActivities.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Student\General\StudentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Student\General\StudentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Student\Update\Bankdata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Update\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Update\UpdateStudent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Update\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Student\Update\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -238,12 +460,122 @@
       <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language\Resource.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.de-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language\Resource.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="WpfScheduler\WpfScheduler.csproj">
       <Project>{F9954C26-6234-43F5-8D96-8EC6E03C03B9}</Project>
       <Name>WpfScheduler</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Courses\Details\" />
+    <Folder Include="Pages\Courses\Edit\" />
+    <Folder Include="Pages\Instructor\Details\" />
+    <Folder Include="Pages\Instructor\Edit\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\action_add_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_add_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_add_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_Cancel_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_Cancel_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_Cancel_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_create_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\action_create_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\AddressEnvelope_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\AddressEnvelope_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\AddressEnvelope_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\LightBulb_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\LightBulb_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\LightBulb_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\LightBulb_32xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\LightBulb_32xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\LightBulb_32xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\mui.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pencil_001_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pencil_002_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pencil_003_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pencil_004_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pencil_005_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pencil_006_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\refresh_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\refresh_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\refresh_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\save_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\save_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\save_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

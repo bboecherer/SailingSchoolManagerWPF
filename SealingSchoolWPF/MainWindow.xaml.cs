@@ -1,4 +1,7 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
+using SealingSchoolWPF.Data;
+using SealingSchoolWPF.Model;
+using SealingSchoolWPF.Resources.Language;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +26,9 @@ namespace SealingSchoolWPF
     {
         public MainWindow()
         {
+            Resource.Culture = new System.Globalization.CultureInfo("de-DE");
             InitializeComponent();
         }
+
     }
 }
