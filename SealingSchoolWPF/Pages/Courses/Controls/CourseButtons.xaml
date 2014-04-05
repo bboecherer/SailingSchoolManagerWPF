@@ -25,8 +25,8 @@
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
-                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Create_ToolTip}"/>
-                            <TextBlock Text="{x:Static resx:Resource.Create_ToolTip_Desc}"/>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Refresh_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Refresh_ToolTip_Desc}"/>
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>

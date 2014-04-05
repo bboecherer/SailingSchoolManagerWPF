@@ -238,12 +238,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
-        public void Close()
-        {
-            instance = null;
-
-        }
-
         private void ExecuteAddCommand()
         {
             Model.FirstName = this.FirstName;
@@ -261,6 +255,42 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             Model.ModifiedOn = DateTime.Now;
 
             studMgr.Create(Model);
+        }
+
+        private ICommand clearCommand;
+
+        public ICommand ClearCommand
+        {
+            get
+            {
+                if (clearCommand == null)
+                {
+                    clearCommand = new RelayCommand(p => ExecuteClearCommand());
+                }
+                return clearCommand;
+            }
+        }
+
+        private void ExecuteClearCommand()
+        {
+            this.FirstName = null;
+            this.LastName = null;
+            this.Adress = null;
+            this.Postal = null;
+            this.City = null;
+            this.Street = null;
+            this.AccountNo = null;
+            this.BankName = null;
+            this.BankNo = null;
+            this.Bic = null;
+            this.Iban = null;
+            this.Notes = null;
+        }
+
+        public void Close()
+        {
+            instance = null;
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using SealingSchoolWPF.Pages.Student.Create;
+﻿using SealingSchoolWPF.Pages;
+using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +49,7 @@ namespace SealingSchoolWPF.ViewModel.StudentVM
 
         private void ExecuteRefreshCommand()
         {
+            StudentListViewModel viewModel = StudentListViewModel.Instance;
 
         }
     }

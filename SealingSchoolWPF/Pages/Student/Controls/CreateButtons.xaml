@@ -22,12 +22,12 @@
                     <Image Source="/Resources/Images/save_16xLG.png" />
                 </StackPanel>
             </Button>
-            <Button Height="25" Width="50" BorderThickness="0" >
+            <Button Height="25" Width="50" BorderThickness="0" Command="{Binding ClearCommand}">
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
-                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Delete_ToolTip}"/>
-                            <TextBlock Text="{x:Static resx:Resource.Delete_ToolTip_Desc}"/>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Clear_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Clear_ToolTip_Desc}"/>
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>

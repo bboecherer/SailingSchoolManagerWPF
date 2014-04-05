@@ -1,4 +1,5 @@
-﻿using SealingSchoolWPF.ViewModel.StudentViewModel;
+﻿using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,19 @@ namespace SealingSchoolWPF.Pages.Student.General
             InitializeComponent();
             var viewModel = new StudentListViewModel();
             studentList.DataContext = viewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = new StudentListViewModel();
+            studentList.DataContext = null;
+            studentList.DataContext = viewModel;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CreateStudent window = new CreateStudent();
+            window.ShowDialog();
         }
     }
 }

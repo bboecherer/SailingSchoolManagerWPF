@@ -196,6 +196,24 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rückgängig.
+        /// </summary>
+        public static string Clear_ToolTip {
+            get {
+                return ResourceManager.GetString("Clear_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alle Felder leeren.
+        /// </summary>
+        public static string Clear_ToolTip_Desc {
+            get {
+                return ResourceManager.GetString("Clear_ToolTip_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Land.
         /// </summary>
         public static string Country {
@@ -570,6 +588,24 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Pricing {
             get {
                 return ResourceManager.GetString("Pricing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aktualisieren.
+        /// </summary>
+        public static string Refresh_ToolTip {
+            get {
+                return ResourceManager.GetString("Refresh_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aktuelle Ansicht neu laden.
+        /// </summary>
+        public static string Refresh_ToolTip_Desc {
+            get {
+                return ResourceManager.GetString("Refresh_ToolTip_Desc", resourceCulture);
             }
         }
         

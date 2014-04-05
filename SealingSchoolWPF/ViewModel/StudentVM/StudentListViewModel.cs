@@ -14,7 +14,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 {
     class StudentListViewModel : ViewModel
     {
-        
+
         static StudentListViewModel instance = null;
         static readonly object padlock = new object();
 
@@ -64,6 +64,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             IList<SealingSchoolWPF.Model.Student> studs = studMgr.GetAll();
             students = new ObservableCollection<StudentViewModel>(studs.Select(p => new StudentViewModel(p)));
         }
+
 
     }
 }

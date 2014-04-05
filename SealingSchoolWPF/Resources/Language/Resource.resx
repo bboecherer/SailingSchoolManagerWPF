@@ -318,4 +318,16 @@
   <data name="Update_ToolTip_Desc" xml:space="preserve">
     <value>Datensatz aktualisieren</value>
   </data>
+  <data name="Refresh_ToolTip" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="Refresh_ToolTip_Desc" xml:space="preserve">
+    <value>Aktuelle Ansicht neu laden</value>
+  </data>
+  <data name="Clear_ToolTip" xml:space="preserve">
+    <value>Rückgängig</value>
+  </data>
+  <data name="Clear_ToolTip_Desc" xml:space="preserve">
+    <value>Alle Felder leeren</value>
+  </data>
 </root>
