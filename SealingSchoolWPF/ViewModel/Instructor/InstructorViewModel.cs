@@ -65,13 +65,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.ZipCode;
+                return Model.Adress.ZipCode;
             }
             set
             {
                 if (ZipCode != value)
                 {
-                    Model.ZipCode = value;
+                    Model.Adress.ZipCode = value;
                     this.OnPropertyChanged("ZipCode");
                 }
             }
@@ -81,13 +81,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.City;
+                return Model.Adress.City;
             }
             set
             {
                 if (City != value)
                 {
-                    Model.City = value;
+                    Model.Adress.City = value;
                     this.OnPropertyChanged("City");
                 }
             }
@@ -97,13 +97,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.AddressLine1;
+                return Model.Adress.AddressLine1;
             }
             set
             {
                 if (AddressLine1 != value)
                 {
-                    Model.AddressLine1 = value;
+                    Model.Adress.AddressLine1 = value;
                     this.OnPropertyChanged("AddressLine1");
                 }
             }
@@ -113,13 +113,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.AddressLine2;
+                return Model.Adress.AddressLine2;
             }
             set
             {
                 if (AddressLine2 != value)
                 {
-                    Model.AddressLine2 = value;
+                    Model.Adress.AddressLine2 = value;
                     this.OnPropertyChanged("AddressLine2");
                 }
             }
@@ -129,13 +129,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.AddressLine3;
+                return Model.Adress.AddressLine3;
             }
             set
             {
                 if (AddressLine3 != value)
                 {
-                    Model.AddressLine3 = value;
+                    Model.Adress.AddressLine3 = value;
                     this.OnPropertyChanged("AddressLine3");
                 }
             }
@@ -144,13 +144,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.Country;
+                return Model.Adress.Country;
             }
             set
             {
                 if (Country != value)
                 {
-                    Model.Country = value;
+                    Model.Adress.Country = value;
                     this.OnPropertyChanged("Country");
                 }
             }
@@ -160,13 +160,13 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.State;
+                return Model.Adress.State;
             }
             set
             {
                 if (State != value)
                 {
-                    Model.State = value;
+                    Model.Adress.State = value;
                     this.OnPropertyChanged("State");
                 }
             }

@@ -40,6 +40,9 @@
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -78,6 +81,9 @@
     <Compile Include="Data\CourseMgr.cs" />
     <Compile Include="Data\StudentMgr.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Adress.cs" />
+    <Compile Include="Model\BankAccountData.cs" />
+    <Compile Include="Model\ContactData.cs" />
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>

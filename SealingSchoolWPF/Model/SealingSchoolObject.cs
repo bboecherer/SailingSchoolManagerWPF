@@ -15,7 +15,7 @@ namespace SealingSchoolWPF.Model
         public String CustomField3 { get; set; }
         public String CreatedBy { get; set; }
         public String ModifiedBy { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public DateTime ModifiedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public DateTime? ModifiedOn { get; set; }
     }
 }

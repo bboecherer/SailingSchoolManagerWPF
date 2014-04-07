@@ -241,26 +241,35 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         }
 
+        InstructorMgr instructorMgr = new InstructorMgr();
+
         private void ExecuteAddCommand()
         {
+            Adress adress = new Adress();
+            BankAccountData bank = new BankAccountData();
+            ContactData contact = new ContactData();
+            contact.Email = "dummy";
+
+            adress.AddressLine1 = this.Adress;
+            adress.ZipCode = this.Postal;
+            adress.City = this.City;
+
+            bank.AccountNo = this.AccountNo;
+            bank.BankName = this.BankName;
+            bank.BankNo = this.BankNo;
+            bank.Bic = this.Bic;
+            bank.Iban = this.Iban;
+
             Model.FirstName = this.FirstName;
             Model.LastName = this.LastName;
-            Model.AddressLine1 = this.Adress;
-            Model.ZipCode = this.Postal;
-            Model.City = this.City;
-            Model.BankName = this.BankName;
-            Model.BankNo = this.BankNo;
-            Model.Bic = this.Bic;
-            Model.Iban = this.Iban;
+            Model.Adress = adress;
+            Model.Bank = bank;
+            Model.Contact = contact;
+
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
-            Model.EnrollmentDate = DateTime.Now;
-            using (var ctx = new SchoolDataContext())
-            {
-                ctx.Instructors.Add(Model);
-                ctx.SaveChanges();
-            }
+            instructorMgr.Create(Model);
         }
     }
 }

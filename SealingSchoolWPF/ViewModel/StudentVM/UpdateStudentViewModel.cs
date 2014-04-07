@@ -75,11 +75,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.AddressLine1;
+                return StudentDummy.Adress.AddressLine1;
             }
             set
             {
-                StudentDummy.AddressLine1 = value;
+                StudentDummy.Adress.AddressLine1 = value;
                 this.OnPropertyChanged("Adress");
             }
         }
@@ -88,11 +88,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.ZipCode;
+                return StudentDummy.Adress.ZipCode;
             }
             set
             {
-                StudentDummy.ZipCode = value;
+                StudentDummy.Adress.ZipCode = value;
                 this.OnPropertyChanged("Postal");
             }
         }
@@ -101,11 +101,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.City;
+                return StudentDummy.Adress.City;
             }
             set
             {
-                StudentDummy.City = value;
+                StudentDummy.Adress.City = value;
                 this.OnPropertyChanged("City");
             }
         }
@@ -114,11 +114,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.AccountNo;
+                return StudentDummy.Bank.AccountNo;
             }
             set
             {
-                StudentDummy.AccountNo = value;
+                StudentDummy.Bank.AccountNo = value;
                 this.OnPropertyChanged("AccountNo");
             }
         }
@@ -127,11 +127,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.BankNo;
+                return StudentDummy.Bank.BankNo;
             }
             set
             {
-                StudentDummy.BankNo = value;
+                StudentDummy.Bank.BankNo = value;
                 this.OnPropertyChanged("BankNo");
             }
         }
@@ -140,11 +140,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.BankName;
+                return StudentDummy.Bank.BankName;
             }
             set
             {
-                StudentDummy.BankName = value;
+                StudentDummy.Bank.BankName = value;
                 this.OnPropertyChanged("BankName");
             }
         }
@@ -153,11 +153,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.Iban;
+                return StudentDummy.Bank.Iban;
             }
             set
             {
-                StudentDummy.Iban = value;
+                StudentDummy.Bank.Iban = value;
                 this.OnPropertyChanged("Iban");
             }
         }
@@ -166,11 +166,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.Sepa;
+                return StudentDummy.Bank.Sepa;
             }
             set
             {
-                StudentDummy.Sepa = value;
+                StudentDummy.Bank.Sepa = value;
                 this.OnPropertyChanged("Sepa");
             }
         }
@@ -179,11 +179,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.Bic;
+                return StudentDummy.Bank.Bic;
             }
             set
             {
-                StudentDummy.Bic = value;
+                StudentDummy.Bank.Bic = value;
                 this.OnPropertyChanged("Bic");
             }
         }

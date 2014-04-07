@@ -23,5 +23,8 @@ namespace SealingSchoolWPF.Data
         public DbSet<CreditNoteItem> CreditNoteItems { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceItem> InvoiceItems { get; set; }
+        public DbSet<Adress> Adresses { get; set; }
+        public DbSet<BankAccountData> Banks { get; set; }
+        public DbSet<ContactData> Contacts { get; set; }
     }
 }

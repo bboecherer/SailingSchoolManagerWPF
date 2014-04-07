@@ -1,4 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
+using SealingSchoolWPF.Model;
 using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
@@ -35,19 +36,26 @@ namespace SealingSchoolWPF.Pages.Student.Update
         private Model.Student GetStudentDataFromModel(StudentViewModel student)
         {
             Model.Student stud = new Model.Student();
+            Adress studAdress = new Adress();
+            BankAccountData studBank = new BankAccountData();
+
+            studAdress.AddressLine1 = student.AddressLine1;
+            studAdress.City = student.City;
+            studAdress.ZipCode = student.ZipCode;
+
+            studBank.BankName = student.BankName;
+            studBank.BankNo = student.BankNo;
+            studBank.Bic = student.Bic;
+            studBank.Iban = student.Iban;
+            studBank.AccountNo = student.AccountNo;
+
             stud.Id = Convert.ToInt32(student.Id);
             stud.LastName = student.Lastname;
             stud.FirstName = student.Firstname;
-            stud.AddressLine1 = student.AddressLine1;
-            stud.City = student.City;
-            stud.ZipCode = student.ZipCode;
-            stud.BankName = student.BankName;
-            stud.BankNo = student.BankNo;
-            stud.Bic = student.Bic;
-            stud.Iban = student.Iban;
             stud.AdditionalInfo = student.Notes;
-            stud.AccountNo = student.AccountNo;
             stud.CreatedOn = student.CreatedOn;
+            stud.Bank = studBank;
+            stud.Adress = studAdress;
 
             return stud;
         }

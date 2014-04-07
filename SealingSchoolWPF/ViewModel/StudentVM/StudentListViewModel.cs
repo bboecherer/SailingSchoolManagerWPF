@@ -65,6 +65,26 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             students = new ObservableCollection<StudentViewModel>(studs.Select(p => new StudentViewModel(p)));
         }
 
+        private ICommand addCommand;
+
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (addCommand == null)
+                {
+                    addCommand = new RelayCommand(p => ExecuteAddCommand());
+                }
+                return addCommand;
+            }
+        }
+
+        private void ExecuteAddCommand()
+        {
+            CreateStudent window = new CreateStudent();
+            window.ShowDialog();
+        }
+
 
     }
 }

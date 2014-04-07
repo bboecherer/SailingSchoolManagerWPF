@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -11,33 +12,21 @@ namespace SealingSchoolWPF.Model
 {
     public class Instructor : SealingSchoolObject, IDataErrorInfo
     {
+        [Key]
         public int Id { get; set; }
         public string LastName { get; set; }
-        public string Label { get; set; }
         public string FirstName { get; set; }
-        public DateTime EnrollmentDate { get; set; }
 
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string AddressLine3 { get; set; }
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string State { get; set; }
-        public string BankNo { get; set; }
-        public string BankName { get; set; }
-        public string AccountNo { get; set; }
-        public string Bic { get; set; }
-        public string Iban { get; set; }
-        public bool Sepa { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
-        public virtual ICollection<Course> Courses { get; set; }
 
-        public override string ToString()
-        {
-            return "Kursleiter: " + this.Label;
-        }
+        public Adress Adress { get; set; }
+
+
+        public ContactData Contact { get; set; }
+
+
+        public BankAccountData Bank { get; set; }
+
 
         string IDataErrorInfo.Error { get { return null; } }
 
