@@ -17,9 +17,8 @@ namespace SealingSchoolWPF.Model
         public Decimal GrossPricePaid { get; set; }
         public Decimal VatAmount { get; set; }
         public Double Vat { get; set; }
-
-
-
+        public Adress CreditNoteAdress { get; set; }
+        
         public void SetItems(SortedSet<CreditNoteItem> Items)
         {
             this.Items = Items;

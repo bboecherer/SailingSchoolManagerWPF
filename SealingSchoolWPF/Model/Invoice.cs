@@ -21,6 +21,7 @@ namespace SealingSchoolWPF.Model
         public Decimal SumTotalPrice { get; set; }
         public Currency Currency { get; set; }
         public SortedSet<InvoiceItem> Items = new SortedSet<InvoiceItem>();
+        public Adress InvoiceAdress { get; set; }
         
 
         public InvoiceStatus InvoiceStatus = InvoiceStatus.RECHNUNG;

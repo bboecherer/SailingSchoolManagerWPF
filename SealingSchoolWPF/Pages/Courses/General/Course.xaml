@@ -1,6 +1,6 @@
 ﻿<UserControl x:Class="SealingSchoolWPF.Pages.Courses.General.CourseView"
              xmlns:View="clr-namespace:SealingSchoolWPF.Pages.Courses.General" 
-             xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,13 +13,40 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" Click="Button_Click_1">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Create_ToolTip}"/>
+                                <TextBlock Text="{x:Static resx:Resource.Create_ToolTip_Desc}"/>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <StackPanel>
+                        <Image Source="/Resources/Images/action_add_16xLG.png" />
+                    </StackPanel>
+                </Button>
+                <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" Click="Button_Click">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Refresh_ToolTip}"/>
+                                <TextBlock Text="{x:Static resx:Resource.Refresh_ToolTip_Desc}"/>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <StackPanel>
+                        <Image Source="/Resources/Images/refresh_16xLG.png" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
         <ScrollViewer Grid.Row="1">
             <StackPanel MinWidth="200">
                 <View:CourseListView x:Name="courseList"/>
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Grid.Row="0">
-            <Button:CourseButtons />
-        </StackPanel>
     </Grid>
 </UserControl>

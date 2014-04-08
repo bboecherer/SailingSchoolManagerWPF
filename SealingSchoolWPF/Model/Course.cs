@@ -20,8 +20,8 @@ namespace SealingSchoolWPF.Model
         public int Duration { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public String Currency { get; set; }
-        public String Status { get; set; }
+        public Currency Currency { get; set; }
+        public CourseStatus CourseStatus { get; set; }
         public int Credits { get; set; }
         public int Capacity { get; set; }
         public Instructor Instructor { get; set; }

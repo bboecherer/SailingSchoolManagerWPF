@@ -13,23 +13,23 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
         }
 
-        public string Label
+        public string Id
         {
             get
             {
-                return Model.Label;
+                return Model.Id.ToString();
             }
             set
             {
-                if (Label != value)
+                if (Id != value)
                 {
-                    Model.Label = value;
-                    this.OnPropertyChanged("Label");
+                    Model.Id = Convert.ToInt32(value);
+                    this.OnPropertyChanged("Id");
                 }
             }
         }
 
-        public string FirstName
+        public string Firstname
         {
             get
             {
@@ -37,15 +37,15 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             }
             set
             {
-                if (FirstName != value)
+                if (Firstname != value)
                 {
                     Model.FirstName = value;
-                    this.OnPropertyChanged("FirstName");
+                    this.OnPropertyChanged("Firstname");
                 }
             }
         }
 
-        public string LastName
+        public string Lastname
         {
             get
             {
@@ -53,10 +53,10 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             }
             set
             {
-                if (LastName != value)
+                if (Lastname != value)
                 {
                     Model.LastName = value;
-                    this.OnPropertyChanged("LastName");
+                    this.OnPropertyChanged("Lastname");
                 }
             }
         }
@@ -140,6 +140,7 @@ namespace SealingSchoolWPF.ViewModel.Instructor
                 }
             }
         }
+
         public string Country
         {
             get
@@ -168,6 +169,121 @@ namespace SealingSchoolWPF.ViewModel.Instructor
                 {
                     Model.Adress.State = value;
                     this.OnPropertyChanged("State");
+                }
+            }
+        }
+
+
+        public string AccountNo
+        {
+            get
+            {
+                return Model.Bank.AccountNo;
+            }
+            set
+            {
+                Model.Bank.AccountNo = value;
+                this.OnPropertyChanged("AccountNo");
+            }
+        }
+
+
+        public string BankNo
+        {
+            get
+            {
+                return Model.Bank.BankNo;
+            }
+            set
+            {
+                Model.Bank.BankNo = value;
+                this.OnPropertyChanged("BankNo");
+            }
+        }
+
+
+        public string BankName
+        {
+            get
+            {
+                return Model.Bank.BankName;
+            }
+            set
+            {
+                Model.Bank.BankName = value;
+                this.OnPropertyChanged("BankName");
+            }
+        }
+
+
+        public string Iban
+        {
+            get
+            {
+                return Model.Bank.Iban;
+            }
+            set
+            {
+                Model.Bank.Iban = value;
+                this.OnPropertyChanged("Iban");
+            }
+        }
+
+
+
+        public string Bic
+        {
+            get
+            {
+                return Model.Bank.Bic;
+            }
+            set
+            {
+                Model.Bank.Bic = value;
+                this.OnPropertyChanged("Bic");
+            }
+        }
+
+        public string Notes
+        {
+            get
+            {
+                return Model.AdditionalInfo;
+            }
+            set
+            {
+                Model.AdditionalInfo = value;
+                this.OnPropertyChanged("Notes");
+            }
+        }
+        public DateTime CreatedOn
+        {
+            get
+            {
+                return Model.CreatedOn ?? DateTime.MinValue; ;
+            }
+            set
+            {
+                if (CreatedOn != value)
+                {
+                    Model.CreatedOn = value;
+                    this.OnPropertyChanged("CreatedOn");
+                }
+            }
+        }
+
+        public DateTime ModifiedOn
+        {
+            get
+            {
+                return Model.ModifiedOn ?? DateTime.MinValue; ;
+            }
+            set
+            {
+                if (ModifiedOn != value)
+                {
+                    Model.ModifiedOn = value;
+                    this.OnPropertyChanged("ModifiedOn");
                 }
             }
         }

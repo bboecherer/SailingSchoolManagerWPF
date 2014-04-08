@@ -4,7 +4,6 @@
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="KURS" IsTitleVisible="True"
-        xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Controls"
        ContentSource="/Pages/Courses/Create/Base.xaml"
        Height="450" Width="500" Closed="ModernWindow_Closed"
       >

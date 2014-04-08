@@ -8,6 +8,7 @@
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
@@ -33,7 +34,8 @@
                     <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=NetPrice}"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=GrossPrice}"/>
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=NetAmount}"/>
-                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Currency}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
+                               SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right" />
             </StackPanel>

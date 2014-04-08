@@ -34,7 +34,8 @@
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Description}"/>
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=Duration}"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Capacity}"/>
-                    <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Instructor}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
+                               SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right" />
             </StackPanel>

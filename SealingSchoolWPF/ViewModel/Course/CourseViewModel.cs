@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,21 +78,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-        public string Status
-        {
-            get
-            {
-                return Model.Status;
-            }
-            set
-            {
-                if (Status != value)
-                {
-                    Model.Status = value;
-                    this.OnPropertyChanged("Status");
-                }
-            }
-        }
+
 
         public DateTime StartDate
         {

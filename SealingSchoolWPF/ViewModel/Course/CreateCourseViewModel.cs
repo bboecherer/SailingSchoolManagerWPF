@@ -22,6 +22,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         {
         }
 
+        InstructorMgr instructorMgr = new InstructorMgr();
+
         static CreateCourseViewModel instance = null;
         static readonly object padlock = new object();
 
@@ -96,8 +98,28 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _instructor;
-        public string Instructor
+        public IEnumerable<String> InstructorTypeValues
+        {
+            get
+            {
+                return GetInstructorNames();
+            }
+        }
+
+        private IList<String> GetInstructorNames()
+        {
+            InstructorNames = new List<String>();
+            foreach (Model.Instructor inst in instructorMgr.GetAll())
+            {
+                InstructorNames.Add(inst.Label);
+            }
+            return InstructorNames;
+        }
+
+        private IList<String> InstructorNames;
+
+        private Model.Student _instructor;
+        public Model.Student Instructor
         {
             get
             {
@@ -152,8 +174,18 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _currency;
-        public string Currency
+
+        public IEnumerable<Currency> CurrencyTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(Currency))
+                    .Cast<Currency>();
+            }
+        }
+
+        private Currency _currency;
+        public Currency Currency
         {
             get
             {

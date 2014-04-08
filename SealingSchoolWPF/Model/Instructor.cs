@@ -17,16 +17,13 @@ namespace SealingSchoolWPF.Model
         public string LastName { get; set; }
         public string FirstName { get; set; }
 
-
+        public virtual ICollection<Course> Courses { get; set; }
 
         public Adress Adress { get; set; }
 
-
         public ContactData Contact { get; set; }
 
-
         public BankAccountData Bank { get; set; }
-
 
         string IDataErrorInfo.Error { get { return null; } }
 

@@ -84,6 +84,7 @@
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\BankAccountData.cs" />
     <Compile Include="Model\ContactData.cs" />
+    <Compile Include="Model\CourseStatus.cs" />
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
@@ -95,6 +96,9 @@
     </Compile>
     <Compile Include="Pages\Controls\Buttons.xaml.cs">
       <DependentUpon>Buttons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Courses\Create\Financial.xaml.cs">
       <DependentUpon>Financial.xaml</DependentUpon>
@@ -116,6 +120,18 @@
     </Compile>
     <Compile Include="Pages\Courses\General\Course.xaml.cs">
       <DependentUpon>Course.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Update\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Update\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Update\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Update\UpdateCourse.xaml.cs">
+      <DependentUpon>UpdateCourse.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\Controls\CreateButtons.xaml.cs">
       <DependentUpon>CreateButtons.xaml</DependentUpon>
@@ -207,6 +223,7 @@
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateCourseViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseButtonViewModel.cs" />
+    <Compile Include="ViewModel\Course\UpdateCourseViewModel.cs" />
     <Compile Include="ViewModel\General\CommandViewModel.cs" />
     <Compile Include="ViewModel\General\IViewModel.cs" />
     <Compile Include="ViewModel\General\RelayCommand.cs" />
@@ -270,6 +287,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Courses\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Courses\Create\Financial.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -295,6 +316,22 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\General\Course.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Update\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Update\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Update\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Update\UpdateCourse.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -486,7 +523,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Courses\Details\" />
     <Folder Include="Pages\Courses\Edit\" />
     <Folder Include="Pages\Instructor\Details\" />
     <Folder Include="Pages\Instructor\Edit\" />
@@ -580,6 +616,54 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\save_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xLG_color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xMD_color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xSM_color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xLG_color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xMD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xMD_color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xSM_color.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Symbols_Complete_and_ok_16xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Symbols_Complete_and_ok_16xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Symbols_Complete_and_ok_32xLG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Symbols_Complete_and_ok_32xSM.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

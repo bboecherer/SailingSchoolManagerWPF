@@ -224,6 +224,53 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
+        private bool _isButtonEnabled = true;
+        public bool IsButtonEnabled
+        {
+            get
+            {
+                return _isButtonEnabled;
+            }
+            set
+            {
+                _isButtonEnabled = value;
+                this.OnPropertyChanged("IsButtonEnabled");
+            }
+        }
+
+        private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
+        public string ImageSourceSave
+        {
+            get
+            {
+                return _imageSourceSave;
+            }
+            set
+            {
+                _imageSourceSave = value;
+                this.OnPropertyChanged("ImageSourceSave");
+            }
+        }
+
+        private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
+        public string ImageSourceClear
+        {
+            get
+            {
+                return _imageSourceClear;
+            }
+            set
+            {
+                _imageSourceClear = value;
+                this.OnPropertyChanged("ImageSourceClear");
+            }
+        }
+
+
+
+
+
+
         private ICommand addCommand;
 
         public ICommand AddCommand
@@ -243,7 +290,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             Adress adress = new Adress();
             BankAccountData bank = new BankAccountData();
             ContactData contact = new ContactData();
-            
             contact.Email = "dummy";
 
             adress.AddressLine1 = this.Adress;
@@ -267,6 +313,10 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             Model.ModifiedOn = DateTime.Now;
 
             studMgr.Create(Model);
+
+            this.IsButtonEnabled = false;
+            this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
+            this.ImageSourceClear = "";
         }
 
         private ICommand clearCommand;

@@ -1,5 +1,6 @@
 ﻿
 using SealingSchoolWPF.Data;
+using SealingSchoolWPF.Pages.Courses.Create;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -12,6 +13,25 @@ namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CourseListViewModel : ViewModel
     {
+
+        static CourseListViewModel instance = null;
+        static readonly object padlock = new object();
+
+        public static CourseListViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new CourseListViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
+
 
         private CourseMgr courseMgr = new CourseMgr();
 
@@ -35,47 +55,35 @@ namespace SealingSchoolWPF.ViewModel.Course
 
         public CourseListViewModel()
         {
-            IList<SealingSchoolWPF.Model.Course> coursesList = courseMgr.GetAll();
-            courses = new ObservableCollection<CourseViewModel>(coursesList.Select(p => new CourseViewModel(p)));
-            courses.CollectionChanged += Students_CollectionChanged;
+            BindDataGrid();
         }
 
-        void Students_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void BindDataGrid()
         {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (CourseViewModel vm in e.NewItems)
-                {
-                    courseMgr.Create(vm.Model);
-                }
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (CourseViewModel vm in e.OldItems)
-                {
-                    courseMgr.Delete(vm.Model);
-                }
-            }
+            IList<SealingSchoolWPF.Model.Course> courseList = courseMgr.GetAll();
+            courses = new ObservableCollection<CourseViewModel>(courseList.Select(p => new CourseViewModel(p)));
         }
 
-        private ICommand addCourseCommand;
+        private ICommand addCommand;
 
-        public ICommand AddCourseCommand
+        public ICommand AddCommand
         {
             get
             {
-                if (addCourseCommand == null)
+                if (addCommand == null)
                 {
-                    addCourseCommand = new RelayCommand(p => ExecuteAddCourseCommand());
+                    addCommand = new RelayCommand(p => ExecuteAddCommand());
                 }
-                return addCourseCommand;
+                return addCommand;
             }
         }
 
-        private void ExecuteAddCourseCommand()
+        private void ExecuteAddCommand()
         {
-            Courses.Add(new CourseViewModel(new SealingSchoolWPF.Model.Course()));
+            CreateCourse window = new CreateCourse();
+            window.ShowDialog();
         }
+
 
     }
 }

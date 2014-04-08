@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-     public class CreditNoteItem : SealingSchoolObject
+    public class CreditNoteItem : SealingSchoolObject
     {
         public int Id { get; set; }
         public Currency Currency { get; set; }
@@ -18,6 +18,6 @@ namespace SealingSchoolWPF.Model
         public DateTime ServiceStartDate { get; set; }
         public DateTime ServiceEndDate { get; set; }
         public String ServiceLocation { get; set; }
-        public InvoiceItem InvoiceItem { get; set; }
+        
     }
 }
