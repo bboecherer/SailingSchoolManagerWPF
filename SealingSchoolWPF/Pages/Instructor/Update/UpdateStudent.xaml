@@ -1,0 +1,21 @@
+﻿<mui:ModernWindow x:Class="SealingSchoolWPF.Pages.Instructor.Update.UpdateInstructor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+        Title="TEILNEHMER" IsTitleVisible="True"
+        xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Controls"
+       ContentSource="/Pages/Instructor/Update/Base.xaml"
+       Height="450" Width="500" Closing="ModernWindow_Closing"
+      >
+    <mui:ModernWindow.MenuLinkGroups >
+        <mui:LinkGroup DisplayName="{x:Static resx:Resource.Update_ToolTip_Desc}">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Instructor/Update/Base.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Bankdata}" Source="/Pages/Instructor/Update/Bankdata.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Student/Instructor/Notes.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Instructor/Update/Documents.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

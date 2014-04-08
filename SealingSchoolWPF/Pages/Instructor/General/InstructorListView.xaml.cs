@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.Pages.Instructor.Update;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace SealingSchoolWPF.Pages
         public InstructorListView()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var instructor = (SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel)grid.SelectedItem;
+
+            UpdateInstructor window = new UpdateInstructor(instructor);
+            window.ShowDialog();
         }
     }
 }

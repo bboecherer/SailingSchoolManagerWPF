@@ -9,13 +9,18 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Instructors}" SelectionMode="Single" AutoGenerateColumns="False">
+        <DataGrid ItemsSource="{Binding Instructors}" SelectionMode="Extended" SelectionUnit="FullRow" 
+                 DataContext="{Binding}" AutoGenerateColumns="False" 
+                  IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
-                            Binding="{Binding Label }"/>
-                <DataGridTextColumn Header="{x:Static resx:Resource.Adress}" 
+                <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
+                            Binding="{Binding Id }" />
+                <DataGridTextColumn Header="{x:Static resx:Resource.Firstname}" 
+                            Binding="{Binding Firstname }" />
+                <DataGridTextColumn Header="{x:Static resx:Resource.Lastname}" 
+                            Binding="{Binding Lastname }" />
+                <DataGridTextColumn Header="{x:Static resx:Resource.Street}" 
                             Binding="{Binding AddressLine1}"/>
                 <DataGridTextColumn Header="{x:Static resx:Resource.PostalShort}" 
                             Binding="{Binding ZipCode}"/>

@@ -1,11 +1,7 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.Student.Create;
+﻿using SealingSchoolWPF.ViewModel.InstructorViewModel;
 using SealingSchoolWPF.ViewModel.StudentViewModel;
-using SealingSchoolWPF.ViewModel.StudentVM;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,17 +15,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Student.Controls
+namespace SealingSchoolWPF.Pages.Instructor.Update
 {
     /// <summary>
-    /// Interaction logic for ButtonsToWork.xaml
+    /// Interaction logic for CreateNewStudent.xaml
     /// </summary>
-    public partial class StudentButtons : UserControl
+    public partial class Documents : UserControl
     {
-        public StudentButtons()
+        public Documents()
         {
             InitializeComponent();
-            var viewModel = new StudentButtonViewModel();
+            var viewModel = UpdateInstructorViewModel.Instance; 
             this.DataContext = viewModel;
         }
     }

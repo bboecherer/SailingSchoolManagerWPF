@@ -1,4 +1,5 @@
 ﻿using SealingSchoolWPF.Data;
+using SealingSchoolWPF.Pages.Instructor.Create;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,7 +13,27 @@ namespace SealingSchoolWPF.ViewModel.Instructor
 {
     class InstructorListViewModel : ViewModel
     {
+        static InstructorListViewModel instance = null;
+        static readonly object padlock = new object();
+
+        public static InstructorListViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new InstructorListViewModel();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+
         private InstructorMgr instructorMgr = new InstructorMgr();
+
         private ObservableCollection<InstructorViewModel> instructors;
 
         public ObservableCollection<InstructorViewModel> Instructors
@@ -33,48 +54,35 @@ namespace SealingSchoolWPF.ViewModel.Instructor
 
         public InstructorListViewModel()
         {
-            IList<SealingSchoolWPF.Model.Instructor> instructorsList = instructorMgr.GetAll();
-            instructors = new ObservableCollection<InstructorViewModel>(instructorsList.Select(p => new InstructorViewModel(p)));
-            instructors.CollectionChanged += Students_CollectionChanged;
+            BindDataGrid();
         }
 
-        void Students_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void BindDataGrid()
         {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (InstructorViewModel vm in e.NewItems)
-                {
-                    instructorMgr.Create(vm.Model);
-                }
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (InstructorViewModel vm in e.OldItems)
-                {
-                    instructorMgr.Delete(vm.Model);
-                }
-            }
+            IList<SealingSchoolWPF.Model.Instructor> studs = instructorMgr.GetAll();
+            instructors = new ObservableCollection<InstructorViewModel>(studs.Select(p => new InstructorViewModel(p)));
         }
 
+        private ICommand addCommand;
 
-        private ICommand addInstructorCommand;
-
-        public ICommand AddInstructorCommand
+        public ICommand AddCommand
         {
             get
             {
-                if (addInstructorCommand == null)
+                if (addCommand == null)
                 {
-                    addInstructorCommand = new RelayCommand(p => ExecuteAddInstructorCommand());
+                    addCommand = new RelayCommand(p => ExecuteAddCommand());
                 }
-                return addInstructorCommand;
+                return addCommand;
             }
         }
 
-        private void ExecuteAddInstructorCommand()
+        private void ExecuteAddCommand()
         {
-            Instructors.Add(new InstructorViewModel(new SealingSchoolWPF.Model.Instructor()));
+            CreateInstructor window = new CreateInstructor();
+            window.ShowDialog();
         }
+
 
     }
 }

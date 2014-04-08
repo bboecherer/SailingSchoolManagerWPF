@@ -1,4 +1,5 @@
-﻿using SealingSchoolWPF.ViewModel.Instructor;
+﻿using SealingSchoolWPF.Pages.Instructor.Create;
+using SealingSchoolWPF.ViewModel.Instructor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,14 +25,22 @@ namespace SealingSchoolWPF.Pages.General
         public Instructors()
         {
             InitializeComponent();
-            SetupBindings();
-        }
-
-        private void SetupBindings()
-        {
             var viewModel = new InstructorListViewModel();
 
             instructorList.DataContext = viewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = new InstructorListViewModel();
+            instructorList.DataContext = null;
+            instructorList.DataContext = viewModel;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CreateInstructor window = new CreateInstructor();
+            window.ShowDialog();
         }
     }
 }

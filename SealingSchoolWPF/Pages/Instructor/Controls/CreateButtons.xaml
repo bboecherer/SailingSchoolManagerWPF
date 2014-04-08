@@ -9,7 +9,7 @@
              >
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" Command="{Binding AddCommand}">
+            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" IsEnabled="{Binding IsButtonEnabled}" Command="{Binding AddCommand}">
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
@@ -19,20 +19,20 @@
                     </ToolTip>
                 </Button.ToolTip>
                 <StackPanel>
-                    <Image Source="/Resources/Images/save_16xLG.png" />
+                    <Image Source="{Binding ImageSourceSave}" />
                 </StackPanel>
             </Button>
-            <Button Height="25" Width="50" BorderThickness="0" >
+            <Button Height="25" Width="50" BorderThickness="0" IsEnabled="{Binding IsButtonEnabled}" Command="{Binding ClearCommand}">
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
-                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Delete_ToolTip}"/>
-                            <TextBlock Text="{x:Static resx:Resource.Delete_ToolTip_Desc}"/>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Clear_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Clear_ToolTip_Desc}"/>
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
                 <StackPanel>
-                    <Image Source="/Resources/Images/action_Cancel_16xLG.png" />
+                    <Image Source="{Binding ImageSourceClear}" />
                 </StackPanel>
             </Button>
         </StackPanel>

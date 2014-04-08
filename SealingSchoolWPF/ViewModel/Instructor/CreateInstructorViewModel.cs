@@ -16,6 +16,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 {
     public class CreateInstructorViewModel : ViewModel<SealingSchoolWPF.Model.Instructor>
     {
+
+        #region Ctor
         public CreateInstructorViewModel(SealingSchoolWPF.Model.Instructor model)
             : base(model)
         {
@@ -38,6 +40,9 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 }
             }
         }
+        #endregion
+
+        #region Properties
 
         private string _firstName;
         public string FirstName
@@ -221,6 +226,56 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
+        private bool _isButtonEnabled = true;
+        public bool IsButtonEnabled
+        {
+            get
+            {
+                return _isButtonEnabled;
+            }
+            set
+            {
+                _isButtonEnabled = value;
+                this.OnPropertyChanged("IsButtonEnabled");
+            }
+        }
+
+        private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
+        public string ImageSourceSave
+        {
+            get
+            {
+                return _imageSourceSave;
+            }
+            set
+            {
+                _imageSourceSave = value;
+                this.OnPropertyChanged("ImageSourceSave");
+            }
+        }
+
+        private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
+        public string ImageSourceClear
+        {
+            get
+            {
+                return _imageSourceClear;
+            }
+            set
+            {
+                _imageSourceClear = value;
+                this.OnPropertyChanged("ImageSourceClear");
+            }
+        }
+
+        #endregion
+
+        #region Members
+        private InstructorMgr instructorMgr = new InstructorMgr();
+        #endregion
+
+        #region Commands
+
         private ICommand addCommand;
 
         public ICommand AddCommand
@@ -234,14 +289,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 return addCommand;
             }
         }
-
-        public void Close()
-        {
-            instance = null;
-
-        }
-
-        InstructorMgr instructorMgr = new InstructorMgr();
 
         private void ExecuteAddCommand()
         {
@@ -269,7 +316,53 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
+
             instructorMgr.Create(Model);
+
+            this.IsButtonEnabled = false;
+            this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
+            this.ImageSourceClear = "";
         }
+
+        private ICommand clearCommand;
+
+        public ICommand ClearCommand
+        {
+            get
+            {
+                if (clearCommand == null)
+                {
+                    clearCommand = new RelayCommand(p => ExecuteClearCommand());
+                }
+                return clearCommand;
+            }
+        }
+
+        private void ExecuteClearCommand()
+        {
+            this.FirstName = null;
+            this.LastName = null;
+            this.Adress = null;
+            this.Postal = null;
+            this.City = null;
+            this.Street = null;
+            this.AccountNo = null;
+            this.BankName = null;
+            this.BankNo = null;
+            this.Bic = null;
+            this.Iban = null;
+            this.Notes = null;
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void Close()
+        {
+            instance = null;
+
+        }
+        #endregion
     }
 }

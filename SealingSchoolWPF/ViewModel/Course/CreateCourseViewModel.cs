@@ -142,6 +142,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 _netPrice = value;
+                this.CalculatePrice(Convert.ToDecimal(value));
                 this.OnPropertyChanged("NetPrice");
             }
         }
@@ -251,5 +252,18 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 ctx.SaveChanges();
             }
         }
+
+        private void CalculatePrice(decimal p)
+        {
+            decimal netPrice = p;
+            decimal grossPrice = decimal.MinValue;
+            decimal vat = 19;
+
+            grossPrice = netPrice + (netPrice * vat / 100);
+            this.NetAmount = (netPrice * vat / 100).ToString();
+            this.GrossPrice = grossPrice.ToString();
+        }
+
+
     }
 }
