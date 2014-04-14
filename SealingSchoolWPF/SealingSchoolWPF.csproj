@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -87,6 +93,9 @@
     <Compile Include="Model\CourseStatus.cs" />
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Courses\Controls\CreateButtons.xaml.cs">
       <DependentUpon>CreateButtons.xaml</DependentUpon>
@@ -287,6 +296,10 @@
     <Page Include="Pages\Calendar\Calendar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\Controls\CreateButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -556,6 +569,10 @@
     <Folder Include="Pages\Instructor\Edit\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\action_add_16xLG.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

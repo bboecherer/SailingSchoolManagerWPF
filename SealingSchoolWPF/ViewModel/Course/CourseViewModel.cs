@@ -191,7 +191,5 @@ namespace SealingSchoolWPF.ViewModel.Course
                 }
             }
         }
-
-
     }
 }
