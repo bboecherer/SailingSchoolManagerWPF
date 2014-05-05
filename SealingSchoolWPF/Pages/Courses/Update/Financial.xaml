@@ -40,7 +40,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:UpdateButtons HorizontalAlignment="Right" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

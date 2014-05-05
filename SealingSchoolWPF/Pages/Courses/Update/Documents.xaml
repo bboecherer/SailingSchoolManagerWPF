@@ -22,9 +22,8 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                 
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:UpdateButtons HorizontalAlignment="Right" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

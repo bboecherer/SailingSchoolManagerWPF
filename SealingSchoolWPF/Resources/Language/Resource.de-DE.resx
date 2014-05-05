@@ -345,4 +345,7 @@
   <data name="RepairAction" xml:space="preserve">
     <value>Reparaturvermerk</value>
   </data>
+  <data name="End" xml:space="preserve">
+    <value>Ende</value>
+  </data>
 </root>

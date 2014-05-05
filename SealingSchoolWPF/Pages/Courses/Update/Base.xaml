@@ -44,9 +44,8 @@
                     <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
                                SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:UpdateButtons HorizontalAlignment="Right" />
             </StackPanel>
-
         </ScrollViewer>
     </Grid>
 </UserControl>

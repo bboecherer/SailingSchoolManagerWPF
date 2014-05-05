@@ -95,21 +95,19 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-        public String StartDate
+        public DateTime StartDate
         {
             get
             {
-                return Model.StartDate.ToString("dd.MM.yyyy",
-                  CultureInfo.CreateSpecificCulture("de-DE"));
+                return Model.StartDate;
             }
         }
 
-        public String EndDate
+        public DateTime EndDate
         {
             get
             {
-                return Model.EndDate.ToString("dd.MM.yyyy",
-                  CultureInfo.CreateSpecificCulture("de-DE"));
+                return Model.EndDate;
             }
         }
 

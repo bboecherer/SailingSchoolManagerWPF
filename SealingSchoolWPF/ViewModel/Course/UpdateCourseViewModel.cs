@@ -119,6 +119,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 CourseDummy.NetPrice = value;
+                this.CalculatePrice(value);
                 this.OnPropertyChanged("NetPrice");
             }
         }
@@ -200,5 +201,17 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             Model.ModifiedOn = DateTime.Now;
             courseMgr.Update(Model);
         }
+
+        private void CalculatePrice(decimal p)
+        {
+            decimal netPrice = p;
+            decimal grossPrice = decimal.MinValue;
+            decimal vat = 19;
+
+            grossPrice = netPrice + (netPrice * vat / 100);
+            this.NetAmount = (netPrice * vat / 100);
+            this.GrossPrice = grossPrice;
+        }
+
     }
 }
