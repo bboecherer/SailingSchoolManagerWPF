@@ -39,7 +39,6 @@
                 </Grid>
                 <Button:UpdateButtons HorizontalAlignment="Right"/>
             </StackPanel>
-
         </ScrollViewer>
     </Grid>
 </UserControl>

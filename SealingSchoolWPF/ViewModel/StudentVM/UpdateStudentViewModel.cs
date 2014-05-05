@@ -71,7 +71,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
-        public string Adress
+        public string Street
         {
             get
             {
@@ -80,7 +80,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             set
             {
                 StudentDummy.Adress.AddressLine1 = value;
-                this.OnPropertyChanged("Adress");
+                this.OnPropertyChanged("Street");
             }
         }
 

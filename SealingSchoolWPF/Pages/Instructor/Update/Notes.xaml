@@ -27,6 +27,7 @@
                              Width="300" Height="200" AcceptsReturn="True"
                              Text="{Binding Path=TextBox, Mode=TwoWay}"/>
                 </Grid>
+                <Button:UpdateButtons HorizontalAlignment="Right" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
