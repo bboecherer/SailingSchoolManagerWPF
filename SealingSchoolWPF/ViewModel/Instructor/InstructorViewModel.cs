@@ -61,6 +61,38 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             }
         }
 
+        public string Label
+        {
+            get
+            {
+                return Model.Label;
+            }
+            set
+            {
+                if (Label != value)
+                {
+                    Model.Label = value;
+                    this.OnPropertyChanged("Label");
+                }
+            }
+        }
+
+        public string Adress
+        {
+            get
+            {
+                return Model.Adress.AddressLine1;
+            }
+            set
+            {
+                if (Adress != value)
+                {
+                    Model.Adress.AddressLine1 = value;
+                    this.OnPropertyChanged("Adress");
+                }
+            }
+        }
+
         public string ZipCode
         {
             get

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Courses.Create.Financial"
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.Courses.Update.Financial"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"

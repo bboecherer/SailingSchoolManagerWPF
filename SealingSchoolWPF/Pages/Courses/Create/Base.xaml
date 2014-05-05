@@ -6,6 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
@@ -27,14 +28,20 @@
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Label}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Description}"/>
-                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.Duration}"/>
-                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Capacity}"/>
-                    <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Instructor}"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.Start}"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.End}"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Duration}"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.Capacity}"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.Instructor}"/>
                     <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Label}"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Description}"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=Duration}"/>
-                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Capacity}"/>
-                    <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
+                    <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Value="{Binding Path=StartDate}"/>
+                    <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" Value="{Binding Path=EndDate}"/>
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="4" Margin="3"  
+                                        Value="{Binding Path=Duration}" Increment="1" />
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3"  
+                                        Value="{Binding Path=Capacity}" Increment="1" />
+                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
                                SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right" />

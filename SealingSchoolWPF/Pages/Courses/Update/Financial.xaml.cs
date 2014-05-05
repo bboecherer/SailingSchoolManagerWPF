@@ -1,4 +1,5 @@
-﻿using SealingSchoolWPF.ViewModel.CourseViewModel;
+﻿using SealingSchoolWPF.Model;
+using SealingSchoolWPF.ViewModel.CourseViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,9 @@ namespace SealingSchoolWPF.Pages.Courses.Update
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml
     /// </summary>
-    public partial class Documents : UserControl
+    public partial class Financial : UserControl
     {
-        public Documents()
+        public Financial()
         {
             InitializeComponent();
             var viewModel = UpdateCourseViewModel.Instance;

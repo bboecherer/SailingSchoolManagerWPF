@@ -403,6 +403,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ende.
+        /// </summary>
+        public static string End {
+            get {
+                return ResourceManager.GetString("End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vorname.
         /// </summary>
         public static string Firstname {

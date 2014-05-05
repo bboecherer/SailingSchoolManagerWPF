@@ -330,4 +330,7 @@
   <data name="Clear_ToolTip_Desc" xml:space="preserve">
     <value>Alle Felder leeren</value>
   </data>
+  <data name="End" xml:space="preserve">
+    <value>Ende</value>
+  </data>
 </root>

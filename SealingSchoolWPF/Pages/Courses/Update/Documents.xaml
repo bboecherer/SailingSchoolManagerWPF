@@ -24,7 +24,7 @@
                     </Grid.ColumnDefinitions>
                  
                 </Grid>
-                <Button:UpdateButtons HorizontalAlignment="Right" />
+                <Button:CreateButtons HorizontalAlignment="Right" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

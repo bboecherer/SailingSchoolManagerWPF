@@ -280,7 +280,8 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 
             adress.ZipCode = this.Postal;
             adress.City = this.City;
-            adress.AddressLine1 = this.Street;
+            adress.Street = this.Street;
+            adress.AddressLine1 = this.Street + ", " + this.Postal + " " + this.City;
 
             bank.AccountNo = this.AccountNo;
             bank.BankName = this.BankName;
@@ -293,6 +294,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             Model.Adress = adress;
             Model.Bank = bank;
             Model.Contact = contact;
+            Model.Label = this.FirstName + " " + this.LastName;
 
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;

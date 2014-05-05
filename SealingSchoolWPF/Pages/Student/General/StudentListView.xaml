@@ -15,17 +15,59 @@
                   IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
-                            Binding="{Binding Id }" />
-                <DataGridTextColumn Header="{x:Static resx:Resource.Firstname}" 
-                            Binding="{Binding Firstname }" />
-                <DataGridTextColumn Header="{x:Static resx:Resource.Lastname}" 
-                            Binding="{Binding Lastname }" />
-                <DataGridTextColumn Header="{x:Static resx:Resource.Street}" 
-                            Binding="{Binding AddressLine1}"/>
-                <DataGridTextColumn Header="{x:Static resx:Resource.PostalShort}" 
-                            Binding="{Binding ZipCode}"/>
-                <DataGridTextColumn Header="{x:Static resx:Resource.City}" 
-                            Binding="{Binding City}"/>
+                            Binding="{Binding Id }" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Width" Value="75" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Left" />
+                            <Setter Property="Width" Value="75" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
+                            Binding="{Binding Label }" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Width" Value="180" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Left" />
+                            <Setter Property="Width" Value="180" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resx:Resource.Adress}" 
+                            Binding="{Binding Adress}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Width" Value="250" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Left" />
+                            <Setter Property="Width" Value="250" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

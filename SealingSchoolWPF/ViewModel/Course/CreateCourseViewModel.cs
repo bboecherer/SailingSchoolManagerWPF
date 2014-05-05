@@ -70,8 +70,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _duration;
-        public string Duration
+        private int _duration;
+        public int Duration
         {
             get
             {
@@ -84,8 +84,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _capacity;
-        public string Capacity
+        private int _capacity;
+        public int Capacity
         {
             get
             {
@@ -132,8 +132,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _netPrice;
-        public string NetPrice
+        private Decimal _netPrice;
+        public Decimal NetPrice
         {
             get
             {
@@ -142,13 +142,13 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 _netPrice = value;
-                this.CalculatePrice(Convert.ToDecimal(value));
+                this.CalculatePrice(value);
                 this.OnPropertyChanged("NetPrice");
             }
         }
 
-        private string _grossPrice;
-        public string GrossPrice
+        private Decimal _grossPrice;
+        public Decimal GrossPrice
         {
             get
             {
@@ -161,8 +161,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _netAmount;
-        public string NetAmount
+        private Decimal _netAmount;
+        public Decimal NetAmount
         {
             get
             {
@@ -199,6 +199,48 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        private DateTime _startDate;
+        public DateTime StartDate
+        {
+            get
+            {
+                if (_startDate == null || _startDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _startDate;
+                }
+            }
+            set
+            {
+                _startDate = value;
+                this.OnPropertyChanged("StartDate");
+            }
+        }
+
+        private DateTime _endDate;
+        public DateTime EndDate
+        {
+            get
+            {
+                if (_endDate == null || _endDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _endDate;
+                }
+            }
+            set
+            {
+                _endDate = value;
+                this.OnPropertyChanged("EndDate");
+            }
+        }
+
         private string _notes;
         public string Notes
         {
@@ -210,6 +252,48 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             {
                 _notes = value;
                 this.OnPropertyChanged("Notes");
+            }
+        }
+
+        private bool _isButtonEnabled = true;
+        public bool IsButtonEnabled
+        {
+            get
+            {
+                return _isButtonEnabled;
+            }
+            set
+            {
+                _isButtonEnabled = value;
+                this.OnPropertyChanged("IsButtonEnabled");
+            }
+        }
+
+        private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
+        public string ImageSourceSave
+        {
+            get
+            {
+                return _imageSourceSave;
+            }
+            set
+            {
+                _imageSourceSave = value;
+                this.OnPropertyChanged("ImageSourceSave");
+            }
+        }
+
+        private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
+        public string ImageSourceClear
+        {
+            get
+            {
+                return _imageSourceClear;
+            }
+            set
+            {
+                _imageSourceClear = value;
+                this.OnPropertyChanged("ImageSourceClear");
             }
         }
 
@@ -237,20 +321,26 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         {
             Model.Label = this.Label;
             Model.Description = this.Description;
-            //   Model.Duration = this.Duration;
-            // Model.Capacity = this.Capacity;
+            Model.Duration = this.Duration;
+            Model.Capacity = this.Capacity;
             Model.AdditionalInfo = this.Notes;
-            // Model.NetPrice = this.NetPrice;
+            Model.NetPrice = this.NetPrice;
+            Model.GrossPrice = this.GrossPrice;
+            Model.NetAmount = this.NetAmount;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
-            Model.StartDate = DateTime.Now;
-            Model.EndDate = DateTime.Now;
+            Model.StartDate = this.StartDate;
+            Model.EndDate = this.EndDate;
 
             using (var ctx = new SchoolDataContext())
             {
                 ctx.Courses.Add(Model);
                 ctx.SaveChanges();
             }
+
+            this.IsButtonEnabled = false;
+            this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
+            this.ImageSourceClear = "";
         }
 
         private void CalculatePrice(decimal p)
@@ -260,8 +350,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             decimal vat = 19;
 
             grossPrice = netPrice + (netPrice * vat / 100);
-            this.NetAmount = (netPrice * vat / 100).ToString();
-            this.GrossPrice = grossPrice.ToString();
+            this.NetAmount = (netPrice * vat / 100);
+            this.GrossPrice = grossPrice;
         }
 
 

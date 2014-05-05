@@ -1,6 +1,7 @@
 ﻿using SealingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,22 @@ namespace SealingSchoolWPF.ViewModel.Course
         public CourseViewModel(SealingSchoolWPF.Model.Course model)
             : base(model)
         {
+        }
+
+        public int Id
+        {
+            get
+            {
+                return Model.Id;
+            }
+            set
+            {
+                if (Id != value)
+                {
+                    Model.Id = value;
+                    this.OnPropertyChanged("Id");
+                }
+            }
         }
 
         public string Label
@@ -78,37 +95,21 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-
-
-        public DateTime StartDate
+        public String StartDate
         {
             get
             {
-                return Model.StartDate;
-            }
-            set
-            {
-                if (StartDate != value)
-                {
-                    Model.StartDate = value;
-                    this.OnPropertyChanged("StartDate");
-                }
+                return Model.StartDate.ToString("dd.MM.yyyy",
+                  CultureInfo.CreateSpecificCulture("de-DE"));
             }
         }
 
-        public DateTime EndDate
+        public String EndDate
         {
             get
             {
-                return Model.EndDate;
-            }
-            set
-            {
-                if (EndDate != value)
-                {
-                    Model.EndDate = value;
-                    this.OnPropertyChanged("EndDate");
-                }
+                return Model.EndDate.ToString("dd.MM.yyyy",
+                  CultureInfo.CreateSpecificCulture("de-DE"));
             }
         }
 

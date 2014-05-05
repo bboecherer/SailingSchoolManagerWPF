@@ -58,6 +58,110 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        public DateTime StartDate
+        {
+            get
+            {
+                return CourseDummy.StartDate;
+            }
+            set
+            {
+                CourseDummy.StartDate = value;
+                this.OnPropertyChanged("StartDate");
+            }
+        }
+
+        public DateTime EndDate
+        {
+            get
+            {
+                return CourseDummy.EndDate;
+            }
+            set
+            {
+                CourseDummy.EndDate = value;
+                this.OnPropertyChanged("EndDate");
+            }
+        }
+
+        public int Duration
+        {
+            get
+            {
+                return CourseDummy.Duration;
+            }
+            set
+            {
+                CourseDummy.Duration = value;
+                this.OnPropertyChanged("Duration");
+            }
+        }
+
+        public int Capacity
+        {
+            get
+            {
+                return CourseDummy.Capacity;
+            }
+            set
+            {
+                CourseDummy.Capacity = value;
+                this.OnPropertyChanged("Capacity");
+            }
+        }
+
+        public Decimal NetPrice
+        {
+            get
+            {
+                return CourseDummy.NetPrice;
+            }
+            set
+            {
+                CourseDummy.NetPrice = value;
+                this.OnPropertyChanged("NetPrice");
+            }
+        }
+
+        public Decimal GrossPrice
+        {
+            get
+            {
+                return CourseDummy.GrossPrice;
+            }
+            set
+            {
+                CourseDummy.GrossPrice = value;
+                this.OnPropertyChanged("GrossPrice");
+            }
+        }
+
+        public Decimal NetAmount
+        {
+            get
+            {
+                return CourseDummy.NetAmount;
+            }
+            set
+            {
+                CourseDummy.NetAmount = value;
+                this.OnPropertyChanged("NetAmount");
+            }
+        }
+
+        public string Notes
+        {
+            get
+            {
+                return CourseDummy.AdditionalInfo;
+            }
+            set
+            {
+                CourseDummy.AdditionalInfo = value;
+                this.OnPropertyChanged("Notes");
+            }
+        }
+
         public string Description
         {
             get

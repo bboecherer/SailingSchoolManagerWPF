@@ -1,5 +1,4 @@
 ﻿using SealingSchoolWPF.ViewModel.CourseViewModel;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

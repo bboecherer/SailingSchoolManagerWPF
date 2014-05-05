@@ -77,18 +77,18 @@ namespace SealingSchoolWPF.Data
 
                 original.FirstName = entity.FirstName;
                 original.LastName = entity.LastName;
+                original.Label = entity.FirstName + " " + entity.LastName;
 
                 if (original.Adress != null)
                 {
                     if (entity.Adress != null)
                     {
-                        original.Adress.AddressLine1 = entity.Adress.AddressLine1;
-                        original.Adress.AddressLine2 = entity.Adress.AddressLine1;
-                        original.Adress.AddressLine3 = entity.Adress.AddressLine1;
                         original.Adress.City = entity.Adress.City;
                         original.Adress.Country = entity.Adress.Country;
                         original.Adress.State = entity.Adress.State;
                         original.Adress.ZipCode = entity.Adress.ZipCode;
+                        original.Adress.Street = entity.Adress.Street;
+                        original.Adress.AddressLine1 = entity.Adress.Street + ", " + entity.Adress.ZipCode + " " + entity.Adress.City;
                     }
                 }
 
