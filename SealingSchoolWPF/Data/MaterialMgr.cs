@@ -111,7 +111,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
-                            }
+            }
             return material;
         }
     }

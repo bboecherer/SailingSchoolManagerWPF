@@ -17,6 +17,6 @@ namespace SealingSchoolWPF.Model
         public Currency Currency { get; set; }
         public MaterialStatus MaterialStatus { get; set; }
         public string RepairAction { get; set; }
-        
+
     }
 }

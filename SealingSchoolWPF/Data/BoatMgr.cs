@@ -25,7 +25,7 @@ namespace SealingSchoolWPF.Data
                 {
                     ctx.Entry(boat).Reference(s => s.Material).Load();
                     ctx.Entry(boat).Reference(s => s.NeededMaterials).Load();
-                    
+
 
                     Boats.Add(boat);
                 }
@@ -110,7 +110,7 @@ namespace SealingSchoolWPF.Data
                     }
                 }
 
-               
+
 
                 original.AdditionalInfo = entity.AdditionalInfo;
                 original.CreatedOn = entity.CreatedOn;
@@ -150,7 +150,7 @@ namespace SealingSchoolWPF.Data
                 boat = (Boat)ctx.Boats.Where(s => s.BoatId == id);
                 ctx.Entry(boat).Reference(s => s.Material).Load();
                 ctx.Entry(boat).Reference(s => s.NeededMaterials).Load();
-                
+
             }
             return boat;
         }

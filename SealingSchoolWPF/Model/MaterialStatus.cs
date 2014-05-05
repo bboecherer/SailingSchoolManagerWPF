@@ -8,8 +8,8 @@ namespace SealingSchoolWPF.Model
 {
     public enum MaterialStatus
     {
-        uneingeschränkt_einsatzbereit, einsatzbereit,eingeschränkt_einsatzbereit,nicht_einsatzbereit,muss_repariert_werden,Schrott
-  
+        uneingeschränkt_einsatzbereit, einsatzbereit, eingeschränkt_einsatzbereit, nicht_einsatzbereit, muss_repariert_werden, Schrott
+
     }
 
 
