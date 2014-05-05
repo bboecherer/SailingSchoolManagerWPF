@@ -1,6 +1,6 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.Pages.Material.Create;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,20 +12,20 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.StudentViewModel
+namespace SealingSchoolWPF.ViewModel.BoatViewModel
 {
-    public class CreateStudentViewModel : ViewModel<Student>
+    public class CreateBoatViewModel : ViewModel<Boat>
     {
 
-        public CreateStudentViewModel(Student model)
+        public CreateBoatViewModel(Boat model)
             : base(model)
         {
         }
 
-        static CreateStudentViewModel instance = null;
+        static CreateBoatViewModel instance = null;
         static readonly object padlock = new object();
 
-        public static CreateStudentViewModel Instance
+        public static CreateBoatViewModel Instance
         {
             get
             {
@@ -33,14 +33,14 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new CreateStudentViewModel(new SealingSchoolWPF.Model.Student());
+                        instance = new CreateBoatViewModel(new SealingSchoolWPF.Model.Boat());
                     }
                     return instance;
                 }
             }
         }
 
-        StudentMgr studMgr = new StudentMgr();
+        BoatMgr boatMgr = new BoatMgr();
 
         private string _firstName;
         public string FirstName
@@ -284,37 +284,16 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 return addCommand;
             }
         }
-   
-       
 
         private void ExecuteAddCommand()
         {
-            Adress adress = new Adress();
-            BankAccountData bank = new BankAccountData();
-            ContactData contact = new ContactData();
-            contact.Email = "dummy";
-
-            adress.AddressLine1 = this.Adress;
-            adress.ZipCode = this.Postal;
-            adress.City = this.City;
-
-            bank.AccountNo = this.AccountNo;
-            bank.BankName = this.BankName;
-            bank.BankNo = this.BankNo;
-            bank.Bic = this.Bic;
-            bank.Iban = this.Iban;
-
-            Model.FirstName = this.FirstName;
-            Model.LastName = this.LastName;
-            Model.Adress = adress;
-            Model.Bank = bank;
-            Model.Contact = contact;
+           //TODO Boat noch ausfüllen
 
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
 
-            studMgr.Create(Model);
+            boatMgr.Create(Model);
 
             this.IsButtonEnabled = false;
             this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
@@ -337,18 +316,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 
         private void ExecuteClearCommand()
         {
-            this.FirstName = null;
-            this.LastName = null;
-            this.Adress = null;
-            this.Postal = null;
-            this.City = null;
-            this.Street = null;
-            this.AccountNo = null;
-            this.BankName = null;
-            this.BankNo = null;
-            this.Bic = null;
-            this.Iban = null;
-            this.Notes = null;
+           //TODO noch clear einbauen
         }
 
         public void Close()

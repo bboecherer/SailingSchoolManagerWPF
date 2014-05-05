@@ -22,6 +22,7 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Courses}" Source="/Pages/Courses/General/Course.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Students}" Source="/Pages/Student/General/StudentView.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Instructor}" Source="/Pages/Instructor/General/Instructors.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.MaterialAdministration}" Source="/Pages/Material/General/MaterialView.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
 

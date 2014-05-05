@@ -26,5 +26,7 @@ namespace SealingSchoolWPF.Data
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<BankAccountData> Banks { get; set; }
         public DbSet<ContactData> Contacts { get; set; }
+        public DbSet<Material> Materials { get; set; }
+        public DbSet<Boat> Boats { get; set; }
     }
 }
