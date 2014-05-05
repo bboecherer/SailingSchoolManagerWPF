@@ -72,20 +72,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private string _adress;
-        public string Adress
-        {
-            get
-            {
-                return _adress;
-            }
-            set
-            {
-                _adress = value;
-                this.OnPropertyChanged("Adress");
-            }
-        }
-
         private string _street;
         public string Street
         {
@@ -297,7 +283,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             ContactData contact = new ContactData();
             contact.Email = "dummy";
 
-            adress.AddressLine1 = this.Adress;
+            adress.AddressLine1 = this.Street;
             adress.ZipCode = this.Postal;
             adress.City = this.City;
 
@@ -342,7 +328,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             this.FirstName = null;
             this.LastName = null;
-            this.Adress = null;
             this.Postal = null;
             this.City = null;
             this.Street = null;

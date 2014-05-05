@@ -81,6 +81,7 @@
     <Compile Include="Content\SettingsInvoice.xaml.cs">
       <DependentUpon>SettingsInvoice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\InfoBoxMgr.cs" />
     <Compile Include="Data\IPersistenceMgr.cs" />
     <Compile Include="Data\SchoolDataContext.cs" />
     <Compile Include="Data\InstructorMgr.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Model\ContactData.cs" />
     <Compile Include="Model\CourseStatus.cs" />
     <Compile Include="Model\Material.cs" />
+    <Compile Include="Model\InfoBox.cs" />
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
@@ -147,6 +149,12 @@
     <Compile Include="Pages\Courses\Update\UpdateCourse.xaml.cs">
       <DependentUpon>UpdateCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\General\InfoBox.xaml.cs">
+      <DependentUpon>InfoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\LiveTiles.xaml.cs">
+      <DependentUpon>LiveTiles.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Instructor\Controls\CreateButtons.xaml.cs">
       <DependentUpon>CreateButtons.xaml</DependentUpon>
     </Compile>
@@ -183,8 +191,8 @@
     <Compile Include="Pages\Instructor\Update\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Instructor\Update\UpdateStudent.xaml.cs">
-      <DependentUpon>UpdateStudent.xaml</DependentUpon>
+    <Compile Include="Pages\Instructor\Update\UpdateInstructor.xaml.cs">
+      <DependentUpon>UpdateInstructor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Material\Controls\CreateButtons.xaml.cs">
       <DependentUpon>CreateButtons.xaml</DependentUpon>
@@ -287,7 +295,9 @@
     <Compile Include="ViewModel\Course\CourseButtonViewModel.cs" />
     <Compile Include="ViewModel\Course\UpdateCourseViewModel.cs" />
     <Compile Include="ViewModel\General\CommandViewModel.cs" />
+    <Compile Include="ViewModel\General\InfoBoxViewModel.cs" />
     <Compile Include="ViewModel\General\IViewModel.cs" />
+    <Compile Include="ViewModel\General\LiveTilesViewModel.cs" />
     <Compile Include="ViewModel\General\RelayCommand.cs" />
     <Compile Include="ViewModel\General\ViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorButtonViewModel.cs" />
@@ -408,6 +418,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\General\InfoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\General\LiveTiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Instructor\Controls\CreateButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -452,7 +470,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Instructor\Update\UpdateStudent.xaml">
+    <Page Include="Pages\Instructor\Update\UpdateInstructor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -703,6 +721,21 @@
     <Content Include="Resources\Images\AddressEnvelope_16xSM.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\Calendar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Course.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\CreditNote.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Instructors.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Invoice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\LightBulb_16xLG.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -720,6 +753,9 @@
     </Content>
     <Content Include="Resources\Images\LightBulb_32xSM.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Material.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\mui.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -795,6 +831,9 @@
     </Content>
     <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_32xSM_color.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Students.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\Symbols_Complete_and_ok_16xLG.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
