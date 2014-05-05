@@ -89,12 +89,17 @@
     <Compile Include="Data\SchoolDataContext.cs" />
     <Compile Include="Data\InstructorMgr.cs" />
     <Compile Include="Data\CourseMgr.cs" />
+    <Compile Include="Data\MaterialMgr.cs" />
+    <Compile Include="Data\BoatMgr.cs" />
     <Compile Include="Data\StudentMgr.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\BankAccountData.cs" />
+    <Compile Include="Model\Boat.cs" />
+    <Compile Include="Model\MaterialStatus.cs" />
     <Compile Include="Model\ContactData.cs" />
     <Compile Include="Model\CourseStatus.cs" />
+    <Compile Include="Model\Material.cs" />
     <Compile Include="Model\InfoBox.cs" />
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
@@ -195,6 +200,42 @@
     <Compile Include="Pages\Instructor\Update\UpdateInstructor.xaml.cs">
       <DependentUpon>UpdateInstructor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Material\Controls\CreateButtons.xaml.cs">
+      <DependentUpon>CreateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Create\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Create\CreateMaterial.xaml.cs">
+      <DependentUpon>CreateMaterial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Create\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Create\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\General\MaterialListView.xaml.cs">
+      <DependentUpon>MaterialListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\General\MaterialView.xaml.cs">
+      <DependentUpon>MaterialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Update\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Update\UpdateMaterial.xaml.cs">
+      <DependentUpon>UpdateMaterial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Update\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Update\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Student\Controls\UpdateButtons.xaml.cs">
       <DependentUpon>UpdateButtons.xaml</DependentUpon>
     </Compile>
@@ -270,6 +311,12 @@
     <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
+    <Compile Include="ViewModel\Material\CreateMaterialViewModel.cs" />
+    <Compile Include="ViewModel\Material\CreateBoatViewModel.cs" />
+    <Compile Include="ViewModel\Material\MaterialViewModel.cs" />
+    <Compile Include="ViewModel\Material\MaterialListViewModel.cs" />
+    <Compile Include="ViewModel\Material\MaterialButtonViewModel.cs" />
+    <Compile Include="ViewModel\Material\UpdateMaterialViewModel.cs" />
     <Compile Include="ViewModel\StudentVM\UpdateStudentViewModel.cs" />
     <Compile Include="ViewModel\StudentVM\CreateStudentViewModel.cs" />
     <Compile Include="ViewModel\StudentVM\StudentButtonViewModel.cs" />
@@ -500,6 +547,54 @@
       <DependentUpon>TrainingsActivities.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="Pages\Material\Controls\CreateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Create\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Create\CreateMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Create\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Create\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\General\MaterialListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\General\MaterialView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Update\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Update\UpdateMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Update\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Update\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Student\Controls\UpdateButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -576,10 +671,12 @@
     <EmbeddedResource Include="Resources\Language\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Language\Resource.de-DE.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.de-DE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Language\Resource.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

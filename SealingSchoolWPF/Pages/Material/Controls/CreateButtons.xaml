@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.Material.Controls.CreateButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="100"
+             >
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" IsEnabled="{Binding IsButtonEnabled}" Command="{Binding AddCommand}">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Save_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Save_ToolTip_Desc}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+                <StackPanel>
+                    <Image Source="{Binding ImageSourceSave}" />
+                </StackPanel>
+            </Button>
+            <Button Height="25" Width="50" BorderThickness="0" IsEnabled="{Binding IsButtonEnabled}" Command="{Binding ClearCommand}">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Clear_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Clear_ToolTip_Desc}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+                <StackPanel>
+                    <Image Source="{Binding ImageSourceClear}" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
