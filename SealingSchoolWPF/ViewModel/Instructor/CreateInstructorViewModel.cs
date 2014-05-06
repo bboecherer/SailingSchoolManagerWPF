@@ -212,6 +212,259 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
+        private bool _SSS;
+        public bool SSS
+        {
+            get
+            {
+                return _SSS;
+            }
+            set
+            {
+                _SSS = value;
+                this.OnPropertyChanged("SSS");
+            }
+        }
+
+        private bool _SKS;
+        public bool SKS
+        {
+            get
+            {
+                return _SKS;
+            }
+            set
+            {
+                _SKS = value;
+                this.OnPropertyChanged("SKS");
+            }
+        }
+
+        private bool _SBFSEA;
+        public bool SBFSEA
+        {
+            get
+            {
+                return _SBFSEA;
+            }
+            set
+            {
+                _SBFSEA = value;
+                this.OnPropertyChanged("SBFSEA");
+            }
+        }
+
+        private bool _SBFBINNEN;
+        public bool SBFBINNEN
+        {
+            get
+            {
+                return _SBFBINNEN;
+            }
+            set
+            {
+                _SBFBINNEN = value;
+                this.OnPropertyChanged("SBFBINNEN");
+            }
+        }
+
+        private bool _SRC;
+        public bool SRC
+        {
+            get
+            {
+                return _SRC;
+            }
+            set
+            {
+                _SRC = value;
+                this.OnPropertyChanged("SRC");
+            }
+        }
+
+        private bool _UBI;
+        public bool UBI
+        {
+            get
+            {
+                return _UBI;
+            }
+            set
+            {
+                _UBI = value;
+                this.OnPropertyChanged("UBI");
+            }
+        }
+
+        private bool _DSV;
+        public bool DSV
+        {
+            get
+            {
+                return _DSV;
+            }
+            set
+            {
+                _DSV = value;
+                this.OnPropertyChanged("DSV");
+            }
+        }
+
+        private bool _SHS;
+        public bool SHS
+        {
+            get
+            {
+                return _SHS;
+            }
+            set
+            {
+                _SHS = value;
+                this.OnPropertyChanged("SHS");
+            }
+        }
+
+        private bool _lifeGuard;
+        public bool LifeGuard
+        {
+            get
+            {
+                return _lifeGuard;
+            }
+            set
+            {
+                _lifeGuard = value;
+                this.OnPropertyChanged("LifeGuard");
+            }
+        }
+
+        private DateTime _SSSDate;
+        public DateTime SSSDate
+        {
+            get
+            {
+                return SSSDate;
+            }
+            set
+            {
+                SSSDate = value;
+                this.OnPropertyChanged("SSSDate");
+            }
+        }
+
+        private DateTime _SKSDate;
+        public DateTime SKSDate
+        {
+            get
+            {
+                return _SKSDate;
+            }
+            set
+            {
+                _SKSDate = value;
+                this.OnPropertyChanged("SKSDate");
+            }
+        }
+
+        private DateTime _SBFSEADate;
+        public DateTime SBFSEADate
+        {
+            get
+            {
+                return _SBFSEADate;
+            }
+            set
+            {
+                _SBFSEADate = value;
+                this.OnPropertyChanged("SBFSEADate");
+            }
+        }
+
+        private DateTime _SBFBINNENDate;
+        public DateTime SBFBINNENDate
+        {
+            get
+            {
+                return _SBFBINNENDate;
+            }
+            set
+            {
+                _SBFBINNENDate = value;
+                this.OnPropertyChanged("SBFBINNENDate");
+            }
+        }
+
+        private DateTime _SRCDate;
+        public DateTime SRCDate
+        {
+            get
+            {
+                return _SRCDate;
+            }
+            set
+            {
+                _SRCDate = value;
+                this.OnPropertyChanged("SRCDate");
+            }
+        }
+
+        private DateTime _UBIDate;
+        public DateTime UBIDate
+        {
+            get
+            {
+                return _UBIDate;
+            }
+            set
+            {
+                _UBIDate = value;
+                this.OnPropertyChanged("UBIDate");
+            }
+        }
+
+        private DateTime _DSVDate;
+        public DateTime DSVDate
+        {
+            get
+            {
+                return _DSVDate;
+            }
+            set
+            {
+                _DSVDate = value;
+                this.OnPropertyChanged("DSVDate");
+            }
+        }
+
+        private DateTime _SHSDate;
+        public DateTime SHSDate
+        {
+            get
+            {
+                return _SHSDate;
+            }
+            set
+            {
+                _SHSDate = value;
+                this.OnPropertyChanged("SHSDate");
+            }
+        }
+
+        private DateTime _lifeGuardDate;
+        public DateTime LifeGuardDate
+        {
+            get
+            {
+                return _lifeGuardDate;
+            }
+            set
+            {
+                _lifeGuardDate = value;
+                this.OnPropertyChanged("LifeGuardDate");
+            }
+        }
+
+
         private bool _isButtonEnabled = true;
         public bool IsButtonEnabled
         {
@@ -300,6 +553,25 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             Model.Bank = bank;
             Model.Contact = contact;
             Model.Label = this.FirstName + " " + this.LastName;
+
+            Model.SSS = this.SSS;
+            Model.SSSDate = this.SSSDate;
+            Model.SKS = this.SKS;
+            Model.SKSDate = this.SKSDate;
+            Model.SBFSEA = this.SBFSEA;
+            Model.SBFSEADate = this.SBFSEADate;
+            Model.SBFBINNEN = this.SBFBINNEN;
+            Model.SBFBINNENDate = this.SBFBINNENDate;
+            Model.SRC = this.SRC;
+            Model.SRCDate = this.SRCDate;
+            Model.UBI = this.UBI;
+            Model.UBIDate = this.UBIDate;
+            Model.DSV = this.DSV;
+            Model.DSVDate = this.DSVDate;
+            Model.SHS = this.SHS;
+            Model.SHSDate = this.SHSDate;
+            Model.LifeGuard = this.LifeGuard;
+            Model.LifeGuardDate = this.LifeGuardDate;
 
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;

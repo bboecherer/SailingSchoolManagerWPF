@@ -44,6 +44,7 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instrAdress.AddressLine1 = instructor.AddressLine1;
             instrAdress.City = instructor.City;
             instrAdress.ZipCode = instructor.ZipCode;
+            instrAdress.Street = instructor.Street;
 
             instrBank.BankName = instructor.BankName;
             instrBank.BankNo = instructor.BankNo;
@@ -58,6 +59,26 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instr.CreatedOn = instructor.CreatedOn;
             instr.Bank = instrBank;
             instr.Adress = instrAdress;
+
+            instr.SSS = instructor.SSS;
+            instr.SKS = instructor.SKS;
+            instr.SBFBINNEN = instructor.SBFBINNEN;
+            instr.SBFSEA = instructor.SBFSEA;
+            instr.SRC = instructor.SRC;
+            instr.UBI = instructor.UBI;
+            instr.DSV = instructor.DSV;
+            instr.SHS = instructor.SHS;
+            instr.LifeGuard = instructor.LifeGuard;
+
+            instr.SSSDate = instructor.SSSDate;
+            instr.SKSDate = instructor.SKSDate;
+            instr.SBFBINNENDate = instructor.SBFBINNENDate;
+            instr.SBFSEADate = instructor.SBFSEADate;
+            instr.SRCDate = instructor.SRCDate;
+            instr.UBIDate = instructor.UBIDate;
+            instr.DSVDate = instructor.DSVDate;
+            instr.SHSDate = instructor.SHSDate;
+            instr.LifeGuardDate = instructor.LifeGuardDate;
 
             return instr;
         }

@@ -376,6 +376,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Segellehrerlizenz des Deutschen Segler Verbandes (DSV).
+        /// </summary>
+        public static string DSV {
+            get {
+                return ResourceManager.GetString("DSV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dauer.
         /// </summary>
         public static string Duration {
@@ -498,6 +507,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Lastname {
             get {
                 return ResourceManager.GetString("Lastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rettungsschwimmer.
+        /// </summary>
+        public static string LifeGuard {
+            get {
+                return ResourceManager.GetString("LifeGuard", resourceCulture);
             }
         }
         
@@ -637,6 +655,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Qualifikationen.
+        /// </summary>
+        public static string Qualification {
+            get {
+                return ResourceManager.GetString("Qualification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aktualisieren.
         /// </summary>
         public static string Refresh_ToolTip {
@@ -682,6 +709,24 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sportbootführerschein Binnen (SBF Binnen).
+        /// </summary>
+        public static string SBFBINNEN {
+            get {
+                return ResourceManager.GetString("SBFBINNEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sportbootführerschein See (SBF See).
+        /// </summary>
+        public static string SBFSEA {
+            get {
+                return ResourceManager.GetString("SBFSEA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sepa-Mandat.
         /// </summary>
         public static string Sepa {
@@ -700,11 +745,47 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sporthochseeschifferschein (SHS).
+        /// </summary>
+        public static string SHS {
+            get {
+                return ResourceManager.GetString("SHS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sportküstenschifferschein (SKS).
+        /// </summary>
+        public static string SKS {
+            get {
+                return ResourceManager.GetString("SKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Software.
         /// </summary>
         public static string Software {
             get {
                 return ResourceManager.GetString("Software", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UKW-Funkzeugnis für See (SRC).
+        /// </summary>
+        public static string SRC {
+            get {
+                return ResourceManager.GetString("SRC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sportseeschifferschein (SSS).
+        /// </summary>
+        public static string SSS {
+            get {
+                return ResourceManager.GetString("SSS", resourceCulture);
             }
         }
         
@@ -732,6 +813,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Students {
             get {
                 return ResourceManager.GetString("Students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UKW-Funkzeugnis für Binnen (UBI).
+        /// </summary>
+        public static string UBI {
+            get {
+                return ResourceManager.GetString("UBI", resourceCulture);
             }
         }
         

@@ -14,7 +14,9 @@ namespace SealingSchoolWPF.Model
     {
         [Key]
         public int Id { get; set; }
+
         public string LastName { get; set; }
+
         public string FirstName { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
@@ -25,6 +27,42 @@ namespace SealingSchoolWPF.Model
 
         public BankAccountData Bank { get; set; }
 
+        public bool SSS { get; set; }
+
+        public DateTime SSSDate { get; set; }
+
+        public bool SKS { get; set; }
+
+        public DateTime SKSDate { get; set; }
+
+        public bool SBFSEA { get; set; }
+
+        public DateTime SBFSEADate { get; set; }
+
+        public bool SBFBINNEN { get; set; }
+
+        public DateTime SBFBINNENDate { get; set; }
+
+        public bool SRC { get; set; }
+
+        public DateTime SRCDate { get; set; }
+
+        public bool UBI { get; set; }
+
+        public DateTime UBIDate { get; set; }
+
+        public bool DSV { get; set; }
+
+        public DateTime DSVDate { get; set; }
+
+        public bool SHS { get; set; }
+
+        public DateTime SHSDate { get; set; }
+
+        public bool LifeGuard { get; set; }
+
+        public DateTime LifeGuardDate { get; set; }
+
         string IDataErrorInfo.Error { get { return null; } }
 
         string IDataErrorInfo.this[string propertyName]
@@ -32,9 +70,11 @@ namespace SealingSchoolWPF.Model
             get { return this.GetValidationError(propertyName); }
         }
 
-        /// <summary>
-        /// Returns true if this object has no validation errors.
-        /// </summary>
+        public override string ToString()
+        {
+            return this.FirstName + " " + this.LastName;
+        }
+
         public bool IsValid
         {
             get
@@ -131,7 +171,6 @@ namespace SealingSchoolWPF.Model
 
             return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
-
     }
 
 }

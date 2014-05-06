@@ -75,11 +75,11 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return StudentDummy.Adress.AddressLine1;
+                return StudentDummy.Adress.Street;
             }
             set
             {
-                StudentDummy.Adress.AddressLine1 = value;
+                StudentDummy.Adress.Street = value;
                 this.OnPropertyChanged("Street");
             }
         }

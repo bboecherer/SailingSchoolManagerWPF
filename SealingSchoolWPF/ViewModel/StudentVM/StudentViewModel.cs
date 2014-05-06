@@ -95,6 +95,22 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
+        public string Street
+        {
+            get
+            {
+                return Model.Adress.Street;
+            }
+            set
+            {
+                if (Street != value)
+                {
+                    Model.Adress.Street = value;
+                    this.OnPropertyChanged("Street");
+                }
+            }
+        }
+
         public string ZipCode
         {
             get

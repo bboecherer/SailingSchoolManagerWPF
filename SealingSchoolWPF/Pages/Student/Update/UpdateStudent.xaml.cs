@@ -42,6 +42,7 @@ namespace SealingSchoolWPF.Pages.Student.Update
             studAdress.AddressLine1 = student.AddressLine1;
             studAdress.City = student.City;
             studAdress.ZipCode = student.ZipCode;
+            studAdress.Street = student.Street;
 
             studBank.BankName = student.BankName;
             studBank.BankNo = student.BankNo;

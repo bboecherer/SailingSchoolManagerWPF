@@ -176,6 +176,28 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        public IEnumerable<Currency> CurrencyTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(Currency))
+                    .Cast<Currency>();
+            }
+        }
+
+        public Currency Currency
+        {
+            get
+            {
+                return CourseDummy.Currency;
+            }
+            set
+            {
+                CourseDummy.Currency = value;
+                this.OnPropertyChanged("Currency");
+            }
+        }
+
         private ICommand addCommand;
 
         public ICommand AddCommand

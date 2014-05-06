@@ -37,9 +37,9 @@
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Description}"/>
                     <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Value="{Binding Path=StartDate}"/>
                     <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" Value="{Binding Path=EndDate}"/>
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="4" Margin="3"  
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="4" Margin="3" Minimum="0"  
                                         Value="{Binding Path=Duration}" Increment="1" />
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3"  
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3" Minimum="0" 
                                         Value="{Binding Path=Capacity}" Increment="1" />
                     <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
                                SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>

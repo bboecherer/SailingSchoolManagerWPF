@@ -98,7 +98,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        public IEnumerable<String> InstructorTypeValues
+        public IEnumerable<SealingSchoolWPF.Model.Instructor> InstructorTypeValues
         {
             get
             {
@@ -106,20 +106,20 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private IList<String> GetInstructorNames()
+        private IList<SealingSchoolWPF.Model.Instructor> GetInstructorNames()
         {
-            InstructorNames = new List<String>();
+            InstructorNames = new List<SealingSchoolWPF.Model.Instructor>();
             foreach (Model.Instructor inst in instructorMgr.GetAll())
             {
-                InstructorNames.Add(inst.Label);
+                InstructorNames.Add(inst);
             }
             return InstructorNames;
         }
 
-        private IList<String> InstructorNames;
+        private IList<SealingSchoolWPF.Model.Instructor> InstructorNames;
 
-        private Model.Student _instructor;
-        public Model.Student Instructor
+        private Model.Instructor _instructor;
+        public Model.Instructor Instructor
         {
             get
             {
@@ -331,6 +331,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             Model.ModifiedOn = DateTime.Now;
             Model.StartDate = this.StartDate;
             Model.EndDate = this.EndDate;
+            Model.Instructor = this.Instructor;
 
             using (var ctx = new SchoolDataContext())
             {

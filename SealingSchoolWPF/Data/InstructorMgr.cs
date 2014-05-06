@@ -61,6 +61,26 @@ namespace SealingSchoolWPF.Data
                 original.LastName = entity.LastName;
                 original.Label = entity.FirstName + " " + entity.LastName;
 
+                original.SSS = entity.SSS;
+                original.SKS = entity.SKS;
+                original.SBFBINNEN = entity.SBFBINNEN;
+                original.SBFSEA = entity.SBFSEA;
+                original.SRC = entity.SRC;
+                original.UBI = entity.UBI;
+                original.DSV = entity.DSV;
+                original.SHS = entity.SHS;
+                original.LifeGuard = entity.LifeGuard;
+
+                original.SSSDate = entity.SSSDate;
+                original.SKSDate = entity.SKSDate;
+                original.SBFBINNENDate = entity.SBFBINNENDate;
+                original.SBFSEADate = entity.SBFSEADate;
+                original.SRCDate = entity.SRCDate;
+                original.UBIDate = entity.UBIDate;
+                original.DSVDate = entity.DSVDate;
+                original.SHSDate = entity.SHSDate;
+                original.LifeGuardDate = entity.LifeGuardDate;
+
                 if (original.Adress != null)
                 {
                     if (entity.Adress != null)

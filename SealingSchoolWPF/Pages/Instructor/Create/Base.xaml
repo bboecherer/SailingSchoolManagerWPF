@@ -35,7 +35,6 @@
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=Street}"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Postal}"/>
                     <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=City}" />
-
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right"/>
             </StackPanel>

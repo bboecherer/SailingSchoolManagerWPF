@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.ViewModel.CourseViewModel;
+﻿using SealingSchoolWPF.ViewModel.InstructorViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +13,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Xceed.Wpf.Toolkit;
 
-namespace SealingSchoolWPF.Pages.Courses.Create
+namespace SealingSchoolWPF.Pages.Instructor.Create
 {
     /// <summary>
-    /// Interaction logic for CreateNewStudent.xaml
+    /// Interaction logic for Qualification.xaml
     /// </summary>
-    public partial class Base : UserControl
+    public partial class Qualification : UserControl
     {
-        public Base()
+        public Qualification()
         {
             InitializeComponent();
-            var viewModel = CreateCourseViewModel.Instance;
+            var viewModel = CreateInstructorViewModel.Instance;
             this.DataContext = viewModel;
         }
     }

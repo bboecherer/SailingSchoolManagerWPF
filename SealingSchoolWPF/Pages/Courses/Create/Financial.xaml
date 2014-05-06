@@ -31,12 +31,12 @@
                     <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.GrossPrice}"/>
                     <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.NetAmount}"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="0" Margin="3"  FormatString="C2" 
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="0" Margin="3" FormatString="C2" Minimum="0.00" 
                                         Value="{Binding Path=NetPrice}" Increment=".5" />
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="1" Margin="3"  FormatString="C2" 
-                                        Value="{Binding Path=GrossPrice}" Increment=".5" />
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="2" Margin="3"  FormatString="C2" 
-                                        Value="{Binding Path=NetAmount}" Increment=".5" />
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="1" Margin="3" FormatString="C2" Minimum="0.00"
+                                        Value="{Binding Path=GrossPrice}" Increment=".5" IsEnabled="False" IsReadOnly="True" />
+                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="2" Margin="3" FormatString="C2" Minimum="0.00"
+                                        Value="{Binding Path=NetAmount}" Increment=".5" IsEnabled="False" IsReadOnly="True"/>
                     <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                 </Grid>
