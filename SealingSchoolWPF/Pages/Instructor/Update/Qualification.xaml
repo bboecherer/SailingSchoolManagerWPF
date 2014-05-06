@@ -41,15 +41,15 @@
                     <Label Grid.Row="7" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.LifeGuard}"/>
                     <Label Grid.Row="8" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SHS}"/>
 
-                    <CheckBox Grid.Column="1" Grid.Row="0" Margin="3" Checked="{Binding Path=SSS}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="1" Margin="3" Checked="{Binding Path=SKS}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="2" Margin="3" Checked="{Binding Path=SBFSEA}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="3" Margin="3" Checked="{Binding Path=SBFBINNEN}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="4" Margin="3" Checked="{Binding Path=SRC}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="5" Margin="3" Checked="{Binding Path=UBI}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="6" Margin="3" Checked="{Binding Path=DSV}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="7" Margin="3" Checked="{Binding Path=LifeGuard}"/>
-                    <CheckBox Grid.Column="1" Grid.Row="8" Margin="3" Checked="{Binding Path=SHS}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="0" Margin="3" IsChecked="{Binding Path=SSS, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="1" Margin="3" IsChecked="{Binding Path=SKS, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="2" Margin="3" IsChecked="{Binding Path=SBFSEA, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="3" Margin="3" IsChecked="{Binding Path=SBFBINNEN, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="4" Margin="3" IsChecked="{Binding Path=SRC, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="5" Margin="3" IsChecked="{Binding Path=UBI, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="6" Margin="3" IsChecked="{Binding Path=DSV, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="7" Margin="3" IsChecked="{Binding Path=LifeGuard, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="8" Margin="3" IsChecked="{Binding Path=SHS, Mode=TwoWay}"/>
 
                     <xctk:DateTimePicker Grid.Column="2" Grid.Row="0" Margin="3" 
                                          Format="ShortDate" Value="{Binding Path=SSSDate}"/>

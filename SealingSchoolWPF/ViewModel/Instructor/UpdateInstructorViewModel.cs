@@ -201,6 +201,258 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
+        private bool _SSS;
+        public bool SSS
+        {
+            get
+            {
+                return InstructorDummy.SSS;
+            }
+            set
+            {
+                InstructorDummy.SSS = value;
+                this.OnPropertyChanged("SSS");
+            }
+        }
+
+        private bool _SKS;
+        public bool SKS
+        {
+            get
+            {
+                return InstructorDummy.SKS;
+            }
+            set
+            {
+                InstructorDummy.SKS = value;
+                this.OnPropertyChanged("SKS");
+            }
+        }
+
+        private bool _SBFSEA;
+        public bool SBFSEA
+        {
+            get
+            {
+                return InstructorDummy.SBFSEA;
+            }
+            set
+            {
+                InstructorDummy.SBFSEA = value;
+                this.OnPropertyChanged("SBFSEA");
+            }
+        }
+
+        private bool _SBFBINNEN;
+        public bool SBFBINNEN
+        {
+            get
+            {
+                return InstructorDummy.SBFBINNEN;
+            }
+            set
+            {
+                InstructorDummy.SBFBINNEN = value;
+                this.OnPropertyChanged("SBFBINNEN");
+            }
+        }
+
+        private bool _SRC;
+        public bool SRC
+        {
+            get
+            {
+                return InstructorDummy.SRC;
+            }
+            set
+            {
+                InstructorDummy.SRC = value;
+                this.OnPropertyChanged("SRC");
+            }
+        }
+
+        private bool _UBI;
+        public bool UBI
+        {
+            get
+            {
+                return InstructorDummy.UBI;
+            }
+            set
+            {
+                InstructorDummy.UBI = value;
+                this.OnPropertyChanged("UBI");
+            }
+        }
+
+        private bool _DSV;
+        public bool DSV
+        {
+            get
+            {
+                return InstructorDummy.DSV;
+            }
+            set
+            {
+                InstructorDummy.DSV = value;
+                this.OnPropertyChanged("DSV");
+            }
+        }
+
+        private bool _SHS;
+        public bool SHS
+        {
+            get
+            {
+                return InstructorDummy.SHS;
+            }
+            set
+            {
+                InstructorDummy.SHS = value;
+                this.OnPropertyChanged("SHS");
+            }
+        }
+
+        private bool _lifeGuard;
+        public bool LifeGuard
+        {
+            get
+            {
+                return InstructorDummy.LifeGuard;
+            }
+            set
+            {
+                InstructorDummy.LifeGuard = value;
+                this.OnPropertyChanged("LifeGuard");
+            }
+        }
+
+        private DateTime _SSSDate;
+        public DateTime SSSDate
+        {
+            get
+            {
+                return InstructorDummy.SSSDate;
+            }
+            set
+            {
+                InstructorDummy.SSSDate = value;
+                this.OnPropertyChanged("SSSDate");
+            }
+        }
+
+        private DateTime _SKSDate;
+        public DateTime SKSDate
+        {
+            get
+            {
+                return InstructorDummy.SKSDate;
+            }
+            set
+            {
+                InstructorDummy.SKSDate = value;
+                this.OnPropertyChanged("SKSDate");
+            }
+        }
+
+        private DateTime _SBFSEADate;
+        public DateTime SBFSEADate
+        {
+            get
+            {
+                return InstructorDummy.SBFSEADate;
+            }
+            set
+            {
+                InstructorDummy.SBFSEADate = value;
+                this.OnPropertyChanged("SBFSEADate");
+            }
+        }
+
+        private DateTime _SBFBINNENDate;
+        public DateTime SBFBINNENDate
+        {
+            get
+            {
+                return InstructorDummy.SBFBINNENDate;
+            }
+            set
+            {
+                InstructorDummy.SBFBINNENDate = value;
+                this.OnPropertyChanged("SBFBINNENDate");
+            }
+        }
+
+        private DateTime _SRCDate;
+        public DateTime SRCDate
+        {
+            get
+            {
+                return InstructorDummy.SRCDate;
+            }
+            set
+            {
+                InstructorDummy.SRCDate = value;
+                this.OnPropertyChanged("SRCDate");
+            }
+        }
+
+        private DateTime _UBIDate;
+        public DateTime UBIDate
+        {
+            get
+            {
+                return InstructorDummy.UBIDate;
+            }
+            set
+            {
+                InstructorDummy.UBIDate = value;
+                this.OnPropertyChanged("UBIDate");
+            }
+        }
+
+        private DateTime _DSVDate;
+        public DateTime DSVDate
+        {
+            get
+            {
+                return InstructorDummy.DSVDate;
+            }
+            set
+            {
+                InstructorDummy.DSVDate = value;
+                this.OnPropertyChanged("DSVDate");
+            }
+        }
+
+        private DateTime _SHSDate;
+        public DateTime SHSDate
+        {
+            get
+            {
+                return InstructorDummy.SHSDate;
+            }
+            set
+            {
+                InstructorDummy.SHSDate = value;
+                this.OnPropertyChanged("SHSDate");
+            }
+        }
+
+        private DateTime _lifeGuardDate;
+        public DateTime LifeGuardDate
+        {
+            get
+            {
+                return InstructorDummy.LifeGuardDate;
+            }
+            set
+            {
+                InstructorDummy.LifeGuardDate = value;
+                this.OnPropertyChanged("LifeGuardDate");
+            }
+        }
+
         private ICommand addCommand;
 
         public ICommand AddCommand
