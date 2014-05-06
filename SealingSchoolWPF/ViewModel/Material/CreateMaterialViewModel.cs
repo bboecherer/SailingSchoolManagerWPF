@@ -142,6 +142,19 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("RepairAction");
             }
         }
+        private string _serialNumber;
+        public string SerialNumber
+        {
+            get
+            {
+                return _serialNumber;
+            }
+            set
+            {
+                _serialNumber = value;
+                this.OnPropertyChanged("SerialNumber");
+            }
+        }
 
         private string _notes;
         public string Notes

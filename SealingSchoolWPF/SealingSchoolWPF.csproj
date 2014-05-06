@@ -68,9 +68,6 @@
     <Reference Include="Xceed.Wpf.AvalonDock">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.resources">
-      <HintPath>..\packages\WPFToolkit\de\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
-    </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
     </Reference>
@@ -83,8 +80,7 @@
     <Reference Include="Xceed.Wpf.DataGrid">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xceed.Wpf.Toolkit">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -200,12 +196,6 @@
     </Compile>
     <Compile Include="Pages\Instructor\Create\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Instructor\Create\Qualification.xaml.cs">
-      <DependentUpon>Qualification.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Instructor\Update\Qualification.xaml.cs">
-      <DependentUpon>Qualification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\General\InstructorListView.xaml.cs">
       <DependentUpon>InstructorListView.xaml</DependentUpon>
@@ -488,14 +478,6 @@
     <Page Include="Pages\Instructor\Create\Notes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Instructor\Create\Qualification.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Instructor\Update\Qualification.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Instructor\Update\Bankdata.xaml">
       <Generator>MSBuild:Compile</Generator>

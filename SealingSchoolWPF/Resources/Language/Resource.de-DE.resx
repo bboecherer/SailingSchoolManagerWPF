@@ -378,4 +378,7 @@
   <data name="UBI" xml:space="preserve">
     <value>UKW-Funkzeugnis für Binnen (UBI)</value>
   </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Seriennummer</value>
+  </data>
 </root>
