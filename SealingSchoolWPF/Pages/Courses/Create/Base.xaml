@@ -43,8 +43,9 @@
                                         Value="{Binding Path=Duration}" Increment="1" />
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3" Minimum="0" 
                                         Value="{Binding Path=Capacity}" Increment="1" />
-                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
-                               SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                              MaxDropDownHeight="100" SelectedItem="{Binding Instructor}"
+                              ItemsSource="{Binding InstructorTypeValues}"/>
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>

@@ -5,7 +5,7 @@
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="KURSLEITER" IsTitleVisible="True"
        ContentSource="/Pages/Instructor/Create/Base.xaml"
-       Height="500" Width="650" Closed="ModernWindow_Closed"
+       Height="450" Width="500" Closed="ModernWindow_Closed"
       >
 
     <mui:ModernWindow.MenuLinkGroups>

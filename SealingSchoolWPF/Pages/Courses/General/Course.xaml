@@ -9,6 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />

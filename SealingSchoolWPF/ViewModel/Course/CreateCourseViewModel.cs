@@ -283,6 +283,20 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        private string _imageSourceNext = "/Resources/Images/arrow_Next_16xLG.png";
+        public string ImageSourceNext
+        {
+            get
+            {
+                return _imageSourceNext;
+            }
+            set
+            {
+                _imageSourceNext = value;
+                this.OnPropertyChanged("ImageSourceNext");
+            }
+        }
+
         private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
         public string ImageSourceClear
         {
@@ -311,13 +325,75 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        private ICommand addAndNextCommand;
+
+        public ICommand AddAndNextCommand
+        {
+            get
+            {
+                if (addAndNextCommand == null)
+                {
+                    addAndNextCommand = new RelayCommand(p => ExecuteAddAndNextCommand());
+                }
+                return addAndNextCommand;
+            }
+        }
+
+        private void ExecuteAddAndNextCommand()
+        {
+            SaveModelToDatabase();
+            this.ExecuteClearCommand();
+            this.Close();
+        }
+
+        private ICommand clearCommand;
+
+        public ICommand ClearCommand
+        {
+            get
+            {
+                if (clearCommand == null)
+                {
+                    clearCommand = new RelayCommand(p => ExecuteClearCommand());
+                }
+                return clearCommand;
+            }
+        }
+
+        private void ExecuteClearCommand()
+        {
+            this.Label = null;
+            this.NetAmount = 0;
+            this.NetPrice = 0;
+            this.Notes = null;
+            this.StartDate = DateTime.Now;
+            this.EndDate = DateTime.Now;
+            this.Duration = 0;
+            this.Capacity = 0;
+            this.Description = null;
+            this.GrossPrice = 0;
+            this.Instructor = null;
+        }
+
         public void Close()
         {
             instance = null;
-
         }
 
         private void ExecuteAddCommand()
+        {
+            SaveModelToDatabase();
+
+            // this.IsButtonEnabled = false;
+            // this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
+            // this.ImageSourceClear = "";
+            Application.Current.Windows[1].Close();
+
+        }
+
+        CourseMgr courseMgr = new CourseMgr();
+
+        private void SaveModelToDatabase()
         {
             Model.Label = this.Label;
             Model.Description = this.Description;
@@ -333,15 +409,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             Model.EndDate = this.EndDate;
             Model.Instructor = this.Instructor;
 
-            using (var ctx = new SchoolDataContext())
-            {
-                ctx.Courses.Add(Model);
-                ctx.SaveChanges();
-            }
-
-            this.IsButtonEnabled = false;
-            this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
-            this.ImageSourceClear = "";
+            courseMgr.Create(Model);
         }
 
         private void CalculatePrice(decimal p)

@@ -349,7 +349,7 @@
     <value>Ende</value>
   </data>
   <data name="DSV" xml:space="preserve">
-    <value>Segellehrerlizenz des Deutschen Segler Verbandes (DSV)</value>
+    <value>DSV</value>
   </data>
   <data name="LifeGuard" xml:space="preserve">
     <value>Rettungsschwimmer</value>
@@ -358,24 +358,24 @@
     <value>Qualifikationen</value>
   </data>
   <data name="SBFBINNEN" xml:space="preserve">
-    <value>Sportbootführerschein Binnen (SBF Binnen)</value>
+    <value>SBF Binnen</value>
   </data>
   <data name="SBFSEA" xml:space="preserve">
-    <value>Sportbootführerschein See (SBF See)</value>
+    <value>SBF See</value>
   </data>
   <data name="SHS" xml:space="preserve">
-    <value>Sporthochseeschifferschein (SHS)</value>
+    <value>SHS</value>
   </data>
   <data name="SKS" xml:space="preserve">
-    <value>Sportküstenschifferschein (SKS)</value>
+    <value>SKS</value>
   </data>
   <data name="SRC" xml:space="preserve">
-    <value>UKW-Funkzeugnis für See (SRC)</value>
+    <value>SRC</value>
   </data>
   <data name="SSS" xml:space="preserve">
-    <value>Sportseeschifferschein (SSS)</value>
+    <value>SSS</value>
   </data>
   <data name="UBI" xml:space="preserve">
-    <value>UKW-Funkzeugnis für Binnen (UBI)</value>
+    <value>UBI</value>
   </data>
 </root>

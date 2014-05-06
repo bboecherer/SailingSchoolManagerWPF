@@ -376,7 +376,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Segellehrerlizenz des Deutschen Segler Verbandes (DSV).
+        ///   Looks up a localized string similar to DSV.
         /// </summary>
         public static string DSV {
             get {
@@ -709,7 +709,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sportbootführerschein Binnen (SBF Binnen).
+        ///   Looks up a localized string similar to SBF Binnen.
         /// </summary>
         public static string SBFBINNEN {
             get {
@@ -718,7 +718,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sportbootführerschein See (SBF See).
+        ///   Looks up a localized string similar to SBF See.
         /// </summary>
         public static string SBFSEA {
             get {
@@ -745,7 +745,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sporthochseeschifferschein (SHS).
+        ///   Looks up a localized string similar to SHS.
         /// </summary>
         public static string SHS {
             get {
@@ -754,7 +754,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sportküstenschifferschein (SKS).
+        ///   Looks up a localized string similar to SKS.
         /// </summary>
         public static string SKS {
             get {
@@ -772,7 +772,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UKW-Funkzeugnis für See (SRC).
+        ///   Looks up a localized string similar to SRC.
         /// </summary>
         public static string SRC {
             get {
@@ -781,7 +781,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sportseeschifferschein (SSS).
+        ///   Looks up a localized string similar to SSS.
         /// </summary>
         public static string SSS {
             get {
@@ -817,7 +817,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UKW-Funkzeugnis für Binnen (UBI).
+        ///   Looks up a localized string similar to UBI.
         /// </summary>
         public static string UBI {
             get {

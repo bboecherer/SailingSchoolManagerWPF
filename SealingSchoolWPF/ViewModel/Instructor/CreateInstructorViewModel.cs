@@ -1,4 +1,7 @@
-﻿using SealingSchoolWPF.Data;
+﻿using AS.IBAN;
+using AS.IBAN.Helper;
+using AS.IBAN.Model;
+using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.Pages.Student.Create;
 using System;
@@ -556,6 +559,20 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
+        private string _imageSourceNext = "/Resources/Images/arrow_Next_16xLG.png";
+        public string ImageSourceNext
+        {
+            get
+            {
+                return _imageSourceNext;
+            }
+            set
+            {
+                _imageSourceNext = value;
+                this.OnPropertyChanged("ImageSourceNext");
+            }
+        }
+
         private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
         public string ImageSourceClear
         {
@@ -578,21 +595,28 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         #region Commands
 
-        private ICommand addCommand;
+        private ICommand addAndNextCommand;
 
-        public ICommand AddCommand
+        public ICommand AddAndNextCommand
         {
             get
             {
-                if (addCommand == null)
+                if (addAndNextCommand == null)
                 {
-                    addCommand = new RelayCommand(p => ExecuteAddCommand());
+                    addAndNextCommand = new RelayCommand(p => ExecuteAddAndNextCommand());
                 }
-                return addCommand;
+                return addAndNextCommand;
             }
         }
 
-        private void ExecuteAddCommand()
+        private void ExecuteAddAndNextCommand()
+        {
+            SaveModelToDatabase();
+            this.ExecuteClearCommand();
+            this.Close();
+        }
+
+        private void SaveModelToDatabase()
         {
             Adress adress = new Adress();
             BankAccountData bank = new BankAccountData();
@@ -643,6 +667,31 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
             instructorMgr.Create(Model);
 
+        }
+
+        private ICommand addCommand;
+
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (addCommand == null)
+                {
+                    addCommand = new RelayCommand(p => ExecuteAddCommand());
+                }
+                return addCommand;
+            }
+        }
+
+        private void ExecuteAddCommand()
+        {
+            SaveModelToDatabase();
+            // this.IsButtonEnabled = false;
+            // this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
+            // this.ImageSourceClear = "";
+            Application.Current.Windows[1].Close();
+
+
             this.IsButtonEnabled = false;
             this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
             this.ImageSourceClear = "";
@@ -677,6 +726,84 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             this.Notes = null;
         }
 
+        private ICommand generateBankData;
+        public ICommand GenerateBankData
+        {
+            get
+            {
+                if (generateBankData == null)
+                {
+                    generateBankData = new RelayCommand(p => ExecuteBankCommand());
+                }
+                return generateBankData;
+            }
+        }
+
+        private void ExecuteBankCommand()
+        {
+            this.BankName = GetGermanBank(this.BankNo, this.AccountNo);
+            this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
+            this.Bic = GetGermanBic(this.Iban);
+        }
+
+
+        private string GenerateGermanIban(string bankIdent, string accountNumber)
+        {
+            IbanGenerator generator = new IbanGenerator();
+            string iban = string.Empty;
+            string bic = string.Empty;
+
+            try
+            {
+                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
+                iban = result.IBAN.IBAN;
+                bic = result.BIC.Bic;
+            }
+            catch (IbanException ex)
+            {
+                //  do some error handling
+            }
+
+            return iban;
+        }
+
+        private string GetGermanBank(string bankIdent, string accountNumber)
+        {
+            IbanGenerator generator = new IbanGenerator();
+            Bank bank = null;
+
+            try
+            {
+                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
+                bank = result.IBAN.Bank;
+            }
+            catch (IbanException ex)
+            {
+                //  do some error handling
+            }
+
+            return bank.Name;
+        }
+
+        private string GetGermanBic(string iban)
+        {
+            IbanGetBic getBic = new IbanGetBic();
+            string bic = string.Empty;
+
+            try
+            {
+                var result = getBic.GetBic(iban);
+                bic = result.Bic;
+            }
+            catch (IbanException ex)
+            {
+                //  do some error handling
+            }
+
+            return bic;
+        }
+
+
         #endregion
 
         #region Methods
@@ -684,7 +811,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         public void Close()
         {
             instance = null;
-
         }
         #endregion
     }
