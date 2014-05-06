@@ -8,14 +8,14 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="360" d:DesignWidth="400">
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="100" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -24,7 +24,7 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="250" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Label}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Description}"/>
@@ -44,7 +44,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
                                SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
                 </Grid>
-                <Button:UpdateButtons HorizontalAlignment="Right" />
+                <Button:UpdateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

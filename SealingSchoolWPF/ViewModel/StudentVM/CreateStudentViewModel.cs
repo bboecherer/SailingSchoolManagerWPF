@@ -270,8 +270,8 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 return addCommand;
             }
         }
-   
-       
+
+
 
         private void ExecuteAddCommand()
         {
@@ -290,6 +290,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             bank.BankNo = this.BankNo;
             bank.Bic = this.Bic;
             bank.Iban = this.Iban;
+            bank.Sepa = this.Sepa;
 
             Model.FirstName = this.FirstName;
             Model.LastName = this.LastName;

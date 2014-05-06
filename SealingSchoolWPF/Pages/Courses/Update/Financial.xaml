@@ -20,8 +20,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
@@ -34,13 +33,15 @@
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="0" Margin="3" Minimum="0.00" FormatString="C2" 
                                         Value="{Binding Path=NetPrice}" Increment=".5" />
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="1" Margin="3" Minimum="0.00" FormatString="C2" 
+                                        IsEnabled="False" IsReadOnly="True"
                                         Value="{Binding Path=GrossPrice}" Increment=".5" />
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="2" Margin="3" Minimum="0.00" FormatString="C2" 
+                                        IsEnabled="False" IsReadOnly="True"
                                         Value="{Binding Path=NetAmount}" Increment=".5" />
                     <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                 </Grid>
-                <Button:UpdateButtons HorizontalAlignment="Right" />
+                <Button:UpdateButtons HorizontalAlignment="Right" Margin="5"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

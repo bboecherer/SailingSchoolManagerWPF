@@ -201,7 +201,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SSS;
         public bool SSS
         {
             get
@@ -215,7 +214,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SKS;
         public bool SKS
         {
             get
@@ -229,7 +227,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SBFSEA;
         public bool SBFSEA
         {
             get
@@ -243,7 +240,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SBFBINNEN;
         public bool SBFBINNEN
         {
             get
@@ -257,7 +253,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SRC;
         public bool SRC
         {
             get
@@ -271,7 +266,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _UBI;
         public bool UBI
         {
             get
@@ -285,7 +279,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _DSV;
         public bool DSV
         {
             get
@@ -299,7 +292,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SHS;
         public bool SHS
         {
             get
@@ -313,7 +305,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _lifeGuard;
         public bool LifeGuard
         {
             get
@@ -327,7 +318,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _SSSDate;
         public DateTime SSSDate
         {
             get
@@ -341,7 +331,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _SKSDate;
         public DateTime SKSDate
         {
             get
@@ -355,7 +344,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _SBFSEADate;
         public DateTime SBFSEADate
         {
             get
@@ -369,7 +357,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _SBFBINNENDate;
         public DateTime SBFBINNENDate
         {
             get
@@ -383,7 +370,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _SRCDate;
         public DateTime SRCDate
         {
             get
@@ -397,7 +383,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _UBIDate;
         public DateTime UBIDate
         {
             get
@@ -411,7 +396,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _DSVDate;
         public DateTime DSVDate
         {
             get
@@ -425,7 +409,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _SHSDate;
         public DateTime SHSDate
         {
             get
@@ -439,7 +422,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private DateTime _lifeGuardDate;
         public DateTime LifeGuardDate
         {
             get

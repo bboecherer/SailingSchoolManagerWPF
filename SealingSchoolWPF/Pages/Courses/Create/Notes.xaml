@@ -15,18 +15,17 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Notes}"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" TextWrapping="Wrap" Width="300" Height="200" 
-                             AcceptsReturn="True" Text="{Binding Path=TextBox, Mode=TwoWay}"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" TextWrapping="Wrap" 
+                             Width="300" Height="200" AcceptsReturn="True" 
+                             Text="{Binding Path=Notes, Mode=TwoWay}"/>
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:CreateButtons HorizontalAlignment="Right" Margin="5"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

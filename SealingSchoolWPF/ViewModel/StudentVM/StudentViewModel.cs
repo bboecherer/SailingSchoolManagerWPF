@@ -223,7 +223,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
-
         public string AccountNo
         {
             get
@@ -236,7 +235,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 this.OnPropertyChanged("AccountNo");
             }
         }
-
 
         public string BankNo
         {
@@ -251,7 +249,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
-
         public string BankName
         {
             get
@@ -264,7 +261,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 this.OnPropertyChanged("BankName");
             }
         }
-
 
         public string Iban
         {
@@ -279,8 +275,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
-
-
         public string Bic
         {
             get
@@ -291,6 +285,19 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             {
                 Model.Bank.Bic = value;
                 this.OnPropertyChanged("Bic");
+            }
+        }
+
+        public bool Sepa
+        {
+            get
+            {
+                return Model.Bank.Sepa;
+            }
+            set
+            {
+                Model.Bank.Sepa = value;
+                this.OnPropertyChanged("Sepa");
             }
         }
 

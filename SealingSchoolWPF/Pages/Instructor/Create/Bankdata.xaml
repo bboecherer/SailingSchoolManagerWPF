@@ -37,6 +37,7 @@
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName, Mode=TwoWay}"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Iban, Mode=TwoWay}"/>
                     <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Bic, Mode=TwoWay}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="5" Margin="3" IsChecked="{Binding Path=Sepa, Mode=TwoWay}"/>
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right"/>
             </StackPanel>

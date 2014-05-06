@@ -20,8 +20,6 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
@@ -40,7 +38,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:CreateButtons HorizontalAlignment="Right" Margin="5"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

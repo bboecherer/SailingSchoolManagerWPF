@@ -49,6 +49,7 @@ namespace SealingSchoolWPF.Pages.Student.Update
             studBank.Bic = student.Bic;
             studBank.Iban = student.Iban;
             studBank.AccountNo = student.AccountNo;
+            studBank.Sepa = student.Sepa;
 
             stud.Id = Convert.ToInt32(student.Id);
             stud.LastName = student.Lastname;

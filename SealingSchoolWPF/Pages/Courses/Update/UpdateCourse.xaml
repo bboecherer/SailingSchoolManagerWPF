@@ -6,7 +6,7 @@
         Title="KURS" IsTitleVisible="True"
         xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Controls"
        ContentSource="/Pages/Courses/Update/Base.xaml"
-       Height="450" Width="500" Closing="ModernWindow_Closing"
+       Height="500" Width="500" Closing="ModernWindow_Closing"
       >
     <mui:ModernWindow.MenuLinkGroups >
         <mui:LinkGroup DisplayName="{x:Static resx:Resource.Update_ToolTip_Desc}">

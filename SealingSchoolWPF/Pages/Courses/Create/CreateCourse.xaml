@@ -5,7 +5,7 @@
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="KURS" IsTitleVisible="True"
        ContentSource="/Pages/Courses/Create/Base.xaml"
-       Height="450" Width="500" Closed="ModernWindow_Closed"
+       Height="500" Width="500" Closed="ModernWindow_Closed"
       >
     <mui:ModernWindow.MenuLinkGroups >
         <mui:LinkGroup DisplayName="{x:Static resx:Resource.Create_ToolTip_Desc}">

@@ -609,6 +609,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             bank.BankNo = this.BankNo;
             bank.Bic = this.Bic;
             bank.Iban = this.Iban;
+            bank.Sepa = this.Sepa;
 
             Model.FirstName = this.FirstName;
             Model.LastName = this.LastName;
