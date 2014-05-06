@@ -343,11 +343,18 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return SSSDate;
+                if (_SSSDate == null || _SSSDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _SSSDate;
+                }
             }
             set
             {
-                SSSDate = value;
+                _SSSDate = value;
                 this.OnPropertyChanged("SSSDate");
             }
         }
@@ -357,7 +364,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _SKSDate;
+                if (_SKSDate == null || _SKSDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _SKSDate;
+                }
             }
             set
             {
@@ -371,7 +385,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _SBFSEADate;
+                if (_SBFSEADate == null || _SBFSEADate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _SBFSEADate;
+                }
             }
             set
             {
@@ -385,7 +406,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _SBFBINNENDate;
+                if (_SBFBINNENDate == null || _SBFBINNENDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _SBFBINNENDate;
+                }
             }
             set
             {
@@ -399,7 +427,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _SRCDate;
+                if (_SRCDate == null || _SRCDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _SRCDate;
+                }
             }
             set
             {
@@ -413,7 +448,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _UBIDate;
+                if (_UBIDate == null || _UBIDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _UBIDate;
+                }
             }
             set
             {
@@ -427,7 +469,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _DSVDate;
+                if (_DSVDate == null || _DSVDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _DSVDate;
+                }
             }
             set
             {
@@ -441,7 +490,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _SHSDate;
+                if (_SHSDate == null || _SHSDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _SHSDate;
+                }
             }
             set
             {
@@ -455,7 +511,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _lifeGuardDate;
+                if (_lifeGuardDate == null || _lifeGuardDate == DateTime.MinValue)
+                {
+                    return DateTime.Now;
+                }
+                else
+                {
+                    return _lifeGuardDate;
+                }
             }
             set
             {
