@@ -224,6 +224,9 @@
     <Compile Include="Pages\Instructor\Create\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Instructor\Create\Qualification.xaml.cs">
+      <DependentUpon>Qualification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Instructor\General\InstructorListView.xaml.cs">
       <DependentUpon>InstructorListView.xaml</DependentUpon>
     </Compile>
@@ -238,6 +241,9 @@
     </Compile>
     <Compile Include="Pages\Instructor\Update\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Update\Qualification.xaml.cs">
+      <DependentUpon>Qualification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\Update\UpdateInstructor.xaml.cs">
       <DependentUpon>UpdateInstructor.xaml</DependentUpon>
@@ -518,6 +524,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Instructor\Create\Qualification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Instructor\Update\Bankdata.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -531,6 +541,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Instructor\Update\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Update\Qualification.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

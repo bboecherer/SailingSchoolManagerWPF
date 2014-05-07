@@ -21,11 +21,11 @@ namespace SealingSchoolWPF.ViewModel.General
                 {
                     return dummy[0].Message;
                 }
-                else 
+                else
                 {
-                    return "Kein Eintrag in der Datenbank hinterlegt"
+                    return "Kein Eintrag in der Datenbank hinterlegt";
                 }
-                
+
             }
         }
     }
