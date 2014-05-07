@@ -107,12 +107,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Content\SettingsBusinessUnit.xaml.cs">
-      <DependentUpon>SettingsBusinessUnit.xaml</DependentUpon>
+    <Compile Include="Pages\BusinessUnit\AdressControl.xaml.cs">
+      <DependentUpon>AdressControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Content\SettingsInvoice.xaml.cs">
+    <Compile Include="Pages\BusinessUnit\BankControl.xaml.cs">
+      <DependentUpon>BankControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BusinessUnit\BusinessUnitSettings.xaml.cs">
+      <DependentUpon>BusinessUnitSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BusinessUnit\GeneralControl.xaml.cs">
+      <DependentUpon>GeneralControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BusinessUnit\SettingsInvoice.xaml.cs">
       <DependentUpon>SettingsInvoice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\BusinessUnitMgr.cs" />
     <Compile Include="Data\InfoBoxMgr.cs" />
     <Compile Include="Data\IPersistenceMgr.cs" />
     <Compile Include="Data\SchoolDataContext.cs" />
@@ -125,11 +135,19 @@
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\BankAccountData.cs" />
     <Compile Include="Model\Boat.cs" />
+    <Compile Include="Model\BusinessUnit.cs" />
+    <Compile Include="Model\GeneralFee.cs" />
+    <Compile Include="Model\ITemplate.cs" />
+    <Compile Include="Model\MailTemplate.cs" />
     <Compile Include="Model\MaterialStatus.cs" />
     <Compile Include="Model\ContactData.cs" />
     <Compile Include="Model\CourseStatus.cs" />
     <Compile Include="Model\Material.cs" />
     <Compile Include="Model\InfoBox.cs" />
+    <Compile Include="Model\PdfTemplate.cs" />
+    <Compile Include="Model\TrainingActivity.cs" />
+    <Compile Include="Model\Fee.cs" />
+    <Compile Include="Model\Vat.cs" />
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
@@ -330,6 +348,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.en-US.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BusinessUnit\BusinessUnitViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateCourseViewModel.cs" />
@@ -360,11 +379,23 @@
       <DependentUpon>StudentListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\StudentVM\StudentViewModel.cs" />
-    <Page Include="Content\SettingsBusinessUnit.xaml">
+    <Page Include="Pages\BusinessUnit\AdressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Content\SettingsInvoice.xaml">
+    <Page Include="Pages\BusinessUnit\BankControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BusinessUnit\BusinessUnitSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BusinessUnit\GeneralControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BusinessUnit\SettingsInvoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -376,18 +407,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Content\About.xaml">
+    <Page Include="Pages\General\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Content\About.xaml.cs">
+    <Compile Include="Pages\General\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Page Include="Content\SettingsAppearance.xaml">
+    <Page Include="Pages\General\SettingsAppearance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Content\SettingsAppearance.xaml.cs">
+    <Compile Include="Pages\General\SettingsAppearance.xaml.cs">
       <DependentUpon>SettingsAppearance.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Settings\SettingsAppearanceViewModel.cs" />
@@ -732,10 +763,7 @@
       <Name>WpfScheduler</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Courses\Edit\" />
-    <Folder Include="Pages\Instructor\Edit\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
       <Link>AutoMapper.Net4.dll</Link>

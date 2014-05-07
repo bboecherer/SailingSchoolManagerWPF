@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="600">
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernTab Layout="List" SelectedSource="/Content/SettingsBusinessUnit.xaml">
+        <mui:ModernTab Layout="List" SelectedSource="/Pages/BusinessUnit/BusinessUnitSettings.xaml">
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="Mandant" Source="/Content/SettingsBusinessUnit.xaml" />
-                <mui:Link DisplayName="Rechnungen" Source="/Content/SettingsInvoice.xaml" />
-                <mui:Link DisplayName="Aussehen" Source="/Content/SettingsAppearance.xaml" />
-                <mui:Link DisplayName="Über" Source="/Content/About.xaml" />
+                <mui:Link DisplayName="Mandant" Source="/Pages/BusinessUnit/BusinessUnitSettings.xaml" />
+                <mui:Link DisplayName="Rechnungen" Source="/Pages/BusinessUnit/SettingsInvoice.xaml" />
+                <mui:Link DisplayName="Aussehen" Source="/Pages/General/SettingsAppearance.xaml" />
+                <mui:Link DisplayName="Über" Source="/Pages/General/About.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

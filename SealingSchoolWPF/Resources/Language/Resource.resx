@@ -378,4 +378,58 @@
   <data name="UBI" xml:space="preserve">
     <value>UBI</value>
   </data>
+  <data name="AccountOwnerLong" xml:space="preserve">
+    <value>Konto Inhaber</value>
+  </data>
+  <data name="AccountOwnerShort" xml:space="preserve">
+    <value>Kto. Inh.</value>
+  </data>
+  <data name="AdminMail" xml:space="preserve">
+    <value>Admin Email</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="extLabel" xml:space="preserve">
+    <value>Ext. Bezeichnung</value>
+  </data>
+  <data name="Fax1" xml:space="preserve">
+    <value>Fax 1</value>
+  </data>
+  <data name="Fax2" xml:space="preserve">
+    <value>Fax 2</value>
+  </data>
+  <data name="Row1" xml:space="preserve">
+    <value>Zeile 1</value>
+  </data>
+  <data name="Row2" xml:space="preserve">
+    <value>Zeile 2</value>
+  </data>
+  <data name="Row3" xml:space="preserve">
+    <value>Zeile 3</value>
+  </data>
+  <data name="Spezify1" xml:space="preserve">
+    <value>Spezifisch 1</value>
+  </data>
+  <data name="Spezify2" xml:space="preserve">
+    <value>Spezifisch 2</value>
+  </data>
+  <data name="Swift" xml:space="preserve">
+    <value>Swift</value>
+  </data>
+  <data name="Tel1" xml:space="preserve">
+    <value>Tel 1</value>
+  </data>
+  <data name="Tel2" xml:space="preserve">
+    <value>Tel 2</value>
+  </data>
+  <data name="Ust" xml:space="preserve">
+    <value>USt</value>
+  </data>
+  <data name="UstId" xml:space="preserve">
+    <value>VAT ID</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Webseite</value>
+  </data>
 </root>

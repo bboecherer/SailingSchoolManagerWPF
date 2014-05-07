@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Content
+namespace SealingSchoolWPF.Pages.BusinessUnit
 {
     /// <summary>
-    /// Interaction logic for SettingsAppearance.xaml
+    /// Interaction logic for AdressControl.xaml
     /// </summary>
-    public partial class SettingsAppearance : UserControl
+    public partial class AdressControl : UserControl
     {
-        public SettingsAppearance()
+        public AdressControl()
         {
             InitializeComponent();
-
-            // create and assign the appearance view model
-            this.DataContext = new SettingsAppearanceViewModel();
         }
     }
 }
