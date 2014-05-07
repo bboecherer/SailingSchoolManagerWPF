@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.BusinessUnit.BankControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Tel1}"/>
+        <Label Grid.Row="0" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.Tel2}"/>
+        <Label Grid.Row="1" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Fax1}"/>
+        <Label Grid.Row="1" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.Fax2}"/>
+        <Label Grid.Row="0" Grid.Column="4" Margin="3" Content="{x:Static resx:Resource.Ust}"/>
+        <Label Grid.Row="1" Grid.Column="4" Margin="3" Content="{x:Static resx:Resource.UstId}"/>
+        <Label Grid.Row="2" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.BankName}"/>
+        <Label Grid.Row="2" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.BankNoShort}"/>
+        <Label Grid.Row="2" Grid.Column="4" Margin="3" Content="{x:Static resx:Resource.AccountNoShort}"/>
+        <Label Grid.Row="3" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Iban}"/>
+        <Label Grid.Row="3" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.Swift}"/>
+        <Label Grid.Row="3" Grid.Column="4" Margin="3" Content="{x:Static resx:Resource.AccountOwnerShort}"/>
+
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" />
+        <TextBox Grid.Column="3" Grid.Row="0" Margin="3" />
+        <TextBox Grid.Column="5" Grid.Row="0" Margin="3" />
+
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="3"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Margin="3" />
+        <TextBox Grid.Column="5" Grid.Row="1" Margin="3"/>
+
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" />
+        <TextBox Grid.Column="3" Grid.Row="2" Margin="3" />
+        <TextBox Grid.Column="5" Grid.Row="2" Margin="3"/>
+
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" />
+        <TextBox Grid.Column="3" Grid.Row="3" Margin="3" />
+        <TextBox Grid.Column="5" Grid.Row="3" Margin="3" />
+    </Grid>
+</UserControl>
