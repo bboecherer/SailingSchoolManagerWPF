@@ -169,6 +169,19 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("Notes");
             }
         }
+        private string _documents;
+        public string Documents
+        {
+            get
+            {
+                return _documents;
+            }
+            set
+            {
+                _documents = value;
+                this.OnPropertyChanged("Documents");
+            }
+        }
 
         private bool _isButtonEnabled = true;
         public bool IsButtonEnabled
@@ -229,11 +242,17 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             
             Model.Name = this.Name;
             Model.MaterialStatus = this.MaterialStatus;
+            Model.Brand = this.Brand;
+            Model.Price = this.Price;
+            Model.RepairAction = this.RepairAction;
+            Model.SerialNumber = this.SerialNumber;
+            Model.Currency = this.Currency;
             
 
             Model.AdditionalInfo = this.Notes ;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
+            
 
             matMgr.Create(Model);
 

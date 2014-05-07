@@ -36,8 +36,10 @@
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Brand}"/>
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=SerialNumber}"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Price}"/>
-                    <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Currency}"/>
-                    <TextBox Grid.Column="1" Grid.Row="5" Margin="3" Text="{Binding Path=MaterialStatus}" />
+                    <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
+                               SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"
+                               SelectedItem="{Binding MaterialStatus}" ItemsSource="{Binding MaterialStatusTypeValues}"/>
                     <TextBox Grid.Column="1" Grid.Row="6" Margin="3" Text="{Binding Path=RepairAction}" />
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right"/>

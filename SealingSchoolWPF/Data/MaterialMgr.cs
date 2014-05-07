@@ -76,6 +76,7 @@ namespace SealingSchoolWPF.Data
                 original.Brand = entity.Brand;
                 original.Currency = entity.Currency;
                 original.AdditionalInfo = entity.AdditionalInfo;
+                original.SerialNumber = entity.SerialNumber;
                 original.CreatedOn = entity.CreatedOn;
                 original.ModifiedOn = DateTime.Now;
 
