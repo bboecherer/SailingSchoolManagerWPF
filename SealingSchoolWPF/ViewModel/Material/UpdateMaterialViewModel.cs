@@ -17,6 +17,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
     public class UpdateMaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {
         public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
+        MaterialMgr matMgr = new MaterialMgr();
 
         public UpdateMaterialViewModel(SealingSchoolWPF.Model.Material model)
             : base(model)
@@ -43,7 +44,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
-        MaterialMgr studMgr = new MaterialMgr();
+
 
         public string Name
         {
@@ -54,6 +55,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             set
             {
                 MaterialDummy.Name = value;
+                resetSaveButton();
                 this.OnPropertyChanged("Name");
             }
         }
@@ -67,6 +69,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             set
             {
                 MaterialDummy.Brand = value;
+                resetSaveButton();
                 this.OnPropertyChanged("Brand");
             }
         }
@@ -80,6 +83,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             set
             {
                 MaterialDummy.Price = value;
+                resetSaveButton();
                 this.OnPropertyChanged("Price");
             }
         }
@@ -92,8 +96,20 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                     .Cast<Currency>();
             }
         }
-
-        public IEnumerable<MaterialStatus> MaterialStatus
+        public Currency Currency
+        {
+            get
+            {
+                return MaterialDummy.Currency;
+            }
+            set
+            {
+                MaterialDummy.Currency = value;
+                resetSaveButton();
+                this.OnPropertyChanged("Currency");
+            }
+        }
+        public IEnumerable<MaterialStatus> MaterialStatusTypeValues
         {
             get
             {
@@ -101,7 +117,72 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                     .Cast<MaterialStatus>();
             }
         }
+        public MaterialStatus MaterialStatus
+        {
+            get
+            {
+                return MaterialDummy.MaterialStatus;
+            }
+            set
+            {
+                MaterialDummy.MaterialStatus = value;
+                resetSaveButton();
+                this.OnPropertyChanged("MaterialStatus");
+            }
+        }
+        public string RepairAction
+        {
+            get
+            {
+                return MaterialDummy.RepairAction;
+            }
+            set
+            {
+                if (RepairAction != value)
+                {
+                    MaterialDummy.RepairAction = value;
+                    resetSaveButton();
+                    this.OnPropertyChanged("RepairAction");
+                }
+            }
+        }
 
+        public string SerialNumber
+        {
+            get
+            {
+                return MaterialDummy.SerialNumber;
+            }
+            set
+            {
+                if (SerialNumber != value)
+                {
+                    MaterialDummy.SerialNumber = value;
+                    resetSaveButton();
+                    this.OnPropertyChanged("SerialNumber");
+                }
+            }
+        }
+        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(MaterialType))
+                    .Cast<MaterialType>();
+            }
+        }
+        public MaterialType MaterialType
+        {
+            get
+            {
+                return MaterialDummy.MaterialType;
+            }
+            set
+            {
+                MaterialDummy.MaterialType = value;
+                this.OnPropertyChanged("MaterialType");
+            }
+        }
         public string Notes
         {
             get
@@ -112,6 +193,34 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             {
                 MaterialDummy.AdditionalInfo = value;
                 this.OnPropertyChanged("Notes");
+            }
+        }
+
+
+        private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
+        public string ImageSourceSave
+        {
+            get
+            {
+                return _imageSourceSave;
+            }
+            set
+            {
+                _imageSourceSave = value;
+                this.OnPropertyChanged("ImageSourceSave");
+            }
+        }
+        private bool _isButtonEnabled = true;
+        public bool IsButtonEnabled
+        {
+            get
+            {
+                return _isButtonEnabled;
+            }
+            set
+            {
+                _isButtonEnabled = value;
+                this.OnPropertyChanged("IsButtonEnabled");
             }
         }
 
@@ -138,7 +247,17 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
         private void ExecuteAddCommand()
         {
             Model.ModifiedOn = DateTime.Now;
-            studMgr.Update(Model);
+            matMgr.Update(Model);
+            this.IsButtonEnabled = false;
+            this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
+
+        }
+
+        private void resetSaveButton()
+        {
+            this.IsButtonEnabled = true;
+            this.ImageSourceSave = "/Resources/Images/save_16xLG.png";
+
         }
     }
 }

@@ -142,6 +142,19 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("RepairAction");
             }
         }
+        private string _serialNumber;
+        public string SerialNumber
+        {
+            get
+            {
+                return _serialNumber;
+            }
+            set
+            {
+                _serialNumber = value;
+                this.OnPropertyChanged("SerialNumber");
+            }
+        }
 
         private string _notes;
         public string Notes
@@ -154,6 +167,28 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             {
                 _notes = value;
                 this.OnPropertyChanged("Notes");
+            }
+        }
+        private string _documents;
+        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(MaterialType))
+                    .Cast<MaterialType>();
+            }
+        }
+        private MaterialType _materialType;
+        public MaterialType MaterialType
+        {
+            get
+            {
+                return _materialType;
+            }
+            set
+            {
+                _materialType = value;
+                this.OnPropertyChanged("MaterialType");
             }
         }
 
@@ -216,11 +251,18 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             
             Model.Name = this.Name;
             Model.MaterialStatus = this.MaterialStatus;
+            Model.Brand = this.Brand;
+            Model.Price = this.Price;
+            Model.RepairAction = this.RepairAction;
+            Model.SerialNumber = this.SerialNumber;
+            Model.Currency = this.Currency;
+            Model.MaterialType = this.MaterialType;
             
 
             Model.AdditionalInfo = this.Notes ;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
+            
 
             matMgr.Create(Model);
 
@@ -250,6 +292,10 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             this.Brand = null;
             this.Price = 0;
             this.Notes = null;
+            this.MaterialType = MaterialType.Material;
+            this.Currency = Currency.EUR;
+            this.SerialNumber = null;
+
             
         }
 

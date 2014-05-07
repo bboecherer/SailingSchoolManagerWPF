@@ -5,11 +5,11 @@
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="Material" IsTitleVisible="True"
        ContentSource="/Pages/Material/Update/Base.xaml"
-       Height="450" Width="500" Closed="ModernWindow_Closed"
+       Height="550" Width="500" Closed="ModernWindow_Closed"
       >
 
     <mui:ModernWindow.MenuLinkGroups>
-        <mui:LinkGroup DisplayName="{x:Static resx:Resource.Create_ToolTip_Desc}">
+        <mui:LinkGroup DisplayName="{x:Static resx:Resource.Update_ToolTip_Desc}">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Material/Update/Base.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Material/Update/Notes.xaml" />

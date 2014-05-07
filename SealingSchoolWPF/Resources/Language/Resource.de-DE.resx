@@ -432,4 +432,10 @@
   <data name="Website" xml:space="preserve">
     <value>Webseite</value>
   </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Seriennummer</value>
+  </data>
+  <data name="MaterialType" xml:space="preserve">
+    <value>Material Art</value>
+  </data>
 </root>

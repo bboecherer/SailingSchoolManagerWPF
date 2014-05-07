@@ -31,7 +31,7 @@ namespace SealingSchoolWPF.Pages
         {
             var grid = sender as DataGrid;
             var material = (SealingSchoolWPF.ViewModel.MaterialViewModel.MaterialViewModel)grid.SelectedItem;
-
+           
             UpdateMaterial window = new UpdateMaterial(material);
             window.ShowDialog();
         }

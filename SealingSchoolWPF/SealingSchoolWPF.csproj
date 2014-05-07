@@ -78,9 +78,6 @@
     <Reference Include="Xceed.Wpf.AvalonDock">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.resources">
-      <HintPath>..\packages\WPFToolkit\de\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
-    </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
     </Reference>
@@ -93,8 +90,7 @@
     <Reference Include="Xceed.Wpf.DataGrid">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xceed.Wpf.Toolkit">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.1.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -129,12 +125,10 @@
     <Compile Include="Data\InstructorMgr.cs" />
     <Compile Include="Data\CourseMgr.cs" />
     <Compile Include="Data\MaterialMgr.cs" />
-    <Compile Include="Data\BoatMgr.cs" />
     <Compile Include="Data\StudentMgr.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\BankAccountData.cs" />
-    <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\BusinessUnit.cs" />
     <Compile Include="Model\GeneralFee.cs" />
     <Compile Include="Model\ITemplate.cs" />
@@ -228,12 +222,6 @@
     </Compile>
     <Compile Include="Pages\Instructor\Create\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Instructor\Create\Qualification.xaml.cs">
-      <DependentUpon>Qualification.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Instructor\Update\Qualification.xaml.cs">
-      <DependentUpon>Qualification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\General\InstructorListView.xaml.cs">
       <DependentUpon>InstructorListView.xaml</DependentUpon>
@@ -366,7 +354,6 @@
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
     <Compile Include="ViewModel\Material\CreateMaterialViewModel.cs" />
-    <Compile Include="ViewModel\Material\CreateBoatViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialListViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialButtonViewModel.cs" />
@@ -529,14 +516,6 @@
     <Page Include="Pages\Instructor\Create\Notes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Instructor\Create\Qualification.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Instructor\Update\Qualification.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Instructor\Update\Bankdata.xaml">
       <Generator>MSBuild:Compile</Generator>

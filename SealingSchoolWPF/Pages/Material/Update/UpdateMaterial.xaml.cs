@@ -34,15 +34,17 @@ namespace SealingSchoolWPF.Pages.Material.Update
 
         private Model.Material GetMaterialDataFromModel(MaterialViewModel material)
         {
-            Model.Material mat = new Model.Material();
-          
-            mat.MaterialId = Convert.ToInt32(material.Id);
-            mat.Name = material.Name;
-            
-            mat.AdditionalInfo = material.Notes;
-            mat.CreatedOn = material.CreatedOn;
-            
 
+            Model.Material mat = new Model.Material();
+            mat.MaterialId = Convert.ToInt32(material.Id);
+            mat.MaterialStatus = material.MaterialStatus;
+            mat.Name = material.Name;
+            mat.Price = material.Price;
+            mat.Brand = material.Brand;
+            mat.Currency = material.Currency;
+            mat.RepairAction = material.RepairAction;
+            mat.SerialNumber = material.SerialNumber;
+            mat.MaterialType = material.MaterialType;
             return mat;
         }
         private void ModernWindow_Closed(object sender, EventArgs e)
