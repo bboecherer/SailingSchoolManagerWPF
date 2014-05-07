@@ -248,7 +248,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
 
         private void ExecuteAddCommand()
         {
-            
+
             Model.Name = this.Name;
             Model.MaterialStatus = this.MaterialStatus;
             Model.Brand = this.Brand;
@@ -257,12 +257,12 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             Model.SerialNumber = this.SerialNumber;
             Model.Currency = this.Currency;
             Model.MaterialType = this.MaterialType;
-            
 
-            Model.AdditionalInfo = this.Notes ;
+
+            Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
-            
+
 
             matMgr.Create(Model);
 
@@ -292,11 +292,11 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             this.Brand = null;
             this.Price = 0;
             this.Notes = null;
-            this.MaterialType = MaterialType.Material;
+            //    this.MaterialType = MaterialType.Material;
             this.Currency = Currency.EUR;
             this.SerialNumber = null;
 
-            
+
         }
 
         public void Close()

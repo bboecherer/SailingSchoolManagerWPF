@@ -10,11 +10,11 @@ namespace SealingSchoolWPF.Model
     public class Fee
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         //Das Datum des Inkrafttretens
-        public DateTime validFrom { get; set; }
+        public DateTime ValidFrom { get; set; }
 
-        public Double percentage { get; set; }
+        public Double Percentage { get; set; }
     }
 }

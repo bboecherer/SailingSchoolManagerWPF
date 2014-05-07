@@ -10,20 +10,20 @@ namespace SealingSchoolWPF.Model
     public class GeneralFee
     {
         [Key]
-        public int id;
+        public int Id { get; set; }
 
         // Der nominale Nettobetrag in der Standardwährung, der erhoben werden darf
-        public Decimal netPrice;
+        public Decimal NetPrice { get; set; }
 
         // Der Mehrwertsteuersatz, der auf den angegebenen Nettobetrag gerechnet wird.
-        public Double percentage;
+        public Double Percentage { get; set; }
 
-        public String label;
+        public String Label { get; set; }
 
         // Der nominale Bruttobetrag in der Standardwährung, der erhoben werden darf
-        public Decimal grossPrice;
+        public Decimal GrossPrice { get; set; }
 
         // Das Datum des Inkrafttretens
-        public DateTime validFrom;
+        public DateTime ValidFrom { get; set; }
     }
 }

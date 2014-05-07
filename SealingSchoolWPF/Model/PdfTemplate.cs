@@ -10,10 +10,10 @@ namespace SealingSchoolWPF.Model
     public class PdfTemplate
     {
         [Key]
-        public int id;
+        public int Id { get; set; }
 
         // Der Inhalt des pdf-Dokumentes in Form einer XHTML-Datei mit Platzhaltern
-        public String xhtmlTemplate;
+        public String XhtmlTemplate { get; set; }
 
         // public TemplateType type;
     }

@@ -17,7 +17,15 @@ namespace SealingSchoolWPF.ViewModel.General
             get
             {
                 var dummy = boxMgr.GetAll();
-                return dummy[0].Message;
+                if (dummy != null && dummy.Count != 0)
+                {
+                    return dummy[0].Message;
+                }
+                else 
+                {
+                    return "Kein Eintrag in der Datenbank hinterlegt"
+                }
+                
             }
         }
     }

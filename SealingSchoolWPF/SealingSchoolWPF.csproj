@@ -103,6 +103,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\MaterialType.cs" />
     <Compile Include="Pages\BusinessUnit\AdressControl.xaml.cs">
       <DependentUpon>AdressControl.xaml</DependentUpon>
     </Compile>

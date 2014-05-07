@@ -10,16 +10,16 @@ namespace SealingSchoolWPF.Model
     public class MailTemplate
     {
         [Key]
-        public int id;
+        public int Id { get; set; }
 
         // Der Sender einer Email
-        public String sender;
+        public String Sender { get; set; }
 
         // Betreff einer EMail mit Platzhaltern
-        public String subjectTemplate;
+        public String SubjectTemplate { get; set; }
 
         // Der Inhalt der Email mit Platzhaltern
-        public String bodyTemplate;
+        public String BodyTemplate { get; set; }
 
         //public TemplateType type;
     }
