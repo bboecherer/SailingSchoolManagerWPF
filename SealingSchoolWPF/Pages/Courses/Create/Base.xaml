@@ -8,23 +8,24 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="360" d:DesignWidth="400">
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="100" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
+                        <RowDefinition Height="Auto" />
+
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="250" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Label}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Description}"/>
@@ -35,16 +36,18 @@
                     <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.Instructor}"/>
                     <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Label}"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Description}"/>
+
                     <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Value="{Binding Path=StartDate}"/>
                     <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" Value="{Binding Path=EndDate}"/>
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="4" Margin="3" Minimum="0"  
                                         Value="{Binding Path=Duration}" Increment="1" />
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3" Minimum="0" 
                                         Value="{Binding Path=Capacity}" Increment="1" />
-                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
-                               SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                              MaxDropDownHeight="100" SelectedItem="{Binding Instructor}"
+                              ItemsSource="{Binding InstructorTypeValues}"/>
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:CreateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>
 
         </ScrollViewer>

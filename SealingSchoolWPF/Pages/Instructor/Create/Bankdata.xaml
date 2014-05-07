@@ -19,8 +19,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
@@ -31,12 +30,17 @@
                     <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.BankName}"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Iban}"/>
                     <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Bic}"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.Sepa}"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.Sepa}"/>
                     <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=AccountNo, Mode=TwoWay}"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=BankNo, Mode=TwoWay}"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName, Mode=TwoWay}"/>
-                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Iban, Mode=TwoWay}"/>
-                    <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Bic, Mode=TwoWay}"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName, Mode=TwoWay}"
+                              IsEnabled="False" IsReadOnly="True"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Iban, Mode=TwoWay}"
+                              IsEnabled="False" IsReadOnly="True"/>
+                    <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Bic, Mode=TwoWay}"
+                              IsEnabled="False" IsReadOnly="True"/>
+                    <Button Grid.Column="1" Grid.Row="5" Margin="3" Width="45" Height="15" Command="{Binding GenerateBankData}"/>
+                    <CheckBox Grid.Column="1" Grid.Row="6" Margin="3" IsChecked="{Binding Path=Sepa, Mode=TwoWay}"/>
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right"/>
             </StackPanel>

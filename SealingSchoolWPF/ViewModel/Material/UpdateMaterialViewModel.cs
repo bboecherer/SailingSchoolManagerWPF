@@ -175,18 +175,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("Notes");
             }
         }
-        public string Documents
-        {
-            get
-            {
-                return MaterialDummy.;
-            }
-            set
-            {
-                _documents = value;
-                this.OnPropertyChanged("Documents");
-            }
-        }
+        
 
         private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
         public string ImageSourceSave

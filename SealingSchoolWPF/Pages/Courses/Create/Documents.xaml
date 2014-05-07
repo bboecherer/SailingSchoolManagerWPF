@@ -15,16 +15,13 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                 
                 </Grid>
-                <Button:CreateButtons HorizontalAlignment="Right" />
+                <Button:CreateButtons HorizontalAlignment="Right" Margin="5"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
