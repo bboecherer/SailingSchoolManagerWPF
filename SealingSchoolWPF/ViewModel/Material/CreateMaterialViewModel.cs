@@ -170,16 +170,25 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
         private string _documents;
-        public string Documents
+        public IEnumerable<MaterialType> MaterialTypeTypeValues
         {
             get
             {
-                return _documents;
+                return Enum.GetValues(typeof(MaterialType))
+                    .Cast<MaterialType>();
+            }
+        }
+        private MaterialType _materialType;
+        public MaterialType MaterialType
+        {
+            get
+            {
+                return _materialType;
             }
             set
             {
-                _documents = value;
-                this.OnPropertyChanged("Documents");
+                _materialType = value;
+                this.OnPropertyChanged("MaterialType");
             }
         }
 
@@ -247,6 +256,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             Model.RepairAction = this.RepairAction;
             Model.SerialNumber = this.SerialNumber;
             Model.Currency = this.Currency;
+            Model.MaterialType = this.MaterialType;
             
 
             Model.AdditionalInfo = this.Notes ;
@@ -282,6 +292,10 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             this.Brand = null;
             this.Price = 0;
             this.Notes = null;
+            this.MaterialType = MaterialType.Material;
+            this.Currency = Currency.EUR;
+            this.SerialNumber = null;
+
             
         }
 

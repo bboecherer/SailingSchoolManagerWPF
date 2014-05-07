@@ -28,6 +28,6 @@ namespace SealingSchoolWPF.Data
         public DbSet<ContactData> Contacts { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<InfoBox> InfoBoxes { get; set; }
-        public DbSet<Boat> Boats { get; set; }
+        
     }
 }

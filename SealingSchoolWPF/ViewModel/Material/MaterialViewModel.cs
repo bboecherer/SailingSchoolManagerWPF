@@ -115,6 +115,27 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
+        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(MaterialType))
+                    .Cast<MaterialType>();
+            }
+        }
+        public MaterialType MaterialType
+        {
+            get
+            {
+                return Model.MaterialType;
+            }
+            set
+            {
+                Model.MaterialType = value;
+                this.OnPropertyChanged("MaterialType");
+            }
+        }
+
         public string RepairAction
         {
             get

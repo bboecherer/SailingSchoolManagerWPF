@@ -44,6 +44,7 @@ namespace SealingSchoolWPF.Pages.Material.Update
             mat.Currency = material.Currency;
             mat.RepairAction = material.RepairAction;
             mat.SerialNumber = material.SerialNumber;
+            mat.MaterialType = material.MaterialType;
             return mat;
         }
         private void ModernWindow_Closed(object sender, EventArgs e)

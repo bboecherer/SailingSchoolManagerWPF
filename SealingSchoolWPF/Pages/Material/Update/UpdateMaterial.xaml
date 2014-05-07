@@ -5,7 +5,7 @@
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="Material" IsTitleVisible="True"
        ContentSource="/Pages/Material/Update/Base.xaml"
-       Height="450" Width="500" Closed="ModernWindow_Closed"
+       Height="550" Width="500" Closed="ModernWindow_Closed"
       >
 
     <mui:ModernWindow.MenuLinkGroups>

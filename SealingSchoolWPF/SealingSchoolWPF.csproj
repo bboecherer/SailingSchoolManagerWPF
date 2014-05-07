@@ -115,12 +115,11 @@
     <Compile Include="Data\InstructorMgr.cs" />
     <Compile Include="Data\CourseMgr.cs" />
     <Compile Include="Data\MaterialMgr.cs" />
-    <Compile Include="Data\BoatMgr.cs" />
     <Compile Include="Data\StudentMgr.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\BankAccountData.cs" />
-    <Compile Include="Model\Boat.cs" />
+    <Compile Include="Model\MaterialType.cs" />
     <Compile Include="Model\MaterialStatus.cs" />
     <Compile Include="Model\ContactData.cs" />
     <Compile Include="Model\CourseStatus.cs" />
@@ -337,7 +336,6 @@
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
     <Compile Include="ViewModel\Material\CreateMaterialViewModel.cs" />
-    <Compile Include="ViewModel\Material\CreateBoatViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialListViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialButtonViewModel.cs" />

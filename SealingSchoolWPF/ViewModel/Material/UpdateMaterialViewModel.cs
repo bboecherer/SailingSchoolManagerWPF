@@ -44,7 +44,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
-        
+
 
         public string Name
         {
@@ -163,6 +163,26 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 }
             }
         }
+        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(MaterialType))
+                    .Cast<MaterialType>();
+            }
+        }
+        public MaterialType MaterialType
+        {
+            get
+            {
+                return MaterialDummy.MaterialType;
+            }
+            set
+            {
+                MaterialDummy.MaterialType = value;
+                this.OnPropertyChanged("MaterialType");
+            }
+        }
         public string Notes
         {
             get
@@ -175,7 +195,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("Notes");
             }
         }
-        
+
 
         private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
         public string ImageSourceSave
@@ -230,7 +250,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             matMgr.Update(Model);
             this.IsButtonEnabled = false;
             this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
-            
+
         }
 
         private void resetSaveButton()
