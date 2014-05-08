@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Content.About"
+﻿<UserControl x:Class="SealingSchoolWPF.General.About"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,7 +8,10 @@
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="TODO: Beschreibung fehlt" Margin="0,0,0,8" TextWrapping="Wrap" />
+                <TextBlock Text="ÜBER" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <TextBlock Text="Sealing School Manager" Margin="0,0,0,8" TextWrapping="Wrap" />
+                <TextBlock Text="Version: 1.0.1" Margin="0,0,0,8" TextWrapping="Wrap" />
+                <TextBlock Text="Copyright Studs@Work AG" Margin="0,0,0,8" TextWrapping="Wrap" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

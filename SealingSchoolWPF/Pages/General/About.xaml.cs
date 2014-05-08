@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Content
+namespace SealingSchoolWPF.General
 {
     /// <summary>
-    /// Interaction logic for SettingsBusinessUnit.xaml
+    /// Interaction logic for About.xaml
     /// </summary>
-    public partial class SettingsBusinessUnit : UserControl
+    public partial class About : UserControl
     {
-        public SettingsBusinessUnit()
+        public About()
         {
             InitializeComponent();
         }

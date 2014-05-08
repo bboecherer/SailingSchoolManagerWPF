@@ -13,7 +13,6 @@ namespace SealingSchoolWPF.Data
         public SchoolDataContext()
             : base("SchoolContext")
         {
-
         }
 
         public DbSet<Student> Students { get; set; }
@@ -28,6 +27,12 @@ namespace SealingSchoolWPF.Data
         public DbSet<ContactData> Contacts { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<InfoBox> InfoBoxes { get; set; }
-        
+        public DbSet<BusinessUnit> BusinessUnits { get; set; }
+        public DbSet<Vat> Vats { get; set; }
+        public DbSet<PdfTemplate> PdfTemplates { get; set; }
+        public DbSet<MailTemplate> MailTemplates { get; set; }
+        public DbSet<Fee> Fees { get; set; }
+        public DbSet<GeneralFee> GeneralFees { get; set; }
+
     }
 }

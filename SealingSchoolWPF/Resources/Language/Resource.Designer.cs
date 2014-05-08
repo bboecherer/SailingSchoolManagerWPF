@@ -88,6 +88,25 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Konto Inhaber.
+        /// </summary>
+        public static string AccountOwnerLong {
+            get {
+                return ResourceManager.GetString("AccountOwnerLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kto. Inh..
+        /// </summary>
+        public static string AccountOwnerShort {
+            get {
+                return ResourceManager.GetString("AccountOwnerShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informationen.
         ///   Sucht eine lokalisierte Zeichenfolge, die Informationen ähnelt.
         /// </summary>
         public static string AdditionalInfo {
@@ -97,7 +116,16 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Adresse ähnelt.
+        ///   Looks up a localized string similar to Admin Email.
+        /// </summary>
+        public static string AdminMail {
+            get {
+                return ResourceManager.GetString("AdminMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresse.
         /// </summary>
         public static string Adress {
             get {
@@ -421,6 +449,16 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ende.
         ///   Sucht eine lokalisierte Zeichenfolge, die Ende ähnelt.
         /// </summary>
         public static string End {
@@ -430,6 +468,34 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ext. Bezeichnung.
+        /// </summary>
+        public static string extLabel {
+            get {
+                return ResourceManager.GetString("extLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fax 1.
+        /// </summary>
+        public static string Fax1 {
+            get {
+                return ResourceManager.GetString("Fax1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fax 2.
+        /// </summary>
+        public static string Fax2 {
+            get {
+                return ResourceManager.GetString("Fax2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vorname.
         ///   Sucht eine lokalisierte Zeichenfolge, die Vorname ähnelt.
         /// </summary>
         public static string Firstname {
@@ -700,6 +766,34 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zeile 1.
+        /// </summary>
+        public static string Row1 {
+            get {
+                return ResourceManager.GetString("Row1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zeile 2.
+        /// </summary>
+        public static string Row2 {
+            get {
+                return ResourceManager.GetString("Row2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zeile 3.
+        /// </summary>
+        public static string Row3 {
+            get {
+                return ResourceManager.GetString("Row3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speichern.
         ///   Sucht eine lokalisierte Zeichenfolge, die Speichern ähnelt.
         /// </summary>
         public static string Save_ToolTip {
@@ -790,6 +884,25 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spezifisch 1.
+        /// </summary>
+        public static string Spezify1 {
+            get {
+                return ResourceManager.GetString("Spezify1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spezifisch 2.
+        /// </summary>
+        public static string Spezify2 {
+            get {
+                return ResourceManager.GetString("Spezify2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SRC.
         ///   Sucht eine lokalisierte Zeichenfolge, die SRC ähnelt.
         /// </summary>
         public static string SRC {
@@ -836,6 +949,34 @@ namespace SealingSchoolWPF.Resources.Language {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die UBI ähnelt.
+        ///   Looks up a localized string similar to Swift.
+        /// </summary>
+        public static string Swift {
+            get {
+                return ResourceManager.GetString("Swift", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tel 1.
+        /// </summary>
+        public static string Tel1 {
+            get {
+                return ResourceManager.GetString("Tel1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tel 2.
+        /// </summary>
+        public static string Tel2 {
+            get {
+                return ResourceManager.GetString("Tel2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UBI.
         /// </summary>
         public static string UBI {
             get {
@@ -854,6 +995,34 @@ namespace SealingSchoolWPF.Resources.Language {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Willkommen ähnelt.
+        ///   Looks up a localized string similar to USt.
+        /// </summary>
+        public static string Ust {
+            get {
+                return ResourceManager.GetString("Ust", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VAT ID.
+        /// </summary>
+        public static string UstId {
+            get {
+                return ResourceManager.GetString("UstId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Webseite.
+        /// </summary>
+        public static string Website {
+            get {
+                return ResourceManager.GetString("Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Willkommen.
         /// </summary>
         public static string Welcome {
             get {
