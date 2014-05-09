@@ -19,8 +19,6 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="28" />
                     </Grid.RowDefinitions>
@@ -31,25 +29,18 @@
                     <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.MaterialName}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Brand}"/>
                     <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.SerialNumber}"/>
-                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Pricing}"/>
-                    <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.MaterialStatus}"/>
-                    <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.MaterialType}"/>
-                    <Label Grid.Row="7" Grid.Column="0" Content="{x:Static resx:Resource.RepairAction}"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.MaterialType}"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.MaterialStatus}"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.RepairAction}"/>
 
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Name}"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Brand}"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding SerialNumber}"/>
-                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Price}"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Name}" IsEnabled="False" IsReadOnly="True"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Brand}" IsEnabled="False" IsReadOnly="True"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding SerialNumber}" IsEnabled="False" IsReadOnly="True"/>
+                    <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
+                		SelectedItem="{Binding MaterialType}" ItemsSource="{Binding MaterialTypeTypeValues}" IsEnabled="False" IsReadOnly="True"/>
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
-                		SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
-
-                    <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"
                 		SelectedItem="{Binding MaterialStatus}" ItemsSource="{Binding MaterialStatusTypeValues}"/>
-
-                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
-                		SelectedItem="{Binding MaterialType}" ItemsSource="{Binding MaterialTypeTypeValues}"/>
-                    <TextBox Grid.Column="1" Grid.Row="7" Margin="3" TextWrapping="Wrap"  
+                    <TextBox Grid.Column="1" Grid.Row="5" Margin="3" TextWrapping="Wrap"  
                 		Height="100" AcceptsReturn="True"
                 		Text="{Binding RepairAction}" />
 

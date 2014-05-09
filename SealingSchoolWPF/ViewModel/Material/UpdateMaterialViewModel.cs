@@ -74,7 +74,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
-        public decimal Price
+        public Decimal Price
         {
             get
             {

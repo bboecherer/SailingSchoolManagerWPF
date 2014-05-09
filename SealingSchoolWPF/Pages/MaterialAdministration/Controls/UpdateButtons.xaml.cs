@@ -1,6 +1,6 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Pages.MaterialAdministration.Administration;
-using SealingSchoolWPF.ViewModel.MaterialViewModel;
+using SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,7 +28,7 @@ namespace SealingSchoolWPF.Pages.MaterialAdministration.Controls
         public UpdateButtons()
         {
             InitializeComponent();
-            var viewModel = UpdateMaterialViewModel.Instance;
+            var viewModel = UpdateMaterialAdministrationViewModel.Instance;
             this.DataContext = viewModel;
         }
 

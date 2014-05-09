@@ -13,7 +13,7 @@ namespace SealingSchoolWPF.Model
         public int MaterialId { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
-        public decimal Price { get; set; }
+        public Decimal Price { get; set; }
         public Currency Currency { get; set; }
         public MaterialStatus MaterialStatus { get; set; }
         public MaterialType MaterialType { get; set; }
