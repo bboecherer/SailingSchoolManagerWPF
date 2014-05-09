@@ -438,4 +438,7 @@
   <data name="MaterialType" xml:space="preserve">
     <value>Material Art</value>
   </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
 </root>
