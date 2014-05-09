@@ -248,6 +248,27 @@
     <Compile Include="Pages\Instructor\Update\UpdateInstructor.xaml.cs">
       <DependentUpon>UpdateInstructor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MaterialAdministration\Administration\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MaterialAdministration\Administration\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MaterialAdministration\Administration\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MaterialAdministration\Administration\AdministrateMaterial.xaml.cs">
+      <DependentUpon>AdministrateMaterial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MaterialAdministration\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MaterialAdministration\General\MaterialAdministrationListView.xaml.cs">
+      <DependentUpon>MaterialAdministrationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MaterialAdministration\General\MaterialAdministrationView.xaml.cs">
+      <DependentUpon>MaterialAdministrationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Material\Controls\CreateButtons.xaml.cs">
       <DependentUpon>CreateButtons.xaml</DependentUpon>
     </Compile>
@@ -360,6 +381,10 @@
     <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
+    <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationButtonViewModel.cs" />
+    <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationListViewModel.cs" />
+    <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationViewModel.cs" />
+    <Compile Include="ViewModel\MaterialAdministration\UpdateMaterialAdministrationViewModel.cs" />
     <Compile Include="ViewModel\Material\CreateMaterialViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialViewModel.cs" />
     <Compile Include="ViewModel\Material\MaterialListViewModel.cs" />
@@ -615,6 +640,34 @@
       <DependentUpon>TrainingsActivities.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="Pages\MaterialAdministration\Administration\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MaterialAdministration\Administration\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MaterialAdministration\Administration\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MaterialAdministration\Administration\AdministrateMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MaterialAdministration\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MaterialAdministration\General\MaterialAdministrationListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MaterialAdministration\General\MaterialAdministrationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Material\Controls\CreateButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
