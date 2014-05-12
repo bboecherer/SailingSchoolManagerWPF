@@ -9,5 +9,8 @@ namespace SealingSchoolWPF.Model
     public enum MaterialType
     {
         Boot, Material
+
     }
+
+
 }

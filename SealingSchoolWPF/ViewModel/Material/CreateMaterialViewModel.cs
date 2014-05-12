@@ -93,8 +93,8 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
-        private decimal _price;
-        public decimal Price
+        private Decimal _price;
+        public Decimal Price
         {
             get
             {

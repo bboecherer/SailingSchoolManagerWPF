@@ -331,7 +331,7 @@
     <value>Alle Felder leeren</value>
   </data>
   <data name="MaterialName" xml:space="preserve">
-    <value>Material Name</value>
+    <value>Materialname</value>
   </data>
   <data name="Brand" xml:space="preserve">
     <value>Marke</value>
@@ -340,7 +340,7 @@
     <value>Materialverwaltung</value>
   </data>
   <data name="MaterialStatus" xml:space="preserve">
-    <value>Material Status</value>
+    <value>Materialstatus</value>
   </data>
   <data name="RepairAction" xml:space="preserve">
     <value>Reparaturvermerk</value>
@@ -436,7 +436,10 @@
     <value>Seriennummer</value>
   </data>
   <data name="MaterialType" xml:space="preserve">
-    <value>Material Art</value>
+    <value>Materialart</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
   </data>
   <data name="SaveNext_ToolTip_Desc" xml:space="preserve">
     <value>Speichern und Neu</value>

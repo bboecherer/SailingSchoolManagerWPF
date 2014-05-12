@@ -1,6 +1,6 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Material.Update;
+using SealingSchoolWPF.Pages.MaterialAdministration.Administration;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,24 +12,24 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.MaterialViewModel
+namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
 {
-    public class UpdateMaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
+    public class UpdateMaterialAdministrationViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {
         public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
         MaterialMgr matMgr = new MaterialMgr();
 
-        public UpdateMaterialViewModel(SealingSchoolWPF.Model.Material model)
+        public UpdateMaterialAdministrationViewModel(SealingSchoolWPF.Model.Material model)
             : base(model)
         {
             instance = this;
             this.MaterialDummy = model;
         }
 
-        static UpdateMaterialViewModel instance = null;
+        static UpdateMaterialAdministrationViewModel instance = null;
         static readonly object padlock = new object();
 
-        public static UpdateMaterialViewModel Instance
+        public static UpdateMaterialAdministrationViewModel Instance
         {
             get
             {
@@ -37,14 +37,12 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new UpdateMaterialViewModel(new SealingSchoolWPF.Model.Material());
+                        instance = new UpdateMaterialAdministrationViewModel(new SealingSchoolWPF.Model.Material());
                     }
                     return instance;
                 }
             }
         }
-
-
 
         public string Name
         {
@@ -74,7 +72,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
-        public Decimal Price
+        public decimal Price
         {
             get
             {

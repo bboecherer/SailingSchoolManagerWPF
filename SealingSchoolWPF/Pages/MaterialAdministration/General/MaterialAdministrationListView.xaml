@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.MaterialListView"
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.MaterialAdministrationListView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -20,9 +20,11 @@
                             Binding="{Binding Name }" />
                 <DataGridTextColumn Header="{x:Static resx:Resource.Brand}" 
                             Binding="{Binding Brand }" />
+                <DataGridTextColumn Header="{x:Static resx:Resource.MaterialStatus}" 
+                            Binding="{Binding MaterialStatus}"/>
                 <DataGridTextColumn Header="{x:Static resx:Resource.MaterialType}" 
                             Binding="{Binding MaterialType}"/>
-
+               
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

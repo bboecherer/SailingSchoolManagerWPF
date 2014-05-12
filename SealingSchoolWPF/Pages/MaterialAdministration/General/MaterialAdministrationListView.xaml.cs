@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.Material.Update;
-using SealingSchoolWPF.ViewModel.MaterialViewModel;
+﻿using SealingSchoolWPF.Pages.MaterialAdministration.Administration;
+using SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +20,9 @@ namespace SealingSchoolWPF.Pages
     /// <summary>
     /// Interaction logic for MaterialListView.xaml
     /// </summary>
-    public partial class MaterialListView : UserControl
+    public partial class MaterialAdministrationListView : UserControl
     {
-        public MaterialListView()
+        public MaterialAdministrationListView()
         {
             InitializeComponent();
         }
@@ -30,9 +30,9 @@ namespace SealingSchoolWPF.Pages
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var grid = sender as DataGrid;
-            var material = (SealingSchoolWPF.ViewModel.MaterialViewModel.MaterialViewModel)grid.SelectedItem;
+            var material = (SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel.MaterialAdministrationViewModel)grid.SelectedItem;
 
-            UpdateMaterial window = new UpdateMaterial(material);
+            AdministrateMaterial window = new AdministrateMaterial(material);
             window.ShowDialog();
         }
     }
