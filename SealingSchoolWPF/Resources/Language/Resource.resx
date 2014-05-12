@@ -294,8 +294,8 @@
   <data name="Save_ToolTip" xml:space="preserve">
     <value>Speichern</value>
   </data>
-  <data name="Save_ToolTip_Desc" xml:space="preserve">
-    <value>Ausgewählten Datensatz speichern</value>
+  <data name="SaveClose_ToolTip_Desc" xml:space="preserve">
+    <value>Ausgewählten Datensatz speichern und Eingabemaske schliessen</value>
   </data>
   <data name="Currency" xml:space="preserve">
     <value>Währung</value>
@@ -440,5 +440,11 @@
   </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
+  </data>
+  <data name="SaveNext_ToolTip_Desc" xml:space="preserve">
+    <value>Speichern und Neu</value>
+  </data>
+  <data name="Save_ToolTip_Desc" xml:space="preserve">
+    <value>Ausgewählten Datensatz speichern</value>
   </data>
 </root>

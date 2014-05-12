@@ -143,8 +143,32 @@
     <Compile Include="Model\TrainingActivity.cs" />
     <Compile Include="Model\Fee.cs" />
     <Compile Include="Model\Vat.cs" />
+    <Compile Include="Pages\BusinessUnit\Templates.xaml.cs">
+      <DependentUpon>Templates.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\AdressControl.xaml.cs">
+      <DependentUpon>AdressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\BankControl.xaml.cs">
+      <DependentUpon>BankControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CourseBaseControl.xaml.cs">
+      <DependentUpon>CourseBaseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\DocumentControl.xaml.cs">
+      <DependentUpon>DocumentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\NotesControl.xaml.cs">
+      <DependentUpon>NotesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\PriceControl.xaml.cs">
+      <DependentUpon>PriceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\QualificationControl.xaml.cs">
+      <DependentUpon>QualificationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\UpdateButtons.xaml.cs">
       <DependentUpon>UpdateButtons.xaml</DependentUpon>
@@ -401,6 +425,38 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\BusinessUnit\Templates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\AdressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\BankControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\CourseBaseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\DocumentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\NotesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\PriceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\QualificationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\General\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -859,6 +915,15 @@
     <Content Include="Resources\Images\mui.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\NewRow_14x12x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\NewRow_291.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\pageinspector.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\pencil_001_16xSM.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -944,6 +1009,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\Symbols_Complete_and_ok_32xSM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Undo_16x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.Controls.QualificationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SSS}"/>
+        <Label Grid.Row="1" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SKS}"/>
+        <Label Grid.Row="2" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SBFSEA}"/>
+        <Label Grid.Row="3" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SBFBINNEN}"/>
+        <Label Grid.Row="4" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SRC}"/>
+        <Label Grid.Row="5" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.UBI}"/>
+        <Label Grid.Row="6" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.DSV}"/>
+        <Label Grid.Row="7" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.LifeGuard}"/>
+        <Label Grid.Row="8" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.SHS}"/>
+
+        <CheckBox Grid.Column="1" Grid.Row="0" Margin="3" IsChecked="{Binding Path=SSS, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="1" Margin="3" IsChecked="{Binding Path=SKS, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="2" Margin="3" IsChecked="{Binding Path=SBFSEA, Mode=TwoWay}" />
+        <CheckBox Grid.Column="1" Grid.Row="3" Margin="3" IsChecked="{Binding Path=SBFBINNEN, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="4" Margin="3" IsChecked="{Binding Path=SRC, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="5" Margin="3" IsChecked="{Binding Path=UBI, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="6" Margin="3" IsChecked="{Binding Path=DSV, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="7" Margin="3" IsChecked="{Binding Path=LifeGuard, Mode=TwoWay}"/>
+        <CheckBox Grid.Column="1" Grid.Row="8" Margin="3" IsChecked="{Binding Path=SHS, Mode=TwoWay}"/>
+
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="0" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=SSSDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="1" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=SKSDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="2" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=SBFSEADate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="3" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=SBFBINNENDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="4" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=SRCDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="5" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=UBIDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="6" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=DSVDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="7" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=LifeGuardDate}"/>
+        <xctk:DateTimePicker Grid.Column="2" Grid.Row="8" Margin="3" 
+                                         Format="ShortDate" Value="{Binding Path=SHSDate}"/>
+    </Grid>
+</UserControl>

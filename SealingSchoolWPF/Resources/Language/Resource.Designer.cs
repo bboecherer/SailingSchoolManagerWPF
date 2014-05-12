@@ -808,6 +808,24 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ausgewählten Datensatz speichern und Eingabemaske schliessen.
+        /// </summary>
+        public static string SaveClose_ToolTip_Desc {
+            get {
+                return ResourceManager.GetString("SaveClose_ToolTip_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speichern und Neu.
+        /// </summary>
+        public static string SaveNext_ToolTip_Desc {
+            get {
+                return ResourceManager.GetString("SaveNext_ToolTip_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SBF Binnen.
         /// </summary>
         public static string SBFBINNEN {

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Courses.Update.Financial"
+﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  x:Class="SealingSchoolWPF.Pages.Courses.Update.Financial"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"
@@ -12,35 +12,7 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="200" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.NetPrice}"/>
-                    <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.GrossPrice}"/>
-                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.NetAmount}"/>
-                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="0" Margin="3" Minimum="0.00" FormatString="C2" 
-                                        Value="{Binding Path=NetPrice}" Increment=".5" />
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="1" Margin="3" Minimum="0.00" FormatString="C2" 
-                                        IsEnabled="False" IsReadOnly="True"
-                                        Value="{Binding Path=GrossPrice}" Increment=".5" />
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="2" Margin="3" Minimum="0.00" FormatString="C2" 
-                                        IsEnabled="False" IsReadOnly="True"
-                                        Value="{Binding Path=NetAmount}" Increment=".5" />
-                    <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
-                               SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
-                </Grid>
+                <Controls:PriceControl />
                 <Button:UpdateButtons HorizontalAlignment="Right" Margin="5"/>
             </StackPanel>
         </ScrollViewer>

@@ -31,26 +31,5 @@ namespace SealingSchoolWPF.ViewModel.StudentVM
             CreateStudent window = new CreateStudent();
             window.ShowDialog();
         }
-
-
-        private ICommand refreshCommand;
-
-        public ICommand RefreshCommand
-        {
-            get
-            {
-                if (refreshCommand == null)
-                {
-                    refreshCommand = new RelayCommand(p => ExecuteRefreshCommand());
-                }
-                return refreshCommand;
-            }
-        }
-
-        private void ExecuteRefreshCommand()
-        {
-            StudentListViewModel viewModel = StudentListViewModel.Instance;
-
-        }
     }
 }

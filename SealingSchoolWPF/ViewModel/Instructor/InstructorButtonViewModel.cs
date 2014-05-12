@@ -31,25 +31,5 @@ namespace SealingSchoolWPF.ViewModel.Course
             CreateInstructor window = new CreateInstructor();
             window.ShowDialog();
         }
-
-
-        private ICommand refreshCommand;
-
-        public ICommand RefreshCommand
-        {
-            get
-            {
-                if (refreshCommand == null)
-                {
-                    refreshCommand = new RelayCommand(p => ExecuteRefreshCommand());
-                }
-                return refreshCommand;
-            }
-        }
-
-        private void ExecuteRefreshCommand()
-        {
-
-        }
     }
 }

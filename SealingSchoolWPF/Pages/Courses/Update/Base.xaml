@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Courses.Update.Base"
+﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  x:Class="SealingSchoolWPF.Pages.Courses.Update.Base"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -12,38 +12,7 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="100" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="28" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="250" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Label}"/>
-                    <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Description}"/>
-                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.Start}"/>
-                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.End}"/>
-                    <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Duration}"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.Capacity}"/>
-                    <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.Instructor}"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Label}"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Description}"/>
-                    <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Value="{Binding Path=StartDate}"/>
-                    <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" Value="{Binding Path=EndDate}"/>
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="4" Margin="3" Minimum="0"  
-                                        Value="{Binding Path=Duration}" Increment="1" />
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3" Minimum="0" 
-                                        Value="{Binding Path=Capacity}" Increment="1" />
-                    <ComboBox Grid.Column="1" Grid.Row="6" Margin="3"
-                               SelectedItem="{Binding Instructor}" ItemsSource="{Binding InstructorTypeValues}"/>
-                </Grid>
+                <Controls:CourseBaseControl />
                 <Button:UpdateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>
         </ScrollViewer>

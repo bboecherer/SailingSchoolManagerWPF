@@ -573,7 +573,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
+        private string _imageSourceClear = "/Resources/Images/Undo_16x.png";
         public string ImageSourceClear
         {
             get
@@ -724,6 +724,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             this.Bic = null;
             this.Iban = null;
             this.Notes = null;
+            this.Sepa = false;
         }
 
         private ICommand generateBankData;
@@ -741,9 +742,18 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         private void ExecuteBankCommand()
         {
-            this.BankName = GetGermanBank(this.BankNo, this.AccountNo);
-            this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
-            this.Bic = GetGermanBic(this.Iban);
+            try
+            {
+                this.BankName = GetGermanBank(this.BankNo, this.AccountNo);
+                this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
+                this.Bic = GetGermanBic(this.Iban);
+            }
+            catch (Exception ex)
+            {
+                this.BankName = "Nicht gefunden";
+                this.Iban = "Nicht gefunden";
+                this.Bic = "Nicht gefunden";
+            }
         }
 
 
@@ -761,7 +771,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
             catch (IbanException ex)
             {
-                //  do some error handling
+                this.Iban = "Nicht gefunden";
             }
 
             return iban;
@@ -779,7 +789,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
             catch (IbanException ex)
             {
-                //  do some error handling
+                this.
+                    BankName = "Nicht gefunden";
             }
 
             return bank.Name;
@@ -797,7 +808,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
             catch (IbanException ex)
             {
-                //  do some error handling
+                this.Bic = "Nicht gefunden";
             }
 
             return bic;

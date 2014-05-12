@@ -297,7 +297,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
+        private string _imageSourceClear = "/Resources/Images/Undo_16x.png";
         public string ImageSourceClear
         {
             get
@@ -373,6 +373,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.Description = null;
             this.GrossPrice = 0;
             this.Instructor = null;
+            this.Notes = null;
         }
 
         public void Close()

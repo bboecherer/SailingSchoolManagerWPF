@@ -1,4 +1,7 @@
-﻿using SealingSchoolWPF.Data;
+﻿using AS.IBAN;
+using AS.IBAN.Helper;
+using AS.IBAN.Model;
+using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.Pages.Student.Create;
 using System;
@@ -225,6 +228,92 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             Model.ModifiedOn = DateTime.Now;
             studMgr.Update(Model);
+        }
+
+        private ICommand generateBankData;
+        public ICommand GenerateBankData
+        {
+            get
+            {
+                if (generateBankData == null)
+                {
+                    generateBankData = new RelayCommand(p => ExecuteBankCommand());
+                }
+                return generateBankData;
+            }
+        }
+
+        private void ExecuteBankCommand()
+        {
+            try
+            {
+                this.BankName = GetGermanBank(this.BankNo, this.AccountNo);
+                this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
+                this.Bic = GetGermanBic(this.Iban);
+            }
+            catch (Exception ex)
+            {
+                this.BankName = "Nicht gefunden";
+                this.Iban = "Nicht gefunden";
+                this.Bic = "Nicht gefunden";
+            }
+        }
+
+
+        private string GenerateGermanIban(string bankIdent, string accountNumber)
+        {
+            IbanGenerator generator = new IbanGenerator();
+            string iban = string.Empty;
+            string bic = string.Empty;
+
+            try
+            {
+                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
+                iban = result.IBAN.IBAN;
+                bic = result.BIC.Bic;
+            }
+            catch (IbanException ex)
+            {
+                this.Iban = "Nicht gefunden";
+            }
+
+            return iban;
+        }
+
+        private string GetGermanBank(string bankIdent, string accountNumber)
+        {
+            IbanGenerator generator = new IbanGenerator();
+            Bank bank = null;
+
+            try
+            {
+                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
+                bank = result.IBAN.Bank;
+            }
+            catch (IbanException ex)
+            {
+                this.BankName = "Nicht gefunden";
+            }
+
+            return bank.Name;
+        }
+
+        private string GetGermanBic(string iban)
+        {
+            IbanGetBic getBic = new IbanGetBic();
+            string bic = string.Empty;
+
+            try
+            {
+                var result = getBic.GetBic(iban);
+                bic = result.Bic;
+            }
+            catch (IbanException ex)
+            {
+                this.Bic = "Nicht gefunden";
+            }
+
+            return bic;
         }
     }
 }
