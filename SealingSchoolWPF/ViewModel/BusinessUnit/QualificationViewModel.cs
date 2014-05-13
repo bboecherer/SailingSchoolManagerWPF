@@ -138,5 +138,24 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             qualification.Description = this.Description;
             qualificationMgr.Create(qualification);
         }
+
+        private ICommand deleteRow;
+
+        public ICommand DeleteRow
+        {
+            get
+            {
+                if (deleteRow == null)
+                {
+                    deleteRow = new RelayCommand(p => ExecuteDeleteCommand());
+                }
+                return deleteRow;
+            }
+        }
+
+        private void ExecuteDeleteCommand()
+        {
+
+        }
     }
 }
