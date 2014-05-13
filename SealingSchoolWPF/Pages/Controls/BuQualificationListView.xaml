@@ -72,7 +72,8 @@
                 <DataGridTemplateColumn IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button BorderThickness="0" Background="Transparent" Command="{Binding DeleteRow}">
+                            <Button BorderThickness="0" Background="Transparent" Command="{Binding DeleteRow}"
+                                     CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=DataContext}">
                                 <Button.ToolTip>
                                     <ToolTip>
                                         <StackPanel>

@@ -1,6 +1,8 @@
 ﻿using SealingSchoolWPF.Data;
+using SealingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -155,7 +157,9 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void ExecuteDeleteCommand()
         {
-
+            Qualification quali = qualificationMgr.GetById(this.Id);
+            qualificationMgr.Delete(quali);
+            var dummy = this.qualifications;
         }
     }
 }

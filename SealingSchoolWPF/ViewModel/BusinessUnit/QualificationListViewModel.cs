@@ -59,6 +59,5 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualificationMgr.GetAll();
             qualifications = new ObservableCollection<QualificationViewModel>(qualificationsList.Select(q => new QualificationViewModel(q)));
         }
-
     }
 }

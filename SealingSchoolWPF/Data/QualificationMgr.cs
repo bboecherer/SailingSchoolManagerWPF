@@ -26,7 +26,12 @@ namespace SealingSchoolWPF.Data
 
         public void Delete(Qualification entity)
         {
-            throw new NotImplementedException();
+            using (var ctx = new SchoolDataContext())
+            {
+                ctx.Qualifications.Attach(entity);
+                ctx.Qualifications.Remove(entity);
+                ctx.SaveChanges();
+            }
         }
 
         public void Create(Qualification entity)
@@ -60,7 +65,12 @@ namespace SealingSchoolWPF.Data
 
         public Qualification GetById(int id)
         {
-            throw new NotImplementedException();
+            Qualification quali;
+            using (var ctx = new SchoolDataContext())
+            {
+                quali = ctx.Qualifications.Find(id);
+            }
+            return quali;
         }
     }
 }
