@@ -83,7 +83,5 @@ namespace SealingSchoolWPF.ViewModel.Course
             CreateCourse window = new CreateCourse();
             window.ShowDialog();
         }
-
-
     }
 }

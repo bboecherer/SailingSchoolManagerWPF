@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.BusinessUnit
+namespace SealingSchoolWPF.Pages.Controls
 {
     /// <summary>
-    /// Interaction logic for GeneralControl.xaml
+    /// Interaction logic for AdressControl.xaml
     /// </summary>
-    public partial class GeneralControl : UserControl
+    public partial class BuAdressControl : UserControl
     {
-        public GeneralControl()
+        public BuAdressControl()
         {
             InitializeComponent();
         }

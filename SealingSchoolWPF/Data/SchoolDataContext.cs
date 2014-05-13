@@ -33,6 +33,7 @@ namespace SealingSchoolWPF.Data
         public DbSet<MailTemplate> MailTemplates { get; set; }
         public DbSet<Fee> Fees { get; set; }
         public DbSet<GeneralFee> GeneralFees { get; set; }
+        public DbSet<Qualification> Qualifications { get; set; }
 
     }
 }

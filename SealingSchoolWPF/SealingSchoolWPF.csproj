@@ -103,18 +103,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\QualificationMgr.cs" />
     <Compile Include="Model\MaterialType.cs" />
-    <Compile Include="Pages\BusinessUnit\AdressControl.xaml.cs">
-      <DependentUpon>AdressControl.xaml</DependentUpon>
+    <Compile Include="Model\Qualification.cs" />
+    <Compile Include="Pages\Controls\BuAdressControl.xaml.cs">
+      <DependentUpon>BuAdressControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BusinessUnit\BankControl.xaml.cs">
-      <DependentUpon>BankControl.xaml</DependentUpon>
+    <Compile Include="Pages\Controls\BuBankControl.xaml.cs">
+      <DependentUpon>BuBankControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BusinessUnit\BusinessUnitSettings.xaml.cs">
       <DependentUpon>BusinessUnitSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BusinessUnit\GeneralControl.xaml.cs">
-      <DependentUpon>GeneralControl.xaml</DependentUpon>
+    <Compile Include="Pages\Controls\BuGeneralControl.xaml.cs">
+      <DependentUpon>BuGeneralControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BusinessUnit\Qualification.xaml.cs">
+      <DependentUpon>Qualification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\BuQualificationControl.xaml.cs">
+      <DependentUpon>BuQualificationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BusinessUnit\SettingsInvoice.xaml.cs">
       <DependentUpon>SettingsInvoice.xaml</DependentUpon>
@@ -143,6 +151,9 @@
     <Compile Include="Model\TrainingActivity.cs" />
     <Compile Include="Model\Fee.cs" />
     <Compile Include="Model\Vat.cs" />
+    <Compile Include="Pages\Controls\BuQualificationListView.xaml.cs">
+      <DependentUpon>BuQualificationListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BusinessUnit\Templates.xaml.cs">
       <DependentUpon>Templates.xaml</DependentUpon>
     </Compile>
@@ -389,6 +400,8 @@
       <DependentUpon>Resource.en-US.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BusinessUnit\BusinessUnitViewModel.cs" />
+    <Compile Include="ViewModel\BusinessUnit\QualificationListViewModel.cs" />
+    <Compile Include="ViewModel\BusinessUnit\QualificationViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateCourseViewModel.cs" />
@@ -422,11 +435,11 @@
       <DependentUpon>StudentListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\StudentVM\StudentViewModel.cs" />
-    <Page Include="Pages\BusinessUnit\AdressControl.xaml">
+    <Page Include="Pages\Controls\BuAdressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BusinessUnit\BankControl.xaml">
+    <Page Include="Pages\Controls\BuBankControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -434,7 +447,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BusinessUnit\GeneralControl.xaml">
+    <Page Include="Pages\Controls\BuGeneralControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BusinessUnit\Qualification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Controls\BuQualificationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -450,6 +471,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Controls\BuQualificationListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\BusinessUnit\Templates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

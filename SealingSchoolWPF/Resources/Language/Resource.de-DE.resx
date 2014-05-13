@@ -354,7 +354,7 @@
   <data name="LifeGuard" xml:space="preserve">
     <value>Rettungsschwimmer</value>
   </data>
-  <data name="Qualification" xml:space="preserve">
+  <data name="Qualifications" xml:space="preserve">
     <value>Qualifikationen</value>
   </data>
   <data name="SBFBINNEN" xml:space="preserve">
@@ -446,5 +446,14 @@
   </data>
   <data name="Save_ToolTip_Desc" xml:space="preserve">
     <value>Ausgewählten Datensatz speichern</value>
+  </data>
+  <data name="Qualification" xml:space="preserve">
+    <value>Qualifikation</value>
+  </data>
+  <data name="QualiLong" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="QualiShort" xml:space="preserve">
+    <value>Abkürzung</value>
   </data>
 </root>

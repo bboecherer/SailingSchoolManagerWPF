@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.BusinessUnit
+namespace SealingSchoolWPF.Pages.Controls
 {
     /// <summary>
-    /// Interaction logic for AdressControl.xaml
+    /// Interaction logic for QualificationControl.xaml
     /// </summary>
-    public partial class AdressControl : UserControl
+    public partial class BuQualificationControl : UserControl
     {
-        public AdressControl()
+        public BuQualificationControl()
         {
             InitializeComponent();
+            var viewModel = QualificationViewModel.Instance;
+            this.DataContext = viewModel;
         }
     }
 }
