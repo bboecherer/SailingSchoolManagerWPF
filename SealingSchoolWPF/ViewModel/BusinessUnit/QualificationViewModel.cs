@@ -159,7 +159,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         {
             Qualification quali = qualificationMgr.GetById(this.Id);
             qualificationMgr.Delete(quali);
-            var dummy = this.qualifications;
+           // var dummy = this.qualifications;
         }
     }
 }
