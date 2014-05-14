@@ -1,0 +1,21 @@
+﻿<UserControl xmlns:BusinessUnit="clr-namespace:SealingSchoolWPF.Pages.Controls"  xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  x:Class="SealingSchoolWPF.Pages.BusinessUnit.Material"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="400">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="QUALIFIKATIONEN" Grid.Row="0" Style="{StaticResource Heading2}" />
+            <BusinessUnit:BuQualificationControl Grid.Row="1" />
+            <BusinessUnit:BuQualificationListView  Grid.Row="2" x:Name="qualificationList"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

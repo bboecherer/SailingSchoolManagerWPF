@@ -26,7 +26,6 @@ namespace SealingSchoolWPF.Data
             return Boxes;
         }
 
-
         public void Delete(InfoBox entity)
         {
             using (var ctx = new SchoolDataContext())

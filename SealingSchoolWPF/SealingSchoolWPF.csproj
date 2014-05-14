@@ -105,7 +105,11 @@
     </Compile>
     <Compile Include="Data\QualificationMgr.cs" />
     <Compile Include="Model\MaterialType.cs" />
+    <Compile Include="Model\MaterialTyp.cs" />
     <Compile Include="Model\Qualification.cs" />
+    <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
+      <DependentUpon>Material.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Controls\BuAdressControl.xaml.cs">
       <DependentUpon>BuAdressControl.xaml</DependentUpon>
     </Compile>
@@ -120,6 +124,9 @@
     </Compile>
     <Compile Include="Pages\BusinessUnit\Qualification.xaml.cs">
       <DependentUpon>Qualification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\BuMaterialControl.xaml.cs">
+      <DependentUpon>BuMaterialControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\BuQualificationControl.xaml.cs">
       <DependentUpon>BuQualificationControl.xaml</DependentUpon>
@@ -151,6 +158,9 @@
     <Compile Include="Model\TrainingActivity.cs" />
     <Compile Include="Model\Fee.cs" />
     <Compile Include="Model\Vat.cs" />
+    <Compile Include="Pages\Controls\BuMaterialListView..xaml.cs">
+      <DependentUpon>BuMaterialListView..xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Controls\BuQualificationListView.xaml.cs">
       <DependentUpon>BuQualificationListView.xaml</DependentUpon>
     </Compile>
@@ -435,6 +445,10 @@
       <DependentUpon>StudentListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\StudentVM\StudentViewModel.cs" />
+    <Page Include="Pages\BusinessUnit\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\BuAdressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -455,6 +469,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Controls\BuMaterialControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\BuQualificationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -471,6 +489,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Controls\BuMaterialListView..xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\BuQualificationListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -34,6 +34,6 @@ namespace SealingSchoolWPF.Data
         public DbSet<Fee> Fees { get; set; }
         public DbSet<GeneralFee> GeneralFees { get; set; }
         public DbSet<Qualification> Qualifications { get; set; }
-
+        public DbSet<MaterialTyp> MaterialTyps { get; set; }
     }
 }
