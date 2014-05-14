@@ -24,8 +24,19 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
         public Qualification()
         {
             InitializeComponent();
-            var viewModel = new QualificationListViewModel();
-            qualificationList.DataContext = viewModel;
+            var viewModel = QualificationListViewModel.Instance;
+            this.DataContext = viewModel;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = QualificationListViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as QualificationViewModel;
+            //var grid = sender as DataGrid;
+            //var quali = (SealingSchoolWPF.Model.Qualification)grid.SelectedItem;
+
+            viewModel.ExecuteDeleteCommand(obj.Id);
         }
     }
 }
