@@ -14,7 +14,7 @@
                     <ToolTip>
                         <StackPanel>
                             <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Save_ToolTip}"/>
-                            <TextBlock Text="{x:Static resx:Resource.Save_ToolTip_Desc}"/>
+                            <TextBlock Text="{x:Static resx:Resource.SaveClose_ToolTip_Desc}"/>
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
@@ -27,7 +27,7 @@
                     <ToolTip>
                         <StackPanel>
                             <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Save_ToolTip}"/>
-                            <TextBlock Text="{x:Static resx:Resource.Save_ToolTip_Desc}"/>
+                            <TextBlock Text="{x:Static resx:Resource.SaveNext_ToolTip_Desc}"/>
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
