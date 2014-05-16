@@ -21,7 +21,7 @@
                 <DataGridTextColumn Header="{x:Static resx:Resource.Brand}" 
                             Binding="{Binding Brand }" />
                 <DataGridTextColumn Header="{x:Static resx:Resource.MaterialType}" 
-                            Binding="{Binding MaterialType}"/>
+                            Binding="{Binding MaterialTyp}"/>
 
             </DataGrid.Columns>
         </DataGrid>

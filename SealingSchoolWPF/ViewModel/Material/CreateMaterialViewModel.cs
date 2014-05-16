@@ -333,9 +333,10 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             this.Brand = null;
             this.Price = 0;
             this.Notes = null;
-            //    this.MaterialType = MaterialType.Material;
+            this.MaterialTyp = null;
             this.Currency = Currency.EUR;
             this.SerialNumber = null;
+
 
 
         }

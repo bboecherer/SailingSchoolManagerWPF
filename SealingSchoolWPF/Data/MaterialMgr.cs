@@ -23,6 +23,7 @@ namespace SealingSchoolWPF.Data
 
                 foreach (Material mat in ctx.Materials)
                 {
+                    ctx.Entry(mat).Reference(s => s.MaterialTyp).Load();
                     Materials.Add(mat);
                 }
             }
@@ -67,7 +68,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 Material original = ctx.Materials.Find(entity.MaterialId);
-
+                ctx.Entry(original).Reference(s => s.MaterialTyp).Load();
 
                 original.Name = entity.Name;
                 original.MaterialStatus = entity.MaterialStatus;
@@ -79,6 +80,7 @@ namespace SealingSchoolWPF.Data
                 original.SerialNumber = entity.SerialNumber;
                 original.CreatedOn = entity.CreatedOn;
                 original.ModifiedOn = DateTime.Now;
+                original.MaterialTyp = entity.MaterialTyp;
 
                 if (original != null)
                 {

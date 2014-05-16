@@ -43,7 +43,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                 		SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                     <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"
-                		SelectedItem="{Binding MaterialType}" ItemsSource="{Binding MaterialTypeTypeValues}"/>
+                		SelectedItem="{Binding MaterialTyp}" ItemsSource="{Binding MaterialTypTypeValues}"/>
 
 
                 </Grid>
