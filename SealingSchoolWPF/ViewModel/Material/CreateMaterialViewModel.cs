@@ -219,6 +219,21 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
+        private string _imageSourceNext = "/Resources/Images/arrow_Next_16xLG.png";
+        public string ImageSourceNext
+        {
+            get
+            {
+                return _imageSourceNext;
+            }
+            set
+            {
+                _imageSourceNext = value;
+                this.OnPropertyChanged("ImageSourceNext");
+            }
+        }
+
+
         private string _imageSourceClear = "/Resources/Images/action_Cancel_16xLG.png";
         public string ImageSourceClear
         {
@@ -232,8 +247,28 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("ImageSourceClear");
             }
         }
-        private ICommand addCommand;
 
+        private ICommand addAndNextCommand;
+        public ICommand AddAndNextCommand
+        {
+            get
+            {
+                if (addAndNextCommand == null)
+                {
+                    addAndNextCommand = new RelayCommand(p => ExecuteAddAndNextCommand());
+                }
+                return addAndNextCommand;
+            }
+        }
+
+        private void ExecuteAddAndNextCommand()
+        {
+            SaveModelToDatabase();
+            this.ExecuteClearCommand();
+            this.Close();
+        }
+
+        private ICommand addCommand;
         public ICommand AddCommand
         {
             get
@@ -249,6 +284,13 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
         private void ExecuteAddCommand()
         {
 
+            SaveModelToDatabase();
+
+            Application.Current.Windows[1].Close();
+        }
+
+        private void SaveModelToDatabase()
+        {
             Model.Name = this.Name;
             Model.MaterialStatus = this.MaterialStatus;
             Model.Brand = this.Brand;
@@ -265,14 +307,9 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
 
 
             matMgr.Create(Model);
-
-            this.IsButtonEnabled = false;
-            this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
-            this.ImageSourceClear = "";
         }
 
         private ICommand clearCommand;
-
         public ICommand ClearCommand
         {
             get
