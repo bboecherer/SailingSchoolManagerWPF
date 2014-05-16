@@ -12,6 +12,13 @@ namespace SealingSchoolWPF.Model
         [Key]
         public int Id { get; set; }
         public String Description { get; set; }
+        public String Name { get; set; }
         public bool IsEnabled { get; set; }
+
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

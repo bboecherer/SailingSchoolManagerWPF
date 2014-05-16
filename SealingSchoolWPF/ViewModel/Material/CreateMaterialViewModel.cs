@@ -1,16 +1,10 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Material.Create;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Threading;
 
 namespace SealingSchoolWPF.ViewModel.MaterialViewModel
 {
@@ -41,6 +35,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
         }
 
         MaterialMgr matMgr = new MaterialMgr();
+        MaterialTypMgr matTypMgr = new MaterialTypMgr();
 
         private string _name;
         public string Name
@@ -169,26 +164,35 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("Notes");
             }
         }
-        private string _documents;
-        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        {
+            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
+            {
+                MaterialTypNames.Add(inst);
+            }
+            return MaterialTypNames;
+        }
+        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+
+        public IEnumerable<MaterialTyp> MaterialTypTypeValues
         {
             get
             {
-                return Enum.GetValues(typeof(MaterialType))
-                    .Cast<MaterialType>();
+                return GetMaterialTypNames();
             }
         }
-        private MaterialType _materialType;
-        public MaterialType MaterialType
+        private MaterialTyp _materialTyp;
+        public MaterialTyp MaterialTyp
         {
             get
             {
-                return _materialType;
+                return _materialTyp;
             }
             set
             {
-                _materialType = value;
-                this.OnPropertyChanged("MaterialType");
+                _materialTyp = value;
+                this.OnPropertyChanged("MaterialTyp");
             }
         }
 
@@ -298,7 +302,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             Model.RepairAction = this.RepairAction;
             Model.SerialNumber = this.SerialNumber;
             Model.Currency = this.Currency;
-            Model.MaterialType = this.MaterialType;
+            Model.MaterialTyp = this.MaterialTyp;
 
 
             Model.AdditionalInfo = this.Notes;

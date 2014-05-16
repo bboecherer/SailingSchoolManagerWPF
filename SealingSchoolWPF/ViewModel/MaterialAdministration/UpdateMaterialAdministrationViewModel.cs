@@ -18,6 +18,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
     {
         public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
         MaterialMgr matMgr = new MaterialMgr();
+        MaterialTypMgr matTypMgr = new MaterialTypMgr();
 
         public UpdateMaterialAdministrationViewModel(SealingSchoolWPF.Model.Material model)
             : base(model)
@@ -161,23 +162,33 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
                 }
             }
         }
-        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        {
+            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
+            {
+                MaterialTypNames.Add(inst);
+            }
+            return MaterialTypNames;
+        }
+        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+
+        public IEnumerable<MaterialTyp> MaterialTypeTypeValues
         {
             get
             {
-                return Enum.GetValues(typeof(MaterialType))
-                    .Cast<MaterialType>();
+                return GetMaterialTypNames();
             }
         }
-        public MaterialType MaterialType
+        public MaterialTyp MaterialType
         {
             get
             {
-                return MaterialDummy.MaterialType;
+                return MaterialDummy.MaterialTyp;
             }
             set
             {
-                MaterialDummy.MaterialType = value;
+                MaterialDummy.MaterialTyp = value;
                 this.OnPropertyChanged("MaterialType");
             }
         }

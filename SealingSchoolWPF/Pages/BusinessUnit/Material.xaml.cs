@@ -24,8 +24,16 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
         public Material()
         {
             InitializeComponent();
-            // var viewModel = new QualificationListViewModel();
-            // qualificationList.DataContext = viewModel;
+            var viewModel = MaterialTypListViewModel.Instance;
+            materialTypList.DataContext = viewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = MaterialTypListViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as MaterialTypListViewModel;
+
+            viewModel.ExecuteDeleteCommand(obj.Id);
         }
     }
 }

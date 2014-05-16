@@ -16,7 +16,7 @@ namespace SealingSchoolWPF.Model
         public Decimal Price { get; set; }
         public Currency Currency { get; set; }
         public MaterialStatus MaterialStatus { get; set; }
-        public MaterialType MaterialType { get; set; }
+        public MaterialTyp MaterialTyp { get; set; }
         public string RepairAction { get; set; }
         public string SerialNumber { get; set; }
 

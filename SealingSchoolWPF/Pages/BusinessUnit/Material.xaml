@@ -13,9 +13,9 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <TextBlock Text="QUALIFIKATIONEN" Grid.Row="0" Style="{StaticResource Heading2}" />
-            <BusinessUnit:BuQualificationControl Grid.Row="1" />
-            <BusinessUnit:BuQualificationListView  Grid.Row="2" x:Name="qualificationList"/>
+            <TextBlock Text="Material Typen" Grid.Row="0" Style="{StaticResource Heading2}" />
+            <BusinessUnit:BuMaterialControl Grid.Row="1" />
+            <BusinessUnit:BuMaterialListView  Grid.Row="2" x:Name="materialTypList"/>
         </Grid>
     </ScrollViewer>
 </UserControl>

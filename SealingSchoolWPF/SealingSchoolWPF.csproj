@@ -103,6 +103,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\MaterialTypMgr.cs" />
     <Compile Include="Data\QualificationMgr.cs" />
     <Compile Include="Model\MaterialType.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
@@ -410,7 +411,9 @@
       <DependentUpon>Resource.en-US.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BusinessUnit\BusinessUnitViewModel.cs" />
+    <Compile Include="ViewModel\BusinessUnit\MaterialTypListViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationListViewModel.cs" />
+    <Compile Include="ViewModel\BusinessUnit\MaterialTypViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />

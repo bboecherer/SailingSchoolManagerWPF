@@ -122,15 +122,15 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
                     .Cast<MaterialType>();
             }
         }
-        public MaterialType MaterialType
+        public MaterialTyp MaterialType
         {
             get
             {
-                return Model.MaterialType;
+                return Model.MaterialTyp;
             }
             set
             {
-                Model.MaterialType = value;
+                Model.MaterialTyp = value;
                 this.OnPropertyChanged("MaterialType");
             }
         }

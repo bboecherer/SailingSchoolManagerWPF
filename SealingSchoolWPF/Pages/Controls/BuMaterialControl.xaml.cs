@@ -17,15 +17,15 @@ using System.Windows.Shapes;
 namespace SealingSchoolWPF.Pages.Controls
 {
     /// <summary>
-    /// Interaction logic for QualificationControl.xaml
+    /// Interaction logic for MaterialTypControl.xaml
     /// </summary>
     public partial class BuMaterialControl : UserControl
     {
         public BuMaterialControl()
         {
             InitializeComponent();
-            //  var viewModel = QualificationViewModel.Instance;
-            //  this.DataContext = viewModel;
+            var viewModel = MaterialTypViewModel.Instance;
+            this.DataContext = viewModel;
         }
     }
 }

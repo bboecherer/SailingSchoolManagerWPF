@@ -10,12 +10,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Materials}" SelectionMode="Extended" SelectionUnit="FullRow" 
+        <DataGrid ItemsSource="{Binding MatTyps}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 
                   IsReadOnly="True" CanUserDeleteRows="True" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
-                            Binding="{Binding Label }" >
+                            Binding="{Binding Name }" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment"

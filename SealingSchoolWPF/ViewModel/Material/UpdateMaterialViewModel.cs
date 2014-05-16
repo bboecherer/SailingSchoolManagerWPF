@@ -1,16 +1,9 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Material.Update;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
-using System.Windows.Threading;
 
 namespace SealingSchoolWPF.ViewModel.MaterialViewModel
 {
@@ -18,6 +11,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
     {
         public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
         MaterialMgr matMgr = new MaterialMgr();
+        MaterialTypMgr matTypMgr = new MaterialTypMgr();
 
         public UpdateMaterialViewModel(SealingSchoolWPF.Model.Material model)
             : base(model)
@@ -163,24 +157,34 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 }
             }
         }
-        public IEnumerable<MaterialType> MaterialTypeTypeValues
+        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        {
+            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
+            {
+                MaterialTypNames.Add(inst);
+            }
+            return MaterialTypNames;
+        }
+        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+
+        public IEnumerable<MaterialTyp> MaterialTypTypeValues
         {
             get
             {
-                return Enum.GetValues(typeof(MaterialType))
-                    .Cast<MaterialType>();
+                return GetMaterialTypNames();
             }
         }
-        public MaterialType MaterialType
+        public MaterialTyp MaterialTyp
         {
             get
             {
-                return MaterialDummy.MaterialType;
+                return MaterialDummy.MaterialTyp;
             }
             set
             {
-                MaterialDummy.MaterialType = value;
-                this.OnPropertyChanged("MaterialType");
+                MaterialDummy.MaterialTyp = value;
+                this.OnPropertyChanged("MaterialTyp");
             }
         }
         public string Notes
