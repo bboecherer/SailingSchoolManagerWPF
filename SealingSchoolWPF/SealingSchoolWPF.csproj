@@ -105,7 +105,6 @@
     </Compile>
     <Compile Include="Data\MaterialTypMgr.cs" />
     <Compile Include="Data\QualificationMgr.cs" />
-    <Compile Include="Model\MaterialType.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
     <Compile Include="Model\Qualification.cs" />
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">

@@ -173,14 +173,14 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
         }
         private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
-        public IEnumerable<MaterialTyp> MaterialTypeTypeValues
+        public IEnumerable<MaterialTyp> MaterialTypTypeValues
         {
             get
             {
                 return GetMaterialTypNames();
             }
         }
-        public MaterialTyp MaterialType
+        public MaterialTyp MaterialTyp
         {
             get
             {

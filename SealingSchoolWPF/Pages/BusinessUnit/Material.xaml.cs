@@ -25,7 +25,8 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
         {
             InitializeComponent();
             var viewModel = MaterialTypListViewModel.Instance;
-            materialTypList.DataContext = viewModel;
+            this.DataContext = viewModel;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

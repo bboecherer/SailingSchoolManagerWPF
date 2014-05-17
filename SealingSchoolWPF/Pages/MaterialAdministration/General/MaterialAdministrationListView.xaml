@@ -23,7 +23,7 @@
                 <DataGridTextColumn Header="{x:Static resx:Resource.MaterialStatus}" 
                             Binding="{Binding MaterialStatus}"/>
                 <DataGridTextColumn Header="{x:Static resx:Resource.MaterialType}" 
-                            Binding="{Binding MaterialType}"/>
+                            Binding="{Binding MaterialTyp}"/>
                
             </DataGrid.Columns>
         </DataGrid>
