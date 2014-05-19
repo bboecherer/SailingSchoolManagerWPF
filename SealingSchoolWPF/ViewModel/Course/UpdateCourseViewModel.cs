@@ -198,6 +198,34 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        InstructorMgr instructorMgr = new InstructorMgr();
+
+        private IList<SealingSchoolWPF.Model.Instructor> GetInstructorNames()
+        {
+            InstructorNames = new List<SealingSchoolWPF.Model.Instructor>();
+            foreach (Model.Instructor inst in instructorMgr.GetAll())
+            {
+                InstructorNames.Add(inst);
+            }
+            return InstructorNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.Instructor> InstructorNames;
+
+        private Model.Instructor _instructor;
+        public Model.Instructor Instructor
+        {
+            get
+            {
+                return CourseDummy.Instructor;
+            }
+            set
+            {
+                _instructor = value;
+                this.OnPropertyChanged("Instructor");
+            }
+        }
+
         private ICommand addCommand;
 
         public ICommand AddCommand

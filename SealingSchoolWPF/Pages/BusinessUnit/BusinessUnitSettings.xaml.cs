@@ -24,6 +24,9 @@ namespace SealingSchoolWPF.Content
         public BusinessUnitSettings()
         {
             InitializeComponent();
+
+            var viewModel = BusinessUnitViewModel.Instance;
+            this.DataContext = viewModel;
         }
     }
 }

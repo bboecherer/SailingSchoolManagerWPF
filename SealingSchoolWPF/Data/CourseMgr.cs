@@ -63,6 +63,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 course = (Course)ctx.Courses.Where(c => c.Id == id);
+                ctx.Entry(course).Reference(s => s.Instructor).Load();
             }
             return course;
         }

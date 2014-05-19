@@ -16,7 +16,11 @@ namespace SealingSchoolWPF.Data
 
         public void Delete(BusinessUnit entity)
         {
-            throw new NotImplementedException();
+            using (var ctx = new SchoolDataContext())
+            {
+                ctx.BusinessUnits.Remove(entity);
+                ctx.SaveChanges();
+            }
         }
 
         public void Create(BusinessUnit entity)
@@ -32,6 +36,22 @@ namespace SealingSchoolWPF.Data
         public BusinessUnit GetById(int id)
         {
             throw new NotImplementedException();
+        }
+
+        internal BusinessUnit GetBu()
+        {
+            BusinessUnit bu = null;
+            using (var ctx = new SchoolDataContext())
+            {
+                try
+                {
+                    bu = ctx.BusinessUnits.FirstOrDefault<BusinessUnit>();
+                }
+                catch (Exception ex)
+                { }
+
+            }
+            return bu;
         }
     }
 }

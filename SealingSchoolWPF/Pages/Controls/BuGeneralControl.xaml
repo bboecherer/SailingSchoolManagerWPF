@@ -21,9 +21,9 @@
         <Label Grid.Row="1" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Row1}"/>
         <Label Grid.Row="2" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Row2}"/>
         <Label Grid.Row="3" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Row3}"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" />
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" />
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" />
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Label}" />
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=AddressLine1}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=AddressLine2}"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=AddressLine3}"/>
     </Grid>
 </UserControl>

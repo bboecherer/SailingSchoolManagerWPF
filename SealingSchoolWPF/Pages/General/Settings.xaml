@@ -13,7 +13,7 @@
                 <mui:Link DisplayName="Rechnungen" Source="/Pages/BusinessUnit/SettingsInvoice.xaml" />
                 <mui:Link DisplayName="Vorlagen" Source="/Pages/BusinessUnit/Templates.xaml" />
                 <mui:Link DisplayName="Qualifikationen" Source="/Pages/BusinessUnit/Qualification.xaml" />
-                <mui:Link DisplayName="Material Typen" Source="/Pages/BusinessUnit/Material.xaml" />
+                <mui:Link DisplayName="Materialarten" Source="/Pages/BusinessUnit/Material.xaml" />
                 <mui:Link DisplayName="Aussehen" Source="/Pages/General/SettingsAppearance.xaml" />
                 <mui:Link DisplayName="Über" Source="/Pages/General/About.xaml" />
             </mui:ModernTab.Links>

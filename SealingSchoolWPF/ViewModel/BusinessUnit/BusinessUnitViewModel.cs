@@ -1,557 +1,582 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SealingSchoolWPF.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SealingSchoolWPF.Model;
 
 namespace SealingSchoolWPF.ViewModel.BusinessUnit
 {
     public class BusinessUnitViewModel : ViewModel<SealingSchoolWPF.Model.BusinessUnit>
     {
+
+        #region Ctor
         public BusinessUnitViewModel(SealingSchoolWPF.Model.BusinessUnit model)
             : base(model)
         {
         }
 
+        static BusinessUnitViewModel instance = null;
+        static readonly object padlock = new object();
+
+        public static BusinessUnitViewModel Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new BusinessUnitViewModel(new SealingSchoolWPF.Model.BusinessUnit());
+                    }
+                    return instance;
+                }
+            }
+        }
+        #endregion
+
+        private static BusinessUnitMgr mgr = new BusinessUnitMgr();
+        private static SealingSchoolWPF.Model.BusinessUnit bu = mgr.GetBu();
+
         public string Label
         {
             get
             {
-                return Model.Label;
+                return bu.Label;
             }
             set
             {
                 if (Label != value)
                 {
-                    Model.Label = value;
-                    this.OnPropertyChanged("Label");
+                    bu.Label = value;
+
                 }
             }
         }
 
         // Email Adress des Admin Accounts
-        public String adminEmail
+        public String AdminEmail
         {
             get
             {
-                return Model.adminEmail;
+                return bu.adminEmail;
             }
             set
             {
-                if (adminEmail != value)
+                if (AdminEmail != value)
                 {
-                    Model.adminEmail = value;
-                    this.OnPropertyChanged("AdminEmail");
+                    bu.adminEmail = value;
+
                 }
             }
         }
 
         // Name der Geschäftseinheit nach "aussen", z.B. Rechnungsstellung
-        public String externalLabel
+        public String ExternalLabel
         {
             get
             {
-                return Model.externalLabel;
+                return bu.externalLabel;
             }
             set
             {
-                if (externalLabel != value)
+                if (ExternalLabel != value)
                 {
-                    Model.externalLabel = value;
-                    this.OnPropertyChanged("ExternalLabel");
+                    bu.externalLabel = value;
+
                 }
             }
         }
 
-        public String customField1Alias
+        public String CustomField1Alias
         {
             get
             {
-                return Model.customField1Alias;
+                return bu.customField1Alias;
             }
             set
             {
-                if (customField1Alias != value)
+                if (CustomField1Alias != value)
                 {
-                    Model.customField1Alias = value;
-                    this.OnPropertyChanged("CustomField1Alias");
+                    bu.customField1Alias = value;
+
                 }
             }
         }
 
-        public String customField2Alias
+        public String CustomField2Alias
         {
             get
             {
-                return Model.customField2Alias;
+                return bu.customField2Alias;
             }
             set
             {
-                if (customField2Alias != value)
+                if (CustomField2Alias != value)
                 {
-                    Model.customField2Alias = value;
-                    this.OnPropertyChanged("CustomField2Alias");
+                    bu.customField2Alias = value;
+
                 }
             }
         }
 
-        public String customField3Alias
+        public String CustomField3Alias
         {
             get
             {
-                return Model.customField3Alias;
+                return bu.customField3Alias;
             }
             set
             {
-                if (customField3Alias != value)
+                if (CustomField3Alias != value)
                 {
-                    Model.customField3Alias = value;
-                    this.OnPropertyChanged("CustomField3Alias");
+                    bu.customField3Alias = value;
+
                 }
             }
         }
 
-        public String customField4Alias
+        public String CustomField4Alias
         {
             get
             {
-                return Model.customField4Alias;
+                return bu.customField4Alias;
             }
             set
             {
-                if (customField4Alias != value)
+                if (CustomField4Alias != value)
                 {
-                    Model.customField4Alias = value;
-                    this.OnPropertyChanged("CustomField4Alias");
+                    bu.customField4Alias = value;
+
                 }
             }
         }
 
-        public String email
+        public String Email
         {
             get
             {
-                return Model.email;
+                return bu.email;
             }
             set
             {
-                if (email != value)
+                if (Email != value)
                 {
-                    Model.email = value;
-                    this.OnPropertyChanged("Email");
+                    bu.email = value;
+
                 }
             }
         }
 
-        public String tel1
+        public String Tel1
         {
             get
             {
-                return Model.tel1;
+                return bu.tel1;
             }
             set
             {
-                if (tel1 != value)
+                if (Tel1 != value)
                 {
-                    Model.tel1 = value;
-                    this.OnPropertyChanged("Tel1");
+                    bu.tel1 = value;
+
                 }
             }
         }
 
-        public String fax1
+        public String Fax1
         {
             get
             {
-                return Model.fax1;
+                return bu.fax1;
             }
             set
             {
-                if (fax1 != value)
+                if (Fax1 != value)
                 {
-                    Model.fax1 = value;
-                    this.OnPropertyChanged("Fax1");
+                    bu.fax1 = value;
+
                 }
             }
         }
 
-        public String tel2
+        public String Tel2
         {
             get
             {
-                return Model.tel2;
+                return bu.tel2;
             }
             set
             {
-                if (tel2 != value)
+                if (Tel2 != value)
                 {
-                    Model.tel2 = value;
-                    this.OnPropertyChanged("Tel2");
+                    bu.tel2 = value;
+
                 }
             }
         }
 
-        public String fax2
+        public String Fax2
         {
             get
             {
-                return Model.fax2;
+                return bu.fax2;
             }
             set
             {
-                if (fax2 != value)
+                if (Fax2 != value)
                 {
-                    Model.fax2 = value;
-                    this.OnPropertyChanged("Fax2");
+                    bu.fax2 = value;
+
                 }
             }
         }
 
-        public String addressLine1
+        public String AddressLine1
         {
             get
             {
-                return Model.addressLine1;
+                return bu.addressLine1;
             }
             set
             {
-                if (addressLine1 != value)
+                if (AddressLine1 != value)
                 {
-                    Model.addressLine1 = value;
-                    this.OnPropertyChanged("AddressLine1");
+                    bu.addressLine1 = value;
+
                 }
             }
         }
 
-        public String addressLine2
+        public String AddressLine2
         {
             get
             {
-                return Model.addressLine2;
+                return bu.addressLine2;
             }
             set
             {
-                if (addressLine2 != value)
+                if (AddressLine2 != value)
                 {
-                    Model.addressLine2 = value;
-                    this.OnPropertyChanged("AddressLine2");
+                    bu.addressLine2 = value;
+
                 }
             }
         }
 
-        public String addressLine3
+        public String AddressLine3
         {
             get
             {
-                return Model.addressLine3;
+                return bu.addressLine3;
             }
             set
             {
-                if (addressLine3 != value)
+                if (AddressLine3 != value)
                 {
-                    Model.addressLine3 = value;
-                    this.OnPropertyChanged("AddressLine3");
+                    bu.addressLine3 = value;
+
                 }
             }
         }
 
-        public String zipCode
+        public String ZipCode
         {
             get
             {
-                return Model.zipCode;
+                return bu.zipCode;
             }
             set
             {
-                if (zipCode != value)
+                if (ZipCode != value)
                 {
-                    Model.zipCode = value;
-                    this.OnPropertyChanged("ZipCode");
+                    bu.zipCode = value;
+
                 }
             }
         }
 
-        public String city
+        public String City
         {
             get
             {
-                return Model.city;
+                return bu.city;
             }
             set
             {
-                if (city != value)
+                if (City != value)
                 {
-                    Model.city = value;
-                    this.OnPropertyChanged("City");
+                    bu.city = value;
+
                 }
             }
         }
 
-        public String country
+        public String Country
         {
             get
             {
-                return Model.country;
+                return bu.country;
             }
             set
             {
-                if (country != value)
+                if (Country != value)
                 {
-                    Model.country = value;
-                    this.OnPropertyChanged("Country");
+                    bu.country = value;
+
                 }
             }
         }
 
-        public String state
+        public String State
         {
             get
             {
-                return Model.state;
+                return bu.state;
             }
             set
             {
-                if (state != value)
+                if (State != value)
                 {
-                    Model.state = value;
-                    this.OnPropertyChanged("State");
+                    bu.state = value;
+
                 }
             }
         }
 
-        public String website
+        public String Website
         {
             get
             {
-                return Model.website;
+                return bu.website;
             }
             set
             {
-                if (website != value)
+                if (Website != value)
                 {
-                    Model.website = value;
-                    this.OnPropertyChanged("Website");
-                }
-            }
-        }
+                    bu.website = value;
 
-
-        public DateTime fiscalYearBegin
-        {
-            get
-            {
-                return Model.fiscalYearBegin;
-            }
-            set
-            {
-                if (fiscalYearBegin != value)
-                {
-                    Model.fiscalYearBegin = value;
-                    this.OnPropertyChanged("FiscalYearBegin");
-                }
-            }
-        }
-
-        public Currency baseCurrency
-        {
-            get
-            {
-                return Model.baseCurrency;
-            }
-            set
-            {
-                if (baseCurrency != value)
-                {
-                    Model.baseCurrency = value;
-                    this.OnPropertyChanged("BaseCurrency");
                 }
             }
         }
 
 
-        public String invoicePrefix
+        public DateTime FiscalYearBegin
         {
             get
             {
-                return Model.invoicePrefix;
+                return bu.fiscalYearBegin;
             }
             set
             {
-                if (invoicePrefix != value)
+                if (FiscalYearBegin != value)
                 {
-                    Model.invoicePrefix = value;
-                    this.OnPropertyChanged("InvoicePrefix");
+                    bu.fiscalYearBegin = value;
+
+                }
+            }
+        }
+
+        public Currency BaseCurrency
+        {
+            get
+            {
+                return bu.baseCurrency;
+            }
+            set
+            {
+                if (BaseCurrency != value)
+                {
+                    bu.baseCurrency = value;
+
                 }
             }
         }
 
 
-        public int defaultPaymentDeadline
+        public String InvoicePrefix
         {
             get
             {
-                return Model.defaultPaymentDeadline;
+                return bu.invoicePrefix;
             }
             set
             {
-                if (defaultPaymentDeadline != value)
+                if (InvoicePrefix != value)
                 {
-                    Model.defaultPaymentDeadline = value;
-                    this.OnPropertyChanged("DefaultPaymentDeadline");
+                    bu.invoicePrefix = value;
+
+                }
+            }
+        }
+
+
+        public int DefaultPaymentDeadline
+        {
+            get
+            {
+                return bu.defaultPaymentDeadline;
+            }
+            set
+            {
+                if (DefaultPaymentDeadline != value)
+                {
+                    bu.defaultPaymentDeadline = value;
+
                 }
             }
         }
 
         // Bankinstitut
-        public String bankName
+        public String BankName
         {
             get
             {
-                return Model.bankName;
+                return bu.bankName;
             }
             set
             {
-                if (bankName != value)
+                if (BankName != value)
                 {
-                    Model.bankName = value;
-                    this.OnPropertyChanged("bankName");
+                    bu.bankName = value;
+
                 }
             }
         }
 
         // Kontonummer
-        public String bankAccountNo
+        public String BankAccountNo
         {
             get
             {
-                return Model.bankAccountNo;
+                return bu.bankAccountNo;
             }
             set
             {
-                if (bankAccountNo != value)
+                if (BankAccountNo != value)
                 {
-                    Model.bankAccountNo = value;
-                    this.OnPropertyChanged("BankAccountNo");
+                    bu.bankAccountNo = value;
+
                 }
             }
         }
 
         // z.B. Steuernummer oder Firmenbuch
-        public String countrySpec1
+        public String CountrySpec1
         {
             get
             {
-                return Model.countrySpec1;
+                return bu.countrySpec1;
             }
             set
             {
-                if (countrySpec1 != value)
+                if (CountrySpec1 != value)
                 {
-                    Model.countrySpec1 = value;
-                    this.OnPropertyChanged("CountrySpec1");
+                    bu.countrySpec1 = value;
+
                 }
             }
         }
 
         // z.B. DVR
-        public String countrySpec2
+        public String CountrySpec2
         {
             get
             {
-                return Model.countrySpec2;
+                return bu.countrySpec2;
             }
             set
             {
-                if (countrySpec2 != value)
+                if (CountrySpec2 != value)
                 {
-                    Model.countrySpec2 = value;
-                    this.OnPropertyChanged("CountrySpec2");
+                    bu.countrySpec2 = value;
+
                 }
             }
         }
 
         // USt Nr in dem aktuellen Land
-        public String vatId
+        public String VatId
         {
             get
             {
-                return Model.vatId;
+                return bu.vatId;
             }
             set
             {
-                if (vatId != value)
+                if (VatId != value)
                 {
-                    Model.vatId = value;
-                    this.OnPropertyChanged("VatId");
+                    bu.vatId = value;
+
                 }
             }
         }
 
         // Kontoinhaber
-        public String bankAccountName
+        public String BankAccountName
         {
             get
             {
-                return Model.bankAccountName;
+                return bu.bankAccountName;
             }
             set
             {
-                if (bankAccountName != value)
+                if (BankAccountName != value)
                 {
-                    Model.bankAccountName = value;
-                    this.OnPropertyChanged("BankAccountName");
+                    bu.bankAccountName = value;
+
                 }
             }
         }
 
         // BLZ
-        public String bankNo
+        public String BankNo
         {
             get
             {
-                return Model.bankNo;
+                return bu.bankNo;
             }
             set
             {
-                if (bankNo != value)
+                if (BankNo != value)
                 {
-                    Model.bankNo = value;
-                    this.OnPropertyChanged("BankNo");
+                    bu.bankNo = value;
+
                 }
             }
         }
 
         // IBAN
-        public String iban
+        public String Iban
         {
             get
             {
-                return Model.iban;
+                return bu.iban;
             }
             set
             {
-                if (iban != value)
+                if (Iban != value)
                 {
-                    Model.iban = value;
-                    this.OnPropertyChanged("Iban");
+                    bu.iban = value;
+
                 }
             }
         }
 
         // SWIFT
-        public String swift
+        public String Swift
         {
             get
             {
-                return Model.swift;
+                return bu.swift;
             }
             set
             {
-                if (swift != value)
+                if (Swift != value)
                 {
-                    Model.swift = value;
-                    this.OnPropertyChanged("Swift");
+                    bu.swift = value;
+
                 }
             }
         }
