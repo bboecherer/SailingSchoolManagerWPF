@@ -32,7 +32,7 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = MaterialTypListViewModel.Instance;
-            var obj = ((FrameworkElement)sender).DataContext as MaterialTypListViewModel;
+            var obj = ((FrameworkElement)sender).DataContext as MaterialTypViewModel;
 
             viewModel.ExecuteDeleteCommand(obj.Id);
         }
