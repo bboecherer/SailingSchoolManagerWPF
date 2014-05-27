@@ -19,13 +19,13 @@ namespace SealingSchoolWPF.ViewModel.Course
         {
             get
             {
-                return Model.Id;
+                return Model.CourseId;
             }
             set
             {
                 if (Id != value)
                 {
-                    Model.Id = value;
+                    Model.CourseId = value;
                     this.OnPropertyChanged("Id");
                 }
             }
@@ -79,6 +79,22 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
+        public SealingSchoolWPF.Model.Instructor Instructor
+        {
+            get
+            {
+                return Model.Instructor;
+            }
+            set
+            {
+                if (Instructor != value)
+                {
+                    Model.Instructor = value;
+                    this.OnPropertyChanged("Instructor");
+                }
+            }
+        }
+
         public string Title
         {
             get
@@ -92,22 +108,6 @@ namespace SealingSchoolWPF.ViewModel.Course
                     Model.Title = value;
                     this.OnPropertyChanged("Title");
                 }
-            }
-        }
-
-        public DateTime StartDate
-        {
-            get
-            {
-                return Model.StartDate;
-            }
-        }
-
-        public DateTime EndDate
-        {
-            get
-            {
-                return Model.EndDate;
             }
         }
 

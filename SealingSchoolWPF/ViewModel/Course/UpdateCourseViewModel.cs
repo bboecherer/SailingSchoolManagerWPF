@@ -44,6 +44,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         CourseMgr courseMgr = new CourseMgr();
+        InstructorMgr instMgr = new InstructorMgr();
 
         public string Label
         {
@@ -55,32 +56,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             {
                 CourseDummy.Label = value;
                 this.OnPropertyChanged("Label");
-            }
-        }
-
-        public DateTime StartDate
-        {
-            get
-            {
-                return CourseDummy.StartDate;
-            }
-            set
-            {
-                CourseDummy.StartDate = value;
-                this.OnPropertyChanged("StartDate");
-            }
-        }
-
-        public DateTime EndDate
-        {
-            get
-            {
-                return CourseDummy.EndDate;
-            }
-            set
-            {
-                CourseDummy.EndDate = value;
-                this.OnPropertyChanged("EndDate");
             }
         }
 
@@ -119,7 +94,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 CourseDummy.NetPrice = value;
-                this.CalculatePrice(value);
                 this.OnPropertyChanged("NetPrice");
             }
         }
@@ -133,6 +107,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 CourseDummy.GrossPrice = value;
+                this.CalculatePrice(value);
                 this.OnPropertyChanged("GrossPrice");
             }
         }
@@ -210,6 +185,14 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             return InstructorNames;
         }
 
+        public IEnumerable<SealingSchoolWPF.Model.Instructor> InstructorTypeValues
+        {
+            get
+            {
+                return GetInstructorNames();
+            }
+        }
+
         private IList<SealingSchoolWPF.Model.Instructor> InstructorNames;
 
         private Model.Instructor _instructor;
@@ -222,6 +205,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 _instructor = value;
+                Model.Instructor = value;
                 this.OnPropertyChanged("Instructor");
             }
         }
@@ -254,13 +238,13 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 
         private void CalculatePrice(decimal p)
         {
-            decimal netPrice = p;
-            decimal grossPrice = decimal.MinValue;
+            decimal grossPrice = p;
+            decimal netPrice = decimal.MinValue;
             decimal vat = 19;
 
-            grossPrice = netPrice + (netPrice * vat / 100);
+            netPrice = grossPrice / ((100 + vat) / 100);
             this.NetAmount = (netPrice * vat / 100);
-            this.GrossPrice = grossPrice;
+            this.NetPrice = netPrice;
         }
 
     }

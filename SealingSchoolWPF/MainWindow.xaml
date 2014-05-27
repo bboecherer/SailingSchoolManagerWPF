@@ -28,7 +28,8 @@
 
         <mui:LinkGroup DisplayName="{x:Static resx:Resource.Bookings}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="{x:Static resx:Resource.Overview}" Source="/Pages/Courses/TrainingsActivities.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Overview}" Source="/Pages/Courses/General/Overview.xaml" />
+                <mui:Link DisplayName="Anmeldungen" Source="/Pages/Courses/TrainingActivities/TrainingsActivities.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Calendar}" Source="/Pages/Calendar/Calendar.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>

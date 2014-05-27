@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages
+namespace SealingSchoolWPF.Pages.TrainingActivities
 {
     /// <summary>
     /// Interaction logic for TrainingsActivities.xaml
