@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Offerings"
+﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"  x:Class="SealingSchoolWPF.Pages.TrainingActivities.TrainingsActivities"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,7 +9,8 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="TODO: Angebote" />
+                <Controls:TaButtons />
+                <TextBlock Text="TODO: Anmeldungen" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

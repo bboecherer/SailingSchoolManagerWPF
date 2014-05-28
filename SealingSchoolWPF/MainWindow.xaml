@@ -36,8 +36,8 @@
 
         <mui:LinkGroup DisplayName="{x:Static resx:Resource.Accounting}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="{x:Static resx:Resource.Invoices}" Source="/Pages/Invoicing/Invoices.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.CreditNotes}" Source="/Pages/Invoicing/CreditNotes.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Invoices}" Source="/Pages/Invoicing/General/Invoices.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.CreditNotes}" Source="/Pages/Invoicing/General/CreditNotes.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
 

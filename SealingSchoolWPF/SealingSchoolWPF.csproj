@@ -263,17 +263,29 @@
     <Compile Include="Pages\Courses\Update\UpdateCourse.xaml.cs">
       <DependentUpon>UpdateCourse.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Courses\Workflows\CreateTAPage1.xaml.cs">
-      <DependentUpon>CreateTAPage1.xaml</DependentUpon>
+    <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage1.xaml.cs">
+      <DependentUpon>CreateCreditNotePage1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Courses\Workflows\CreateTAPage2.xaml.cs">
-      <DependentUpon>CreateTAPage2.xaml</DependentUpon>
+    <Compile Include="Pages\Invoicing\Workflows\CreateInvoicePage1.xaml.cs">
+      <DependentUpon>CreateInvoicePage1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Courses\Workflows\CreateTAPage3.xaml.cs">
-      <DependentUpon>CreateTAPage3.xaml</DependentUpon>
+    <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage2.xaml.cs">
+      <DependentUpon>CreateCreditNotePage2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Courses\Workflows\CreateTrainingActivitiesWF.xaml.cs">
-      <DependentUpon>CreateTrainingActivitiesWF.xaml</DependentUpon>
+    <Compile Include="Pages\Invoicing\Workflows\CreateInvoicePage2.xaml.cs">
+      <DependentUpon>CreateInvoicePage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage3.xaml.cs">
+      <DependentUpon>CreateCreditNotePage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateInvoicePage3.xaml.cs">
+      <DependentUpon>CreateInvoicePage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateCreditNoteWF.xaml.cs">
+      <DependentUpon>CreateCreditNoteWF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateInvoiceWF.xaml.cs">
+      <DependentUpon>CreateInvoiceWF.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\General\InfoBox.xaml.cs">
       <DependentUpon>InfoBox.xaml</DependentUpon>
@@ -325,6 +337,24 @@
     </Compile>
     <Compile Include="Pages\Instructor\Update\UpdateInstructor.xaml.cs">
       <DependentUpon>UpdateInstructor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Controls\CreditNoteButtons.xaml.cs">
+      <DependentUpon>CreditNoteButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Controls\InvoiceButtons.xaml.cs">
+      <DependentUpon>InvoiceButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Workflows\CreateTAPage1.xaml.cs">
+      <DependentUpon>CreateTAPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Workflows\CreateTAPage2.xaml.cs">
+      <DependentUpon>CreateTAPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Workflows\CreateTAPage3.xaml.cs">
+      <DependentUpon>CreateTAPage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Workflows\CreateTrainingActivitiesWF.xaml.cs">
+      <DependentUpon>CreateTrainingActivitiesWF.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MaterialAdministration\Administration\Base.xaml.cs">
       <DependentUpon>Base.xaml</DependentUpon>
@@ -470,6 +500,8 @@
     <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
+    <Compile Include="ViewModel\Invoicing\InvoiceButtonViewModel.cs" />
+    <Compile Include="ViewModel\Invoicing\CreditNoteButtonViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationButtonViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationListViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationViewModel.cs" />
@@ -599,19 +631,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Courses\Workflows\CreateTAPage1.xaml">
+    <Page Include="Pages\Invoicing\Workflows\CreateCreditNotePage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateInvoicePage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Courses\Workflows\CreateTAPage2.xaml">
+    <Page Include="Pages\Invoicing\Workflows\CreateCreditNotePage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateInvoicePage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Courses\Workflows\CreateTAPage3.xaml">
+    <Page Include="Pages\Invoicing\Workflows\CreateCreditNotePage3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateInvoicePage3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Courses\Workflows\CreateTrainingActivitiesWF.xaml">
+    <Page Include="Pages\Invoicing\Workflows\CreateCreditNoteWF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateInvoiceWF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -766,7 +814,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Invoicing\CreditNotes.xaml">
+    <Page Include="Pages\Invoicing\Controls\CreditNoteButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Controls\InvoiceButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\General\CreditNotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -782,11 +838,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Invoicing\Invoices.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Invoicing\Offerings.xaml">
+    <Page Include="Pages\Invoicing\General\Invoices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -807,7 +859,7 @@
     <Compile Include="Model\PaymentStatus.cs" />
     <Compile Include="Model\SealingSchoolObject.cs" />
     <Compile Include="Model\Student.cs" />
-    <Compile Include="Pages\Invoicing\CreditNotes.xaml.cs">
+    <Compile Include="Pages\Invoicing\General\CreditNotes.xaml.cs">
       <DependentUpon>CreditNotes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\General\Home.xaml.cs">
@@ -816,11 +868,8 @@
     <Compile Include="Pages\Instructor\General\Instructors.xaml.cs">
       <DependentUpon>Instructors.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Invoicing\Invoices.xaml.cs">
+    <Compile Include="Pages\Invoicing\General\Invoices.xaml.cs">
       <DependentUpon>Invoices.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Invoicing\Offerings.xaml.cs">
-      <DependentUpon>Offerings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\General\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -829,6 +878,22 @@
       <DependentUpon>TrainingsActivities.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="Pages\Courses\Workflows\CreateTAPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Workflows\CreateTAPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Workflows\CreateTAPage3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Workflows\CreateTrainingActivitiesWF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\MaterialAdministration\Administration\Base.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1007,7 +1072,10 @@
       <Name>WpfScheduler</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\Invoicing\Create\" />
+    <Folder Include="Pages\Invoicing\Update\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
       <Link>AutoMapper.Net4.dll</Link>
