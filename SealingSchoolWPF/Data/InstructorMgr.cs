@@ -52,7 +52,7 @@ namespace SealingSchoolWPF.Data
         {
             using (var ctx = new SchoolDataContext())
             {
-                Instructor original = ctx.Instructors.Find(entity.Id);
+                Instructor original = ctx.Instructors.Find(entity.InstructorId);
                 ctx.Entry(original).Reference(s => s.Adress).Load();
                 ctx.Entry(original).Reference(s => s.Bank).Load();
                 ctx.Entry(original).Reference(s => s.Contact).Load();
@@ -61,25 +61,25 @@ namespace SealingSchoolWPF.Data
                 original.LastName = entity.LastName;
                 original.Label = entity.FirstName + " " + entity.LastName;
 
-                original.SSS = entity.SSS;
-                original.SKS = entity.SKS;
-                original.SBFBINNEN = entity.SBFBINNEN;
-                original.SBFSEA = entity.SBFSEA;
-                original.SRC = entity.SRC;
-                original.UBI = entity.UBI;
-                original.DSV = entity.DSV;
-                original.SHS = entity.SHS;
-                original.LifeGuard = entity.LifeGuard;
+                //original.SSS = entity.SSS;
+                //original.SKS = entity.SKS;
+                //original.SBFBINNEN = entity.SBFBINNEN;
+                //original.SBFSEA = entity.SBFSEA;
+                //original.SRC = entity.SRC;
+                //original.UBI = entity.UBI;
+                //original.DSV = entity.DSV;
+                //original.SHS = entity.SHS;
+                //original.LifeGuard = entity.LifeGuard;
 
-                original.SSSDate = entity.SSSDate;
-                original.SKSDate = entity.SKSDate;
-                original.SBFBINNENDate = entity.SBFBINNENDate;
-                original.SBFSEADate = entity.SBFSEADate;
-                original.SRCDate = entity.SRCDate;
-                original.UBIDate = entity.UBIDate;
-                original.DSVDate = entity.DSVDate;
-                original.SHSDate = entity.SHSDate;
-                original.LifeGuardDate = entity.LifeGuardDate;
+                //original.SSSDate = entity.SSSDate;
+                //original.SKSDate = entity.SKSDate;
+                //original.SBFBINNENDate = entity.SBFBINNENDate;
+                //original.SBFSEADate = entity.SBFSEADate;
+                //original.SRCDate = entity.SRCDate;
+                //original.UBIDate = entity.UBIDate;
+                //original.DSVDate = entity.DSVDate;
+                //original.SHSDate = entity.SHSDate;
+                //original.LifeGuardDate = entity.LifeGuardDate;
 
                 if (original.Adress != null)
                 {
@@ -158,7 +158,7 @@ namespace SealingSchoolWPF.Data
             Instructor instructor;
             using (var ctx = new SchoolDataContext())
             {
-                instructor = (Instructor)ctx.Instructors.Where(s => s.Id == id);
+                instructor = (Instructor)ctx.Instructors.Where(s => s.InstructorId == id);
                 ctx.Entry(instructor).Reference(s => s.Adress).Load();
                 ctx.Entry(instructor).Reference(s => s.Bank).Load();
                 ctx.Entry(instructor).Reference(s => s.Contact).Load();

@@ -118,8 +118,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 
         private IList<SealingSchoolWPF.Model.Instructor> InstructorNames;
 
-        private Model.Instructor _instructor;
-        public Model.Instructor Instructor
+        private SealingSchoolWPF.Model.Instructor _instructor;
+        public SealingSchoolWPF.Model.Instructor Instructor
         {
             get
             {
@@ -142,7 +142,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 _netPrice = value;
-                this.CalculatePrice(value);
                 this.OnPropertyChanged("NetPrice");
             }
         }
@@ -157,6 +156,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             set
             {
                 _grossPrice = value;
+                this.CalculatePrice(value);
                 this.OnPropertyChanged("GrossPrice");
             }
         }
@@ -196,48 +196,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             {
                 _currency = value;
                 this.OnPropertyChanged("Currency");
-            }
-        }
-
-        private DateTime _startDate;
-        public DateTime StartDate
-        {
-            get
-            {
-                if (_startDate == null || _startDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _startDate;
-                }
-            }
-            set
-            {
-                _startDate = value;
-                this.OnPropertyChanged("StartDate");
-            }
-        }
-
-        private DateTime _endDate;
-        public DateTime EndDate
-        {
-            get
-            {
-                if (_endDate == null || _endDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _endDate;
-                }
-            }
-            set
-            {
-                _endDate = value;
-                this.OnPropertyChanged("EndDate");
             }
         }
 
@@ -366,8 +324,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.NetAmount = 0;
             this.NetPrice = 0;
             this.Notes = null;
-            this.StartDate = DateTime.Now;
-            this.EndDate = DateTime.Now;
             this.Duration = 0;
             this.Capacity = 0;
             this.Description = null;
@@ -406,8 +362,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             Model.NetAmount = this.NetAmount;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
-            Model.StartDate = this.StartDate;
-            Model.EndDate = this.EndDate;
             Model.Instructor = this.Instructor;
 
             courseMgr.Create(Model);
@@ -415,13 +369,13 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 
         private void CalculatePrice(decimal p)
         {
-            decimal netPrice = p;
-            decimal grossPrice = decimal.MinValue;
+            decimal grossPrice = p;
+            decimal netPrice = decimal.MinValue;
             decimal vat = 19;
 
-            grossPrice = netPrice + (netPrice * vat / 100);
+            netPrice = grossPrice / ((100 + vat) / 100);
             this.NetAmount = (netPrice * vat / 100);
-            this.GrossPrice = grossPrice;
+            this.NetPrice = netPrice;
         }
 
 

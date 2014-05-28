@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages
+namespace SealingSchoolWPF.Pages.Invoicing.Workflows
 {
     /// <summary>
-    /// Interaction logic for TrainingsActivities.xaml
+    /// Interaction logic for CreateTAPage2.xaml
     /// </summary>
-    public partial class TrainingsActivities : UserControl
+    public partial class CreateCreditNotePage2 : UserControl
     {
-        public TrainingsActivities()
+        public CreateCreditNotePage2()
         {
             InitializeComponent();
         }

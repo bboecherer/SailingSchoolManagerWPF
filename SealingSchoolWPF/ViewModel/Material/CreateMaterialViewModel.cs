@@ -164,6 +164,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("Notes");
             }
         }
+
         private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
         {
             MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
@@ -173,6 +174,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
             return MaterialTypNames;
         }
+
         private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
         public IEnumerable<MaterialTyp> MaterialTypTypeValues
@@ -182,6 +184,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 return GetMaterialTypNames();
             }
         }
+
         private MaterialTyp _materialTyp;
         public MaterialTyp MaterialTyp
         {

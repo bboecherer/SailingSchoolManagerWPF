@@ -11,23 +11,20 @@ namespace SealingSchoolWPF.Model
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public Decimal NetPrice { get; set; }
-        public Decimal GrossPrice { get; set; }
-        public Decimal NetAmount { get; set; }
-        public int Duration { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public Currency Currency { get; set; }
-        public CourseStatus CourseStatus { get; set; }
-        public int Credits { get; set; }
-        public int Capacity { get; set; }
-        public Instructor Instructor { get; set; }
+        public virtual int CourseId { get; set; }
+        public virtual string Title { get; set; }
+        public virtual string Description { get; set; }
+        public virtual Decimal NetPrice { get; set; }
+        public virtual Decimal GrossPrice { get; set; }
+        public virtual Decimal NetAmount { get; set; }
+        public virtual int Duration { get; set; }
+        public virtual Currency Currency { get; set; }
+        public virtual CourseStatus CourseStatus { get; set; }
+        public virtual int Credits { get; set; }
+        public virtual int Capacity { get; set; }
+        public virtual Instructor Instructor { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
-
+        
         public override string ToString()
         {
             return "Kurs: " + this.Title;

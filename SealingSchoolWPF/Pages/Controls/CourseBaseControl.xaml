@@ -23,8 +23,6 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Label}"/>
         <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Description}"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.Start}"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.End}"/>
         <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Duration}"/>
         <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.Capacity}"/>
         <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.Instructor}"/>
@@ -32,14 +30,15 @@
         <TextBox Grid.Column="1" Grid.Row="1" Margin="3" VerticalScrollBarVisibility="Auto"
                  TextWrapping="Wrap" MinLines ="5" Text="{Binding Path=Description}"/>
 
-        <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Value="{Binding Path=StartDate}"/>
-        <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" Value="{Binding Path=EndDate}"/>
         <xctk:DecimalUpDown Grid.Column="1" Grid.Row="4" Margin="3" Minimum="0"  
                                         Value="{Binding Path=Duration}" Increment="1" />
         <xctk:DecimalUpDown Grid.Column="1" Grid.Row="5" Margin="3" Minimum="0" 
                                         Value="{Binding Path=Capacity}" Increment="1" />
         <ComboBox Grid.Column="1" Grid.Row="6" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
-                              MaxDropDownHeight="100" SelectedItem="{Binding Instructor}"
-                              ItemsSource="{Binding InstructorTypeValues}"/>
+                  MaxDropDownHeight="100" 
+                  SelectedItem="{Binding Path=Instructor,Mode=TwoWay}"
+                  ItemsSource="{Binding InstructorTypeValues}"
+                  IsTextSearchEnabled="True"                  
+                  IsSynchronizedWithCurrentItem="True"/>
     </Grid>
 </UserControl>

@@ -26,21 +26,35 @@ namespace SealingSchoolWPF.Pages.Courses.General
         public CourseView()
         {
             InitializeComponent();
-            var viewModel = new CourseListViewModel();
-            courseList.DataContext = viewModel;
+            BindDataContext();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BindDataContext()
         {
             var viewModel = new CourseListViewModel();
             courseList.DataContext = null;
             courseList.DataContext = viewModel;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BindDataContext();
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             CreateCourse window = new CreateCourse();
             window.ShowDialog();
+        }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            BindDataContext();
+        }
+                
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BindDataContext();
         }
     }
 }

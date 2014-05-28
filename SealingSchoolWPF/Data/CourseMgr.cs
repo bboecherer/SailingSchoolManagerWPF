@@ -1,6 +1,8 @@
 ﻿using SealingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,14 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (Course c in ctx.Courses)
                 {
+                    ctx.Entry(c).Reference(i => i.Instructor).Load();
+                    ctx.Entry(c.Instructor).Reference(i => i.Adress).Load();
+                    ctx.Entry(c.Instructor).Reference(i => i.Bank).Load();
+                    ctx.Entry(c.Instructor).Reference(i => i.Contact).Load();
+
+
+                    ctx.Instructors.Attach(c.Instructor);
+                    c.Instructor = ctx.Instructors.Find(c.Instructor.InstructorId);
                     Courses.Add(c);
                 }
             }
@@ -38,8 +48,27 @@ namespace SealingSchoolWPF.Data
         {
             using (var ctx = new SchoolDataContext())
             {
-                ctx.Courses.Add(entity);
-                ctx.SaveChanges();
+                try
+                {
+                    Instructor inst = ctx.Instructors.Find(entity.Instructor.InstructorId);
+                    entity.Instructor = inst;
+                    ctx.Courses.Add(entity);
+                    ctx.Entry(entity.Instructor).State = EntityState.Unchanged;
+                    ctx.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    List<string> errorMessages = new List<string>();
+                    foreach (DbEntityValidationResult validationResult in ex.EntityValidationErrors)
+                    {
+                        string entityName = validationResult.Entry.Entity.GetType().Name;
+                        foreach (DbValidationError error in validationResult.ValidationErrors)
+                        {
+                            errorMessages.Add(entityName + "." + error.PropertyName + ": " + error.ErrorMessage);
+                        }
+                    }
+                }
+                catch (Exception ex) { }
             }
         }
 
@@ -47,7 +76,7 @@ namespace SealingSchoolWPF.Data
         {
             using (var ctx = new SchoolDataContext())
             {
-                Course original = ctx.Courses.Find(entity.Id);
+                Course original = ctx.Courses.Find(entity.CourseId);
 
                 if (original != null)
                 {
@@ -62,7 +91,7 @@ namespace SealingSchoolWPF.Data
             Course course;
             using (var ctx = new SchoolDataContext())
             {
-                course = (Course)ctx.Courses.Where(c => c.Id == id);
+                course = (Course)ctx.Courses.Where(c => c.CourseId == id);
                 ctx.Entry(course).Reference(s => s.Instructor).Load();
             }
             return course;

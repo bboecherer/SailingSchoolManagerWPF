@@ -48,10 +48,8 @@ namespace SealingSchoolWPF.Data
                 try
                 {
                     ctx.Materials.Add(entity);
-                    /*if (entity.MaterialTyp != null)
-                    {
-                        ctx.Entry(entity.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
-                    }*/
+                    ctx.MaterialTyps.Attach(entity.MaterialTyp);
+
                     ctx.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)

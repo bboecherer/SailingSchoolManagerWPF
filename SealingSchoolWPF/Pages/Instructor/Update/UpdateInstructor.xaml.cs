@@ -53,7 +53,7 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instrBank.AccountNo = instructor.AccountNo;
             instrBank.Sepa = instructor.Sepa;
 
-            instr.Id = Convert.ToInt32(instructor.Id);
+            instr.InstructorId = Convert.ToInt32(instructor.Id);
             instr.LastName = instructor.Lastname;
             instr.FirstName = instructor.Firstname;
             instr.AdditionalInfo = instructor.Notes;
@@ -61,25 +61,25 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instr.Bank = instrBank;
             instr.Adress = instrAdress;
 
-            instr.SSS = instructor.SSS;
-            instr.SKS = instructor.SKS;
-            instr.SBFBINNEN = instructor.SBFBINNEN;
-            instr.SBFSEA = instructor.SBFSEA;
-            instr.SRC = instructor.SRC;
-            instr.UBI = instructor.UBI;
-            instr.DSV = instructor.DSV;
-            instr.SHS = instructor.SHS;
-            instr.LifeGuard = instructor.LifeGuard;
+            //instr.SSS = instructor.SSS;
+            //instr.SKS = instructor.SKS;
+            //instr.SBFBINNEN = instructor.SBFBINNEN;
+            //instr.SBFSEA = instructor.SBFSEA;
+            //instr.SRC = instructor.SRC;
+            //instr.UBI = instructor.UBI;
+            //instr.DSV = instructor.DSV;
+            //instr.SHS = instructor.SHS;
+            //instr.LifeGuard = instructor.LifeGuard;
 
-            instr.SSSDate = instructor.SSSDate;
-            instr.SKSDate = instructor.SKSDate;
-            instr.SBFBINNENDate = instructor.SBFBINNENDate;
-            instr.SBFSEADate = instructor.SBFSEADate;
-            instr.SRCDate = instructor.SRCDate;
-            instr.UBIDate = instructor.UBIDate;
-            instr.DSVDate = instructor.DSVDate;
-            instr.SHSDate = instructor.SHSDate;
-            instr.LifeGuardDate = instructor.LifeGuardDate;
+            //instr.SSSDate = instructor.SSSDate;
+            //instr.SKSDate = instructor.SKSDate;
+            //instr.SBFBINNENDate = instructor.SBFBINNENDate;
+            //instr.SBFSEADate = instructor.SBFSEADate;
+            //instr.SRCDate = instructor.SRCDate;
+            //instr.UBIDate = instructor.UBIDate;
+            //instr.DSVDate = instructor.DSVDate;
+            //instr.SHSDate = instructor.SHSDate;
+            //instr.LifeGuardDate = instructor.LifeGuardDate;
 
             return instr;
         }

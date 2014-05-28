@@ -32,15 +32,30 @@ namespace SealingSchoolWPF.Pages.General
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = new InstructorListViewModel();
-            instructorList.DataContext = null;
-            instructorList.DataContext = viewModel;
+            BindDataContext();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             CreateInstructor window = new CreateInstructor();
             window.ShowDialog();
+        }
+
+        private void BindDataContext()
+        {
+            var viewModel = new InstructorListViewModel();
+            instructorList.DataContext = null;
+            instructorList.DataContext = viewModel;
+        }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            BindDataContext();
+        }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BindDataContext();
         }
     }
 }

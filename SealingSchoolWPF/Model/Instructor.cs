@@ -13,55 +13,12 @@ namespace SealingSchoolWPF.Model
     public class Instructor : SealingSchoolObject, IDataErrorInfo
     {
         [Key]
-        public int Id { get; set; }
-
-        public string LastName { get; set; }
-
-        public string FirstName { get; set; }
-
-        public virtual ICollection<Course> Courses { get; set; }
-
-        public Adress Adress { get; set; }
-
-        public ContactData Contact { get; set; }
-
-        public BankAccountData Bank { get; set; }
-
-        public bool SSS { get; set; }
-
-        public DateTime SSSDate { get; set; }
-
-        public bool SKS { get; set; }
-
-        public DateTime SKSDate { get; set; }
-
-        public bool SBFSEA { get; set; }
-
-        public DateTime SBFSEADate { get; set; }
-
-        public bool SBFBINNEN { get; set; }
-
-        public DateTime SBFBINNENDate { get; set; }
-
-        public bool SRC { get; set; }
-
-        public DateTime SRCDate { get; set; }
-
-        public bool UBI { get; set; }
-
-        public DateTime UBIDate { get; set; }
-
-        public bool DSV { get; set; }
-
-        public DateTime DSVDate { get; set; }
-
-        public bool SHS { get; set; }
-
-        public DateTime SHSDate { get; set; }
-
-        public bool LifeGuard { get; set; }
-
-        public DateTime LifeGuardDate { get; set; }
+        public virtual int InstructorId { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual Adress Adress { get; set; }
+        public virtual ContactData Contact { get; set; }
+        public virtual BankAccountData Bank { get; set; }
 
         string IDataErrorInfo.Error { get { return null; } }
 
@@ -73,6 +30,22 @@ namespace SealingSchoolWPF.Model
         public override string ToString()
         {
             return this.FirstName + " " + this.LastName;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Instructor instr = (Instructor)obj;
+
+            if (InstructorId != instr.InstructorId)
+            {
+                return false;
+            }
+
+            if (Label != instr.Label)
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool IsValid
