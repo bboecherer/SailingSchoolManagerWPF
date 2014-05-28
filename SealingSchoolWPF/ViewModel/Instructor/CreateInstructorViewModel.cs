@@ -215,320 +215,34 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private bool _SSS;
-        public bool SSS
+        private Decimal _honorarValueStd;
+        public Decimal HonorarValueStd
         {
             get
             {
-                return _SSS;
+                return _honorarValueStd;
             }
             set
             {
-                _SSS = value;
-                this.OnPropertyChanged("SSS");
+                _honorarValueStd = value;
+                this.OnPropertyChanged("HonorarValueStd");
             }
         }
 
-        private bool _SKS;
-        public bool SKS
+        private Decimal _honorarValueDay;
+        public Decimal HonorarValueDay
         {
             get
             {
-                return _SKS;
+                return _honorarValueDay;
             }
             set
             {
-                _SKS = value;
-                this.OnPropertyChanged("SKS");
+                _honorarValueDay = value;
+                this.OnPropertyChanged("HonorarValueDay");
             }
         }
 
-        private bool _SBFSEA;
-        public bool SBFSEA
-        {
-            get
-            {
-                return _SBFSEA;
-            }
-            set
-            {
-                _SBFSEA = value;
-                this.OnPropertyChanged("SBFSEA");
-            }
-        }
-
-        private bool _SBFBINNEN;
-        public bool SBFBINNEN
-        {
-            get
-            {
-                return _SBFBINNEN;
-            }
-            set
-            {
-                _SBFBINNEN = value;
-                this.OnPropertyChanged("SBFBINNEN");
-            }
-        }
-
-        private bool _SRC;
-        public bool SRC
-        {
-            get
-            {
-                return _SRC;
-            }
-            set
-            {
-                _SRC = value;
-                this.OnPropertyChanged("SRC");
-            }
-        }
-
-        private bool _UBI;
-        public bool UBI
-        {
-            get
-            {
-                return _UBI;
-            }
-            set
-            {
-                _UBI = value;
-                this.OnPropertyChanged("UBI");
-            }
-        }
-
-        private bool _DSV;
-        public bool DSV
-        {
-            get
-            {
-                return _DSV;
-            }
-            set
-            {
-                _DSV = value;
-                this.OnPropertyChanged("DSV");
-            }
-        }
-
-        private bool _SHS;
-        public bool SHS
-        {
-            get
-            {
-                return _SHS;
-            }
-            set
-            {
-                _SHS = value;
-                this.OnPropertyChanged("SHS");
-            }
-        }
-
-        private bool _lifeGuard;
-        public bool LifeGuard
-        {
-            get
-            {
-                return _lifeGuard;
-            }
-            set
-            {
-                _lifeGuard = value;
-                this.OnPropertyChanged("LifeGuard");
-            }
-        }
-
-        private DateTime _SSSDate;
-        public DateTime SSSDate
-        {
-            get
-            {
-                if (_SSSDate == null || _SSSDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _SSSDate;
-                }
-            }
-            set
-            {
-                _SSSDate = value;
-                this.OnPropertyChanged("SSSDate");
-            }
-        }
-
-        private DateTime _SKSDate;
-        public DateTime SKSDate
-        {
-            get
-            {
-                if (_SKSDate == null || _SKSDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _SKSDate;
-                }
-            }
-            set
-            {
-                _SKSDate = value;
-                this.OnPropertyChanged("SKSDate");
-            }
-        }
-
-        private DateTime _SBFSEADate;
-        public DateTime SBFSEADate
-        {
-            get
-            {
-                if (_SBFSEADate == null || _SBFSEADate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _SBFSEADate;
-                }
-            }
-            set
-            {
-                _SBFSEADate = value;
-                this.OnPropertyChanged("SBFSEADate");
-            }
-        }
-
-        private DateTime _SBFBINNENDate;
-        public DateTime SBFBINNENDate
-        {
-            get
-            {
-                if (_SBFBINNENDate == null || _SBFBINNENDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _SBFBINNENDate;
-                }
-            }
-            set
-            {
-                _SBFBINNENDate = value;
-                this.OnPropertyChanged("SBFBINNENDate");
-            }
-        }
-
-        private DateTime _SRCDate;
-        public DateTime SRCDate
-        {
-            get
-            {
-                if (_SRCDate == null || _SRCDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _SRCDate;
-                }
-            }
-            set
-            {
-                _SRCDate = value;
-                this.OnPropertyChanged("SRCDate");
-            }
-        }
-
-        private DateTime _UBIDate;
-        public DateTime UBIDate
-        {
-            get
-            {
-                if (_UBIDate == null || _UBIDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _UBIDate;
-                }
-            }
-            set
-            {
-                _UBIDate = value;
-                this.OnPropertyChanged("UBIDate");
-            }
-        }
-
-        private DateTime _DSVDate;
-        public DateTime DSVDate
-        {
-            get
-            {
-                if (_DSVDate == null || _DSVDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _DSVDate;
-                }
-            }
-            set
-            {
-                _DSVDate = value;
-                this.OnPropertyChanged("DSVDate");
-            }
-        }
-
-        private DateTime _SHSDate;
-        public DateTime SHSDate
-        {
-            get
-            {
-                if (_SHSDate == null || _SHSDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _SHSDate;
-                }
-            }
-            set
-            {
-                _SHSDate = value;
-                this.OnPropertyChanged("SHSDate");
-            }
-        }
-
-        private DateTime _lifeGuardDate;
-        public DateTime LifeGuardDate
-        {
-            get
-            {
-                if (_lifeGuardDate == null || _lifeGuardDate == DateTime.MinValue)
-                {
-                    return DateTime.Now;
-                }
-                else
-                {
-                    return _lifeGuardDate;
-                }
-            }
-            set
-            {
-                _lifeGuardDate = value;
-                this.OnPropertyChanged("LifeGuardDate");
-            }
-        }
 
 
         private bool _isButtonEnabled = true;
@@ -641,6 +355,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             Model.Bank = bank;
             Model.Contact = contact;
             Model.Label = this.FirstName + " " + this.LastName;
+            Model.HonorarValueDay = this.HonorarValueDay;
+            Model.HonorarValueStd = this.HonorarValueStd;
 
             //Model.SSS = this.SSS;
             //Model.SSSDate = this.SSSDate;

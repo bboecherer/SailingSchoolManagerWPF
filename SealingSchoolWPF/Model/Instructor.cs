@@ -19,6 +19,9 @@ namespace SealingSchoolWPF.Model
         public virtual Adress Adress { get; set; }
         public virtual ContactData Contact { get; set; }
         public virtual BankAccountData Bank { get; set; }
+        public Decimal HonorarValueDay { get; set; }
+        public Decimal HonorarValueStd { get; set; }
+        public virtual IList<Qualification> Qualifications { get; set; }
 
         string IDataErrorInfo.Error { get { return null; } }
 
@@ -46,6 +49,11 @@ namespace SealingSchoolWPF.Model
                 return false;
             }
             return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ this.InstructorId;
         }
 
         public bool IsValid

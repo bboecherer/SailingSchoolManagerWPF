@@ -60,6 +60,8 @@ namespace SealingSchoolWPF.Data
                 original.FirstName = entity.FirstName;
                 original.LastName = entity.LastName;
                 original.Label = entity.FirstName + " " + entity.LastName;
+                original.HonorarValueDay = entity.HonorarValueDay;
+                original.HonorarValueStd = entity.HonorarValueStd;
 
                 //original.SSS = entity.SSS;
                 //original.SKS = entity.SKS;

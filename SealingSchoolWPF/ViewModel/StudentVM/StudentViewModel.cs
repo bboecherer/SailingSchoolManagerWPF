@@ -19,13 +19,13 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         {
             get
             {
-                return Model.Id.ToString();
+                return Model.StudentId.ToString();
             }
             set
             {
                 if (Id != value)
                 {
-                    Model.Id = Convert.ToInt32(value);
+                    Model.StudentId = Convert.ToInt32(value);
                     this.OnPropertyChanged("Id");
                 }
             }

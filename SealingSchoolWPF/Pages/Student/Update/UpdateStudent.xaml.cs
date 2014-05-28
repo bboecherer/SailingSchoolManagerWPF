@@ -51,7 +51,7 @@ namespace SealingSchoolWPF.Pages.Student.Update
             studBank.AccountNo = student.AccountNo;
             studBank.Sepa = student.Sepa;
 
-            stud.Id = Convert.ToInt32(student.Id);
+            stud.StudentId = Convert.ToInt32(student.Id);
             stud.LastName = student.Lastname;
             stud.FirstName = student.Firstname;
             stud.AdditionalInfo = student.Notes;

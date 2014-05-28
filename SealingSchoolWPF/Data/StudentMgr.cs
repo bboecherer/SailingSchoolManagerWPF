@@ -70,7 +70,7 @@ namespace SealingSchoolWPF.Data
         {
             using (var ctx = new SchoolDataContext())
             {
-                Student original = ctx.Students.Find(entity.Id);
+                Student original = ctx.Students.Find(entity.StudentId);
                 ctx.Entry(original).Reference(s => s.Adress).Load();
                 ctx.Entry(original).Reference(s => s.Bank).Load();
                 ctx.Entry(original).Reference(s => s.Contact).Load();
@@ -156,7 +156,7 @@ namespace SealingSchoolWPF.Data
             Student student;
             using (var ctx = new SchoolDataContext())
             {
-                student = (Student)ctx.Students.Where(s => s.Id == id);
+                student = (Student)ctx.Students.Where(s => s.StudentId == id);
                 ctx.Entry(student).Reference(s => s.Adress).Load();
                 ctx.Entry(student).Reference(s => s.Bank).Load();
                 ctx.Entry(student).Reference(s => s.Contact).Load();

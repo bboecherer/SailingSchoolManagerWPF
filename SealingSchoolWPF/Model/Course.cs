@@ -23,8 +23,29 @@ namespace SealingSchoolWPF.Model
         public virtual int Credits { get; set; }
         public virtual int Capacity { get; set; }
         public virtual Instructor Instructor { get; set; }
+        //   public virtual IList<Qualification> Qualifications { get; set; }
 
-        
+        public override bool Equals(object obj)
+        {
+            Course course = (Course)obj;
+
+            if (CourseId != course.CourseId)
+            {
+                return false;
+            }
+
+            if (Label != course.Label)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ this.CourseId;
+        }
+
         public override string ToString()
         {
             return "Kurs: " + this.Title;

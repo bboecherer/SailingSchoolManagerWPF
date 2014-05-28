@@ -299,6 +299,32 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             }
         }
 
+        public Decimal HonorarValueStd
+        {
+            get
+            {
+                return Model.HonorarValueStd;
+            }
+            set
+            {
+                Model.HonorarValueStd = value;
+                this.OnPropertyChanged("HonorarValueStd");
+            }
+        }
+
+        public Decimal HonorarValueDay
+        {
+            get
+            {
+                return Model.HonorarValueDay;
+            }
+            set
+            {
+                Model.HonorarValueDay = value;
+                this.OnPropertyChanged("HonorarValueDay");
+            }
+        }
+
         public string Notes
         {
             get
@@ -344,238 +370,6 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             }
         }
 
-        //public bool SSS
-        //{
-        //    get
-        //    {
-        //        return Model.SSS;
-        //    }
-        //    set
-        //    {
-        //        Model.SSS = value;
-        //        this.OnPropertyChanged("SSS");
-        //    }
-        //}
 
-        //public bool SKS
-        //{
-        //    get
-        //    {
-        //        return Model.SKS;
-        //    }
-        //    set
-        //    {
-        //        Model.SKS = value;
-        //        this.OnPropertyChanged("SKS");
-        //    }
-        //}
-
-        //public bool SBFSEA
-        //{
-        //    get
-        //    {
-        //        return Model.SBFSEA;
-        //    }
-        //    set
-        //    {
-        //        Model.SBFSEA = value;
-        //        this.OnPropertyChanged("SBFSEA");
-        //    }
-        //}
-
-        //public bool SBFBINNEN
-        //{
-        //    get
-        //    {
-        //        return Model.SBFBINNEN;
-        //    }
-        //    set
-        //    {
-        //        Model.SBFBINNEN = value;
-        //        this.OnPropertyChanged("SBFBINNEN");
-        //    }
-        //}
-
-        //public bool SRC
-        //{
-        //    get
-        //    {
-        //        return Model.SRC;
-        //    }
-        //    set
-        //    {
-        //        Model.SRC = value;
-        //        this.OnPropertyChanged("SRC");
-        //    }
-        //}
-
-        //public bool UBI
-        //{
-        //    get
-        //    {
-        //        return Model.UBI;
-        //    }
-        //    set
-        //    {
-        //        Model.UBI = value;
-        //        this.OnPropertyChanged("UBI");
-        //    }
-        //}
-
-        //public bool DSV
-        //{
-        //    get
-        //    {
-        //        return Model.DSV;
-        //    }
-        //    set
-        //    {
-        //        Model.DSV = value;
-        //        this.OnPropertyChanged("DSV");
-        //    }
-        //}
-
-        //public bool SHS
-        //{
-        //    get
-        //    {
-        //        return Model.SHS;
-        //    }
-        //    set
-        //    {
-        //        Model.SHS = value;
-        //        this.OnPropertyChanged("SHS");
-        //    }
-        //}
-
-        //public bool LifeGuard
-        //{
-        //    get
-        //    {
-        //        return Model.LifeGuard;
-        //    }
-        //    set
-        //    {
-        //        Model.LifeGuard = value;
-        //        this.OnPropertyChanged("LifeGuard");
-        //    }
-        //}
-
-        //public DateTime SSSDate
-        //{
-        //    get
-        //    {
-        //        return Model.SSSDate;
-        //    }
-        //    set
-        //    {
-        //        Model.SSSDate = value;
-        //        this.OnPropertyChanged("SSSDate");
-        //    }
-        //}
-
-        //public DateTime SKSDate
-        //{
-        //    get
-        //    {
-        //        return Model.SKSDate;
-        //    }
-        //    set
-        //    {
-        //        Model.SKSDate = value;
-        //        this.OnPropertyChanged("SKSDate");
-        //    }
-        //}
-
-        //public DateTime SBFSEADate
-        //{
-        //    get
-        //    {
-        //        return Model.SBFSEADate;
-        //    }
-        //    set
-        //    {
-        //        Model.SBFSEADate = value;
-        //        this.OnPropertyChanged("SBFSEADate");
-        //    }
-        //}
-
-        //public DateTime SBFBINNENDate
-        //{
-        //    get
-        //    {
-        //        return Model.SBFBINNENDate;
-        //    }
-        //    set
-        //    {
-        //        Model.SBFBINNENDate = value;
-        //        this.OnPropertyChanged("SBFBINNENDate");
-        //    }
-        //}
-
-        //public DateTime SRCDate
-        //{
-        //    get
-        //    {
-        //        return Model.SRCDate;
-        //    }
-        //    set
-        //    {
-        //        Model.SRCDate = value;
-        //        this.OnPropertyChanged("SRCDate");
-        //    }
-        //}
-
-        //public DateTime UBIDate
-        //{
-        //    get
-        //    {
-        //        return Model.UBIDate;
-        //    }
-        //    set
-        //    {
-        //        Model.UBIDate = value;
-        //        this.OnPropertyChanged("UBIDate");
-        //    }
-        //}
-
-        //public DateTime DSVDate
-        //{
-        //    get
-        //    {
-        //        return Model.DSVDate;
-        //    }
-        //    set
-        //    {
-        //        Model.DSVDate = value;
-        //        this.OnPropertyChanged("DSVDate");
-        //    }
-        //}
-
-        //public DateTime SHSDate
-        //{
-        //    get
-        //    {
-        //        return Model.SHSDate;
-        //    }
-        //    set
-        //    {
-        //        Model.SHSDate = value;
-        //        this.OnPropertyChanged("SHSDate");
-        //    }
-        //}
-
-        //public DateTime LifeGuardDate
-        //{
-        //    get
-        //    {
-        //        return Model.LifeGuardDate;
-        //    }
-        //    set
-        //    {
-        //        Model.LifeGuardDate = value;
-        //        this.OnPropertyChanged("LifeGuardDate");
-        //    }
-        //}
     }
 }

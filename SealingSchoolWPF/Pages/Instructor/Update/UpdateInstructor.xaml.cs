@@ -61,6 +61,9 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instr.Bank = instrBank;
             instr.Adress = instrAdress;
 
+            instr.HonorarValueDay = instructor.HonorarValueDay;
+            instr.HonorarValueStd = instructor.HonorarValueStd;
+
             //instr.SSS = instructor.SSS;
             //instr.SKS = instructor.SKS;
             //instr.SBFBINNEN = instructor.SBFBINNEN;
