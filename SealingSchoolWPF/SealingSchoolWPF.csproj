@@ -105,10 +105,16 @@
     </Compile>
     <Compile Include="Data\MaterialTypMgr.cs" />
     <Compile Include="Data\QualificationMgr.cs" />
+    <Compile Include="Model\IncomingInvoice.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
+    <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\Qualification.cs" />
+    <Compile Include="Model\Unit.cs" />
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\HonorarControl.xaml.cs">
+      <DependentUpon>HonorarControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\BuAdressControl.xaml.cs">
       <DependentUpon>BuAdressControl.xaml</DependentUpon>
@@ -262,6 +268,12 @@
     </Compile>
     <Compile Include="Pages\Courses\Update\UpdateCourse.xaml.cs">
       <DependentUpon>UpdateCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\Honorar.xaml.cs">
+      <DependentUpon>Honorar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Update\Honorar.xaml.cs">
+      <DependentUpon>Honorar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage1.xaml.cs">
       <DependentUpon>CreateCreditNotePage1.xaml</DependentUpon>
@@ -523,6 +535,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Controls\HonorarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\BuAdressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -628,6 +644,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\Update\Qualification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\Honorar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Update\Honorar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

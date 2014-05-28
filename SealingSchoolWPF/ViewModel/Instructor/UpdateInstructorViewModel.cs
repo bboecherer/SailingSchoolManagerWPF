@@ -204,239 +204,31 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        //public bool SSS
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SSS;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SSS = value;
-        //        this.OnPropertyChanged("SSS");
-        //    }
-        //}
+        public Decimal HonorarValueStd
+        {
+            get
+            {
+                return InstructorDummy.HonorarValueStd;
+            }
+            set
+            {
+                InstructorDummy.HonorarValueStd= value;
+                this.OnPropertyChanged("HonorarValueStd");
+            }
+        }
 
-        //public bool SKS
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SKS;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SKS = value;
-        //        this.OnPropertyChanged("SKS");
-        //    }
-        //}
-
-        //public bool SBFSEA
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SBFSEA;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SBFSEA = value;
-        //        this.OnPropertyChanged("SBFSEA");
-        //    }
-        //}
-
-        //public bool SBFBINNEN
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SBFBINNEN;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SBFBINNEN = value;
-        //        this.OnPropertyChanged("SBFBINNEN");
-        //    }
-        //}
-
-        //public bool SRC
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SRC;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SRC = value;
-        //        this.OnPropertyChanged("SRC");
-        //    }
-        //}
-
-        //public bool UBI
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.UBI;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.UBI = value;
-        //        this.OnPropertyChanged("UBI");
-        //    }
-        //}
-
-        //public bool DSV
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.DSV;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.DSV = value;
-        //        this.OnPropertyChanged("DSV");
-        //    }
-        //}
-
-        //public bool SHS
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SHS;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SHS = value;
-        //        this.OnPropertyChanged("SHS");
-        //    }
-        //}
-
-        //public bool LifeGuard
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.LifeGuard;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.LifeGuard = value;
-        //        this.OnPropertyChanged("LifeGuard");
-        //    }
-        //}
-
-        //public DateTime SSSDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SSSDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SSSDate = value;
-        //        this.OnPropertyChanged("SSSDate");
-        //    }
-        //}
-
-        //public DateTime SKSDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SKSDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SKSDate = value;
-        //        this.OnPropertyChanged("SKSDate");
-        //    }
-        //}
-
-        //public DateTime SBFSEADate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SBFSEADate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SBFSEADate = value;
-        //        this.OnPropertyChanged("SBFSEADate");
-        //    }
-        //}
-
-        //public DateTime SBFBINNENDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SBFBINNENDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SBFBINNENDate = value;
-        //        this.OnPropertyChanged("SBFBINNENDate");
-        //    }
-        //}
-
-        //public DateTime SRCDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SRCDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SRCDate = value;
-        //        this.OnPropertyChanged("SRCDate");
-        //    }
-        //}
-
-        //public DateTime UBIDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.UBIDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.UBIDate = value;
-        //        this.OnPropertyChanged("UBIDate");
-        //    }
-        //}
-
-        //public DateTime DSVDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.DSVDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.DSVDate = value;
-        //        this.OnPropertyChanged("DSVDate");
-        //    }
-        //}
-
-        //public DateTime SHSDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.SHSDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.SHSDate = value;
-        //        this.OnPropertyChanged("SHSDate");
-        //    }
-        //}
-
-        //public DateTime LifeGuardDate
-        //{
-        //    get
-        //    {
-        //        return InstructorDummy.LifeGuardDate;
-        //    }
-        //    set
-        //    {
-        //        InstructorDummy.LifeGuardDate = value;
-        //        this.OnPropertyChanged("LifeGuardDate");
-        //    }
-        //}
+        public Decimal HonorarValueDay
+        {
+            get
+            {
+                return InstructorDummy.HonorarValueDay;
+            }
+            set
+            {
+                InstructorDummy.HonorarValueDay = value;
+                this.OnPropertyChanged("HonorarValueDay");
+            }
+        }
 
         private ICommand addCommand;
 
