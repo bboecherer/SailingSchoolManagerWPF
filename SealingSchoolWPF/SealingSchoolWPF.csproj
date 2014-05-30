@@ -103,8 +103,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\CoursePlaningMgr.cs" />
     <Compile Include="Data\MaterialTypMgr.cs" />
     <Compile Include="Data\QualificationMgr.cs" />
+    <Compile Include="Model\CoursePlaning.cs" />
     <Compile Include="Model\IncomingInvoice.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
     <Compile Include="Model\PurchaseOrder.cs" />
@@ -112,6 +114,21 @@
     <Compile Include="Model\Unit.cs" />
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CourseBasePlaningControl.xaml.cs">
+      <DependentUpon>CourseBasePlaningControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CourseQualificationControl.xaml.cs">
+      <DependentUpon>CourseQualificationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CourseInstructorControl.xaml.cs">
+      <DependentUpon>CourseInstructorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CourseQualificationListViewControl.xaml.cs">
+      <DependentUpon>CourseQualificationListViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CourseInstructorListViewControl.xaml.cs">
+      <DependentUpon>CourseInstructorListViewControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\HonorarControl.xaml.cs">
       <DependentUpon>HonorarControl.xaml</DependentUpon>
@@ -203,17 +220,23 @@
     <Compile Include="Pages\Controls\PriceControl.xaml.cs">
       <DependentUpon>PriceControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Controls\InstructorControl.xaml.cs">
+      <DependentUpon>InstructorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Controls\QualificationControl.xaml.cs">
       <DependentUpon>QualificationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\UpdateButtons.xaml.cs">
       <DependentUpon>UpdateButtons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Courses\Controls\CreateButtons - Copy.xaml.cs">
+      <DependentUpon>CreateButtons - Copy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Courses\Controls\TaButtons.xaml.cs">
       <DependentUpon>TaButtons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Courses\Controls\CreateButtons.xaml.cs">
-      <DependentUpon>CreateButtons.xaml</DependentUpon>
+    <Compile Include="Pages\Courses\Controls\CreatePlaningButtons.xaml.cs">
+      <DependentUpon>CreatePlaningButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Courses\Controls\CourseButtons.xaml.cs">
       <DependentUpon>CourseButtons.xaml</DependentUpon>
@@ -248,8 +271,20 @@
     <Compile Include="Pages\Courses\General\Course.xaml.cs">
       <DependentUpon>Course.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Courses\General\Overview.xaml.cs">
+    <Compile Include="Pages\Courses\General\CoursePlaning.xaml.cs">
+      <DependentUpon>CoursePlaning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Planing\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Planing\Instructor.xaml.cs">
+      <DependentUpon>Instructor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Planing\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Planing\CreateCoursePlaning.xaml.cs">
+      <DependentUpon>CreateCoursePlaning.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Courses\Update\Base.xaml.cs">
       <DependentUpon>Base.xaml</DependentUpon>
@@ -495,6 +530,8 @@
     <Compile Include="ViewModel\BusinessUnit\QualificationListViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\MaterialTypViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationViewModel.cs" />
+    <Compile Include="ViewModel\Course\CreateCoursePlaningViewModel.cs" />
+    <Compile Include="ViewModel\Course\CoursePlaningViewModel.cs" />
     <Compile Include="ViewModel\Course\TaButtonViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />
@@ -532,6 +569,26 @@
     </Compile>
     <Compile Include="ViewModel\StudentVM\StudentViewModel.cs" />
     <Page Include="Pages\BusinessUnit\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CourseBasePlaningControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CourseQualificationControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CourseInstructorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CourseQualificationListViewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CourseInstructorListViewControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -627,9 +684,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Controls\InstructorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\QualificationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Courses\Controls\CreateButtons - Copy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\Controls\TaButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -639,7 +704,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Courses\General\Overview.xaml">
+    <Page Include="Pages\Courses\General\CoursePlaning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\Overview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\Instructor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\CreateCoursePlaning.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -710,7 +791,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Courses\Controls\CreateButtons.xaml">
+    <Page Include="Pages\Courses\Controls\CreatePlaningButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1101,10 +1182,6 @@
     <Folder Include="Pages\Invoicing\Update\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
-      <Link>AutoMapper.Net4.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Images\305_Close_16x16_72.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

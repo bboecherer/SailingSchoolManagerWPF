@@ -27,5 +27,10 @@ namespace SealingSchoolWPF.Pages.Student.Create
             var viewModel = CreateStudentViewModel.Instance;
             this.DataContext = viewModel;
         }
+
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

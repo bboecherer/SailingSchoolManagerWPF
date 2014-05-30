@@ -344,5 +344,21 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 }
             }
         }
+
+        public ICollection<Model.Qualification> Qualifications
+        {
+            get
+            {
+                return Model.Qualifications;
+            }
+            set
+            {
+                if (Qualifications != value)
+                {
+                    Model.Qualifications = value;
+                    this.OnPropertyChanged("Qualifications");
+                }
+            }
+        }
     }
 }

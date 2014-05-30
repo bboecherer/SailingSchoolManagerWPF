@@ -42,14 +42,14 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         {
             get
             {
-                return Model.Id;
+                return Model.QualificationId;
             }
             set
             {
                 if (Id != value)
                 {
-                    Model.Id = value;
-                    this.OnPropertyChanged("Id");
+                    Model.QualificationId = value;
+                    this.OnPropertyChanged("QualificationId");
                 }
             }
         }

@@ -4,6 +4,7 @@ using AS.IBAN.Model;
 using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -330,6 +331,20 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             this.Close();
         }
 
+        private IList<SealingSchoolWPF.Model.Qualification> prepareQualifications(IList<QualificationViewModel> list)
+        {
+            IList<SealingSchoolWPF.Model.Qualification> qualiList = new List<SealingSchoolWPF.Model.Qualification>();
+
+            foreach (QualificationViewModel q in list)
+            {
+                SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+                quali.QualificationId = q.Id;
+                qualiList.Add(quali);
+            }
+
+            return qualiList;
+        }
+
         private void SaveModelToDatabase()
         {
             Adress adress = new Adress();
@@ -355,8 +370,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             Model.Bank = bank;
             Model.Contact = contact;
             Model.Label = this.FirstName + " " + this.LastName;
-            Model.HonorarValueDay = this.HonorarValueDay;
-            Model.HonorarValueStd = this.HonorarValueStd;
+            Model.FeeValueDay = this.HonorarValueDay;
+            Model.FeeValueStd = this.HonorarValueStd;
 
             //Model.SSS = this.SSS;
             //Model.SSSDate = this.SSSDate;
@@ -380,6 +395,16 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
+
+            if (Model.Qualifications == null)
+            {
+                Model.Qualifications = new List<Model.Qualification>();
+            }
+
+            foreach (SealingSchoolWPF.Model.Qualification q in prepareQualifications(dummy))
+            {
+                Model.Qualifications.Add(q);
+            }
 
             instructorMgr.Create(Model);
 
@@ -441,6 +466,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             this.Iban = null;
             this.Notes = null;
             this.Sepa = false;
+
+            if (this.qualifications != null)
+            {
+                this.qualifications.Clear();
+            }
+
+            this.dummy.Clear();
+            this.ReBindDataGrid();
         }
 
         private ICommand generateBankData;
@@ -528,6 +561,104 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
 
             return bic;
+        }
+
+        private ICommand addQualiCommand;
+
+        public ICommand AddQualiCommand
+        {
+            get
+            {
+                if (addQualiCommand == null)
+                {
+                    addQualiCommand = new RelayCommand(p => ExecuteAddQualiCommand());
+                }
+                return addQualiCommand;
+            }
+        }
+
+        private void ExecuteAddQualiCommand()
+        {
+            if (this.QualificationTyp == null)
+                return;
+
+            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            QualificationViewModel quali = new QualificationViewModel(origQauli);
+            if (this.qualifications == null)
+            {
+                this.qualifications = new ObservableCollection<QualificationViewModel>();
+            }
+
+            foreach (QualificationViewModel q in dummy)
+            {
+                if (q.ShortName == quali.ShortName)
+                    return;
+            }
+
+            this.dummy.Add(quali);
+            this.ReBindDataGrid();
+        }
+
+        private void ReBindDataGrid()
+        {
+            this.qualifications.Clear();
+            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
+            Qualifications = new ObservableCollection<QualificationViewModel>(dummy);
+        }
+
+        private List<QualificationViewModel> dummy = new List<QualificationViewModel>();
+
+
+        private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
+        {
+            QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
+            foreach (Model.Qualification quali in qualiMgr.GetAll())
+            {
+                QualificationTypNames.Add(quali);
+            }
+            return QualificationTypNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.Qualification> QualificationTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.Qualification> QualificationValues
+        {
+            get
+            {
+                return GetQualificationTypNames();
+            }
+        }
+
+        private SealingSchoolWPF.Model.Qualification _qualificationTyp;
+        public SealingSchoolWPF.Model.Qualification QualificationTyp
+        {
+            get
+            {
+                return _qualificationTyp;
+            }
+            set
+            {
+                _qualificationTyp = value;
+                this.OnPropertyChanged("QualificationTyp");
+            }
+        }
+
+        private ObservableCollection<QualificationViewModel> qualifications;
+
+        public ObservableCollection<QualificationViewModel> Qualifications
+        {
+            get
+            {
+                return qualifications;
+            }
+            set
+            {
+                if (Qualifications != value)
+                {
+                    qualifications = value;
+                    this.OnPropertyChanged("Qualifications");
+                }
+            }
         }
 
 

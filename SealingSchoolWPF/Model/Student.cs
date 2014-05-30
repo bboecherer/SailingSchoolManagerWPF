@@ -21,7 +21,9 @@ namespace SealingSchoolWPF.Model
         public virtual Adress Adress { get; set; }
         public virtual ContactData Contact { get; set; }
         public virtual BankAccountData Bank { get; set; }
-     //   public virtual IList<Qualification> Qualifications { get; set; }
+
+        [InverseProperty("Students")]
+        public virtual ICollection<Qualification> Qualifications { get; set; }
 
         public override bool Equals(object obj)
         {

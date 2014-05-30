@@ -21,14 +21,11 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (Course c in ctx.Courses)
                 {
-                    ctx.Entry(c).Reference(i => i.Instructor).Load();
-                    ctx.Entry(c.Instructor).Reference(i => i.Adress).Load();
-                    ctx.Entry(c.Instructor).Reference(i => i.Bank).Load();
-                    ctx.Entry(c.Instructor).Reference(i => i.Contact).Load();
-
-
-                    ctx.Instructors.Attach(c.Instructor);
-                    c.Instructor = ctx.Instructors.Find(c.Instructor.InstructorId);
+                    if (c.Qualifications != null)
+                    {
+                        foreach (Qualification q in c.Qualifications)
+                            ctx.Qualifications.Attach(q);
+                    }
                     Courses.Add(c);
                 }
             }
@@ -50,10 +47,22 @@ namespace SealingSchoolWPF.Data
             {
                 try
                 {
-                    Instructor inst = ctx.Instructors.Find(entity.Instructor.InstructorId);
-                    entity.Instructor = inst;
+                    List<Qualification> qualies = new List<Qualification>();
+
+                    if (entity.Qualifications != null)
+                    {
+                        foreach (Qualification q in entity.Qualifications)
+                        {
+                            Qualification dummy = ctx.Qualifications.Find(q.QualificationId);
+                            ctx.Qualifications.Attach(dummy);
+                            ctx.Entry(dummy).State = EntityState.Unchanged;
+                            qualies.Add(dummy);
+                        }
+
+                        entity.Qualifications.Clear();
+                        entity.Qualifications = qualies;
+                    }
                     ctx.Courses.Add(entity);
-                    ctx.Entry(entity.Instructor).State = EntityState.Unchanged;
                     ctx.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
@@ -76,10 +85,36 @@ namespace SealingSchoolWPF.Data
         {
             using (var ctx = new SchoolDataContext())
             {
+                List<Qualification> dummy = new List<Qualification>();
+
+                if (entity.Qualifications != null)
+                {
+                    foreach (Qualification q in entity.Qualifications)
+                    {
+                        Qualification quali = ctx.Qualifications.Find(q.QualificationId);
+                        ctx.Entry(quali).State = EntityState.Unchanged;
+                        dummy.Add(quali);
+                    }
+                }
+
+                entity.Qualifications.Clear();
+
+                foreach (Qualification q in dummy)
+                {
+                    entity.Qualifications.Add(q);
+                }
+
                 Course original = ctx.Courses.Find(entity.CourseId);
 
                 if (original != null)
                 {
+                    original.Qualifications.Clear();
+                    foreach (Qualification q in entity.Qualifications)
+                    {
+                        ctx.Qualifications.Attach(q);
+                        ctx.Entry(q).State = EntityState.Unchanged;
+                        original.Qualifications.Add(q);
+                    }
                     ctx.Entry(original).CurrentValues.SetValues(entity);
                     ctx.SaveChanges();
                 }
@@ -91,8 +126,7 @@ namespace SealingSchoolWPF.Data
             Course course;
             using (var ctx = new SchoolDataContext())
             {
-                course = (Course)ctx.Courses.Where(c => c.CourseId == id);
-                ctx.Entry(course).Reference(s => s.Instructor).Load();
+                course = (Course)ctx.Courses.Find(id);
             }
             return course;
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,15 @@ namespace SealingSchoolWPF.Model
         public virtual Adress Adress { get; set; }
         public virtual ContactData Contact { get; set; }
         public virtual BankAccountData Bank { get; set; }
-        public Decimal HonorarValueDay { get; set; }
-        public Decimal HonorarValueStd { get; set; }
-        public virtual IList<Qualification> Qualifications { get; set; }
+        public Decimal FeeValueDay { get; set; }
+        public Decimal FeeValueStd { get; set; }
+
+        [InverseProperty("Instructors")]
+        public virtual ICollection<Qualification> Qualifications { get; set; }
+
+        [InverseProperty("Instructors")]
+        public virtual ICollection<CoursePlaning> CoursePlanings { get; set; }
+
 
         string IDataErrorInfo.Error { get { return null; } }
 
@@ -37,7 +44,15 @@ namespace SealingSchoolWPF.Model
 
         public override bool Equals(object obj)
         {
-            Instructor instr = (Instructor)obj;
+            Instructor instr;
+            try
+            {
+                instr = (Instructor)obj;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
 
             if (InstructorId != instr.InstructorId)
             {

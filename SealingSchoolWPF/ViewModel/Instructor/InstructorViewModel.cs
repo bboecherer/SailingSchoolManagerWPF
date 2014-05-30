@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -303,11 +304,11 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.HonorarValueStd;
+                return Model.FeeValueStd;
             }
             set
             {
-                Model.HonorarValueStd = value;
+                Model.FeeValueStd = value;
                 this.OnPropertyChanged("HonorarValueStd");
             }
         }
@@ -316,11 +317,11 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         {
             get
             {
-                return Model.HonorarValueDay;
+                return Model.FeeValueDay;
             }
             set
             {
-                Model.HonorarValueDay = value;
+                Model.FeeValueDay = value;
                 this.OnPropertyChanged("HonorarValueDay");
             }
         }
@@ -370,6 +371,20 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             }
         }
 
-
+        public ICollection<Qualification> Qualifications
+        {
+            get
+            {
+                return Model.Qualifications;
+            }
+            set
+            {
+                if (Qualifications != value)
+                {
+                    Model.Qualifications = value;
+                    this.OnPropertyChanged("Qualifications");
+                }
+            }
+        }
     }
 }

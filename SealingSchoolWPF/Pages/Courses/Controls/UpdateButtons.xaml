@@ -8,7 +8,8 @@
              d:DesignHeight="25" d:DesignWidth="50">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" Command="{Binding AddCommand}">
+            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" 
+                    IsEnabled="{Binding IsButtonEnabled}" Command="{Binding AddCommand}">
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
@@ -18,7 +19,7 @@
                     </ToolTip>
                 </Button.ToolTip>
                 <StackPanel>
-                    <Image Source="/Resources/Images/save_16xLG.png" />
+                    <Image Source="{Binding SaveImage}" />
                 </StackPanel>
             </Button>
         </StackPanel>
