@@ -12,7 +12,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 {
     public class QualificationViewModel : ViewModel<SealingSchoolWPF.Model.Qualification>
     {
-
+        #region ctor
         public QualificationViewModel(SealingSchoolWPF.Model.Qualification model)
             : base(model)
         {
@@ -35,9 +35,9 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 }
             }
         }
+        #endregion
 
-        private QualificationMgr qualificationMgr = new QualificationMgr();
-
+        #region properties
         public int Id
         {
             get
@@ -117,9 +117,10 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 }
             }
         }
+        #endregion
 
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -138,9 +139,8 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             qualification.ShortName = this.ShortName;
             qualification.Name = this.Name;
             qualification.Description = this.Description;
-            qualificationMgr.Create(qualification);
+            qualiMgr.Create(qualification);
         }
-
-      
+        #endregion
     }
 }

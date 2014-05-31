@@ -15,18 +15,18 @@ using System.Windows.Threading;
 
 namespace SealingSchoolWPF.ViewModel.CourseViewModel
 {
-    public class CreateCoursePlaningViewModel : ViewModel<SealingSchoolWPF.Model.CoursePlaning>
+    public class CreateTAViewModel : ViewModel<SealingSchoolWPF.Model.TrainingActivity>
     {
-        #region ctor
-        public CreateCoursePlaningViewModel(SealingSchoolWPF.Model.CoursePlaning model)
+
+        public CreateTAViewModel(SealingSchoolWPF.Model.TrainingActivity model)
             : base(model)
         {
         }
 
-        static CreateCoursePlaningViewModel instance = null;
+        static CreateTAViewModel instance = null;
         static readonly object padlock = new object();
 
-        public static CreateCoursePlaningViewModel Instance
+        public static CreateTAViewModel Instance
         {
             get
             {
@@ -34,15 +34,13 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new CreateCoursePlaningViewModel(new SealingSchoolWPF.Model.CoursePlaning());
+                        instance = new CreateTAViewModel(new SealingSchoolWPF.Model.TrainingActivity());
                     }
                     return instance;
                 }
             }
         }
-        #endregion
 
-        #region properties
         public IEnumerable<SealingSchoolWPF.Model.Course> CourseTypeValues
         {
             get
@@ -198,61 +196,60 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private IList<SealingSchoolWPF.Model.Instructor> GetInstructorTypNames()
+        private IList<SealingSchoolWPF.Model.Student> GetStudentTypNames()
         {
-            InstructorTypNames = new List<SealingSchoolWPF.Model.Instructor>();
-            foreach (Model.Instructor quali in instructorMgr.GetAll())
+            StudentTypNames = new List<SealingSchoolWPF.Model.Student>();
+            foreach (Model.Student quali in studentMgr.GetAll())
             {
-                InstructorTypNames.Add(quali);
+                StudentTypNames.Add(quali);
             }
-            return InstructorTypNames;
+            return StudentTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.Instructor> InstructorTypNames;
+        private IList<SealingSchoolWPF.Model.Student> StudentTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.Instructor> InstructorValues
+        public IEnumerable<SealingSchoolWPF.Model.Student> StudentValues
         {
             get
             {
-                return GetInstructorTypNames();
+                return GetStudentTypNames();
             }
         }
 
-        private SealingSchoolWPF.Model.Instructor _instructorTyp;
-        public SealingSchoolWPF.Model.Instructor InstructorTyp
+        private SealingSchoolWPF.Model.Student _studentTyp;
+        public SealingSchoolWPF.Model.Student StudentTyp
         {
             get
             {
-                return _instructorTyp;
+                return _studentTyp;
             }
             set
             {
-                _instructorTyp = value;
-                this.OnPropertyChanged("InstructorTyp");
+                _studentTyp = value;
+                this.OnPropertyChanged("StudentTyp");
             }
         }
 
-        private ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> _instructors;
+        private ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> _students;
 
-        public ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> Instructors
+        public ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> Students
         {
             get
             {
-                return _instructors;
+                return _students;
             }
             set
             {
-                if (_instructors != value)
+                if (_students != value)
                 {
-                    _instructors = value;
-                    this.OnPropertyChanged("Instructors");
+                    _students = value;
+                    this.OnPropertyChanged("Students");
                 }
             }
         }
-        #endregion
 
-        #region commands
         private ICommand addCommand;
+
         public ICommand AddCommand
         {
             get
@@ -266,6 +263,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ICommand addAndNextCommand;
+
         public ICommand AddAndNextCommand
         {
             get
@@ -286,6 +284,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ICommand clearCommand;
+
         public ICommand ClearCommand
         {
             get
@@ -302,119 +301,97 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         {
             this.ErrorLabel = string.Empty;
             //TODO: Felder leeren
-            this.Instructors.Clear();
+            this.Students.Clear();
             this.dummy.Clear();
             this.ReBindDataGrid();
+        }
+
+        public void Close()
+        {
+            instance = null;
         }
 
         private void ExecuteAddCommand()
         {
             SaveModelToDatabase();
             Application.Current.Windows[1].Close();
+
         }
 
-        public void ExecuteDeleteCommand(SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel instr)
-        {
-            this.ErrorLabel = string.Empty;
-            this.dummy.Remove(instr);
-            this.ReBindDataGrid();
-        }
+        private List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> dummy =
+            new List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
 
-        private ICommand addInstructorCommand;
-        public ICommand AddInstructorCommand
+        private ICommand addStudentCommand;
+
+        public ICommand AddStudentCommand
         {
             get
             {
-                if (addInstructorCommand == null)
+                if (addStudentCommand == null)
                 {
-                    addInstructorCommand = new RelayCommand(p => ExecuteAddInstructorCommand());
+                    addStudentCommand = new RelayCommand(p => ExecuteAddStudentCommand());
                 }
-                return addInstructorCommand;
+                return addStudentCommand;
             }
         }
 
-        private void ExecuteAddInstructorCommand()
+        private void ExecuteAddStudentCommand()
         {
             this.ErrorLabel = string.Empty;
 
-            if (this.InstructorTyp == null)
+            if (this.StudentTyp == null)
                 return;
 
-            SealingSchoolWPF.Model.Course course = courseMgr.GetById(this.Course.CourseId);
-            int maxInstructors = course.NeededInstructors;
 
-            SealingSchoolWPF.Model.Instructor origQauli = this.InstructorTyp;
-            SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel quali = new SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel(origQauli);
-            if (this.Instructors == null)
+            SealingSchoolWPF.Model.Student origStud = this.StudentTyp;
+            SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud =
+                new SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel(origStud);
+
+            if (this.Students == null)
             {
-                this.Instructors = new ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>();
+                this.Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
             }
 
-            foreach (SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel q in dummy)
+            foreach (SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in dummy)
             {
-                if (q.Id == quali.Id)
+                if (q.Id == stud.Id)
                     return;
             }
 
-            if (this.dummy.Count == maxInstructors)
-            {
-                this.ErrorLabel = string.Format("Der Kurs hat nur max. {0} Kursleiter", maxInstructors);
-                return;
-            }
-
-            this.dummy.Add(quali);
+            this.dummy.Add(stud);
             this.ReBindDataGrid();
         }
 
-        #endregion
-
-        #region helpers
-        public void Close()
+        private IList<SealingSchoolWPF.Model.Student> prepareInstructors(IList<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> list)
         {
-            instance = null;
-        }
+            IList<SealingSchoolWPF.Model.Student> studList = new List<SealingSchoolWPF.Model.Student>();
 
-        private List<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> dummy = new List<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>();
-
-        private IList<SealingSchoolWPF.Model.Instructor> prepareInstructors(IList<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> list)
-        {
-            IList<SealingSchoolWPF.Model.Instructor> instrList = new List<SealingSchoolWPF.Model.Instructor>();
-
-            foreach (SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel q in list)
+            foreach (SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in list)
             {
-                SealingSchoolWPF.Model.Instructor instr = new Model.Instructor();
-                instr.InstructorId = Convert.ToInt32(q.Id);
-                instrList.Add(instr);
+                SealingSchoolWPF.Model.Student stud = new Model.Student();
+                stud.StudentId = Convert.ToInt32(q.Id);
+                studList.Add(stud);
             }
 
-            return instrList;
+            return studList;
         }
 
         private void SaveModelToDatabase()
         {
-            Model.StartDate = this.StartDate;
-            Model.EndDate = this.EndDate;
-            Model.CourseStatus = this.CourseStatus;
+        }
 
-            if (Model.Instructors == null)
-            {
-                Model.Instructors = new List<SealingSchoolWPF.Model.Instructor>();
-            }
-            foreach (SealingSchoolWPF.Model.Instructor instr in prepareInstructors(dummy))
-            {
-                Model.Instructors.Add(instr);
-            }
-
-            Model.Course = this.Course;
-
-            coursePlaningMgr.Create(Model);
+        public void ExecuteDeleteCommand(SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud)
+        {
+            this.ErrorLabel = string.Empty;
+            this.dummy.Remove(stud);
+            this.ReBindDataGrid();
         }
 
         private void ReBindDataGrid()
         {
-            this.Instructors.Clear();
-            Instructors = new ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>(dummy);
+            this.Students.Clear();
+            Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>(dummy);
         }
-        #endregion
+
     }
 }

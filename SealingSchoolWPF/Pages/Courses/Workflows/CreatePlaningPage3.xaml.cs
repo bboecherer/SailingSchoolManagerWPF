@@ -15,14 +15,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Xceed.Wpf.Toolkit;
 
-namespace SealingSchoolWPF.Pages.Course.Planing
+namespace SealingSchoolWPF.Pages.Course.Workflows
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml
     /// </summary>
-    public partial class Base : UserControl
+    public partial class CreatePlaningPage3 : UserControl
     {
-        public Base()
+        public CreatePlaningPage3()
         {
             InitializeComponent();
             var viewModel = CreateCoursePlaningViewModel.Instance;

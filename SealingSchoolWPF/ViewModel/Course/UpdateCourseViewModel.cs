@@ -19,6 +19,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
     {
         public Model.Course CourseDummy { get; set; }
 
+        #region ctor
         public UpdateCourseViewModel(Model.Course model)
             : base(model)
         {
@@ -43,7 +44,9 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 }
             }
         }
+        #endregion
 
+        #region properties
         public string Label
         {
             get
@@ -212,97 +215,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-        private ICommand addCommand;
-
-        public ICommand AddCommand
-        {
-            get
-            {
-                if (addCommand == null)
-                {
-                    addCommand = new RelayCommand(p => ExecuteAddCommand());
-                }
-                return addCommand;
-            }
-        }
-
-        public void Close()
-        {
-            instance = null;
-        }
-
-        private void ExecuteAddCommand()
-        {
-            Model.ModifiedOn = DateTime.Now;
-
-            Model.Qualifications.Clear();
-
-            if (prepared != null)
-            {
-                foreach (QualificationViewModel q in prepared)
-                {
-                    Model.Qualifications.Add(prepareQualiToSave(q));
-                }
-            }
-
-            courseMgr.Update(Model);
-            this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
-            this.IsButtonEnabled = false;
-        }
-
-        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
-        {
-            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
-            quali.QualificationId = q.Id;
-            return quali;
-        }
-
-        private void CalculatePrice(decimal p)
-        {
-            decimal grossPrice = p;
-            decimal netPrice = decimal.MinValue;
-            decimal vat = 19;
-
-            netPrice = grossPrice / ((100 + vat) / 100);
-            this.NetAmount = (netPrice * vat / 100);
-            this.NetPrice = netPrice;
-        }
-
-        public void ExecuteDeleteCommand(QualificationViewModel quali)
-        {
-            this.prepared.Remove(quali);
-        }
-
-        private ICommand addQualiCommand;
-
-        public ICommand AddQualiCommand
-        {
-            get
-            {
-                if (addQualiCommand == null)
-                {
-                    addQualiCommand = new RelayCommand(p => ExecuteAddQualiCommand());
-                }
-                return addQualiCommand;
-            }
-        }
-
-        private void ExecuteAddQualiCommand()
-        {
-            if (this.QualificationTyp == null)
-                return;
-            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
-            QualificationViewModel quali = new QualificationViewModel(origQauli);
-
-            foreach (QualificationViewModel q in prepared)
-            {
-                if (q.ShortName == quali.ShortName)
-                    return;
-            }
-
-            this.prepared.Add(quali);
-        }
-
         private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
         {
             QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
@@ -338,7 +250,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ObservableCollection<QualificationViewModel> qualifications;
-
         public ObservableCollection<QualificationViewModel> Qualifications
         {
             get
@@ -354,9 +265,101 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 }
             }
         }
+        #endregion
+
+        #region commands
+        private ICommand addCommand;
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (addCommand == null)
+                {
+                    addCommand = new RelayCommand(p => ExecuteAddCommand());
+                }
+                return addCommand;
+            }
+        }
+
+        private void ExecuteAddCommand()
+        {
+            Model.ModifiedOn = DateTime.Now;
+
+            Model.Qualifications.Clear();
+
+            if (prepared != null)
+            {
+                foreach (QualificationViewModel q in prepared)
+                {
+                    Model.Qualifications.Add(prepareQualiToSave(q));
+                }
+            }
+
+            courseMgr.Update(Model);
+            this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
+            this.IsButtonEnabled = false;
+        }
+
+        public void ExecuteDeleteCommand(QualificationViewModel quali)
+        {
+            this.prepared.Remove(quali);
+        }
+
+        private ICommand addQualiCommand;
+        public ICommand AddQualiCommand
+        {
+            get
+            {
+                if (addQualiCommand == null)
+                {
+                    addQualiCommand = new RelayCommand(p => ExecuteAddQualiCommand());
+                }
+                return addQualiCommand;
+            }
+        }
+
+        private void ExecuteAddQualiCommand()
+        {
+            if (this.QualificationTyp == null)
+                return;
+            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            QualificationViewModel quali = new QualificationViewModel(origQauli);
+
+            foreach (QualificationViewModel q in prepared)
+            {
+                if (q.ShortName == quali.ShortName)
+                    return;
+            }
+
+            this.prepared.Add(quali);
+        }
+        #endregion
+
+        #region helpers
+        public void Close()
+        {
+            instance = null;
+        }
+
+        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
+        {
+            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+            quali.QualificationId = q.Id;
+            return quali;
+        }
+
+        private void CalculatePrice(decimal p)
+        {
+            decimal grossPrice = p;
+            decimal netPrice = decimal.MinValue;
+            decimal vat = 19;
+
+            netPrice = grossPrice / ((100 + vat) / 100);
+            this.NetAmount = (netPrice * vat / 100);
+            this.NetPrice = netPrice;
+        }
 
         private ObservableCollection<QualificationViewModel> prepared;
-
         private ObservableCollection<QualificationViewModel> qualiList()
         {
             if (prepared == null || prepared.Count == 0)
@@ -382,5 +385,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 
             return list;
         }
+        #endregion
     }
 }

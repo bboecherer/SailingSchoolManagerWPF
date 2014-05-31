@@ -601,8 +601,11 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         private void ReBindDataGrid()
         {
-            this.qualifications.Clear();
-            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
+            if (this.qualifications != null)
+            {
+                this.qualifications.Clear();
+            }
+
             Qualifications = new ObservableCollection<QualificationViewModel>(dummy);
         }
 

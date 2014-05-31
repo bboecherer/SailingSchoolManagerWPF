@@ -12,8 +12,8 @@ namespace SealingSchoolWPF.ViewModel.Course
 {
     class TaButtonViewModel : ViewModel
     {
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -31,5 +31,6 @@ namespace SealingSchoolWPF.ViewModel.Course
             CreateTrainingActivitiesWF window = new CreateTrainingActivitiesWF();
             window.ShowDialog();
         }
+        #endregion
     }
 }

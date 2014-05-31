@@ -21,11 +21,11 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (CoursePlaning c in ctx.CoursePlanings)
                 {
-                    //if (c.Qualifications != null)
-                    //{
-                    //    foreach (Qualification q in c.Qualifications)
-                    //        ctx.Qualifications.Attach(q);
-                    //}
+                    if (c.Instructors != null)
+                    {
+                        foreach (Instructor q in c.Instructors)
+                            ctx.Instructors.Attach(q);
+                    }
                     Courses.Add(c);
                 }
             }
@@ -47,21 +47,26 @@ namespace SealingSchoolWPF.Data
             {
                 try
                 {
-                    //List<Qualification> qualies = new List<Qualification>();
+                    Course c = ctx.Courses.Find(entity.Course.CourseId);
+                    ctx.Courses.Attach(c);
+                    ctx.Entry(c).State = EntityState.Unchanged;
+                    entity.Course = c;
 
-                    //if (entity.Qualifications != null)
-                    //{
-                    //    foreach (Qualification q in entity.Qualifications)
-                    //    {
-                    //        Qualification dummy = ctx.Qualifications.Find(q.QualificationId);
-                    //        ctx.Qualifications.Attach(dummy);
-                    //        ctx.Entry(dummy).State = EntityState.Unchanged;
-                    //        qualies.Add(dummy);
-                    //    }
+                    List<Instructor> qualies = new List<Instructor>();
 
-                    //    entity.Qualifications.Clear();
-                    //    entity.Qualifications = qualies;
-                    //}
+                    if (entity.Instructors != null)
+                    {
+                        foreach (Instructor q in entity.Instructors)
+                        {
+                            Instructor dummy = ctx.Instructors.Find(q.InstructorId);
+                            ctx.Instructors.Attach(dummy);
+                            ctx.Entry(dummy).State = EntityState.Unchanged;
+                            qualies.Add(dummy);
+                        }
+
+                        entity.Instructors.Clear();
+                        entity.Instructors = qualies;
+                    }
                     ctx.CoursePlanings.Add(entity);
                     ctx.SaveChanges();
                 }

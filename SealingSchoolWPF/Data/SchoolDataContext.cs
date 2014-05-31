@@ -38,5 +38,6 @@ namespace SealingSchoolWPF.Data
         public DbSet<IncomingInvoice> IncomingInvoices { get; set; }
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public DbSet<CoursePlaning> CoursePlanings { get; set; }
+        public DbSet<BlockedTimeSpan> BlockedTimeSpans { get; set; }
     }
 }

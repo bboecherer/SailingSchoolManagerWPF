@@ -17,7 +17,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 {
     public class CreateCourseViewModel : ViewModel<SealingSchoolWPF.Model.Course>
     {
-
+        #region ctor
         public CreateCourseViewModel(SealingSchoolWPF.Model.Course model)
             : base(model)
         {
@@ -40,7 +40,9 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 }
             }
         }
+        #endregion
 
+        #region properties
         private string _label;
         public string Label
         {
@@ -318,7 +320,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ObservableCollection<QualificationViewModel> qualifications;
-
         public ObservableCollection<QualificationViewModel> Qualifications
         {
             get
@@ -334,10 +335,10 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 }
             }
         }
+        #endregion
 
-
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -350,10 +351,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
-
-
         private ICommand addAndNextCommand;
-
         public ICommand AddAndNextCommand
         {
             get
@@ -374,7 +372,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ICommand clearCommand;
-
         public ICommand ClearCommand
         {
             get
@@ -410,26 +407,19 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.ReBindDataGrid();
         }
 
-        public void Close()
+        public void ExecuteDeleteCommand(QualificationViewModel quali)
         {
-            instance = null;
+            this.dummy.Remove(quali);
+            this.ReBindDataGrid();
         }
 
         private void ExecuteAddCommand()
         {
             SaveModelToDatabase();
-
-            // this.IsButtonEnabled = false;
-            // this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
-            // this.ImageSourceClear = "";
             Application.Current.Windows[1].Close();
-
         }
 
-        private List<QualificationViewModel> dummy = new List<QualificationViewModel>();
-
         private ICommand addQualiCommand;
-
         public ICommand AddQualiCommand
         {
             get
@@ -464,6 +454,16 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 
             this.ReBindDataGrid();
         }
+        #endregion
+
+        #region helpers
+        public void Close()
+        {
+            instance = null;
+        }
+
+
+        private List<QualificationViewModel> dummy = new List<QualificationViewModel>();
 
         private IList<SealingSchoolWPF.Model.Qualification> prepareQualifications(IList<QualificationViewModel> list)
         {
@@ -517,21 +517,15 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.NetPrice = netPrice;
         }
 
-        public void ExecuteDeleteCommand(QualificationViewModel quali)
-        {
-            //Qualification q = qualificationMgr.GetById(qId);
-            //qualificationMgr.Delete(q);
-            //this.ReBindDataGrid();
-            this.dummy.Remove(quali);
-            this.ReBindDataGrid();
-        }
-
         private void ReBindDataGrid()
         {
-            this.qualifications.Clear();
-            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
+            if (this.qualifications != null)
+            {
+                this.qualifications.Clear();
+            }
+
             Qualifications = new ObservableCollection<QualificationViewModel>(dummy);
         }
-
+        #endregion
     }
 }

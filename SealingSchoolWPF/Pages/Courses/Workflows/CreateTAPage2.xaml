@@ -8,7 +8,8 @@
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <Controls:CreateTAStudentControl />
+                <Label Content="Bitte Teilnehmer auswählen" />
+                <Controls:StudentControl />
             </StackPanel>
         </ScrollViewer>
     </Grid>

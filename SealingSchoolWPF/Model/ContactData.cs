@@ -10,16 +10,16 @@ namespace SealingSchoolWPF.Model
     public class ContactData
     {
         [Key]
-        public int ContactId { get; set; }
-        public string Tel1 { get; set; }
-        public string Tel2 { get; set; }
-        public string Tel3 { get; set; }
-        public string Fax1 { get; set; }
-        public string Fax2 { get; set; }
-        public string WebSite { get; set; }
-        public string Email { get; set; }
-        public bool WantsEmailNotification { get; set; }
-        public bool WantsTelNotification { get; set; }
+        public virtual int ContactId { get; set; }
+        public virtual string Tel1 { get; set; }
+        public virtual string Tel2 { get; set; }
+        public virtual string Tel3 { get; set; }
+        public virtual string Fax1 { get; set; }
+        public virtual string Fax2 { get; set; }
+        public virtual string WebSite { get; set; }
+        public virtual string Email { get; set; }
+        public virtual bool WantsEmailNotification { get; set; }
+        public virtual bool WantsTelNotification { get; set; }
 
     }
 }

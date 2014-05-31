@@ -10,11 +10,14 @@ namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CourseViewModel : ViewModel<SealingSchoolWPF.Model.Course>
     {
+        #region ctor
         public CourseViewModel(SealingSchoolWPF.Model.Course model)
             : base(model)
         {
         }
+        #endregion
 
+        #region properties
         public int Id
         {
             get
@@ -191,7 +194,6 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-
         public ICollection<Qualification> Qualifications
         {
             get
@@ -207,5 +209,6 @@ namespace SealingSchoolWPF.ViewModel.Course
                 }
             }
         }
+        #endregion
     }
 }

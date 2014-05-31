@@ -10,11 +10,14 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 {
     public class StudentViewModel : ViewModel<SealingSchoolWPF.Model.Student>
     {
+        #region ctor
         public StudentViewModel(SealingSchoolWPF.Model.Student model)
             : base(model)
         {
         }
+        #endregion
 
+        #region properties
         public string Id
         {
             get
@@ -360,5 +363,6 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 }
             }
         }
+        #endregion
     }
 }

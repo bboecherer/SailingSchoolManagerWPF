@@ -12,14 +12,12 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 {
     public class QualificationListViewModel : ViewModel<SealingSchoolWPF.Model.Qualification>
     {
-
+        #region ctor
         public QualificationListViewModel(SealingSchoolWPF.Model.Qualification model)
             : base(model)
         {
             BindDataGrid();
         }
-
-        private QualificationMgr qualificationMgr = new QualificationMgr();
 
         static QualificationListViewModel instance = null;
         static readonly object padlock = new object();
@@ -39,9 +37,10 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 }
             }
         }
+        #endregion
 
+        #region properties
         private ObservableCollection<QualificationViewModel> qualifications;
-
         public ObservableCollection<QualificationViewModel> Qualifications
         {
             get
@@ -57,13 +56,6 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 }
             }
         }
-
-        private void BindDataGrid()
-        {
-            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualificationMgr.GetAll();
-            qualifications = new ObservableCollection<QualificationViewModel>(qualificationsList.Select(q => new QualificationViewModel(q)));
-        }
-
 
         public int Id
         {
@@ -144,9 +136,10 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 }
             }
         }
+        #endregion
 
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -165,16 +158,31 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             qualification.ShortName = this.ShortName;
             qualification.Name = this.Name;
             qualification.Description = this.Description;
-            qualificationMgr.Create(qualification);
+            qualiMgr.Create(qualification);
 
             this.ClearFields();
             this.ReBindDataGrid();
         }
 
+        public void ExecuteDeleteCommand(int qId)
+        {
+            Qualification q = qualiMgr.GetById(qId);
+            qualiMgr.Delete(q);
+            this.ReBindDataGrid();
+        }
+        #endregion
+
+        #region helpers
+        private void BindDataGrid()
+        {
+            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
+            qualifications = new ObservableCollection<QualificationViewModel>(qualificationsList.Select(q => new QualificationViewModel(q)));
+        }
+
         private void ReBindDataGrid()
         {
             this.qualifications.Clear();
-            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualificationMgr.GetAll();
+            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
             Qualifications = new ObservableCollection<QualificationViewModel>(qualificationsList.Select(q => new QualificationViewModel(q)));
         }
 
@@ -184,14 +192,6 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             this.Description = string.Empty;
             this.Name = string.Empty;
         }
-
-        public void ExecuteDeleteCommand(int qId)
-        {
-            Qualification q = qualificationMgr.GetById(qId);
-            qualificationMgr.Delete(q);
-            this.ReBindDataGrid();
-        }
-
-
+        #endregion
     }
 }

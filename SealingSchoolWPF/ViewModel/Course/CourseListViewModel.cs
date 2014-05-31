@@ -13,6 +13,11 @@ namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CourseListViewModel : ViewModel
     {
+        #region ctor
+        public CourseListViewModel()
+        {
+            BindDataGrid();
+        }
 
         static CourseListViewModel instance = null;
         static readonly object padlock = new object();
@@ -31,12 +36,10 @@ namespace SealingSchoolWPF.ViewModel.Course
                 }
             }
         }
+        #endregion
 
-
-        private CourseMgr courseMgr = new CourseMgr();
-
+        #region properties
         private ObservableCollection<CourseViewModel> courses;
-
         public ObservableCollection<CourseViewModel> Courses
         {
             get
@@ -52,20 +55,18 @@ namespace SealingSchoolWPF.ViewModel.Course
                 }
             }
         }
+        #endregion
 
-        public CourseListViewModel()
-        {
-            BindDataGrid();
-        }
-
+        #region helpers
         private void BindDataGrid()
         {
             IList<SealingSchoolWPF.Model.Course> courseList = courseMgr.GetAll();
             courses = new ObservableCollection<CourseViewModel>(courseList.Select(p => new CourseViewModel(p)));
         }
+        #endregion
 
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -83,5 +84,6 @@ namespace SealingSchoolWPF.ViewModel.Course
             CreateCourse window = new CreateCourse();
             window.ShowDialog();
         }
+        #endregion
     }
 }

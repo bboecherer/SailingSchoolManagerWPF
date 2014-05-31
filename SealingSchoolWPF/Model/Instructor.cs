@@ -29,7 +29,6 @@ namespace SealingSchoolWPF.Model
         [InverseProperty("Instructors")]
         public virtual ICollection<CoursePlaning> CoursePlanings { get; set; }
 
-
         string IDataErrorInfo.Error { get { return null; } }
 
         string IDataErrorInfo.this[string propertyName]

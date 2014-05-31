@@ -6,7 +6,7 @@
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="300">
+             d:DesignHeight="250" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
@@ -14,6 +14,9 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100" />
@@ -24,6 +27,8 @@
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte wählen Sie Start- und Enddatum aus."/>
         <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Start}"/>
         <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.End}"/>
+        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte wählen Sie den Kursstatus aus."/>
+        <Label Grid.Row="7" Grid.Column="0" Content="Kursstatus"/>
 
         <ComboBox Grid.Row="1" Grid.Column="1" Margin="3" Height="22" VerticalAlignment="Top"
                         SelectedValue="{Binding Course}" ItemsSource="{Binding CourseTypeValues}" 
@@ -31,7 +36,11 @@
                               />
         <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" 
                                         Value="{Binding Path=StartDate}"/>
-        <xctk:DateTimePicker Grid.Column="1" Grid.Row="4" Margin="3" 
-                                        Value="{Binding Path=EndDate}"  />
+        <xctk:DateTimePicker Grid.Column="1" Grid.Row="4" Margin="3" Height="20"
+                             VerticalContentAlignment="Top" Value="{Binding Path=EndDate}"  />
+        <ComboBox Grid.Column="1" Grid.Row="7" Margin="3"
+                  SelectedItem="{Binding CourseStatus}" 
+                  ItemsSource="{Binding CourseStatusTypeValues}"
+                  />
     </Grid>
 </UserControl>
