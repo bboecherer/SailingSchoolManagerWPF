@@ -233,7 +233,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> _instructors;
-
         public ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> Instructors
         {
             get

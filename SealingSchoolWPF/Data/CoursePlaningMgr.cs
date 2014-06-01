@@ -68,6 +68,17 @@ namespace SealingSchoolWPF.Data
                         entity.Instructors = qualies;
                     }
                     ctx.CoursePlanings.Add(entity);
+
+                    foreach (Instructor instr in entity.Instructors)
+                    {
+                        BlockedTimeSpan blocked = new BlockedTimeSpan();
+                        blocked.Course = entity.Course;
+                        blocked.StartDate = (DateTime)entity.StartDate;
+                        blocked.EndDate = (DateTime)entity.EndDate;
+                        blocked.Instructor = instr;
+                        ctx.BlockedTimeSpans.Add(blocked);
+                    }
+
                     ctx.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)

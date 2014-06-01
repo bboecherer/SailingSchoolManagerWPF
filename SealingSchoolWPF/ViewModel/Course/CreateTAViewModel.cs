@@ -17,7 +17,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 {
     public class CreateTAViewModel : ViewModel<SealingSchoolWPF.Model.TrainingActivity>
     {
-
+        #region ctor
         public CreateTAViewModel(SealingSchoolWPF.Model.TrainingActivity model)
             : base(model)
         {
@@ -40,26 +40,59 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 }
             }
         }
+        #endregion
 
-        public IEnumerable<SealingSchoolWPF.Model.Course> CourseTypeValues
+        #region properties
+        private IList<SealingSchoolWPF.Model.Course> GetCourseTypNames()
+        {
+            CourseTypNames = new List<SealingSchoolWPF.Model.Course>();
+            foreach (SealingSchoolWPF.Model.Course course in courseMgr.GetAll())
+            {
+                CourseTypNames.Add(course);
+            }
+            return CourseTypNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.Course> CourseTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.Course> CourseValues
         {
             get
             {
-                return GetCourseNames();
+                return GetCourseTypNames();
             }
         }
 
-        private IList<SealingSchoolWPF.Model.Course> GetCourseNames()
+        private SealingSchoolWPF.Model.Course _courseTyp;
+        public SealingSchoolWPF.Model.Course CourseTyp
         {
-            CourseNames = new List<SealingSchoolWPF.Model.Course>();
-            foreach (Model.Course inst in courseMgr.GetAll())
+            get
             {
-                CourseNames.Add(inst);
+                return _courseTyp;
             }
-            return CourseNames;
+            set
+            {
+                _courseTyp = value;
+                this.OnPropertyChanged("CourseTyp");
+            }
         }
 
-        private IList<SealingSchoolWPF.Model.Course> CourseNames;
+        private ObservableCollection<SealingSchoolWPF.ViewModel.Course.CourseViewModel> _courses;
+        public ObservableCollection<SealingSchoolWPF.ViewModel.Course.CourseViewModel> Courses
+        {
+            get
+            {
+                return _courses;
+            }
+            set
+            {
+                if (_courses != value)
+                {
+                    _courses = value;
+                    this.OnPropertyChanged("Courses");
+                }
+            }
+        }
 
         private SealingSchoolWPF.Model.Course _course;
         public SealingSchoolWPF.Model.Course Course
@@ -247,9 +280,10 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                 }
             }
         }
+        #endregion
 
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -263,7 +297,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ICommand addAndNextCommand;
-
         public ICommand AddAndNextCommand
         {
             get
@@ -284,7 +317,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
 
         private ICommand clearCommand;
-
         public ICommand ClearCommand
         {
             get
@@ -306,11 +338,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.ReBindDataGrid();
         }
 
-        public void Close()
-        {
-            instance = null;
-        }
-
         private void ExecuteAddCommand()
         {
             SaveModelToDatabase();
@@ -318,11 +345,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
 
         }
 
-        private List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> dummy =
-            new List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
-
         private ICommand addStudentCommand;
-
         public ICommand AddStudentCommand
         {
             get
@@ -342,6 +365,8 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             if (this.StudentTyp == null)
                 return;
 
+            SealingSchoolWPF.Model.Course course = courseMgr.GetById(this.CourseTyp.CourseId);
+            int maxStudents = course.Capacity;
 
             SealingSchoolWPF.Model.Student origStud = this.StudentTyp;
             SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud =
@@ -358,9 +383,32 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
                     return;
             }
 
+            if (this.dummy.Count == maxStudents)
+            {
+                this.ErrorLabel = string.Format("Die max. Anzahl von {0} Teilnehmern wurde erreicht.", maxStudents);
+                return;
+            }
+
             this.dummy.Add(stud);
             this.ReBindDataGrid();
         }
+
+        public void ExecuteDeleteCommand(SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud)
+        {
+            this.ErrorLabel = string.Empty;
+            this.dummy.Remove(stud);
+            this.ReBindDataGrid();
+        }
+        #endregion
+
+        #region helpers
+        public void Close()
+        {
+            instance = null;
+        }
+
+        private List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> dummy =
+            new List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
 
         private IList<SealingSchoolWPF.Model.Student> prepareInstructors(IList<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> list)
         {
@@ -380,18 +428,13 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         {
         }
 
-        public void ExecuteDeleteCommand(SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud)
-        {
-            this.ErrorLabel = string.Empty;
-            this.dummy.Remove(stud);
-            this.ReBindDataGrid();
-        }
-
         private void ReBindDataGrid()
         {
             this.Students.Clear();
             Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>(dummy);
+            this.ErrorLabel = String.Empty;
         }
+        #endregion
 
     }
 }

@@ -50,6 +50,9 @@
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -510,6 +513,8 @@
     <Compile Include="Pages\Student\Update\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PDF\PDFCreator.cs" />
+    <Compile Include="PDF\PDFTest.cs" />
     <Compile Include="Properties\MessagesResource.Designer.cs">
       <DependentUpon>MessagesResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
