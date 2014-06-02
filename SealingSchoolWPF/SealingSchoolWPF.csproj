@@ -1369,6 +1369,9 @@
     <Content Include="Resources\Images\save_16xSM.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <SplashScreen Include="Resources\Images\Splashscreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
     <Content Include="Resources\Images\StatusAnnotations_Complete_and_ok_16xLG.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
