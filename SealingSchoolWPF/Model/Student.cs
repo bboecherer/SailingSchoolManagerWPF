@@ -41,7 +41,7 @@ namespace SealingSchoolWPF.Model
             {
                 stud = (Student)obj;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }

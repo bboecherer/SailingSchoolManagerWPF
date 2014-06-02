@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="600">
+             d:DesignHeight="160" d:DesignWidth="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -33,15 +34,15 @@
         <Label Grid.Row="3" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.Email}"/>
         <Label Grid.Row="4" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Website}"/>
         <Label Grid.Row="4" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.extLabel}"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=ZipCode}"/>
-        <TextBox Grid.Column="3" Grid.Row="0" Margin="3" Text="{Binding Path=City}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Country}"/>
-        <TextBox Grid.Column="3" Grid.Row="1" Margin="3" Text="{Binding Path=State}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" />
-        <TextBox Grid.Column="3" Grid.Row="2" Margin="3" />
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=AdminEmail}"/>
-        <TextBox Grid.Column="3" Grid.Row="3" Margin="3" Text="{Binding Path=Email}"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Website}"/>
-        <TextBox Grid.Column="3" Grid.Row="4" Margin="3" Text="{Binding Path=ExternalLabel}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=ZipCode}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="0" Margin="3" Text="{Binding Path=City}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Country}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="1" Margin="3" Text="{Binding Path=State}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" />
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="2" Margin="3" />
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=AdminEmail}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="3" Margin="3" Text="{Binding Path=Email}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Website}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="4" Margin="3" Text="{Binding Path=ExternalLabel}"/>
     </Grid>
 </UserControl>

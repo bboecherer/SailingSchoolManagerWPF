@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="120" d:DesignWidth="600">
+             d:DesignHeight="130" d:DesignWidth="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -34,20 +35,20 @@
         <Label Grid.Row="3" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.Swift}"/>
         <Label Grid.Row="3" Grid.Column="4" Margin="3" Content="{x:Static resx:Resource.AccountOwnerShort}"/>
 
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Tel1}"/>
-        <TextBox Grid.Column="3" Grid.Row="0" Margin="3" Text="{Binding Path=Tel2}"/>
-        <TextBox Grid.Column="5" Grid.Row="0" Margin="3" Text="{Binding Path=VatId}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Tel1}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="0" Margin="3" Text="{Binding Path=Tel2}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="5" Grid.Row="0" Margin="3" Text="{Binding Path=VatId}"/>
 
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Fax1}"/>
-        <TextBox Grid.Column="3" Grid.Row="1" Margin="3" Text="{Binding Path=Fax2}"/>
-        <TextBox Grid.Column="5" Grid.Row="1" Margin="3" Text="{Binding Path=VatId}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Fax1}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="1" Margin="3" Text="{Binding Path=Fax2}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="5" Grid.Row="1" Margin="3" Text="{Binding Path=VatId}"/>
 
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName}"/>
-        <TextBox Grid.Column="3" Grid.Row="2" Margin="3" Text="{Binding Path=BankNo}"/>
-        <TextBox Grid.Column="5" Grid.Row="2" Margin="3" Text="{Binding Path=BankAccountNo}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="2" Margin="3" Text="{Binding Path=BankNo}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="5" Grid.Row="2" Margin="3" Text="{Binding Path=BankAccountNo}"/>
 
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Iban}"/>
-        <TextBox Grid.Column="3" Grid.Row="3" Margin="3" Text="{Binding Path=Swift}"/>
-        <TextBox Grid.Column="5" Grid.Row="3" Margin="3" Text="{Binding Path=BankAccountName}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Iban}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="3" Grid.Row="3" Margin="3" Text="{Binding Path=Swift}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="5" Grid.Row="3" Margin="3" Text="{Binding Path=BankAccountName}"/>
     </Grid>
 </UserControl>

@@ -6,14 +6,15 @@
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="350">
     <Grid>
         <StackPanel>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
                     <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -25,8 +26,9 @@
                               SelectedValue="{Binding InstructorTyp}" ItemsSource="{Binding InstructorValues}" 
                               IsEnabled="True" IsReadOnly="False"
                               />
-                <Button Command="{Binding AddInstructorCommand}" Grid.Row="1" Grid.Column="2" Margin="3"
-                            HorizontalAlignment="Right" Height="20" Width="45">
+                <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding AddInstructorCommand}" Grid.Row="1" Grid.Column="1">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -35,14 +37,17 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                                        <StackPanel>
-                        <Image Source="/Resources/Images/action_add_16xSM.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
                 <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" 
                        Content="{Binding ErrorLabel}" Foreground="Red"/>
             </Grid>
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

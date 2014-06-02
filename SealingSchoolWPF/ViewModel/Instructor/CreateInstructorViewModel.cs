@@ -304,10 +304,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         #endregion
 
-        #region Members
-        private InstructorMgr instructorMgr = new InstructorMgr();
-        #endregion
-
         #region Commands
 
         private ICommand addAndNextCommand;
@@ -497,7 +493,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
                 this.Bic = GetGermanBic(this.Iban);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 this.BankName = "Nicht gefunden";
                 this.Iban = "Nicht gefunden";
@@ -518,7 +514,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 iban = result.IBAN.IBAN;
                 bic = result.BIC.Bic;
             }
-            catch (IbanException ex)
+            catch (IbanException )
             {
                 this.Iban = "Nicht gefunden";
             }
@@ -536,7 +532,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
                 bank = result.IBAN.Bank;
             }
-            catch (IbanException ex)
+            catch (IbanException )
             {
                 this.
                     BankName = "Nicht gefunden";
@@ -555,7 +551,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 var result = getBic.GetBic(iban);
                 bic = result.Bic;
             }
-            catch (IbanException ex)
+            catch (IbanException )
             {
                 this.Bic = "Nicht gefunden";
             }

@@ -5,10 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
-             d:DesignHeight="25" d:DesignWidth="100">
+             d:DesignHeight="35" d:DesignWidth="70">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" Command="{Binding AddCommand}">
+            <Button Width="35" Height="35"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding AddCommand}" >
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
@@ -17,11 +19,17 @@
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
-                <StackPanel>
-                    <Image Source="/Resources/Images/action_add_16xLG.png" />
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="15" Height="15" StrokeThickness="0">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
                 </StackPanel>
             </Button>
-            <Button Height="25" Width="50" Margin="0,0,0,0" BorderThickness="0" Command="{Binding RefreshCommand}">
+            <Button Width="35" Height="35"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding RefreshCommand}" >
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel>
@@ -30,8 +38,12 @@
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
-                <StackPanel>
-                    <Image Source="/Resources/Images/refresh_16xLG.png" />
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="15" Height="15" StrokeThickness="0">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_refresh}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
                 </StackPanel>
             </Button>
         </StackPanel>

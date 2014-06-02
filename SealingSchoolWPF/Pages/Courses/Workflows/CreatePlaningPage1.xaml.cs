@@ -28,5 +28,17 @@ namespace SealingSchoolWPF.Pages.Course.Workflows
             var viewModel = CreateCoursePlaningViewModel.Instance;
             this.DataContext = viewModel;
         }
+
+        private void UserControl_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            viewModel.CheckFields();
+        }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            viewModel.CheckFields();
+        }
     }
 }

@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
@@ -35,9 +36,9 @@
                     <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.MaterialType}"/>
 
 
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Name}"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Brand}"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding SerialNumber}"/>
+                    <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Name}"/>
+                    <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Brand}"/>
+                    <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding SerialNumber}"/>
                     <xctk:DecimalUpDown Grid.Column="1" Grid.Row="3" Margin="3" FormatString="C2" Minimum="0.00" 
                                         Value="{Binding Path=Price}" Increment=".5" />
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"

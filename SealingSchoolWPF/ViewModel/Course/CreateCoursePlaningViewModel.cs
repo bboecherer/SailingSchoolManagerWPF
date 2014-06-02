@@ -114,6 +114,22 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             }
         }
 
+        private string _page1ErrorLabel;
+        public string Page1ErrorLabel
+        {
+            get
+            {
+                return _page1ErrorLabel;
+            }
+            set
+            {
+                _page1ErrorLabel = value;
+                this.OnPropertyChanged("Page1ErrorLabel");
+            }
+        }
+
+
+
         private bool _isButtonEnabled = true;
         public bool IsButtonEnabled
         {
@@ -364,7 +380,6 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.dummy.Add(quali);
             this.ReBindDataGrid();
         }
-
         #endregion
 
         #region helpers
@@ -414,6 +429,17 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             this.Instructors.Clear();
             Instructors = new ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>(dummy);
         }
+
+        public void CheckFields()
+        {
+            if (this.StartDate == null)
+            {
+                this.Page1ErrorLabel = "Bitte Datum auswählen!";
+                return;
+            }
+        }
         #endregion
+
+
     }
 }

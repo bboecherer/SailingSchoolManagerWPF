@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="300">
+             d:DesignHeight="280" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
@@ -16,6 +17,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="10" />
             <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -29,6 +31,7 @@
         <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.End}"/>
         <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte wählen Sie den Kursstatus aus."/>
         <Label Grid.Row="7" Grid.Column="0" Content="Kursstatus"/>
+        <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Page1ErrorLabel}"/>
 
         <ComboBox Grid.Row="1" Grid.Column="1" Margin="3" Height="22" VerticalAlignment="Top"
                         SelectedValue="{Binding Course}" ItemsSource="{Binding CourseTypeValues}" 

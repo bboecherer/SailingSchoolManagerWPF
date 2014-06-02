@@ -24,8 +24,9 @@
                               SelectedValue="{Binding QualificationTyp}" ItemsSource="{Binding QualificationValues}" 
                               IsEnabled="True" IsReadOnly="False"
                               />
-                <Button Command="{Binding AddQualiCommand}" Grid.Row="4" Grid.Column="2" Margin="3"
-                            HorizontalAlignment="Right"   Height="20" Width="45">
+                <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding AddQualiCommand}" Grid.Row="1" Grid.Column="1">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -34,12 +35,15 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                    <StackPanel>
-                        <Image Source="/Resources/Images/action_add_16xSM.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
             </Grid>
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

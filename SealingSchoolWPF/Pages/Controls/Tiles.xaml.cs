@@ -1,5 +1,4 @@
-﻿using SealingSchoolWPF.ViewModel.General;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.General
+namespace SealingSchoolWPF.Pages.Controls
 {
     /// <summary>
-    /// Interaction logic for LiveTiles.xaml
+    /// Interaction logic for Tiles.xaml
     /// </summary>
-    public partial class LiveTiles : UserControl
+    public partial class Tiles : UserControl
     {
-        public LiveTiles()
+        public Tiles()
         {
             InitializeComponent();
         }
