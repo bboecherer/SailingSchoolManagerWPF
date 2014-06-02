@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,12 +23,25 @@ namespace SealingSchoolWPF.Model
         public virtual CourseStatus CourseStatus { get; set; }
         public virtual int Credits { get; set; }
         public virtual int Capacity { get; set; }
-        public virtual Instructor Instructor { get; set; }
-        //   public virtual IList<Qualification> Qualifications { get; set; }
+        public int NeededInstructors { get; set; }
+
+        [InverseProperty("Courses")]
+        public virtual ICollection<Qualification> Qualifications { get; set; }
+
+        [InverseProperty("Course")]
+        public virtual ICollection<CoursePlaning> CoursePlanings { get; set; }
 
         public override bool Equals(object obj)
         {
-            Course course = (Course)obj;
+            Course course;
+            try
+            {
+                course = (Course)obj;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
 
             if (CourseId != course.CourseId)
             {
@@ -48,7 +62,7 @@ namespace SealingSchoolWPF.Model
 
         public override string ToString()
         {
-            return "Kurs: " + this.Title;
+            return this.Label;
         }
 
     }

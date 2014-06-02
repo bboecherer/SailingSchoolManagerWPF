@@ -32,7 +32,9 @@
         <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Height="20" VerticalAlignment="Top"
                                          Format="ShortDate" />
         <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
-                              MaxDropDownHeight="100"/>
-
+                  MaxDropDownHeight="100" 
+                  SelectedValue="{Binding CourseTyp}" ItemsSource="{Binding CourseValues}" 
+                  IsEnabled="True" IsReadOnly="False"
+                  />
     </Grid>
 </UserControl>

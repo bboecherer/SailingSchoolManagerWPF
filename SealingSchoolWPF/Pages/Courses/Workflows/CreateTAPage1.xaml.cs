@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.CourseViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace SealingSchoolWPF.Pages.Courses.Workflows
         public CreateTAPage1()
         {
             InitializeComponent();
+            var viewModel = CreateTAViewModel.Instance;
+            this.DataContext = viewModel;
         }
     }
 }

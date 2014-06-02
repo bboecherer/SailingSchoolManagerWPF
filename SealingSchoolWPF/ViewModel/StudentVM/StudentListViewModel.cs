@@ -14,7 +14,14 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 {
     class StudentListViewModel : ViewModel
     {
+        #region ctor
+        public StudentListViewModel()
+        {
+            BindDataGrid();
+        }
+        #endregion
 
+        #region singleton
         static StudentListViewModel instance = null;
         static readonly object padlock = new object();
 
@@ -32,12 +39,10 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 }
             }
         }
+        #endregion
 
-
-        private StudentMgr studMgr = new StudentMgr();
-
+        #region properties
         private ObservableCollection<StudentViewModel> students;
-
         public ObservableCollection<StudentViewModel> Students
         {
             get
@@ -53,20 +58,18 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 }
             }
         }
+        #endregion
 
-        public StudentListViewModel()
-        {
-            BindDataGrid();
-        }
-
+        #region helpers
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Student> studs = studMgr.GetAll();
+            IList<SealingSchoolWPF.Model.Student> studs = studentMgr.GetAll();
             students = new ObservableCollection<StudentViewModel>(studs.Select(p => new StudentViewModel(p)));
         }
+        #endregion
 
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -84,7 +87,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             CreateStudent window = new CreateStudent();
             window.ShowDialog();
         }
-
+        #endregion
 
     }
 }

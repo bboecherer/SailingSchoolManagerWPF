@@ -10,11 +10,14 @@ namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CourseViewModel : ViewModel<SealingSchoolWPF.Model.Course>
     {
+        #region ctor
         public CourseViewModel(SealingSchoolWPF.Model.Course model)
             : base(model)
         {
         }
+        #endregion
 
+        #region properties
         public int Id
         {
             get
@@ -75,22 +78,6 @@ namespace SealingSchoolWPF.ViewModel.Course
                 {
                     Model.AdditionalInfo = value;
                     this.OnPropertyChanged("AdditionalInfo");
-                }
-            }
-        }
-
-        public SealingSchoolWPF.Model.Instructor Instructor
-        {
-            get
-            {
-                return Model.Instructor;
-            }
-            set
-            {
-                if (Instructor != value)
-                {
-                    Model.Instructor = value;
-                    this.OnPropertyChanged("Instructor");
                 }
             }
         }
@@ -190,5 +177,38 @@ namespace SealingSchoolWPF.ViewModel.Course
                 }
             }
         }
+
+        public int NeededInstructors
+        {
+            get
+            {
+                return Model.NeededInstructors;
+            }
+            set
+            {
+                if (NeededInstructors != value)
+                {
+                    Model.NeededInstructors = value;
+                    this.OnPropertyChanged("NeededInstructors");
+                }
+            }
+        }
+
+        public ICollection<Qualification> Qualifications
+        {
+            get
+            {
+                return Model.Qualifications;
+            }
+            set
+            {
+                if (Qualifications != value)
+                {
+                    Model.Qualifications = value;
+                    this.OnPropertyChanged("Qualifications");
+                }
+            }
+        }
+        #endregion
     }
 }

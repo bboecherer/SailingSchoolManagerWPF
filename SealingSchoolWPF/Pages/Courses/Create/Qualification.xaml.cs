@@ -1,4 +1,5 @@
-﻿using SealingSchoolWPF.ViewModel.CourseViewModel;
+﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
+using SealingSchoolWPF.ViewModel.CourseViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -48,7 +48,8 @@ namespace SealingSchoolWPF.Pages.Courses.Update
             c.NetAmount = course.NetAmount;
             c.Title = course.Title;
             c.AdditionalInfo = course.AdditionalInfo;
-            c.Instructor = course.Instructor;
+            c.NeededInstructors = course.NeededInstructors;
+            c.Qualifications = course.Qualifications;
 
             return c;
         }

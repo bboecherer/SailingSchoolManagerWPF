@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
+using SealingSchoolWPF.ViewModel.CourseViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,13 @@ namespace SealingSchoolWPF.Pages.Controls
         public QualificationControl()
         {
             InitializeComponent();
+        }
+
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = CreateCourseViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as QualificationViewModel;
+            viewModel.ExecuteDeleteCommand(obj);
         }
     }
 }

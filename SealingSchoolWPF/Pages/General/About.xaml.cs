@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.PDF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace SealingSchoolWPF.General
         public About()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PDFTest test = new PDFTest();
+            test.test();
         }
     }
 }

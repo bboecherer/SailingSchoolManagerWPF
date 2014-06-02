@@ -10,11 +10,14 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 {
     public class StudentViewModel : ViewModel<SealingSchoolWPF.Model.Student>
     {
+        #region ctor
         public StudentViewModel(SealingSchoolWPF.Model.Student model)
             : base(model)
         {
         }
+        #endregion
 
+        #region properties
         public string Id
         {
             get
@@ -344,5 +347,22 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 }
             }
         }
+
+        public ICollection<Model.Qualification> Qualifications
+        {
+            get
+            {
+                return Model.Qualifications;
+            }
+            set
+            {
+                if (Qualifications != value)
+                {
+                    Model.Qualifications = value;
+                    this.OnPropertyChanged("Qualifications");
+                }
+            }
+        }
+        #endregion
     }
 }

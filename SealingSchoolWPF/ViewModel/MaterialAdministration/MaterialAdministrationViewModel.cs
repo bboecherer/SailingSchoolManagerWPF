@@ -134,6 +134,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
                 return GetMaterialTypNames();
             }
         }
+       
         private MaterialTyp _materialTyp;
         public MaterialTyp MaterialTyp
         {

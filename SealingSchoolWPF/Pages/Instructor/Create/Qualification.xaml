@@ -9,11 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="350">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <Controls:QualificationControl />
-                <Button:CreateButtons HorizontalAlignment="Right" Margin="10"/>
-            </StackPanel>
-        </ScrollViewer>
+        <Controls:QualificationControl />
+        <Button:CreateButtons HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

@@ -1,0 +1,96 @@
+﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             x:Class="SealingSchoolWPF.Pages.Controls.InstructorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="350">
+    <Grid>
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Instructor}"/>
+                <ComboBox Grid.Column="1" Grid.Row="0" Margin="3"
+                              SelectedValue="{Binding InstructorTyp}" ItemsSource="{Binding InstructorValues}" 
+                              IsEnabled="True" IsReadOnly="False"
+                              />
+                <Button Command="{Binding AddInstructorCommand}" Grid.Row="1" Grid.Column="2" Margin="3"
+                            HorizontalAlignment="Right" Height="20" Width="45">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Create_ToolTip}"/>
+                                <TextBlock Text="{x:Static resx:Resource.Create_ToolTip_Desc}"/>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                                        <StackPanel>
+                        <Image Source="/Resources/Images/action_add_16xSM.png" />
+                    </StackPanel>
+                </Button>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" 
+                       Content="{Binding ErrorLabel}" Foreground="Red"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <DataGrid ItemsSource="{Binding Instructors}" SelectionMode="Extended" SelectionUnit="FullRow" 
+                 DataContext="{Binding}" AutoGenerateColumns="False" 
+                  IsReadOnly="True" CanUserDeleteRows="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
+                            Binding="{Binding Label }" >
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="200" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="200" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="Buttontest" Background="Transparent" BorderThickness="0" Click="Buttontest_Click">
+                                        <Button.ToolTip>
+                                            <ToolTip>
+                                                <StackPanel>
+                                                    <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Delete_ToolTip}"/>
+                                                    <TextBlock Text="{x:Static resx:Resource.Delete_ToolTip_Desc}"/>
+                                                </StackPanel>
+                                            </ToolTip>
+                                        </Button.ToolTip>
+                                        <StackPanel>
+                                            <Image Source="/Resources/Images/Offline_16xLG.png"/>
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

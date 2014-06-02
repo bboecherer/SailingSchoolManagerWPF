@@ -8,6 +8,6 @@ namespace SealingSchoolWPF.Model
 {
     public enum CourseStatus
     {
-        STARTED, CANCELLED, FINISHED, PLANING
+        GESTARTET, ABGEBROCHEN, BEENDET, PLANUNG
     }
 }

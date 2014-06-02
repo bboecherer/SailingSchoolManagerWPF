@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.CourseViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
-namespace SealingSchoolWPF.Pages
+namespace SealingSchoolWPF.Pages.Courses.Workflows
 {
     /// <summary>
-    /// Interaction logic for TrainingsActivities.xaml
+    /// Interaction logic for CreateNewStudent.xaml
     /// </summary>
-    public partial class Overview : UserControl
+    public partial class CreatePlaningPage2 : UserControl
     {
-        public Overview()
+        public CreatePlaningPage2()
         {
             InitializeComponent();
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            this.DataContext = viewModel;
         }
     }
 }

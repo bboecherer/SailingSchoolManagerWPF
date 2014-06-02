@@ -12,6 +12,7 @@
                 <TextBlock Text="Sealing School Manager" Margin="0,0,0,8" TextWrapping="Wrap" />
                 <TextBlock Text="Version: 1.0.1" Margin="0,0,0,8" TextWrapping="Wrap" />
                 <TextBlock Text="Copyright Studs@Work AG" Margin="0,0,0,8" TextWrapping="Wrap" />
+                <Button Content="PDF Test" Click="Button_Click"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
