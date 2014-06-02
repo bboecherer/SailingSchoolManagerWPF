@@ -22,6 +22,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
     {
         public Model.Instructor InstructorDummy { get; set; }
 
+        #region ctor
         public UpdateInstructorViewModel(Model.Instructor model)
             : base(model)
         {
@@ -46,9 +47,9 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 }
             }
         }
+        #endregion
 
-
-
+        #region properties
         public string FirstName
         {
             get
@@ -259,175 +260,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private ICommand addCommand;
-
-        public ICommand AddCommand
-        {
-            get
-            {
-                if (addCommand == null)
-                {
-                    addCommand = new RelayCommand(p => ExecuteAddCommand());
-                }
-                return addCommand;
-            }
-        }
-
-        public void Close()
-        {
-            instance = null;
-
-        }
-
-        private void ExecuteAddCommand()
-        {
-            Model.ModifiedOn = DateTime.Now;
-
-            Model.Qualifications.Clear();
-
-            if (prepared != null)
-            {
-                foreach (QualificationViewModel q in prepared)
-                {
-                    Model.Qualifications.Add(prepareQualiToSave(q));
-                }
-            }
-
-            instructorMgr.Update(Model);
-            this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
-            this.IsButtonEnabled = false;
-        }
-
-        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
-        {
-            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
-            quali.QualificationId = q.Id;
-            return quali;
-        }
-
-        private ICommand generateBankData;
-        public ICommand GenerateBankData
-        {
-            get
-            {
-                if (generateBankData == null)
-                {
-                    generateBankData = new RelayCommand(p => ExecuteBankCommand());
-                }
-                return generateBankData;
-            }
-        }
-
-        private void ExecuteBankCommand()
-        {
-            try
-            {
-                this.BankName = GetGermanBank(this.BankNo, this.AccountNo);
-                this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
-                this.Bic = GetGermanBic(this.Iban);
-            }
-            catch (Exception )
-            {
-                this.BankName = "Nicht gefunden";
-                this.Iban = "Nicht gefunden";
-                this.Bic = "Nicht gefunden";
-            }
-        }
-
-
-        private string GenerateGermanIban(string bankIdent, string accountNumber)
-        {
-            IbanGenerator generator = new IbanGenerator();
-            string iban = string.Empty;
-            string bic = string.Empty;
-
-            try
-            {
-                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
-                iban = result.IBAN.IBAN;
-                bic = result.BIC.Bic;
-            }
-            catch (IbanException )
-            {
-                this.Iban = "Nicht gefunden";
-            }
-
-            return iban;
-        }
-
-        private string GetGermanBank(string bankIdent, string accountNumber)
-        {
-            IbanGenerator generator = new IbanGenerator();
-            Bank bank = null;
-
-            try
-            {
-                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
-                bank = result.IBAN.Bank;
-            }
-            catch (IbanException )
-            {
-                this.BankName = "Nicht gefunden";
-            }
-
-            return bank.Name;
-        }
-
-        private string GetGermanBic(string iban)
-        {
-            IbanGetBic getBic = new IbanGetBic();
-            string bic = string.Empty;
-
-            try
-            {
-                var result = getBic.GetBic(iban);
-                bic = result.Bic;
-            }
-            catch (IbanException )
-            {
-                this.Bic = "Nicht gefunden";
-            }
-
-            return bic;
-        }
-
-
-        public void ExecuteDeleteCommand(QualificationViewModel quali)
-        {
-            this.prepared.Remove(quali);
-        }
-
-        private ICommand addQualiCommand;
-
-        public ICommand AddQualiCommand
-        {
-            get
-            {
-                if (addQualiCommand == null)
-                {
-                    addQualiCommand = new RelayCommand(p => ExecuteAddQualiCommand());
-                }
-                return addQualiCommand;
-            }
-        }
-
-        private void ExecuteAddQualiCommand()
-        {
-            if (this.QualificationTyp == null)
-                return;
-
-            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
-            QualificationViewModel quali = new QualificationViewModel(origQauli);
-
-            foreach (QualificationViewModel q in prepared)
-            {
-                if (q.ShortName == quali.ShortName)
-                    return;
-            }
-
-            this.prepared.Add(quali);
-        }
-
         private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
         {
             QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
@@ -463,7 +295,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         }
 
         private ObservableCollection<QualificationViewModel> qualifications;
-
         public ObservableCollection<QualificationViewModel> Qualifications
         {
             get
@@ -478,6 +309,175 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                     this.OnPropertyChanged("Qualifications");
                 }
             }
+        }
+        #endregion
+
+        #region commands
+        private ICommand addCommand;
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (addCommand == null)
+                {
+                    addCommand = new RelayCommand(p => ExecuteAddCommand());
+                }
+                return addCommand;
+            }
+        }
+
+        private void ExecuteAddCommand()
+        {
+            Model.ModifiedOn = DateTime.Now;
+
+            Model.Qualifications.Clear();
+
+            if (prepared != null)
+            {
+                foreach (QualificationViewModel q in prepared)
+                {
+                    Model.Qualifications.Add(prepareQualiToSave(q));
+                }
+            }
+
+            instructorMgr.Update(Model);
+            this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
+            this.IsButtonEnabled = false;
+        }
+
+        private ICommand generateBankData;
+        public ICommand GenerateBankData
+        {
+            get
+            {
+                if (generateBankData == null)
+                {
+                    generateBankData = new RelayCommand(p => ExecuteBankCommand());
+                }
+                return generateBankData;
+            }
+        }
+
+        private void ExecuteBankCommand()
+        {
+            try
+            {
+                this.BankName = GetGermanBank(this.BankNo, this.AccountNo);
+                this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
+                this.Bic = GetGermanBic(this.Iban);
+            }
+            catch (Exception)
+            {
+                this.BankName = "Nicht gefunden";
+                this.Iban = "Nicht gefunden";
+                this.Bic = "Nicht gefunden";
+            }
+        }
+
+        public void ExecuteDeleteCommand(QualificationViewModel quali)
+        {
+            this.prepared.Remove(quali);
+        }
+
+        private ICommand addQualiCommand;
+        public ICommand AddQualiCommand
+        {
+            get
+            {
+                if (addQualiCommand == null)
+                {
+                    addQualiCommand = new RelayCommand(p => ExecuteAddQualiCommand());
+                }
+                return addQualiCommand;
+            }
+        }
+
+        private void ExecuteAddQualiCommand()
+        {
+            if (this.QualificationTyp == null)
+                return;
+
+            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            QualificationViewModel quali = new QualificationViewModel(origQauli);
+
+            foreach (QualificationViewModel q in prepared)
+            {
+                if (q.ShortName == quali.ShortName)
+                    return;
+            }
+
+            this.prepared.Add(quali);
+        }
+        #endregion
+
+        #region helpers
+        public void Close()
+        {
+            instance = null;
+
+        }
+
+        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
+        {
+            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+            quali.QualificationId = q.Id;
+            return quali;
+        }
+
+        private string GenerateGermanIban(string bankIdent, string accountNumber)
+        {
+            IbanGenerator generator = new IbanGenerator();
+            string iban = string.Empty;
+            string bic = string.Empty;
+
+            try
+            {
+                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
+                iban = result.IBAN.IBAN;
+                bic = result.BIC.Bic;
+            }
+            catch (IbanException)
+            {
+                this.Iban = "Nicht gefunden";
+            }
+
+            return iban;
+        }
+
+        private string GetGermanBank(string bankIdent, string accountNumber)
+        {
+            IbanGenerator generator = new IbanGenerator();
+            Bank bank = null;
+
+            try
+            {
+                var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
+                bank = result.IBAN.Bank;
+            }
+            catch (IbanException)
+            {
+                this.BankName = "Nicht gefunden";
+            }
+
+            return bank.Name;
+        }
+
+        private string GetGermanBic(string iban)
+        {
+            IbanGetBic getBic = new IbanGetBic();
+            string bic = string.Empty;
+
+            try
+            {
+                var result = getBic.GetBic(iban);
+                bic = result.Bic;
+            }
+            catch (IbanException)
+            {
+                this.Bic = "Nicht gefunden";
+            }
+
+            return bic;
         }
 
         private ObservableCollection<QualificationViewModel> prepared;
@@ -507,5 +507,6 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
             return list;
         }
+        #endregion
     }
 }

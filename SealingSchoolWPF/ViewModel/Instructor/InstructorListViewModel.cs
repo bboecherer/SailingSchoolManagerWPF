@@ -14,7 +14,6 @@ namespace SealingSchoolWPF.ViewModel.Instructor
     class InstructorListViewModel : ViewModel
     {
         #region ctor
-
         public InstructorListViewModel()
         {
             BindDataGrid();

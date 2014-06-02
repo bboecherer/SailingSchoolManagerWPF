@@ -440,6 +440,5 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
         }
         #endregion
 
-
     }
 }
