@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             mc:Ignorable="d" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             mc:Ignorable="d" IsVisibleChanged="UserControl_IsVisibleChanged"
              d:DesignHeight="300" d:DesignWidth="400">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,35 +17,35 @@
             <ColumnDefinition Width="130" />
             <ColumnDefinition Width="130" />
         </Grid.ColumnDefinitions>
-        <ModernControls:Tile Title="Kurse" 
+        <ModernControls:Tile Title="{x:Static resx:Resource.Courses}" 
                     TiltFactor="1"
                     Width="120" Height="120" 
-                    Count="1" Grid.Column="0" Grid.Row="0">
+                    Count="{Binding CourseCount}" Grid.Column="0" Grid.Row="0">
         </ModernControls:Tile>
-        <ModernControls:Tile Title="Rechnungen" 
-                    TiltFactor="2"
+        <ModernControls:Tile Title="{x:Static resx:Resource.Invoices}" 
+                    TiltFactor="2" 
                     Width="120" Height="120" 
-                    Count="2" Grid.Column="0" Grid.Row="2">
+                    Count="{Binding InvoiceCount}" Grid.Column="0" Grid.Row="2">
         </ModernControls:Tile>
-        <ModernControls:Tile Title="Teilnehmer" 
+        <ModernControls:Tile Title="{x:Static resx:Resource.Students}" 
                     TiltFactor="3"
                     Width="120" Height="120" 
-                    Count="3" Grid.Column="1" Grid.Row="0">
+                    Count="{Binding StudentCount}" Grid.Column="1" Grid.Row="0">
         </ModernControls:Tile>
-        <ModernControls:Tile Title="Gutschriften" 
+        <ModernControls:Tile Title="{x:Static resx:Resource.CreditNote}" 
                     TiltFactor="2"
                     Width="120" Height="120" 
-                    Count="4" Grid.Column="1" Grid.Row="2">
+                    Count="{Binding CreditNoteCount}" Grid.Column="1" Grid.Row="2">
         </ModernControls:Tile>
-        <ModernControls:Tile Title="Kursleiter" 
+        <ModernControls:Tile Title="{x:Static resx:Resource.Instructor}" 
                     TiltFactor="2"
                     Width="120" Height="120" 
-                    Count="5" Grid.Column="2" Grid.Row="0">
+                    Count="{Binding InstructorCount}" Grid.Column="2" Grid.Row="0">
         </ModernControls:Tile>
-        <ModernControls:Tile Title="Anmeldungen" 
+        <ModernControls:Tile Title="{x:Static resx:Resource.TrainingActivity}" 
                     TiltFactor="2"
                     Width="120" Height="120" 
-                    Count="10" Grid.Column="2" Grid.Row="2">
+                    Count="{Binding TaCount}" Grid.Column="2" Grid.Row="2">
         </ModernControls:Tile>
     </Grid>
 </UserControl>

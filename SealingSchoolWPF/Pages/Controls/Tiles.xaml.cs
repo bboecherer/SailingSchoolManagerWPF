@@ -12,17 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SealingSchoolWPF.ViewModel.General;
 
 namespace SealingSchoolWPF.Pages.Controls
 {
-    /// <summary>
-    /// Interaction logic for Tiles.xaml
-    /// </summary>
-    public partial class Tiles : UserControl
+  /// <summary>
+  /// Interaction logic for Tiles.xaml
+  /// </summary>
+  public partial class Tiles : UserControl
+  {
+    public Tiles()
     {
-        public Tiles()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
+      var viewModel = new LiveTilesViewModel();
+      this.DataContext = viewModel;
     }
+
+    private void UserControl_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
+    {
+      this.DataContext = null;
+      var viewModel = new LiveTilesViewModel();
+      this.DataContext = viewModel;
+    }
+  }
 }

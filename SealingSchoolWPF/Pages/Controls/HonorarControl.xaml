@@ -16,8 +16,8 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="Stundensatz"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Tagessatz"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.HourlyFee}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.DailyFee}"/>
         <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3" Minimum="0.00" 
                                         Value="{Binding Path=HonorarValueStd}" />
         <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Minimum="0.00" 
