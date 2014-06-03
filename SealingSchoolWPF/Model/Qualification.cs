@@ -38,7 +38,7 @@ namespace SealingSchoolWPF.Model
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }

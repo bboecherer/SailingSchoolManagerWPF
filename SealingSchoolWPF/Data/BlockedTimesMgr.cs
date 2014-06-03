@@ -57,7 +57,7 @@ namespace SealingSchoolWPF.Data
                         }
                     }
                 }
-                catch (Exception ex) { }
+                catch (Exception ) { }
             }
         }
 

@@ -10,14 +10,16 @@
              d:DesignHeight="300" d:DesignWidth="300" 
              IsVisibleChanged="UserControl_IsVisibleChanged" MouseEnter="UserControl_MouseEnter" 
              >
-    <Grid Style="{StaticResource ContentRoot}">
+       <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid>
             <StackPanel Orientation="Horizontal">
-                <Button Height="25" Width="50" BorderThickness="0" Click="Button_Click_1">
+                <Button Width="35" Height="35" VerticalAlignment="Top"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Click="Button_Click_1">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -26,11 +28,17 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                    <StackPanel>
-                        <Image Source="/Resources/Images/action_add_16xLG.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
-                <Button Height="25" Width="50" BorderThickness="0" Click="Button_Click">
+                <Button Width="35" Height="35" VerticalAlignment="Top"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Click="Button_Click">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -39,8 +47,12 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                    <StackPanel>
-                        <Image Source="/Resources/Images/refresh_16xLG.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_refresh}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
             </StackPanel>

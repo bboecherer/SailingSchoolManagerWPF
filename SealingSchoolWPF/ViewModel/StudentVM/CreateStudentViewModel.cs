@@ -381,6 +381,12 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
+        public void ExecuteDeleteCommand(QualificationViewModel quali)
+        {
+            this.dummy.Remove(quali);
+            this.ReBindDataGrid();
+        }
+
         private void ExecuteClearCommand()
         {
             this.FirstName = null;
@@ -426,7 +432,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
                 this.Bic = GetGermanBic(this.Iban);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 this.BankName = "Nicht gefunden";
                 this.Iban = "Nicht gefunden";
@@ -545,7 +551,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 iban = result.IBAN.IBAN;
                 bic = result.BIC.Bic;
             }
-            catch (IbanException ex)
+            catch (IbanException)
             {
                 this.Iban = "Nicht gefunden";
             }
@@ -563,7 +569,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
                 bank = result.IBAN.Bank;
             }
-            catch (IbanException ex)
+            catch (IbanException)
             {
                 this.BankName = "Nicht gefunden";
             }
@@ -581,7 +587,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 var result = getBic.GetBic(iban);
                 bic = result.Bic;
             }
-            catch (IbanException ex)
+            catch (IbanException)
             {
                 this.Bic = "Nicht gefunden";
             }

@@ -12,8 +12,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
 {
     class InvoiceButtonViewModel : ViewModel
     {
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -31,5 +31,6 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
             CreateInvoiceWF window = new CreateInvoiceWF();
             window.ShowDialog();
         }
+        #endregion
     }
 }

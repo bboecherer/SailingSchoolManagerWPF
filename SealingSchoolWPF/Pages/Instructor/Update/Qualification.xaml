@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Instructor.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="350">
@@ -13,8 +12,8 @@
         <StackPanel>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
@@ -25,8 +24,9 @@
                               SelectedValue="{Binding QualificationTyp}" ItemsSource="{Binding QualificationValues}" 
                               IsEnabled="True" IsReadOnly="False"
                               />
-                <Button Command="{Binding AddQualiCommand}" Grid.Row="4" Grid.Column="2" Margin="3"
-                            HorizontalAlignment="Right"   Height="20" Width="45">
+                <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding AddQualiCommand}" Grid.Row="1" Grid.Column="1">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -35,12 +35,15 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                    <StackPanel>
-                        <Image Source="/Resources/Images/action_add_16xSM.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
             </Grid>
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

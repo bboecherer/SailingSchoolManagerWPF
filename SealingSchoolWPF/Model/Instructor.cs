@@ -48,7 +48,7 @@ namespace SealingSchoolWPF.Model
             {
                 instr = (Instructor)obj;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="500">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
@@ -24,10 +25,11 @@
                 <TextBlock Text="Material Typen" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Heading2}" />
                 <Label Grid.Row="1" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Label}"/>
                 <Label Grid.Row="2" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Description}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Text="{Binding Path=Name}" Grid.ColumnSpan="2"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Text="{Binding Path=Description}"/>
-                <Button Command="{Binding AddCommand}" Grid.Row="3" Grid.Column="2" Margin="3"
-             HorizontalAlignment="Right"   Height="20" Width="45">
+                <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Row="1" Grid.Column="1" Margin="3" Text="{Binding Path=Name}" Grid.ColumnSpan="2"/>
+                <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Text="{Binding Path=Description}"/>
+                <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding AddCommand}" Grid.Row="3" Grid.Column="2">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -36,8 +38,12 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                    <StackPanel>
-                        <Image Source="/Resources/Images/action_add_16xSM.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
             </Grid>

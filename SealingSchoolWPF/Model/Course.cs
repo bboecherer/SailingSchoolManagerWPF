@@ -38,7 +38,7 @@ namespace SealingSchoolWPF.Model
             {
                 course = (Course)obj;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }

@@ -47,7 +47,7 @@ namespace SealingSchoolWPF.Data
                 {
                     bu = ctx.BusinessUnits.FirstOrDefault<BusinessUnit>();
                 }
-                catch (Exception ex)
+                catch (Exception )
                 { }
 
             }

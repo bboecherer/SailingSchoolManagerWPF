@@ -1,5 +1,4 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using log4net;
 using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.Resources.Language;
@@ -7,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,6 +29,9 @@ namespace SealingSchoolWPF
         {
             Resource.Culture = new System.Globalization.CultureInfo("de-DE");
             InitializeComponent();
+            BusinessUnitMgr bu = new BusinessUnitMgr();
+            bu.GetBu();
+            Thread.Sleep(2000);
         }
 
     }

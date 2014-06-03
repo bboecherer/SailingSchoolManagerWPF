@@ -13,7 +13,6 @@
                 <Controls:CourseBaseControl />
                 <Button:CreateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>
-
         </ScrollViewer>
     </Grid>
 </UserControl>

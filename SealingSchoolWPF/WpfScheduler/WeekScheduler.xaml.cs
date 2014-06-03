@@ -149,7 +149,7 @@ namespace WpfScheduler
                     Grid.SetRowSpan(endJourney, 24 - _scheduler.EndJourney.Hours);
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {                
                 throw;
             }
@@ -163,7 +163,7 @@ namespace WpfScheduler
                 PaintAllEvents(null);
                 PaintAllDayEvents();
             }
-            catch (Exception ex)
+            catch (Exception )
             {                
                 throw;
             }
@@ -238,7 +238,7 @@ namespace WpfScheduler
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {                
                 throw;
             }
@@ -289,7 +289,7 @@ namespace WpfScheduler
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {                
                 throw;
             }

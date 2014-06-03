@@ -10,6 +10,8 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 {
     public class BusinessUnitViewModel : ViewModel<SealingSchoolWPF.Model.BusinessUnit>
     {
+        private static BusinessUnitMgr mgr = new BusinessUnitMgr();
+        private static SealingSchoolWPF.Model.BusinessUnit bu = mgr.GetBu();
 
         #region Ctor
         public BusinessUnitViewModel(SealingSchoolWPF.Model.BusinessUnit model)
@@ -35,9 +37,6 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             }
         }
         #endregion
-
-        private static BusinessUnitMgr mgr = new BusinessUnitMgr();
-        private static SealingSchoolWPF.Model.BusinessUnit bu = mgr.GetBu();
 
         #region properties
         public string Label

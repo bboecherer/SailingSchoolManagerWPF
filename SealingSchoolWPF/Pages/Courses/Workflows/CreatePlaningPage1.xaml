@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="360" d:DesignWidth="360">
+             d:DesignHeight="360" d:DesignWidth="360" LostFocus="UserControl_LostFocus" IsVisibleChanged="UserControl_IsVisibleChanged">
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">

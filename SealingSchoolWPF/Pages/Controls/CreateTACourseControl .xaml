@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="330">
     <Grid>
@@ -26,11 +26,12 @@
         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte wählen Sie den Kurs aus."
                FontWeight="Bold" FontSize="14"/>
         <Label Grid.Row="4" Grid.Column="0" Content="Kurs"/>
-
+        <!--
         <xctk:DateTimePicker Grid.Column="1" Grid.Row="1" Margin="3" 
                                          Format="ShortDate"/>
         <xctk:DateTimePicker Grid.Column="1" Grid.Row="2" Margin="3" Height="20" VerticalAlignment="Top"
                                          Format="ShortDate" />
+        -->
         <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
                   MaxDropDownHeight="100" 
                   SelectedValue="{Binding CourseTyp}" ItemsSource="{Binding CourseValues}" 
