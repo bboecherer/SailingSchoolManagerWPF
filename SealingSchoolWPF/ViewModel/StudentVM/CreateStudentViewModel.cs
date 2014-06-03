@@ -381,6 +381,12 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
+        public void ExecuteDeleteCommand(QualificationViewModel quali)
+        {
+            this.dummy.Remove(quali);
+            this.ReBindDataGrid();
+        }
+
         private void ExecuteClearCommand()
         {
             this.FirstName = null;

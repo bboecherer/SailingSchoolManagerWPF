@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="210" d:DesignWidth="310">
     <Grid>
@@ -19,9 +18,9 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Stundensatz"/>
         <Label Grid.Row="1" Grid.Column="0" Content="Tagessatz"/>
-        <xctk:DecimalUpDown Grid.Column="1" Grid.Row="0" Margin="3" FormatString="C2" Minimum="0.00" 
-                                        Value="{Binding Path=HonorarValueStd}" Increment=".5" />
-        <xctk:DecimalUpDown Grid.Column="1" Grid.Row="1" Margin="3" FormatString="C2" Minimum="0.00" 
-                                        Value="{Binding Path=HonorarValueDay}" Increment=".5" />
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3" Minimum="0.00" 
+                                        Value="{Binding Path=HonorarValueStd}" />
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Minimum="0.00" 
+                                        Value="{Binding Path=HonorarValueDay}" />
     </Grid>
 </UserControl>

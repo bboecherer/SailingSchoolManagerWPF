@@ -7,7 +7,6 @@
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="450">
     <Grid Style="{StaticResource ContentRoot}">
@@ -39,8 +38,8 @@
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Name}"/>
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Brand}"/>
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding SerialNumber}"/>
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="3" Margin="3" FormatString="C2" Minimum="0.00" 
-                                        Value="{Binding Path=Price}" Increment=".5" />
+                    <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="3" Margin="3" Minimum="0.00" StringFormat="C2"
+                                        Value="{Binding Path=Price}" />
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                 		SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                     <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"

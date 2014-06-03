@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              d:DesignHeight="280" d:DesignWidth="300">
     <Grid>
@@ -37,10 +38,14 @@
                         SelectedValue="{Binding Course}" ItemsSource="{Binding CourseTypeValues}" 
                         IsEnabled="True" IsReadOnly="False"
                               />
-        <xctk:DateTimePicker Grid.Column="1" Grid.Row="3" Margin="3" 
-                                        Value="{Binding Path=StartDate}"/>
-        <xctk:DateTimePicker Grid.Column="1" Grid.Row="4" Margin="3" Height="20"
-                             VerticalContentAlignment="Top" Value="{Binding Path=EndDate}"  />
+        <DatePicker Width="150" Grid.Column="1" Grid.Row="3" Margin="3"
+                    HorizontalAlignment="Left"
+                    SelectedDate="{Binding StartDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                    Controls:TextboxHelper.Watermark="Startdatum auswählen" />
+        <DatePicker Width="150" Grid.Column="1" Grid.Row="4" Margin="3"
+                    HorizontalAlignment="Left"
+                    SelectedDate="{Binding EndDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                    Controls:TextboxHelper.Watermark="Enddatum auswählen" />
         <ComboBox Grid.Column="1" Grid.Row="7" Margin="3"
                   SelectedItem="{Binding CourseStatus}" 
                   ItemsSource="{Binding CourseStatusTypeValues}"
