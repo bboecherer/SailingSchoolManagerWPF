@@ -121,7 +121,7 @@
     <value>Accounting</value>
   </data>
   <data name="AccountNoLong" xml:space="preserve">
-    <value>account number</value>
+    <value>account no</value>
   </data>
   <data name="AccountNoShort" xml:space="preserve">
     <value>ACN</value>
@@ -136,7 +136,7 @@
     <value>information</value>
   </data>
   <data name="AdminMail" xml:space="preserve">
-    <value>Admin Email</value>
+    <value>Admin email</value>
   </data>
   <data name="Adress" xml:space="preserve">
     <value>Address</value>
@@ -196,10 +196,10 @@
     <value>Create new dataset</value>
   </data>
   <data name="CreditNote" xml:space="preserve">
-    <value>Credit entry</value>
+    <value>Credit note</value>
   </data>
   <data name="CreditNotes" xml:space="preserve">
-    <value>Credit entries</value>
+    <value>Credit notes</value>
   </data>
   <data name="Currency" xml:space="preserve">
     <value>Currency</value>
@@ -274,7 +274,7 @@
     <value>Identifier</value>
   </data>
   <data name="Instructor" xml:space="preserve">
-    <value>Course instructor</value>
+    <value>Instructor</value>
   </data>
   <data name="Invoice" xml:space="preserve">
     <value>Invoice</value>
@@ -334,7 +334,7 @@
     <value>Overview</value>
   </data>
   <data name="PostalLong" xml:space="preserve">
-    <value>Postal Code</value>
+    <value>Postal code</value>
   </data>
   <data name="PostalShort" xml:space="preserve">
     <value>ZIP</value>
@@ -352,7 +352,7 @@
     <value>Name</value>
   </data>
   <data name="QualiShort" xml:space="preserve">
-    <value>Abreviation</value>
+    <value>Shortcut</value>
   </data>
   <data name="Refresh_ToolTip" xml:space="preserve">
     <value>Refresh</value>
@@ -427,7 +427,7 @@
     <value>Street</value>
   </data>
   <data name="Students" xml:space="preserve">
-    <value>Members</value>
+    <value>Students</value>
   </data>
   <data name="Swift" xml:space="preserve">
     <value>SWIFT</value>
@@ -455,5 +455,56 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="Course" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="CourseEnd" xml:space="preserve">
+    <value>Cours end</value>
+  </data>
+  <data name="CoursePlanDateDescription" xml:space="preserve">
+    <value>Please select start and end date</value>
+  </data>
+  <data name="CourseStart" xml:space="preserve">
+    <value>Course start</value>
+  </data>
+  <data name="CourseStatus" xml:space="preserve">
+    <value>Course status</value>
+  </data>
+  <data name="CourseStatusDescription" xml:space="preserve">
+    <value>Please select course status</value>
+  </data>
+  <data name="DailyFee" xml:space="preserve">
+    <value>Daily fee</value>
+  </data>
+  <data name="EndDateDescription" xml:space="preserve">
+    <value>Please select end date</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="HourlyFee" xml:space="preserve">
+    <value>Hourly fee</value>
+  </data>
+  <data name="InstructorCount" xml:space="preserve">
+    <value>Number of instructors</value>
+  </data>
+  <data name="SelectCourseDescription" xml:space="preserve">
+    <value>Please select the course</value>
+  </data>
+  <data name="SelectStudent" xml:space="preserve">
+    <value>Please select students</value>
+  </data>
+  <data name="StartDateDescription" xml:space="preserve">
+    <value>Please select start date</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="SummaryDescription" xml:space="preserve">
+    <value>Here you will see a summary</value>
+  </data>
+  <data name="TrainingActivity" xml:space="preserve">
+    <value>Registration</value>
   </data>
 </root>

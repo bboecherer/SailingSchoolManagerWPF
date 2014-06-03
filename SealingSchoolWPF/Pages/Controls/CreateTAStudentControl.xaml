@@ -17,10 +17,10 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte Teilnehmer auswählen."
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resx:Resource.SelectStudent}"
                FontWeight="Bold" FontSize="14"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Gruppe"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="Teilnehmer"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Group}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.Students}"/>
 
         <CheckBox Grid.Column="1" Grid.Row="1" Margin="3"/>
         <ComboBox Grid.Column="1" Grid.Row="2" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
