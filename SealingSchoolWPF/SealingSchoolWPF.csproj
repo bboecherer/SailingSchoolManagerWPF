@@ -75,16 +75,25 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\BlockedTimesMgr.cs" />
+    <Compile Include="Data\BoatMgr.cs" />
+    <Compile Include="Data\MaterialGroupMgr.cs" />
     <Compile Include="Data\CoursePlaningMgr.cs" />
+    <Compile Include="Data\BoatTypMgr.cs" />
     <Compile Include="Data\MaterialTypMgr.cs" />
     <Compile Include="Data\QualificationMgr.cs" />
     <Compile Include="Model\BlockedTimeSpan.cs" />
+    <Compile Include="Model\BoatTyp.cs" />
+    <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\CoursePlaning.cs" />
     <Compile Include="Model\IncomingInvoice.cs" />
+    <Compile Include="Model\MaterialGroup.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
     <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\Qualification.cs" />
     <Compile Include="Model\Unit.cs" />
+    <Compile Include="Pages\BusinessUnit\BoatTyp.xaml.cs">
+      <DependentUpon>BoatTyp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
     </Compile>
@@ -504,7 +513,9 @@
       <DependentUpon>Resource.en-US.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BusinessUnit\BusinessUnitViewModel.cs" />
+    <Compile Include="ViewModel\BusinessUnit\BoatTypListViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\MaterialTypListViewModel.cs" />
+    <Compile Include="ViewModel\BusinessUnit\BoatTypViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationListViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\MaterialTypViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationViewModel.cs" />
@@ -547,6 +558,10 @@
       <DependentUpon>StudentListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\StudentVM\StudentViewModel.cs" />
+    <Page Include="Pages\BusinessUnit\BoatTyp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\BusinessUnit\Material.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

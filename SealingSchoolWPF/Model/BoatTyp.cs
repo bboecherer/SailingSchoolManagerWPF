@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class MaterialGroup : SealingSchoolObject
+    public class BoatTyp : SealingSchoolObject
     {
         [Key]
-        public int ID { get; set; }
+        public int BoatID { get; set; }
         public string Name { get; set; }
+        public Decimal CrewAmount { get; set; }
+        public MaterialGroup MaterialGroup { get; set; }
+        public String Description { get; set; }
+
     }
 }

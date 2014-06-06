@@ -18,8 +18,8 @@ namespace SealingSchoolWPF.Model
         public MaterialStatus MaterialStatus { get; set; }
         public string RepairAction { get; set; }
         public string SerialNumber { get; set; }
-        public Decimal CrewAmount { get; set; }
-        public MaterialGroup MaterialGroup { get; set; }
+        public BoatTyp BoatTyp { get; set; }
+        public String Description { get; set; }
 
     }
 }

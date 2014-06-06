@@ -507,4 +507,10 @@
   <data name="TrainingActivity" xml:space="preserve">
     <value>Registration</value>
   </data>
+  <data name="CrewAmount" xml:space="preserve">
+    <value>Crew Amount</value>
+  </data>
+  <data name="BoatTyp" xml:space="preserve">
+    <value>Boat Typ</value>
+  </data>
 </root>

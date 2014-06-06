@@ -25,7 +25,10 @@ namespace SealingSchoolWPF.Data
                 foreach (Material mat in ctx.Materials)
                 {
                     ctx.Entry(mat).Reference(s => s.MaterialTyp).Load();
-                    ctx.MaterialTyps.Attach(mat.MaterialTyp);
+                    if (mat.MaterialTyp != null)
+                    {
+                        ctx.MaterialTyps.Attach(mat.MaterialTyp);
+                    }
                     Materials.Add(mat);
                 }
             }

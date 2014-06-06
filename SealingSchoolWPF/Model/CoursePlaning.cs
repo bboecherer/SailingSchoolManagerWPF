@@ -24,9 +24,9 @@ namespace SealingSchoolWPF.Model
 
         public override bool Equals(object obj)
         {
-            CoursePlaning course = (CoursePlaning)obj;
+            CoursePlaning Course = (CoursePlaning)obj;
 
-            if (CoursePlaningId != course.CoursePlaningId)
+            if (CoursePlaningId != Course.CoursePlaningId)
             {
                 return false;
             }
