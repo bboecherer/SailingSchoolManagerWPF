@@ -23,11 +23,11 @@
         <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.NetAmount}"/>
         <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.NetPrice}"/>
         <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="C2"
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="N2"
                                         Value="{Binding Path=GrossPrice}"  />
-        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Interval="0.5" Minimum="0.00" StringFormat="C2"
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Interval="0.5" Minimum="0.00" StringFormat="N2"
                                         Value="{Binding Path=NetAmount}"  IsEnabled="False" IsReadOnly="True" />
-        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="2" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="C2"
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="2" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="N2"
                                         Value="{Binding Path=NetPrice}"  IsEnabled="False" IsReadOnly="True"/>
         <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>

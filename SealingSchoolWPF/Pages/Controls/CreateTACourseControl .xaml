@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="330">
     <Grid>
@@ -26,7 +26,15 @@
         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resx:Resource.SelectCourseDescription}"
                FontWeight="Bold" FontSize="14"/>
         <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Course}"/>
-             <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
+        <DatePicker Width="150" Grid.Column="1" Grid.Row="1" Margin="3"
+                    HorizontalAlignment="Left"
+                    SelectedDate="{Binding StartDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                    Controls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectStart}" />
+        <DatePicker Width="150" Grid.Column="1" Grid.Row="2" Margin="3" Height="20" VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    SelectedDate="{Binding EndDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                    Controls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectEnd}" />
+        <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
                   MaxDropDownHeight="100" 
                   SelectedValue="{Binding CourseTyp}" ItemsSource="{Binding CourseValues}" 
                   IsEnabled="True" IsReadOnly="False"

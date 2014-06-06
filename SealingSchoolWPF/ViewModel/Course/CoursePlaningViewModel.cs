@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CoursePlaningViewModel : ViewModel<SealingSchoolWPF.Model.CoursePlaning>
     {

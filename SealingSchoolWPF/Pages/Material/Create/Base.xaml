@@ -38,7 +38,7 @@
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Name}"/>
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Brand}"/>
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=SerialNumber}"/>
-                    <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="3" Margin="3" Minimum="0.00" 
+                    <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="3" Margin="3" Minimum="0.00" StringFormat="N2"
                                         Value="{Binding Path=Price}" />
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>

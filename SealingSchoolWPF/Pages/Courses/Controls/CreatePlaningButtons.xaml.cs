@@ -1,7 +1,6 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Pages.Instructor.Create;
 using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.CourseViewModel;
 using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
@@ -19,20 +18,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Controls
 {
-    /// <summary>
-    /// Interaction logic for ButtonsToWork.xaml
-    /// </summary>
-    public partial class CreatePlaningButtons : UserControl
+  /// <summary>
+  /// Interaction logic for ButtonsToWork.xaml
+  /// </summary>
+  public partial class CreatePlaningButtons : UserControl
+  {
+    public CreatePlaningButtons()
     {
-        public CreatePlaningButtons()
-        {
-            InitializeComponent();
-            var viewModel = CreateCoursePlaningViewModel.Instance;
-            this.DataContext = viewModel;
-        }
-
+      InitializeComponent();
+      var viewModel = CreateCoursePlaningViewModel.Instance;
+      this.DataContext = viewModel;
     }
+
+  }
 }

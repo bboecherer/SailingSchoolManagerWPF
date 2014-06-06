@@ -1,5 +1,4 @@
 ﻿using SealingSchoolWPF.Model;
-using SealingSchoolWPF.ViewModel.CourseViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,19 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Create
 {
-    /// <summary>
-    /// Interaction logic for CreateNewStudent.xaml
-    /// </summary>
-    public partial class Financial : UserControl
+  /// <summary>
+  /// Interaction logic for CreateNewStudent.xaml
+  /// </summary>
+  public partial class Financial : UserControl
+  {
+    public Financial()
     {
-        public Financial()
-        {
-            InitializeComponent();
-            var viewModel = CreateCourseViewModel.Instance;
-            this.DataContext = viewModel;
-        }
+      InitializeComponent();
+      var viewModel = CreateCourseViewModel.Instance;
+      this.DataContext = viewModel;
     }
+  }
 }

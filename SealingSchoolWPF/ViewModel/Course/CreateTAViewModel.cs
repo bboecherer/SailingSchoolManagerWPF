@@ -13,7 +13,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.CourseViewModel
+namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CreateTAViewModel : ViewModel<SealingSchoolWPF.Model.TrainingActivity>
     {

@@ -11,7 +11,7 @@
             <RowDefinition Height="200" />
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Courses}" SelectionMode="Extended" SelectionUnit="FullRow" 
-                 DataContext="{Binding}" AutoGenerateColumns="False" Height="280"
+                 DataContext="{Binding}" AutoGenerateColumns="False" Height="280" HorizontalGridLinesBrush="Gray"
                   IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 

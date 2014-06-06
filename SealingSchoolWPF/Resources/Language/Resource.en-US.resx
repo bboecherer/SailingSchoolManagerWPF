@@ -513,4 +513,10 @@
   <data name="BoatTyp" xml:space="preserve">
     <value>Boat Typ</value>
   </data>
+  <data name="SelectEnd" xml:space="preserve">
+    <value>Select end date</value>
+  </data>
+  <data name="SelectStart" xml:space="preserve">
+    <value>Select start date</value>
+  </data>
 </root>

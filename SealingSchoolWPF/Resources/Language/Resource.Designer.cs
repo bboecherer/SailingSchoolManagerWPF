@@ -1007,6 +1007,25 @@ namespace SealingSchoolWPF.Resources.Language {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Bitte Teilnehmer auswählen ähnelt.
+        ///   Looks up a localized string similar to Endtdatum auswählen.
+        /// </summary>
+        public static string SelectEnd {
+            get {
+                return ResourceManager.GetString("SelectEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Startdatum auswählen.
+        /// </summary>
+        public static string SelectStart {
+            get {
+                return ResourceManager.GetString("SelectStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte Teilnehmer auswählen.
         /// </summary>
         public static string SelectStudent {
             get {
