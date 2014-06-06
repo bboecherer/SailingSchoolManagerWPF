@@ -18,6 +18,9 @@ namespace SealingSchoolWPF.ViewModel
         public StudentMgr studentMgr = new StudentMgr();
         public QualificationMgr qualiMgr = new QualificationMgr();
         public CoursePlaningMgr coursePlaningMgr = new CoursePlaningMgr();
+        public BlockedTimesMgr blockTimesMgr = new BlockedTimesMgr();
+
+
 
         /// <summary>
         /// Returns the user-friendly name of this object.

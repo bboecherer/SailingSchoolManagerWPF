@@ -510,4 +510,10 @@
   <data name="TrainingActivity" xml:space="preserve">
     <value>Anmeldung</value>
   </data>
+  <data name="SelectEnd" xml:space="preserve">
+    <value>Endtdatum auswählen</value>
+  </data>
+  <data name="SelectStart" xml:space="preserve">
+    <value>Startdatum auswählen</value>
+  </data>
 </root>

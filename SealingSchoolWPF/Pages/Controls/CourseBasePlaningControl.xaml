@@ -41,11 +41,11 @@
         <DatePicker Width="150" Grid.Column="1" Grid.Row="3" Margin="3"
                     HorizontalAlignment="Left"
                     SelectedDate="{Binding StartDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
-                    Controls:TextboxHelper.Watermark="Startdatum auswählen" />
+                    Controls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectStart}" />
         <DatePicker Width="150" Grid.Column="1" Grid.Row="4" Margin="3"
                     HorizontalAlignment="Left"
                     SelectedDate="{Binding EndDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
-                    Controls:TextboxHelper.Watermark="Enddatum auswählen" />
+                    Controls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectEnd}" />
         <ComboBox Grid.Column="1" Grid.Row="7" Margin="3"
                   SelectedItem="{Binding CourseStatus}" 
                   ItemsSource="{Binding CourseStatusTypeValues}"

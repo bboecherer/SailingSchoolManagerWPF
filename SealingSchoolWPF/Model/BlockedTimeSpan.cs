@@ -8,15 +8,37 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class BlockedTimeSpan
+  public class BlockedTimeSpan
+  {
+    [Key]
+    public virtual int BlockedTimeSpanId { get; set; }
+    public virtual DateTime StartDate { get; set; }
+    public virtual DateTime EndDate { get; set; }
+
+    public virtual Course Course { get; set; }
+
+    public virtual Instructor Instructor { get; set; }
+
+    public virtual String Reason { get; set; }
+
+
+    public override string ToString()
     {
-        [Key]
-        public virtual int BlockedTimeSpanId { get; set; }
-        public virtual DateTime StartDate { get; set; }
-        public virtual DateTime EndDate { get; set; }
+      StringBuilder builder = new StringBuilder();
 
-        public virtual Course Course { get; set; }
+      builder.Append( "Von " + StartDate.ToShortDateString() + " bis " + this.EndDate.ToShortDateString() );
 
-        public virtual Instructor Instructor { get; set; }
+      if ( this.Course != null )
+      {
+        builder.Append( string.Format( ", Kurs {0}", this.Course.Label ) );
+      }
+      else
+      {
+        builder.Append( ", privat" );
+
+      }
+
+      return builder.ToString();
     }
+  }
 }

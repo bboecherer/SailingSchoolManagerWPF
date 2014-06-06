@@ -18,9 +18,9 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.HourlyFee}"/>
         <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.DailyFee}"/>
-        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3" Minimum="0.00" 
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="N2" 
                                         Value="{Binding Path=HonorarValueStd}" />
-        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Minimum="0.00" 
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="N2"
                                         Value="{Binding Path=HonorarValueDay}" />
     </Grid>
 </UserControl>

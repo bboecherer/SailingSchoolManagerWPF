@@ -283,8 +283,14 @@
     <Compile Include="Pages\Courses\Update\UpdateCourse.xaml.cs">
       <DependentUpon>UpdateCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Instructor\Create\BlockedTimes.xaml.cs">
+      <DependentUpon>BlockedTimes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Instructor\Create\Honorar.xaml.cs">
       <DependentUpon>Honorar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Update\BlockedTimes.xaml.cs">
+      <DependentUpon>BlockedTimes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\Update\Honorar.xaml.cs">
       <DependentUpon>Honorar.xaml</DependentUpon>
@@ -511,6 +517,7 @@
     <Compile Include="ViewModel\Course\CreateTAViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateCoursePlaningViewModel.cs" />
     <Compile Include="ViewModel\Course\CoursePlaningViewModel.cs" />
+    <Compile Include="ViewModel\Course\BlockedTimesViewModel.cs" />
     <Compile Include="ViewModel\Course\TaButtonViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseListViewModel.cs" />
     <Compile Include="ViewModel\Course\CourseViewModel.cs" />
@@ -715,7 +722,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Instructor\Create\BlockedTimes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Instructor\Create\Honorar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Update\BlockedTimes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
