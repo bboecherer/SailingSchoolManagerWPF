@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Reflection;
@@ -24,6 +25,10 @@ namespace SealingSchoolWPF.Data
                 foreach (Material mat in ctx.Materials)
                 {
                     ctx.Entry(mat).Reference(s => s.MaterialTyp).Load();
+                    if (mat.MaterialTyp != null)
+                    {
+                        ctx.MaterialTyps.Attach(mat.MaterialTyp);
+                    }
                     Materials.Add(mat);
                 }
             }
@@ -46,7 +51,10 @@ namespace SealingSchoolWPF.Data
                 try
                 {
                     ctx.Materials.Add(entity);
-                    ctx.MaterialTyps.Attach(entity.MaterialTyp);
+                    if (entity.MaterialTyp != null)
+                    {
+                        ctx.Entry(entity.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                    }
 
                     ctx.SaveChanges();
                 }
@@ -89,6 +97,10 @@ namespace SealingSchoolWPF.Data
                     try
                     {
                         ctx.Entry(original).State = EntityState.Modified;
+                        if (entity.MaterialTyp != null)
+                        {
+                            ctx.Entry(original.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                        }
                         ctx.ChangeTracker.DetectChanges();
                         ctx.SaveChanges();
                     }
@@ -116,6 +128,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
+                ctx.Entry(material).Reference(s => s.MaterialTyp).Load();
             }
             return material;
         }

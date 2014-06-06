@@ -13,7 +13,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.CourseViewModel
+namespace SealingSchoolWPF.ViewModel.Course
 {
     public class CreateCoursePlaningViewModel : ViewModel<SealingSchoolWPF.Model.CoursePlaning>
     {
@@ -409,7 +409,7 @@ namespace SealingSchoolWPF.ViewModel.CourseViewModel
             Model.StartDate = this.StartDate;
             Model.EndDate = this.EndDate;
             Model.CourseStatus = this.CourseStatus;
-
+                       
             if (Model.Instructors == null)
             {
                 Model.Instructors = new List<SealingSchoolWPF.Model.Instructor>();

@@ -1,5 +1,4 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.CourseViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Create
 {

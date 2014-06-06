@@ -1,7 +1,6 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.ViewModel.Course;
-using SealingSchoolWPF.ViewModel.CourseViewModel;
 using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;

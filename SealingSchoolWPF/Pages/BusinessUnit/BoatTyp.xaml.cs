@@ -1,4 +1,4 @@
-﻿using FirstFloor.ModernUI.Windows.Controls;
+﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,27 +13,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Courses.Planing
+namespace SealingSchoolWPF.Pages.BusinessUnit
 {
     /// <summary>
-    /// Interaction logic for CreateStudent.xaml
+    /// Interaction logic for Qualification.xaml
     /// </summary>
-    public partial class CreateCoursePlaning : ModernWindow
+    public partial class BoatTyp : UserControl
     {
-        CreateCoursePlaningViewModel viewModel;
-
-        public CreateCoursePlaning()
+        public BoatTyp()
         {
             InitializeComponent();
-            viewModel = new CreateCoursePlaningViewModel(new SealingSchoolWPF.Model.CoursePlaning());
+            var viewModel = MaterialTypListViewModel.Instance;
             this.DataContext = viewModel;
+
         }
 
-        private void ModernWindow_Closed(object sender, EventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.Close();
+            var viewModel = MaterialTypListViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as MaterialTypViewModel;
+
+            viewModel.ExecuteDeleteCommand(obj.Id);
         }
     }
 }

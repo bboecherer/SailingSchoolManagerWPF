@@ -15,25 +15,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Instructor.Create
+namespace SealingSchoolWPF.Pages.Instructor.Update
 {
     /// <summary>
     /// Interaction logic for Qualification.xaml
     /// </summary>
-    public partial class Qualification : UserControl
+    public partial class BlockedTimes : UserControl
     {
-        public Qualification()
+      public BlockedTimes()
         {
             InitializeComponent();
-            var viewModel = CreateInstructorViewModel.Instance;
+            var viewModel = UpdateInstructorViewModel.Instance;
             this.DataContext = viewModel;
         }
 
         private void Buttontest_Click( object sender, RoutedEventArgs e )
         {
-          var viewModel = CreateInstructorViewModel.Instance;
-          var obj = ( (FrameworkElement) sender ).DataContext as QualificationViewModel;
-          viewModel.ExecuteDeleteCommand( obj );
+          var viewModel = UpdateInstructorViewModel.Instance;
+          var obj = ( (FrameworkElement) sender ).DataContext as SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel;
+          viewModel.ExecuteDeleteBlockCommand( obj );
         }
     }
 }

@@ -29,11 +29,11 @@ namespace SealingSchoolWPF.Pages.Student.Create
             this.DataContext = viewModel;
         }
 
-        private void Buttontest_Click(object sender, RoutedEventArgs e)
+        private void Buttontest_Click( object sender, RoutedEventArgs e )
         {
-            var viewModel = CreateStudentViewModel.Instance;
-            var obj = ((FrameworkElement)sender).DataContext as QualificationViewModel;
-            viewModel.ExecuteDeleteCommand(obj);
+          var viewModel = CreateStudentViewModel.Instance;
+          var obj = ( (FrameworkElement) sender ).DataContext as QualificationViewModel;
+          viewModel.ExecuteDeleteCommand( obj );
         }
     }
 }

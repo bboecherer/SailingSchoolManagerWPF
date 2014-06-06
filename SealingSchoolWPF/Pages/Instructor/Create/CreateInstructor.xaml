@@ -5,7 +5,7 @@
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="KURSLEITER" IsTitleVisible="True"
        ContentSource="/Pages/Instructor/Create/Base.xaml"
-       Height="450" Width="500" Closed="ModernWindow_Closed"
+       Height="450" Width="550" Closed="ModernWindow_Closed"
       >
 
     <mui:ModernWindow.MenuLinkGroups>
@@ -14,6 +14,7 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Instructor/Create/Base.xaml" />
                 <mui:Link DisplayName="Honorar" Source="/Pages/Instructor/Create/Honorar.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Qualification}" Source="/Pages/Instructor/Create/Qualification.xaml" />
+                <mui:Link DisplayName="Zeiten" Source="/Pages/Instructor/Create/BlockedTimes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Bankdata}" Source="/Pages/Instructor/Create/Bankdata.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Instructor/Create/Notes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Instructor/Create/Documents.xaml" />
