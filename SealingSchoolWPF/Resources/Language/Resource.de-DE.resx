@@ -507,6 +507,12 @@
   <data name="TrainingActivity" xml:space="preserve">
     <value>Anmeldung</value>
   </data>
+  <data name="CrewAmount" xml:space="preserve">
+    <value>Crew Anzahl</value>
+  </data>
+  <data name="BoatTyp" xml:space="preserve">
+    <value>Boot Typ</value>
+  </data>
   <data name="SelectEnd" xml:space="preserve">
     <value>Endtdatum auswählen</value>
   </data>
