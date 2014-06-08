@@ -56,7 +56,106 @@
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1">
-            <StackPanel MinWidth="200">
+            <StackPanel>
+                <DataGrid ItemsSource="{Binding CoursePlanings}" SelectionMode="Extended" SelectionUnit="FullRow" 
+                 DataContext="{Binding}" AutoGenerateColumns="False" HorizontalGridLinesBrush="Gray"
+                  IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick_1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
+                            Binding="{Binding CoursePlaningId }">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="75" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="75" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="{x:Static resx:Resource.Course}" 
+                            Binding="{Binding Course }">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="250" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="250" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="{x:Static resx:Resource.CourseStatus}" 
+                            Binding="{Binding CourseStatus }">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="{x:Static resx:Resource.Start}" 
+                            Binding="{Binding StartDate, StringFormat=\{0:dd.MM.yy HH:mm\}}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static resx:Resource.End}" 
+                            Binding="{Binding EndDate, StringFormat=\{0:dd.MM.yy HH:mm\} }">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </ScrollViewer>
     </Grid>

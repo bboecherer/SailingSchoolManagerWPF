@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media;
+using FirstFloor.ModernUI.Presentation;
 
 namespace SealingSchoolWPF.ViewModel.General
 {
@@ -18,6 +20,19 @@ namespace SealingSchoolWPF.ViewModel.General
         return courseMgr.GetAll().Count;
       }
     }
+
+    public System.Windows.Media.SolidColorBrush BackgroundColor
+    {
+      get
+      {
+        return new SolidColorBrush( AppearanceManager.Current.AccentColor );
+      }
+      set
+      {
+        BackgroundColor = value;
+      }
+    }
+
 
     public int StudentCount
     {

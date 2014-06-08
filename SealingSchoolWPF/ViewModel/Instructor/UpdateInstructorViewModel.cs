@@ -206,6 +206,34 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
     }
 
+    private DateTime _startDatePicker;
+    public DateTime StartDatePicker
+    {
+      get
+      {
+        return _startDatePicker != DateTime.MinValue ? _startDatePicker : DateTime.Now;
+      }
+      set
+      {
+        _startDatePicker = value;
+        this.OnPropertyChanged( "StartDatePicker" );
+      }
+    }
+
+    private DateTime _endDatePicker;
+    public DateTime EndDatePicker
+    {
+      get
+      {
+        return _endDatePicker != DateTime.MinValue ? _endDatePicker : DateTime.Now;
+      }
+      set
+      {
+        _endDatePicker = value;
+        this.OnPropertyChanged( "EndDatePicker" );
+      }
+    }
+
     public Decimal HonorarValueStd
     {
       get
@@ -358,6 +386,12 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
 
       instructorMgr.Update( Model );
+
+      if ( this.list != null && this.list.Count > 0 )
+      {
+        blockTimesMgr.Update( this.list );
+      }
+
       this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
       this.IsButtonEnabled = false;
     }
@@ -411,21 +445,21 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
     private void ExecuteAddTimeCommand()
     {
-      //if ( this.QualificationTyp == null )
-      //  return;
+      if ( this.list == null )
+      {
+        this.list = new List<BlockedTimeSpan>();
+      }
 
-      //SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
-      //QualificationViewModel quali = new QualificationViewModel( origQauli );
+      SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel model = new Course.BlockedTimesViewModel( new BlockedTimeSpan() );
+      model.StartDate = this.StartDatePicker.ToShortDateString();
+      model.EndDate = this.EndDatePicker.ToShortDateString();
 
-      //foreach ( QualificationViewModel q in prepared )
-      //{
-      //  if ( q.ShortName == quali.ShortName )
-      //    return;
-      //}
+      //prüfen, ob es Terminüberschneidungen gibt
+      // this.blockTimesMgr.checkTimes( prepareBlockTimesToModel( model ) );
 
-      //this.prepared.Add( quali );
+      this.list.Add( prepareBlockTimesToModel( model ) );
+      this.ReBindDataGrid();
     }
-
 
 
     private ICommand addQualiCommand;
@@ -460,11 +494,28 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
     public void ExecuteDeleteBlockCommand( SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel obj )
     {
-      throw new NotImplementedException();
+      if ( this.blockedDummyList != null )
+      {
+        this.blockedDummyList.Remove( obj );
+        BlockedTimeSpan dummy = this.prepareBlockTimesToModel( obj );
+        this.list.Remove( dummy );
+      }
+      ReBindDataGrid();
+
     }
     #endregion
 
     #region helpers
+    public IList<Course.BlockedTimesViewModel> blockedDummyList { get; set; }
+
+    private void ReBindDataGrid()
+    {
+      if ( blockedDummyList != null )
+      {
+        BlockedTimes = new ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>( blockedDummyList );
+      }
+    }
+
     public void Close()
     {
       instance = null;
@@ -534,6 +585,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       return bic;
     }
 
+
     private ObservableCollection<QualificationViewModel> prepared;
 
     private ObservableCollection<QualificationViewModel> qualiList()
@@ -549,6 +601,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       return prepared;
     }
 
+
     private ObservableCollection<QualificationViewModel> prepareQualifications( ICollection<SealingSchoolWPF.Model.Qualification> collection )
     {
       ObservableCollection<QualificationViewModel> list = new ObservableCollection<QualificationViewModel>();
@@ -562,10 +615,15 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       return list;
     }
 
+    private IList<BlockedTimeSpan> list;
+
     private ObservableCollection<Course.BlockedTimesViewModel> blockedDummy()
     {
-      IList<BlockedTimeSpan> list = blockTimesMgr.GetByInstructor( this.InstructorDummy.InstructorId );
-
+      if ( this.list == null )
+      {
+        list = blockTimesMgr.GetByInstructor( this.InstructorDummy.InstructorId );
+      }
+      this.blockedDummyList = prepareBlockTimes( list );
       return list != null ? prepareBlockTimes( list ) : null;
 
     }
@@ -581,6 +639,18 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
 
       return blockList;
+    }
+
+    private BlockedTimeSpan prepareBlockTimesToModel( Course.BlockedTimesViewModel model )
+    {
+      BlockedTimeSpan block = new BlockedTimeSpan();
+      block.BlockedTimeSpanId = model.Id;
+      block.Course = model.Course;
+      block.EndDate = DateTime.Parse( model.EndDate );
+      block.StartDate = DateTime.Parse( model.StartDate );
+      block.Instructor = Model;
+
+      return block;
     }
 
 

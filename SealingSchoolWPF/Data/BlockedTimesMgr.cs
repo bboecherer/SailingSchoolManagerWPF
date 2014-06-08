@@ -42,6 +42,7 @@ namespace SealingSchoolWPF.Data
     {
       using ( var ctx = new SchoolDataContext() )
       {
+        ctx.BlockedTimeSpans.Attach( entity );
         ctx.BlockedTimeSpans.Remove( entity );
         ctx.SaveChanges();
       }
@@ -114,6 +115,25 @@ namespace SealingSchoolWPF.Data
       }
 
       return blocked;
+    }
+
+    public void Update( IList<BlockedTimeSpan> list )
+    {
+
+      var dummy = this.GetByInstructor( list.FirstOrDefault().Instructor.InstructorId );
+      foreach ( BlockedTimeSpan b in dummy )
+      {
+        if ( b.Reason == null || b.Course == null )
+        {
+          this.Delete( b );
+        }
+      }
+
+      foreach ( BlockedTimeSpan blocked in list )
+      {
+        this.Create( blocked );
+      }
+
     }
   }
 }

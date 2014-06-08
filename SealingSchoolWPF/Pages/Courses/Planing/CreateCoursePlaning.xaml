@@ -5,7 +5,7 @@
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="KURSPLANUNG" IsTitleVisible="True"
        ContentSource="/Pages/Courses/Workflows/CreatePlaningPage1.xaml"
-       Height="500" Width="500" Closed="ModernWindow_Closed"
+       Height="500" Width="550" Closed="ModernWindow_Closed"
       >
     <mui:ModernWindow.MenuLinkGroups >
         <mui:LinkGroup DisplayName="Kurs planen">

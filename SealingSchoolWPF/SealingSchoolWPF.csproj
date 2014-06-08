@@ -253,6 +253,15 @@
     <Compile Include="Pages\Courses\General\CoursePlaning.xaml.cs">
       <DependentUpon>CoursePlaning.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Courses\Planing\PlaningCourse.xaml.cs">
+      <DependentUpon>PlaningCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Planing\PlaningPage1.xaml.cs">
+      <DependentUpon>PlaningPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Planing\PlaningPage2.xaml.cs">
+      <DependentUpon>PlaningPage2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Courses\Workflows\CreatePlaningPage3.xaml.cs">
       <DependentUpon>CreatePlaningPage3.xaml</DependentUpon>
     </Compile>
@@ -288,6 +297,9 @@
     </Compile>
     <Compile Include="Pages\Instructor\Create\Honorar.xaml.cs">
       <DependentUpon>Honorar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Create\Rating.xaml.cs">
+      <DependentUpon>Rating.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\Update\BlockedTimes.xaml.cs">
       <DependentUpon>BlockedTimes.xaml</DependentUpon>
@@ -514,6 +526,7 @@
     <Compile Include="ViewModel\BusinessUnit\QualificationListViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\MaterialTypViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationViewModel.cs" />
+    <Compile Include="ViewModel\Course\UpdateCoursePlaningViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateTAViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateCoursePlaningViewModel.cs" />
     <Compile Include="ViewModel\Course\CoursePlaningViewModel.cs" />
@@ -702,6 +715,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Courses\Planing\PlaningCourse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\PlaningPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\PlaningPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Courses\Workflows\CreatePlaningPage3.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -729,6 +754,10 @@
     <Page Include="Pages\Instructor\Create\Honorar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Create\Rating.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Instructor\Update\BlockedTimes.xaml">
       <Generator>MSBuild:Compile</Generator>

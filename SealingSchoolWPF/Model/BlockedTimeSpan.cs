@@ -40,5 +40,30 @@ namespace SealingSchoolWPF.Model
 
       return builder.ToString();
     }
+
+    public override bool Equals( object obj )
+    {
+      BlockedTimeSpan blocked;
+      try
+      {
+        blocked = (BlockedTimeSpan) obj;
+      }
+      catch ( Exception )
+      {
+        return false;
+      }
+
+      if ( BlockedTimeSpanId != blocked.BlockedTimeSpanId )
+      {
+        return false;
+      }
+
+      return true;
+    }
+
+    public override int GetHashCode()
+    {
+      return base.GetHashCode() ^ this.BlockedTimeSpanId;
+    }
   }
 }

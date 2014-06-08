@@ -27,11 +27,11 @@
 
                 <DatePicker Width="200" Grid.Column="1" Grid.Row="0" Margin="3"
                     HorizontalAlignment="Left"
-                    SelectedDate="{Binding StartDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
-                    ModernControls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectStart}" />
+                    SelectedDate="{Binding StartDatePicker}"
+                    />
                 <DatePicker Width="200" Grid.Column="1" Grid.Row="1" Margin="3" Height="20" VerticalAlignment="Top"
                     HorizontalAlignment="Left"
-                    SelectedDate="{Binding EndDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                    SelectedDate="{Binding EndDatePicker}"
                     ModernControls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectEnd}" />
 
 

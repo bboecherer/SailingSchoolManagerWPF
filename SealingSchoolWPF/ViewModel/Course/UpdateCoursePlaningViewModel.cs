@@ -15,18 +15,26 @@ using System.Windows.Threading;
 
 namespace SealingSchoolWPF.ViewModel.Course
 {
-  public class CreateCoursePlaningViewModel : ViewModel<SealingSchoolWPF.Model.CoursePlaning>
+  public class UpdateCoursePlaningViewModel : ViewModel<SealingSchoolWPF.Model.CoursePlaning>
   {
+    static SealingSchoolWPF.Model.CoursePlaning modelDummy = new SealingSchoolWPF.Model.CoursePlaning();
+
     #region ctor
-    public CreateCoursePlaningViewModel( SealingSchoolWPF.Model.CoursePlaning model )
+    public UpdateCoursePlaningViewModel( SealingSchoolWPF.Model.CoursePlaning model )
       : base( model )
     {
+      modelDummy.CoursePlaningId = model.CoursePlaningId;
+      modelDummy.StartDate = model.StartDate;
+      modelDummy.EndDate = model.EndDate;
+      modelDummy.Course = model.Course;
+      modelDummy.CourseStatus = model.CourseStatus;
+      modelDummy.Instructors = model.Instructors;
     }
 
-    static CreateCoursePlaningViewModel instance = null;
+    static UpdateCoursePlaningViewModel instance = null;
     static readonly object padlock = new object();
 
-    public static CreateCoursePlaningViewModel Instance
+    public static UpdateCoursePlaningViewModel Instance
     {
       get
       {
@@ -34,7 +42,7 @@ namespace SealingSchoolWPF.ViewModel.Course
         {
           if ( instance == null )
           {
-            instance = new CreateCoursePlaningViewModel( new SealingSchoolWPF.Model.CoursePlaning() );
+            instance = new UpdateCoursePlaningViewModel( modelDummy );
           }
           return instance;
         }
@@ -43,37 +51,27 @@ namespace SealingSchoolWPF.ViewModel.Course
     #endregion
 
     #region properties
-    public IEnumerable<SealingSchoolWPF.Model.Course> CourseTypeValues
+    public String CourseString
     {
       get
       {
-        return GetCourseNames();
+        return modelDummy.Course.Label;
       }
-    }
-
-    private IList<SealingSchoolWPF.Model.Course> GetCourseNames()
-    {
-      CourseNames = new List<SealingSchoolWPF.Model.Course>();
-      foreach ( Model.Course inst in courseMgr.GetAll() )
+      set
       {
-        CourseNames.Add( inst );
+        CourseString = value;
       }
-      return CourseNames;
     }
 
-    private IList<SealingSchoolWPF.Model.Course> CourseNames;
-
-    private SealingSchoolWPF.Model.Course _course;
     public SealingSchoolWPF.Model.Course Course
     {
       get
       {
-        return _course;
+        return modelDummy.Course;
       }
       set
       {
-        _course = value;
-        this.OnPropertyChanged( "Course" );
+        Course = value;
       }
     }
 
@@ -86,16 +84,15 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
-    private CourseStatus _courseStatus;
     public CourseStatus CourseStatus
     {
       get
       {
-        return _courseStatus;
+        return Model.CourseStatus;
       }
       set
       {
-        _courseStatus = value;
+        CourseStatus = value;
         this.OnPropertyChanged( "CourseStatus" );
       }
     }
@@ -156,6 +153,7 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
+
     private bool _isButtonEnabled = true;
     public bool IsButtonEnabled
     {
@@ -212,30 +210,28 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
-    private DateTime? _startDate;
     public DateTime? StartDate
     {
       get
       {
-        return _startDate;
+        return Model.StartDate;
       }
       set
       {
-        _startDate = value;
+        StartDate = value;
         this.OnPropertyChanged( "StartDate" );
       }
     }
 
-    private DateTime? _endDate;
     public DateTime? EndDate
     {
       get
       {
-        return _endDate;
+        return Model.EndDate;
       }
       set
       {
-        _endDate = value;
+        EndDate = value;
         this.OnPropertyChanged( "EndDate" );
       }
     }
@@ -279,7 +275,7 @@ namespace SealingSchoolWPF.ViewModel.Course
     {
       get
       {
-        return _instructors;
+        return this.prepareInstructorsForModel( modelDummy.Instructors );
       }
       set
       {
@@ -290,6 +286,8 @@ namespace SealingSchoolWPF.ViewModel.Course
         }
       }
     }
+
+
     #endregion
 
     #region commands
@@ -390,12 +388,6 @@ namespace SealingSchoolWPF.ViewModel.Course
         return;
       }
 
-      if ( this.Course == null )
-      {
-        this.ErrorLabel = "Bitte wählen Sie einen Kurs aus";
-        return;
-      }
-
       if ( this.InstructorTyp == null )
         return;
 
@@ -409,12 +401,6 @@ namespace SealingSchoolWPF.ViewModel.Course
         this.Instructors = new ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>();
       }
 
-      foreach ( SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel q in dummy )
-      {
-        if ( q.Id == quali.Id )
-          return;
-      }
-
       if ( this.dummy.Count == maxInstructors )
       {
         this.ErrorLabel = string.Format( "Der Kurs hat nur max. {0} Kursleiter", maxInstructors );
@@ -425,10 +411,10 @@ namespace SealingSchoolWPF.ViewModel.Course
       //zuerst die  notwendenigen Qualifikationen aus dem Kurs holen
       IList<SealingSchoolWPF.Model.Qualification> courseQualies = this.qualiMgr.GetQualifications( "Course", this.Course.CourseId );
 
-      //dann die Qualifikationen des Kursleiter
+      ////dann die Qualifikationen des Kursleiter
       IList<SealingSchoolWPF.Model.Qualification> instrQualies = this.qualiMgr.GetQualifications( "Instructor", this.InstructorTyp.InstructorId );
 
-      //jetzt vergleichen
+      ////jetzt vergleichen
       List<SealingSchoolWPF.Model.Qualification> results = new List<SealingSchoolWPF.Model.Qualification>();
 
       foreach ( var s1 in courseQualies )
@@ -518,6 +504,18 @@ namespace SealingSchoolWPF.ViewModel.Course
       return instrList;
     }
 
+    private ObservableCollection<Instructor.InstructorViewModel> prepareInstructorsForModel( ICollection<SealingSchoolWPF.Model.Instructor> collection )
+    {
+      IList<Instructor.InstructorViewModel> instrList = new List<Instructor.InstructorViewModel>();
+      foreach ( SealingSchoolWPF.Model.Instructor instr in collection )
+      {
+        Instructor.InstructorViewModel i = new Instructor.InstructorViewModel( instr );
+        instrList.Add( i );
+      }
+      return new ObservableCollection<Instructor.InstructorViewModel>( instrList );
+    }
+
+
     private void SaveModelToDatabase()
     {
       Model.StartDate = this.StartDate;
@@ -533,9 +531,9 @@ namespace SealingSchoolWPF.ViewModel.Course
         Model.Instructors.Add( instr );
       }
 
-      Model.Course = this.Course;
+      // Model.Course = this.Course;
 
-      coursePlaningMgr.Create( Model );
+      //   coursePlaningMgr.Create( Model );
     }
 
     private void ReBindDataGrid()
@@ -546,11 +544,11 @@ namespace SealingSchoolWPF.ViewModel.Course
 
     public void CheckFields()
     {
-      //if ( this.StartDate == null )
-      //{
-      //  this.Page1ErrorLabel = "Bitte Datum auswählen!";
-      //  return;
-      //}
+      if ( this.StartDate == null )
+      {
+        this.Page1ErrorLabel = "Bitte Datum auswählen!";
+        return;
+      }
     }
     #endregion
 
