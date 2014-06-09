@@ -12,7 +12,7 @@ namespace SealingSchoolWPF.Model
         [Key]
         public int BoatID { get; set; }
         public string Name { get; set; }
-        public Decimal CrewAmount { get; set; }
+        public int CrewAmount { get; set; }
         public String Description { get; set; }
 
     }

@@ -519,4 +519,7 @@
   <data name="SelectStart" xml:space="preserve">
     <value>Select start date</value>
   </data>
+  <data name="MaterialGroup" xml:space="preserve">
+    <value>Material Group</value>
+  </data>
 </root>

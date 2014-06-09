@@ -78,7 +78,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             }
         }
 
-        public decimal CrewAmount
+        public int CrewAmount
         {
             get
             {

@@ -53,12 +53,30 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <DataGrid ItemsSource="{Binding MatTyps}" SelectionMode="Extended" SelectionUnit="FullRow" 
+                <DataGrid ItemsSource="{Binding BoatTyps}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 
                   IsReadOnly="True" CanUserDeleteRows="True" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
                             Binding="{Binding Name }" >
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="Width" Value="100" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static resx:Resource.CrewAmount}" 
+                            Binding="{Binding CrewAmount }" >
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="HorizontalContentAlignment"
