@@ -76,7 +76,6 @@
     </Compile>
     <Compile Include="Data\BlockedTimesMgr.cs" />
     <Compile Include="Data\BoatMgr.cs" />
-    <Compile Include="Data\MaterialGroupMgr.cs" />
     <Compile Include="Data\CoursePlaningMgr.cs" />
     <Compile Include="Data\BoatTypMgr.cs" />
     <Compile Include="Data\MaterialTypMgr.cs" />
@@ -86,7 +85,6 @@
     <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\CoursePlaning.cs" />
     <Compile Include="Model\IncomingInvoice.cs" />
-    <Compile Include="Model\MaterialGroup.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
     <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\Qualification.cs" />

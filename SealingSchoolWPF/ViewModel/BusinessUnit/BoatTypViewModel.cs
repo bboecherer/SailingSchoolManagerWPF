@@ -70,6 +70,22 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             }
         }
 
+        public Decimal CrewAmount
+        {
+            get
+            {
+                return Model.CrewAmount;
+            }
+            set
+            {
+                if (CrewAmount != value)
+                {
+                    Model.CrewAmount = value;
+                    this.OnPropertyChanged("CrewAmount");
+                }
+            }
+        }
+
         public string Name
         {
             get
@@ -105,6 +121,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
             boatTyp.Name = this.Name;
             boatTyp.Description = this.Description;
+            boatTyp.CrewAmount = this.CrewAmount;
             BoatTypMgr.Create(boatTyp);
         }
 

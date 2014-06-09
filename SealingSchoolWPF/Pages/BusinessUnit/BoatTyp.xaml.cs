@@ -24,15 +24,15 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
         public BoatTyp()
         {
             InitializeComponent();
-            var viewModel = MaterialTypListViewModel.Instance;
+            var viewModel = BoatTypListViewModel.Instance;
             this.DataContext = viewModel;
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = MaterialTypListViewModel.Instance;
-            var obj = ((FrameworkElement)sender).DataContext as MaterialTypViewModel;
+            var viewModel = BoatTypListViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as BoatTypViewModel;
 
             viewModel.ExecuteDeleteCommand(obj.Id);
         }
