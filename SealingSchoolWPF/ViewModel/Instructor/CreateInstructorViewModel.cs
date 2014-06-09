@@ -113,6 +113,21 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
     }
 
+
+    private string _huhu;
+    public string Huhu
+    {
+      get
+      {
+        return "Dies ist eine Message";
+      }
+      set
+      {
+        _huhu = value;
+        this.OnPropertyChanged( "Huhu" );
+      }
+    }
+
     private string _lastName;
     public string LastName
     {
@@ -520,6 +535,12 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
 
       this.dummy.Clear();
+
+      if ( this.blockedDummyList != null )
+      {
+        this.blockedDummyList.Clear();
+      }
+
       this.ReBindDataGrid();
     }
 
@@ -589,7 +610,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
     public void ExecuteDeleteBlockCommand( SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel obj )
     {
-      throw new NotImplementedException();
+      this.blockedDummyList.Remove( obj );
+      this.ReBindDataGrid();
     }
     #endregion
 
@@ -708,7 +730,14 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
       try
       {
-        instructorMgr.Create( Model, blockedPreparedList( blockedDummyList ) );
+        if ( blockedDummyList != null )
+        {
+          instructorMgr.Create( Model, blockedPreparedList( blockedDummyList ) );
+        }
+        else
+        {
+          instructorMgr.Create( Model );
+        }
 
       }
       catch ( Exception ex )

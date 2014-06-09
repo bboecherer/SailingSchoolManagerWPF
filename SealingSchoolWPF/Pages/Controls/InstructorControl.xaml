@@ -7,18 +7,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="350">
+             d:DesignHeight="250" d:DesignWidth="400">
     <Grid>
         <StackPanel>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35" />
                     <RowDefinition Height="35" />
-                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Instructor}"/>
                 <ComboBox Grid.Column="1" Grid.Row="0" Margin="3"
@@ -44,7 +44,7 @@
                         </Rectangle>
                     </StackPanel>
                 </Button>
-                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" 
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" Width="400"
                        Content="{Binding ErrorLabel}" Foreground="Red"/>
             </Grid>
             <Grid>

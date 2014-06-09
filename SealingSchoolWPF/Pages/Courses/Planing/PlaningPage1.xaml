@@ -1,14 +1,17 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Controls.CourseBasePlaningControl"
+﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             x:Class="SealingSchoolWPF.Pages.Course.Planing.PlaningPage1"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+              xmlns:MashControls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="280" d:DesignWidth="300">
+             d:DesignHeight="360" d:DesignWidth="360">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
@@ -34,20 +37,21 @@
         <Label Grid.Row="7" Grid.Column="0" Content="{x:Static resx:Resource.CourseStatus}"/>
         <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Page1ErrorLabel}"/>
 
-        <ComboBox Grid.Row="1" Grid.Column="1" Margin="3" Height="22" VerticalAlignment="Top"
-                        SelectedValue="{Binding Course}" ItemsSource="{Binding CourseTypeValues}" 
-                              />
+        <Label Grid.Row="1" Grid.Column="1" Margin="3" Height="35" VerticalAlignment="Top"
+                        Content="{Binding CourseString}" />
         <DatePicker Width="150" Grid.Column="1" Grid.Row="3" Margin="3"
                     HorizontalAlignment="Left"
                     SelectedDate="{Binding StartDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
-                    Controls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectStart}" />
+                    MashControls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectStart}" />
         <DatePicker Width="150" Grid.Column="1" Grid.Row="4" Margin="3"
                     HorizontalAlignment="Left"
                     SelectedDate="{Binding EndDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
-                    Controls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectEnd}" />
+                    MashControls:TextboxHelper.Watermark="{x:Static resx:Resource.SelectEnd}" />
         <ComboBox Grid.Column="1" Grid.Row="7" Margin="3"
                   SelectedItem="{Binding CourseStatus}" 
                   ItemsSource="{Binding CourseStatusTypeValues}"
                   />
     </Grid>
 </UserControl>
+
+

@@ -26,6 +26,12 @@ namespace SealingSchoolWPF.Data
             foreach ( Instructor q in c.Instructors )
               ctx.Instructors.Attach( q );
           }
+
+          if ( c.Course != null )
+          {
+            ctx.Courses.Attach( c.Course );
+          }
+
           Courses.Add( c );
         }
       }

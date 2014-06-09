@@ -13,6 +13,8 @@ namespace SealingSchoolWPF.Data
   {
     public IList<Instructor> Instructors { get; set; }
 
+    private BlockedTimesMgr mgr = new BlockedTimesMgr();
+
     public IList<Instructor> GetAll()
     {
       Instructors = new List<Instructor>();
@@ -202,5 +204,7 @@ namespace SealingSchoolWPF.Data
       }
 
     }
+
+   
   }
 }

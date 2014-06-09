@@ -16,41 +16,54 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-    /// <summary>
-    /// Interaction logic for TrainingsActivities.xaml
-    /// </summary>
-    public partial class CoursePlaning : UserControl
+  /// <summary>
+  /// Interaction logic for TrainingsActivities.xaml
+  /// </summary>
+  public partial class CoursePlaning : UserControl
+  {
+    public CoursePlaning()
     {
-        public CoursePlaning()
-        {
-            InitializeComponent();
-            BindDataContext();
-        }
-
-        private void BindDataContext()
-        {
-            // TODO: viewModel-Binding
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            BindDataContext();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CreateCoursePlaning window = new CreateCoursePlaning();
-            window.ShowDialog();
-        }
-
-        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            BindDataContext();
-        }
-
-        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
-        {
-            BindDataContext();
-        }
+      InitializeComponent();
+      BindDataContext();
     }
+
+    private void BindDataContext()
+    {
+      var viewModel = SealingSchoolWPF.ViewModel.Course.CoursePlaningViewModel.Instance;
+      this.DataContext = viewModel;
+    }
+
+    private void Button_Click( object sender, RoutedEventArgs e )
+    {
+      this.DataContext = null;
+      BindDataContext();
+    }
+
+    private void Button_Click_1( object sender, RoutedEventArgs e )
+    {
+      CreateCoursePlaning window = new CreateCoursePlaning();
+      window.ShowDialog();
+    }
+
+    private void UserControl_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
+    {
+      this.DataContext = null;
+      BindDataContext();
+    }
+
+    private void UserControl_MouseEnter( object sender, MouseEventArgs e )
+    {
+      this.DataContext = null;
+      BindDataContext();
+    }
+
+    private void DataGrid_MouseDoubleClick_1( object sender, MouseButtonEventArgs e )
+    {
+      var grid = sender as DataGrid;
+      var course = (SealingSchoolWPF.Model.CoursePlaning) grid.SelectedItem;
+
+      PlaningCourse window = new PlaningCourse( course );
+      window.ShowDialog();
+    }
+  }
 }

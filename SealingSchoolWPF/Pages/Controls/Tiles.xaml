@@ -19,31 +19,34 @@
         </Grid.ColumnDefinitions>
         <ModernControls:Tile Title="{x:Static resx:Resource.Courses}" 
                     TiltFactor="1"
+                    Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
                     Count="{Binding CourseCount}" Grid.Column="0" Grid.Row="0">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.Invoices}" 
                     TiltFactor="2" 
+                    Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
                     Count="{Binding InvoiceCount}" Grid.Column="0" Grid.Row="2">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.Students}" 
                     TiltFactor="3"
+                    Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
                     Count="{Binding StudentCount}" Grid.Column="1" Grid.Row="0">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.CreditNote}" 
-                    TiltFactor="2"
+                    TiltFactor="2" Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
                     Count="{Binding CreditNoteCount}" Grid.Column="1" Grid.Row="2">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.Instructor}" 
-                    TiltFactor="2"
+                    TiltFactor="2" Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
                     Count="{Binding InstructorCount}" Grid.Column="2" Grid.Row="0">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.TrainingActivity}" 
-                    TiltFactor="2"
+                    TiltFactor="2" Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
                     Count="{Binding TaCount}" Grid.Column="2" Grid.Row="2">
         </ModernControls:Tile>
