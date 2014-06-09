@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,9 @@ namespace SealingSchoolWPF.Model
         public MaterialTyp MaterialTyp { get; set; }
         public string RepairAction { get; set; }
         public string SerialNumber { get; set; }
+        
+        [InverseProperty("Material")]
+        public virtual ICollection<BoatTyp> BoatTyps { get; set; }
 
     }
 }

@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.MaterialViewModel;
+using SealingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace SealingSchoolWPF.Pages.Material.Update
     {
         UpdateMaterialViewModel viewModel;
 
-        public UpdateMaterial(SealingSchoolWPF.ViewModel.MaterialViewModel.MaterialViewModel material)
+        public UpdateMaterial(MaterialViewModel material)
         {
             InitializeComponent();
             viewModel = new UpdateMaterialViewModel(GetMaterialDataFromModel(material));

@@ -66,13 +66,13 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         {
             get
             {
-                return Model.BoatID;
+                return Model.BoatTypID;
             }
             set
             {
                 if (Id != value)
                 {
-                    Model.BoatID = value;
+                    Model.BoatTypID = value;
                     this.OnPropertyChanged("Id");
                 }
             }

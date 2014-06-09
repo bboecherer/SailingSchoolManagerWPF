@@ -1,4 +1,6 @@
-﻿<UserControl xmlns:BusinessUnit="clr-namespace:SealingSchoolWPF.Pages.Controls"  xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  x:Class="SealingSchoolWPF.Pages.BusinessUnit.BoatTyp"
+﻿<UserControl xmlns:BusinessUnit="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             x:Class="SealingSchoolWPF.Pages.BusinessUnit.BoatTyp"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

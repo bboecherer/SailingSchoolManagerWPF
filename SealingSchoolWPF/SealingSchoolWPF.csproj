@@ -443,6 +443,9 @@
     <Compile Include="Pages\Material\Create\Notes.xaml.cs">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Material\Create\MaterialGroup.xaml.cs">
+      <DependentUpon>MaterialGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Material\General\MaterialListView.xaml.cs">
       <DependentUpon>MaterialListView.xaml</DependentUpon>
     </Compile>
@@ -451,6 +454,9 @@
     </Compile>
     <Compile Include="Pages\Material\Update\Base.xaml.cs">
       <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Material\Update\MaterialGroup.xaml.cs">
+      <DependentUpon>MaterialGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Material\Update\UpdateMaterial.xaml.cs">
       <DependentUpon>UpdateMaterial.xaml</DependentUpon>
@@ -1091,6 +1097,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Material\Create\MaterialGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Material\General\MaterialListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1100,6 +1110,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Material\Update\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Material\Update\MaterialGroup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

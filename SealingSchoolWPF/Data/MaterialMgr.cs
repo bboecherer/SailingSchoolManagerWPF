@@ -29,6 +29,11 @@ namespace SealingSchoolWPF.Data
                     {
                         ctx.MaterialTyps.Attach(mat.MaterialTyp);
                     }
+                    if (mat.BoatTyps != null)
+                    {
+                        foreach (BoatTyp q in mat.BoatTyps)
+                            ctx.BoatTyps.Attach(q);
+                    }
                     Materials.Add(mat);
                 }
             }
@@ -50,12 +55,26 @@ namespace SealingSchoolWPF.Data
             {
                 try
                 {
+                    List<BoatTyp> boatTyps = new List<BoatTyp>();
+
                     ctx.Materials.Add(entity);
                     if (entity.MaterialTyp != null)
                     {
                         ctx.Entry(entity.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
                     }
+                    if (entity.BoatTyps != null)
+                    {
+                        foreach (BoatTyp q in entity.BoatTyps)
+                        {
+                            BoatTyp dummy = ctx.BoatTyps.Find(q.BoatTypID);
+                            ctx.BoatTyps.Attach(dummy);
+                            ctx.Entry(dummy).State = EntityState.Unchanged;
+                            boatTyps.Add(dummy);
+                        }
 
+                        entity.BoatTyps.Clear();
+                        entity.BoatTyps = boatTyps;
+                    }
                     ctx.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
@@ -91,6 +110,25 @@ namespace SealingSchoolWPF.Data
                 original.CreatedOn = entity.CreatedOn;
                 original.ModifiedOn = DateTime.Now;
                 original.MaterialTyp = entity.MaterialTyp;
+
+
+                List<BoatTyp> boatTyps = new List<BoatTyp>();
+                if (entity.BoatTyps != null)
+                {
+                    foreach (BoatTyp q in entity.BoatTyps)
+                    {
+                        BoatTyp dummy = ctx.BoatTyps.Find(q.BoatTypID);
+                        ctx.Entry(dummy).State = EntityState.Unchanged;
+                        boatTyps.Add(dummy);
+                    }
+                    entity.BoatTyps.Clear();
+                }
+                
+                foreach (BoatTyp q in boatTyps)
+                {
+                    entity.BoatTyps.Add(q);
+                }
+
 
                 if (original != null)
                 {
@@ -129,6 +167,11 @@ namespace SealingSchoolWPF.Data
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
                 ctx.Entry(material).Reference(s => s.MaterialTyp).Load();
+                if (material.BoatTyps != null)
+                {
+                    foreach (BoatTyp q in material.BoatTyps)
+                        ctx.BoatTyps.Attach(q);
+                }
             }
             return material;
         }
