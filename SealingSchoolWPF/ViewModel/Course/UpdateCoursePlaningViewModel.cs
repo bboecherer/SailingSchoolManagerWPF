@@ -29,6 +29,11 @@ namespace SealingSchoolWPF.ViewModel.Course
       modelDummy.Course = model.Course;
       modelDummy.CourseStatus = model.CourseStatus;
       modelDummy.Instructors = model.Instructors;
+
+      foreach ( SealingSchoolWPF.Model.Instructor inst in model.Instructors )
+      {
+        instrList.Add( inst );
+      }
     }
 
     static UpdateCoursePlaningViewModel instance = null;
@@ -51,6 +56,8 @@ namespace SealingSchoolWPF.ViewModel.Course
     #endregion
 
     #region properties
+
+    private bool isInsructorChanged = false;
     public String CourseString
     {
       get
@@ -84,15 +91,16 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
+    private CourseStatus _courseStatus;
     public CourseStatus CourseStatus
     {
       get
       {
-        return Model.CourseStatus;
+        return modelDummy.CourseStatus;
       }
       set
       {
-        CourseStatus = value;
+        _courseStatus = value;
         this.OnPropertyChanged( "CourseStatus" );
       }
     }
@@ -124,35 +132,6 @@ namespace SealingSchoolWPF.ViewModel.Course
         this.OnPropertyChanged( "Page1ErrorLabel" );
       }
     }
-
-    private bool _isComboBoxEnabled = true;
-    public bool IsComboBoxEnabled
-    {
-      get
-      {
-        return _isComboBoxEnabled;
-      }
-      set
-      {
-        _isComboBoxEnabled = value;
-        this.OnPropertyChanged( "IsComboBoxEnabled" );
-      }
-    }
-
-    private bool _isComboBoxReadOnly = false;
-    public bool IsComboBoxReadOnly
-    {
-      get
-      {
-        return _isComboBoxReadOnly;
-      }
-      set
-      {
-        _isComboBoxReadOnly = value;
-        this.OnPropertyChanged( "IsComboBoxReadOnly" );
-      }
-    }
-
 
     private bool _isButtonEnabled = true;
     public bool IsButtonEnabled
@@ -210,28 +189,35 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
+    private DateTime? _startDate;
     public DateTime? StartDate
     {
       get
       {
-        return Model.StartDate;
+        return !isStartDateChanged ? Model.StartDate : _startDate;
       }
       set
       {
-        StartDate = value;
+        _startDate = value;
+        this.isStartDateChanged = true;
         this.OnPropertyChanged( "StartDate" );
       }
     }
 
+    private bool isStartDateChanged = false;
+    private bool isEndDateChanged = false;
+
+    private DateTime? _endDate;
     public DateTime? EndDate
     {
       get
       {
-        return Model.EndDate;
+        return !isEndDateChanged ? Model.EndDate : _endDate;
       }
       set
       {
-        EndDate = value;
+        _endDate = value;
+        this.isEndDateChanged = true;
         this.OnPropertyChanged( "EndDate" );
       }
     }
@@ -270,12 +256,14 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
+    IList<SealingSchoolWPF.Model.Instructor> instrList = new List<SealingSchoolWPF.Model.Instructor>();
+
     private ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> _instructors;
     public ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel> Instructors
     {
       get
       {
-        return this.prepareInstructorsForModel( modelDummy.Instructors );
+        return this.prepareInstructorsForModel( instrList );
       }
       set
       {
@@ -304,48 +292,6 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
-    private ICommand addAndNextCommand;
-    public ICommand AddAndNextCommand
-    {
-      get
-      {
-        if ( addAndNextCommand == null )
-        {
-          addAndNextCommand = new RelayCommand( p => ExecuteAddAndNextCommand() );
-        }
-        return addAndNextCommand;
-      }
-    }
-
-    private void ExecuteAddAndNextCommand()
-    {
-      SaveModelToDatabase();
-      this.ExecuteClearCommand();
-      this.Close();
-    }
-
-    private ICommand clearCommand;
-    public ICommand ClearCommand
-    {
-      get
-      {
-        if ( clearCommand == null )
-        {
-          clearCommand = new RelayCommand( p => ExecuteClearCommand() );
-        }
-        return clearCommand;
-      }
-    }
-
-    private void ExecuteClearCommand()
-    {
-      this.ErrorLabel = string.Empty;
-      //TODO: Felder leeren
-      this.Instructors.Clear();
-      this.dummy.Clear();
-      this.ReBindDataGrid();
-    }
-
     private void ExecuteAddCommand()
     {
       SaveModelToDatabase();
@@ -355,8 +301,17 @@ namespace SealingSchoolWPF.ViewModel.Course
     public void ExecuteDeleteCommand( SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel instr )
     {
       this.ErrorLabel = string.Empty;
-      this.dummy.Remove( instr );
+      this.isInsructorChanged = true;
+      instrList.Remove( prepareInstrToModel( instr ) );
       this.ReBindDataGrid();
+    }
+
+    private SealingSchoolWPF.Model.Instructor prepareInstrToModel( Instructor.InstructorViewModel instr )
+    {
+      SealingSchoolWPF.Model.Instructor instructor = new Model.Instructor();
+      instructor.InstructorId = Convert.ToInt32( instr.Id );
+      instructor.Label = instr.Label;
+      return instructor;
     }
 
     private ICommand addInstructorCommand;
@@ -376,19 +331,7 @@ namespace SealingSchoolWPF.ViewModel.Course
     {
       this.ErrorLabel = string.Empty;
 
-      if ( this.StartDate == null )
-      {
-        this.ErrorLabel = "Bitte wählen Sie Start- und Enddatum aus";
-        return;
-      }
-
-      if ( this.EndDate == null )
-      {
-        this.ErrorLabel = "Bitte wählen Sie Start- und Enddatum aus";
-        return;
-      }
-
-      if ( this.InstructorTyp == null )
+      if ( CheckFields() )
         return;
 
       SealingSchoolWPF.Model.Course course = courseMgr.GetById( this.Course.CourseId );
@@ -463,11 +406,17 @@ namespace SealingSchoolWPF.ViewModel.Course
 
         if ( timeResult.Count > 0 )
         {
-          this.ErrorLabel = "Der Kursleiter steht nicht zur Verfügung";
-          return;
+          // in der Update-Methode muss jetzt geprüft werden, ob die geblockte Zeit von dem aktuellen Kurs ausgeht
+          foreach ( SealingSchoolWPF.Model.BlockedTimeSpan blocked in timeResult )
+            if ( blocked.Course.CourseId != modelDummy.Course.CourseId )
+            {
+              this.ErrorLabel = "Der Kursleiter steht nicht zur Verfügung";
+              return;
+            }
         }
       }
-      this.dummy.Add( quali );
+      this.instrList.Add( prepareInstrToModel( quali ) );
+      this.isInsructorChanged = true;
       this.ReBindDataGrid();
     }
     #endregion
@@ -518,9 +467,9 @@ namespace SealingSchoolWPF.ViewModel.Course
 
     private void SaveModelToDatabase()
     {
-      Model.StartDate = this.StartDate;
-      Model.EndDate = this.EndDate;
-      Model.CourseStatus = this.CourseStatus;
+      Model.StartDate = this._startDate != null ? this._startDate : Model.StartDate;
+      Model.EndDate = this._endDate != null ? this._endDate : Model.EndDate;
+      Model.CourseStatus = this._courseStatus;
 
       if ( Model.Instructors == null )
       {
@@ -531,24 +480,60 @@ namespace SealingSchoolWPF.ViewModel.Course
         Model.Instructors.Add( instr );
       }
 
-      // Model.Course = this.Course;
+      Model.Course = modelDummy.Course;
 
-      //   coursePlaningMgr.Create( Model );
+      coursePlaningMgr.Update( Model );
+
+      // prüfen, ob geblockte Zeiten aktualisiert werden müssen
+      if ( this.isInsructorChanged || this._startDate != null || this._endDate != null )
+      {
+        IList<BlockedTimeSpan> blockedList = new List<BlockedTimeSpan>();
+        foreach ( SealingSchoolWPF.Model.Instructor instr in instrList )
+        {
+          BlockedTimeSpan block = new BlockedTimeSpan();
+          block.Course = modelDummy.Course;
+          block.Instructor = instr;
+          block.Reason = modelDummy.Course.Label;
+          block.StartDate = this._startDate != null ? (DateTime) this._startDate : (DateTime) Model.StartDate;
+          block.EndDate = this._endDate != null ? (DateTime) this._endDate : (DateTime) Model.EndDate;
+          blockedList.Add( block );
+        }
+
+        blockTimesMgr.Update( blockedList, true );
+      }
     }
 
     private void ReBindDataGrid()
     {
       this.Instructors.Clear();
-      Instructors = new ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>( dummy );
+      Instructors = new ObservableCollection<SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel>( prepareInstructorsForModel( instrList ) );
     }
 
-    public void CheckFields()
+    public bool CheckFields()
     {
       if ( this.StartDate == null )
       {
-        this.Page1ErrorLabel = "Bitte Datum auswählen!";
-        return;
+        this.ErrorLabel = "Bitte wählen Sie Start- und Enddatum aus";
+        return true;
       }
+
+      if ( this.EndDate == null )
+      {
+        this.ErrorLabel = "Bitte wählen Sie Start- und Enddatum aus";
+        return true;
+      }
+
+      if ( this.InstructorTyp == null )
+        return true;
+
+      foreach ( SealingSchoolWPF.Model.Instructor i in instrList )
+      {
+        if ( this.InstructorTyp.InstructorId == i.InstructorId )
+        {
+          return true;
+        }
+      }
+      return false;
     }
     #endregion
 

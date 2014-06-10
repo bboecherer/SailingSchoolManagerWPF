@@ -27,5 +27,12 @@ namespace SealingSchoolWPF.Pages.Courses.Planing
       var viewModel = UpdateCoursePlaningViewModel.Instance;
       this.DataContext = viewModel;
     }
+
+    private void Buttontest_Click( object sender, RoutedEventArgs e )
+    {
+      var viewModel = UpdateCoursePlaningViewModel.Instance;
+      var obj = ( (FrameworkElement) sender ).DataContext as SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel;
+      viewModel.ExecuteDeleteCommand( obj );
+    }
   }
 }

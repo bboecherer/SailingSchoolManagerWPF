@@ -8,35 +8,49 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class CoursePlaning : SealingSchoolObject
+  public class CoursePlaning : SealingSchoolObject
+  {
+    //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+    [Key]
+    public virtual int CoursePlaningId { get; set; }
+    public virtual CourseStatus CourseStatus { get; set; }
+    public virtual DateTime? StartDate { get; set; }
+    public virtual DateTime? EndDate { get; set; }
+
+    public virtual Course Course { get; set; }
+
+    [InverseProperty( "CoursePlanings" )]
+    public virtual ICollection<Instructor> Instructors { get; set; }
+
+    public override bool Equals( object obj )
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Key]
-        public virtual int CoursePlaningId { get; set; }
-        public virtual CourseStatus CourseStatus { get; set; }
-        public virtual DateTime? StartDate { get; set; }
-        public virtual DateTime? EndDate { get; set; }
+      CoursePlaning Course;
+      try
+      {
+        Course = (CoursePlaning) obj;
+      }
+      catch ( Exception )
+      {
+        return false;
+      }
 
-        public virtual Course Course { get; set; }
 
-        [InverseProperty("CoursePlanings")]
-        public virtual ICollection<Instructor> Instructors { get; set; }
+      if ( CoursePlaningId != Course.CoursePlaningId )
+      {
+        return false;
+      }
 
-        public override bool Equals(object obj)
-        {
-            CoursePlaning Course = (CoursePlaning)obj;
-
-            if (CoursePlaningId != Course.CoursePlaningId)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode() ^ this.CoursePlaningId;
-        }
+      return true;
     }
+
+    public override int GetHashCode()
+    {
+      return base.GetHashCode() ^ this.CoursePlaningId;
+    }
+
+    public override string ToString()
+    {
+      return this.Label + " (" + this.StartDate + " - " + this.EndDate + ")";
+    }
+  }
 }

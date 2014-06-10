@@ -19,6 +19,7 @@ namespace SealingSchoolWPF.ViewModel
         public QualificationMgr qualiMgr = new QualificationMgr();
         public CoursePlaningMgr coursePlaningMgr = new CoursePlaningMgr();
         public BlockedTimesMgr blockTimesMgr = new BlockedTimesMgr();
+        public TrainingActivityMgr trainingActivityMgr = new TrainingActivityMgr();
 
 
 

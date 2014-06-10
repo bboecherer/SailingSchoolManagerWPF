@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-        Title="KURS" IsTitleVisible="True"
+        Title="{x:Static resx:Resource.Course}" IsTitleVisible="True"
        ContentSource="/Pages/Courses/Create/Base.xaml"
        Height="500" Width="500" Closed="ModernWindow_Closed"
       >

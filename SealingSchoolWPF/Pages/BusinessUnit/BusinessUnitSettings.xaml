@@ -15,7 +15,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <TextBlock Text="MANDANT" Style="{StaticResource Heading2}" Grid.Row="0"/>
+            <TextBlock Text="{x:Static resx:Resource.Mandant}" Style="{StaticResource Heading2}" Grid.Row="0"/>
             <BusinessUnit:BuGeneralControl Grid.Row="1"/>
             <BusinessUnit:BuAdressControl Grid.Row="2"/>
             <BusinessUnit:BuBankControl Grid.Row="3"/>

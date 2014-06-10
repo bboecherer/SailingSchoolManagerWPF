@@ -57,6 +57,7 @@ namespace SealingSchoolWPF.Data
           ctx.Courses.Attach( c );
           ctx.Entry( c ).State = EntityState.Unchanged;
           entity.Course = c;
+          entity.Label = c.Label;
 
           List<Instructor> qualies = new List<Instructor>();
 
@@ -118,36 +119,10 @@ namespace SealingSchoolWPF.Data
     {
       using ( var ctx = new SchoolDataContext() )
       {
-        //List<Qualification> dummy = new List<Qualification>();
-
-        //if (entity.Qualifications != null)
-        //{
-        //    foreach (Qualification q in entity.Qualifications)
-        //    {
-        //        Qualification quali = ctx.Qualifications.Find(q.QualificationId);
-        //        ctx.Entry(quali).State = EntityState.Unchanged;
-        //        dummy.Add(quali);
-        //    }
-        //}
-
-        //entity.Qualifications.Clear();
-
-        //foreach (Qualification q in dummy)
-        //{
-        //    entity.Qualifications.Add(q);
-        //}
-
         CoursePlaning original = ctx.CoursePlanings.Find( entity.CoursePlaningId );
 
         if ( original != null )
         {
-          //original.Qualifications.Clear();
-          //foreach (Qualification q in entity.Qualifications)
-          //{
-          //    ctx.Qualifications.Attach(q);
-          //    ctx.Entry(q).State = EntityState.Unchanged;
-          //    original.Qualifications.Add(q);
-          //}
           ctx.Entry( original ).CurrentValues.SetValues( entity );
           ctx.SaveChanges();
         }
@@ -164,5 +139,72 @@ namespace SealingSchoolWPF.Data
       return course;
     }
 
+    public IEnumerable<CoursePlaning> GetAll( CourseStatus courseStatus )
+    {
+      var courseList = new List<CoursePlaning>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        var dummy = this.GetAll();
+
+
+        foreach ( CoursePlaning c in dummy )
+        {
+          if ( c.CourseStatus == courseStatus )
+          {
+            courseList.Add( c );
+          }
+        }
+      }
+      return courseList;
+    }
+
+    public IEnumerable<CoursePlaning> GetAll( CourseStatus courseStatus, DateTime? startDate, DateTime? endDate )
+    {
+      var courseList = new List<CoursePlaning>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        var dummy = this.GetAll();
+
+        foreach ( CoursePlaning c in dummy )
+        {
+          if ( c.CourseStatus == courseStatus )
+          {
+            // TODO: Zeitraum eingrenzen
+            if ( c.StartDate >= startDate && c.EndDate <= endDate )
+            {
+              courseList.Add( c );
+            }
+          }
+        }
+      }
+      return courseList;
+    }
+
+    public IEnumerable<CoursePlaning> GetInstructorReference( int instructorId )
+    {
+      var courseList = new List<CoursePlaning>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        var dummy = this.GetAll();
+
+        foreach ( CoursePlaning c in dummy )
+        {
+          if ( c.CourseStatus == CourseStatus.BEENDET )
+          {
+            foreach ( Instructor i in c.Instructors )
+            {
+              if ( i.InstructorId == instructorId )
+              {
+                courseList.Add( c );
+              }
+            }
+          }
+        }
+      }
+      return courseList;
+    }
   }
 }

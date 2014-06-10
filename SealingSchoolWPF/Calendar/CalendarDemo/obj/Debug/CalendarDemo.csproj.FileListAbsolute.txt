@@ -1,0 +1,11 @@
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\bin\Debug\CalendarDemo.exe.config
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\bin\Debug\CalendarDemo.exe
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\bin\Debug\CalendarDemo.pdb
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\bin\Debug\System.Windows.Forms.Calendar.dll
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\bin\Debug\System.Windows.Forms.Calendar.pdb
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\obj\Debug\CalendarDemo.csprojResolveAssemblyReference.cache
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\obj\Debug\CalendarDemo.DemoForm.resources
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\obj\Debug\CalendarDemo.Properties.Resources.resources
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\obj\Debug\CalendarDemo.csproj.GenerateResource.Cache
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\obj\Debug\CalendarDemo.exe
+D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\CalendarDemo\obj\Debug\CalendarDemo.pdb

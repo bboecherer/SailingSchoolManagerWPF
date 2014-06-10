@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <Label Content="Bitte Teilnehmer auswählen" />
+                <Label Content="{x:Static resx:Resource.SelectStudent}" />
                 <Controls:StudentControl />
             </StackPanel>
         </ScrollViewer>

@@ -70,7 +70,7 @@ namespace SealingSchoolWPF.ViewModel.General
     {
       get
       {
-        return coursePlaningMgr.GetAll().Count;
+        return trainingActivityMgr.GetAll().Count;
       }
     }
     #endregion

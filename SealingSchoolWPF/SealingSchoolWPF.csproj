@@ -53,14 +53,19 @@
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.13.1.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -76,6 +81,8 @@
     </Compile>
     <Compile Include="Data\BlockedTimesMgr.cs" />
     <Compile Include="Data\BoatMgr.cs" />
+    <Compile Include="Data\TrainingActivityMgr.cs" />
+    <Compile Include="Data\MaterialGroupMgr.cs" />
     <Compile Include="Data\CoursePlaningMgr.cs" />
     <Compile Include="Data\BoatTypMgr.cs" />
     <Compile Include="Data\MaterialTypMgr.cs" />
@@ -83,6 +90,7 @@
     <Compile Include="Model\BlockedTimeSpan.cs" />
     <Compile Include="Model\BoatTyp.cs" />
     <Compile Include="Model\Boat.cs" />
+    <Compile Include="Model\TrainingActivityStatus.cs" />
     <Compile Include="Model\CoursePlaning.cs" />
     <Compile Include="Model\IncomingInvoice.cs" />
     <Compile Include="Model\MaterialTyp.cs" />
@@ -94,6 +102,9 @@
     </Compile>
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\InstructorReferenceControl.xaml.cs">
+      <DependentUpon>InstructorReferenceControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\CourseBasePlaningControl.xaml.cs">
       <DependentUpon>CourseBasePlaningControl.xaml</DependentUpon>
@@ -167,9 +178,6 @@
     <Compile Include="Pages\Controls\BuQualificationListView.xaml.cs">
       <DependentUpon>BuQualificationListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BusinessUnit\Templates.xaml.cs">
-      <DependentUpon>Templates.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Calendar\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
@@ -214,6 +222,9 @@
     </Compile>
     <Compile Include="Pages\Controls\UpdateButtons.xaml.cs">
       <DependentUpon>UpdateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Controls\CreateTaButtons.xaml.cs">
+      <DependentUpon>CreateTaButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Courses\Controls\CreateButtons.xaml.cs">
       <DependentUpon>CreateButtons.xaml</DependentUpon>
@@ -269,6 +280,9 @@
     <Compile Include="Pages\Courses\Planing\PlaningPage2.xaml.cs">
       <DependentUpon>PlaningPage2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Courses\Planing\UpdatePlanButtons.xaml.cs">
+      <DependentUpon>UpdatePlanButtons.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Courses\Workflows\CreatePlaningPage3.xaml.cs">
       <DependentUpon>CreatePlaningPage3.xaml</DependentUpon>
     </Compile>
@@ -310,6 +324,9 @@
     </Compile>
     <Compile Include="Pages\Instructor\Update\BlockedTimes.xaml.cs">
       <DependentUpon>BlockedTimes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Instructor\Update\References.xaml.cs">
+      <DependentUpon>References.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Instructor\Update\Honorar.xaml.cs">
       <DependentUpon>Honorar.xaml</DependentUpon>
@@ -590,6 +607,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Controls\InstructorReferenceControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\CourseBasePlaningControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -662,10 +683,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\BusinessUnit\Templates.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Controls\AdressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -718,6 +735,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Courses\Controls\CreateTaButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Courses\Controls\CreateButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -743,6 +764,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\Planing\PlaningPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Planing\UpdatePlanButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -779,6 +804,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Instructor\Update\BlockedTimes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Instructor\Update\References.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1234,6 +1263,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="JarlooCalendar\Jarloo.Calendar\Jarloo.Calendar.csproj">
+      <Project>{31C3B4A7-504B-4EFF-BACC-C8F2FFE5AF6F}</Project>
+      <Name>Jarloo.Calendar</Name>
+    </ProjectReference>
     <ProjectReference Include="WpfScheduler\WpfScheduler.csproj">
       <Project>{F9954C26-6234-43F5-8D96-8EC6E03C03B9}</Project>
       <Name>WpfScheduler</Name>
