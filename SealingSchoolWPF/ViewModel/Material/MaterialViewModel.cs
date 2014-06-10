@@ -191,6 +191,21 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
         }
 
+        public ICollection<BoatTyp> BoatTyps
+        {
+            get
+            {
+                return Model.BoatTyps;
+            }
+            set
+            {
+                if (BoatTyps != value)
+                {
+                    Model.BoatTyps = value;
+                    this.OnPropertyChanged("BoatTyps");
+                }
+            }
+        }
         public DateTime CreatedOn
         {
             get

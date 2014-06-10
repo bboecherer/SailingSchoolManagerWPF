@@ -45,6 +45,7 @@ namespace SealingSchoolWPF.Pages.Material.Update
             mat.RepairAction = material.RepairAction;
             mat.SerialNumber = material.SerialNumber;
             mat.MaterialTyp = material.MaterialTyp;
+            mat.BoatTyps = material.BoatTyps;
             return mat;
         }
         private void ModernWindow_Closed(object sender, EventArgs e)

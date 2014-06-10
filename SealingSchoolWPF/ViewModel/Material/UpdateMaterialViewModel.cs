@@ -255,6 +255,15 @@ namespace SealingSchoolWPF.ViewModel.Material
         private void ExecuteAddCommand()
         {
             Model.ModifiedOn = DateTime.Now;
+            Model.BoatTyps.Clear();
+            if (dummy != null)
+            {
+                foreach (BoatTypViewModel q in dummy)
+                {
+                    
+                    Model.BoatTyps.Add(prepareBoatTypToSave(q));
+                }
+            }
             matMgr.Update(Model);
             this.IsButtonEnabled = false;
             this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
@@ -307,7 +316,7 @@ namespace SealingSchoolWPF.ViewModel.Material
         {
             get
             {
-                return _boatTyps;
+                return boatTypList();
             }
             set
             {
@@ -360,7 +369,7 @@ namespace SealingSchoolWPF.ViewModel.Material
             this.ReBindDataGrid();
         }
 
-        private List<BoatTypViewModel> dummy = new List<BoatTypViewModel>();
+        //private List<BoatTypViewModel> dummy = new List<BoatTypViewModel>();
 
         private IList<SealingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
         {
@@ -384,6 +393,43 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
 
             BoatTyps = new ObservableCollection<BoatTypViewModel>(dummy);
+        }
+
+        private ObservableCollection<BoatTypViewModel> dummy;
+        private ObservableCollection<BoatTypViewModel> boatTypList()
+        {
+            if (dummy == null || dummy.Count == 0)
+            {
+                dummy = new ObservableCollection<BoatTypViewModel>();
+            }
+            foreach (BoatTypViewModel q in prepareBoatTyps(Model.BoatTyps))
+            {
+                dummy.Add(q);
+            }
+            return dummy;
+        }
+
+        private ObservableCollection<BoatTypViewModel> prepareBoatTyps(ICollection<SealingSchoolWPF.Model.BoatTyp> collection)
+        {
+            ObservableCollection<BoatTypViewModel> list = new ObservableCollection<BoatTypViewModel>();
+
+            if (collection != null)
+            {
+                foreach (Model.BoatTyp q in collection)
+                {
+                    BoatTypViewModel model = new BoatTypViewModel(q);
+                    list.Add(model);
+                }
+            }
+
+            return list;
+        }
+
+        private SealingSchoolWPF.Model.BoatTyp prepareBoatTypToSave(BoatTypViewModel b)
+        {
+            SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
+            boatTyp.BoatTypID = b.Id;
+            return boatTyp;
         }
     }
 }
