@@ -22,11 +22,7 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (BoatTyp i in ctx.BoatTyps)
                 {
-                    ctx.Entry(i).Reference(s => s.MaterialGroup).Load();
-                    if (i.MaterialGroup != null)
-                    {
-                        ctx.MaterialGroups.Attach(i.MaterialGroup);
-                    }
+       
                     BoatTyps.Add(i);
                 }
             }
@@ -49,6 +45,7 @@ namespace SealingSchoolWPF.Data
             {
                 try
                 {
+                  
                     ctx.BoatTyps.Add(entity);
                     ctx.SaveChanges();
                 }

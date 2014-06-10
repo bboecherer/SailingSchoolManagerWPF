@@ -42,13 +42,13 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         {
             get
             {
-                return Model.BoatID;
+                return Model.BoatTypID;
             }
             set
             {
                 if (Id != value)
                 {
-                    Model.BoatID = value;
+                    Model.BoatTypID = value;
                     this.OnPropertyChanged("Id");
                 }
             }
@@ -66,6 +66,22 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     Model.Description = value;
                     this.OnPropertyChanged("Description");
+                }
+            }
+        }
+
+        public int CrewAmount
+        {
+            get
+            {
+                return Model.CrewAmount;
+            }
+            set
+            {
+                if (CrewAmount != value)
+                {
+                    Model.CrewAmount = value;
+                    this.OnPropertyChanged("CrewAmount");
                 }
             }
         }
@@ -105,6 +121,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
             boatTyp.Name = this.Name;
             boatTyp.Description = this.Description;
+            boatTyp.CrewAmount = this.CrewAmount;
             BoatTypMgr.Create(boatTyp);
         }
 

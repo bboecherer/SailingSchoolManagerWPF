@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.MaterialViewModel
+namespace SealingSchoolWPF.ViewModel.Material
 {
     public class MaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {

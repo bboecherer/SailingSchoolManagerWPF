@@ -1,6 +1,6 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Pages.Material.Create;
-using SealingSchoolWPF.ViewModel.MaterialViewModel;
+using SealingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

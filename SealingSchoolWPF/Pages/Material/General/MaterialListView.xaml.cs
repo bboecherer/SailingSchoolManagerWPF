@@ -1,5 +1,5 @@
 ﻿using SealingSchoolWPF.Pages.Material.Update;
-using SealingSchoolWPF.ViewModel.MaterialViewModel;
+using SealingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +30,7 @@ namespace SealingSchoolWPF.Pages
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var grid = sender as DataGrid;
-            var material = (SealingSchoolWPF.ViewModel.MaterialViewModel.MaterialViewModel)grid.SelectedItem;
+            var material = (MaterialViewModel)grid.SelectedItem;
 
             UpdateMaterial window = new UpdateMaterial(material);
             window.ShowDialog();

@@ -66,19 +66,33 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         {
             get
             {
-                return Model.BoatID;
+                return Model.BoatTypID;
             }
             set
             {
                 if (Id != value)
                 {
-                    Model.BoatID = value;
+                    Model.BoatTypID = value;
                     this.OnPropertyChanged("Id");
                 }
             }
         }
 
-       
+        public int CrewAmount
+        {
+            get
+            {
+                return Model.CrewAmount;
+            }
+            set
+            {
+                if (CrewAmount != value)
+                {
+                    Model.CrewAmount = value;
+                    this.OnPropertyChanged("CrewAmount");
+                }
+            }
+        }
         public string Description
         {
             get
@@ -130,6 +144,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
             boatTyp.Name = this.Name;
             boatTyp.Description = this.Description;
+            boatTyp.CrewAmount = this.CrewAmount;
             BoatTypMgr.Create(boatTyp);
 
             this.ClearFields();
@@ -147,6 +162,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         {
             this.Description = string.Empty;
             this.Name = string.Empty;
+            this.CrewAmount = 0;
         }
 
         public void ExecuteDeleteCommand(int qId)

@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.ViewModel.MaterialViewModel;
+﻿using SealingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
