@@ -3,21 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-        Title="KURSLEITER" IsTitleVisible="True"
+        Title="{x:Static resx:Resource.Instructor}" IsTitleVisible="True"
         xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Controls"
        ContentSource="/Pages/Instructor/Update/Base.xaml"
-       Height="450" Width="550" Closing="ModernWindow_Closing"
+       Height="450" Width="600" Closing="ModernWindow_Closing"
       >
     <mui:ModernWindow.MenuLinkGroups >
         <mui:LinkGroup DisplayName="{x:Static resx:Resource.Update_ToolTip_Desc}">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Instructor/Update/Base.xaml" />
-                <mui:Link DisplayName="Honorar" Source="/Pages/Instructor/Update/Honorar.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Fee}" Source="/Pages/Instructor/Update/Honorar.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Qualification}" Source="/Pages/Instructor/Update/Qualification.xaml" />
-                <mui:Link DisplayName="Zeiten" Source="/Pages/Instructor/Update/BlockedTimes.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Times}" Source="/Pages/Instructor/Update/BlockedTimes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Bankdata}" Source="/Pages/Instructor/Update/Bankdata.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Instructor/Update/Notes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Instructor/Update/Documents.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.References}" Source="/Pages/Instructor/Update/References.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

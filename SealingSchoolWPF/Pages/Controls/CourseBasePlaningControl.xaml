@@ -25,8 +25,8 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="190" />
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resx:Resource.EndDateDescription}"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Courses}"/>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resx:Resource.SelectCourse}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Course}"/>
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resx:Resource.StartDateDescription}"/>
         <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Start}"/>
         <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.End}"/>

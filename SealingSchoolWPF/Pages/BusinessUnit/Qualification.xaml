@@ -22,7 +22,7 @@
                     <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="280" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="QUALIFIKATIONEN" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Heading2}" />
+                <TextBlock Text="{x:Static resx:Resource.Qualifications}" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Heading2}" />
                 <Label Grid.Row="1" Grid.Column="1" Margin="3" Content="{x:Static resx:Resource.QualiShort}"/>
                 <Label Grid.Row="1" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.QualiLong}"/>
                 <Label Grid.Row="2" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Qualification}"/>

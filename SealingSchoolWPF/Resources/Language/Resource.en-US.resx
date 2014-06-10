@@ -142,7 +142,7 @@
     <value>Address</value>
   </data>
   <data name="Bankdata" xml:space="preserve">
-    <value>Banking information</value>
+    <value>Banking</value>
   </data>
   <data name="BankName" xml:space="preserve">
     <value>Bank name</value>
@@ -292,22 +292,22 @@
     <value>Lifeguard</value>
   </data>
   <data name="MasterData" xml:space="preserve">
-    <value>Master data</value>
+    <value>Masterdata</value>
   </data>
   <data name="Material" xml:space="preserve">
     <value>Material</value>
   </data>
   <data name="MaterialAdministration" xml:space="preserve">
-    <value>Material administration</value>
+    <value>Materialadministration</value>
   </data>
   <data name="MaterialName" xml:space="preserve">
-    <value>Material name</value>
+    <value>Materialname</value>
   </data>
   <data name="MaterialStatus" xml:space="preserve">
-    <value>Material state</value>
+    <value>Materialstate</value>
   </data>
   <data name="MaterialType" xml:space="preserve">
-    <value>Material type</value>
+    <value>Materialtype</value>
   </data>
   <data name="NetAmount" xml:space="preserve">
     <value>VAT</value>
@@ -451,7 +451,7 @@
     <value>VAT ID</value>
   </data>
   <data name="Website" xml:space="preserve">
-    <value>Webseite</value>
+    <value>Website</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
@@ -487,28 +487,28 @@
     <value>Hourly fee</value>
   </data>
   <data name="InstructorCount" xml:space="preserve">
-    <value>Number of instructors</value>
+    <value>No. of instructors</value>
   </data>
   <data name="SelectCourseDescription" xml:space="preserve">
-    <value>Please select the course</value>
+    <value>Select the course</value>
   </data>
   <data name="SelectStudent" xml:space="preserve">
-    <value>Please select students</value>
+    <value>Select student</value>
   </data>
   <data name="StartDateDescription" xml:space="preserve">
-    <value>Please select start date</value>
+    <value>Select start date</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Summary</value>
   </data>
   <data name="SummaryDescription" xml:space="preserve">
-    <value>Here you will see a summary</value>
+    <value>Here you see the summary</value>
   </data>
   <data name="TrainingActivity" xml:space="preserve">
     <value>Registration</value>
   </data>
   <data name="CrewAmount" xml:space="preserve">
-    <value>Crew Amount</value>
+    <value>Crew amount</value>
   </data>
   <data name="BoatTyp" xml:space="preserve">
     <value>Boat Typ</value>
@@ -518,5 +518,50 @@
   </data>
   <data name="SelectStart" xml:space="preserve">
     <value>Select start date</value>
+  </data>
+  <data name="CreateRegistration" xml:space="preserve">
+    <value>Create registration</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="Registrations" xml:space="preserve">
+    <value>Registrations</value>
+  </data>
+  <data name="SelectCourse" xml:space="preserve">
+    <value>Select course</value>
+  </data>
+  <data name="SelectInstructor" xml:space="preserve">
+    <value>Select instructor</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Appereance" xml:space="preserve">
+    <value>Appereance</value>
+  </data>
+  <data name="CoursePlanning" xml:space="preserve">
+    <value>Course planning</value>
+  </data>
+  <data name="FontSize" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="Mandant" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Fee" xml:space="preserve">
+    <value>Fee</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>References</value>
+  </data>
+  <data name="Times" xml:space="preserve">
+    <value>Times</value>
   </data>
 </root>

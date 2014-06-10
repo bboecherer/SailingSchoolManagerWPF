@@ -1,33 +1,17 @@
-﻿<UserControl xmlns:WpfScheduler="clr-namespace:WpfScheduler;assembly=WpfScheduler"   x:Class="SealingSchoolWPF.Pages.Calendar"
+﻿<UserControl xmlns:WpfScheduler="clr-namespace:WpfScheduler;assembly=WpfScheduler"   
+             x:Class="SealingSchoolWPF.Pages.Calendar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:Jarloo="clr-namespace:Jarloo.Calendar;assembly=Jarloo.Calendar"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <WpfScheduler:Scheduler
-            Grid.Row="1"
-            HorizontalAlignment="Stretch" Name="scheduler1"  
-            SelectedDate="2013-05-27"
-            StartJourney="9:00"
-            EndJourney="19:00"          
-            Mode="Week">
-                    <WpfScheduler:Scheduler.Events>
-                        <WpfScheduler:Event Subject="Dad birthday" AllDay="True" Start="2013-05-29" End="2013-05-29" Color="Aqua"></WpfScheduler:Event>
-                        <WpfScheduler:Event Subject="Dev meeting" Start="2013-05-29 09:30:00" End="2013-05-29 11:30:00" Color="LightGreen"></WpfScheduler:Event>
-                        <WpfScheduler:Event Subject="Dev meeting" Start="2013-05-30 12:00:00" End="2013-05-30 12:30:00" Color="LightGreen"></WpfScheduler:Event>
-                        <WpfScheduler:Event Subject="Mike Holidays" Start="2013-05-27" End="2013-06-09" Color="LightSalmon"></WpfScheduler:Event>
-                        <WpfScheduler:Event Subject="Lunch with David" Start="2013-05-28 12:00:00" End="2013-05-28 13:00:00" Color="Violet"></WpfScheduler:Event>
-                        <WpfScheduler:Event Subject="Internet line installation" Start="2013-05-29 10:00:00" End="2013-05-29 14:00:00" Color="Yellow"></WpfScheduler:Event>
-                    </WpfScheduler:Scheduler.Events>
-                </WpfScheduler:Scheduler>
-            </StackPanel>
-        </ScrollViewer>
-     
+    <Grid>
+        <Jarloo:Calendar x:Name="CalendarView" Margin="0,46,0,0" />
+        <ComboBox x:Name="cboMonth" HorizontalAlignment="Left" Height="34" Margin="8,8,0,0" VerticalAlignment="Top" Width="152" FontSize="18.667" DisplayMemberPath="{Binding}" />
+        <ComboBox x:Name="cboYear" Height="34" Margin="164,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="87" FontSize="18.667" DisplayMemberPath="{Binding}" />
     </Grid>
+
 </UserControl>

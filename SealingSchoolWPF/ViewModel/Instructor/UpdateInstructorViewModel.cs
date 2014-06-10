@@ -339,6 +339,23 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
     }
 
+    private ObservableCollection<CoursePlaning> references;
+    public ObservableCollection<CoursePlaning> References
+    {
+      get
+      {
+        return referenceList();
+      }
+      set
+      {
+        if ( References != value )
+        {
+          references = value;
+          this.OnPropertyChanged( "References" );
+        }
+      }
+    }
+
     private ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> _blockedTimes;
     public ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> BlockedTimes
     {
@@ -599,6 +616,21 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         prepared.Add( q );
       }
       return prepared;
+    }
+
+    private ObservableCollection<CoursePlaning> preparedReferences;
+
+    private ObservableCollection<CoursePlaning> referenceList()
+    {
+      if ( preparedReferences == null || preparedReferences.Count == 0 )
+      {
+        preparedReferences = new ObservableCollection<CoursePlaning>();
+      }
+      foreach ( CoursePlaning q in coursePlaningMgr.GetInstructorReference( Model.InstructorId ) )
+      {
+        preparedReferences.Add( q );
+      }
+      return preparedReferences;
     }
 
 

@@ -3,16 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-        Title="ANMELDUNGEN" IsTitleVisible="True"
+        Title="{x:Static resx:Resource.Registrations}" IsTitleVisible="True"
        ContentSource="/Pages/Courses/Workflows/CreateTAPage1.xaml"
-       Height="500" Width="500" 
+       Height="500" Width="500" Closing="ModernWindow_Closing"
       >
     <mui:ModernWindow.MenuLinkGroups >
-        <mui:LinkGroup DisplayName="Anmeldungen durchführen">
+        <mui:LinkGroup DisplayName="{x:Static resx:Resource.CreateRegistration}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="Kurs auswählen" Source="/Pages/Courses/Workflows/CreateTAPage1.xaml" />
-                <mui:Link DisplayName="Teilnehmer auswählen" Source="/Pages/Courses/Workflows/CreateTAPage2.xaml" />
-                <mui:Link DisplayName="Zusammenfassung" Source="/Pages/Courses/Workflows/CreateTAPage3.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.SelectCourse}" Source="/Pages/Courses/Workflows/CreateTAPage1.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.SelectStudent}" Source="/Pages/Courses/Workflows/CreateTAPage2.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Overview}" Source="/Pages/Courses/Workflows/CreateTAPage3.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

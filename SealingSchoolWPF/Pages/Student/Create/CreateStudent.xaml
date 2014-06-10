@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-        Title="TEILNEHMER" IsTitleVisible="True"
+        Title="{x:Static resx:Resource.Students}" IsTitleVisible="True"
         xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Controls"
        ContentSource="/Pages/Student/Create/Base.xaml"
        Height="450" Width="500" Closing="ModernWindow_Closing"

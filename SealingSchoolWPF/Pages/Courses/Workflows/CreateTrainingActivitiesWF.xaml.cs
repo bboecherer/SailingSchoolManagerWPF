@@ -13,16 +13,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SealingSchoolWPF.ViewModel.Course;
 namespace SealingSchoolWPF.Pages.Courses.Workflows
 {
-    /// <summary>
-    /// Interaction logic for CreateTrainingActivitiesWF.xaml
-    /// </summary>
-    public partial class CreateTrainingActivitiesWF : ModernWindow
+  /// <summary>
+  /// Interaction logic for CreateTrainingActivitiesWF.xaml
+  /// </summary>
+  public partial class CreateTrainingActivitiesWF : ModernWindow
+  {
+    CreateTAViewModel viewModel;
+
+    public CreateTrainingActivitiesWF()
     {
-        public CreateTrainingActivitiesWF()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
+      viewModel = CreateTAViewModel.Instance;
+      this.DataContext = viewModel;
     }
+
+    private void ModernWindow_Closing( object sender, System.ComponentModel.CancelEventArgs e )
+    {
+      viewModel.Close();
+    }
+  }
 }

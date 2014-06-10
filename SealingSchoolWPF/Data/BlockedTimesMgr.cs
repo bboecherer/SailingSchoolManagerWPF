@@ -117,15 +117,22 @@ namespace SealingSchoolWPF.Data
       return blocked;
     }
 
-    public void Update( IList<BlockedTimeSpan> list )
+    public void Update( IList<BlockedTimeSpan> list, bool updateCoursePlaning = false )
     {
 
       var dummy = this.GetByInstructor( list.FirstOrDefault().Instructor.InstructorId );
       foreach ( BlockedTimeSpan b in dummy )
       {
-        if ( b.Reason == null || b.Course == null )
+        if ( !updateCoursePlaning )
         {
-          this.Delete( b );
+          if ( b.Reason == null || b.Course == null )
+          {
+            this.Delete( b );
+          }
+        }
+        else
+        {
+          //  this.Delete( b );
         }
       }
 

@@ -37,7 +37,7 @@
         <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
                   MaxDropDownHeight="100" 
                   SelectedValue="{Binding CourseTyp}" ItemsSource="{Binding CourseValues}" 
-                  IsEnabled="True" IsReadOnly="False"
+                  IsEnabled="{Binding IsComboBoxEnabled}" IsReadOnly="{Binding IsComboBoxReadOnly}"
                   />
     </Grid>
 </UserControl>

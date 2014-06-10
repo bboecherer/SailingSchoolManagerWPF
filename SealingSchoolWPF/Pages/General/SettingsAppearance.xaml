@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <ScrollViewer>
             <StackPanel x:Name="Panel" MinWidth="150">
-                <TextBlock Text="AUSSEHEN" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <TextBlock Text="{x:Static resx:Resource.Appereance}" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
                 <ListBox ItemsSource="{Binding AccentColors}"
                          SelectedItem="{Binding SelectedAccentColor, Mode=TwoWay}"
                          Margin="0,0,0,16">
@@ -41,7 +42,7 @@
                     <TextBlock Text="Theme:" VerticalAlignment="Center" Margin="0,0,16,4" />
                     <ComboBox Grid.Column="1" ItemsSource="{Binding Themes}" SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" DisplayMemberPath="DisplayName" VerticalAlignment="Center" Margin="0,0,0,4" />
 
-                    <TextBlock Grid.Row="1" Text="Schriftgröße:" VerticalAlignment="Center" Margin="0,0,16,0" />
+                    <TextBlock Grid.Row="1" Text="{x:Static resx:Resource.FontSize}" VerticalAlignment="Center" Margin="0,0,16,0" />
                     <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding FontSizes}" SelectedItem="{Binding SelectedFontSize, Mode=TwoWay}" VerticalAlignment="Center" />
                 </Grid>
             </StackPanel>
