@@ -41,7 +41,6 @@ namespace SealingSchoolWPF.Data
         public DbSet<BlockedTimeSpan> BlockedTimeSpans { get; set; }
         public DbSet<Boat> Boats { get; set; }
         public DbSet<BoatTyp> BoatTyps { get; set; }
-    public DbSet<MaterialGroup> MaterialGroups { get; set; }
-    public DbSet<TrainingActivity> TrainingActivities { get; set; }
+        public DbSet<TrainingActivity> TrainingActivities { get; set; }
     }
 }

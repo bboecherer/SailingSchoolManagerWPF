@@ -82,7 +82,6 @@
     <Compile Include="Data\BlockedTimesMgr.cs" />
     <Compile Include="Data\BoatMgr.cs" />
     <Compile Include="Data\TrainingActivityMgr.cs" />
-    <Compile Include="Data\MaterialGroupMgr.cs" />
     <Compile Include="Data\CoursePlaningMgr.cs" />
     <Compile Include="Data\BoatTypMgr.cs" />
     <Compile Include="Data\MaterialTypMgr.cs" />
