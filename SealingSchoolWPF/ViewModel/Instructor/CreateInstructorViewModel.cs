@@ -706,12 +706,12 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       bank.Iban = this.Iban;
       bank.Sepa = this.Sepa;
 
-      Model.FirstName = this.FirstName;
-      Model.LastName = this.LastName;
+      Model.FirstName = this.FirstName.Trim();
+      Model.LastName = this.LastName.Trim();
       Model.Adress = adress;
       Model.Bank = bank;
       Model.Contact = contact;
-      Model.Label = this.FirstName + " " + this.LastName;
+      Model.Label = this.LastName.Trim() + ", " + this.FirstName.Trim();
       Model.FeeValueDay = this.HonorarValueDay;
       Model.FeeValueStd = this.HonorarValueStd;
 

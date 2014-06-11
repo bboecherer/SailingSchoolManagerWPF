@@ -101,9 +101,14 @@ namespace SealingSchoolWPF.Data
         ctx.Entry( original ).Reference( s => s.Bank ).Load();
         ctx.Entry( original ).Reference( s => s.Contact ).Load();
 
-        original.FirstName = entity.FirstName;
-        original.LastName = entity.LastName;
-        original.Label = entity.FirstName + " " + entity.LastName;
+        original.FirstName = entity.FirstName.Trim();
+        original.LastName = entity.LastName.Trim();
+        original.Label = entity.LastName.Trim() + ", " + entity.FirstName.Trim();
+
+        entity.Label = entity.LastName.Trim() + ", " + entity.FirstName.Trim();
+        entity.FirstName = entity.FirstName.Trim();
+        entity.LastName = entity.LastName.Trim();
+
         original.FeeValueDay = entity.FeeValueDay;
         original.FeeValueStd = entity.FeeValueStd;
 
@@ -152,7 +157,6 @@ namespace SealingSchoolWPF.Data
         original.AdditionalInfo = entity.AdditionalInfo;
         original.CreatedOn = entity.CreatedOn;
         original.ModifiedOn = DateTime.Now;
-        original.Label = entity.FirstName + " " + entity.LastName;
 
         if ( original != null )
         {
@@ -205,6 +209,6 @@ namespace SealingSchoolWPF.Data
 
     }
 
-   
+
   }
 }

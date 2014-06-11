@@ -570,4 +570,7 @@
   <data name="Times" xml:space="preserve">
     <value>Zeiten</value>
   </data>
+  <data name="MaterialGroup" xml:space="preserve">
+    <value>Materialgruppe</value>
+  </data>
 </root>

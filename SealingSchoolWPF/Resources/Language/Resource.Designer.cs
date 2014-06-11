@@ -790,7 +790,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Material Gruppe ähnelt.
+        ///   Looks up a localized string similar to Materialgruppe.
         /// </summary>
         public static string MaterialGroup {
             get {
@@ -799,7 +799,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Materialname ähnelt.
+        ///   Looks up a localized string similar to Materialname.
         /// </summary>
         public static string MaterialName {
             get {
@@ -1133,7 +1133,6 @@ namespace SealingSchoolWPF.Resources.Language {
         
         /// <summary>
         ///   Looks up a localized string similar to Endtdatum auswählen.
-        ///   Sucht eine lokalisierte Zeichenfolge, die Endtdatum auswählen ähnelt.
         /// </summary>
         public static string SelectEnd {
             get {
@@ -1160,7 +1159,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Bitte Teilnehmer auswählen ähnelt.
+        ///   Looks up a localized string similar to Bitte Teilnehmer auswählen.
         /// </summary>
         public static string SelectStudent {
             get {
