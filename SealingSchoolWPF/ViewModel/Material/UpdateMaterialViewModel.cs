@@ -346,7 +346,7 @@ namespace SealingSchoolWPF.ViewModel.Material
                 return;
 
             SealingSchoolWPF.Model.BoatTyp origBoatType = this.BoatTyp;
-            BoatTypViewModel quali = new BoatTypViewModel(origBoatType);
+            BoatTypViewModel boatTyp = new BoatTypViewModel(origBoatType);
             if (this._boatTyps == null)
             {
                 this._boatTyps = new ObservableCollection<BoatTypViewModel>();
@@ -354,22 +354,22 @@ namespace SealingSchoolWPF.ViewModel.Material
 
             foreach (BoatTypViewModel b in dummy)
             {
-                if (b.Name == b.Name)
+                if (b.Name == boatTyp.Name)
                     return;
             }
 
-            this.dummy.Add(quali);
+            this.dummy.Add(boatTyp);
 
-            this.ReBindDataGrid();
+           
         }
 
         public void ExecuteDeleteCommand(BoatTypViewModel boatTyp)
         {
             this.dummy.Remove(boatTyp);
-            this.ReBindDataGrid();
+           
         }
 
-        //private List<BoatTypViewModel> dummy = new List<BoatTypViewModel>();
+       
 
         private IList<SealingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
         {
