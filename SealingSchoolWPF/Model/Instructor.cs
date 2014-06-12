@@ -23,6 +23,7 @@ namespace SealingSchoolWPF.Model
     public virtual Decimal FeeValueDay { get; set; }
     public virtual Decimal FeeValueStd { get; set; }
     public virtual TrainingActivity TrainingActivity { get; set; }
+    public virtual Double RatingValue { get; set; }
 
     [InverseProperty( "Instructors" )]
     public virtual ICollection<Qualification> Qualifications { get; set; }

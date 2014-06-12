@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.InstructorViewModel;
 
-namespace SealingSchoolWPF.Pages.Instructor.Create
+namespace SealingSchoolWPF.Pages.Controls
 {
-  /// <summary>
-  /// Interaction logic for Rating.xaml
-  /// </summary>
-  public partial class Rating : UserControl
-  {
-    public Rating()
+    /// <summary>
+    /// Interaction logic for BankControl.xaml
+    /// </summary>
+    public partial class InstructorRatingControl : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateInstructorViewModel.Instance;
-      this.DataContext = viewModel;
+        public InstructorRatingControl()
+        {
+            InitializeComponent();
+        }
     }
-  }
 }

@@ -970,6 +970,24 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bewertung.
+        /// </summary>
+        public static string Rating {
+            get {
+                return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bewertungen.
+        /// </summary>
+        public static string Ratings {
+            get {
+                return ResourceManager.GetString("Ratings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referenz.
         /// </summary>
         public static string Reference {

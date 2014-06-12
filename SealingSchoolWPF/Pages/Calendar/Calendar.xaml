@@ -9,7 +9,8 @@
              d:DesignHeight="300" d:DesignWidth="300" IsVisibleChanged="UserControl_IsVisibleChanged">
     <Grid Style="{StaticResource ContentRoot}">
         <telerik:RadScheduleView x:Name="radScheduleView" AppointmentsSource="{Binding Appointments}"
-                                 NavigationHeaderVisibility="Visible" AllowDrop="False" ShowDialog="radScheduleView_ShowDialog"
+                                 NavigationHeaderVisibility="Visible" AllowDrop="False" 
+                                 ShowDialog="radScheduleView_ShowDialog"
                                  >
             <telerik:RadScheduleView.ViewDefinitions>
                 <telerik:DayViewDefinition />

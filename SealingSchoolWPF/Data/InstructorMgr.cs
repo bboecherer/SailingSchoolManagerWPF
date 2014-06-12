@@ -157,6 +157,7 @@ namespace SealingSchoolWPF.Data
         original.AdditionalInfo = entity.AdditionalInfo;
         original.CreatedOn = entity.CreatedOn;
         original.ModifiedOn = DateTime.Now;
+        original.RatingValue = entity.RatingValue;
 
         if ( original != null )
         {

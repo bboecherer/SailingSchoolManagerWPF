@@ -41,22 +41,26 @@ namespace SealingSchoolWPF.ViewModel.General
         Appointments = value;
       }
     }
+    #endregion
 
+    #region helpers
     private ObservableCollection<Telerik.Windows.Controls.ScheduleView.Appointment> GetAppointments()
     {
       var appointments = new ObservableCollection<Appointment>();
 
       foreach ( SealingSchoolWPF.Model.CoursePlaning c in coursePlaningMgr.GetAll() )
       {
-
-        appointments.Add( new Appointment()
+        if ( c.StartDate != null && c.EndDate != null
+          && c.CourseStatus != CourseStatus.BEENDET && c.CourseStatus != CourseStatus.ABGEBROCHEN )
         {
-          Subject = c.Label,
-          Start = (DateTime) c.StartDate,
-          End = (DateTime) c.EndDate,
-          Body = c.CourseStatus.ToString() + "\n" + GetInstructors( c.Instructors ),
-          TimeMarker = GetTimeMarker( c.CourseStatus )
-        } );
+          Appointment a = new Appointment();
+          a.Subject = c.Label + "\n" + GetInstructors( c.Instructors );
+          a.Start = (DateTime) c.StartDate;
+          a.End = (DateTime) c.EndDate;
+          a.Body = c.CourseStatus.ToString() + "\n" + GetInstructors( c.Instructors );
+          a.TimeMarker = GetTimeMarker( c.CourseStatus );
+          appointments.Add( a );
+        }
       }
       return appointments;
     }
@@ -77,15 +81,6 @@ namespace SealingSchoolWPF.ViewModel.General
       {
         return TimeMarker.Tentative;
       }
-      if ( status == CourseStatus.BEENDET )
-      {
-        return TimeMarker.Free;
-      }
-      if ( status == CourseStatus.ABGEBROCHEN )
-      {
-        return TimeMarker.Free;
-      }
-
       return TimeMarker.Busy;
     }
     #endregion

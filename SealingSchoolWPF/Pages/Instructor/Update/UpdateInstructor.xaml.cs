@@ -64,6 +64,7 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instr.FeeValueStd = instructor.HonorarValueStd;
 
             instr.Qualifications = instructor.Qualifications;
+            instr.RatingValue = instructor.RatingValue;
 
 
 

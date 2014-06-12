@@ -63,6 +63,20 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
       }
     }
 
+    private Double _ratingValue;
+    public Double RatingValue
+    {
+      get
+      {
+        return _ratingValue != null && _ratingValue != 0 ? _ratingValue : Model.RatingValue;
+      }
+      set
+      {
+        _ratingValue = value;
+        this.OnPropertyChanged( "RatingValue" );
+      }
+    }
+
     public string LastName
     {
       get
@@ -401,6 +415,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
           Model.Qualifications.Add( prepareQualiToSave( q ) );
         }
       }
+
+      Model.RatingValue = this._ratingValue;
 
       instructorMgr.Update( Model );
 

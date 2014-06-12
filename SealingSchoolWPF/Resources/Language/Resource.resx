@@ -573,4 +573,10 @@
   <data name="MaterialGroup" xml:space="preserve">
     <value>Materialgruppe</value>
   </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Bewertung</value>
+  </data>
+  <data name="Ratings" xml:space="preserve">
+    <value>Bewertungen</value>
+  </data>
 </root>
