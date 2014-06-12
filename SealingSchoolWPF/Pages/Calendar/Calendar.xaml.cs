@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Jarloo.Calendar;
+using SealingSchoolWPF.ViewModel.General;
+using Telerik.Windows.Controls.ScheduleView;
 
 namespace SealingSchoolWPF.Pages
 {
@@ -23,39 +25,22 @@ namespace SealingSchoolWPF.Pages
   {
     public Calendar()
     {
-      InitializeComponent(); List<string> months = new List<string> { "Januar", "Februar", "März", "April", "mai", "Juni", 
-        "Juli", "August", "September", "Oktober", "November", "Dezember" };
-      cboMonth.ItemsSource = months;
-
-      for ( int i = -50; i < 50; i++ )
-      {
-        cboYear.Items.Add( DateTime.Today.AddYears( i ).Year );
-      }
-
-      cboMonth.SelectedItem = months.FirstOrDefault( w => w == DateTime.Today.ToString( "MMMM" ) );
-      cboYear.SelectedItem = DateTime.Today.Year;
-
-      cboMonth.SelectionChanged += ( o, e ) => RefreshCalendar();
-      cboYear.SelectionChanged += ( o, e ) => RefreshCalendar();
+      InitializeComponent();
+      var viewModel = new CalendarViewModel();
+      this.DataContext = viewModel;
     }
 
-    private void RefreshCalendar()
+    private void UserControl_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
     {
-      if ( cboYear.SelectedItem == null ) return;
-      if ( cboMonth.SelectedItem == null ) return;
-
-      int year = (int) cboYear.SelectedItem;
-
-      int month = cboMonth.SelectedIndex + 1;
-
-      DateTime targetDate = new DateTime( year, month, 1 );
-
-      CalendarView.BuildCalendar( targetDate );
+      this.DataContext = null;
+      var viewModel = new CalendarViewModel();
+      this.DataContext = viewModel;
     }
 
-    private void Calendar_DayChanged( object sender, DayChangedEventArgs e )
+    private void radScheduleView_ShowDialog( object sender, Telerik.Windows.Controls.ShowDialogEventArgs e )
     {
-      //save the text edits to persistant storage
+      //if ( e.DialogViewModel is AppointmentDialogViewModel )
+      e.Cancel = true;
     }
   }
 }

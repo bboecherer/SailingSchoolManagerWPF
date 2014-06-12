@@ -120,7 +120,7 @@ namespace SealingSchoolWPF.Data
       using ( var ctx = new SchoolDataContext() )
       {
         CoursePlaning original = ctx.CoursePlanings.Find( entity.CoursePlaningId );
-
+        entity.Label = entity.Course.Label;
         if ( original != null )
         {
           ctx.Entry( original ).CurrentValues.SetValues( entity );

@@ -1,5 +1,0 @@
-D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\System.Windows.Forms.Calendar\bin\Debug\System.Windows.Forms.Calendar.dll
-D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\System.Windows.Forms.Calendar\bin\Debug\System.Windows.Forms.Calendar.pdb
-D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.csprojResolveAssemblyReference.cache
-D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.dll
-D:\Repos\SealingSchool\SailingSchoolManagerWPF\SealingSchoolWPF\Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.pdb
