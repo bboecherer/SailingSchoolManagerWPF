@@ -6,12 +6,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
+             d:DesignHeight="300" d:DesignWidth="800"
              IsVisibleChanged="UserControl_IsVisibleChanged" MouseEnter="UserControl_MouseEnter">
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
         <Grid>
             <StackPanel Orientation="Horizontal">
@@ -88,13 +88,13 @@
                                     Value="Left" />
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
-                                    <Setter Property="Width" Value="250" />
+                                    <Setter Property="Width" Value="350" />
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="Width" Value="250" />
+                                    <Setter Property="Width" Value="350" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -107,13 +107,13 @@
                                     Value="Left" />
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
-                                    <Setter Property="Width" Value="100" />
+                                    <Setter Property="Width" Value="120" />
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="Width" Value="100" />
+                                    <Setter Property="Width" Value="120" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -126,13 +126,13 @@
                                     Value="Left" />
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
-                                    <Setter Property="Width" Value="100" />
+                                    <Setter Property="Width" Value="120" />
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="Width" Value="100" />
+                                    <Setter Property="Width" Value="120" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>

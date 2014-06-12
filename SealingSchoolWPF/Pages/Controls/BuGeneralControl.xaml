@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="130" d:DesignWidth="600">
+             d:DesignHeight="130" d:DesignWidth="630">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -15,8 +15,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80" />
-            <ColumnDefinition Width="520" />
+            <ColumnDefinition Width="90" />
+            <ColumnDefinition Width="542" />
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Label}"/>
         <Label Grid.Row="1" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Row1}"/>

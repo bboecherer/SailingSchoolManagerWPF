@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Materials}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 

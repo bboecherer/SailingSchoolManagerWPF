@@ -6,7 +6,7 @@
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="130" d:DesignWidth="600">
+             d:DesignHeight="130" d:DesignWidth="630">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -15,11 +15,11 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="90" />
             <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="90" />
             <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="90" />
             <ColumnDefinition Width="120" />
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Tel1}"/>
