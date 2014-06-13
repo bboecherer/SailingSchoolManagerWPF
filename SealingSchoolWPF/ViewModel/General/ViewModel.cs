@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SealingSchoolWPF.Data;
+using SealingSchoolWPF.ViewModel.BusinessUnit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -11,6 +13,15 @@ namespace SealingSchoolWPF.ViewModel
 {
     public abstract class ViewModel : IViewModel
     {
+        public InstructorMgr instructorMgr = new InstructorMgr();
+        public CourseMgr courseMgr = new CourseMgr();
+        public StudentMgr studentMgr = new StudentMgr();
+        public QualificationMgr qualiMgr = new QualificationMgr();
+        public CoursePlaningMgr coursePlaningMgr = new CoursePlaningMgr();
+        public BlockedTimesMgr blockTimesMgr = new BlockedTimesMgr();
+        public TrainingActivityMgr trainingActivityMgr = new TrainingActivityMgr();
+
+
 
         /// <summary>
         /// Returns the user-friendly name of this object.
@@ -126,7 +137,7 @@ namespace SealingSchoolWPF.ViewModel
         protected virtual void OnDispose()
         {
         }
-               
+
     }
 
     /// <summary>
@@ -236,6 +247,8 @@ namespace SealingSchoolWPF.ViewModel
 
             return Model.Equals(other.Model);
         }
+
+
     }
 
 }

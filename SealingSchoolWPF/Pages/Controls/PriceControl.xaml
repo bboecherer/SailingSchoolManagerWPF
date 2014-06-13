@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="110" d:DesignWidth="330">
+             d:DesignHeight="130" d:DesignWidth="330">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -19,16 +19,16 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.NetPrice}"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.GrossPrice}"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.NetAmount}"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.GrossPrice}"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.NetAmount}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.NetPrice}"/>
         <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-        <xctk:DecimalUpDown Grid.Column="1" Grid.Row="0" Margin="3" FormatString="C2" Minimum="0.00" 
-                                        Value="{Binding Path=NetPrice}" Increment=".5" />
-        <xctk:DecimalUpDown Grid.Column="1" Grid.Row="1" Margin="3" FormatString="C2" Minimum="0.00"
-                                        Value="{Binding Path=GrossPrice}" Increment=".5" IsEnabled="False" IsReadOnly="True" />
-        <xctk:DecimalUpDown Grid.Column="1" Grid.Row="2" Margin="3" FormatString="C2" Minimum="0.00"
-                                        Value="{Binding Path=NetAmount}" Increment=".5" IsEnabled="False" IsReadOnly="True"/>
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="0" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="N2"
+                                        Value="{Binding Path=GrossPrice}"  />
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Interval="0.5" Minimum="0.00" StringFormat="N2"
+                                        Value="{Binding Path=NetAmount}"  IsEnabled="False" IsReadOnly="True" />
+        <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="2" Margin="3"  Interval="0.5" Minimum="0.00" StringFormat="N2"
+                                        Value="{Binding Path=NetPrice}"  IsEnabled="False" IsReadOnly="True"/>
         <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
     </Grid>

@@ -1,0 +1,19 @@
+﻿<mui:ModernWindow x:Class="SealingSchoolWPF.Pages.Invoicing.Workflows.CreateCreditNoteWF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+        Title="ANMELDUNGEN" IsTitleVisible="True"
+        ContentSource="/Pages/Invoicing/Workflows/CreateCreditNotePage1.xaml"
+        Height="500" Width="500" 
+      >
+    <mui:ModernWindow.MenuLinkGroups >
+        <mui:LinkGroup DisplayName="Gutschrift erstellen">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Rechnung auswählen" Source="/Pages/Invoicing/Workflows/CreateCreditNotePage1.xaml" />
+                <mui:Link DisplayName="Konfliktstrategie auswählen" Source="/Pages/Invoicing/Workflows/CreateCreditNotePage2.xaml" />
+                <mui:Link DisplayName="Zusammenfassung" Source="/Pages/Invoicing/Workflows/CreateCreditNotePage3.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

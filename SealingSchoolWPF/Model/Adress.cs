@@ -11,14 +11,15 @@ namespace SealingSchoolWPF.Model
     public class Adress
     {
         [Key]
-        public int AdressId { get; set; }
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string AddressLine3 { get; set; }
-        public string Street { get; set; }
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string State { get; set; }
+        public virtual int AdressId { get; set; }
+        public virtual string AddressLine1 { get; set; }
+        public virtual string AddressLine2 { get; set; }
+        public virtual string AddressLine3 { get; set; }
+        public virtual string Street { get; set; }
+        public virtual string ZipCode { get; set; }
+        public virtual string City { get; set; }
+        public virtual string Country { get; set; }
+        public virtual string State { get; set; }
+
     }
 }

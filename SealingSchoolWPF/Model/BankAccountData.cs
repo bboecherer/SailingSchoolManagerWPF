@@ -10,12 +10,13 @@ namespace SealingSchoolWPF.Model
     public class BankAccountData
     {
         [Key]
-        public int BankId { get; set; }
-        public string BankNo { get; set; }
-        public string BankName { get; set; }
-        public string AccountNo { get; set; }
-        public string Bic { get; set; }
-        public string Iban { get; set; }
-        public bool Sepa { get; set; }
+        public virtual int BankId { get; set; }
+        public virtual string BankNo { get; set; }
+        public virtual string BankName { get; set; }
+        public virtual string AccountNo { get; set; }
+        public virtual string Bic { get; set; }
+        public virtual string Iban { get; set; }
+        public virtual bool Sepa { get; set; }
+
     }
 }

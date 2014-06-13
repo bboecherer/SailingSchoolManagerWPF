@@ -7,13 +7,12 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="360" d:DesignWidth="360">
-    <Grid Style="{StaticResource ContentRoot}">
+    <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <Controls:CourseBaseControl />
                 <Button:CreateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>
-
         </ScrollViewer>
     </Grid>
 </UserControl>

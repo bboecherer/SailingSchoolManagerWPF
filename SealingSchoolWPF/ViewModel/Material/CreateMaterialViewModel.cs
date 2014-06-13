@@ -1,12 +1,15 @@
 ﻿using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
+using SealingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.MaterialViewModel
+namespace SealingSchoolWPF.ViewModel.Material
 {
     public class CreateMaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {
@@ -36,6 +39,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
 
         MaterialMgr matMgr = new MaterialMgr();
         MaterialTypMgr matTypMgr = new MaterialTypMgr();
+        BoatTypMgr boatTypMgr = new BoatTypMgr();
 
         private string _name;
         public string Name
@@ -164,6 +168,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("Notes");
             }
         }
+
         private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
         {
             MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
@@ -173,6 +178,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
             return MaterialTypNames;
         }
+
         private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
         public IEnumerable<MaterialTyp> MaterialTypTypeValues
@@ -182,6 +188,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 return GetMaterialTypNames();
             }
         }
+
         private MaterialTyp _materialTyp;
         public MaterialTyp MaterialTyp
         {
@@ -195,6 +202,58 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
                 this.OnPropertyChanged("MaterialTyp");
             }
         }
+
+        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        {
+            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
+            {
+                BoatTypNames.Add(boatTyp);
+            }
+            return BoatTypNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
+        {
+            get
+            {
+                return GetBoatTypNames();
+            }
+        }
+
+        private SealingSchoolWPF.Model.BoatTyp _boatTyp;
+        public SealingSchoolWPF.Model.BoatTyp BoatTyp
+        {
+            get
+            {
+                return _boatTyp;
+            }
+            set
+            {
+                _boatTyp = value;
+                this.OnPropertyChanged("BoatTyp");
+            }
+        }
+
+        private ObservableCollection<BoatTypViewModel> _boatTyps;
+        public ObservableCollection<BoatTypViewModel> BoatTyps
+        {
+            get
+            {
+                return _boatTyps;
+            }
+            set
+            {
+                if (BoatTyps != value)
+                {
+                    _boatTyps = value;
+                    this.OnPropertyChanged("BoatTyps");
+                }
+            }
+        }
+
 
         private bool _isButtonEnabled = true;
         public bool IsButtonEnabled
@@ -293,6 +352,63 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             Application.Current.Windows[1].Close();
         }
 
+        private ICommand addBoatTypCommand;
+        public ICommand AddBoatTypCommand
+        {
+            get
+            {
+                if (addBoatTypCommand == null)
+                {
+                    addBoatTypCommand = new RelayCommand(p => ExecuteAddBoatTypCommand());
+                }
+                return addBoatTypCommand;
+            }
+        }
+
+        private void ExecuteAddBoatTypCommand()
+        {
+            if (this.BoatTyp == null)
+                return;
+
+            SealingSchoolWPF.Model.BoatTyp origBoatType = this.BoatTyp;
+            BoatTypViewModel boatTyp = new BoatTypViewModel(origBoatType);
+            if (this._boatTyps == null)
+            {
+                this._boatTyps = new ObservableCollection<BoatTypViewModel>();
+            }
+
+            foreach (BoatTypViewModel b in dummy)
+            {
+                if (b.Name == boatTyp.Name)
+                    return;
+            }
+
+            this.dummy.Add(boatTyp);
+            this.ReBindDataGrid();
+        }
+
+        public void ExecuteDeleteCommand(BoatTypViewModel boatTyp)
+        {
+            this.dummy.Remove(boatTyp);
+            this.ReBindDataGrid();
+        }
+
+        private List<BoatTypViewModel> dummy = new List<BoatTypViewModel>();
+
+        private IList<SealingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
+        {
+            IList<SealingSchoolWPF.Model.BoatTyp> boatTypList = new List<SealingSchoolWPF.Model.BoatTyp>();
+
+            foreach (BoatTypViewModel b in list)
+            {
+                SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
+                boatTyp.BoatTypID = b.Id;
+                boatTypList.Add(boatTyp);
+            }
+
+            return boatTypList;
+        }
+
         private void SaveModelToDatabase()
         {
             Model.Name = this.Name;
@@ -309,6 +425,15 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
 
+            if (Model.BoatTyps == null)
+            {
+                Model.BoatTyps = new List<Model.BoatTyp>();
+            }
+
+            foreach (SealingSchoolWPF.Model.BoatTyp q in prepareBoatTyps(dummy))
+            {
+                Model.BoatTyps.Add(q);
+            }
 
             matMgr.Create(Model);
         }
@@ -339,6 +464,16 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
 
 
 
+        }
+
+        private void ReBindDataGrid()
+        {
+            if (this._boatTyps != null)
+            {
+                this._boatTyps.Clear();
+            }
+
+            BoatTyps = new ObservableCollection<BoatTypViewModel>(dummy);
         }
 
         public void Close()

@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.MaterialViewModel;
+using SealingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace SealingSchoolWPF.Pages.Material.Update
     {
         UpdateMaterialViewModel viewModel;
 
-        public UpdateMaterial(SealingSchoolWPF.ViewModel.MaterialViewModel.MaterialViewModel material)
+        public UpdateMaterial(MaterialViewModel material)
         {
             InitializeComponent();
             viewModel = new UpdateMaterialViewModel(GetMaterialDataFromModel(material));
@@ -45,6 +45,7 @@ namespace SealingSchoolWPF.Pages.Material.Update
             mat.RepairAction = material.RepairAction;
             mat.SerialNumber = material.SerialNumber;
             mat.MaterialTyp = material.MaterialTyp;
+            mat.BoatTyps = material.BoatTyps;
             return mat;
         }
         private void ModernWindow_Closed(object sender, EventArgs e)

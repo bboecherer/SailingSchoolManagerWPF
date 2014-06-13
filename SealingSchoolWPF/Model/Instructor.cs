@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -10,167 +11,163 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class Instructor : SealingSchoolObject, IDataErrorInfo
+  public class Instructor : SealingSchoolObject, IDataErrorInfo
+  {
+    [Key]
+    public virtual int InstructorId { get; set; }
+    public virtual string LastName { get; set; }
+    public virtual string FirstName { get; set; }
+    public virtual Adress Adress { get; set; }
+    public virtual ContactData Contact { get; set; }
+    public virtual BankAccountData Bank { get; set; }
+    public virtual Decimal FeeValueDay { get; set; }
+    public virtual Decimal FeeValueStd { get; set; }
+    public virtual TrainingActivity TrainingActivity { get; set; }
+    public virtual Double RatingValue { get; set; }
+
+    [InverseProperty( "Instructors" )]
+    public virtual ICollection<Qualification> Qualifications { get; set; }
+
+    [InverseProperty( "Instructors" )]
+    public virtual ICollection<CoursePlaning> CoursePlanings { get; set; }
+
+    string IDataErrorInfo.Error { get { return null; } }
+
+    string IDataErrorInfo.this[ string propertyName ]
     {
-        [Key]
-        public int Id { get; set; }
+      get { return this.GetValidationError( propertyName ); }
+    }
 
-        public string LastName { get; set; }
+    public override string ToString()
+    {
+      return this.FirstName + " " + this.LastName;
+    }
 
-        public string FirstName { get; set; }
+    public override bool Equals( object obj )
+    {
+      Instructor instr;
+      try
+      {
+        instr = (Instructor) obj;
+      }
+      catch ( Exception )
+      {
+        return false;
+      }
 
-        public virtual ICollection<Course> Courses { get; set; }
+      if ( InstructorId != instr.InstructorId )
+      {
+        return false;
+      }
 
-        public Adress Adress { get; set; }
+      if ( Label != instr.Label )
+      {
+        return false;
+      }
+      return true;
+    }
 
-        public ContactData Contact { get; set; }
+    public override int GetHashCode()
+    {
+      return base.GetHashCode() ^ this.InstructorId;
+    }
 
-        public BankAccountData Bank { get; set; }
+    public bool IsValid
+    {
+      get
+      {
+        foreach ( string property in ValidatedProperties )
+          if ( GetValidationError( property ) != null )
+            return false;
 
-        public bool SSS { get; set; }
+        return true;
+      }
+    }
 
-        public DateTime SSSDate { get; set; }
-
-        public bool SKS { get; set; }
-
-        public DateTime SKSDate { get; set; }
-
-        public bool SBFSEA { get; set; }
-
-        public DateTime SBFSEADate { get; set; }
-
-        public bool SBFBINNEN { get; set; }
-
-        public DateTime SBFBINNENDate { get; set; }
-
-        public bool SRC { get; set; }
-
-        public DateTime SRCDate { get; set; }
-
-        public bool UBI { get; set; }
-
-        public DateTime UBIDate { get; set; }
-
-        public bool DSV { get; set; }
-
-        public DateTime DSVDate { get; set; }
-
-        public bool SHS { get; set; }
-
-        public DateTime SHSDate { get; set; }
-
-        public bool LifeGuard { get; set; }
-
-        public DateTime LifeGuardDate { get; set; }
-
-        string IDataErrorInfo.Error { get { return null; } }
-
-        string IDataErrorInfo.this[string propertyName]
-        {
-            get { return this.GetValidationError(propertyName); }
-        }
-
-        public override string ToString()
-        {
-            return this.FirstName + " " + this.LastName;
-        }
-
-        public bool IsValid
-        {
-            get
-            {
-                foreach (string property in ValidatedProperties)
-                    if (GetValidationError(property) != null)
-                        return false;
-
-                return true;
-            }
-        }
-
-        static readonly string[] ValidatedProperties = 
+    static readonly string[] ValidatedProperties = 
         { 
             "Label", 
             "FirstName", 
             "LastName",
         };
 
-        string GetValidationError(string propertyName)
-        {
-            if (Array.IndexOf(ValidatedProperties, propertyName) < 0)
-                return null;
+    string GetValidationError( string propertyName )
+    {
+      if ( Array.IndexOf( ValidatedProperties, propertyName ) < 0 )
+        return null;
 
-            string error = null;
+      string error = null;
 
-            switch (propertyName)
-            {
-                case "Label":
-                    error = this.ValidateLabel();
-                    break;
+      switch ( propertyName )
+      {
+        case "Label":
+          error = this.ValidateLabel();
+          break;
 
-                case "FirstName":
-                    error = this.ValidateFirstName();
-                    break;
+        case "FirstName":
+          error = this.ValidateFirstName();
+          break;
 
-                case "LastName":
-                    error = this.ValidateLastName();
-                    break;
+        case "LastName":
+          error = this.ValidateLastName();
+          break;
 
-                default:
-                    Debug.Fail("Unexpected property being validated on Instructor: " + propertyName);
-                    break;
-            }
+        default:
+          Debug.Fail( "Unexpected property being validated on Instructor: " + propertyName );
+          break;
+      }
 
-            return error;
-        }
-
-        string ValidateLabel()
-        {
-            if (IsStringMissing(this.Label))
-            {
-                return "";// Strings.Student_Error_MissingEmail;
-            }
-            else if (!IsValidEmailAddress(this.Label))
-            {
-                return "";//Strings.Customer_Error_InvalidEmail;
-            }
-            return null;
-        }
-
-        string ValidateFirstName()
-        {
-            if (IsStringMissing(this.FirstName))
-            {
-                return "";//Strings.Customer_Error_MissingFirstName;
-            }
-            return null;
-        }
-
-        string ValidateLastName()
-        {
-
-            if (IsStringMissing(this.LastName))
-            {
-                return "";//Strings.Customer_Error_MissingFirstName;
-            }
-            return null;
-        }
-
-        static bool IsStringMissing(string value)
-        {
-            return
-                String.IsNullOrEmpty(value) ||
-                value.Trim() == String.Empty;
-        }
-
-        static bool IsValidEmailAddress(string email)
-        {
-            if (IsStringMissing(email))
-                return false;
-
-            string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-
-            return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
-        }
+      return error;
     }
+
+    string ValidateLabel()
+    {
+      if ( IsStringMissing( this.Label ) )
+      {
+        return "";// Strings.Student_Error_MissingEmail;
+      }
+      else if ( !IsValidEmailAddress( this.Label ) )
+      {
+        return "";//Strings.Customer_Error_InvalidEmail;
+      }
+      return null;
+    }
+
+    string ValidateFirstName()
+    {
+      if ( IsStringMissing( this.FirstName ) )
+      {
+        return "";//Strings.Customer_Error_MissingFirstName;
+      }
+      return null;
+    }
+
+    string ValidateLastName()
+    {
+
+      if ( IsStringMissing( this.LastName ) )
+      {
+        return "";//Strings.Customer_Error_MissingFirstName;
+      }
+      return null;
+    }
+
+    static bool IsStringMissing( string value )
+    {
+      return
+          String.IsNullOrEmpty( value ) ||
+          value.Trim() == String.Empty;
+    }
+
+    static bool IsValidEmailAddress( string email )
+    {
+      if ( IsStringMissing( email ) )
+        return false;
+
+      string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+
+      return Regex.IsMatch( email, pattern, RegexOptions.IgnoreCase );
+    }
+  }
 
 }

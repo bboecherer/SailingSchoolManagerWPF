@@ -13,6 +13,12 @@ namespace SealingSchoolWPF.ViewModel.Instructor
 {
     class InstructorListViewModel : ViewModel
     {
+        #region ctor
+        public InstructorListViewModel()
+        {
+            BindDataGrid();
+        }
+
         static InstructorListViewModel instance = null;
         static readonly object padlock = new object();
 
@@ -30,12 +36,10 @@ namespace SealingSchoolWPF.ViewModel.Instructor
                 }
             }
         }
+        #endregion
 
-
-        private InstructorMgr instructorMgr = new InstructorMgr();
-
+        #region properties
         private ObservableCollection<InstructorViewModel> instructors;
-
         public ObservableCollection<InstructorViewModel> Instructors
         {
             get
@@ -51,20 +55,18 @@ namespace SealingSchoolWPF.ViewModel.Instructor
                 }
             }
         }
+        #endregion
 
-        public InstructorListViewModel()
-        {
-            BindDataGrid();
-        }
-
+        #region helpers
         private void BindDataGrid()
         {
             IList<SealingSchoolWPF.Model.Instructor> studs = instructorMgr.GetAll();
             instructors = new ObservableCollection<InstructorViewModel>(studs.Select(p => new InstructorViewModel(p)));
         }
+        #endregion
 
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -82,7 +84,7 @@ namespace SealingSchoolWPF.ViewModel.Instructor
             CreateInstructor window = new CreateInstructor();
             window.ShowDialog();
         }
-
+        #endregion
 
     }
 }

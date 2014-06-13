@@ -1,11 +1,14 @@
-﻿<UserControl xmlns:BusinessUnit="clr-namespace:SealingSchoolWPF.Pages.Controls"  xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  x:Class="SealingSchoolWPF.Pages.BusinessUnit.Qualification"
+﻿<UserControl xmlns:BusinessUnit="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             x:Class="SealingSchoolWPF.Pages.BusinessUnit.Qualification"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="500">
+             d:DesignHeight="250" d:DesignWidth="650">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <StackPanel>
             <Grid>
@@ -14,23 +17,24 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="60" />
-                    <RowDefinition Height="30" />
+                    <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="280" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="QUALIFIKATIONEN" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Heading2}" />
+                <TextBlock Text="{x:Static resx:Resource.Qualifications}" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Heading2}" />
                 <Label Grid.Row="1" Grid.Column="1" Margin="3" Content="{x:Static resx:Resource.QualiShort}"/>
                 <Label Grid.Row="1" Grid.Column="2" Margin="3" Content="{x:Static resx:Resource.QualiLong}"/>
                 <Label Grid.Row="2" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Qualification}"/>
                 <Label Grid.Row="3" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Description}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="3" Text="{Binding Path=ShortName}"/>
-                <TextBox Grid.Row="2" Grid.Column="2" Margin="3" Text="{Binding Path=Name}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Text="{Binding Path=Description}"/>
-                <Button Command="{Binding AddCommand}" Grid.Row="4" Grid.Column="2" Margin="3"
-             HorizontalAlignment="Right"   Height="20" Width="45">
+                <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Row="2" Grid.Column="1" Margin="3" Text="{Binding Path=ShortName}"/>
+                <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Row="2" Grid.Column="2" Margin="3" Text="{Binding Path=Name}"/>
+                <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Text="{Binding Path=Description}"/>
+                <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding AddCommand}" Grid.Row="4" Grid.Column="2">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -39,14 +43,14 @@
                             </StackPanel>
                         </ToolTip>
                     </Button.ToolTip>
-                    <StackPanel>
-                        <Image Source="/Resources/Images/action_add_16xSM.png" />
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
                     </StackPanel>
                 </Button>
-                <!-- 
-            <BusinessUnit:BuQualificationControl Grid.Row="1" />
-            <BusinessUnit:BuQualificationListView  Grid.Row="2" x:Name="qualificationList"/>
-            -->
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -55,6 +59,12 @@
                 <DataGrid ItemsSource="{Binding Qualifications}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 
                   IsReadOnly="True" CanUserDeleteRows="True">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="BorderBrush" Value="Gray" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                        </Style>
+                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{x:Static resx:Resource.QualiShort}" 
                             Binding="{Binding ShortName }" >
@@ -102,13 +112,15 @@
                                     Value="Left" />
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
-                                    <Setter Property="Width" Value="180" />
+                                    <Setter Property="Width" Value="300" />
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="Height" Value="Auto"/>
                                     <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="Width" Value="180" />
+                                    <Setter Property="Width" Value="300" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>

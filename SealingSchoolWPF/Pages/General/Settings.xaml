@@ -3,19 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid Style="{StaticResource ContentRoot}">
         <mui:ModernTab Layout="List" SelectedSource="/Pages/BusinessUnit/BusinessUnitSettings.xaml">
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="Mandant" Source="/Pages/BusinessUnit/BusinessUnitSettings.xaml" />
-                <mui:Link DisplayName="Rechnungen" Source="/Pages/BusinessUnit/SettingsInvoice.xaml" />
-                <mui:Link DisplayName="Vorlagen" Source="/Pages/BusinessUnit/Templates.xaml" />
-                <mui:Link DisplayName="Qualifikationen" Source="/Pages/BusinessUnit/Qualification.xaml" />
-                <mui:Link DisplayName="Materialarten" Source="/Pages/BusinessUnit/Material.xaml" />
-                <mui:Link DisplayName="Aussehen" Source="/Pages/General/SettingsAppearance.xaml" />
-                <mui:Link DisplayName="Über" Source="/Pages/General/About.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Mandant}" Source="/Pages/BusinessUnit/BusinessUnitSettings.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Invoice}" Source="/Pages/BusinessUnit/SettingsInvoice.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Qualification}" Source="/Pages/BusinessUnit/Qualification.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Material}" Source="/Pages/BusinessUnit/Material.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.BoatTyp}" Source="/Pages/BusinessUnit/BoatTyp.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Appereance}" Source="/Pages/General/SettingsAppearance.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.About}" Source="/Pages/General/About.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

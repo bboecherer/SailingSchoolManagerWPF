@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="210" d:DesignWidth="310">
+             d:DesignHeight="230" d:DesignWidth="310">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -26,17 +27,28 @@
         <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Bic}"/>
         <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Iban}"/>
         <Label Grid.Row="6" Grid.Column="0" Content="{x:Static resx:Resource.Sepa}"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=AccountNo, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=BankNo, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Bic, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Iban, Mode=TwoWay}"/>
-        <Button Grid.Column="1" Grid.Row="5" Margin="3" Width="45" Height="20" 
-                            HorizontalAlignment="Right" Command="{Binding GenerateBankData}">
-            <StackPanel>
-                <Image Source="/Resources/Images/NewRow_14x12x.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=AccountNo, Mode=TwoWay}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=BankNo, Mode=TwoWay}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=BankName, Mode=TwoWay}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Bic, Mode=TwoWay}"/>
+        <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=Iban, Mode=TwoWay}"/>
+        <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding GenerateBankData}" Grid.Row="5" Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <Rectangle Width="15" Height="15" StrokeThickness="0">
+                    <Rectangle.Fill>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_calculator}" />
+                    </Rectangle.Fill>
+                </Rectangle>
             </StackPanel>
         </Button>
+
+
+
+
+
+
         <CheckBox Grid.Column="1" Grid.Row="6" Margin="3" IsChecked="{Binding Path=Sepa, Mode=TwoWay}"/>
     </Grid>
 </UserControl>

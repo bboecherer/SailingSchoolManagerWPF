@@ -11,7 +11,7 @@ namespace SealingSchoolWPF.Data
     class SchoolDataContext : DbContext
     {
         public SchoolDataContext()
-            : base("SchoolContext")
+      : base( "SchoolContext" )
         {
         }
 
@@ -35,5 +35,12 @@ namespace SealingSchoolWPF.Data
         public DbSet<GeneralFee> GeneralFees { get; set; }
         public DbSet<Qualification> Qualifications { get; set; }
         public DbSet<MaterialTyp> MaterialTyps { get; set; }
+        public DbSet<IncomingInvoice> IncomingInvoices { get; set; }
+        public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
+        public DbSet<CoursePlaning> CoursePlanings { get; set; }
+        public DbSet<BlockedTimeSpan> BlockedTimeSpans { get; set; }
+        public DbSet<Boat> Boats { get; set; }
+        public DbSet<BoatTyp> BoatTyps { get; set; }
+        public DbSet<TrainingActivity> TrainingActivities { get; set; }
     }
 }

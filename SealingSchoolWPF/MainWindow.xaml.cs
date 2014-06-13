@@ -1,5 +1,4 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using log4net;
 using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.Resources.Language;
@@ -7,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,19 +17,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 
 namespace SealingSchoolWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : ModernWindow
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : ModernWindow
+  {
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            Resource.Culture = new System.Globalization.CultureInfo("de-DE");
-            InitializeComponent();
-        }
-
+      string cultureInfo = ConfigurationManager.AppSettings[ "DefaultCulture" ];
+      Resource.Culture = new System.Globalization.CultureInfo( cultureInfo );
+      InitializeComponent();
+      BusinessUnitMgr bu = new BusinessUnitMgr();
+      bu.GetBu();
+      Thread.Sleep( 2000 );
     }
+
+  }
 }

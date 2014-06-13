@@ -29,7 +29,6 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
 
         public UpdateInstructor(SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel instructor)
         {
-            //      Model.Student stud = GetStudentDataFromModel(student);
             InitializeComponent();
             viewModel = new UpdateInstructorViewModel(GetInstructorDataFromModel(instructor));
             this.DataContext = viewModel;
@@ -53,33 +52,21 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
             instrBank.AccountNo = instructor.AccountNo;
             instrBank.Sepa = instructor.Sepa;
 
-            instr.Id = Convert.ToInt32(instructor.Id);
+            instr.InstructorId = Convert.ToInt32(instructor.Id);
             instr.LastName = instructor.Lastname;
             instr.FirstName = instructor.Firstname;
             instr.AdditionalInfo = instructor.Notes;
             instr.CreatedOn = instructor.CreatedOn;
             instr.Bank = instrBank;
             instr.Adress = instrAdress;
+            instr.Label = instructor.Firstname + " " + instructor.Lastname;
+            instr.FeeValueDay = instructor.HonorarValueDay;
+            instr.FeeValueStd = instructor.HonorarValueStd;
 
-            instr.SSS = instructor.SSS;
-            instr.SKS = instructor.SKS;
-            instr.SBFBINNEN = instructor.SBFBINNEN;
-            instr.SBFSEA = instructor.SBFSEA;
-            instr.SRC = instructor.SRC;
-            instr.UBI = instructor.UBI;
-            instr.DSV = instructor.DSV;
-            instr.SHS = instructor.SHS;
-            instr.LifeGuard = instructor.LifeGuard;
+            instr.Qualifications = instructor.Qualifications;
+            instr.RatingValue = instructor.RatingValue;
 
-            instr.SSSDate = instructor.SSSDate;
-            instr.SKSDate = instructor.SKSDate;
-            instr.SBFBINNENDate = instructor.SBFBINNENDate;
-            instr.SBFSEADate = instructor.SBFSEADate;
-            instr.SRCDate = instructor.SRCDate;
-            instr.UBIDate = instructor.UBIDate;
-            instr.DSVDate = instructor.DSVDate;
-            instr.SHSDate = instructor.SHSDate;
-            instr.LifeGuardDate = instructor.LifeGuardDate;
+
 
             return instr;
         }

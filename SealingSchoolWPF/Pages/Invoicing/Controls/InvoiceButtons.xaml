@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.Invoicing.Controls.InvoiceButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="100">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="35" Height="35" VerticalAlignment="Top"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                         Command="{Binding AddCommand}">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Create_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Create_ToolTip_Desc}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="15" Height="15" StrokeThickness="0">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </StackPanel>
+            </Button>
+            <Button Width="35" Height="35" VerticalAlignment="Top"
+                        Style="{DynamicResource MetroCircleButtonStyle}"
+                        Command="{Binding RefreshCommand}">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Refresh_ToolTip}"/>
+                            <TextBlock Text="{x:Static resx:Resource.Refresh_ToolTip_Desc}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="15" Height="15" StrokeThickness="0">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_refresh}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

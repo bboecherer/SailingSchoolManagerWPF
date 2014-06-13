@@ -50,14 +50,15 @@ namespace SealingSchoolWPF.Pages.Student.Update
             studBank.Iban = student.Iban;
             studBank.AccountNo = student.AccountNo;
             studBank.Sepa = student.Sepa;
-
-            stud.Id = Convert.ToInt32(student.Id);
+            stud.Label = student.Firstname + " " + student.Lastname;
+            stud.StudentId = Convert.ToInt32(student.Id);
             stud.LastName = student.Lastname;
             stud.FirstName = student.Firstname;
             stud.AdditionalInfo = student.Notes;
             stud.CreatedOn = student.CreatedOn;
             stud.Bank = studBank;
             stud.Adress = studAdress;
+            stud.Qualifications = student.Qualifications;
 
             return stud;
         }

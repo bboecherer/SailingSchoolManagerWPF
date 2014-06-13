@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="350">
     <Grid Style="{StaticResource ContentRoot}">
@@ -35,11 +35,11 @@
                     <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.MaterialType}"/>
 
 
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Name}"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Brand}"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=SerialNumber}"/>
-                    <xctk:DecimalUpDown Grid.Column="1" Grid.Row="3" Margin="3" FormatString="C2" Minimum="0.00" 
-                                        Value="{Binding Path=Price}" Increment=".5" />
+                    <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Name}"/>
+                    <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Brand}"/>
+                    <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=SerialNumber}"/>
+                    <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="3" Margin="3" Minimum="0.00" StringFormat="N2"
+                                        Value="{Binding Path=Price}" />
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                     <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"

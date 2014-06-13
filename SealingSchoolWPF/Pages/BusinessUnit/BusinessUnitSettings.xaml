@@ -5,9 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"             
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="600">
+             d:DesignHeight="400" d:DesignWidth="630">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Grid>
             <Grid.RowDefinitions>
@@ -16,7 +15,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <TextBlock Text="MANDANT" Style="{StaticResource Heading2}" Grid.Row="0"/>
+            <TextBlock Text="{x:Static resx:Resource.Mandant}" Style="{StaticResource Heading2}" Grid.Row="0"/>
             <BusinessUnit:BuGeneralControl Grid.Row="1"/>
             <BusinessUnit:BuAdressControl Grid.Row="2"/>
             <BusinessUnit:BuBankControl Grid.Row="3"/>

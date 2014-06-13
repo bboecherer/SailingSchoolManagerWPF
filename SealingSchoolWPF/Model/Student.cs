@@ -15,16 +15,52 @@ namespace SealingSchoolWPF.Model
     public class Student : SealingSchoolObject
     {
         [Key]
-        public int Id { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
+        public virtual int StudentId { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual string FirstName { get; set; }
 
-        public Adress Adress { get; set; }
+        public virtual Adress Adress { get; set; }
 
-        public ContactData Contact { get; set; }
+        public virtual ContactData Contact { get; set; }
 
-        public BankAccountData Bank { get; set; }
+        public virtual BankAccountData Bank { get; set; }
 
+        [InverseProperty("Students")]
+        public virtual ICollection<Qualification> Qualifications { get; set; }
 
+        public override string ToString()
+        {
+            return this.Label;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Student stud;
+
+            try
+            {
+                stud = (Student)obj;
+            }
+            catch (Exception )
+            {
+                return false;
+            }
+
+            if (StudentId != stud.StudentId)
+            {
+                return false;
+            }
+
+            if (Label != stud.Label)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ this.StudentId;
+        }
     }
 }

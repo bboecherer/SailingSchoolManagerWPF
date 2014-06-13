@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Reflection;
@@ -24,6 +25,15 @@ namespace SealingSchoolWPF.Data
                 foreach (Material mat in ctx.Materials)
                 {
                     ctx.Entry(mat).Reference(s => s.MaterialTyp).Load();
+                    if (mat.MaterialTyp != null)
+                    {
+                        ctx.MaterialTyps.Attach(mat.MaterialTyp);
+                    }
+                    if (mat.BoatTyps != null)
+                    {
+                        foreach (BoatTyp q in mat.BoatTyps)
+                            ctx.BoatTyps.Attach(q);
+                    }
                     Materials.Add(mat);
                 }
             }
@@ -45,7 +55,26 @@ namespace SealingSchoolWPF.Data
             {
                 try
                 {
+                    List<BoatTyp> boatTyps = new List<BoatTyp>();
+
                     ctx.Materials.Add(entity);
+                    if (entity.MaterialTyp != null)
+                    {
+                        ctx.Entry(entity.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+                    if (entity.BoatTyps != null)
+                    {
+                        foreach (BoatTyp q in entity.BoatTyps)
+                        {
+                            BoatTyp dummy = ctx.BoatTyps.Find(q.BoatTypID);
+                            ctx.BoatTyps.Attach(dummy);
+                            ctx.Entry(dummy).State = EntityState.Unchanged;
+                            boatTyps.Add(dummy);
+                        }
+
+                        entity.BoatTyps.Clear();
+                        entity.BoatTyps = boatTyps;
+                    }
                     ctx.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
@@ -82,11 +111,34 @@ namespace SealingSchoolWPF.Data
                 original.ModifiedOn = DateTime.Now;
                 original.MaterialTyp = entity.MaterialTyp;
 
+
+                List<BoatTyp> boatTyps = new List<BoatTyp>();
+                if (entity.BoatTyps != null)
+                {
+                    foreach (BoatTyp q in entity.BoatTyps)
+                    {
+                        BoatTyp dummy = ctx.BoatTyps.Find(q.BoatTypID);
+                        ctx.Entry(dummy).State = EntityState.Unchanged;
+                        boatTyps.Add(dummy);
+                    }
+                    entity.BoatTyps.Clear();
+                }
+                
+                foreach (BoatTyp q in boatTyps)
+                {
+                    entity.BoatTyps.Add(q);
+                }
+
+
                 if (original != null)
                 {
                     try
                     {
                         ctx.Entry(original).State = EntityState.Modified;
+                        if (entity.MaterialTyp != null)
+                        {
+                            ctx.Entry(original.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                        }
                         ctx.ChangeTracker.DetectChanges();
                         ctx.SaveChanges();
                     }
@@ -102,7 +154,7 @@ namespace SealingSchoolWPF.Data
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     { }
                 }
             }
@@ -114,6 +166,12 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
+                ctx.Entry(material).Reference(s => s.MaterialTyp).Load();
+                if (material.BoatTyps != null)
+                {
+                    foreach (BoatTyp q in material.BoatTyps)
+                        ctx.BoatTyps.Attach(q);
+                }
             }
             return material;
         }

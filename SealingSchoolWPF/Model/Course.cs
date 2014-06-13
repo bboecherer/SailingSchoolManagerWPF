@@ -1,37 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class Course : SealingSchoolObject
+  public class Course : SealingSchoolObject
+  {
+    //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+    [Key]
+    public virtual int CourseId { get; set; }
+    public virtual string Title { get; set; }
+    public virtual string Description { get; set; }
+    public virtual Decimal NetPrice { get; set; }
+    public virtual Decimal GrossPrice { get; set; }
+    public virtual Decimal NetAmount { get; set; }
+    public virtual int Duration { get; set; }
+    public virtual Currency Currency { get; set; }
+    public virtual CourseStatus CourseStatus { get; set; }
+    public virtual int Credits { get; set; }
+    public virtual int Capacity { get; set; }
+    public virtual int NeededInstructors { get; set; }
+    public virtual Double RatingValue { get; set; }
+
+
+    [InverseProperty( "Courses" )]
+    public virtual ICollection<Qualification> Qualifications { get; set; }
+
+    [InverseProperty( "Course" )]
+    public virtual ICollection<CoursePlaning> CoursePlanings { get; set; }
+
+    public override bool Equals( object obj )
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Key]
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public Decimal NetPrice { get; set; }
-        public Decimal GrossPrice { get; set; }
-        public Decimal NetAmount { get; set; }
-        public int Duration { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public Currency Currency { get; set; }
-        public CourseStatus CourseStatus { get; set; }
-        public int Credits { get; set; }
-        public int Capacity { get; set; }
-        public Instructor Instructor { get; set; }
+      Course course;
+      try
+      {
+        course = (Course) obj;
+      }
+      catch ( Exception )
+      {
+        return false;
+      }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+      if ( CourseId != course.CourseId )
+      {
+        return false;
+      }
 
-        public override string ToString()
-        {
-            return "Kurs: " + this.Title;
-        }
-
+      if ( Label != course.Label )
+      {
+        return false;
+      }
+      return true;
     }
+
+    public override int GetHashCode()
+    {
+      return base.GetHashCode() ^ this.CourseId;
+    }
+
+    public override string ToString()
+    {
+      return this.Label;
+    }
+
+  }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.MaterialViewModel
+namespace SealingSchoolWPF.ViewModel.Material
 {
     public class MaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {
@@ -191,6 +191,21 @@ namespace SealingSchoolWPF.ViewModel.MaterialViewModel
             }
         }
 
+        public ICollection<BoatTyp> BoatTyps
+        {
+            get
+            {
+                return Model.BoatTyps;
+            }
+            set
+            {
+                if (BoatTyps != value)
+                {
+                    Model.BoatTyps = value;
+                    this.OnPropertyChanged("BoatTyps");
+                }
+            }
+        }
         public DateTime CreatedOn
         {
             get

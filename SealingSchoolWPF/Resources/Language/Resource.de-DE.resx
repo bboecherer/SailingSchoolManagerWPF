@@ -456,4 +456,121 @@
   <data name="QualiShort" xml:space="preserve">
     <value>Abkürzung</value>
   </data>
+  <data name="Course" xml:space="preserve">
+    <value>Kurs</value>
+  </data>
+  <data name="CourseEnd" xml:space="preserve">
+    <value>Kursende</value>
+  </data>
+  <data name="CoursePlanDateDescription" xml:space="preserve">
+    <value>Bitte wählen Sie Start- und Enddatum aus</value>
+  </data>
+  <data name="CourseStart" xml:space="preserve">
+    <value>Kursstart</value>
+  </data>
+  <data name="CourseStatus" xml:space="preserve">
+    <value>Kursstatus</value>
+  </data>
+  <data name="CourseStatusDescription" xml:space="preserve">
+    <value>Bitte wählen Sie den Kursstatus aus</value>
+  </data>
+  <data name="DailyFee" xml:space="preserve">
+    <value>Tagessatz</value>
+  </data>
+  <data name="EndDateDescription" xml:space="preserve">
+    <value>Bitte wählen Sie das Enddatum aus</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Gruppe</value>
+  </data>
+  <data name="HourlyFee" xml:space="preserve">
+    <value>Stundensatz</value>
+  </data>
+  <data name="InstructorCount" xml:space="preserve">
+    <value>Anz. Kursleiter</value>
+  </data>
+  <data name="SelectCourseDescription" xml:space="preserve">
+    <value>Bitte wählen Sie den Kurs aus.</value>
+  </data>
+  <data name="SelectStudent" xml:space="preserve">
+    <value>Bitte Teilnehmer auswählen</value>
+  </data>
+  <data name="StartDateDescription" xml:space="preserve">
+    <value>Bitte wählen Sie das Startdatum aus</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Zusammenfassung</value>
+  </data>
+  <data name="SummaryDescription" xml:space="preserve">
+    <value>Hier sehen Sie eine Zusammenfassung</value>
+  </data>
+  <data name="TrainingActivity" xml:space="preserve">
+    <value>Anmeldung</value>
+  </data>
+  <data name="CrewAmount" xml:space="preserve">
+    <value>Crew Anzahl</value>
+  </data>
+  <data name="BoatTyp" xml:space="preserve">
+    <value>Boot Typ</value>
+  </data>
+  <data name="SelectEnd" xml:space="preserve">
+    <value>Endtdatum auswählen</value>
+  </data>
+  <data name="SelectStart" xml:space="preserve">
+    <value>Startdatum auswählen</value>
+  </data>
+  <data name="CreateRegistration" xml:space="preserve">
+    <value>Anmeldungen durchführen</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Anmeldung</value>
+  </data>
+  <data name="Registrations" xml:space="preserve">
+    <value>Anmeldungen</value>
+  </data>
+  <data name="SelectCourse" xml:space="preserve">
+    <value>Kurs auswählen</value>
+  </data>
+  <data name="SelectInstructor" xml:space="preserve">
+    <value>Kursleiter auswählen</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="Appereance" xml:space="preserve">
+    <value>Aussehen</value>
+  </data>
+  <data name="CoursePlanning" xml:space="preserve">
+    <value>Kursplanung</value>
+  </data>
+  <data name="FontSize" xml:space="preserve">
+    <value>Schriftgröße</value>
+  </data>
+  <data name="Mandant" xml:space="preserve">
+    <value>Mandant</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Neuigkeiten</value>
+  </data>
+  <data name="Fee" xml:space="preserve">
+    <value>Honorar</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referenz</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>Referenzen</value>
+  </data>
+  <data name="Times" xml:space="preserve">
+    <value>Zeiten</value>
+  </data>
+  <data name="MaterialGroup" xml:space="preserve">
+    <value>Materialgruppe</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Bewertung</value>
+  </data>
+  <data name="Ratings" xml:space="preserve">
+    <value>Bewertungen</value>
+  </data>
 </root>

@@ -4,6 +4,7 @@ using AS.IBAN.Model;
 using SealingSchoolWPF.Data;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,6 +22,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
     {
         public Model.Instructor InstructorDummy { get; set; }
 
+        #region ctor
         public UpdateInstructorViewModel(Model.Instructor model)
             : base(model)
         {
@@ -45,9 +47,9 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 }
             }
         }
+        #endregion
 
-        InstructorMgr instructorMgr = new InstructorMgr();
-
+        #region properties
         public string FirstName
         {
             get
@@ -58,6 +60,20 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             {
                 InstructorDummy.FirstName = value;
                 this.OnPropertyChanged("FirstName");
+            }
+        }
+
+        private Double _ratingValue;
+        public Double RatingValue
+        {
+            get
+            {
+                return _ratingValue != null && _ratingValue != 0 ? _ratingValue : Model.RatingValue;
+            }
+            set
+            {
+                _ratingValue = value;
+                this.OnPropertyChanged("RatingValue");
             }
         }
 
@@ -204,242 +220,176 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        public bool SSS
+        private DateTime _startDatePicker;
+        public DateTime StartDatePicker
         {
             get
             {
-                return InstructorDummy.SSS;
+                return _startDatePicker != DateTime.MinValue ? _startDatePicker : DateTime.Now;
             }
             set
             {
-                InstructorDummy.SSS = value;
-                this.OnPropertyChanged("SSS");
+                _startDatePicker = value;
+                this.OnPropertyChanged("StartDatePicker");
             }
         }
 
-        public bool SKS
+        private DateTime _endDatePicker;
+        public DateTime EndDatePicker
         {
             get
             {
-                return InstructorDummy.SKS;
+                return _endDatePicker != DateTime.MinValue ? _endDatePicker : DateTime.Now;
             }
             set
             {
-                InstructorDummy.SKS = value;
-                this.OnPropertyChanged("SKS");
+                _endDatePicker = value;
+                this.OnPropertyChanged("EndDatePicker");
             }
         }
 
-        public bool SBFSEA
+        public Decimal HonorarValueStd
         {
             get
             {
-                return InstructorDummy.SBFSEA;
+                return InstructorDummy.FeeValueStd;
             }
             set
             {
-                InstructorDummy.SBFSEA = value;
-                this.OnPropertyChanged("SBFSEA");
+                InstructorDummy.FeeValueStd = value;
+                this.OnPropertyChanged("HonorarValueStd");
             }
         }
 
-        public bool SBFBINNEN
+        public Decimal HonorarValueDay
         {
             get
             {
-                return InstructorDummy.SBFBINNEN;
+                return InstructorDummy.FeeValueDay;
             }
             set
             {
-                InstructorDummy.SBFBINNEN = value;
-                this.OnPropertyChanged("SBFBINNEN");
+                InstructorDummy.FeeValueDay = value;
+                this.OnPropertyChanged("HonorarValueDay");
             }
         }
 
-        public bool SRC
+        private string _saveImage = "/Resources/Images/save_16xLG.png";
+        public string SaveImage
         {
             get
             {
-                return InstructorDummy.SRC;
+                return _saveImage;
             }
             set
             {
-                InstructorDummy.SRC = value;
-                this.OnPropertyChanged("SRC");
+                _saveImage = value;
+                this.OnPropertyChanged("SaveImage");
             }
         }
 
-        public bool UBI
+        private bool _isButtonEnabled = true;
+        public bool IsButtonEnabled
         {
             get
             {
-                return InstructorDummy.UBI;
+                return _isButtonEnabled;
             }
             set
             {
-                InstructorDummy.UBI = value;
-                this.OnPropertyChanged("UBI");
+                _isButtonEnabled = value;
+                this.OnPropertyChanged("IsButtonEnabled");
             }
         }
 
-        public bool DSV
+        private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
+        {
+            QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
+            foreach (Model.Qualification quali in qualiMgr.GetAll())
+            {
+                QualificationTypNames.Add(quali);
+            }
+            return QualificationTypNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.Qualification> QualificationTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.Qualification> QualificationValues
         {
             get
             {
-                return InstructorDummy.DSV;
-            }
-            set
-            {
-                InstructorDummy.DSV = value;
-                this.OnPropertyChanged("DSV");
+                return GetQualificationTypNames();
             }
         }
 
-        public bool SHS
+        private SealingSchoolWPF.Model.Qualification _qualificationTyp;
+        public SealingSchoolWPF.Model.Qualification QualificationTyp
         {
             get
             {
-                return InstructorDummy.SHS;
+                return _qualificationTyp;
             }
             set
             {
-                InstructorDummy.SHS = value;
-                this.OnPropertyChanged("SHS");
+                _qualificationTyp = value;
+                this.OnPropertyChanged("QualificationTyp");
             }
         }
 
-        public bool LifeGuard
+        private ObservableCollection<QualificationViewModel> qualifications;
+        public ObservableCollection<QualificationViewModel> Qualifications
         {
             get
             {
-                return InstructorDummy.LifeGuard;
+                return qualiList();
             }
             set
             {
-                InstructorDummy.LifeGuard = value;
-                this.OnPropertyChanged("LifeGuard");
+                if (Qualifications != value)
+                {
+                    qualifications = value;
+                    this.OnPropertyChanged("Qualifications");
+                }
             }
         }
 
-        public DateTime SSSDate
+        private ObservableCollection<CoursePlaning> references;
+        public ObservableCollection<CoursePlaning> References
         {
             get
             {
-                return InstructorDummy.SSSDate;
+                return referenceList();
             }
             set
             {
-                InstructorDummy.SSSDate = value;
-                this.OnPropertyChanged("SSSDate");
+                if (References != value)
+                {
+                    references = value;
+                    this.OnPropertyChanged("References");
+                }
             }
         }
 
-        public DateTime SKSDate
+        private ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> _blockedTimes;
+        public ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> BlockedTimes
         {
             get
             {
-                return InstructorDummy.SKSDate;
+                return this.blockedDummy();
             }
             set
             {
-                InstructorDummy.SKSDate = value;
-                this.OnPropertyChanged("SKSDate");
+                if (_blockedTimes != value)
+                {
+                    _blockedTimes = value;
+                    this.OnPropertyChanged("BlockedTimes");
+                }
             }
         }
+        #endregion
 
-        public DateTime SBFSEADate
-        {
-            get
-            {
-                return InstructorDummy.SBFSEADate;
-            }
-            set
-            {
-                InstructorDummy.SBFSEADate = value;
-                this.OnPropertyChanged("SBFSEADate");
-            }
-        }
-
-        public DateTime SBFBINNENDate
-        {
-            get
-            {
-                return InstructorDummy.SBFBINNENDate;
-            }
-            set
-            {
-                InstructorDummy.SBFBINNENDate = value;
-                this.OnPropertyChanged("SBFBINNENDate");
-            }
-        }
-
-        public DateTime SRCDate
-        {
-            get
-            {
-                return InstructorDummy.SRCDate;
-            }
-            set
-            {
-                InstructorDummy.SRCDate = value;
-                this.OnPropertyChanged("SRCDate");
-            }
-        }
-
-        public DateTime UBIDate
-        {
-            get
-            {
-                return InstructorDummy.UBIDate;
-            }
-            set
-            {
-                InstructorDummy.UBIDate = value;
-                this.OnPropertyChanged("UBIDate");
-            }
-        }
-
-        public DateTime DSVDate
-        {
-            get
-            {
-                return InstructorDummy.DSVDate;
-            }
-            set
-            {
-                InstructorDummy.DSVDate = value;
-                this.OnPropertyChanged("DSVDate");
-            }
-        }
-
-        public DateTime SHSDate
-        {
-            get
-            {
-                return InstructorDummy.SHSDate;
-            }
-            set
-            {
-                InstructorDummy.SHSDate = value;
-                this.OnPropertyChanged("SHSDate");
-            }
-        }
-
-        public DateTime LifeGuardDate
-        {
-            get
-            {
-                return InstructorDummy.LifeGuardDate;
-            }
-            set
-            {
-                InstructorDummy.LifeGuardDate = value;
-                this.OnPropertyChanged("LifeGuardDate");
-            }
-        }
-
+        #region commands
         private ICommand addCommand;
-
         public ICommand AddCommand
         {
             get
@@ -452,16 +402,31 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        public void Close()
-        {
-            instance = null;
-
-        }
-
         private void ExecuteAddCommand()
         {
             Model.ModifiedOn = DateTime.Now;
+
+            Model.Qualifications.Clear();
+
+            if (prepared != null)
+            {
+                foreach (QualificationViewModel q in prepared)
+                {
+                    Model.Qualifications.Add(prepareQualiToSave(q));
+                }
+            }
+
+            Model.RatingValue = this._ratingValue;
+
             instructorMgr.Update(Model);
+
+            if (this.list != null && this.list.Count > 0)
+            {
+                blockTimesMgr.Update(this.list);
+            }
+
+            this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
+            this.IsButtonEnabled = false;
         }
 
         private ICommand generateBankData;
@@ -485,7 +450,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 this.Iban = GenerateGermanIban(this.BankNo, this.AccountNo);
                 this.Bic = GetGermanBic(this.Iban);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 this.BankName = "Nicht gefunden";
                 this.Iban = "Nicht gefunden";
@@ -493,6 +458,109 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
+        public void ExecuteDeleteCommand(QualificationViewModel quali)
+        {
+            this.prepared.Remove(quali);
+        }
+
+        private ICommand addTimeCommand;
+        public ICommand AddTimeCommand
+        {
+            get
+            {
+                if (addTimeCommand == null)
+                {
+                    addTimeCommand = new RelayCommand(p => ExecuteAddTimeCommand());
+                }
+                return addTimeCommand;
+            }
+        }
+
+        private void ExecuteAddTimeCommand()
+        {
+            if (this.list == null)
+            {
+                this.list = new List<BlockedTimeSpan>();
+            }
+
+            SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel model = new Course.BlockedTimesViewModel(new BlockedTimeSpan());
+            model.StartDate = this.StartDatePicker.ToShortDateString();
+            model.EndDate = this.EndDatePicker.ToShortDateString();
+
+            //prüfen, ob es Terminüberschneidungen gibt
+            // this.blockTimesMgr.checkTimes( prepareBlockTimesToModel( model ) );
+
+            this.list.Add(prepareBlockTimesToModel(model));
+            this.ReBindDataGrid();
+        }
+
+
+        private ICommand addQualiCommand;
+        public ICommand AddQualiCommand
+        {
+            get
+            {
+                if (addQualiCommand == null)
+                {
+                    addQualiCommand = new RelayCommand(p => ExecuteAddQualiCommand());
+                }
+                return addQualiCommand;
+            }
+        }
+
+        private void ExecuteAddQualiCommand()
+        {
+            if (this.QualificationTyp == null)
+                return;
+
+            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            QualificationViewModel quali = new QualificationViewModel(origQauli);
+
+            foreach (QualificationViewModel q in prepared)
+            {
+                if (q.ShortName == quali.ShortName)
+                    return;
+            }
+
+            this.prepared.Add(quali);
+        }
+
+        public void ExecuteDeleteBlockCommand(SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel obj)
+        {
+            if (this.blockedDummyList != null)
+            {
+                this.blockedDummyList.Remove(obj);
+                BlockedTimeSpan dummy = this.prepareBlockTimesToModel(obj);
+                this.list.Remove(dummy);
+            }
+            ReBindDataGrid();
+
+        }
+        #endregion
+
+        #region helpers
+        public IList<Course.BlockedTimesViewModel> blockedDummyList { get; set; }
+
+        private void ReBindDataGrid()
+        {
+            if (blockedDummyList != null)
+            {
+                BlockedTimes = new ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>(blockedDummyList);
+            }
+        }
+
+        public void Close()
+        {
+            instance = null;
+
+        }
+
+        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
+        {
+            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+            quali.QualificationId = q.Id;
+            return quali;
+        }
 
         private string GenerateGermanIban(string bankIdent, string accountNumber)
         {
@@ -506,7 +574,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 iban = result.IBAN.IBAN;
                 bic = result.BIC.Bic;
             }
-            catch (IbanException ex)
+            catch (IbanException)
             {
                 this.Iban = "Nicht gefunden";
             }
@@ -524,12 +592,12 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 var result = generator.GenerateIban(ECountry.DE, bankIdent, accountNumber);
                 bank = result.IBAN.Bank;
             }
-            catch (IbanException ex)
+            catch (IbanException)
             {
                 this.BankName = "Nicht gefunden";
             }
 
-            return bank.Name;
+            return bank.Name != null && bank.Name != string.Empty ? bank.Name : "Nicht gefunden";
         }
 
         private string GetGermanBic(string iban)
@@ -542,12 +610,99 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 var result = getBic.GetBic(iban);
                 bic = result.Bic;
             }
-            catch (IbanException ex)
+            catch (IbanException)
             {
                 this.Bic = "Nicht gefunden";
             }
 
             return bic;
         }
+
+
+        private ObservableCollection<QualificationViewModel> prepared;
+
+        private ObservableCollection<QualificationViewModel> qualiList()
+        {
+            if (prepared == null || prepared.Count == 0)
+            {
+                prepared = new ObservableCollection<QualificationViewModel>();
+            }
+            foreach (QualificationViewModel q in prepareQualifications(Model.Qualifications))
+            {
+                prepared.Add(q);
+            }
+            return prepared;
+        }
+
+        private ObservableCollection<CoursePlaning> preparedReferences;
+
+        private ObservableCollection<CoursePlaning> referenceList()
+        {
+            if (preparedReferences == null || preparedReferences.Count == 0)
+            {
+                preparedReferences = new ObservableCollection<CoursePlaning>();
+            }
+            foreach (CoursePlaning q in coursePlaningMgr.GetInstructorReference(Model.InstructorId))
+            {
+                preparedReferences.Add(q);
+            }
+            return preparedReferences;
+        }
+
+
+        private ObservableCollection<QualificationViewModel> prepareQualifications(ICollection<SealingSchoolWPF.Model.Qualification> collection)
+        {
+            ObservableCollection<QualificationViewModel> list = new ObservableCollection<QualificationViewModel>();
+
+            foreach (Model.Qualification q in collection)
+            {
+                QualificationViewModel model = new QualificationViewModel(q);
+                list.Add(model);
+            }
+
+            return list;
+        }
+
+        private IList<BlockedTimeSpan> list;
+
+        private ObservableCollection<Course.BlockedTimesViewModel> blockedDummy()
+        {
+            if (this.list == null)
+            {
+                list = blockTimesMgr.GetByInstructor(this.InstructorDummy.InstructorId);
+            }
+            this.blockedDummyList = prepareBlockTimes(list);
+            return list != null ? prepareBlockTimes(list) : null;
+
+        }
+
+        private ObservableCollection<Course.BlockedTimesViewModel> prepareBlockTimes(IList<BlockedTimeSpan> list)
+        {
+            ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> blockList = new ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>();
+
+            foreach (SealingSchoolWPF.Model.BlockedTimeSpan b in list)
+            {
+                SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel blockView = new SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel(b);
+                blockList.Add(blockView);
+            }
+
+            return blockList;
+        }
+
+        private BlockedTimeSpan prepareBlockTimesToModel(Course.BlockedTimesViewModel model)
+        {
+            BlockedTimeSpan block = new BlockedTimeSpan();
+            block.BlockedTimeSpanId = model.Id;
+            block.Course = model.Course;
+            block.EndDate = DateTime.Parse(model.EndDate);
+            block.StartDate = DateTime.Parse(model.StartDate);
+            block.Instructor = Model;
+
+            return block;
+        }
+
+
+        #endregion
+
     }
 }

@@ -61,6 +61,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Über.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buchhaltung.
         /// </summary>
         public static string Accounting {
@@ -133,6 +142,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aussehen.
+        /// </summary>
+        public static string Appereance {
+            get {
+                return ResourceManager.GetString("Appereance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bankdaten.
         /// </summary>
         public static string Bankdata {
@@ -187,6 +205,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Boot Typ.
+        /// </summary>
+        public static string BoatTyp {
+            get {
+                return ResourceManager.GetString("BoatTyp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buchungen.
         /// </summary>
         public static string Bookings {
@@ -205,7 +232,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kalendar.
+        ///   Looks up a localized string similar to Kalender.
         /// </summary>
         public static string Calendar {
             get {
@@ -259,11 +286,74 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kurs.
+        /// </summary>
+        public static string Course {
+            get {
+                return ResourceManager.GetString("Course", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kursende.
+        /// </summary>
+        public static string CourseEnd {
+            get {
+                return ResourceManager.GetString("CourseEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte wählen Sie Start- und Enddatum aus.
+        /// </summary>
+        public static string CoursePlanDateDescription {
+            get {
+                return ResourceManager.GetString("CoursePlanDateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kursplanung.
+        /// </summary>
+        public static string CoursePlanning {
+            get {
+                return ResourceManager.GetString("CoursePlanning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kurse.
         /// </summary>
         public static string Courses {
             get {
                 return ResourceManager.GetString("Courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kursstart.
+        /// </summary>
+        public static string CourseStart {
+            get {
+                return ResourceManager.GetString("CourseStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kursstatus.
+        /// </summary>
+        public static string CourseStatus {
+            get {
+                return ResourceManager.GetString("CourseStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte wählen Sie den Kursstatus aus.
+        /// </summary>
+        public static string CourseStatusDescription {
+            get {
+                return ResourceManager.GetString("CourseStatusDescription", resourceCulture);
             }
         }
         
@@ -295,6 +385,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anmeldungen durchführen.
+        /// </summary>
+        public static string CreateRegistration {
+            get {
+                return ResourceManager.GetString("CreateRegistration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gutschrift.
         /// </summary>
         public static string CreditNote {
@@ -313,11 +412,29 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crew Anzahl.
+        /// </summary>
+        public static string CrewAmount {
+            get {
+                return ResourceManager.GetString("CrewAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Währung.
         /// </summary>
         public static string Currency {
             get {
                 return ResourceManager.GetString("Currency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tagessatz.
+        /// </summary>
+        public static string DailyFee {
+            get {
+                return ResourceManager.GetString("DailyFee", resourceCulture);
             }
         }
         
@@ -466,6 +583,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte wählen Sie das Enddatum aus.
+        /// </summary>
+        public static string EndDateDescription {
+            get {
+                return ResourceManager.GetString("EndDateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ext. Bezeichnung.
         /// </summary>
         public static string extLabel {
@@ -493,6 +619,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Honorar.
+        /// </summary>
+        public static string Fee {
+            get {
+                return ResourceManager.GetString("Fee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vorname.
         /// </summary>
         public static string Firstname {
@@ -502,11 +637,38 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Schriftgröße.
+        /// </summary>
+        public static string FontSize {
+            get {
+                return ResourceManager.GetString("FontSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bruttopreis.
         /// </summary>
         public static string GrossPrice {
             get {
                 return ResourceManager.GetString("GrossPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gruppe.
+        /// </summary>
+        public static string Group {
+            get {
+                return ResourceManager.GetString("Group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stundensatz.
+        /// </summary>
+        public static string HourlyFee {
+            get {
+                return ResourceManager.GetString("HourlyFee", resourceCulture);
             }
         }
         
@@ -534,6 +696,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Instructor {
             get {
                 return ResourceManager.GetString("Instructor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anz. Kursleiter.
+        /// </summary>
+        public static string InstructorCount {
+            get {
+                return ResourceManager.GetString("InstructorCount", resourceCulture);
             }
         }
         
@@ -583,6 +754,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mandant.
+        /// </summary>
+        public static string Mandant {
+            get {
+                return ResourceManager.GetString("Mandant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stammdaten.
         /// </summary>
         public static string MasterData {
@@ -606,6 +786,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string MaterialAdministration {
             get {
                 return ResourceManager.GetString("MaterialAdministration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Materialgruppe.
+        /// </summary>
+        public static string MaterialGroup {
+            get {
+                return ResourceManager.GetString("MaterialGroup", resourceCulture);
             }
         }
         
@@ -651,6 +840,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string NetPrice {
             get {
                 return ResourceManager.GetString("NetPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neuigkeiten.
+        /// </summary>
+        public static string News {
+            get {
+                return ResourceManager.GetString("News", resourceCulture);
             }
         }
         
@@ -772,6 +970,42 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bewertung.
+        /// </summary>
+        public static string Rating {
+            get {
+                return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bewertungen.
+        /// </summary>
+        public static string Ratings {
+            get {
+                return ResourceManager.GetString("Ratings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Referenz.
+        /// </summary>
+        public static string Reference {
+            get {
+                return ResourceManager.GetString("Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Referenzen.
+        /// </summary>
+        public static string References {
+            get {
+                return ResourceManager.GetString("References", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aktualisieren.
         /// </summary>
         public static string Refresh_ToolTip {
@@ -786,6 +1020,24 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Refresh_ToolTip_Desc {
             get {
                 return ResourceManager.GetString("Refresh_ToolTip_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anmeldung.
+        /// </summary>
+        public static string Registration {
+            get {
+                return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anmeldungen.
+        /// </summary>
+        public static string Registrations {
+            get {
+                return ResourceManager.GetString("Registrations", resourceCulture);
             }
         }
         
@@ -876,6 +1128,60 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string SBFSEA {
             get {
                 return ResourceManager.GetString("SBFSEA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kurs auswählen.
+        /// </summary>
+        public static string SelectCourse {
+            get {
+                return ResourceManager.GetString("SelectCourse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte wählen Sie den Kurs aus..
+        /// </summary>
+        public static string SelectCourseDescription {
+            get {
+                return ResourceManager.GetString("SelectCourseDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Endtdatum auswählen.
+        /// </summary>
+        public static string SelectEnd {
+            get {
+                return ResourceManager.GetString("SelectEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kursleiter auswählen.
+        /// </summary>
+        public static string SelectInstructor {
+            get {
+                return ResourceManager.GetString("SelectInstructor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Startdatum auswählen.
+        /// </summary>
+        public static string SelectStart {
+            get {
+                return ResourceManager.GetString("SelectStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte Teilnehmer auswählen.
+        /// </summary>
+        public static string SelectStudent {
+            get {
+                return ResourceManager.GetString("SelectStudent", resourceCulture);
             }
         }
         
@@ -979,6 +1285,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte wählen Sie das Startdatum aus.
+        /// </summary>
+        public static string StartDateDescription {
+            get {
+                return ResourceManager.GetString("StartDateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Straße.
         /// </summary>
         public static string Street {
@@ -993,6 +1308,24 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Students {
             get {
                 return ResourceManager.GetString("Students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zusammenfassung.
+        /// </summary>
+        public static string Summary {
+            get {
+                return ResourceManager.GetString("Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hier sehen Sie eine Zusammenfassung.
+        /// </summary>
+        public static string SummaryDescription {
+            get {
+                return ResourceManager.GetString("SummaryDescription", resourceCulture);
             }
         }
         
@@ -1024,11 +1357,38 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vorlage.
+        /// </summary>
+        public static string Template {
+            get {
+                return ResourceManager.GetString("Template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test.
         /// </summary>
         public static string Test {
             get {
                 return ResourceManager.GetString("Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zeiten.
+        /// </summary>
+        public static string Times {
+            get {
+                return ResourceManager.GetString("Times", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anmeldung.
+        /// </summary>
+        public static string TrainingActivity {
+            get {
+                return ResourceManager.GetString("TrainingActivity", resourceCulture);
             }
         }
         

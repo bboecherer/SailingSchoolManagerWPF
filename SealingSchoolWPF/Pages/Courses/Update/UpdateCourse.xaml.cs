@@ -1,7 +1,6 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
 using SealingSchoolWPF.Model;
 using SealingSchoolWPF.ViewModel.Course;
-using SealingSchoolWPF.ViewModel.CourseViewModel;
 using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
@@ -38,18 +37,19 @@ namespace SealingSchoolWPF.Pages.Courses.Update
         {
             Model.Course c = new Model.Course();
 
-            c.Id = Convert.ToInt32(course.Id);
+            c.CourseId = Convert.ToInt32(course.Id);
             c.Label = course.Label;
             c.Description = course.Description;
             c.Duration = course.Duration;
             c.Capacity = course.Capacity;
-            c.StartDate = course.StartDate;
-            c.EndDate = course.EndDate;
             c.NetPrice = course.NetPrice;
             c.GrossPrice = course.GrossPrice;
             c.NetAmount = course.NetAmount;
             c.Title = course.Title;
             c.AdditionalInfo = course.AdditionalInfo;
+            c.NeededInstructors = course.NeededInstructors;
+            c.Qualifications = course.Qualifications;
+            c.RatingValue = course.RatingValue;
 
             return c;
         }
