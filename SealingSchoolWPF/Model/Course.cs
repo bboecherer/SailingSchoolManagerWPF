@@ -23,7 +23,8 @@ namespace SealingSchoolWPF.Model
     public virtual CourseStatus CourseStatus { get; set; }
     public virtual int Credits { get; set; }
     public virtual int Capacity { get; set; }
-    public int NeededInstructors { get; set; }
+    public virtual int NeededInstructors { get; set; }
+    public virtual Double RatingValue { get; set; }
 
 
     [InverseProperty( "Courses" )]

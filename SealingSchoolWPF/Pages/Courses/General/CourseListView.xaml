@@ -13,6 +13,12 @@
         <DataGrid ItemsSource="{Binding Courses}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" Height="400" HorizontalGridLinesBrush="Gray"
                   IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
                             Binding="{Binding Id }">

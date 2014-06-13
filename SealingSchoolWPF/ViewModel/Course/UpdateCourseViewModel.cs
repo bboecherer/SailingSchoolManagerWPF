@@ -60,6 +60,20 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
+    private Double _ratingValue;
+    public Double RatingValue
+    {
+      get
+      {
+        return _ratingValue != null && _ratingValue != 0 ? _ratingValue : Model.RatingValue;
+      }
+      set
+      {
+        _ratingValue = value;
+        this.OnPropertyChanged( "RatingValue" );
+      }
+    }
+
     public int Duration
     {
       get
@@ -294,6 +308,8 @@ namespace SealingSchoolWPF.ViewModel.Course
           Model.Qualifications.Add( prepareQualiToSave( q ) );
         }
       }
+
+      Model.RatingValue = this._ratingValue;
 
       courseMgr.Update( Model );
       this.SaveImage = "/Resources/Images/StatusAnnotations_Complete_and_ok_16xLG_color.png";
