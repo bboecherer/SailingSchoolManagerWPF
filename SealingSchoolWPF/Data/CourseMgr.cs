@@ -105,6 +105,7 @@ namespace SealingSchoolWPF.Data
         }
 
         Course original = ctx.Courses.Find( entity.CourseId );
+        original.RatingValue = entity.RatingValue;
 
         if ( original != null )
         {

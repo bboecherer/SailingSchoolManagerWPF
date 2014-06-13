@@ -18,7 +18,6 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Bankdata}" Source="/Pages/Instructor/Create/Bankdata.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Instructor/Create/Notes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Instructor/Create/Documents.xaml" />
-                <mui:Link DisplayName="Rating" Source="/Pages/Instructor/Create/Rating.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

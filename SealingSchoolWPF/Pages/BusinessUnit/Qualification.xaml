@@ -8,7 +8,7 @@
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="500">
+             d:DesignHeight="250" d:DesignWidth="650">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <StackPanel>
             <Grid>
@@ -59,6 +59,12 @@
                 <DataGrid ItemsSource="{Binding Qualifications}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 
                   IsReadOnly="True" CanUserDeleteRows="True">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="BorderBrush" Value="Gray" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                        </Style>
+                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{x:Static resx:Resource.QualiShort}" 
                             Binding="{Binding ShortName }" >
@@ -106,13 +112,15 @@
                                     Value="Left" />
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
-                                    <Setter Property="Width" Value="180" />
+                                    <Setter Property="Width" Value="300" />
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="Height" Value="Auto"/>
                                     <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="Width" Value="180" />
+                                    <Setter Property="Width" Value="300" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>

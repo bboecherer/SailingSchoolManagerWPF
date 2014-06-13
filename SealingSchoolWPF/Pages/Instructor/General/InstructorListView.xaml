@@ -5,21 +5,34 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="300">
+             d:DesignHeight="200" d:DesignWidth="800">
     <Grid>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="400px"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
         <DataGrid ItemsSource="{Binding Instructors}" SelectionMode="Extended" SelectionUnit="FullRow" 
-                 DataContext="{Binding}" AutoGenerateColumns="False" 
-                  IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
+                        DataContext="{Binding}" AutoGenerateColumns="False" 
+                        IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="BorderBrush" Value="Gray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
+
                 <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
-                            Binding="{Binding Id }" >
+                                Binding="{Binding Id }" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment"
-                                    Value="Left" />
+                                        Value="Left" />
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                             <Setter Property="Width" Value="75" />
@@ -33,38 +46,38 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
-                            Binding="{Binding Label }" >
+                                Binding="{Binding Label }" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment"
-                                    Value="Left" />
+                                        Value="Left" />
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="Width" Value="180" />
+                            <Setter Property="Width" Value="250" />
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="TextAlignment" Value="Left" />
-                            <Setter Property="Width" Value="180" />
+                            <Setter Property="Width" Value="250" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Adress}" 
-                            Binding="{Binding Adress}">
+                                Binding="{Binding Adress}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment"
-                                    Value="Left" />
+                                        Value="Left" />
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="Width" Value="250" />
+                            <Setter Property="Width" Value="500" />
                         </Style>
                     </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="TextAlignment" Value="Left" />
-                            <Setter Property="Width" Value="250" />
+                            <Setter Property="Width" Value="500" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
