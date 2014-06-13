@@ -20,5 +20,30 @@ namespace SealingSchoolWPF.Model
         {
             return this.Name;
         }
+
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                MaterialTyp materialTyp = (MaterialTyp)obj;
+
+
+                if (this.Id != materialTyp.Id)
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ this.Id;
+        }
     }
 }
