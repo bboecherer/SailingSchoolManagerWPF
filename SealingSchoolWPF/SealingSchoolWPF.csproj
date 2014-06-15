@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Data\BlockedTimesMgr.cs" />
     <Compile Include="Data\BoatMgr.cs" />
+    <Compile Include="Data\InvoiceMgr.cs" />
     <Compile Include="Data\TrainingActivityMgr.cs" />
     <Compile Include="Data\CoursePlaningMgr.cs" />
     <Compile Include="Data\BoatTypMgr.cs" />
@@ -113,6 +114,9 @@
     </Compile>
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CreateInvoiceCourseControl .xaml.cs">
+      <DependentUpon>CreateInvoiceCourseControl .xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\CourseRatingControl.xaml.cs">
       <DependentUpon>CourseRatingControl.xaml</DependentUpon>
@@ -350,6 +354,9 @@
     </Compile>
     <Compile Include="Pages\Instructor\Update\Honorar.xaml.cs">
       <DependentUpon>Honorar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Controls\CreateInvoiceButtons.xaml.cs">
+      <DependentUpon>CreateInvoiceButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage1.xaml.cs">
       <DependentUpon>CreateCreditNotePage1.xaml</DependentUpon>
@@ -601,6 +608,7 @@
     <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
+    <Compile Include="ViewModel\Invoicing\CreateInvoiceViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\InvoiceButtonViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\CreditNoteButtonViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationButtonViewModel.cs" />
@@ -625,6 +633,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\BusinessUnit\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CreateInvoiceCourseControl .xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -845,6 +857,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Instructor\Update\Honorar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Controls\CreateInvoiceButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

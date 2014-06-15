@@ -8,6 +8,6 @@ namespace SealingSchoolWPF.Model
 {
   public enum TrainingActivityStatus
   {
-    GESTARTET, ABGEBROCHEN, BEENDET, ANGEMELDET
+    GESTARTET, ABGEBROCHEN, BEENDET, ANGEMELDET, RECHNUNG_GESTELLT
   }
 }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Courses.Controls.CreateTaButtons"
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.Invoicing.Controls.CreateInvoiceButtons"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -31,7 +31,7 @@
             </Button>
             <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
                     Style="{DynamicResource MetroCircleButtonStyle}"
-                    Command="{Binding AddAndNextCommand}" 
+                    Command="{Binding AddAndNextCommand}"
                     IsEnabled="{Binding IsButtonEnabled}">
                 <Button.ToolTip>
                     <ToolTip>

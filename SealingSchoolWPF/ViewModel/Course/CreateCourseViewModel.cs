@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using FirstFloor.ModernUI.Windows.Controls;
 
 namespace SealingSchoolWPF.ViewModel.Course
 {
@@ -70,6 +71,8 @@ namespace SealingSchoolWPF.ViewModel.Course
                 this.OnPropertyChanged("Description");
             }
         }
+
+      
 
         private int _duration;
         public int Duration

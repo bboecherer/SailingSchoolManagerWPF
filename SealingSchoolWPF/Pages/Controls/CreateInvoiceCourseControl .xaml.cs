@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Invoicing;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Workflows
+namespace SealingSchoolWPF.Pages.Controls
 {
   /// <summary>
-  /// Interaction logic for CreateTAPage1.xaml
+  /// Interaction logic for PriceControl.xaml
   /// </summary>
-  public partial class CreateInvoicePage1 : UserControl
+  public partial class CreateInvoiceCourseControl  : UserControl
   {
-    public CreateInvoicePage1()
+    public CreateInvoiceCourseControl()
     {
       InitializeComponent();
-      var viewModel = CreateInvoiceViewModel.Instance;
-      this.DataContext = viewModel;
     }
   }
 }

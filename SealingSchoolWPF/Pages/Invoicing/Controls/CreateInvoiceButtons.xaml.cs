@@ -1,5 +1,11 @@
-﻿using System;
+﻿using SealingSchoolWPF.Data;
+using SealingSchoolWPF.Pages.Instructor.Create;
+using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.ViewModel.StudentViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +20,19 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SealingSchoolWPF.ViewModel.Invoicing;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Workflows
+namespace SealingSchoolWPF.Pages.Invoicing.Controls
 {
   /// <summary>
-  /// Interaction logic for CreateTAPage1.xaml
+  /// Interaction logic for ButtonsToWork.xaml
   /// </summary>
-  public partial class CreateInvoicePage1 : UserControl
+  public partial class CreateInvoiceButtons : UserControl
   {
-    public CreateInvoicePage1()
+    public CreateInvoiceButtons()
     {
       InitializeComponent();
       var viewModel = CreateInvoiceViewModel.Instance;
       this.DataContext = viewModel;
     }
+
   }
 }
