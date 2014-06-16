@@ -31,7 +31,7 @@
                     <StackPanel Orientation="Vertical">
                         <Rectangle Width="15" Height="15" StrokeThickness="0">
                             <Rectangle.Fill>
-                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_user_tie}" />
                             </Rectangle.Fill>
                         </Rectangle>
                     </StackPanel>

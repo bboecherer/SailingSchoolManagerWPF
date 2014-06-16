@@ -20,15 +20,14 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
   /// <summary>
   /// Interaction logic for CreateTrainingActivitiesWF.xaml
   /// </summary>
-  public partial class CreateInvoiceWF : ModernWindow
+  public partial class CreateMultipleInvoiceWF : ModernWindow
   {
+    CreateMultipleInvoiceViewModel viewModel;
 
-    CreateInvoiceViewModel viewModel;
-
-    public CreateInvoiceWF()
+    public CreateMultipleInvoiceWF()
     {
       InitializeComponent();
-      viewModel = CreateInvoiceViewModel.Instance;
+      viewModel = CreateMultipleInvoiceViewModel.Instance;
       this.DataContext = viewModel;
     }
 

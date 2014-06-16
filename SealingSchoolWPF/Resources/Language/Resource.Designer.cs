@@ -727,6 +727,24 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        /// </summary>
+        public static string Invoice {
+            get {
+                return ResourceManager.GetString("Invoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechnungsdatum.
+        /// </summary>
+        public static string InvoiceDate {
+            get {
+                return ResourceManager.GetString("InvoiceDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechnungen.
         ///   Sucht eine lokalisierte Zeichenfolge, die Rechnungen ähnelt.
         /// </summary>
         public static string Invoices {
@@ -736,6 +754,16 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rechnungsstatus.
+        /// </summary>
+        public static string InvoiceStatus {
+            get {
+                return ResourceManager.GetString("InvoiceStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bezeichnung.
         ///   Sucht eine lokalisierte Zeichenfolge, die Bezeichnung ähnelt.
         /// </summary>
         public static string Label {
@@ -916,6 +944,25 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zahlstatus.
+        /// </summary>
+        public static string PaymentStatus {
+            get {
+                return ResourceManager.GetString("PaymentStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zahlungszieldatum.
+        /// </summary>
+        public static string PaymentTargetDate {
+            get {
+                return ResourceManager.GetString("PaymentTargetDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postleitzahl.
         ///   Sucht eine lokalisierte Zeichenfolge, die Postleitzahl ähnelt.
         /// </summary>
         public static string PostalLong {
