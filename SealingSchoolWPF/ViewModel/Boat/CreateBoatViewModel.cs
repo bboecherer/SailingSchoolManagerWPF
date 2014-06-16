@@ -205,24 +205,6 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        private ObservableCollection<BoatTypViewModel> _boatTyps;
-        public ObservableCollection<BoatTypViewModel> BoatTyps
-        {
-            get
-            {
-                return _boatTyps;
-            }
-            set
-            {
-                if (BoatTyps != value)
-                {
-                    _boatTyps = value;
-                    this.OnPropertyChanged("BoatTyps");
-                }
-            }
-        }
-
-
         private bool _isButtonEnabled = true;
         public bool IsButtonEnabled
         {
@@ -320,62 +302,8 @@ namespace SealingSchoolWPF.ViewModel.Boat
             Application.Current.Windows[1].Close();
         }
 
-        private ICommand addBoatTypCommand;
-        public ICommand AddBoatTypCommand
-        {
-            get
-            {
-                if (addBoatTypCommand == null)
-                {
-                    addBoatTypCommand = new RelayCommand(p => ExecuteAddBoatTypCommand());
-                }
-                return addBoatTypCommand;
-            }
-        }
-
-        private void ExecuteAddBoatTypCommand()
-        {
-            if (this.BoatTyp == null)
-                return;
-
-            SealingSchoolWPF.Model.BoatTyp origBoatType = this.BoatTyp;
-            BoatTypViewModel boatTyp = new BoatTypViewModel(origBoatType);
-            if (this._boatTyps == null)
-            {
-                this._boatTyps = new ObservableCollection<BoatTypViewModel>();
-            }
-
-            foreach (BoatTypViewModel b in dummy)
-            {
-                if (b.Name == boatTyp.Name)
-                    return;
-            }
-
-            this.dummy.Add(boatTyp);
-            this.ReBindDataGrid();
-        }
-
-        public void ExecuteDeleteCommand(BoatTypViewModel boatTyp)
-        {
-            this.dummy.Remove(boatTyp);
-            this.ReBindDataGrid();
-        }
-
-        private List<BoatTypViewModel> dummy = new List<BoatTypViewModel>();
-
-        private IList<SealingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
-        {
-            IList<SealingSchoolWPF.Model.BoatTyp> boatTypList = new List<SealingSchoolWPF.Model.BoatTyp>();
-
-            foreach (BoatTypViewModel b in list)
-            {
-                SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
-                boatTyp.BoatTypID = b.Id;
-                boatTypList.Add(boatTyp);
-            }
-
-            return boatTypList;
-        }
+        
+       
 
         private void SaveModelToDatabase()
         {
@@ -425,15 +353,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
 
         }
 
-        private void ReBindDataGrid()
-        {
-            if (this._boatTyps != null)
-            {
-                this._boatTyps.Clear();
-            }
-
-            BoatTyps = new ObservableCollection<BoatTypViewModel>(dummy);
-        }
+       
 
         public void Close()
         {
