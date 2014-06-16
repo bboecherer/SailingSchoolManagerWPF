@@ -13,8 +13,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
     public class UpdateBoatViewModel : ViewModel<SealingSchoolWPF.Model.Boat>
     {
         public SealingSchoolWPF.Model.Boat BoatDummy { get; set; }
-        MaterialMgr matMgr = new MaterialMgr();
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
+        BoatMgr boatMgr = new BoatMgr();
         BoatTypMgr boatTypMgr = new BoatTypMgr();
 
         public UpdateBoatViewModel(SealingSchoolWPF.Model.Boat model)
@@ -48,11 +47,11 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.Name;
+                return BoatDummy.Name;
             }
             set
             {
-                MaterialDummy.Name = value;
+                BoatDummy.Name = value;
                 resetSaveButton();
                 this.OnPropertyChanged("Name");
             }
@@ -62,11 +61,11 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.Brand;
+                return BoatDummy.Brand;
             }
             set
             {
-                MaterialDummy.Brand = value;
+                BoatDummy.Brand = value;
                 resetSaveButton();
                 this.OnPropertyChanged("Brand");
             }
@@ -76,11 +75,11 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.Price;
+                return BoatDummy.Price;
             }
             set
             {
-                MaterialDummy.Price = value;
+                BoatDummy.Price = value;
                 resetSaveButton();
                 this.OnPropertyChanged("Price");
             }
@@ -98,11 +97,11 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.Currency;
+                return BoatDummy.Currency;
             }
             set
             {
-                MaterialDummy.Currency = value;
+                BoatDummy.Currency = value;
                 resetSaveButton();
                 this.OnPropertyChanged("Currency");
             }
@@ -119,11 +118,11 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.MaterialStatus;
+                return BoatDummy.MaterialStatus;
             }
             set
             {
-                MaterialDummy.MaterialStatus = value;
+                BoatDummy.MaterialStatus = value;
                 resetSaveButton();
                 this.OnPropertyChanged("MaterialStatus");
             }
@@ -132,13 +131,13 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.RepairAction;
+                return BoatDummy.RepairAction;
             }
             set
             {
                 if (RepairAction != value)
                 {
-                    MaterialDummy.RepairAction = value;
+                    BoatDummy.RepairAction = value;
                     resetSaveButton();
                     this.OnPropertyChanged("RepairAction");
                 }
@@ -149,57 +148,28 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
             get
             {
-                return MaterialDummy.SerialNumber;
+                return BoatDummy.SerialNumber;
             }
             set
             {
                 if (SerialNumber != value)
                 {
-                    MaterialDummy.SerialNumber = value;
+                    BoatDummy.SerialNumber = value;
                     resetSaveButton();
                     this.OnPropertyChanged("SerialNumber");
                 }
             }
         }
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
-        {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
-            foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
-            {
-                MaterialTypNames.Add(inst);
-            }
-            return MaterialTypNames;
-        }
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
-
-        public IEnumerable<MaterialTyp> MaterialTypTypeValues
-        {
-            get
-            {
-                return GetMaterialTypNames();
-            }
-        }
-        public MaterialTyp MaterialTyp
-        {
-            get
-            {
-                return MaterialDummy.MaterialTyp;
-            }
-            set
-            {
-                MaterialDummy.MaterialTyp = value;
-                this.OnPropertyChanged("MaterialTyp");
-            }
-        }
+        
         public string Notes
         {
             get
             {
-                return MaterialDummy.AdditionalInfo;
+                return BoatDummy.AdditionalInfo;
             }
             set
             {
-                MaterialDummy.AdditionalInfo = value;
+                BoatDummy.AdditionalInfo = value;
                 this.OnPropertyChanged("Notes");
             }
         }
@@ -255,16 +225,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
         private void ExecuteAddCommand()
         {
             Model.ModifiedOn = DateTime.Now;
-            Model.BoatTyps.Clear();
-            if (dummy != null)
-            {
-                foreach (BoatTypViewModel q in dummy)
-                {
-                    
-                    Model.BoatTyps.Add(prepareBoatTypToSave(q));
-                }
-            }
-            matMgr.Update(Model);
+            boatMgr.Update(Model);
             this.IsButtonEnabled = false;
             this.ImageSourceSave = "/Resources/Images/StatusAnnotations_Complete_and_ok_32xLG_color.png";
 
@@ -311,125 +272,13 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        private ObservableCollection<BoatTypViewModel> _boatTyps;
-        public ObservableCollection<BoatTypViewModel> BoatTyps
-        {
-            get
-            {
-                return boatTypList();
-            }
-            set
-            {
-                if (BoatTyps != value)
-                {
-                    _boatTyps = value;
-                    this.OnPropertyChanged("BoatTyps");
-                }
-            }
-        }
-        private ICommand addBoatTypCommand;
-        public ICommand AddBoatTypCommand
-        {
-            get
-            {
-                if (addBoatTypCommand == null)
-                {
-                    addBoatTypCommand = new RelayCommand(p => ExecuteAddBoatTypCommand());
-                }
-                return addBoatTypCommand;
-            }
-        }
-
-        private void ExecuteAddBoatTypCommand()
-        {
-            if (this.BoatTyp == null)
-                return;
-
-            SealingSchoolWPF.Model.BoatTyp origBoatType = this.BoatTyp;
-            BoatTypViewModel boatTyp = new BoatTypViewModel(origBoatType);
-            if (this._boatTyps == null)
-            {
-                this._boatTyps = new ObservableCollection<BoatTypViewModel>();
-            }
-
-            foreach (BoatTypViewModel b in dummy)
-            {
-                if (b.Name == boatTyp.Name)
-                    return;
-            }
-
-            this.dummy.Add(boatTyp);
-
-           
-        }
-
-        public void ExecuteDeleteCommand(BoatTypViewModel boatTyp)
-        {
-            this.dummy.Remove(boatTyp);
-           
-        }
-
        
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
-        {
-            IList<SealingSchoolWPF.Model.BoatTyp> boatTypList = new List<SealingSchoolWPF.Model.BoatTyp>();
+        
 
-            foreach (BoatTypViewModel b in list)
-            {
-                SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
-                boatTyp.BoatTypID = b.Id;
-                boatTypList.Add(boatTyp);
-            }
+        
+       
 
-            return boatTypList;
-        }
-
-        private void ReBindDataGrid()
-        {
-            if (this._boatTyps != null)
-            {
-                this._boatTyps.Clear();
-            }
-
-            BoatTyps = new ObservableCollection<BoatTypViewModel>(dummy);
-        }
-
-        private ObservableCollection<BoatTypViewModel> dummy;
-        private ObservableCollection<BoatTypViewModel> boatTypList()
-        {
-            if (dummy == null || dummy.Count == 0)
-            {
-                dummy = new ObservableCollection<BoatTypViewModel>();
-            }
-            foreach (BoatTypViewModel q in prepareBoatTyps(Model.BoatTyps))
-            {
-                dummy.Add(q);
-            }
-            return dummy;
-        }
-
-        private ObservableCollection<BoatTypViewModel> prepareBoatTyps(ICollection<SealingSchoolWPF.Model.BoatTyp> collection)
-        {
-            ObservableCollection<BoatTypViewModel> list = new ObservableCollection<BoatTypViewModel>();
-
-            if (collection != null)
-            {
-                foreach (Model.BoatTyp q in collection)
-                {
-                    BoatTypViewModel model = new BoatTypViewModel(q);
-                    list.Add(model);
-                }
-            }
-
-            return list;
-        }
-
-        private SealingSchoolWPF.Model.BoatTyp prepareBoatTypToSave(BoatTypViewModel b)
-        {
-            SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
-            boatTyp.BoatTypID = b.Id;
-            return boatTyp;
-        }
+       
     }
 }

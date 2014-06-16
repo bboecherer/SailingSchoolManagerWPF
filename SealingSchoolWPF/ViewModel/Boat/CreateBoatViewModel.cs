@@ -37,7 +37,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        MaterialMgr matMgr = new MaterialMgr();
+        BoatMgr boatMgr = new BoatMgr();
         MaterialTypMgr matTypMgr = new MaterialTypMgr();
         BoatTypMgr boatTypMgr = new BoatTypMgr();
 
@@ -169,39 +169,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
-        {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
-            foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
-            {
-                MaterialTypNames.Add(inst);
-            }
-            return MaterialTypNames;
-        }
-
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
-
-        public IEnumerable<MaterialTyp> MaterialTypTypeValues
-        {
-            get
-            {
-                return GetMaterialTypNames();
-            }
-        }
-
-        private MaterialTyp _materialTyp;
-        public MaterialTyp MaterialTyp
-        {
-            get
-            {
-                return _materialTyp;
-            }
-            set
-            {
-                _materialTyp = value;
-                this.OnPropertyChanged("MaterialTyp");
-            }
-        }
+        
 
         private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
@@ -418,24 +386,15 @@ namespace SealingSchoolWPF.ViewModel.Boat
             Model.RepairAction = this.RepairAction;
             Model.SerialNumber = this.SerialNumber;
             Model.Currency = this.Currency;
-            Model.MaterialTyp = this.MaterialTyp;
+            Model.BoatTyp = this.BoatTyp;
 
 
             Model.AdditionalInfo = this.Notes;
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
 
-            if (Model.BoatTyps == null)
-            {
-                Model.BoatTyps = new List<Model.BoatTyp>();
-            }
-
-            foreach (SealingSchoolWPF.Model.BoatTyp q in prepareBoatTyps(dummy))
-            {
-                Model.BoatTyps.Add(q);
-            }
-
-            matMgr.Create(Model);
+            
+            boatMgr.Create(Model);
         }
 
         private ICommand clearCommand;
@@ -458,7 +417,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
             this.Brand = null;
             this.Price = 0;
             this.Notes = null;
-            this.MaterialTyp = null;
+            this.BoatTyp = null;
             this.Currency = Currency.EUR;
             this.SerialNumber = null;
 

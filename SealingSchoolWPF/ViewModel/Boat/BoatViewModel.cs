@@ -17,9 +17,9 @@ namespace SealingSchoolWPF.ViewModel.Boat
         {
         }
 
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
+        BoatTypMgr boatTypMgr = new BoatTypMgr();
 
-        public string Id
+        public string BoatID
         {
             get
             {
@@ -27,10 +27,10 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
             set
             {
-                if (Id != value)
+                if (BoatID != value)
                 {
                     Model.BoatID = Convert.ToInt32(value);
-                    this.OnPropertyChanged("Id");
+                    this.OnPropertyChanged("BoatID");
                 }
             }
         }
@@ -117,34 +117,34 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
-            foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
+            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            foreach (Model.BoatTyp inst in boatTypMgr.GetAll())
             {
-                MaterialTypNames.Add(inst);
+                BoatTypNames.Add(inst);
             }
-            return MaterialTypNames;
+            return BoatTypNames;
         }
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
-        public IEnumerable<MaterialTyp> MaterialTypTypeValues
+        public IEnumerable<BoatTyp> BoatTypTypeValues
         {
             get
             {
-                return GetMaterialTypNames();
+                return GetBoatTypNames();
             }
         }
-        public MaterialTyp MaterialTyp
+        public BoatTyp BoatTyp
         {
             get
             {
-                return Model.MaterialTyp;
+                return Model.BoatTyp;
             }
             set
             {
-                Model.MaterialTyp = value;
-                this.OnPropertyChanged("MaterialTyp");
+                Model.BoatTyp = value;
+                this.OnPropertyChanged("BoatTyp");
             }
         }
 
@@ -191,21 +191,6 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        public ICollection<BoatTyp> BoatTyps
-        {
-            get
-            {
-                return Model.BoatTyps;
-            }
-            set
-            {
-                if (BoatTyps != value)
-                {
-                    Model.BoatTyps = value;
-                    this.OnPropertyChanged("BoatTyps");
-                }
-            }
-        }
         public DateTime CreatedOn
         {
             get

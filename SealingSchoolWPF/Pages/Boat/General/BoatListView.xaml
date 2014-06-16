@@ -10,18 +10,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Materials}" SelectionMode="Extended" SelectionUnit="FullRow" 
+        <DataGrid ItemsSource="{Binding Boats}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 
                   IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
-                            Binding="{Binding Id }" />
-                <DataGridTextColumn Header="{x:Static resx:Resource.MaterialName}" 
+                            Binding="{Binding BoatID }" />
+                <DataGridTextColumn Header="{x:Static resx:Resource.Label}" 
                             Binding="{Binding Name }" />
                 <DataGridTextColumn Header="{x:Static resx:Resource.Brand}" 
                             Binding="{Binding Brand }" />
-                <DataGridTextColumn Header="{x:Static resx:Resource.MaterialType}" 
-                            Binding="{Binding MaterialTyp}"/>
+                <DataGridTextColumn Header="{x:Static resx:Resource.BoatTyp}" 
+                            Binding="{Binding BoatTyp}"/>
 
             </DataGrid.Columns>
         </DataGrid>

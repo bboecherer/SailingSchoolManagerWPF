@@ -62,6 +62,20 @@ namespace SealingSchoolWPF.ViewModel.General
           appointments.Add( a );
         }
       }
+
+      foreach ( SealingSchoolWPF.Model.BlockedTimeSpan b in blockTimesMgr.GetAll() )
+      {
+        if ( b.Reason == null )
+        {
+          Appointment a = new Appointment();
+          a.Subject = b.Instructor.Label + "\n" + "Nicht verfügbar";
+          a.Start = b.StartDate;
+          a.End = b.EndDate;
+          a.TimeMarker = TimeMarker.OutOfOffice;
+          appointments.Add( a );
+
+        }
+      }
       return appointments;
     }
 

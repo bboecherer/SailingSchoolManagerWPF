@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SealingSchoolWPF.Pages.Material.Boat.Base"
+﻿<UserControl x:Class="SealingSchoolWPF.Pages.Boat.Update.Base"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Boat.Controls"
@@ -32,7 +32,7 @@
                     <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.SerialNumber}"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Pricing}"/>
                     <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.MaterialType}"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.BoatTyp}"/>
 
 
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Name}"/>
@@ -43,7 +43,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                 		SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                     <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"
-                		SelectedItem="{Binding MaterialTyp}" ItemsSource="{Binding MaterialTypTypeValues}"/>
+                		SelectedItem="{Binding BoatTyp}" ItemsSource="{Binding BoatTypTypeValues}"/>
 
 
                 </Grid>

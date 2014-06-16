@@ -65,6 +65,31 @@ namespace SealingSchoolWPF.Data
       {
         foreach ( TrainingActivity ta in ctx.TrainingActivities )
         {
+          ctx.Courses.Attach( ta.Course );
+          ctx.Entry( ta.Course ).State = EntityState.Unchanged;
+          ctx.Students.Attach( ta.Student );
+          ctx.Entry( ta.Student ).State = EntityState.Unchanged;
+
+          tas.Add( ta );
+        }
+      }
+      return tas;
+
+    }
+
+    public IList<TrainingActivity> GetByStatus( TrainingActivityStatus status )
+    {
+      IList<TrainingActivity> tas = new List<TrainingActivity>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        foreach ( TrainingActivity ta in ctx.TrainingActivities.Where( t => t.TrainingActivityStatus == status ) )
+        {
+          ctx.Courses.Attach( ta.Course );
+          ctx.Entry( ta.Course ).State = EntityState.Unchanged;
+          ctx.Students.Attach( ta.Student );
+          ctx.Entry( ta.Student ).State = EntityState.Unchanged;
+
           tas.Add( ta );
         }
       }

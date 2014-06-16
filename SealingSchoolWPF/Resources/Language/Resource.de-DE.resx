@@ -573,4 +573,7 @@
   <data name="Ratings" xml:space="preserve">
     <value>Bewertungen</value>
   </data>
+  <data name="Boat" xml:space="preserve">
+    <value>Boot</value>
+  </data>
 </root>

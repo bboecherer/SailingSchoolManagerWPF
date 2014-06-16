@@ -27,12 +27,12 @@
                         <ColumnDefinition Width="120" />
                         <ColumnDefinition Width="230" />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.MaterialName}"/>
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:Resource.Label}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Brand}"/>
                     <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:Resource.SerialNumber}"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:Resource.Pricing}"/>
                     <Label Grid.Row="4" Grid.Column="0" Content="{x:Static resx:Resource.Currency}"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.MaterialType}"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="{x:Static resx:Resource.BoatTyp}"/>
 
 
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=Name}"/>
@@ -43,7 +43,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                                SelectedItem="{Binding Currency}" ItemsSource="{Binding CurrencyTypeValues}"/>
                     <ComboBox Grid.Column="1" Grid.Row="5" Margin="3"
-                               SelectedItem="{Binding MaterialTyp}" ItemsSource="{Binding MaterialTypTypeValues}"/>
+                               SelectedItem="{Binding BoatTyp}" ItemsSource="{Binding BoatTypTypeValues}"/>
 
                 </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right"/>

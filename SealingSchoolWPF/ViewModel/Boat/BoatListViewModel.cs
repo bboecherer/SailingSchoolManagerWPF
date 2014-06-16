@@ -33,7 +33,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
         }
 
 
-        private MaterialMgr matMgr = new MaterialMgr();
+        private BoatMgr boatMgr = new BoatMgr();
 
         private ObservableCollection<BoatViewModel> boat;
 
@@ -60,8 +60,8 @@ namespace SealingSchoolWPF.ViewModel.Boat
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Boat> mats = matMgr.GetAll();
-            boat = new ObservableCollection<BoatViewModel>(mats.Select(p => new BoatViewModel(p)));
+            IList<SealingSchoolWPF.Model.Boat> boats = boatMgr.GetAll();
+            boat = new ObservableCollection<BoatViewModel>(boats.Select(p => new BoatViewModel(p)));
         }
 
         private ICommand addCommand;
