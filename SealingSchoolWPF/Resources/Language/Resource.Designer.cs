@@ -727,14 +727,6 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        /// </summary>
-        public static string Invoice {
-            get {
-                return ResourceManager.GetString("Invoice", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Rechnungsdatum.
         /// </summary>
         public static string InvoiceDate {
