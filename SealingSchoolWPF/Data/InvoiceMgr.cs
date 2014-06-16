@@ -21,7 +21,6 @@ namespace SealingSchoolWPF.Data
       {
         foreach ( Invoice i in ctx.Invoices )
         {
-
           Invoices.Add( i );
         }
       }

@@ -358,6 +358,15 @@
     <Compile Include="Pages\Invoicing\Controls\CreateInvoiceButtons.xaml.cs">
       <DependentUpon>CreateInvoiceButtons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage1.xaml.cs">
+      <DependentUpon>CreateMultipleInvoicePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage3.xaml.cs">
+      <DependentUpon>CreateMultipleInvoicePage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Workflows\CreateMultipleInvoiceWF.xaml.cs">
+      <DependentUpon>CreateMultipleInvoiceWF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage1.xaml.cs">
       <DependentUpon>CreateCreditNotePage1.xaml</DependentUpon>
     </Compile>
@@ -367,8 +376,8 @@
     <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage2.xaml.cs">
       <DependentUpon>CreateCreditNotePage2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Invoicing\Workflows\CreateInvoicePage2.xaml.cs">
-      <DependentUpon>CreateInvoicePage2.xaml</DependentUpon>
+    <Compile Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage2.xaml.cs">
+      <DependentUpon>CreateMultipleInvoicePage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Invoicing\Workflows\CreateCreditNotePage3.xaml.cs">
       <DependentUpon>CreateCreditNotePage3.xaml</DependentUpon>
@@ -608,6 +617,7 @@
     <Compile Include="ViewModel\Instructor\InstructorListViewModel.cs" />
     <Compile Include="ViewModel\Instructor\InstructorViewModel.cs" />
     <Compile Include="ViewModel\Instructor\UpdateInstructorViewModel.cs" />
+    <Compile Include="ViewModel\Invoicing\CreateMultipleInvoiceViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\CreateInvoiceViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\InvoiceButtonViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\CreditNoteButtonViewModel.cs" />
@@ -864,6 +874,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Workflows\CreateMultipleInvoiceWF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Invoicing\Workflows\CreateCreditNotePage1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -876,7 +898,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Invoicing\Workflows\CreateInvoicePage2.xaml">
+    <Page Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

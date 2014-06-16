@@ -29,7 +29,7 @@
                     <StackPanel Orientation="Vertical">
                         <Rectangle Width="15" Height="15" StrokeThickness="0">
                             <Rectangle.Fill>
-                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_group_add}" />
                             </Rectangle.Fill>
                         </Rectangle>
                     </StackPanel>
@@ -58,8 +58,14 @@
         <ScrollViewer Grid.Row="1">
             <StackPanel>
                 <DataGrid ItemsSource="{Binding TrainingActivities}" SelectionMode="Extended" SelectionUnit="FullRow" 
-                 DataContext="{Binding}" AutoGenerateColumns="False" HorizontalGridLinesBrush="Gray"
+                 DataContext="{Binding}" AutoGenerateColumns="False"
                   IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="BorderBrush" Value="Gray" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                        </Style>
+                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{x:Static resx:Resource.Id}" 
                             Binding="{Binding TrainingActivityId }">
@@ -107,13 +113,13 @@
                                     Value="Left" />
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Setter Property="FontWeight" Value="Bold"/>
-                                    <Setter Property="Width" Value="100" />
+                                    <Setter Property="Width" Value="180" />
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="Width" Value="100" />
+                                    <Setter Property="Width" Value="180" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>

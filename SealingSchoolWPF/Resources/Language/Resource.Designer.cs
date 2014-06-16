@@ -718,11 +718,29 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rechnungsdatum.
+        /// </summary>
+        public static string InvoiceDate {
+            get {
+                return ResourceManager.GetString("InvoiceDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rechnungen.
         /// </summary>
         public static string Invoices {
             get {
                 return ResourceManager.GetString("Invoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rechnungsstatus.
+        /// </summary>
+        public static string InvoiceStatus {
+            get {
+                return ResourceManager.GetString("InvoiceStatus", resourceCulture);
             }
         }
         
@@ -903,6 +921,24 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Overview {
             get {
                 return ResourceManager.GetString("Overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zahlstatus.
+        /// </summary>
+        public static string PaymentStatus {
+            get {
+                return ResourceManager.GetString("PaymentStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zahlungszieldatum.
+        /// </summary>
+        public static string PaymentTargetDate {
+            get {
+                return ResourceManager.GetString("PaymentTargetDate", resourceCulture);
             }
         }
         

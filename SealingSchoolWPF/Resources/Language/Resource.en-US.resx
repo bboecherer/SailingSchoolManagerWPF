@@ -573,4 +573,16 @@
   <data name="Ratings" xml:space="preserve">
     <value>Ratings</value>
   </data>
+  <data name="InvoiceDate" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="InvoiceStatus" xml:space="preserve">
+    <value>Invoice status</value>
+  </data>
+  <data name="PaymentStatus" xml:space="preserve">
+    <value>Payment status</value>
+  </data>
+  <data name="PaymentTargetDate" xml:space="preserve">
+    <value>Payment target</value>
+  </data>
 </root>

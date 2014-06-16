@@ -24,7 +24,7 @@
         <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:Resource.Course}"/>
         <ComboBox Grid.Column="1" Grid.Row="1" Margin="3" ScrollViewer.VerticalScrollBarVisibility="Visible"
                   MaxDropDownHeight="100" 
-                  SelectedValue="{Binding CourseTyp}" ItemsSource="{Binding CourseValues}" 
+                  SelectedValue="{Binding TrainingActivityTyp}" ItemsSource="{Binding TrainingActivityValues}" 
                   IsEnabled="{Binding IsComboBoxEnabled}" IsReadOnly="{Binding IsComboBoxReadOnly}"
                   />
     </Grid>

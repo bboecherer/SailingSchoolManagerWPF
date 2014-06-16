@@ -1,26 +1,33 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SealingSchoolWPF.Data;
+using SealingSchoolWPF.Model;
+using SealingSchoolWPF.Pages.Student.Create;
+using SealingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace SealingSchoolWPF.ViewModel.Invoicing
 {
-  public class CreateInvoiceViewModel : ViewModel<SealingSchoolWPF.Model.Invoice>
+  public class CreateMultipleInvoiceViewModel : ViewModel<SealingSchoolWPF.Model.Invoice>
   {
     #region ctor
-    public CreateInvoiceViewModel( SealingSchoolWPF.Model.Invoice model )
+    public CreateMultipleInvoiceViewModel( SealingSchoolWPF.Model.Invoice model )
       : base( model )
     {
-      GetTrainingActivityTypNames();
+      GetCourseTypNames();
     }
 
-    static CreateInvoiceViewModel instance = null;
+    static CreateMultipleInvoiceViewModel instance = null;
     static readonly object padlock = new object();
 
-    public static CreateInvoiceViewModel Instance
+    public static CreateMultipleInvoiceViewModel Instance
     {
       get
       {
@@ -28,7 +35,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         {
           if ( instance == null )
           {
-            instance = new CreateInvoiceViewModel( new SealingSchoolWPF.Model.Invoice() );
+            instance = new CreateMultipleInvoiceViewModel( new SealingSchoolWPF.Model.Invoice() );
           }
           return instance;
         }
@@ -37,26 +44,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     #endregion
 
     #region properties
-
-    private ObservableCollection<Invoice> invoices;
-    public ObservableCollection<Invoice> Invoices
-    {
-      get
-      {
-        return this.GetInvoices();
-      }
-      set
-      {
-        if ( invoices != value )
-        {
-          invoices = value;
-          this.OnPropertyChanged( "Invoices" );
-        }
-      }
-    }
-
-
-    private IList<SealingSchoolWPF.Model.TrainingActivity> GetTrainingActivityTypNames()
+    private IList<SealingSchoolWPF.Model.TrainingActivity> GetCourseTypNames()
     {
       CourseTypNames = new List<SealingSchoolWPF.Model.TrainingActivity>();
 
@@ -66,15 +54,15 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         coursesList.Add( course );
       }
 
-      TrainingActivityValues = coursesList;
+      CourseValues = coursesList;
 
       return CourseTypNames;
     }
 
     private IList<SealingSchoolWPF.Model.TrainingActivity> CourseTypNames;
 
-    private IEnumerable<SealingSchoolWPF.Model.TrainingActivity> _trainingActivityValues;
-    public IEnumerable<SealingSchoolWPF.Model.TrainingActivity> TrainingActivityValues
+    private IEnumerable<SealingSchoolWPF.Model.TrainingActivity> _courseValues;
+    public IEnumerable<SealingSchoolWPF.Model.TrainingActivity> CourseValues
     {
       get
       {
@@ -82,22 +70,22 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       }
       set
       {
-        _trainingActivityValues = value;
+        _courseValues = value;
         this.OnPropertyChanged( "TrainingActivityValues" );
       }
     }
 
-    private SealingSchoolWPF.Model.TrainingActivity _trainingActivityTyp;
-    public SealingSchoolWPF.Model.TrainingActivity TrainingActivityTyp
+    private SealingSchoolWPF.Model.TrainingActivity _courseTyp;
+    public SealingSchoolWPF.Model.TrainingActivity CourseTyp
     {
       get
       {
-        return _trainingActivityTyp;
+        return _courseTyp;
       }
       set
       {
-        _trainingActivityTyp = value;
-        this.OnPropertyChanged( "TrainingActivityTyp" );
+        _courseTyp = value;
+        this.OnPropertyChanged( "CourseTyp" );
       }
     }
 
@@ -428,7 +416,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       if ( this.StudentTyp == null )
         return;
 
-      SealingSchoolWPF.Model.Course course = courseMgr.GetById( this.TrainingActivityTyp.Course.CourseId );
+      SealingSchoolWPF.Model.Course course = courseMgr.GetById( this.CourseTyp.Course.CourseId );
 
       SealingSchoolWPF.Model.Student origStud = this.StudentTyp;
       SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud =
@@ -482,10 +470,11 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
 
     private void SaveModelToDatabase()
     {
+
       InvoiceItem item = new InvoiceItem();
-      item.GrossPrice = this.TrainingActivityTyp.Course.GrossPrice;
-      item.NetPrice = this.TrainingActivityTyp.Course.NetPrice;
-      item.VatAmount = this.TrainingActivityTyp.Course.NetAmount;
+      item.GrossPrice = this.CourseTyp.Course.GrossPrice;
+      item.NetPrice = this.CourseTyp.Course.NetPrice;
+      item.VatAmount = this.CourseTyp.Course.NetAmount;
       item.Amount = 1;
       item.ServiceLocation = "Italien";
       item.ServiceEndDate = DateTime.Now;
@@ -495,29 +484,16 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
 
       Model.CreatedOn = DateTime.Now;
       Model.Printed = false;
-      Model.GrossPrice = this.TrainingActivityTyp.Course.GrossPrice;
-      Model.NetPrice = this.TrainingActivityTyp.Course.NetPrice;
-      Model.VatAmount = this.TrainingActivityTyp.Course.NetAmount;
+      Model.GrossPrice = this.CourseTyp.Course.GrossPrice;
+      Model.NetPrice = this.CourseTyp.Course.NetPrice;
+      Model.VatAmount = this.CourseTyp.Course.NetAmount;
       Model.PaymentStatus = PaymentStatus.NICHT_GEZAHLT;
       Model.InvoiceStatus = InvoiceStatus.RECHNUNG;
       Model.PaymentTargetDate = DateTime.Now.Add( new TimeSpan( 14, 0, 0, 0 ) );
       Model.PaidDate = DateTime.Now;
       Model.ModifiedOn = DateTime.Now;
-      Model.Label = this.TrainingActivityTyp.Student.Label + " / " + this.TrainingActivityTyp.Course.Label;
 
-      try
-      {
-        this.invoiceMgr.Create( Model );
-
-        TrainingActivity ta = this.trainingActivityMgr.GetById( this.TrainingActivityTyp.TrainingActivityId );
-        ta.TrainingActivityStatus = TrainingActivityStatus.RECHNUNG_GESTELLT;
-
-        this.trainingActivityMgr.Update( ta );
-      }
-      catch ( Exception e )
-      {
-
-      }
+      this.invoiceMgr.Create( Model );
     }
 
     private void ReBindDataGrid()
@@ -525,13 +501,6 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       this.Students.Clear();
       Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>( dummy );
       this.ErrorLabel = String.Empty;
-    }
-
-    private ObservableCollection<SealingSchoolWPF.Model.Invoice> GetInvoices()
-    {
-      IList<SealingSchoolWPF.Model.Invoice> invs = invoiceMgr.GetAll();
-      invoices = new ObservableCollection<Invoice>( invs );
-      return invoices;
     }
 
     public IList<TrainingActivity> coursesList = new List<TrainingActivity>();

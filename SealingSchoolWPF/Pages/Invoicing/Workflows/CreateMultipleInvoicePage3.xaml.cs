@@ -1,5 +1,4 @@
-﻿using FirstFloor.ModernUI.Windows.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,23 +17,15 @@ using SealingSchoolWPF.ViewModel.Invoicing;
 namespace SealingSchoolWPF.Pages.Invoicing.Workflows
 {
   /// <summary>
-  /// Interaction logic for CreateTrainingActivitiesWF.xaml
+  /// Interaction logic for CreateTAPage3.xaml
   /// </summary>
-  public partial class CreateInvoiceWF : ModernWindow
+  public partial class CreateMultipleInvoicePage3 : UserControl
   {
-
-    CreateInvoiceViewModel viewModel;
-
-    public CreateInvoiceWF()
+    public CreateMultipleInvoicePage3()
     {
       InitializeComponent();
-      viewModel = CreateInvoiceViewModel.Instance;
+      var viewModel = CreateMultipleInvoiceViewModel.Instance;
       this.DataContext = viewModel;
-    }
-
-    private void ModernWindow_Closing( object sender, System.ComponentModel.CancelEventArgs e )
-    {
-      viewModel.Close();
     }
   }
 }

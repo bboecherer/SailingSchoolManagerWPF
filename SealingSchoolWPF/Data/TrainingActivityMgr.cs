@@ -53,7 +53,17 @@ namespace SealingSchoolWPF.Data
 
     public void Update( TrainingActivity entity )
     {
+       using ( var ctx = new SchoolDataContext() )
+      {
 
+        TrainingActivity original = ctx.TrainingActivities.Find( entity.TrainingActivityId );
+
+        if ( original != null )
+        {
+          ctx.Entry( original ).CurrentValues.SetValues( entity );
+          ctx.SaveChanges();
+        }
+      }
     }
 
 
@@ -94,7 +104,14 @@ namespace SealingSchoolWPF.Data
         }
       }
       return tas;
+    }
 
+    public TrainingActivity GetById( int taId )
+    {
+      using ( var ctx = new SchoolDataContext() )
+      {
+        return ctx.TrainingActivities.Find( taId );
+      }
     }
   }
 }
