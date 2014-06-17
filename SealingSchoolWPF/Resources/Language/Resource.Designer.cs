@@ -727,7 +727,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechnungsdatum.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Rechnungsdatum ähnelt.
         /// </summary>
         public static string InvoiceDate {
             get {
@@ -736,7 +736,6 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechnungen.
         ///   Sucht eine lokalisierte Zeichenfolge, die Rechnungen ähnelt.
         /// </summary>
         public static string Invoices {
@@ -746,7 +745,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rechnungsstatus.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Rechnungsstatus ähnelt.
         /// </summary>
         public static string InvoiceStatus {
             get {
@@ -755,7 +754,6 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bezeichnung.
         ///   Sucht eine lokalisierte Zeichenfolge, die Bezeichnung ähnelt.
         /// </summary>
         public static string Label {
@@ -806,15 +804,6 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Material {
             get {
                 return ResourceManager.GetString("Material", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Materialverwaltung ähnelt.
-        /// </summary>
-        public static string MaterialAdministration {
-            get {
-                return ResourceManager.GetString("MaterialAdministration", resourceCulture);
             }
         }
         
@@ -936,7 +925,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zahlstatus.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zahlstatus ähnelt.
         /// </summary>
         public static string PaymentStatus {
             get {
@@ -945,7 +934,7 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zahlungszieldatum.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zahlungszieldatum ähnelt.
         /// </summary>
         public static string PaymentTargetDate {
             get {
@@ -954,7 +943,6 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Postleitzahl.
         ///   Sucht eine lokalisierte Zeichenfolge, die Postleitzahl ähnelt.
         /// </summary>
         public static string PostalLong {
@@ -1086,6 +1074,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string Registrations {
             get {
                 return ResourceManager.GetString("Registrations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Reparatur ähnelt.
+        /// </summary>
+        public static string Repair {
+            get {
+                return ResourceManager.GetString("Repair", resourceCulture);
             }
         }
         

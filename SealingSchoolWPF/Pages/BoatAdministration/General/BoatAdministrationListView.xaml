@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="400" />
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Materials}" SelectionMode="Extended" SelectionUnit="FullRow" 
+        <DataGrid ItemsSource="{Binding Boats}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 
                   IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
             <DataGrid.RowStyle>

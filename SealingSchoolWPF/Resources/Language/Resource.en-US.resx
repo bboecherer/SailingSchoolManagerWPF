@@ -297,9 +297,6 @@
   <data name="Material" xml:space="preserve">
     <value>Material</value>
   </data>
-  <data name="MaterialAdministration" xml:space="preserve">
-    <value>Materialadministration</value>
-  </data>
   <data name="MaterialName" xml:space="preserve">
     <value>Materialname</value>
   </data>
@@ -587,5 +584,8 @@
   </data>
   <data name="Boat" xml:space="preserve">
     <value>Boat</value>
+  </data>
+  <data name="Repair" xml:space="preserve">
+    <value>Repair</value>
   </data>
 </root>

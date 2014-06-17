@@ -34,19 +34,19 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
 
         private BoatMgr boatMgr = new BoatMgr();
 
-        private ObservableCollection<BoatAdministrationViewModel> boat;
+        private ObservableCollection<BoatAdministrationViewModel> boats;
 
         public ObservableCollection<BoatAdministrationViewModel> Boats
         {
             get
             {
-                return boat;
+                return boats;
             }
             set
             {
                 if (Boats != value)
                 {
-                    boat = value;
+                    boats = value;
                     this.OnPropertyChanged("Boats");
                 }
             }
@@ -59,8 +59,8 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Boat> boats = boatMgr.GetAll();
-            boat = new ObservableCollection<BoatAdministrationViewModel>(boats.Select(p => new BoatAdministrationViewModel(p)));
+            IList<SealingSchoolWPF.Model.Boat> boat = boatMgr.GetAll();
+            boats = new ObservableCollection<BoatAdministrationViewModel>(boat.Select(p => new BoatAdministrationViewModel(p)));
             
         }
 
