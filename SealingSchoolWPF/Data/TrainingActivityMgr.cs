@@ -53,7 +53,17 @@ namespace SealingSchoolWPF.Data
 
     public void Update( TrainingActivity entity )
     {
+       using ( var ctx = new SchoolDataContext() )
+      {
 
+        TrainingActivity original = ctx.TrainingActivities.Find( entity.TrainingActivityId );
+
+        if ( original != null )
+        {
+          ctx.Entry( original ).CurrentValues.SetValues( entity );
+          ctx.SaveChanges();
+        }
+      }
     }
 
 
@@ -65,11 +75,43 @@ namespace SealingSchoolWPF.Data
       {
         foreach ( TrainingActivity ta in ctx.TrainingActivities )
         {
+          ctx.Courses.Attach( ta.Course );
+          ctx.Entry( ta.Course ).State = EntityState.Unchanged;
+          ctx.Students.Attach( ta.Student );
+          ctx.Entry( ta.Student ).State = EntityState.Unchanged;
+
           tas.Add( ta );
         }
       }
       return tas;
 
+    }
+
+    public IList<TrainingActivity> GetByStatus( TrainingActivityStatus status )
+    {
+      IList<TrainingActivity> tas = new List<TrainingActivity>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        foreach ( TrainingActivity ta in ctx.TrainingActivities.Where( t => t.TrainingActivityStatus == status ) )
+        {
+          ctx.Courses.Attach( ta.Course );
+          ctx.Entry( ta.Course ).State = EntityState.Unchanged;
+          ctx.Students.Attach( ta.Student );
+          ctx.Entry( ta.Student ).State = EntityState.Unchanged;
+
+          tas.Add( ta );
+        }
+      }
+      return tas;
+    }
+
+    public TrainingActivity GetById( int taId )
+    {
+      using ( var ctx = new SchoolDataContext() )
+      {
+        return ctx.TrainingActivities.Find( taId );
+      }
     }
   }
 }

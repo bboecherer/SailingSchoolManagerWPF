@@ -31,7 +31,7 @@
             </Button>
             <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
                     Style="{DynamicResource MetroCircleButtonStyle}"
-                    Command="{Binding AddAndNextCommand}"
+                    Command="{Binding AddAndNextCommand}" 
                     IsEnabled="{Binding IsButtonEnabled}">
                 <Button.ToolTip>
                     <ToolTip>

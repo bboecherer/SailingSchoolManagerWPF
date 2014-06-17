@@ -12,17 +12,49 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SealingSchoolWPF.Pages.Invoicing.Workflows;
+using SealingSchoolWPF.ViewModel.Invoicing;
 
 namespace SealingSchoolWPF.Pages
 {
-    /// <summary>
-    /// Interaction logic for Invoices.xaml
-    /// </summary>
-    public partial class Invoices : UserControl
+  /// <summary>
+  /// Interaction logic for Invoices.xaml
+  /// </summary>
+  public partial class Invoices : UserControl
+  {
+    public Invoices()
     {
-        public Invoices()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
+      BindViewModel();
     }
+
+    public void BindViewModel()
+    {
+      this.DataContext = null;
+      var viewModel = CreateInvoiceViewModel.Instance;
+      this.DataContext = viewModel;
+    }
+
+    private void Button_Click( object sender, RoutedEventArgs e )
+    {
+      CreateInvoiceWF window = new CreateInvoiceWF();
+      window.ShowDialog();
+    }
+
+    private void Button_Click_1( object sender, RoutedEventArgs e )
+    {
+      CreateMultipleInvoiceWF window = new CreateMultipleInvoiceWF();
+      window.ShowDialog();
+    }
+
+    private void Button_Click_2( object sender, RoutedEventArgs e )
+    {
+      BindViewModel();
+    }
+
+    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+    {
+
+    }
+  }
 }

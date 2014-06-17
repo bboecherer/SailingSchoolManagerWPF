@@ -1,0 +1,19 @@
+﻿<mui:ModernWindow x:Class="SealingSchoolWPF.Pages.Invoicing.Workflows.CreateMultipleInvoiceWF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+        Title="{x:Static resx:Resource.Invoices}" IsTitleVisible="True"
+        ContentSource="/Pages/Invoicing/Workflows/CreateInvoicePage1.xaml"
+        Height="500" Width="500" Closing="ModernWindow_Closing"
+      >
+    <mui:ModernWindow.MenuLinkGroups >
+        <mui:LinkGroup DisplayName="Rechnung erstellen">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="{x:Static resx:Resource.SelectCourse}" Source="/Pages/Invoicing/Workflows/CreateMultipleInvoicePage1.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.SelectStudent}" Source="/Pages/Invoicing/Workflows/CreateMultipleInvoicePage2.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Summary}" Source="/Pages/Invoicing/Workflows/CreateMultipleInvoicePage3.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

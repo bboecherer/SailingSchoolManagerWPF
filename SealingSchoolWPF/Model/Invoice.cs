@@ -1,41 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class Invoice
-    {
-        public int Id { get; set; }
-        public Boolean Printed { get; set; }
+  public class Invoice : SealingSchoolObject
+  {
+    [Key]
+    public virtual int InvoiceId { get; set; }
+    public virtual Boolean Printed { get; set; }
+    public virtual DateTime PaymentTargetDate { get; set; }
+    public virtual DateTime PaidDate { get; set; }
+    public virtual Decimal NetPrice { get; set; }
+    public virtual Decimal GrossPrice { get; set; }
+    public virtual Decimal GrossPricePaid { get; set; }
+    public virtual Decimal VatAmount { get; set; }
+    public virtual Double Vat { get; set; }
+    public virtual Decimal SumTotalPrice { get; set; }
+    public virtual Currency Currency { get; set; }
+    public virtual Adress InvoiceAdress { get; set; }
+    public virtual InvoiceStatus InvoiceStatus { get; set; }
+    public virtual PaymentStatus PaymentStatus { get; set; }
+    public virtual IList<InvoiceItem> InvoiceItems { get; set; }
 
-        public DateTime PaymentTargetDate { get; set; }
-        public DateTime PaidDate { get; set; }
-        public Decimal NetPrice { get; set; }
-        public Decimal GrossPrice { get; set; }
-        public Decimal GrossPricePaid { get; set; }
-        public Decimal VatAmount { get; set; }
-        public Double Vat { get; set; }
-        public Decimal SumTotalPrice { get; set; }
-        public Currency Currency { get; set; }
-        public SortedSet<InvoiceItem> Items = new SortedSet<InvoiceItem>();
-        public Adress InvoiceAdress { get; set; }
-        
 
-        public InvoiceStatus InvoiceStatus = InvoiceStatus.RECHNUNG;
-
-
-        public PaymentStatus PaymentStatus = PaymentStatus.NICHT_GEZAHLT;
-        
-        public void SetItems( SortedSet<InvoiceItem> Items ) {
-            this.Items = Items;
-        }
-        
-        public SortedSet<InvoiceItem> GetItems() {  
-            return this.Items; 
-        }
-
-    }
+  }
 }

@@ -1,0 +1,51 @@
+﻿using FirstFloor.ModernUI.Windows.Controls;
+using SealingSchoolWPF.ViewModel.Boat;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace SealingSchoolWPF.Pages.Boat.Update
+{
+    /// <summary>
+    /// Interaction logic for UpdateMaterial.xaml
+    /// </summary>
+    public partial class UpdateBoat : ModernWindow
+    {
+        UpdateBoatViewModel viewModel;
+
+        public UpdateBoat(BoatViewModel material)
+        {
+            InitializeComponent();
+            viewModel = new UpdateBoatViewModel(GetBoatDataFromModel(material));
+            this.DataContext = viewModel;
+        }
+
+
+        private Model.Boat GetBoatDataFromModel(BoatViewModel boat)
+        {
+
+            Model.Boat newBoat = new Model.Boat();
+            newBoat.BoatID = Convert.ToInt32(boat.BoatID);
+            newBoat.MaterialStatus = boat.MaterialStatus;
+            newBoat.Name = boat.Name;
+            newBoat.Price = boat.Price;
+            
+            return newBoat;
+        }
+        private void ModernWindow_Closed(object sender, EventArgs e)
+        {
+            viewModel.Close();
+        }
+    }
+}

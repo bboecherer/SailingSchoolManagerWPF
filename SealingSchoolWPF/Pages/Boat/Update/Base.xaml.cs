@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SealingSchoolWPF.ViewModel.Boat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Workflows
+namespace SealingSchoolWPF.Pages.Boat.Update
 {
     /// <summary>
-    /// Interaction logic for CreateTAPage2.xaml
+    /// Interaction logic for UpdateMaterial.xaml
     /// </summary>
-    public partial class CreateInvoicePage2 : UserControl
+    public partial class Base : UserControl
     {
-        public CreateInvoicePage2()
+        public Base()
         {
             InitializeComponent();
+            var viewModel = UpdateBoatViewModel.Instance;
+            this.DataContext = viewModel;
         }
     }
 }

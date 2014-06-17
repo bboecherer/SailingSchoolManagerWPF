@@ -12,20 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FirstFloor.ModernUI.Windows.Controls;
 using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Create
 {
-    /// <summary>
-    /// Interaction logic for CreateNewStudent.xaml
-    /// </summary>
-    public partial class Base : UserControl
+  /// <summary>
+  /// Interaction logic for CreateNewStudent.xaml
+  /// </summary>
+  public partial class Base : UserControl
+  {
+    public Base()
     {
-        public Base()
-        {
-            InitializeComponent();
-            var viewModel = CreateCourseViewModel.Instance;
-            this.DataContext = viewModel;
-        }
+      InitializeComponent();
+      var viewModel = CreateCourseViewModel.Instance;
+      this.DataContext = viewModel;
     }
+
+    public override void OnApplyTemplate()
+    {
+      base.OnApplyTemplate();
+
+      var frame = (ModernFrame) GetTemplateChild( "ContentFrame" );
+
+    }
+
+  }
 }

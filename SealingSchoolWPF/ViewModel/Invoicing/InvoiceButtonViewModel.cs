@@ -10,27 +10,48 @@ using System.Windows.Input;
 
 namespace SealingSchoolWPF.ViewModel.Invoicing
 {
-    class InvoiceButtonViewModel : ViewModel
+  class InvoiceButtonViewModel : ViewModel
+  {
+    #region commands
+    private ICommand addCommand;
+    public ICommand AddCommand
     {
-        #region commands
-        private ICommand addCommand;
-        public ICommand AddCommand
+      get
+      {
+        if ( addCommand == null )
         {
-            get
-            {
-                if (addCommand == null)
-                {
-                    addCommand = new RelayCommand(p => ExecuteAddCommand());
-                }
-                return addCommand;
-            }
+          addCommand = new RelayCommand( p => ExecuteAddCommand() );
         }
-
-        private void ExecuteAddCommand()
-        {
-            CreateInvoiceWF window = new CreateInvoiceWF();
-            window.ShowDialog();
-        }
-        #endregion
+        return addCommand;
+      }
     }
+
+    private void ExecuteAddCommand()
+    {
+      CreateInvoiceWF window = new CreateInvoiceWF();
+      window.ShowDialog();
+    }
+
+    private ICommand addMultipleCommand;
+    public ICommand AddMultipleCommand
+    {
+      get
+      {
+        if ( addMultipleCommand == null )
+        {
+          addMultipleCommand = new RelayCommand( p => ExecuteAddMultipleCommand() );
+        }
+        return addMultipleCommand;
+      }
+    }
+
+    private void ExecuteAddMultipleCommand()
+    {
+      CreateMultipleInvoiceWF window = new CreateMultipleInvoiceWF();
+      window.ShowDialog();
+    }
+
+
+    #endregion
+  }
 }
