@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Boats}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False" 

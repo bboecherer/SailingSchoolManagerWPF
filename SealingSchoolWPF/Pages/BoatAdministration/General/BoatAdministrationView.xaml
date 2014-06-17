@@ -15,7 +15,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="600" />
         </Grid.RowDefinitions>
         <Grid>
             <StackPanel Orientation="Horizontal">
@@ -40,10 +40,8 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <ScrollViewer Grid.Row="1">
-            <StackPanel MinWidth="200"  >
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                 <View:BoatAdministrationListView x:Name="boatAdministrationList"/>
-            </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>
