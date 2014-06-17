@@ -585,4 +585,7 @@
   <data name="PaymentTargetDate" xml:space="preserve">
     <value>Zahlungszieldatum</value>
   </data>
+  <data name="Boat" xml:space="preserve">
+    <value>Boot</value>
+  </data>
 </root>

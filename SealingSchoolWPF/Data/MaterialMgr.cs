@@ -129,16 +129,16 @@ namespace SealingSchoolWPF.Data
                     entity.BoatTyps.Add(q);
                 }
 
-
+                if (entity.MaterialTyp != null)
+                {
+                    ctx.Entry(original.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                }
                 if (original != null)
                 {
                     try
                     {
                         ctx.Entry(original).State = EntityState.Modified;
-                        if (entity.MaterialTyp != null)
-                        {
-                            ctx.Entry(original.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
-                        }
+                        
                         ctx.ChangeTracker.DetectChanges();
                         ctx.SaveChanges();
                     }
@@ -171,6 +171,10 @@ namespace SealingSchoolWPF.Data
                 {
                     foreach (BoatTyp q in material.BoatTyps)
                         ctx.BoatTyps.Attach(q);
+                }
+                if (material.MaterialTyp != null)
+                {
+                    ctx.MaterialTyps.Attach(material.MaterialTyp);
                 }
             }
             return material;
