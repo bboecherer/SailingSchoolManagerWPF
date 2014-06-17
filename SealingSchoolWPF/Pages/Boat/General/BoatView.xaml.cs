@@ -31,15 +31,29 @@ namespace SealingSchoolWPF.Pages.Boat.General
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = new BoatListViewModel();
-            boatList.DataContext = null;
-            boatList.DataContext = viewModel;
+            BindDataContext();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             CreateBoat window = new CreateBoat();
             window.ShowDialog();
+        }
+        private void BindDataContext()
+        {
+            var viewModel = new BoatListViewModel();
+            boatList.DataContext = null;
+            boatList.DataContext = viewModel;
+        }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            BindDataContext();
+        }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BindDataContext();
         }
     }
 }
