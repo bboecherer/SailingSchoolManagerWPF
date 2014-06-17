@@ -493,6 +493,27 @@
     <Compile Include="Pages\Courses\Workflows\CreateTrainingActivitiesWF.xaml.cs">
       <DependentUpon>CreateTrainingActivitiesWF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BoatAdministration\Administration\AdministrateBoat.xaml.cs">
+      <DependentUpon>AdministrateBoat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoatAdministration\Administration\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoatAdministration\Administration\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoatAdministration\Administration\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoatAdministration\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoatAdministration\General\BoatAdministrationListView.xaml.cs">
+      <DependentUpon>BoatAdministrationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BoatAdministration\General\BoatAdministrationView.xaml.cs">
+      <DependentUpon>BoatAdministrationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MaterialAdministration\Administration\Base.xaml.cs">
       <DependentUpon>Base.xaml</DependentUpon>
     </Compile>
@@ -662,6 +683,10 @@
     <Compile Include="ViewModel\Invoicing\CreateInvoiceViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\InvoiceButtonViewModel.cs" />
     <Compile Include="ViewModel\Invoicing\CreditNoteButtonViewModel.cs" />
+    <Compile Include="ViewModel\BoatAdministration\BoatAdministrationButtonViewModel.cs" />
+    <Compile Include="ViewModel\BoatAdministration\BoatAdministrationListViewModel.cs" />
+    <Compile Include="ViewModel\BoatAdministration\BoatAdministrationViewModel.cs" />
+    <Compile Include="ViewModel\BoatAdministration\UpdateBoatAdministrationViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationButtonViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationListViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationViewModel.cs" />
@@ -1231,6 +1256,34 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\Workflows\CreateTrainingActivitiesWF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\Administration\AdministrateBoat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\Administration\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\Administration\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\Administration\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\General\BoatAdministrationListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BoatAdministration\General\BoatAdministrationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
