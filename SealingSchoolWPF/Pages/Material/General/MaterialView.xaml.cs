@@ -31,15 +31,30 @@ namespace SealingSchoolWPF.Pages.Material.General
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = new MaterialListViewModel();
-            materialList.DataContext = null;
-            materialList.DataContext = viewModel;
+            BindDataContext();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             CreateMaterial window = new CreateMaterial();
             window.ShowDialog();
+        }
+
+        private void BindDataContext()
+        {
+            var viewModel = new MaterialListViewModel();
+            materialList.DataContext = null;
+            materialList.DataContext = viewModel;
+        }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            BindDataContext();
+        }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BindDataContext();
         }
     }
 }

@@ -42,9 +42,10 @@
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
 
-        <mui:LinkGroup DisplayName="{x:Static resx:Resource.MaterialAdministration}">
+        <mui:LinkGroup DisplayName="{x:Static resx:Resource.Repair}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="{x:Static resx:Resource.Overview}" Source="/Pages/MaterialAdministration/General/MaterialAdministrationView.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Material}" Source="/Pages/MaterialAdministration/General/MaterialAdministrationView.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Boat}" Source="/Pages/BoatAdministration/General/BoatAdministrationView.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         

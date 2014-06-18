@@ -69,7 +69,53 @@ namespace SealingSchoolWPF.Data
 
         public void Update(Boat entity)
         {
-            throw new NotImplementedException();
+            using (var ctx = new SchoolDataContext())
+            {
+                Boat original = ctx.Boats.Find(entity.BoatID);
+                ctx.Entry(original).Reference(s => s.BoatTyp).Load();
+
+                original.Name = entity.Name;
+                original.MaterialStatus = entity.MaterialStatus;
+                original.Price = entity.Price;
+                original.RepairAction = entity.RepairAction;
+                original.Brand = entity.Brand;
+                original.Currency = entity.Currency;
+                original.AdditionalInfo = entity.AdditionalInfo;
+                original.SerialNumber = entity.SerialNumber;
+                original.CreatedOn = entity.CreatedOn;
+                original.ModifiedOn = DateTime.Now;
+                original.BoatTyp = entity.BoatTyp;
+
+
+                if (entity.BoatTyp != null)
+                {
+                    ctx.Entry(original.BoatTyp).State = System.Data.Entity.EntityState.Unchanged;
+                }
+                if (original != null)
+                {
+                    try
+                    {
+                        ctx.Entry(original).State = EntityState.Modified;
+
+                        ctx.ChangeTracker.DetectChanges();
+                        ctx.SaveChanges();
+                    }
+                    catch (DbEntityValidationException ex)
+                    {
+                        List<string> errorMessages = new List<string>();
+                        foreach (DbEntityValidationResult validationResult in ex.EntityValidationErrors)
+                        {
+                            string entityName = validationResult.Entry.Entity.GetType().Name;
+                            foreach (DbValidationError error in validationResult.ValidationErrors)
+                            {
+                                errorMessages.Add(entityName + "." + error.PropertyName + ": " + error.ErrorMessage);
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    { }
+                }
+            }
         }
 
         public Boat GetById(int id)

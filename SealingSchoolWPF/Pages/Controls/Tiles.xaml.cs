@@ -34,5 +34,30 @@ namespace SealingSchoolWPF.Pages.Controls
       var viewModel = new LiveTilesViewModel();
       this.DataContext = viewModel;
     }
+
+    private void Tile_Click( object sender, RoutedEventArgs e )
+    {
+      //Courses
+    }
+
+    private void Tile_Click_1( object sender, RoutedEventArgs e )
+    {
+      //Invoices
+    }
+
+    private void Tile_Click_2( object sender, RoutedEventArgs e )
+    {
+      //Students
+    }
+
+    private void Tile_Click_3( object sender, RoutedEventArgs e )
+    {
+      //CreditNote
+    }
+
+    private void Tile_Click_4( object sender, RoutedEventArgs e )
+    {
+      //Instructor
+    }
   }
 }

@@ -8,12 +8,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             IsVisibleChanged="UserControl_IsVisibleChanged" MouseEnter="UserControl_MouseEnter">
     <Grid Style="{StaticResource ContentRoot}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
         <Grid>
             <StackPanel Orientation="Horizontal">
@@ -57,10 +58,8 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <ScrollViewer Grid.Row="1">
-            <StackPanel MinWidth="200"  >
-                <View:BoatListView x:Name="boatList"/>
-            </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <View:BoatListView x:Name="boatList"/>
         </ScrollViewer>
     </Grid>
 </UserControl>

@@ -336,9 +336,6 @@
   <data name="Brand" xml:space="preserve">
     <value>Marke</value>
   </data>
-  <data name="MaterialAdministration" xml:space="preserve">
-    <value>Materialverwaltung</value>
-  </data>
   <data name="MaterialStatus" xml:space="preserve">
     <value>Materialstatus</value>
   </data>
@@ -587,5 +584,8 @@
   </data>
   <data name="Boat" xml:space="preserve">
     <value>Boot</value>
+  </data>
+  <data name="Repair" xml:space="preserve">
+    <value>Reparatur</value>
   </data>
 </root>

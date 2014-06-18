@@ -1,0 +1,21 @@
+﻿<mui:ModernWindow x:Class="SealingSchoolWPF.Pages.BoatAdministration.Administration.AdministrateBoat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+        Title="Material" IsTitleVisible="True"
+       ContentSource="/Pages/BoatAdministration/Administration/Base.xaml"
+       Height="550" Width="500" Closed="ModernWindow_Closed"
+      >
+
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="{x:Static resx:Resource.Update_ToolTip_Desc}">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/BoatAdministration/Administration/Base.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/BoatAdministration/Administration/Notes.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/BoatAdministration/Administration/Documents.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+
+</mui:ModernWindow>

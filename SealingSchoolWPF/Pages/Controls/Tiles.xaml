@@ -21,34 +21,40 @@
                     TiltFactor="1"
                     Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
-                    Count="{Binding CourseCount}" Grid.Column="0" Grid.Row="0">
+                    Count="{Binding CourseCount}" Grid.Column="0" Grid.Row="0"
+                    Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Courses/General/Course.xaml">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.Invoices}" 
                     TiltFactor="2" 
                     Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
-                    Count="{Binding InvoiceCount}" Grid.Column="0" Grid.Row="2">
+                    Count="{Binding InvoiceCount}" Grid.Column="0" Grid.Row="2"
+                    Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Invoicing/General/Invoices.xaml">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.Students}" 
                     TiltFactor="3"
                     Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
-                    Count="{Binding StudentCount}" Grid.Column="1" Grid.Row="0">
+                    Count="{Binding StudentCount}" Grid.Column="1" Grid.Row="0"
+                    Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Student/General/StudentView.xaml">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.CreditNote}" 
                     TiltFactor="2" Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
-                    Count="{Binding CreditNoteCount}" Grid.Column="1" Grid.Row="2">
+                    Count="{Binding CreditNoteCount}" Grid.Column="1" Grid.Row="2"
+                    Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Invoicing/General/CreditNotes.xaml">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.Instructor}" 
                     TiltFactor="2" Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
-                    Count="{Binding InstructorCount}" Grid.Column="2" Grid.Row="0">
+                    Count="{Binding InstructorCount}" Grid.Column="2" Grid.Row="0"
+                    Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Instructor/General/Instructors.xaml">
         </ModernControls:Tile>
         <ModernControls:Tile Title="{x:Static resx:Resource.TrainingActivity}" 
                     TiltFactor="2" Background="{Binding BackgroundColor}"
                     Width="120" Height="120" 
-                    Count="{Binding TaCount}" Grid.Column="2" Grid.Row="2">
+                    Count="{Binding TaCount}" Grid.Column="2" Grid.Row="2"
+                    Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Courses/TrainingActivities/TrainingsActivities.xaml">
         </ModernControls:Tile>
     </Grid>
 </UserControl>
