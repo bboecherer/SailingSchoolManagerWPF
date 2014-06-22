@@ -32,8 +32,6 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
         }
 
 
-        private BoatMgr boatMgr = new BoatMgr();
-
         private ObservableCollection<BoatAdministrationViewModel> boats;
 
         public ObservableCollection<BoatAdministrationViewModel> Boats
@@ -61,9 +59,9 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
         {
             IList<SealingSchoolWPF.Model.Boat> boat = boatMgr.GetAll();
             boats = new ObservableCollection<BoatAdministrationViewModel>(boat.Select(p => new BoatAdministrationViewModel(p)));
-            
+
         }
 
-        
+
     }
 }

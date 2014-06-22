@@ -17,8 +17,6 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
     public class UpdateMaterialAdministrationViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {
         public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
-        MaterialMgr matMgr = new MaterialMgr();
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
 
         public UpdateMaterialAdministrationViewModel(SealingSchoolWPF.Model.Material model)
             : base(model)
@@ -189,7 +187,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
             set
             {
                 MaterialDummy.MaterialTyp = value;
-                this.OnPropertyChanged("MaterialType");
+                this.OnPropertyChanged("MaterialTyp");
             }
         }
         public string Notes

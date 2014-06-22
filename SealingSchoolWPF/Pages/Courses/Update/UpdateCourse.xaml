@@ -15,6 +15,7 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Pricing}" Source="/Pages/Courses/Update/Financial.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Rating}" Source="/Pages/Courses/Update/Rating.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Qualification}" Source="/Pages/Courses/Update/Qualification.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Material}" Source="/Pages/Courses/Update/Material.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Courses/Update/Notes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Courses/Update/Documents.xaml" />
             </mui:LinkGroup.Links>

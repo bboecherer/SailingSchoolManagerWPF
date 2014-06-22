@@ -72,7 +72,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-      
+
 
         private int _duration;
         public int Duration
@@ -338,6 +338,102 @@ namespace SealingSchoolWPF.ViewModel.Course
                 }
             }
         }
+
+        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        {
+            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            foreach (Model.MaterialTyp matTyp in matTypMgr.GetAll())
+            {
+                MaterialTypNames.Add(matTyp);
+            }
+            return MaterialTypNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.MaterialTyp> MaterialTypValues
+        {
+            get
+            {
+                return GetMaterialTypNames();
+            }
+        }
+
+        private ObservableCollection<CourseMaterialTypViewModel> _courseMaterialTyps;
+        public ObservableCollection<CourseMaterialTypViewModel> CourseMaterialTyps
+        {
+            get
+            {
+                return _courseMaterialTyps;
+            }
+            set
+            {
+                _courseMaterialTyps = value;
+                this.OnPropertyChanged("CourseMaterialTyps");
+            }
+        }
+
+        private MaterialTyp _materialTyp;
+        public MaterialTyp MaterialType
+        {
+            get
+            {
+                return _materialTyp;
+            }
+            set
+            {
+                _materialTyp = value;
+                this.OnPropertyChanged("MaterialType");
+            }
+        }
+
+        private int _matAmount;
+        public int MatAmount
+        {
+            get
+            {
+                return _matAmount;
+            }
+            set
+            {
+                _matAmount = value;
+                this.OnPropertyChanged("MatAmount");
+            }
+        }
+
+        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        {
+            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
+            {
+                BoatTypNames.Add(boatTyp);
+            }
+            return BoatTypNames;
+        }
+
+        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
+        {
+            get
+            {
+                return GetBoatTypNames();
+            }
+        }
+
+        private SealingSchoolWPF.Model.BoatTyp _boatTyp;
+        public SealingSchoolWPF.Model.BoatTyp BoatTyp
+        {
+            get
+            {
+                return _boatTyp;
+            }
+            set
+            {
+                _boatTyp = value;
+                this.OnPropertyChanged("BoatTyp");
+            }
+        }
         #endregion
 
         #region commands
@@ -400,10 +496,17 @@ namespace SealingSchoolWPF.ViewModel.Course
             this.Instructor = null;
             this.Notes = null;
             this.NeededInstructors = 0;
+            this.BoatTyp = null;
 
             if (this.qualifications != null)
             {
                 this.qualifications.Clear();
+            }
+
+            this.MaterialType = null;
+            if (this._courseMaterialTyps != null)
+            {
+                this._courseMaterialTyps.Clear();
             }
 
             this.dummy.Clear();
@@ -413,6 +516,12 @@ namespace SealingSchoolWPF.ViewModel.Course
         public void ExecuteDeleteCommand(QualificationViewModel quali)
         {
             this.dummy.Remove(quali);
+            this.ReBindDataGrid();
+        }
+
+        public void ExecuteMatDeleteCommand(CourseMaterialTypViewModel couseMatTyp)
+        {
+            this.matTypDummy.Remove(couseMatTyp);
             this.ReBindDataGrid();
         }
 
@@ -457,6 +566,42 @@ namespace SealingSchoolWPF.ViewModel.Course
 
             this.ReBindDataGrid();
         }
+
+        private ICommand addMatTypCommand;
+        public ICommand AddMatTypCommand
+        {
+            get
+            {
+                if (addMatTypCommand == null)
+                {
+                    addMatTypCommand = new RelayCommand(p => ExecuteAddMatTypCommand());
+                }
+                return addMatTypCommand;
+            }
+        }
+
+        private void ExecuteAddMatTypCommand()
+        {
+            CourseMaterialTypViewModel model = new CourseMaterialTypViewModel(new CourseMaterialTyp());
+
+            model.MaterialTyp = this.MaterialType;
+            model.MatAmount = this.MatAmount;
+
+
+            if (this.matTypDummy == null)
+            {
+                this.matTypDummy = new List<CourseMaterialTypViewModel>();
+            }
+
+            foreach (CourseMaterialTypViewModel m in matTypDummy)
+            {
+                if (m.Name == model.Name)
+                    return;
+            }
+            this.matTypDummy.Add(model);
+            this.ReBindDataGrid();
+
+        }
         #endregion
 
         #region helpers
@@ -482,6 +627,24 @@ namespace SealingSchoolWPF.ViewModel.Course
             return qualiList;
         }
 
+        private List<CourseMaterialTypViewModel> matTypDummy = new List<CourseMaterialTypViewModel>();
+
+        private IList<SealingSchoolWPF.Model.CourseMaterialTyp> prepareMaterialTyps(IList<CourseMaterialTypViewModel> list)
+        {
+            IList<SealingSchoolWPF.Model.CourseMaterialTyp> matTypList = new List<SealingSchoolWPF.Model.CourseMaterialTyp>();
+
+            foreach (CourseMaterialTypViewModel m in list)
+            {
+                SealingSchoolWPF.Model.CourseMaterialTyp matTyp = new Model.CourseMaterialTyp();
+                matTyp.Id = m.Id;
+                matTyp.MaterialTyp = m.MaterialTyp;
+                matTyp.Amount = m.MatAmount;
+                matTypList.Add(matTyp);
+            }
+
+            return matTypList;
+        }
+
         private void SaveModelToDatabase()
         {
             Model.Label = this.Label;
@@ -495,6 +658,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
             Model.NeededInstructors = this.NeededInstructors;
+            Model.BoatTyp = this.BoatTyp;
 
             if (Model.Qualifications == null)
             {
@@ -505,6 +669,18 @@ namespace SealingSchoolWPF.ViewModel.Course
             {
                 Model.Qualifications.Add(q);
             }
+
+            if (Model.CourseMaterialTyps == null)
+            {
+                Model.CourseMaterialTyps = new List<Model.CourseMaterialTyp>();
+            }
+
+            foreach (SealingSchoolWPF.Model.CourseMaterialTyp m in prepareMaterialTyps(matTypDummy))
+            {
+                Model.CourseMaterialTyps.Add(m);
+            }
+
+
 
             courseMgr.Create(Model);
         }
@@ -528,7 +704,15 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
 
             Qualifications = new ObservableCollection<QualificationViewModel>(dummy);
+
+            if (this._courseMaterialTyps != null)
+            {
+                this._courseMaterialTyps.Clear();
+            }
+
+            CourseMaterialTyps = new ObservableCollection<CourseMaterialTypViewModel>(matTypDummy);
         }
+
         #endregion
     }
 }

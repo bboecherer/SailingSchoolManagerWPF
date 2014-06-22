@@ -16,8 +16,6 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
         {
         }
 
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
-
         public string Id
         {
             get
@@ -134,17 +132,17 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
                 return GetMaterialTypNames();
             }
         }
-       
-        private MaterialTyp _materialTyp;
+
+
         public MaterialTyp MaterialTyp
         {
             get
             {
-                return _materialTyp;
+                return Model.MaterialTyp;
             }
             set
             {
-                _materialTyp = value;
+                Model.MaterialTyp = value;
                 this.OnPropertyChanged("MaterialTyp");
             }
         }

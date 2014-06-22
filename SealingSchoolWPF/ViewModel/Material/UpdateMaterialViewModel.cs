@@ -13,10 +13,7 @@ namespace SealingSchoolWPF.ViewModel.Material
     public class UpdateMaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
     {
         public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
-        MaterialMgr matMgr = new MaterialMgr();
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
-        BoatTypMgr boatTypMgr = new BoatTypMgr();
-
+        
         public UpdateMaterialViewModel(SealingSchoolWPF.Model.Material model)
             : base(model)
         {

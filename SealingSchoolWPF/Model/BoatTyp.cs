@@ -10,10 +10,10 @@ namespace SealingSchoolWPF.Model
     public class BoatTyp : SealingSchoolObject
     {
         [Key]
-        public int BoatTypID { get; set; }
-        public string Name { get; set; }
-        public int CrewAmount { get; set; }
-        public String Description { get; set; }
+        public virtual int BoatTypID { get; set; }
+        public virtual string Name { get; set; }
+        public virtual int CrewAmount { get; set; }
+        public virtual String Description { get; set; }
 
         public virtual ICollection<Material> Material { get; set; }
 

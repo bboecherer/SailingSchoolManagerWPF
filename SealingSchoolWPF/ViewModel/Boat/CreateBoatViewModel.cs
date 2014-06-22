@@ -37,10 +37,6 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        BoatMgr boatMgr = new BoatMgr();
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
-        BoatTypMgr boatTypMgr = new BoatTypMgr();
-
         private string _name;
         public string Name
         {
@@ -169,7 +165,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        
+
 
         private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
@@ -302,8 +298,8 @@ namespace SealingSchoolWPF.ViewModel.Boat
             Application.Current.Windows[1].Close();
         }
 
-        
-       
+
+
 
         private void SaveModelToDatabase()
         {
@@ -321,7 +317,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
             Model.CreatedOn = DateTime.Now;
             Model.ModifiedOn = DateTime.Now;
 
-            
+
             boatMgr.Create(Model);
         }
 
@@ -353,7 +349,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
 
         }
 
-       
+
 
         public void Close()
         {

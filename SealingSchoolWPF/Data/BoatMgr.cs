@@ -22,7 +22,6 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (Boat i in ctx.Boats)
                 {
-                    ctx.Entry(i).Reference(s => s.BoatTyp).Load();
                     if (i.BoatTyp != null)
                     {
                         ctx.BoatTyps.Attach(i.BoatTyp);
@@ -49,6 +48,13 @@ namespace SealingSchoolWPF.Data
             {
                 try
                 {
+                    if (entity.BoatTyp != null)
+                    {
+                        BoatTyp bt = ctx.BoatTyps.Find(entity.BoatTyp.BoatTypID);
+                        ctx.BoatTyps.Attach(bt);
+                        ctx.Entry(bt).State = EntityState.Unchanged;
+                        entity.BoatTyp = bt;
+                    }
                     ctx.Boats.Add(entity);
                     ctx.SaveChanges();
                 }
@@ -72,8 +78,6 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 Boat original = ctx.Boats.Find(entity.BoatID);
-                ctx.Entry(original).Reference(s => s.BoatTyp).Load();
-
                 original.Name = entity.Name;
                 original.MaterialStatus = entity.MaterialStatus;
                 original.Price = entity.Price;
@@ -84,12 +88,14 @@ namespace SealingSchoolWPF.Data
                 original.SerialNumber = entity.SerialNumber;
                 original.CreatedOn = entity.CreatedOn;
                 original.ModifiedOn = DateTime.Now;
-                original.BoatTyp = entity.BoatTyp;
-
 
                 if (entity.BoatTyp != null)
                 {
-                    ctx.Entry(original.BoatTyp).State = System.Data.Entity.EntityState.Unchanged;
+                    BoatTyp bt = ctx.BoatTyps.Find(entity.BoatTyp.BoatTypID);
+                    ctx.BoatTyps.Attach(bt);
+                    ctx.Entry(bt).State = EntityState.Unchanged;
+                    entity.BoatTyp = bt;
+                    original.BoatTyp = bt;
                 }
                 if (original != null)
                 {

@@ -17,9 +17,7 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
     public class UpdateBoatAdministrationViewModel : ViewModel<SealingSchoolWPF.Model.Boat>
     {
         public SealingSchoolWPF.Model.Boat BoatDummy { get; set; }
-        BoatMgr boatMgr = new BoatMgr();
-        BoatTypMgr boatTypMgr = new BoatTypMgr();
-
+        
         public UpdateBoatAdministrationViewModel(SealingSchoolWPF.Model.Boat model)
             : base(model)
         {

@@ -32,8 +32,6 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
         }
 
 
-        private MaterialMgr matMgr = new MaterialMgr();
-
         private ObservableCollection<MaterialAdministrationViewModel> materials;
 
         public ObservableCollection<MaterialAdministrationViewModel> Materials
@@ -63,6 +61,6 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
             materials = new ObservableCollection<MaterialAdministrationViewModel>(mats.Select(p => new MaterialAdministrationViewModel(p)));
         }
 
-        
+
     }
 }

@@ -38,7 +38,7 @@
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Brand}" IsEnabled="False" IsReadOnly="True"/>
                     <TextBox ModernControls:TextboxHelper.ClearTextButton="True" Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding SerialNumber}" IsEnabled="False" IsReadOnly="True"/>
                     <ComboBox Grid.Column="1" Grid.Row="3" Margin="3"
-                		SelectedItem="{Binding MaterialType}" ItemsSource="{Binding MaterialTypeTypeValues}" IsEnabled="False" IsReadOnly="True"/>
+                		SelectedItem="{Binding MaterialTyp}" ItemsSource="{Binding MaterialTypTypeValues}" IsEnabled="False" IsReadOnly="True"/>
                     <ComboBox Grid.Column="1" Grid.Row="4" Margin="3"
                 		SelectedItem="{Binding MaterialStatus}" ItemsSource="{Binding MaterialStatusTypeValues}"/>
                     <TextBox Grid.Column="1" Grid.Row="5" Margin="3" TextWrapping="Wrap"  

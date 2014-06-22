@@ -1,0 +1,127 @@
+﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  
+             x:Class="SealingSchoolWPF.Pages.Courses.Update.Material"
+             xmlns:Button="clr-namespace:SealingSchoolWPF.Pages.Courses.Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:ModernControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400">
+    <Grid >
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Material}"/>
+                <Label Grid.Row="1" Grid.Column="0" Margin="3" Content="{x:Static resx:Resource.Amount}"/>
+                <ComboBox Grid.Column="1" Grid.Row="0" Margin="3"
+                              SelectedValue="{Binding MaterialType}" ItemsSource="{Binding MaterialTypValues}" 
+                              IsEnabled="True" IsReadOnly="False"
+                              />
+                <ModernControls:NumericUpDown Grid.Column="1" Grid.Row="1" Margin="3" Minimum="0" StringFormat="N0" Grid.ColumnSpan="2"
+                                        Value="{Binding Path=MatAmount}" />
+                <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
+                       Style="{DynamicResource MetroCircleButtonStyle}"
+                       Command="{Binding AddMatTypCommand}" Grid.Row="4" Grid.Column="2">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Create_ToolTip}"/>
+                                <TextBlock Text="{x:Static resx:Resource.Create_ToolTip_Desc}"/>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <StackPanel Orientation="Vertical">
+                        <Rectangle Width="15" Height="15" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </StackPanel>
+                </Button>
+            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <DataGrid ItemsSource="{Binding CourseMaterialTyps}" SelectionMode="Extended" SelectionUnit="FullRow" 
+                 DataContext="{Binding}" AutoGenerateColumns="False" 
+                  IsReadOnly="True" CanUserDeleteRows="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{x:Static resx:Resource.QualiLong}" 
+                            Binding="{Binding Name}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                            <Setter Property="Width" Value="180" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Left" />
+                                            <Setter Property="Width" Value="180" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static resx:Resource.Amount}" 
+                            Binding="{Binding MatAmount}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Left" />
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                            <Setter Property="Width" Value="180" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextAlignment" Value="Left" />
+                                            <Setter Property="Width" Value="180" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTemplateColumn IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button x:Name="Buttontest" Background="Transparent" BorderThickness="0" Click="Buttontest_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        <StackPanel>
+                                                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Delete_ToolTip}"/>
+                                                            <TextBlock Text="{x:Static resx:Resource.Delete_ToolTip_Desc}"/>
+                                                        </StackPanel>
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                                <StackPanel>
+                                                    <Image Source="/Resources/Images/Offline_16xLG.png"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <Button:UpdateButtons HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+    </Grid>
+</UserControl>

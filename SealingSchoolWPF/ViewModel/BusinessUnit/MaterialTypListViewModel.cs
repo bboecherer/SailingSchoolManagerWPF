@@ -16,8 +16,6 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             BindDataGrid();
         }
 
-        private MaterialTypMgr matTypMgr = new MaterialTypMgr();
-
         static MaterialTypListViewModel instance = null;
         static readonly object padlock = new object();
 
@@ -78,7 +76,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             }
         }
 
-       
+
         public string Description
         {
             get

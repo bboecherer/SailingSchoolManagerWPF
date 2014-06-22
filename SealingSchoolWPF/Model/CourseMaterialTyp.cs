@@ -7,27 +7,21 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class MaterialTyp : SealingSchoolObject
+    public class CourseMaterialTyp : SealingSchoolObject
     {
         [Key]
         public virtual int Id { get; set; }
-        public virtual String Description { get; set; }
-        public virtual String Name { get; set; }
-        public virtual bool IsEnabled { get; set; }
+        public virtual MaterialTyp MaterialTyp { get; set; }
+        public virtual int Amount { get; set; }
 
-        public virtual ICollection<Course> CourseMaterialTyp { get; set; }
+        //public virtual ICollection<Course> CourseMatTyp { get; set; }
 
-
-        public override string ToString()
-        {
-            return Name;
-        }
 
         public override bool Equals(object obj)
         {
             try
             {
-                MaterialTyp materialTyp = (MaterialTyp)obj;
+                CourseMaterialTyp materialTyp = (CourseMaterialTyp)obj;
 
 
                 if (this.Id != materialTyp.Id)

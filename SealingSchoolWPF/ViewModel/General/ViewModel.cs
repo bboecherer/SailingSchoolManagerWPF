@@ -21,6 +21,10 @@ namespace SealingSchoolWPF.ViewModel
     public BlockedTimesMgr blockTimesMgr = new BlockedTimesMgr();
     public TrainingActivityMgr trainingActivityMgr = new TrainingActivityMgr();
     public InvoiceMgr invoiceMgr = new InvoiceMgr();
+    public MaterialTypMgr matTypMgr = new MaterialTypMgr();
+    public MaterialMgr matMgr = new MaterialMgr();
+    public BoatTypMgr boatTypMgr = new BoatTypMgr();
+    public BoatMgr boatMgr = new BoatMgr();
 
 
 

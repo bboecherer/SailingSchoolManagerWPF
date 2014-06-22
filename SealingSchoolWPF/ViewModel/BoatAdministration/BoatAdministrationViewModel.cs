@@ -16,8 +16,6 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
         {
         }
 
-        BoatTypMgr boatTypMgr = new BoatTypMgr();
-
         public string Id
         {
             get

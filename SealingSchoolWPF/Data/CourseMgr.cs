@@ -9,128 +9,163 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
-  public class CourseMgr : IPersistenceMgr<Course>
-  {
-    public IList<Course> Courses { get; set; }
-
-    public IList<Course> GetAll()
+    public class CourseMgr : IPersistenceMgr<Course>
     {
-      Courses = new List<Course>();
+        public IList<Course> Courses { get; set; }
 
-      using ( var ctx = new SchoolDataContext() )
-      {
-        foreach ( Course c in ctx.Courses )
+        public IList<Course> GetAll()
         {
-          if ( c.Qualifications != null )
-          {
-            foreach ( Qualification q in c.Qualifications )
-              ctx.Qualifications.Attach( q );
-          }
-          Courses.Add( c );
-        }
-      }
-      return Courses;
-    }
+            Courses = new List<Course>();
 
-    public void Delete( Course entity )
-    {
-      using ( var ctx = new SchoolDataContext() )
-      {
-        ctx.Courses.Remove( entity );
-        ctx.SaveChanges();
-      }
-    }
-
-    public void Create( Course entity )
-    {
-      using ( var ctx = new SchoolDataContext() )
-      {
-        try
-        {
-          List<Qualification> qualies = new List<Qualification>();
-
-          if ( entity.Qualifications != null )
-          {
-            foreach ( Qualification q in entity.Qualifications )
+            using (var ctx = new SchoolDataContext())
             {
-              Qualification dummy = ctx.Qualifications.Find( q.QualificationId );
-              ctx.Qualifications.Attach( dummy );
-              ctx.Entry( dummy ).State = EntityState.Unchanged;
-              qualies.Add( dummy );
-            }
+                foreach (Course c in ctx.Courses)
+                {
+                    if (c.Qualifications != null)
+                    {
+                        foreach (Qualification q in c.Qualifications)
+                            ctx.Qualifications.Attach(q);
+                    }
+                    if (c.CourseMaterialTyps != null)
+                    {
+                        foreach (CourseMaterialTyp q in c.CourseMaterialTyps)
+                        {
+                            ctx.CourseMaterialTyps.Attach(q);
+                            if (q.MaterialTyp != null)
+                            {
+                                ctx.MaterialTyps.Attach(q.MaterialTyp);
+                            }
+                        }
 
-            entity.Qualifications.Clear();
-            entity.Qualifications = qualies;
-          }
-          ctx.Courses.Add( entity );
-          ctx.SaveChanges();
+                    }
+                    Courses.Add(c);
+                }
+            }
+            return Courses;
         }
-        catch ( DbEntityValidationException ex )
+
+        public void Delete(Course entity)
         {
-          List<string> errorMessages = new List<string>();
-          foreach ( DbEntityValidationResult validationResult in ex.EntityValidationErrors )
-          {
-            string entityName = validationResult.Entry.Entity.GetType().Name;
-            foreach ( DbValidationError error in validationResult.ValidationErrors )
+            using (var ctx = new SchoolDataContext())
             {
-              errorMessages.Add( entityName + "." + error.PropertyName + ": " + error.ErrorMessage );
+                ctx.Courses.Remove(entity);
+                ctx.SaveChanges();
             }
-          }
         }
-        catch ( Exception ) { }
-      }
-    }
 
-    public void Update( Course entity )
-    {
-      using ( var ctx = new SchoolDataContext() )
-      {
-        List<Qualification> dummy = new List<Qualification>();
-
-        if ( entity.Qualifications != null )
+        public void Create(Course entity)
         {
-          foreach ( Qualification q in entity.Qualifications )
-          {
-            Qualification quali = ctx.Qualifications.Find( q.QualificationId );
-            ctx.Entry( quali ).State = EntityState.Unchanged;
-            dummy.Add( quali );
-          }
+            using (var ctx = new SchoolDataContext())
+            {
+                try
+                {
+                    List<Qualification> qualies = new List<Qualification>();
+
+                    if (entity.Qualifications != null)
+                    {
+                        foreach (Qualification q in entity.Qualifications)
+                        {
+                            Qualification dummy = ctx.Qualifications.Find(q.QualificationId);
+                            ctx.Qualifications.Attach(dummy);
+                            ctx.Entry(dummy).State = EntityState.Unchanged;
+                            qualies.Add(dummy);
+                        }
+
+                        entity.Qualifications.Clear();
+                        entity.Qualifications = qualies;
+                    }
+                    ctx.Courses.Add(entity);
+                    ctx.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    List<string> errorMessages = new List<string>();
+                    foreach (DbEntityValidationResult validationResult in ex.EntityValidationErrors)
+                    {
+                        string entityName = validationResult.Entry.Entity.GetType().Name;
+                        foreach (DbValidationError error in validationResult.ValidationErrors)
+                        {
+                            errorMessages.Add(entityName + "." + error.PropertyName + ": " + error.ErrorMessage);
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
         }
 
-        entity.Qualifications.Clear();
-
-        foreach ( Qualification q in dummy )
+        public void Update(Course entity)
         {
-          entity.Qualifications.Add( q );
+            using (var ctx = new SchoolDataContext())
+            {
+                List<Qualification> dummy = new List<Qualification>();
+
+                if (entity.Qualifications != null)
+                {
+                    foreach (Qualification q in entity.Qualifications)
+                    {
+                        Qualification quali = ctx.Qualifications.Find(q.QualificationId);
+                        ctx.Entry(quali).State = EntityState.Unchanged;
+                        dummy.Add(quali);
+                    }
+                }
+
+                entity.Qualifications.Clear();
+
+                foreach (Qualification q in dummy)
+                {
+                    entity.Qualifications.Add(q);
+                }
+
+                /*if (entity.CourseMaterialTyps != null)
+                {
+                    foreach (CourseMaterialTyp m in entity.CourseMaterialTyps)
+                    {
+                        CourseMaterialTyp matTyp = ctx.CourseMaterialTyps.Find(m.Id);
+                        if (matTyp != null)
+                        {
+                            ctx.Entry(matTyp).State = EntityState.Unchanged;
+                        }
+                    }
+                }*/
+
+                Course original = ctx.Courses.Find(entity.CourseId);
+                original.RatingValue = entity.RatingValue;
+
+                if (original != null)
+                {
+                    original.Qualifications.Clear();
+                    foreach (Qualification q in entity.Qualifications)
+                    {
+                        ctx.Qualifications.Attach(q);
+                        ctx.Entry(q).State = EntityState.Unchanged;
+                        original.Qualifications.Add(q);
+                    }
+
+                    /*original.CourseMaterialTyps.Clear();
+                    foreach (CourseMaterialTyp m in entity.CourseMaterialTyps)
+                    {
+                        ctx.CourseMaterialTyps.Add(m);
+                        if (m.Id > 0)
+                        {
+                            ctx.Entry(m).State = EntityState.Unchanged;
+                        }
+                        original.CourseMaterialTyps.Add(m);
+                    }*/
+                    ctx.Entry(original).CurrentValues.SetValues(entity);
+                    ctx.SaveChanges();
+                }
+            }
         }
 
-        Course original = ctx.Courses.Find( entity.CourseId );
-        original.RatingValue = entity.RatingValue;
-
-        if ( original != null )
+        public Course GetById(int id)
         {
-          original.Qualifications.Clear();
-          foreach ( Qualification q in entity.Qualifications )
-          {
-            ctx.Qualifications.Attach( q );
-            ctx.Entry( q ).State = EntityState.Unchanged;
-            original.Qualifications.Add( q );
-          }
-          ctx.Entry( original ).CurrentValues.SetValues( entity );
-          ctx.SaveChanges();
+            Course course;
+            using (var ctx = new SchoolDataContext())
+            {
+                course = (Course)ctx.Courses.Find(id);
+            }
+            return course;
         }
-      }
-    }
 
-    public Course GetById( int id )
-    {
-      Course course;
-      using ( var ctx = new SchoolDataContext() )
-      {
-        course = (Course) ctx.Courses.Find( id );
-      }
-      return course;
     }
-
-  }
 }

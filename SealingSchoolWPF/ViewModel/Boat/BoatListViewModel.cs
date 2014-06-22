@@ -33,8 +33,6 @@ namespace SealingSchoolWPF.ViewModel.Boat
         }
 
 
-        private BoatMgr boatMgr = new BoatMgr();
-
         private ObservableCollection<BoatViewModel> boat;
 
         public ObservableCollection<BoatViewModel> Boats

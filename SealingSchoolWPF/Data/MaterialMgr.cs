@@ -24,7 +24,6 @@ namespace SealingSchoolWPF.Data
 
                 foreach (Material mat in ctx.Materials)
                 {
-                    ctx.Entry(mat).Reference(s => s.MaterialTyp).Load();
                     if (mat.MaterialTyp != null)
                     {
                         ctx.MaterialTyps.Attach(mat.MaterialTyp);
@@ -60,7 +59,10 @@ namespace SealingSchoolWPF.Data
                     ctx.Materials.Add(entity);
                     if (entity.MaterialTyp != null)
                     {
-                        ctx.Entry(entity.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                        MaterialTyp mt = ctx.MaterialTyps.Find(entity.MaterialTyp.Id);
+                        ctx.MaterialTyps.Attach(mt);
+                        ctx.Entry(mt).State = EntityState.Unchanged;
+                        entity.MaterialTyp = mt;
                     }
                     if (entity.BoatTyps != null)
                     {
@@ -97,7 +99,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 Material original = ctx.Materials.Find(entity.MaterialId);
-                ctx.Entry(original).Reference(s => s.MaterialTyp).Load();
+
 
                 original.Name = entity.Name;
                 original.MaterialStatus = entity.MaterialStatus;
@@ -109,7 +111,7 @@ namespace SealingSchoolWPF.Data
                 original.SerialNumber = entity.SerialNumber;
                 original.CreatedOn = entity.CreatedOn;
                 original.ModifiedOn = DateTime.Now;
-                original.MaterialTyp = entity.MaterialTyp;
+
 
 
                 List<BoatTyp> boatTyps = new List<BoatTyp>();
@@ -123,7 +125,7 @@ namespace SealingSchoolWPF.Data
                     }
                     entity.BoatTyps.Clear();
                 }
-                
+
                 foreach (BoatTyp q in boatTyps)
                 {
                     entity.BoatTyps.Add(q);
@@ -131,14 +133,19 @@ namespace SealingSchoolWPF.Data
 
                 if (entity.MaterialTyp != null)
                 {
-                    ctx.Entry(original.MaterialTyp).State = System.Data.Entity.EntityState.Unchanged;
+                    MaterialTyp mt = ctx.MaterialTyps.Find(entity.MaterialTyp.Id);
+                    ctx.MaterialTyps.Attach(mt);
+                    ctx.Entry(mt).State = EntityState.Unchanged;
+                    entity.MaterialTyp = mt;
+                    original.MaterialTyp = mt;
                 }
+
                 if (original != null)
                 {
                     try
                     {
                         ctx.Entry(original).State = EntityState.Modified;
-                        
+
                         ctx.ChangeTracker.DetectChanges();
                         ctx.SaveChanges();
                     }
@@ -154,7 +161,7 @@ namespace SealingSchoolWPF.Data
                             }
                         }
                     }
-                    catch (Exception )
+                    catch (Exception)
                     { }
                 }
             }
@@ -166,7 +173,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
-                ctx.Entry(material).Reference(s => s.MaterialTyp).Load();
+               
                 if (material.BoatTyps != null)
                 {
                     foreach (BoatTyp q in material.BoatTyps)

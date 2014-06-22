@@ -17,8 +17,6 @@ namespace SealingSchoolWPF.ViewModel.Material
         {
         }
 
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
-
         public string Id
         {
             get

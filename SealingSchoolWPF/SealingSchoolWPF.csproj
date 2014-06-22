@@ -102,6 +102,7 @@
     <Compile Include="Model\BlockedTimeSpan.cs" />
     <Compile Include="Model\BoatTyp.cs" />
     <Compile Include="Model\Boat.cs" />
+    <Compile Include="Model\CourseMaterialTyp.cs" />
     <Compile Include="Model\TrainingActivityStatus.cs" />
     <Compile Include="Model\CoursePlaning.cs" />
     <Compile Include="Model\IncomingInvoice.cs" />
@@ -301,6 +302,9 @@
     <Compile Include="Pages\Courses\Controls\UpdateButtons.xaml.cs">
       <DependentUpon>UpdateButtons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Courses\Create\Material.xaml.cs">
+      <DependentUpon>Material.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Courses\Create\Qualification.xaml.cs">
       <DependentUpon>Qualification.xaml</DependentUpon>
     </Compile>
@@ -339,6 +343,9 @@
     </Compile>
     <Compile Include="Pages\Courses\Planing\UpdatePlanButtons.xaml.cs">
       <DependentUpon>UpdatePlanButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Courses\Update\Material.xaml.cs">
+      <DependentUpon>Material.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Courses\Update\Rating.xaml.cs">
       <DependentUpon>Rating.xaml</DependentUpon>
@@ -656,6 +663,7 @@
     <Compile Include="ViewModel\BusinessUnit\QualificationListViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\MaterialTypViewModel.cs" />
     <Compile Include="ViewModel\BusinessUnit\QualificationViewModel.cs" />
+    <Compile Include="ViewModel\Course\CourseMaterialTypViewModel.cs" />
     <Compile Include="ViewModel\Course\UpdateCoursePlaningViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateTAViewModel.cs" />
     <Compile Include="ViewModel\Course\CreateCoursePlaningViewModel.cs" />
@@ -912,6 +920,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Courses\Create\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Courses\Create\Qualification.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -933,6 +945,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Courses\Planing\UpdatePlanButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Courses\Update\Material.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
