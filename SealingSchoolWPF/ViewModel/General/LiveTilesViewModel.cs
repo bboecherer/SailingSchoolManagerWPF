@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using FirstFloor.ModernUI.Presentation;
+using SealingSchoolWPF.Model;
 
 namespace SealingSchoolWPF.ViewModel.General
 {
@@ -54,7 +55,7 @@ namespace SealingSchoolWPF.ViewModel.General
     {
       get
       {
-        return 0;
+        return invoiceMgr.GetByStatus(PaymentStatus.NICHT_GEZAHLT).Count;
       }
     }
 

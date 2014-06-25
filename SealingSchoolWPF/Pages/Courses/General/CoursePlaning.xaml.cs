@@ -62,8 +62,11 @@ namespace SealingSchoolWPF.Pages
       var grid = sender as DataGrid;
       var course = (SealingSchoolWPF.Model.CoursePlaning) grid.SelectedItem;
 
-      PlaningCourse window = new PlaningCourse( course );
-      window.ShowDialog();
+      if ( course != null )
+      {
+        PlaningCourse window = new PlaningCourse( course );
+        window.ShowDialog();
+      }
     }
   }
 }

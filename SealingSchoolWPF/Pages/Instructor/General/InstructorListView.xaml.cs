@@ -31,8 +31,11 @@ namespace SealingSchoolWPF.Pages
       var grid = sender as DataGrid;
       var instructor = (SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel) grid.SelectedItem;
 
-      UpdateInstructor window = new UpdateInstructor( instructor );
-      window.ShowDialog();
+      if ( instructor != null )
+      {
+        UpdateInstructor window = new UpdateInstructor( instructor );
+        window.ShowDialog();
+      }
     }
   }
 }

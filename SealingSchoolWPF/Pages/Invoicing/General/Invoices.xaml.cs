@@ -51,10 +51,5 @@ namespace SealingSchoolWPF.Pages
     {
       BindViewModel();
     }
-
-    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
-    {
-
-    }
   }
 }

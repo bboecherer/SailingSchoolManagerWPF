@@ -44,11 +44,12 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     #endregion
 
     #region properties
-    private IList<SealingSchoolWPF.Model.TrainingActivity> GetCourseTypNames()
-    {
-      CourseTypNames = new List<SealingSchoolWPF.Model.TrainingActivity>();
 
-      foreach ( SealingSchoolWPF.Model.TrainingActivity course in trainingActivityMgr.GetByStatus( TrainingActivityStatus.BEENDET ) )
+    private IList<SealingSchoolWPF.Model.CoursePlaning> GetCourseTypNames()
+    {
+      CourseTypNames = new List<SealingSchoolWPF.Model.CoursePlaning>();
+
+      foreach ( SealingSchoolWPF.Model.CoursePlaning course in coursePlaningMgr.GetByStatus( CourseStatus.BEENDET ) )
       {
         CourseTypNames.Add( course );
         coursesList.Add( course );
@@ -59,10 +60,10 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       return CourseTypNames;
     }
 
-    private IList<SealingSchoolWPF.Model.TrainingActivity> CourseTypNames;
+    private IList<SealingSchoolWPF.Model.CoursePlaning> CourseTypNames;
 
-    private IEnumerable<SealingSchoolWPF.Model.TrainingActivity> _courseValues;
-    public IEnumerable<SealingSchoolWPF.Model.TrainingActivity> CourseValues
+    private IEnumerable<SealingSchoolWPF.Model.CoursePlaning> _courseValues;
+    public IEnumerable<SealingSchoolWPF.Model.CoursePlaning> CourseValues
     {
       get
       {
@@ -71,12 +72,12 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       set
       {
         _courseValues = value;
-        this.OnPropertyChanged( "TrainingActivityValues" );
+        this.OnPropertyChanged( "CourseValues" );
       }
     }
 
-    private SealingSchoolWPF.Model.TrainingActivity _courseTyp;
-    public SealingSchoolWPF.Model.TrainingActivity CourseTyp
+    private SealingSchoolWPF.Model.CoursePlaning _courseTyp;
+    public SealingSchoolWPF.Model.CoursePlaning CourseTyp
     {
       get
       {
@@ -88,39 +89,6 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         this.OnPropertyChanged( "CourseTyp" );
       }
     }
-
-    private bool _isComboBoxEnabled = true;
-    public bool IsComboBoxEnabled
-    {
-      get
-      {
-        return _isComboBoxEnabled;
-      }
-      set
-      {
-        _isComboBoxEnabled = value;
-        this.OnPropertyChanged( "IsComboBoxEnabled" );
-      }
-    }
-
-    private bool _isComboBoxReadOnly = false;
-    public bool IsComboBoxReadOnly
-    {
-      get
-      {
-        return _isComboBoxReadOnly;
-      }
-      set
-      {
-        _isComboBoxReadOnly = value;
-        this.OnPropertyChanged( "IsComboBoxReadOnly" );
-      }
-    }
-
-    //private bool CheckComboBox()
-    //{
-    //  return this.StartDate == null && this.EndDate == null;
-    //}
 
     private ObservableCollection<SealingSchoolWPF.ViewModel.Course.CourseViewModel> _courses;
     public ObservableCollection<SealingSchoolWPF.ViewModel.Course.CourseViewModel> Courses
@@ -150,29 +118,6 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       {
         _course = value;
         this.OnPropertyChanged( "Course" );
-      }
-    }
-
-    public IEnumerable<CourseStatus> CourseStatusTypeValues
-    {
-      get
-      {
-        return Enum.GetValues( typeof( CourseStatus ) )
-            .Cast<CourseStatus>();
-      }
-    }
-
-    private CourseStatus _courseStatus;
-    public CourseStatus CourseStatus
-    {
-      get
-      {
-        return _courseStatus;
-      }
-      set
-      {
-        _courseStatus = value;
-        this.OnPropertyChanged( "CourseStatus" );
       }
     }
 
@@ -246,81 +191,12 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       }
     }
 
-    //private DateTime? _startDate;
-    //public DateTime? StartDate
-    //{
-    //  get
-    //  {
-    //    return _startDate;
-    //  }
-    //  set
-    //  {
-    //    _startDate = value;
-    //    this.IsComboBoxReadOnly = !CheckComboBox();
-    //    this.IsComboBoxEnabled = CheckComboBox();
-    //    GetTrainingActivityTypNames();
-    //    this.OnPropertyChanged( "StartDate" );
-    //  }
-    //}
-
-    //private DateTime? _endDate;
-    //public DateTime? EndDate
-    //{
-    //  get
-    //  {
-    //    return _endDate;
-    //  }
-    //  set
-    //  {
-    //    _endDate = value;
-    //    this.IsComboBoxReadOnly = CheckComboBox();
-    //    this.IsComboBoxEnabled = !CheckComboBox();
-    //    coursesList.Clear();
-    //    GetTrainingActivityTypNames();
-    //    this.OnPropertyChanged( "EndDate" );
-    //  }
-    //}
-
-    private IList<SealingSchoolWPF.Model.Student> GetStudentTypNames()
-    {
-      StudentTypNames = new List<SealingSchoolWPF.Model.Student>();
-      foreach ( Model.Student quali in studentMgr.GetAll() )
-      {
-        StudentTypNames.Add( quali );
-      }
-      return StudentTypNames;
-    }
-
-    private IList<SealingSchoolWPF.Model.Student> StudentTypNames;
-
-    public IEnumerable<SealingSchoolWPF.Model.Student> StudentValues
-    {
-      get
-      {
-        return GetStudentTypNames();
-      }
-    }
-
-    private SealingSchoolWPF.Model.Student _studentTyp;
-    public SealingSchoolWPF.Model.Student StudentTyp
-    {
-      get
-      {
-        return _studentTyp;
-      }
-      set
-      {
-        _studentTyp = value;
-        this.OnPropertyChanged( "StudentTyp" );
-      }
-    }
-
     private ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> _students;
     public ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> Students
     {
       get
       {
-        return _students;
+        return GetStudents();
       }
       set
       {
@@ -330,6 +206,41 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
           this.OnPropertyChanged( "Students" );
         }
       }
+    }
+
+    private bool _isChecked;
+    public bool IsChecked
+    {
+      get
+      {
+        return _isChecked;
+      }
+      set
+      {
+        if ( _isChecked != value )
+        {
+          _isChecked = value;
+          this.OnPropertyChanged( "IsChecked" );
+        }
+      }
+    }
+
+
+    private ObservableCollection<StudentViewModel.StudentViewModel> GetStudents()
+    {
+      var studentList = this.studentMgr.GetByCoursePlaning( this._courseTyp );
+      if ( _students != null )
+        _students.Clear();
+
+      foreach ( Student s in studentList )
+      {
+        StudentViewModel.StudentViewModel stud = new StudentViewModel.StudentViewModel( s );
+        if ( _students == null )
+          _students = new ObservableCollection<StudentViewModel.StudentViewModel>();
+        _students.Add( stud );
+      }
+
+      return _students;
     }
     #endregion
 
@@ -384,88 +295,20 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     {
       this.ErrorLabel = string.Empty;
       //TODO: Felder leeren
-      this.Students.Clear();
-      this.dummy.Clear();
-      this.ReBindDataGrid();
     }
 
     private void ExecuteAddCommand()
     {
       SaveModelToDatabase();
       Application.Current.Windows[ 1 ].Close();
-
     }
 
-    private ICommand addStudentCommand;
-    public ICommand AddStudentCommand
-    {
-      get
-      {
-        if ( addStudentCommand == null )
-        {
-          addStudentCommand = new RelayCommand( p => ExecuteAddStudentCommand() );
-        }
-        return addStudentCommand;
-      }
-    }
-
-    private void ExecuteAddStudentCommand()
-    {
-      this.ErrorLabel = string.Empty;
-
-      if ( this.StudentTyp == null )
-        return;
-
-      SealingSchoolWPF.Model.Course course = courseMgr.GetById( this.CourseTyp.Course.CourseId );
-
-      SealingSchoolWPF.Model.Student origStud = this.StudentTyp;
-      SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud =
-          new SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel( origStud );
-
-      if ( this.Students == null )
-      {
-        this.Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
-      }
-
-      foreach ( SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in dummy )
-      {
-        if ( q.Id == stud.Id )
-          return;
-      }
-
-      this.dummy.Add( stud );
-      this.ReBindDataGrid();
-    }
-
-    public void ExecuteDeleteCommand( SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud )
-    {
-      this.ErrorLabel = string.Empty;
-      this.dummy.Remove( stud );
-      this.ReBindDataGrid();
-    }
     #endregion
 
     #region helpers
     public void Close()
     {
       instance = null;
-    }
-
-    private List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> dummy =
-        new List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
-
-    private IList<SealingSchoolWPF.Model.Student> prepareStudents( IList<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> list )
-    {
-      IList<SealingSchoolWPF.Model.Student> studList = new List<SealingSchoolWPF.Model.Student>();
-
-      foreach ( SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in list )
-      {
-        SealingSchoolWPF.Model.Student stud = new Model.Student();
-        stud.StudentId = Convert.ToInt32( q.Id );
-        studList.Add( stud );
-      }
-
-      return studList;
     }
 
     private void SaveModelToDatabase()
@@ -496,14 +339,9 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       this.invoiceMgr.Create( Model );
     }
 
-    private void ReBindDataGrid()
-    {
-      this.Students.Clear();
-      Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>( dummy );
-      this.ErrorLabel = String.Empty;
-    }
+    public IList<CoursePlaning> coursesList = new List<CoursePlaning>();
 
-    public IList<TrainingActivity> coursesList = new List<TrainingActivity>();
+    public IList<StudentViewModel.StudentViewModel> CheckedStudentList = new List<StudentViewModel.StudentViewModel>();
     #endregion
   }
 }

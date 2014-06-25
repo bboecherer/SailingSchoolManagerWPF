@@ -17,23 +17,26 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-    /// <summary>
-    /// Interaction logic for MaterialListView.xaml
-    /// </summary>
-    public partial class MaterialAdministrationListView : UserControl
+  /// <summary>
+  /// Interaction logic for MaterialListView.xaml
+  /// </summary>
+  public partial class MaterialAdministrationListView : UserControl
+  {
+    public MaterialAdministrationListView()
     {
-        public MaterialAdministrationListView()
-        {
-            InitializeComponent();
-        }
-
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var grid = sender as DataGrid;
-            var material = (SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel.MaterialAdministrationViewModel)grid.SelectedItem;
-
-            AdministrateMaterial window = new AdministrateMaterial(material);
-            window.ShowDialog();
-        }
+      InitializeComponent();
     }
+
+    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+    {
+      var grid = sender as DataGrid;
+      var material = (SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel.MaterialAdministrationViewModel) grid.SelectedItem;
+
+      if ( material != null )
+      {
+        AdministrateMaterial window = new AdministrateMaterial( material );
+        window.ShowDialog();
+      }
+    }
+  }
 }

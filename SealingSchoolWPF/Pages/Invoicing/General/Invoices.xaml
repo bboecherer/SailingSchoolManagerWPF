@@ -79,7 +79,7 @@
             <StackPanel>
                 <DataGrid ItemsSource="{Binding Invoices}" SelectionMode="Extended" SelectionUnit="FullRow" 
                  DataContext="{Binding}" AutoGenerateColumns="False"
-                  IsReadOnly="True"  MouseDoubleClick="DataGrid_MouseDoubleClick">
+                  IsReadOnly="True">
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
                             <Setter Property="BorderBrush" Value="Gray" />

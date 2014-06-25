@@ -17,23 +17,26 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-    /// <summary>
-    /// Interaction logic for StudentListView.xaml
-    /// </summary>
-    public partial class StudentListView : UserControl
+  /// <summary>
+  /// Interaction logic for StudentListView.xaml
+  /// </summary>
+  public partial class StudentListView : UserControl
+  {
+    public StudentListView()
     {
-        public StudentListView()
-        {
-            InitializeComponent();
-        }
-
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var grid = sender as DataGrid;
-            var student = (SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel)grid.SelectedItem;
-
-            UpdateStudent window = new UpdateStudent(student);
-            window.ShowDialog();
-        }
+      InitializeComponent();
     }
+
+    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+    {
+      var grid = sender as DataGrid;
+      var student = (SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel) grid.SelectedItem;
+
+      if ( student != null )
+      {
+        UpdateStudent window = new UpdateStudent( student );
+        window.ShowDialog();
+      }
+    }
+  }
 }
