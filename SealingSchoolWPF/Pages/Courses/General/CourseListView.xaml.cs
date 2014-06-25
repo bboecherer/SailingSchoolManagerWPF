@@ -16,23 +16,26 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages.Courses.General
 {
-    /// <summary>
-    /// Interaction logic for InstructorListView.xaml
-    /// </summary>
-    public partial class CourseListView : UserControl
+  /// <summary>
+  /// Interaction logic for InstructorListView.xaml
+  /// </summary>
+  public partial class CourseListView : UserControl
+  {
+    public CourseListView()
     {
-        public CourseListView()
-        {
-            InitializeComponent();
-        }
-
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var grid = sender as DataGrid;
-            var course = (SealingSchoolWPF.ViewModel.Course.CourseViewModel)grid.SelectedItem;
-
-            UpdateCourse window = new UpdateCourse(course);
-            window.ShowDialog();
-        }
+      InitializeComponent();
     }
+
+    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+    {
+      var grid = sender as DataGrid;
+      var course = (SealingSchoolWPF.ViewModel.Course.CourseViewModel) grid.SelectedItem;
+
+      if ( course != null )
+      {
+        UpdateCourse window = new UpdateCourse( course );
+        window.ShowDialog();
+      }
+    }
+  }
 }

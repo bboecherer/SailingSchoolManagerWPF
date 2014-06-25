@@ -152,6 +152,12 @@
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Controls\CreateMultipleStudentControl.xaml.cs">
+      <DependentUpon>CreateMultipleStudentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CreateMultipleInvoiceCourseControl .xaml.cs">
+      <DependentUpon>CreateMultipleInvoiceCourseControl .xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Controls\CreateInvoiceCourseControl .xaml.cs">
       <DependentUpon>CreateInvoiceCourseControl .xaml</DependentUpon>
     </Compile>
@@ -765,6 +771,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\BusinessUnit\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CreateMultipleStudentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\CreateMultipleInvoiceCourseControl .xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

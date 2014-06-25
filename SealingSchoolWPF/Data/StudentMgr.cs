@@ -214,5 +214,21 @@ namespace SealingSchoolWPF.Data
       }
       return student;
     }
+
+    public List<Student> GetByCoursePlaning( CoursePlaning coursePlaning )
+    {
+      var dummy = new List<Student>();
+      using ( var ctx = new SchoolDataContext() )
+      {
+        foreach ( TrainingActivity t in ctx.TrainingActivities.Where( t => t.TrainingActivityStatus == TrainingActivityStatus.BEENDET ) )
+        {
+          if ( t.Course.CourseId == coursePlaning.Course.CourseId )
+          {
+            dummy.Add( t.Student );
+          }
+        }
+      }
+      return dummy;
+    }
   }
 }

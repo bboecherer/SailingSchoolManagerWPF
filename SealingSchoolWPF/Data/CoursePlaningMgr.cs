@@ -206,5 +206,24 @@ namespace SealingSchoolWPF.Data
       }
       return courseList;
     }
+
+    internal IEnumerable<CoursePlaning> GetByStatus( CourseStatus courseStatus )
+    {
+      var courseList = new List<CoursePlaning>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        var dummy = this.GetAll();
+
+        foreach ( CoursePlaning c in dummy )
+        {
+          if ( c.CourseStatus == CourseStatus.BEENDET )
+          {
+            courseList.Add( c );
+          }
+        }
+      }
+      return courseList;
+    }
   }
 }
