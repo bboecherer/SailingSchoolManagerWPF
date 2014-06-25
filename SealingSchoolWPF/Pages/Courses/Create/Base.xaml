@@ -5,12 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
              mc:Ignorable="d" 
              d:DesignHeight="360" d:DesignWidth="360">
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <Controls:CourseBaseControl />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="230" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Margin="0" Content="{x:Static resx:Resource.BoatTyp}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="0" Margin="3"
+                              SelectedValue="{Binding BoatTyp}" ItemsSource="{Binding BoatTypValues}" 
+                              IsEnabled="True" IsReadOnly="False"
+                              />
+                </Grid>
                 <Button:CreateButtons HorizontalAlignment="Right" Margin="15"/>
             </StackPanel>
         </ScrollViewer>

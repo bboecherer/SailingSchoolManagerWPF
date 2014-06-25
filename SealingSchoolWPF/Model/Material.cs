@@ -11,18 +11,21 @@ namespace SealingSchoolWPF.Model
     public class Material : SealingSchoolObject
     {
         [Key]
-        public int MaterialId { get; set; }
-        public string Name { get; set; }
-        public string Brand { get; set; }
-        public Decimal Price { get; set; }
-        public Currency Currency { get; set; }
-        public MaterialStatus MaterialStatus { get; set; }
-        public MaterialTyp MaterialTyp { get; set; }
-        public string RepairAction { get; set; }
-        public string SerialNumber { get; set; }
-        
+        public virtual int MaterialId { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Brand { get; set; }
+        public virtual Decimal Price { get; set; }
+        public virtual Currency Currency { get; set; }
+        public virtual MaterialStatus MaterialStatus { get; set; }
+        public virtual MaterialTyp MaterialTyp { get; set; }
+        public virtual string RepairAction { get; set; }
+        public virtual string SerialNumber { get; set; }
+        public virtual CoursePlaning CoursePlaning { get; set; }
+
         [InverseProperty("Material")]
         public virtual ICollection<BoatTyp> BoatTyps { get; set; }
+
+       
 
     }
 }

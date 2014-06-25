@@ -10,15 +10,17 @@ namespace SealingSchoolWPF.Model
     public class MaterialTyp : SealingSchoolObject
     {
         [Key]
-        public int Id { get; set; }
-        public String Description { get; set; }
-        public String Name { get; set; }
-        public bool IsEnabled { get; set; }
+        public virtual int Id { get; set; }
+        public virtual String Description { get; set; }
+        public virtual String Name { get; set; }
+        public virtual bool IsEnabled { get; set; }
+
+        public virtual ICollection<Course> CourseMaterialTyp { get; set; }
 
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
 
         public override bool Equals(object obj)

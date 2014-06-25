@@ -210,6 +210,22 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
+    public BoatTyp BoatTyp
+    {
+        get
+        {
+            return Model.BoatTyp;
+        }
+        set
+        {
+            if (BoatTyp != value)
+            {
+                Model.BoatTyp = value;
+                this.OnPropertyChanged("BoatTyp");
+            }
+        }
+    }
+
     public ICollection<Qualification> Qualifications
     {
       get
@@ -224,6 +240,22 @@ namespace SealingSchoolWPF.ViewModel.Course
           this.OnPropertyChanged( "Qualifications" );
         }
       }
+    }
+
+    public ICollection<CourseMaterialTyp> CourseMaterialTyps
+    {
+        get
+        {
+            return Model.CourseMaterialTyps;
+        }
+        set
+        {
+            if (CourseMaterialTyps != value)
+            {
+                Model.CourseMaterialTyps = value;
+                this.OnPropertyChanged("CourseMaterialTyps");
+            }
+        }
     }
     #endregion
   }

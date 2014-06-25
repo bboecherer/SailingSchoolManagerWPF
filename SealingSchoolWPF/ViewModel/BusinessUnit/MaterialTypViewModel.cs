@@ -36,7 +36,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
             }
         }
 
-        private MaterialTypMgr matTypMgr = new MaterialTypMgr();
+        
 
         public int Id
         {

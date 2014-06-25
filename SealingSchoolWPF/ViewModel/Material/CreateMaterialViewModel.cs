@@ -37,10 +37,6 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
         }
 
-        MaterialMgr matMgr = new MaterialMgr();
-        MaterialTypMgr matTypMgr = new MaterialTypMgr();
-        BoatTypMgr boatTypMgr = new BoatTypMgr();
-
         private string _name;
         public string Name
         {

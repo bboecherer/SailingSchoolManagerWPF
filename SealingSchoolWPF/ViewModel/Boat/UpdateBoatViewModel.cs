@@ -13,8 +13,6 @@ namespace SealingSchoolWPF.ViewModel.Boat
     public class UpdateBoatViewModel : ViewModel<SealingSchoolWPF.Model.Boat>
     {
         public SealingSchoolWPF.Model.Boat BoatDummy { get; set; }
-        BoatMgr boatMgr = new BoatMgr();
-        BoatTypMgr boatTypMgr = new BoatTypMgr();
 
         public UpdateBoatViewModel(SealingSchoolWPF.Model.Boat model)
             : base(model)
@@ -160,7 +158,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
                 }
             }
         }
-        
+
         public string Notes
         {
             get
@@ -174,7 +172,40 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
+        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        {
+            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
+            {
+                BoatTypNames.Add(boatTyp);
+            }
+            return BoatTypNames;
+        }
 
+        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+
+        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
+        {
+            get
+            {
+                return GetBoatTypNames();
+            }
+        }
+
+
+        public SealingSchoolWPF.Model.BoatTyp BoatTyp
+        {
+            get
+            {
+                return BoatDummy.BoatTyp;
+            }
+            set
+            {
+                BoatDummy.BoatTyp = value;
+                this.OnPropertyChanged("BoatTyp");
+                resetSaveButton();
+            }
+        }
         private string _imageSourceSave = "/Resources/Images/save_16xLG.png";
         public string ImageSourceSave
         {
@@ -238,47 +269,15 @@ namespace SealingSchoolWPF.ViewModel.Boat
 
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
-        {
-            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
-            foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
-            {
-                BoatTypNames.Add(boatTyp);
-            }
-            return BoatTypNames;
-        }
+ 
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
-        {
-            get
-            {
-                return GetBoatTypNames();
-            }
-        }
 
-        private SealingSchoolWPF.Model.BoatTyp _boatTyp;
-        public SealingSchoolWPF.Model.BoatTyp BoatTyp
-        {
-            get
-            {
-                return _boatTyp;
-            }
-            set
-            {
-                _boatTyp = value;
-                this.OnPropertyChanged("BoatTyp");
-            }
-        }
 
-       
 
-        
 
-        
-       
 
-       
+
+
     }
 }

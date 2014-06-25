@@ -25,6 +25,8 @@ namespace SealingSchoolWPF.Model
     public virtual int Capacity { get; set; }
     public virtual int NeededInstructors { get; set; }
     public virtual Double RatingValue { get; set; }
+    public virtual ICollection<CourseMaterialTyp> CourseMaterialTyps { get; set; }
+    public virtual BoatTyp BoatTyp { get; set; }
 
 
     [InverseProperty( "Courses" )]
@@ -32,6 +34,10 @@ namespace SealingSchoolWPF.Model
 
     [InverseProperty( "Course" )]
     public virtual ICollection<CoursePlaning> CoursePlanings { get; set; }
+
+    
+    
+
 
     public override bool Equals( object obj )
     {

@@ -142,6 +142,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Amount ähnelt.
+        /// </summary>
+        public static string Amount {
+            get {
+                return ResourceManager.GetString("Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Aussehen ähnelt.
         /// </summary>
         public static string Appereance {

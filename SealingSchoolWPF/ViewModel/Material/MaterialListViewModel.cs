@@ -33,8 +33,6 @@ namespace SealingSchoolWPF.ViewModel.Material
         }
 
 
-        private MaterialMgr matMgr = new MaterialMgr();
-
         private ObservableCollection<MaterialViewModel> materials;
 
         public ObservableCollection<MaterialViewModel> Materials

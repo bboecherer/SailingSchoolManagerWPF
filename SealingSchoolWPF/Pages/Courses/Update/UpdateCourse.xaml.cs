@@ -50,6 +50,7 @@ namespace SealingSchoolWPF.Pages.Courses.Update
             c.NeededInstructors = course.NeededInstructors;
             c.Qualifications = course.Qualifications;
             c.RatingValue = course.RatingValue;
+            c.CourseMaterialTyps = course.CourseMaterialTyps;
 
             return c;
         }

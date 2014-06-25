@@ -13,6 +13,7 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Courses/Create/Base.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Pricing}" Source="/Pages/Courses/Create/Financial.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Qualification}" Source="/Pages/Courses/Create/Qualification.xaml" />
+                <mui:Link DisplayName="{x:Static resx:Resource.Material}" Source="/Pages/Courses/Create/Material.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Courses/Create/Notes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Courses/Create/Documents.xaml" />
             </mui:LinkGroup.Links>

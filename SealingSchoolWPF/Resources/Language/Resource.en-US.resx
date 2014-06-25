@@ -588,4 +588,7 @@
   <data name="Repair" xml:space="preserve">
     <value>Repair</value>
   </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
 </root>

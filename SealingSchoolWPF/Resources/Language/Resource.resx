@@ -594,4 +594,7 @@
   <data name="Repair" xml:space="preserve">
     <value>Reparatur</value>
   </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
 </root>
