@@ -4,7 +4,7 @@
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
         Title="{x:Static resx:Resource.Invoices}" IsTitleVisible="True"
-        ContentSource="/Pages/Invoicing/Workflows/CreateInvoicePage1.xaml"
+        ContentSource="/Pages/Invoicing/Workflows/CreateMultipleInvoicePage1.xaml"
         Height="500" Width="500" Closing="ModernWindow_Closing"
       >
     <mui:ModernWindow.MenuLinkGroups >

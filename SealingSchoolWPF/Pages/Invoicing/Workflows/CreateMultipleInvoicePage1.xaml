@@ -9,7 +9,7 @@
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <Controls:CreateInvoiceCourseControl />
+                <Controls:CreateMultipleInvoiceCourseControl />
             </StackPanel>
         </ScrollViewer>
     </Grid>

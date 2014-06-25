@@ -72,5 +72,18 @@ namespace SealingSchoolWPF.Data
       return invoice;
     }
 
+    public IList<Invoice> GetByStatus( PaymentStatus paymentStatus )
+    {
+      Invoices = new List<Invoice>();
+
+      using ( var ctx = new SchoolDataContext() )
+      {
+        foreach ( Invoice i in ctx.Invoices.Where( i => i.PaymentStatus == paymentStatus ) )
+        {
+          Invoices.Add( i );
+        }
+      }
+      return Invoices;
+    }
   }
 }
