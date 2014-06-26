@@ -12,7 +12,6 @@
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{x:Static resx:Resource.SelectCourse}" Source="/Pages/Courses/Workflows/CreateTAPage1.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.SelectStudent}" Source="/Pages/Courses/Workflows/CreateTAPage2.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.Overview}" Source="/Pages/Courses/Workflows/CreateTAPage3.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

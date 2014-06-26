@@ -11,7 +11,6 @@
         <mui:LinkGroup DisplayName="Rechnung erstellen">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{x:Static resx:Resource.SelectCourse}" Source="/Pages/Invoicing/Workflows/CreateInvoicePage1.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.Summary}" Source="/Pages/Invoicing/Workflows/CreateInvoicePage3.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

@@ -18,7 +18,6 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Times}" Source="/Pages/Instructor/Update/BlockedTimes.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Rating}" Source="/Pages/Instructor/Update/Rating.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Instructor/Update/Notes.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Instructor/Update/Documents.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.References}" Source="/Pages/Instructor/Update/References.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>

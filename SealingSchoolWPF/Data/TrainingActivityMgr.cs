@@ -53,7 +53,7 @@ namespace SealingSchoolWPF.Data
 
     public void Update( TrainingActivity entity )
     {
-       using ( var ctx = new SchoolDataContext() )
+      using ( var ctx = new SchoolDataContext() )
       {
 
         TrainingActivity original = ctx.TrainingActivities.Find( entity.TrainingActivityId );
@@ -110,7 +110,12 @@ namespace SealingSchoolWPF.Data
     {
       using ( var ctx = new SchoolDataContext() )
       {
-        return ctx.TrainingActivities.Find( taId );
+        TrainingActivity ta = ctx.TrainingActivities.Find( taId );
+        ctx.Courses.Attach( ta.Course );
+        ctx.Students.Attach( ta.Student );
+        ctx.Adresses.Attach( ta.Student.Adress );
+
+        return ta;
       }
     }
   }

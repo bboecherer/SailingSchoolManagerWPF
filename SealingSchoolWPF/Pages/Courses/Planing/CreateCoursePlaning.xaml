@@ -12,7 +12,6 @@
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Courses/Workflows/CreatePlaningPage1.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Instructor}" Source="/Pages/Courses/Workflows/CreatePlaningPage2.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.Overview}" Source="/Pages/Courses/Workflows/CreatePlaningPage3.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

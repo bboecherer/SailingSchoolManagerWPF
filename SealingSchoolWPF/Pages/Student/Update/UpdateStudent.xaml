@@ -15,7 +15,6 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Bankdata}" Source="/Pages/Student/Update/Bankdata.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Qualification}" Source="/Pages/Student/Update/Qualification.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Student/Update/Notes.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Student/Update/Documents.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>
