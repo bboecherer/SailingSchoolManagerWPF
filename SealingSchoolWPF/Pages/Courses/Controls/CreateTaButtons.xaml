@@ -29,26 +29,7 @@
                     </Rectangle>
                 </StackPanel>
             </Button>
-            <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
-                    Style="{DynamicResource MetroCircleButtonStyle}"
-                    Command="{Binding AddAndNextCommand}" 
-                    IsEnabled="{Binding IsButtonEnabled}">
-                <Button.ToolTip>
-                    <ToolTip>
-                        <StackPanel>
-                            <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Save_ToolTip}"/>
-                            <TextBlock Text="{x:Static resx:Resource.SaveNext_ToolTip_Desc}"/>
-                        </StackPanel>
-                    </ToolTip>
-                </Button.ToolTip>
-                <StackPanel Orientation="Vertical">
-                    <Rectangle Width="15" Height="15" StrokeThickness="0">
-                        <Rectangle.Fill>
-                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_arrow_right}" />
-                        </Rectangle.Fill>
-                    </Rectangle>
-                </StackPanel>
-            </Button>
+          
             <Button Width="35" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right"
                     Style="{DynamicResource MetroCircleButtonStyle}"
                     Command="{Binding ClearCommand}">

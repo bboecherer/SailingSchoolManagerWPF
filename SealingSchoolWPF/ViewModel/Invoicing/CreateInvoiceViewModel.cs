@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using SealingSchoolWPF.PDF;
 
 namespace SealingSchoolWPF.ViewModel.Invoicing
 {
@@ -508,11 +509,13 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       try
       {
         this.invoiceMgr.Create( Model );
-
         TrainingActivity ta = this.trainingActivityMgr.GetById( this.TrainingActivityTyp.TrainingActivityId );
         ta.TrainingActivityStatus = TrainingActivityStatus.RECHNUNG_GESTELLT;
-
         this.trainingActivityMgr.Update( ta );
+
+        PDFTest createInvoicePDF = new PDFTest();
+        string name = DateTime.Now.ToString().Replace( ".", "_" ).Replace( ":", string.Empty ).Replace( " ", "_" );
+        createInvoicePDF.createPDF( name.Trim(), ta, Model.InvoiceId );
       }
       catch ( Exception e )
       {

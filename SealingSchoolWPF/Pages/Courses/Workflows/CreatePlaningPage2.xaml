@@ -14,5 +14,6 @@
                 <Controls:InstructorControl />
             </StackPanel>
         </ScrollViewer>
+        <Button:CreatePlaningButtons VerticalAlignment="Bottom" HorizontalAlignment="Right" />
     </Grid>
 </UserControl>

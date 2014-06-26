@@ -14,7 +14,6 @@
                 <mui:Link DisplayName="{x:Static resx:Resource.Base}" Source="/Pages/Material/Create/Base.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.MaterialGroup}" Source="/Pages/Material/Create/MaterialGroup.xaml" />
                 <mui:Link DisplayName="{x:Static resx:Resource.Notes}" Source="/Pages/Material/Create/Notes.xaml" />
-                <mui:Link DisplayName="{x:Static resx:Resource.Documents}" Source="/Pages/Material/Create/Documents.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>
