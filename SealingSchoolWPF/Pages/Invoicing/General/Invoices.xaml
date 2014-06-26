@@ -36,26 +36,6 @@
 
                 <Button Width="35" Height="35" VerticalAlignment="Top"
                         Style="{DynamicResource MetroCircleButtonStyle}"
-                         Click="Button_Click_1">
-                    <Button.ToolTip>
-                        <ToolTip>
-                            <StackPanel>
-                                <TextBlock FontWeight="Bold" Text="{x:Static resx:Resource.Create_ToolTip}"/>
-                                <TextBlock Text="{x:Static resx:Resource.Create_ToolTip_Desc}"/>
-                            </StackPanel>
-                        </ToolTip>
-                    </Button.ToolTip>
-                    <StackPanel Orientation="Vertical">
-                        <Rectangle Width="15" Height="15" StrokeThickness="0">
-                            <Rectangle.Fill>
-                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_people_multiple}" />
-                            </Rectangle.Fill>
-                        </Rectangle>
-                    </StackPanel>
-                </Button>
-
-                <Button Width="35" Height="35" VerticalAlignment="Top"
-                        Style="{DynamicResource MetroCircleButtonStyle}"
                         Click="Button_Click_2">
                     <Button.ToolTip>
                         <ToolTip>
