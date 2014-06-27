@@ -21,6 +21,7 @@ namespace SealingSchoolWPF.Model
     public virtual TrainingActivityStatus TrainingActivityStatus { get; set; }
     public virtual Student Student { get; set; }
     public virtual Course Course { get; set; }
+    public virtual CoursePlaning CoursePlaning { get; set; }
 
     public override string ToString()
     {

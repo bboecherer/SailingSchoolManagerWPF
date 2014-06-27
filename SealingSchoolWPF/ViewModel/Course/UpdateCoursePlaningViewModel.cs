@@ -501,6 +501,36 @@ namespace SealingSchoolWPF.ViewModel.Course
 
         blockTimesMgr.Update( blockedList, true );
       }
+
+
+      // Status der TAs ändern, falls welche vorhanden sind
+      List<TrainingActivity> tas = this.trainingActivityMgr.GetByCoursePlaning( Model.CoursePlaningId );
+      if ( tas.Count > 0 )
+      {
+        foreach ( TrainingActivity ta in tas )
+        {
+          if ( this.CourseStatus == CourseStatus.BEENDET )
+          {
+            ta.TrainingActivityStatus = TrainingActivityStatus.BEENDET;
+          }
+
+          if ( this.CourseStatus == CourseStatus.GESTARTET )
+          {
+            ta.TrainingActivityStatus = TrainingActivityStatus.GESTARTET;
+          }
+
+          if ( this.CourseStatus == CourseStatus.ABGEBROCHEN )
+          {
+            ta.TrainingActivityStatus = TrainingActivityStatus.ABGEBROCHEN;
+          }
+        }
+
+        foreach ( TrainingActivity ta in tas )
+        {
+          this.trainingActivityMgr.Update( ta );
+        }
+
+      }
     }
 
     private void ReBindDataGrid()

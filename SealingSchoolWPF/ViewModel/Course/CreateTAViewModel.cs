@@ -538,6 +538,7 @@ namespace SealingSchoolWPF.ViewModel.Course
         Model.Course = this.CourseTyp.Course;
         Model.TrainingActivityStatus = TrainingActivityStatus.ANGEMELDET;
         Model.Student = stud;
+        Model.CoursePlaning = this.CourseTyp;
 
         this.trainingActivityMgr.Create( Model );
       }

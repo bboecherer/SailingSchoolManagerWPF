@@ -597,4 +597,7 @@
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="RegDate" xml:space="preserve">
+    <value>Anmeldung</value>
+  </data>
 </root>

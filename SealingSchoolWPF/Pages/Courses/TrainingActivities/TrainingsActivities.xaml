@@ -142,7 +142,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="RegDate" 
+                        <DataGridTextColumn Header="{x:Static resx:Resource.RegDate}" 
                             Binding="{Binding RegDateTime, StringFormat=\{0:dd.MM.yy HH:mm\} }">
                             <DataGridTextColumn.HeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">

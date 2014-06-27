@@ -32,6 +32,11 @@ namespace SealingSchoolWPF.Data
           ctx.Students.Attach( stud );
           ctx.Entry( stud ).State = EntityState.Unchanged;
 
+          CoursePlaning plan = ctx.CoursePlanings.Find( entity.CoursePlaning.CoursePlaningId );
+          entity.CoursePlaning = plan;
+          ctx.CoursePlanings.Attach( plan );
+          ctx.Entry( plan ).State = EntityState.Unchanged;
+
           ctx.TrainingActivities.Add( entity );
           ctx.SaveChanges();
         }
@@ -79,6 +84,8 @@ namespace SealingSchoolWPF.Data
           ctx.Entry( ta.Course ).State = EntityState.Unchanged;
           ctx.Students.Attach( ta.Student );
           ctx.Entry( ta.Student ).State = EntityState.Unchanged;
+          ctx.CoursePlanings.Attach( ta.CoursePlaning );
+          ctx.Entry( ta.CoursePlaning ).State = EntityState.Unchanged;
 
           tas.Add( ta );
         }
@@ -99,6 +106,8 @@ namespace SealingSchoolWPF.Data
           ctx.Entry( ta.Course ).State = EntityState.Unchanged;
           ctx.Students.Attach( ta.Student );
           ctx.Entry( ta.Student ).State = EntityState.Unchanged;
+          ctx.CoursePlanings.Attach( ta.CoursePlaning );
+          ctx.Entry( ta.CoursePlaning ).State = EntityState.Unchanged;
 
           tas.Add( ta );
         }
@@ -117,6 +126,19 @@ namespace SealingSchoolWPF.Data
 
         return ta;
       }
+    }
+
+    public List<TrainingActivity> GetByCoursePlaning( int p )
+    {
+      List<TrainingActivity> tas = new List<TrainingActivity>();
+      using ( var ctx = new SchoolDataContext() )
+      {
+        foreach ( TrainingActivity ta in ctx.TrainingActivities.Where( t => t.CoursePlaning.CoursePlaningId == p ) )
+        {
+          tas.Add( ta );
+        }
+      }
+      return tas;
     }
   }
 }
