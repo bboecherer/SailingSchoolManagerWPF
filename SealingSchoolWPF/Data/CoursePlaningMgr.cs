@@ -97,10 +97,10 @@ namespace SealingSchoolWPF.Data
                         ctx.BlockedTimeSpans.Add(blocked);
                     }
 
-                    foreach (Material mat in prepareMatList())
+                    /*foreach (Material mat in prepareMatList(c.BoatTyp))
                     {
 
-                    }
+                    }*/
 
                     ctx.SaveChanges();
                 }
@@ -120,7 +120,7 @@ namespace SealingSchoolWPF.Data
             }
         }
 
-        private IEnumerable<Material> prepareMatList()
+        private IEnumerable<Material> prepareMatList(BoatTyp BoatTyp)
         {
             var PrepMatList = new List<Material>();
             
