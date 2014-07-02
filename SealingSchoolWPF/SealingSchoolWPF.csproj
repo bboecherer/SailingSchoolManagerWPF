@@ -91,6 +91,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\BlockedMaterialMgr.cs" />
     <Compile Include="Data\BlockedTimesMgr.cs" />
     <Compile Include="Data\BoatMgr.cs" />
     <Compile Include="Data\InvoiceMgr.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Data\BoatTypMgr.cs" />
     <Compile Include="Data\MaterialTypMgr.cs" />
     <Compile Include="Data\QualificationMgr.cs" />
+    <Compile Include="Model\BlockedMaterial.cs" />
     <Compile Include="Model\BlockedTimeSpan.cs" />
     <Compile Include="Model\BoatTyp.cs" />
     <Compile Include="Model\Boat.cs" />

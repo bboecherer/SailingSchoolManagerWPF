@@ -173,7 +173,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
-               
+
                 if (material.BoatTyps != null)
                 {
                     foreach (BoatTyp q in material.BoatTyps)
@@ -186,5 +186,6 @@ namespace SealingSchoolWPF.Data
             }
             return material;
         }
+
     }
 }
