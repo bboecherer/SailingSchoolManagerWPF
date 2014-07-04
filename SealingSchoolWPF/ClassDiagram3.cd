@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SealingSchoolWPF.Model.Adress">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAABAAYABAAQAAA=</HashCode>
+      <FileName>Model\Adress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BankAccountData">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAIAACAAAUAAAAAAADAAAAAAAAA=</HashCode>
+      <FileName>Model\BankAccountData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BlockedTimeSpan">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAIEgIAAAAAgAAAAAIAAAAQAAEAAAAA=</HashCode>
+      <FileName>Model\BlockedTimeSpan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.ContactData">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAYAEAACAAAAAAAIAAAAAAAACAAAEAYAAAAAAAAQA=</HashCode>
+      <FileName>Model\ContactData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Course">
+    <Position X="3.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAEAABAAAAiAEAEgAgAAgACCAAACIAAgAEAAAgABAA=</HashCode>
+      <FileName>Model\Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Instructor" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ARABAEAgAAAgAAQEiAkAAAAAACggAIAAAAOABAgEEAg=</HashCode>
+      <FileName>Model\Instructor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Qualification">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAgIAAEgAEAAAQAAAAAAIAAAQAAABAAAAA=</HashCode>
+      <FileName>Model\Qualification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.TrainingActivity">
+    <Position X="8" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAYACAEAAEkIAQAACAAAAAAIAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TrainingActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

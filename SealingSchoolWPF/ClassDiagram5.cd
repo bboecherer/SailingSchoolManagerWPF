@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SealingSchoolWPF.Model.InvoiceItem">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAACAAAAAAABAAACACAAACAAAgAAAAAAAAQw=</HashCode>
+      <FileName>Model\InvoiceItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Invoice">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAACCAAAgAABAEAAECAAACAAAhBAAACAAAAA=</HashCode>
+      <FileName>Model\Invoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CreditNoteItem">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAABAAACAAAAAAABAAACACAAACAAAgAAAAAAAAAQ=</HashCode>
+      <FileName>Model\CreditNoteItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CreditNote">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAACAABAAACACAAAAABAAAAAAAAAiiAAgBAAAAAAAAA=</HashCode>
+      <FileName>Model\CreditNote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

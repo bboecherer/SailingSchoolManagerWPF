@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SealingSchoolWPF.Model.BankAccountData">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAIAACAAAUAAAAAAADAAAAAAAAA=</HashCode>
+      <FileName>Model\BankAccountData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Student">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAEAAAAAAAAAEiAgAAAAAAAgAAIAAAAAAAAACAAg=</HashCode>
+      <FileName>Model\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Adress">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAABAAYABAAQAAA=</HashCode>
+      <FileName>Model\Adress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.ContactData">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAYAEAACAAAAAAAIAAAAAAAACAAAEAYAAAAAAAAQA=</HashCode>
+      <FileName>Model\ContactData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Qualification">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAgIAAEgAEAAAQAAAAAAIAAAQAAABAAAAA=</HashCode>
+      <FileName>Model\Qualification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

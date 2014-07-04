@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SealingSchoolWPF.Model.Adress">
+    <Position X="13.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAABAAYABAAQAAA=</HashCode>
+      <FileName>Model\Adress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BankAccountData">
+    <Position X="15.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAIAACAAAUAAAAAAADAAAAAAAAA=</HashCode>
+      <FileName>Model\BankAccountData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BlockedTimeSpan">
+    <Position X="17" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAIEgIAAAAAgAAAAAIAAAAQAAEAAAAA=</HashCode>
+      <FileName>Model\BlockedTimeSpan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Boat">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIAQCgAAAAAAAAAgQACAEAAAAAAAAAAAABgAA=</HashCode>
+      <FileName>Model\Boat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BoatTyp">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAgAAAEgAAAAAQAAAAAAMAAAAAAAIAAAAA=</HashCode>
+      <FileName>Model\BoatTyp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BusinessUnit">
+    <Position X="25.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AJAABQBAAAhAAASgYIAAKQEAEIAwEABGQCAAAAJAAgI=</HashCode>
+      <FileName>Model\BusinessUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.ContactData">
+    <Position X="24" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAYAEAACAAAAAAAIAAAAAAAACAAAEAYAAAAAAAAQA=</HashCode>
+      <FileName>Model\ContactData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Course">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAEAABAAAAiAEAEgAgAAgACCAAACIAAgAEAAAgABAA=</HashCode>
+      <FileName>Model\Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CourseMaterialTyp">
+    <Position X="9.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAAAAgAAAAACAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\CourseMaterialTyp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CoursePlaning">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAEgIgAAAAgAAAAAIAAAAQAAEAAAAA=</HashCode>
+      <FileName>Model\CoursePlaning.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CreditNote">
+    <Position X="22.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAABAAACACAAAAABAAAAAAAAAiiAAgBAAAAAAAAA=</HashCode>
+      <FileName>Model\CreditNote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CreditNoteItem">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAABAAACAAAAAAABAAACACAAACAAAgAAAAAAAAAQ=</HashCode>
+      <FileName>Model\CreditNoteItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.IncomingInvoice">
+    <Position X="20.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IncomingInvoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.InfoBox">
+    <Position X="20.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Model\InfoBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Instructor">
+    <Position X="32" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ARABAEAgAAAgAAQEiAkAAAAAACggAIAAAAOABAgEEAg=</HashCode>
+      <FileName>Model\Instructor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Invoice">
+    <Position X="2.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAACCAAAgAABAEAAECAAACAAAhBAAACAAAAA=</HashCode>
+      <FileName>Model\Invoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.InvoiceItem">
+    <Position X="18.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAACAAAAAAABAAACACAAACAAAgAAAAAAAAQw=</HashCode>
+      <FileName>Model\InvoiceItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Material">
+    <Position X="29.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAQKAAAAAEAQAAAQACAEAAAAAAAAAAAABgAA=</HashCode>
+      <FileName>Model\Material.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.MaterialTyp">
+    <Position X="5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAgAAAEgAEAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MaterialTyp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.PurchaseOrder">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PurchaseOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Qualification">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAgIAAEgAEAAAQAAAAAAIAAAQAAABAAAAA=</HashCode>
+      <FileName>Model\Qualification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.SealingSchoolObject" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAACABAEAAAAAAAAAAAAAAABAACAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Model\SealingSchoolObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Student">
+    <Position X="34.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAEAAAAAAAAAEiAgAAAAAAAgAAIAAAAAAAAACAAg=</HashCode>
+      <FileName>Model\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.TrainingActivity">
+    <Position X="7.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAYACAEAAEkIAQAACAAAAAAIAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TrainingActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SealingSchoolWPF.Model.CourseStatus">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAACBAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\CourseStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SealingSchoolWPF.Model.Currency">
+    <Position X="2.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Model\Currency.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SealingSchoolWPF.Model.InvoiceStatus">
+    <Position X="4" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAEAAAIAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\InvoiceStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SealingSchoolWPF.Model.MaterialStatus">
+    <Position X="9.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAACAAIAgAAAAAAAAAAAAAAQAAgAAAA=</HashCode>
+      <FileName>Model\MaterialStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SealingSchoolWPF.Model.PaymentStatus">
+    <Position X="7.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAKAAAEAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PaymentStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SealingSchoolWPF.Model.TrainingActivityStatus">
+    <Position X="5.75" Y="13.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACBAAAAAAAAAAAIgAAAAAAIAAAA=</HashCode>
+      <FileName>Model\TrainingActivityStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SealingSchoolWPF.Model.Unit">
+    <Position X="11.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Model\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

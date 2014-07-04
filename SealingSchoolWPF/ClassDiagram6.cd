@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SealingSchoolWPF.Model.Boat">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIAQCgAAAAAAAAAgQACAEAAAAAAAAAAAABgAA=</HashCode>
+      <FileName>Model\Boat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BoatTyp">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAgAAAEgAAAAAQAAAAAAMAAAAAAAIAAAAA=</HashCode>
+      <FileName>Model\BoatTyp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.BusinessUnit">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AJAABQBAAAhAAASgYIAAKQEAEIAwEABGQCAAAAJAAgI=</HashCode>
+      <FileName>Model\BusinessUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CourseMaterialTyp">
+    <Position X="0.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAAAAgAAAAACAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\CourseMaterialTyp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.CoursePlaning">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAEgIgAAAAgAAAAAIAAAAQAAEAAAAA=</HashCode>
+      <FileName>Model\CoursePlaning.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.InfoBox">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Model\InfoBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.Material">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAQKAAAAAEAQAAAQACAEAAAAAAAAAAAABgAA=</HashCode>
+      <FileName>Model\Material.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SealingSchoolWPF.Model.MaterialTyp">
+    <Position X="2.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAgAAAEgAEAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MaterialTyp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
