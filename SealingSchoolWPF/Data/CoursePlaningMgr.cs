@@ -123,7 +123,7 @@ namespace SealingSchoolWPF.Data
         private IEnumerable<Material> prepareMatList(BoatTyp BoatTyp)
         {
             var PrepMatList = new List<Material>();
-            
+            var MatForBoatTyp = LoadMaterialPerBoatTyp(BoatTyp);
 
             return PrepMatList;
         }
@@ -262,6 +262,8 @@ namespace SealingSchoolWPF.Data
             }
             return Materials;
         }
+
+        private IList<BlockedMaterial> LoadBlockMaterialDuring
 
     }
 }
