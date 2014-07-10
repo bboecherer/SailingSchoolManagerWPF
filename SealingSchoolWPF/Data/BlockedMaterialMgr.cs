@@ -21,10 +21,7 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (BlockedMaterial block in ctx.BlockedMaterials)
                 {
-                    if (block.CoursePlaning != null)
-                    {
-                        ctx.CoursePlanings.Attach(block.CoursePlaning);
-                    }
+                    
 
                     if (block.Material != null)
                     {

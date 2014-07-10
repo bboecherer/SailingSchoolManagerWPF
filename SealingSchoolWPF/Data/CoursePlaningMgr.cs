@@ -263,7 +263,7 @@ namespace SealingSchoolWPF.Data
             return Materials;
         }
 
-        private IList<BlockedMaterial> LoadBlockMaterialDuring
+        //private IList<BlockedMaterial> LoadBlockMaterialDuring
 
     }
 }

@@ -15,7 +15,7 @@ namespace SealingSchoolWPF.Model
     public virtual DateTime StartDate { get; set; }
     public virtual DateTime EndDate { get; set; }
 
-    public virtual CoursePlaning CoursePlaning { get; set; }
+    //public virtual CoursePlaning CoursePlaning { get; set; }
 
     public virtual Material Material { get; set; }
 
@@ -28,9 +28,9 @@ namespace SealingSchoolWPF.Model
 
       builder.Append( "Von " + StartDate.ToShortDateString() + " bis " + this.EndDate.ToShortDateString() );
 
-      if ( this.CoursePlaning != null )
+      if ( this.Material != null )
       {
-        builder.Append( string.Format( ", Kurs {0}", this.CoursePlaning.Label ) );
+        builder.Append( string.Format( ", Material {0}", this.Material.Label ) );
       }
       else
       {

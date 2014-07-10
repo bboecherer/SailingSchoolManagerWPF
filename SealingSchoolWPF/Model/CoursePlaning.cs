@@ -16,7 +16,7 @@ namespace SealingSchoolWPF.Model
         public virtual CourseStatus CourseStatus { get; set; }
         public virtual DateTime? StartDate { get; set; }
         public virtual DateTime? EndDate { get; set; }
-        public virtual BlockedMaterial BlockedMaterial { get; set; }
+        public virtual ICollection<BlockedMaterial> BlockedMaterial { get; set; }
         public virtual Course Course { get; set; }
 
         [InverseProperty("CoursePlanings")]
