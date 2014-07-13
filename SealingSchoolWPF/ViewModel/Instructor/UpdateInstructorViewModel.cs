@@ -68,7 +68,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             get
             {
-                return _ratingValue != null && _ratingValue != 0 ? _ratingValue : Model.RatingValue;
+                return _ratingValue != 0 ? _ratingValue : Model.RatingValue;
             }
             set
             {

@@ -65,7 +65,7 @@ namespace SealingSchoolWPF.ViewModel.Course
         {
             get
             {
-                return _ratingValue != null && _ratingValue != 0 ? _ratingValue : Model.RatingValue;
+                return _ratingValue != 0 ? _ratingValue : Model.RatingValue;
             }
             set
             {
@@ -373,7 +373,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             {
                 CourseDummy.BoatTyp = value;
                 this.OnPropertyChanged("BoatTyp");
-                
+
             }
         }
         #endregion
@@ -549,7 +549,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             return list;
         }
 
-        
+
 
         private IList<SealingSchoolWPF.Model.CourseMaterialTyp> prepareMaterialTyps(IList<CourseMaterialTypViewModel> list)
         {

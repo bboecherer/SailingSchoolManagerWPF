@@ -14,42 +14,55 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SealingSchoolWPF.Pages.Invoicing.Workflows;
 using SealingSchoolWPF.ViewModel.Invoicing;
+using SealingSchoolWPF.Pages.Invoicing.Update;
 
 namespace SealingSchoolWPF.Pages
 {
-  /// <summary>
-  /// Interaction logic for Invoices.xaml
-  /// </summary>
-  public partial class Invoices : UserControl
-  {
-    public Invoices()
+    /// <summary>
+    /// Interaction logic for Invoices.xaml
+    /// </summary>
+    public partial class Invoices : UserControl
     {
-      InitializeComponent();
-      BindViewModel();
-    }
+        public Invoices()
+        {
+            InitializeComponent();
+            BindViewModel();
+        }
 
-    public void BindViewModel()
-    {
-      this.DataContext = null;
-      var viewModel = CreateInvoiceViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        public void BindViewModel()
+        {
+            this.DataContext = null;
+            var viewModel = CreateInvoiceViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-    private void Button_Click( object sender, RoutedEventArgs e )
-    {
-      CreateInvoiceWF window = new CreateInvoiceWF();
-      window.ShowDialog();
-    }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CreateInvoiceWF window = new CreateInvoiceWF();
+            window.ShowDialog();
+        }
 
-    private void Button_Click_1( object sender, RoutedEventArgs e )
-    {
-      CreateMultipleInvoiceWF window = new CreateMultipleInvoiceWF();
-      window.ShowDialog();
-    }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CreateMultipleInvoiceWF window = new CreateMultipleInvoiceWF();
+            window.ShowDialog();
+        }
 
-    private void Button_Click_2( object sender, RoutedEventArgs e )
-    {
-      BindViewModel();
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            BindViewModel();
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var invoice = (SealingSchoolWPF.Model.Invoice)grid.SelectedItem;
+
+            if (invoice != null)
+            {
+                UpdateInvoice window = new UpdateInvoice(invoice);
+                window.ShowDialog();
+            }
+        }
     }
-  }
 }

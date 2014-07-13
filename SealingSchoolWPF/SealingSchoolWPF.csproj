@@ -152,6 +152,9 @@
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Controls\InvoiceBaseControl.xaml.cs">
+      <DependentUpon>InvoiceBaseControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Controls\CreateMultipleStudentControl.xaml.cs">
       <DependentUpon>CreateMultipleStudentControl.xaml</DependentUpon>
     </Compile>
@@ -406,6 +409,15 @@
     </Compile>
     <Compile Include="Pages\Invoicing\Controls\CreateInvoiceButtons.xaml.cs">
       <DependentUpon>CreateInvoiceButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Controls\UpdateButtons.xaml.cs">
+      <DependentUpon>UpdateButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Update\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Update\UpdateInvoice.xaml.cs">
+      <DependentUpon>UpdateInvoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Invoicing\Workflows\CreateMultipleInvoicePage1.xaml.cs">
       <DependentUpon>CreateMultipleInvoicePage1.xaml</DependentUpon>
@@ -701,6 +713,7 @@
     <Compile Include="ViewModel\BoatAdministration\BoatAdministrationListViewModel.cs" />
     <Compile Include="ViewModel\BoatAdministration\BoatAdministrationViewModel.cs" />
     <Compile Include="ViewModel\BoatAdministration\UpdateBoatAdministrationViewModel.cs" />
+    <Compile Include="ViewModel\Invoicing\UpdateInvoiceViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationButtonViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationListViewModel.cs" />
     <Compile Include="ViewModel\MaterialAdministration\MaterialAdministrationViewModel.cs" />
@@ -771,6 +784,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\BusinessUnit\Material.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Controls\InvoiceBaseControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1015,6 +1032,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Invoicing\Controls\CreateInvoiceButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Controls\UpdateButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Update\Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Update\UpdateInvoice.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1507,7 +1536,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\Invoicing\Create\" />
-    <Folder Include="Pages\Invoicing\Update\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Entypo-license.txt">
