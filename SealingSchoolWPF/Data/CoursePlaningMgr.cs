@@ -12,6 +12,8 @@ namespace SealingSchoolWPF.Data
     public class CoursePlaningMgr : IPersistenceMgr<CoursePlaning>
     {
         public IList<CoursePlaning> Courses { get; set; }
+        public BlockedMaterialMgr blockMatMgr = new BlockedMaterialMgr();
+
 
         public IList<CoursePlaning> GetAll()
         {
@@ -47,7 +49,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
-        public void Create(CoursePlaning entity)
+        public void Create(CoursePlaning entity) {
+            CreateWithAnswer(entity);
+        }
+
+        public Boolean CreateWithAnswer(CoursePlaning entity)
         {
             using (var ctx = new SchoolDataContext())
             {
@@ -97,12 +103,54 @@ namespace SealingSchoolWPF.Data
                         ctx.BlockedTimeSpans.Add(blocked);
                     }
 
-                    /*foreach (Material mat in prepareMatList(c.BoatTyp))
-                    {
+                    IList<Material> availableMaterial = blockMatMgr.LoadUseableMaterialPerBoatTyp(c.BoatTyp, (DateTime)entity.StartDate, (DateTime)entity.EndDate);
 
-                    }*/
+
+                    foreach (CourseMaterialTyp courseMatTyp in c.CourseMaterialTyps)
+                    {
+                        int numberOfBlockedMat = 0;
+                        for (int i = 0; i < c.Capacity; i++)
+                        {
+                            Material tempMat = null;
+                            foreach (Material mat in availableMaterial)
+                            {
+                                if (courseMatTyp.MaterialTyp.Id == mat.MaterialTyp.Id)
+                                {
+                                    BlockedMaterial BlockedMaterial = new BlockedMaterial();
+                                    BlockedMaterial.StartDate = (DateTime)entity.StartDate;
+                                    BlockedMaterial.EndDate = (DateTime)entity.EndDate;
+
+                                    Material dummy = ctx.Materials.Find(mat.MaterialId);
+                                    ctx.Materials.Attach(dummy);
+                                    ctx.Entry(dummy).State = EntityState.Unchanged;
+                                    BlockedMaterial.Material = dummy;
+                                    if (entity.BlockedMaterial == null)
+                                    {
+                                        entity.BlockedMaterial = new List<BlockedMaterial>();
+                                    }
+                                    entity.BlockedMaterial.Add(BlockedMaterial);
+                                    ctx.BlockedMaterials.Add(BlockedMaterial);
+                                    tempMat = mat;
+                                    break;
+                                }
+                            }
+                            if (tempMat != null)
+                            {
+                                availableMaterial.Remove(tempMat);
+                                numberOfBlockedMat++;
+                            }
+                        }
+                        if (numberOfBlockedMat < c.Capacity)
+                        {
+                            return false;
+                        }
+                        
+                    }
+
 
                     ctx.SaveChanges();
+                    return true;
+
                 }
                 catch (DbEntityValidationException ex)
                 {
@@ -114,18 +162,11 @@ namespace SealingSchoolWPF.Data
                         {
                             errorMessages.Add(entityName + "." + error.PropertyName + ": " + error.ErrorMessage);
                         }
-                    }
+                    } return false;
                 }
-                catch (Exception) { }
+                catch (Exception) { return false; }
+               
             }
-        }
-
-        private IEnumerable<Material> prepareMatList(BoatTyp BoatTyp)
-        {
-            var PrepMatList = new List<Material>();
-            var MatForBoatTyp = LoadMaterialPerBoatTyp(BoatTyp);
-
-            return PrepMatList;
         }
 
         public void Update(CoursePlaning entity)
@@ -239,31 +280,9 @@ namespace SealingSchoolWPF.Data
             return courseList;
         }
 
-        private IList<Material> LoadMaterialPerBoatTyp(BoatTyp BoatTyp)
-        {
-            var Materials = new List<Material>();
 
-            using (var ctx = new SchoolDataContext())
-            {
 
-                foreach (Material mat in ctx.Materials.Where(s => s.BoatTyps == BoatTyp))
-                {
-                    if (mat.MaterialTyp != null)
-                    {
-                        ctx.MaterialTyps.Attach(mat.MaterialTyp);
-                    }
-                    if (mat.BoatTyps != null)
-                    {
-                        foreach (BoatTyp q in mat.BoatTyps)
-                            ctx.BoatTyps.Attach(q);
-                    }
-                    Materials.Add(mat);
-                }
-            }
-            return Materials;
-        }
 
-        //private IList<BlockedMaterial> LoadBlockMaterialDuring
 
     }
 }

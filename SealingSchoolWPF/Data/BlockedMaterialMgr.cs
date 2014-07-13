@@ -12,6 +12,7 @@ namespace SealingSchoolWPF.Data
     public class BlockedMaterialMgr
     {
         public IList<BlockedMaterial> BlockedMaterials { get; set; }
+        public MaterialMgr matMgr = new MaterialMgr();
 
         public IList<BlockedMaterial> GetAll()
         {
@@ -21,7 +22,7 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (BlockedMaterial block in ctx.BlockedMaterials)
                 {
-                    
+
 
                     if (block.Material != null)
                     {
@@ -98,21 +99,71 @@ namespace SealingSchoolWPF.Data
         }
 
 
-        public IList<BlockedMaterial> GetByMaterial(int MaterialId)
+        public IList<Material> LoadUseableMaterialPerBoatTyp(BoatTyp BoatTyp, DateTime StartDate, DateTime EndDate)
         {
-            IList<BlockedMaterial> blockedTimespan = this.GetAll();
-            IList<BlockedMaterial> blocked = new List<BlockedMaterial>();
+            IList<Material> Materials;
+            var BlockedMaterial = new List<BlockedMaterial>();
 
-            foreach (BlockedMaterial b in blockedTimespan)
+            using (var ctx = new SchoolDataContext())
             {
-                if (b.Material.MaterialId == MaterialId)
+                var query = ctx.BlockedMaterials.Where(s => s.StartDate >= StartDate && s.StartDate <= EndDate);
+                query.Where(s => s.EndDate >= StartDate && s.EndDate <= EndDate);
+
+                foreach (BlockedMaterial blockedMat in query)
                 {
-                    blocked.Add(b);
+                    /*if (blockedMat.Material != null)
+                    {
+                        ctx.Materials.Attach(blockedMat.Material);
+                    }
+                    if (blockedMat.Material.MaterialTyp != null)
+                    {
+                        ctx.MaterialTyps.Attach(blockedMat.Material.MaterialTyp);
+                    }*/
+                    if (blockedMat.Material.BoatTyps != null)
+                    {
+                        foreach (BoatTyp q in blockedMat.Material.BoatTyps)
+                        {
+                            if (q.BoatTypID == BoatTyp.BoatTypID)
+                            {
+                                //ctx.BoatTyps.Attach(q);
+                                BlockedMaterial.Add(blockedMat);
+                                break;
+                            }
+                        }
+                    }
+
+                }
+
+                Materials = matMgr.GetAllForBootTyp(BoatTyp);
+                var dummyMatList = new List<Material>();
+                foreach (BlockedMaterial bMat in BlockedMaterial)
+                {
+                    foreach (Material mat in Materials)
+                    {
+                        if (bMat.Material != null && bMat.Material.MaterialId == mat.MaterialId)
+                        {
+                            dummyMatList.Add(mat);
+                            break;
+                        }
+                    }
+                    
+                }
+
+                foreach (Material mat in dummyMatList)
+                {
+                    Materials.Remove(mat);
                 }
             }
-
-            return blocked;
+            return Materials;
         }
+
+
+
+
+
+
+
+
 
 
     }

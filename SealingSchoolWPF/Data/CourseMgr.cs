@@ -74,6 +74,30 @@ namespace SealingSchoolWPF.Data
                         entity.Qualifications.Clear();
                         entity.Qualifications = qualies;
                     }
+
+                    if (entity.BoatTyp != null)
+                    {
+                        BoatTyp dummy = ctx.BoatTyps.Find(entity.BoatTyp.BoatTypID);
+                        ctx.BoatTyps.Attach(dummy);
+                        ctx.Entry(dummy).State = EntityState.Unchanged;
+                        entity.BoatTyp = dummy;
+                    }
+
+                    List<CourseMaterialTyp> matTyp = new List<CourseMaterialTyp>();
+                    if (entity.CourseMaterialTyps != null)
+                    {
+                        foreach (CourseMaterialTyp q in entity.CourseMaterialTyps)
+                        {
+                            MaterialTyp dummy = ctx.MaterialTyps.Find(q.MaterialTyp.Id);
+                            ctx.MaterialTyps.Attach(dummy);
+                            ctx.Entry(dummy).State = EntityState.Unchanged;
+                            q.MaterialTyp = dummy;
+                            matTyp.Add(q);
+                        }
+
+                        entity.CourseMaterialTyps.Clear();
+                        entity.CourseMaterialTyps = matTyp;
+                    }
                     ctx.Courses.Add(entity);
                     ctx.SaveChanges();
                 }
@@ -139,6 +163,13 @@ namespace SealingSchoolWPF.Data
                         ctx.Qualifications.Attach(q);
                         ctx.Entry(q).State = EntityState.Unchanged;
                         original.Qualifications.Add(q);
+                    }
+
+                    if (entity.BoatTyp != null)
+                    {
+                        BoatTyp bootDummy = ctx.BoatTyps.Find(entity.BoatTyp.BoatTypID);
+                        ctx.BoatTyps.Attach(bootDummy);
+                        ctx.Entry(bootDummy).State = EntityState.Unchanged;
                     }
 
                     /*original.CourseMaterialTyps.Clear();

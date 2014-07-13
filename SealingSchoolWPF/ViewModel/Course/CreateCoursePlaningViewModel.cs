@@ -350,8 +350,10 @@ namespace SealingSchoolWPF.ViewModel.Course
 
     private void ExecuteAddCommand()
     {
-      SaveModelToDatabase();
-      Application.Current.Windows[ 1 ].Close();
+        if (SaveModelToDatabase())
+        {
+            Application.Current.Windows[1].Close();
+        }
     }
 
     public void ExecuteDeleteCommand( SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel instr )
@@ -518,7 +520,7 @@ namespace SealingSchoolWPF.ViewModel.Course
       return instrList;
     }
 
-    private void SaveModelToDatabase()
+    private Boolean SaveModelToDatabase()
     {
       Model.StartDate = this.StartDate;
       Model.EndDate = this.EndDate;
@@ -535,7 +537,12 @@ namespace SealingSchoolWPF.ViewModel.Course
 
       Model.Course = this.Course;
 
-      coursePlaningMgr.Create( Model );
+      if (!coursePlaningMgr.CreateWithAnswer(Model))
+      {
+          this.ErrorLabel = "Es steht nicht genug Material für diesen Kurs zur Verfügung";
+          return false;
+      }
+      return true;
     }
 
     private void ReBindDataGrid()
