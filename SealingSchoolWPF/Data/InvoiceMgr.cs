@@ -9,81 +9,85 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
-  public class InvoiceMgr : IPersistenceMgr<Invoice>
-  {
-    public IList<Invoice> Invoices { get; set; }
-
-    public IList<Invoice> GetAll()
+    public class InvoiceMgr : IPersistenceMgr<Invoice>
     {
-      Invoices = new List<Invoice>();
+        public IList<Invoice> Invoices { get; set; }
 
-      using ( var ctx = new SchoolDataContext() )
-      {
-        foreach ( Invoice i in ctx.Invoices )
+        public IList<Invoice> GetAll()
         {
-          Invoices.Add( i );
+            Invoices = new List<Invoice>();
+
+            using (var ctx = new SchoolDataContext())
+            {
+                foreach (Invoice i in ctx.Invoices)
+                {
+                    Invoices.Add(i);
+                }
+            }
+            return Invoices;
         }
-      }
-      return Invoices;
-    }
 
-    public void Delete( Invoice entity )
-    {
-      using ( var ctx = new SchoolDataContext() )
-      {
-        ctx.Invoices.Remove( entity );
-        ctx.SaveChanges();
-      }
-    }
-
-    public void Create( Invoice entity )
-    {
-      using ( var ctx = new SchoolDataContext() )
-      {
-        try
+        public void Delete(Invoice entity)
         {
-          ctx.Invoices.Add( entity );
-          ctx.SaveChanges();
+            using (var ctx = new SchoolDataContext())
+            {
+                ctx.Invoices.Remove(entity);
+                ctx.SaveChanges();
+            }
         }
-        catch ( Exception ) { }
-      }
-    }
 
-    public void Update( Invoice entity )
-    {
-      using ( var ctx = new SchoolDataContext() )
-      {
-        Invoice original = ctx.Invoices.Find( entity.InvoiceId );
-        if ( original != null )
+        public void Create(Invoice entity)
         {
-          ctx.Entry( original ).CurrentValues.SetValues( entity );
-          ctx.SaveChanges();
+            using (var ctx = new SchoolDataContext())
+            {
+                try
+                {
+                    ctx.Invoices.Add(entity);
+                    ctx.SaveChanges();
+                }
+                catch (Exception) { }
+            }
         }
-      }
-    }
 
-    public Invoice GetById( int id )
-    {
-      Invoice invoice;
-      using ( var ctx = new SchoolDataContext() )
-      {
-        invoice = (Invoice) ctx.Invoices.Where( i => i.InvoiceId == id );
-      }
-      return invoice;
-    }
-
-    public IList<Invoice> GetByStatus( PaymentStatus paymentStatus )
-    {
-      Invoices = new List<Invoice>();
-
-      using ( var ctx = new SchoolDataContext() )
-      {
-        foreach ( Invoice i in ctx.Invoices.Where( i => i.PaymentStatus == paymentStatus ) )
+        public void Update(Invoice entity)
         {
-          Invoices.Add( i );
+            using (var ctx = new SchoolDataContext())
+            {
+                Invoice original = ctx.Invoices.Find(entity.InvoiceId);
+                if (original != null)
+                {
+                    entity.PaidDate = DateTime.Now;
+                    entity.PaymentTargetDate = DateTime.Now;
+                    original.PaidDate = DateTime.Now;
+                    original.PaymentTargetDate = DateTime.Now;
+                    ctx.Entry(original).CurrentValues.SetValues(entity);
+                    ctx.SaveChanges();
+                }
+            }
         }
-      }
-      return Invoices;
+
+        public Invoice GetById(int id)
+        {
+            Invoice invoice;
+            using (var ctx = new SchoolDataContext())
+            {
+                invoice = (Invoice)ctx.Invoices.Where(i => i.InvoiceId == id);
+            }
+            return invoice;
+        }
+
+        public IList<Invoice> GetByStatus(PaymentStatus paymentStatus)
+        {
+            Invoices = new List<Invoice>();
+
+            using (var ctx = new SchoolDataContext())
+            {
+                foreach (Invoice i in ctx.Invoices.Where(i => i.PaymentStatus == paymentStatus))
+                {
+                    Invoices.Add(i);
+                }
+            }
+            return Invoices;
+        }
     }
-  }
 }

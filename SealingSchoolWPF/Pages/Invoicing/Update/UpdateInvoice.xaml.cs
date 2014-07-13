@@ -1,5 +1,7 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.Invoicing;
+using SealingSchoolWPF.Model;
+using SealingSchoolWPF.ViewModel.Course;
+using SealingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +17,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Workflows
+namespace SealingSchoolWPF.Pages.Invoicing.Update
 {
     /// <summary>
-    /// Interaction logic for CreateTrainingActivitiesWF.xaml
+    /// Interaction logic for CreateStudent.xaml
     /// </summary>
-    public partial class CreateCreditNoteWF : ModernWindow
+    public partial class UpdateInvoice : ModernWindow
     {
+        UpdateInvoiceViewModel viewModel;
 
-        CreateCreditNoteViewModel viewModel;
-
-        public CreateCreditNoteWF()
+        public UpdateInvoice(SealingSchoolWPF.Model.Invoice invoice)
         {
-            InitializeComponent(); viewModel = CreateCreditNoteViewModel.Instance;
+            InitializeComponent();
+            viewModel = new UpdateInvoiceViewModel(invoice);
             this.DataContext = viewModel;
         }
 
@@ -35,5 +37,6 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
         {
             viewModel.Close();
         }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class CreditNote
+    public class CreditNote : SealingSchoolObject
     {
         public int Id { get; set; }
         public Boolean Printed { get; set; }
@@ -18,7 +18,7 @@ namespace SealingSchoolWPF.Model
         public Decimal VatAmount { get; set; }
         public Double Vat { get; set; }
         public Adress CreditNoteAdress { get; set; }
-        
+
         public void SetItems(SortedSet<CreditNoteItem> Items)
         {
             this.Items = Items;

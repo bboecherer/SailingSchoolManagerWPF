@@ -594,4 +594,7 @@
   <data name="RegDate" xml:space="preserve">
     <value>Anmeldung</value>
   </data>
+  <data name="PaymentStatusDescription" xml:space="preserve">
+    <value>Bitte den Bezahlstatus auswählen</value>
+  </data>
 </root>
