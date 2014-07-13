@@ -49,7 +49,8 @@ namespace SealingSchoolWPF.Data
             }
         }
 
-        public void Create(CoursePlaning entity) {
+        public void Create(CoursePlaning entity)
+        {
             CreateWithAnswer(entity);
         }
 
@@ -144,7 +145,7 @@ namespace SealingSchoolWPF.Data
                         {
                             return false;
                         }
-                        
+
                     }
 
 
@@ -165,7 +166,7 @@ namespace SealingSchoolWPF.Data
                     } return false;
                 }
                 catch (Exception) { return false; }
-               
+
             }
         }
 

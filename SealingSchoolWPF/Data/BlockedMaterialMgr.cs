@@ -111,21 +111,14 @@ namespace SealingSchoolWPF.Data
 
                 foreach (BlockedMaterial blockedMat in query)
                 {
-                    /*if (blockedMat.Material != null)
-                    {
-                        ctx.Materials.Attach(blockedMat.Material);
-                    }
-                    if (blockedMat.Material.MaterialTyp != null)
-                    {
-                        ctx.MaterialTyps.Attach(blockedMat.Material.MaterialTyp);
-                    }*/
+
                     if (blockedMat.Material.BoatTyps != null)
                     {
                         foreach (BoatTyp q in blockedMat.Material.BoatTyps)
                         {
                             if (q.BoatTypID == BoatTyp.BoatTypID)
                             {
-                                //ctx.BoatTyps.Attach(q);
+
                                 BlockedMaterial.Add(blockedMat);
                                 break;
                             }
@@ -146,7 +139,7 @@ namespace SealingSchoolWPF.Data
                             break;
                         }
                     }
-                    
+
                 }
 
                 foreach (Material mat in dummyMatList)
