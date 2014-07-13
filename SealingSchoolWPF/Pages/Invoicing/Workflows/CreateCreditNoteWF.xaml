@@ -11,8 +11,6 @@
         <mui:LinkGroup DisplayName="Gutschrift erstellen">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Rechnung auswählen" Source="/Pages/Invoicing/Workflows/CreateCreditNotePage1.xaml" />
-                <mui:Link DisplayName="Konfliktstrategie auswählen" Source="/Pages/Invoicing/Workflows/CreateCreditNotePage2.xaml" />
-                <mui:Link DisplayName="Zusammenfassung" Source="/Pages/Invoicing/Workflows/CreateCreditNotePage3.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>

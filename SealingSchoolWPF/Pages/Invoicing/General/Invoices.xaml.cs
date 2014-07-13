@@ -64,5 +64,15 @@ namespace SealingSchoolWPF.Pages
                 window.ShowDialog();
             }
         }
+
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            BindViewModel();
+        }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BindViewModel();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
+using SealingSchoolWPF.ViewModel.Invoicing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,18 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
     /// </summary>
     public partial class CreateCreditNoteWF : ModernWindow
     {
+
+        CreateCreditNoteViewModel viewModel;
+
         public CreateCreditNoteWF()
         {
-            InitializeComponent();
+            InitializeComponent(); viewModel = CreateCreditNoteViewModel.Instance;
+            this.DataContext = viewModel;
+        }
+
+        private void ModernWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            viewModel.Close();
         }
     }
 }
