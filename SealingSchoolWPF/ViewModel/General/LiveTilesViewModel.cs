@@ -10,70 +10,70 @@ using SealingSchoolWPF.Model;
 
 namespace SealingSchoolWPF.ViewModel.General
 {
-  public class LiveTilesViewModel : ViewModel
-  {
-    #region properties
-
-    public int CourseCount
+    public class LiveTilesViewModel : ViewModel
     {
-      get
-      {
-        return courseMgr.GetAll().Count;
-      }
-    }
+        #region properties
 
-    public System.Windows.Media.SolidColorBrush BackgroundColor
-    {
-      get
-      {
-        return new SolidColorBrush( AppearanceManager.Current.AccentColor );
-      }
-      set
-      {
-        BackgroundColor = value;
-      }
-    }
+        public int CourseCount
+        {
+            get
+            {
+                return courseMgr.GetAll().Count;
+            }
+        }
+
+        public System.Windows.Media.SolidColorBrush BackgroundColor
+        {
+            get
+            {
+                return new SolidColorBrush(AppearanceManager.Current.AccentColor);
+            }
+            set
+            {
+                BackgroundColor = value;
+            }
+        }
 
 
-    public int StudentCount
-    {
-      get
-      {
-        return studentMgr.GetAll().Count;
-      }
-    }
+        public int StudentCount
+        {
+            get
+            {
+                return studentMgr.GetAll().Count;
+            }
+        }
 
-    public int InstructorCount
-    {
-      get
-      {
-        return instructorMgr.GetAll().Count;
-      }
-    }
+        public int InstructorCount
+        {
+            get
+            {
+                return instructorMgr.GetAll().Count;
+            }
+        }
 
-    public int InvoiceCount
-    {
-      get
-      {
-        return invoiceMgr.GetByStatus(PaymentStatus.NICHT_GEZAHLT).Count;
-      }
-    }
+        public int InvoiceCount
+        {
+            get
+            {
+                return invoiceMgr.GetByStatus(PaymentStatus.NICHT_GEZAHLT).Count;
+            }
+        }
 
-    public int CreditNoteCount
-    {
-      get
-      {
-        return 0;
-      }
-    }
+        public int CreditNoteCount
+        {
+            get
+            {
+                return creditNoteMgr.GetAll().Count;
+            }
+        }
 
-    public int TaCount
-    {
-      get
-      {
-        return trainingActivityMgr.GetAll().Count;
-      }
+        public int TaCount
+        {
+            get
+            {
+                return trainingActivityMgr.GetAll().Count;
+            }
+        }
+        #endregion
     }
-    #endregion
-  }
 }

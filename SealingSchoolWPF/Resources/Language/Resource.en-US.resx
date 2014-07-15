@@ -597,4 +597,16 @@
   <data name="PaymentStatusDescription" xml:space="preserve">
     <value>Please select the payment status</value>
   </data>
+  <data name="SelectInvoiceDescription" xml:space="preserve">
+    <value>Please select invoice</value>
+  </data>
+  <data name="Dummy" xml:space="preserve">
+    <value>Dummy</value>
+  </data>
+  <data name="SelectInvDesc" xml:space="preserve">
+    <value>Please select invoice</value>
+  </data>
+  <data name="CreditDate" xml:space="preserve">
+    <value>Credit note date</value>
+  </data>
 </root>

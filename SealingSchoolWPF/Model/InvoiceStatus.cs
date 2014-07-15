@@ -8,6 +8,6 @@ namespace SealingSchoolWPF.Model
 {
     public enum InvoiceStatus
     {
-        RECHNUNG, ERSTE_MAHNUNG, ZWEITE_MAHNUNG, DRITTE_MAHNUNG, CANCELLED
+        RECHNUNG, ERSTE_MAHNUNG, ZWEITE_MAHNUNG, DRITTE_MAHNUNG, CANCELLED, GUTSCHRIFT
     }
 }

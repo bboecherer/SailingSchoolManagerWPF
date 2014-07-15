@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
         xmlns:resx="clr-namespace:SealingSchoolWPF.Resources.Language"
-        Title="ANMELDUNGEN" IsTitleVisible="True"
+        Title="ANMELDUNGEN" IsTitleVisible="True" Closing="ModernWindow_Closing_1"
         ContentSource="/Pages/Invoicing/Workflows/CreateCreditNotePage1.xaml"
         Height="500" Width="500" 
       >

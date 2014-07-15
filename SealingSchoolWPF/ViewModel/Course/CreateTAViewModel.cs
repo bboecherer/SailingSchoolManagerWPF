@@ -545,7 +545,7 @@ namespace SealingSchoolWPF.ViewModel.Course
                 {
                     this.trainingActivityMgr.Create(Model);
 
-                    PDFTest createTaPDF = new PDFTest();
+                    PDFPrinter createTaPDF = new PDFPrinter();
                     string name = DateTime.Now.ToString().Replace(".", "_").Replace(":", string.Empty).Replace(" ", "_");
                     createTaPDF.createTaPDF(name.Trim(), Model, Model.TrainingActivityId);
                 }

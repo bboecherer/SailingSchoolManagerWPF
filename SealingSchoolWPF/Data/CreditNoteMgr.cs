@@ -67,23 +67,9 @@ namespace SealingSchoolWPF.Data
             CreditNote CreditNote;
             using (var ctx = new SchoolDataContext())
             {
-                CreditNote = (CreditNote)ctx.CreditNotes.Where(i => i.Id == id);
+                CreditNote = ctx.CreditNotes.Find(id);
             }
             return CreditNote;
         }
-
-        //public IList<CreditNote> GetByStatus(PaymentStatus paymentStatus)
-        //{
-        //    CreditNotes = new List<CreditNote>();
-
-        //    using (var ctx = new SchoolDataContext())
-        //    {
-        //        foreach (CreditNote i in ctx.CreditNotes.Where(i => i.PaymentStatus == paymentStatus))
-        //        {
-        //            CreditNotes.Add(i);
-        //        }
-        //    }
-        //    return CreditNotes;
-        //}
     }
 }

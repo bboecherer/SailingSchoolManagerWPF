@@ -15,7 +15,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         public CreateCreditNoteViewModel(SealingSchoolWPF.Model.CreditNote model)
             : base(model)
         {
-            GetTrainingActivityTypNames();
+            GetInvoiceTypNames();
         }
 
         static CreateCreditNoteViewModel instance = null;
@@ -57,76 +57,48 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         }
 
 
-        private IList<SealingSchoolWPF.Model.TrainingActivity> GetTrainingActivityTypNames()
+        private IList<SealingSchoolWPF.Model.Invoice> GetInvoiceTypNames()
         {
-            CourseTypNames = new List<SealingSchoolWPF.Model.TrainingActivity>();
+            InvoiceTypNames = new List<SealingSchoolWPF.Model.Invoice>();
 
-            foreach (SealingSchoolWPF.Model.TrainingActivity course in trainingActivityMgr.GetByStatus(TrainingActivityStatus.BEENDET))
+            foreach (SealingSchoolWPF.Model.Invoice inv in invoiceMgr.GetByStatus(PaymentStatus.GEZAHLT))
             {
-                CourseTypNames.Add(course);
-                coursesList.Add(course);
+                InvoiceTypNames.Add(inv);
+                invoiceList.Add(inv);
             }
 
-            TrainingActivityValues = coursesList;
+            InvoiceValues = invoiceList;
 
-            return CourseTypNames;
+            return InvoiceTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.TrainingActivity> CourseTypNames;
+        private IList<SealingSchoolWPF.Model.Invoice> InvoiceTypNames;
 
-        private IEnumerable<SealingSchoolWPF.Model.TrainingActivity> _trainingActivityValues;
-        public IEnumerable<SealingSchoolWPF.Model.TrainingActivity> TrainingActivityValues
+        private IEnumerable<SealingSchoolWPF.Model.Invoice> _invoiceValues;
+        public IEnumerable<SealingSchoolWPF.Model.Invoice> InvoiceValues
         {
             get
             {
-                return coursesList;
+                return invoiceList;
             }
             set
             {
-                _trainingActivityValues = value;
-                this.OnPropertyChanged("TrainingActivityValues");
+                _invoiceValues = value;
+                this.OnPropertyChanged("InvoiceValues");
             }
         }
 
-        private SealingSchoolWPF.Model.TrainingActivity _trainingActivityTyp;
-        public SealingSchoolWPF.Model.TrainingActivity TrainingActivityTyp
+        private SealingSchoolWPF.Model.Invoice _invoiceTyp;
+        public SealingSchoolWPF.Model.Invoice InvoiceTyp
         {
             get
             {
-                return _trainingActivityTyp;
+                return _invoiceTyp;
             }
             set
             {
-                _trainingActivityTyp = value;
-                this.OnPropertyChanged("TrainingActivityTyp");
-            }
-        }
-
-        private bool _isComboBoxEnabled = true;
-        public bool IsComboBoxEnabled
-        {
-            get
-            {
-                return _isComboBoxEnabled;
-            }
-            set
-            {
-                _isComboBoxEnabled = value;
-                this.OnPropertyChanged("IsComboBoxEnabled");
-            }
-        }
-
-        private bool _isComboBoxReadOnly = false;
-        public bool IsComboBoxReadOnly
-        {
-            get
-            {
-                return _isComboBoxReadOnly;
-            }
-            set
-            {
-                _isComboBoxReadOnly = value;
-                this.OnPropertyChanged("IsComboBoxReadOnly");
+                _invoiceTyp = value;
+                this.OnPropertyChanged("InvoiceTyp");
             }
         }
 
@@ -253,39 +225,35 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
 
         private void SaveModelToDatabase()
         {
-            InvoiceItem item = new InvoiceItem();
-            item.GrossPrice = this.TrainingActivityTyp.Course.GrossPrice;
-            item.NetPrice = this.TrainingActivityTyp.Course.NetPrice;
-            item.VatAmount = this.TrainingActivityTyp.Course.NetAmount;
+            CreditNoteItem item = new CreditNoteItem();
+            item.GrossPrice = this.InvoiceTyp.GrossPrice;
+            item.NetPrice = this.InvoiceTyp.NetPrice;
+            item.VatAmount = this.InvoiceTyp.VatAmount;
             item.Amount = 1;
             item.ServiceLocation = "Italien";
             item.ServiceEndDate = DateTime.Now;
             item.ServiceStartDate = DateTime.Now;
-            //Model.InvoiceItems = new List<InvoiceItem>();
-            //Model.InvoiceItems.Add(item);
+            Model.CreditNoteItems = new List<CreditNoteItem>();
+            Model.CreditNoteItems.Add(item);
 
-            //Model.CreatedOn = DateTime.Now;
-            //Model.Printed = false;
-            Model.GrossPrice = this.TrainingActivityTyp.Course.GrossPrice;
-            Model.NetPrice = this.TrainingActivityTyp.Course.NetPrice;
-            Model.VatAmount = this.TrainingActivityTyp.Course.NetAmount;
-            //Model.PaymentStatus = PaymentStatus.NICHT_GEZAHLT;
-            //Model.InvoiceStatus = InvoiceStatus.RECHNUNG;
-            //Model.PaymentTargetDate = DateTime.Now.Add(new TimeSpan(14, 0, 0, 0));
-            //Model.PaidDate = DateTime.Now;
-            //Model.ModifiedOn = DateTime.Now;
-            //Model.Label = this.TrainingActivityTyp.Student.Label + " / " + this.TrainingActivityTyp.Course.Label;
+            Model.CreatedOn = DateTime.Now;
+            Model.GrossPrice = this.InvoiceTyp.GrossPrice;
+            Model.NetPrice = this.InvoiceTyp.NetPrice;
+            Model.VatAmount = this.InvoiceTyp.VatAmount;
+            Model.ModifiedOn = DateTime.Now;
+            Model.Label = "GS_" + this.InvoiceTyp.Label;
+            Model.CreditDate = DateTime.Now;
 
             try
             {
                 this.creditNoteMgr.Create(Model);
-                TrainingActivity ta = this.trainingActivityMgr.GetById(this.TrainingActivityTyp.TrainingActivityId);
-                ta.TrainingActivityStatus = TrainingActivityStatus.RECHNUNG_GESTELLT;
-                this.trainingActivityMgr.Update(ta);
+                this.InvoiceTyp.InvoiceStatus = InvoiceStatus.GUTSCHRIFT;
+                this.InvoiceTyp.PaymentStatus = PaymentStatus.GUTGESCHRIEBEN;
+                this.invoiceMgr.Update(this.InvoiceTyp);
 
-                PDFTest createInvoicePDF = new PDFTest();
+                PDFPrinter createCreditNotePDF = new PDFPrinter();
                 string name = DateTime.Now.ToString().Replace(".", "_").Replace(":", string.Empty).Replace(" ", "_");
-                //createInvoicePDF.createPDF(name.Trim(), ta, Model.InvoiceId);
+                createCreditNotePDF.createCreditNotePDF(name.Trim(), Model);
             }
             catch (Exception e)
             {
@@ -305,7 +273,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
             return creditNotes;
         }
 
-        public IList<TrainingActivity> coursesList = new List<TrainingActivity>();
+        public IList<Invoice> invoiceList = new List<Invoice>();
         #endregion
     }
 }
