@@ -153,6 +153,9 @@
     <Compile Include="Pages\BusinessUnit\Material.xaml.cs">
       <DependentUpon>Material.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Controls\CreateCreditNoteControl.xaml.cs">
+      <DependentUpon>CreateCreditNoteControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Controls\InvoiceBaseControl.xaml.cs">
       <DependentUpon>InvoiceBaseControl.xaml</DependentUpon>
     </Compile>
@@ -407,6 +410,9 @@
     </Compile>
     <Compile Include="Pages\Instructor\Update\Honorar.xaml.cs">
       <DependentUpon>Honorar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoicing\Controls\CreateCreditNotesButtons.xaml.cs">
+      <DependentUpon>CreateCreditNotesButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Invoicing\Controls\CreateInvoiceButtons.xaml.cs">
       <DependentUpon>CreateInvoiceButtons.xaml</DependentUpon>
@@ -789,6 +795,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Controls\CreateCreditNoteControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\Controls\InvoiceBaseControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1030,6 +1040,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Instructor\Update\Honorar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Invoicing\Controls\CreateCreditNotesButtons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

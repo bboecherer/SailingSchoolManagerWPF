@@ -597,4 +597,16 @@
   <data name="PaymentStatusDescription" xml:space="preserve">
     <value>Bitte den Bezahlstatus auswählen</value>
   </data>
+  <data name="SelectInvoiceDescription" xml:space="preserve">
+    <value>Bitte Rechnung auswählen</value>
+  </data>
+  <data name="Dummy" xml:space="preserve">
+    <value>Dummy</value>
+  </data>
+  <data name="SelectInvDesc" xml:space="preserve">
+    <value>Bitte Rechnung auswählen</value>
+  </data>
+  <data name="CreditDate" xml:space="preserve">
+    <value>Gutschriftsdatum</value>
+  </data>
 </root>

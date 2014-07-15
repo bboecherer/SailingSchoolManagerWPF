@@ -31,7 +31,7 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
             this.DataContext = viewModel;
         }
 
-        private void ModernWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void ModernWindow_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {
             viewModel.Close();
         }

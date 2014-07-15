@@ -412,6 +412,15 @@ namespace SealingSchoolWPF.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gutschriftsdatum.
+        /// </summary>
+        public static string CreditDate {
+            get {
+                return ResourceManager.GetString("CreditDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gutschrift.
         /// </summary>
         public static string CreditNote {
@@ -543,6 +552,15 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string DSV {
             get {
                 return ResourceManager.GetString("DSV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dummy.
+        /// </summary>
+        public static string Dummy {
+            get {
+                return ResourceManager.GetString("Dummy", resourceCulture);
             }
         }
         
@@ -1236,6 +1254,24 @@ namespace SealingSchoolWPF.Resources.Language {
         public static string SelectInstructor {
             get {
                 return ResourceManager.GetString("SelectInstructor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte Rechnung auswählen.
+        /// </summary>
+        public static string SelectInvDesc {
+            get {
+                return ResourceManager.GetString("SelectInvDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte Rechnung auswählen.
+        /// </summary>
+        public static string SelectInvoiceDescription {
+            get {
+                return ResourceManager.GetString("SelectInvoiceDescription", resourceCulture);
             }
         }
         

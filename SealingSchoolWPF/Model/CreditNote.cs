@@ -8,25 +8,16 @@ namespace SealingSchoolWPF.Model
 {
     public class CreditNote : SealingSchoolObject
     {
-        public int Id { get; set; }
-        public Boolean Printed { get; set; }
-        public DateTime CreditDate { get; set; }
-        public SortedSet<CreditNoteItem> Items = new SortedSet<CreditNoteItem>();
-        public Decimal NetPrice { get; set; }
-        public Decimal GrossPrice { get; set; }
-        public Decimal GrossPricePaid { get; set; }
-        public Decimal VatAmount { get; set; }
-        public Double Vat { get; set; }
-        public Adress CreditNoteAdress { get; set; }
+        public virtual int Id { get; set; }
+        public virtual Boolean Printed { get; set; }
+        public virtual DateTime CreditDate { get; set; }
+        public virtual Decimal NetPrice { get; set; }
+        public virtual Decimal GrossPrice { get; set; }
+        public virtual Decimal GrossPricePaid { get; set; }
+        public virtual Decimal VatAmount { get; set; }
+        public virtual Double Vat { get; set; }
+        public virtual Adress CreditNoteAdress { get; set; }
+        public virtual IList<CreditNoteItem> CreditNoteItems { get; set; }
 
-        public void SetItems(SortedSet<CreditNoteItem> Items)
-        {
-            this.Items = Items;
-        }
-
-        public SortedSet<CreditNoteItem> GetItems()
-        {
-            return this.Items;
-        }
     }
 }

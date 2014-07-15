@@ -89,5 +89,7 @@ namespace SealingSchoolWPF.Data
             }
             return Invoices;
         }
+
+      
     }
 }
