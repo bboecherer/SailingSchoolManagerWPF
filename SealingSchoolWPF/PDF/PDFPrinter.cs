@@ -9,57 +9,14 @@ using SealingSchoolWPF.Data;
 
 namespace SealingSchoolWPF.PDF
 {
-    public class PDFTest
+    public class PDFPrinter
     {
         PDFCreator creator = new PDFCreator();
         private TrainingActivityMgr taMgr = new TrainingActivityMgr();
         private InvoiceMgr invMgr = new InvoiceMgr();
+        private CreditNoteMgr creditMgr = new CreditNoteMgr();
 
-        public void test()
-        {
-            Document pdfdoc = new Document();
-            creator.CreatePDF(pdfdoc, "Invoice");
-
-            Paragraph headline = creator.CreateParagraphLeft("Rechnung für Kurs XYZ", creator.GetStandardFontTitle());
-            pdfdoc.Add(headline);
-            pdfdoc.Add(creator.AddEmptyParagraph());
-            pdfdoc.Add(creator.AddEmptyParagraph());
-            pdfdoc.Add(creator.CreateParagraphLeft("Rechnungsnummer: xxxxx", creator.GetStandardFont()));
-            pdfdoc.Add(creator.CreateParagraphLeft("Rechnungsdatum: " + DateTime.Now.ToLongDateString(), creator.GetStandardFont()));
-            pdfdoc.Add(creator.AddEmptyParagraph());
-            pdfdoc.Add(creator.AddEmptyParagraph());
-
-            pdfdoc.Add(creator.CreateParagraphLeft("Vielen Dank für Ihre Teilnahmen", creator.GetStandardFontBold()));
-
-            pdfdoc.Add(creator.AddEmptyParagraph());
-            pdfdoc.Add(creator.CreateParagraphLeft("Platzhalter für Tabelle", creator.GetStandardFont()));
-            pdfdoc.Add(creator.AddEmptyParagraph());
-
-            pdfdoc.Add(creator.AddEmptyParagraph());
-            pdfdoc.Add(creator.AddEmptyParagraph());
-
-            List<Course> dummy = new List<Course>();
-
-            Course c1 = new Course();
-            c1.Label = "Test";
-            c1.Description = "Testbeschreibung";
-            c1.ModifiedOn = DateTime.Now;
-            c1.GrossPrice = new Decimal(12.5);
-            dummy.Add(c1);
-
-            Course c2 = new Course();
-            c2.Label = "Test 2";
-            c2.Description = "Testbeschreibung2";
-            c2.ModifiedOn = DateTime.Now;
-            c2.GrossPrice = new Decimal(22.5);
-            dummy.Add(c2);
-
-            pdfdoc.Add(creator.CreatePDFTable(dummy));
-
-            pdfdoc.Close();
-        }
-
-        public void createPDF(String invoiceName, TrainingActivity ta, int invoiceId)
+        public void createInvoicePDF(String invoiceName, TrainingActivity ta, int invoiceId)
         {
             Document pdfdoc = new Document();
             creator.CreatePDF(pdfdoc, "RE_" + invoiceName);
@@ -166,22 +123,20 @@ namespace SealingSchoolWPF.PDF
             pdfdoc.Close();
         }
 
-
-
-        internal void createCreditNotePDF(string name, CreditNote cn)
+        public void createCreditNotePDF(string name, CreditNote cn)
         {
             Document pdfdoc = new Document();
             creator.CreatePDF(pdfdoc, "GS_" + name);
 
-            var invDummy = invMgr.GetById(cn.Id);
+            var invDummy = creditMgr.GetById(cn.Id);
 
-            Paragraph headline = creator.CreateParagraph(string.Format("Gutschrift-Nr.: {0}", cn.Label), creator.GetStandardFontTitle());
+            Paragraph headline = creator.CreateParagraph(string.Format("Gutschrift"), creator.GetStandardFontTitle());
 
             pdfdoc.Add(creator.AddEmptyParagraph());
             pdfdoc.Add(creator.AddEmptyParagraph());
 
             pdfdoc.Add(creator.CreateParagraph("Empfänger:", creator.GetStandardFont()));
-            pdfdoc.Add(creator.CreateParagraph("Vorname + Nachname", creator.GetStandardFont()));
+            pdfdoc.Add(creator.CreateParagraph("Vor- und Nachname", creator.GetStandardFont()));
             pdfdoc.Add(creator.CreateParagraph("Adresse", creator.GetStandardFont()));
             pdfdoc.Add(creator.CreateParagraph("PLZ und Ort", creator.GetStandardFont()));
 
@@ -196,7 +151,7 @@ namespace SealingSchoolWPF.PDF
             pdfdoc.Add(creator.AddEmptyParagraph());
             pdfdoc.Add(creator.AddEmptyParagraph());
 
-            //List<Course> dummy = new List<Course>();
+            List<Course> dummy = new List<Course>();
 
             //Course c1 = new Course();
             //c1.Label = taDummy.Course.Label;
@@ -205,7 +160,7 @@ namespace SealingSchoolWPF.PDF
             //c1.GrossPrice = taDummy.Course.GrossPrice;
             //dummy.Add(c1);
 
-            //pdfdoc.Add(creator.CreatePDFTable(dummy));
+            pdfdoc.Add(creator.CreatePDFTable(dummy));
 
             pdfdoc.Add(creator.AddEmptyParagraph());
             pdfdoc.Add(creator.AddEmptyParagraph());

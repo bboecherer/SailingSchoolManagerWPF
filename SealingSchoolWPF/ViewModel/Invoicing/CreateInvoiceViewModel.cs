@@ -513,9 +513,9 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         ta.TrainingActivityStatus = TrainingActivityStatus.RECHNUNG_GESTELLT;
         this.trainingActivityMgr.Update( ta );
 
-        PDFTest createInvoicePDF = new PDFTest();
+        PDFPrinter createInvoicePDF = new PDFPrinter();
         string name = DateTime.Now.ToString().Replace( ".", "_" ).Replace( ":", string.Empty ).Replace( " ", "_" );
-        createInvoicePDF.createPDF( name.Trim(), ta, Model.InvoiceId );
+        createInvoicePDF.createInvoicePDF( name.Trim(), ta, Model.InvoiceId );
       }
       catch ( Exception e )
       {

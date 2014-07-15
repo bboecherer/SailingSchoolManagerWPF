@@ -251,7 +251,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
                 this.InvoiceTyp.PaymentStatus = PaymentStatus.GUTGESCHRIEBEN;
                 this.invoiceMgr.Update(this.InvoiceTyp);
 
-                PDFTest createCreditNotePDF = new PDFTest();
+                PDFPrinter createCreditNotePDF = new PDFPrinter();
                 string name = DateTime.Now.ToString().Replace(".", "_").Replace(":", string.Empty).Replace(" ", "_");
                 createCreditNotePDF.createCreditNotePDF(name.Trim(), Model);
             }

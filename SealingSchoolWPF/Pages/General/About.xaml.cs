@@ -25,11 +25,5 @@ namespace SealingSchoolWPF.General
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            PDFTest test = new PDFTest();
-            test.test();
-        }
     }
 }
