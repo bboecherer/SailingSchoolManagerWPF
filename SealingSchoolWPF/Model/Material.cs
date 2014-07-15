@@ -20,12 +20,11 @@ namespace SealingSchoolWPF.Model
         public virtual MaterialTyp MaterialTyp { get; set; }
         public virtual string RepairAction { get; set; }
         public virtual string SerialNumber { get; set; }
-        public virtual CoursePlaning CoursePlaning { get; set; }
 
         [InverseProperty("Material")]
         public virtual ICollection<BoatTyp> BoatTyps { get; set; }
 
-       
+
 
     }
 }

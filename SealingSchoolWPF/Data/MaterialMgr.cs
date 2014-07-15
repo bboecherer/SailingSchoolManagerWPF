@@ -173,7 +173,7 @@ namespace SealingSchoolWPF.Data
             using (var ctx = new SchoolDataContext())
             {
                 material = (Material)ctx.Materials.Where(s => s.MaterialId == id);
-               
+
                 if (material.BoatTyps != null)
                 {
                     foreach (BoatTyp q in material.BoatTyps)
@@ -185,6 +185,36 @@ namespace SealingSchoolWPF.Data
                 }
             }
             return material;
+        }
+
+        public IList<Material> GetAllForBootTyp(BoatTyp BoatTyp)
+        {
+            Materials = new List<Material>();
+
+            using (var ctx = new SchoolDataContext())
+            {
+
+                foreach (Material mat in ctx.Materials)
+                {
+                    if (mat.MaterialTyp != null)
+                    {
+                        ctx.MaterialTyps.Attach(mat.MaterialTyp);
+                    }
+                    if (mat.BoatTyps != null)
+                    {
+                        foreach (BoatTyp q in mat.BoatTyps)
+                        {
+                            if (q.BoatTypID == BoatTyp.BoatTypID)
+                            {
+                                Materials.Add(mat);
+                                ctx.BoatTyps.Attach(q);
+                            }
+                        }
+                    }
+
+                }
+            }
+            return Materials;
         }
     }
 }

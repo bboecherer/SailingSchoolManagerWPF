@@ -43,5 +43,7 @@ namespace SealingSchoolWPF.Data
         public DbSet<BoatTyp> BoatTyps { get; set; }
         public DbSet<TrainingActivity> TrainingActivities { get; set; }
         public DbSet<CourseMaterialTyp> CourseMaterialTyps { get; set; }
+        public DbSet<BlockedMaterial> BlockedMaterials { get; set; }
+        
     }
 }
