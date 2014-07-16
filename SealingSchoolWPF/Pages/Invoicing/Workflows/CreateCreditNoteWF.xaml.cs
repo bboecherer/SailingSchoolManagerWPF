@@ -27,7 +27,10 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
 
         public CreateCreditNoteWF()
         {
-            InitializeComponent(); viewModel = CreateCreditNoteViewModel.Instance;
+            InitializeComponent();
+            viewModel = CreateCreditNoteViewModel.Instance;
+            viewModel.Close();
+            viewModel = CreateCreditNoteViewModel.Instance;
             this.DataContext = viewModel;
         }
 

@@ -17,24 +17,26 @@ using SealingSchoolWPF.ViewModel.Invoicing;
 
 namespace SealingSchoolWPF.Pages.Invoicing.Workflows
 {
-  /// <summary>
-  /// Interaction logic for CreateTrainingActivitiesWF.xaml
-  /// </summary>
-  public partial class CreateInvoiceWF : ModernWindow
-  {
-
-    CreateInvoiceViewModel viewModel;
-
-    public CreateInvoiceWF()
+    /// <summary>
+    /// Interaction logic for CreateTrainingActivitiesWF.xaml
+    /// </summary>
+    public partial class CreateInvoiceWF : ModernWindow
     {
-      InitializeComponent();
-      viewModel = CreateInvoiceViewModel.Instance;
-      this.DataContext = viewModel;
-    }
 
-    private void ModernWindow_Closing( object sender, System.ComponentModel.CancelEventArgs e )
-    {
-      viewModel.Close();
+        CreateInvoiceViewModel viewModel;
+
+        public CreateInvoiceWF()
+        {
+            InitializeComponent();
+            viewModel = CreateInvoiceViewModel.Instance;
+            viewModel.Close();
+            viewModel = CreateInvoiceViewModel.Instance;
+            this.DataContext = viewModel;
+        }
+
+        private void ModernWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            viewModel.Close();
+        }
     }
-  }
 }
