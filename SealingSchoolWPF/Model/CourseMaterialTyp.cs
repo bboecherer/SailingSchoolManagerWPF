@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-    public class CourseMaterialTyp : SealingSchoolObject
+    public class CourseMaterialTyp
     {
         [Key]
         public virtual int Id { get; set; }
         public virtual MaterialTyp MaterialTyp { get; set; }
         public virtual int Amount { get; set; }
-
-        //public virtual ICollection<Course> CourseMatTyp { get; set; }
-
 
         public override bool Equals(object obj)
         {
