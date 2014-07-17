@@ -15,7 +15,7 @@ namespace SealingSchoolWPF.Model
         public virtual String Name { get; set; }
         public virtual bool IsEnabled { get; set; }
 
-        public virtual ICollection<Course> CourseMaterialTyp { get; set; }
+        //public virtual ICollection<Course> CourseMaterialTyp { get; set; }
 
 
         public override string ToString()
