@@ -14,9 +14,6 @@ namespace SealingSchoolWPF.Model
         public virtual int BlockedMaterialId { get; set; }
         public virtual DateTime StartDate { get; set; }
         public virtual DateTime EndDate { get; set; }
-
-        //public virtual CoursePlaning CoursePlaning { get; set; }
-
         public virtual Material Material { get; set; }
 
 

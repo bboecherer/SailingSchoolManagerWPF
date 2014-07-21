@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace SealingSchoolWPF.Pages.BoatAdministration.Administration
 {
     /// <summary>
-    /// Interaction logic for UpdateMaterial.xaml
+    /// Interaction logic for AdministrateBoat.xaml
     /// </summary>
     public partial class AdministrateBoat : ModernWindow
     {
