@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
     /// </summary>
     public partial class Material : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Material"/> class.
+        /// </summary>
         public Material()
         {
             InitializeComponent();
@@ -29,6 +32,11 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the Button control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = MaterialTypListViewModel.Instance;

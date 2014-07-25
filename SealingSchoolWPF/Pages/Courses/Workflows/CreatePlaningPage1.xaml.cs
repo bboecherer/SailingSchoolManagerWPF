@@ -16,28 +16,41 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Course.Workflows
 {
-  /// <summary>
-  /// Interaction logic for CreateNewStudent.xaml
-  /// </summary>
-  public partial class CreatePlaningPage1 : UserControl
-  {
-    public CreatePlaningPage1()
+    /// <summary>
+    /// Interaction logic for CreateNewStudent.xaml
+    /// </summary>
+    public partial class CreatePlaningPage1 : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateCoursePlaningViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePlaningPage1"/> class.
+        /// </summary>
+        public CreatePlaningPage1()
+        {
+            InitializeComponent();
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-    private void UserControl_LostFocus( object sender, RoutedEventArgs e )
-    {
-      var viewModel = CreateCoursePlaningViewModel.Instance;
-      viewModel.CheckFields();
-    }
+        /// <summary>
+        /// Handles the LostFocus event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void UserControl_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            viewModel.CheckFields();
+        }
 
-    private void UserControl_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
-    {
-      var viewModel = CreateCoursePlaningViewModel.Instance;
-      viewModel.CheckFields();
+        /// <summary>
+        /// Handles the IsVisibleChanged event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            viewModel.CheckFields();
+        }
     }
-  }
 }

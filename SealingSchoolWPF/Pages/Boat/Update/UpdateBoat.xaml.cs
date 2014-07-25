@@ -22,8 +22,15 @@ namespace SealingSchoolWPF.Pages.Boat.Update
     /// </summary>
     public partial class UpdateBoat : ModernWindow
     {
+        /// <summary>
+        /// The view model
+        /// </summary>
         UpdateBoatViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateBoat"/> class.
+        /// </summary>
+        /// <param name="material">The material.</param>
         public UpdateBoat(BoatViewModel material)
         {
             InitializeComponent();
@@ -32,6 +39,11 @@ namespace SealingSchoolWPF.Pages.Boat.Update
         }
 
 
+        /// <summary>
+        /// Gets the boat data from model.
+        /// </summary>
+        /// <param name="boat">The boat.</param>
+        /// <returns>Boat</returns>
         private Model.Boat GetBoatDataFromModel(BoatViewModel boat)
         {
 
@@ -40,9 +52,14 @@ namespace SealingSchoolWPF.Pages.Boat.Update
             newBoat.MaterialStatus = boat.MaterialStatus;
             newBoat.Name = boat.Name;
             newBoat.Price = boat.Price;
-            
+
             return newBoat;
         }
+        /// <summary>
+        /// Handles the Closed event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closed(object sender, EventArgs e)
         {
             viewModel.Close();

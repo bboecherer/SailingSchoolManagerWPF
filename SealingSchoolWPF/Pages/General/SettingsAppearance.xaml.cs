@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.General
     /// </summary>
     public partial class SettingsAppearance : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingsAppearance"/> class.
+        /// </summary>
         public SettingsAppearance()
         {
             InitializeComponent();

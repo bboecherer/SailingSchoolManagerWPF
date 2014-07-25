@@ -10,10 +10,23 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for MaterialTyp
+    /// </summary>
     public class MaterialTypMgr : IPersistenceMgr<MaterialTyp>
     {
+        /// <summary>
+        /// Gets or sets the material typs.
+        /// </summary>
+        /// <value>
+        /// The material typs.
+        /// </value>
         public IList<MaterialTyp> MaterialTyps { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<MaterialTyp></returns>
         public IList<MaterialTyp> GetAll()
         {
             MaterialTyps = new List<MaterialTyp>();
@@ -28,6 +41,10 @@ namespace SealingSchoolWPF.Data
             return MaterialTyps;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(MaterialTyp entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -38,6 +55,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(MaterialTyp entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -62,11 +83,21 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
         public void Update(MaterialTyp entity)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>MaterialTyp</returns>
         public MaterialTyp GetById(int id)
         {
             MaterialTyp Mat;

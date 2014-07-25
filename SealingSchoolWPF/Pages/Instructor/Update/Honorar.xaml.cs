@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
     /// </summary>
     public partial class Honorar : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Honorar"/> class.
+        /// </summary>
         public Honorar()
         {
             InitializeComponent();

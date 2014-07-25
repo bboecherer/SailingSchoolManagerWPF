@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Material.Update
     /// </summary>
     public partial class Documents : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Documents"/> class.
+        /// </summary>
         public Documents()
         {
             InitializeComponent();

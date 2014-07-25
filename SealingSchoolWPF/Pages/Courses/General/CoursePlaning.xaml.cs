@@ -16,57 +16,88 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-  /// <summary>
-  /// Interaction logic for TrainingsActivities.xaml
-  /// </summary>
-  public partial class CoursePlaning : UserControl
-  {
-    public CoursePlaning()
+    /// <summary>
+    /// Interaction logic for TrainingsActivities.xaml
+    /// </summary>
+    public partial class CoursePlaning : UserControl
     {
-      InitializeComponent();
-      BindDataContext();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoursePlaning"/> class.
+        /// </summary>
+        public CoursePlaning()
+        {
+            InitializeComponent();
+            BindDataContext();
+        }
 
-    private void BindDataContext()
-    {
-      var viewModel = SealingSchoolWPF.ViewModel.Course.CoursePlaningViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Binds the data context.
+        /// </summary>
+        private void BindDataContext()
+        {
+            var viewModel = SealingSchoolWPF.ViewModel.Course.CoursePlaningViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-    private void Button_Click( object sender, RoutedEventArgs e )
-    {
-      this.DataContext = null;
-      BindDataContext();
-    }
+        /// <summary>
+        /// Handles the Click event of the Button control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = null;
+            BindDataContext();
+        }
 
-    private void Button_Click_1( object sender, RoutedEventArgs e )
-    {
-      CreateCoursePlaning window = new CreateCoursePlaning();
-      window.ShowDialog();
-    }
+        /// <summary>
+        /// Handles the 1 event of the Button_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CreateCoursePlaning window = new CreateCoursePlaning();
+            window.ShowDialog();
+        }
 
-    private void UserControl_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
-    {
-      this.DataContext = null;
-      BindDataContext();
-    }
+        /// <summary>
+        /// Handles the IsVisibleChanged event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            this.DataContext = null;
+            BindDataContext();
+        }
 
-    private void UserControl_MouseEnter( object sender, MouseEventArgs e )
-    {
-      this.DataContext = null;
-      BindDataContext();
-    }
+        /// <summary>
+        /// Handles the MouseEnter event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.DataContext = null;
+            BindDataContext();
+        }
 
-    private void DataGrid_MouseDoubleClick_1( object sender, MouseButtonEventArgs e )
-    {
-      var grid = sender as DataGrid;
-      var course = (SealingSchoolWPF.Model.CoursePlaning) grid.SelectedItem;
+        /// <summary>
+        /// Handles the 1 event of the DataGrid_MouseDoubleClick control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var course = (SealingSchoolWPF.Model.CoursePlaning)grid.SelectedItem;
 
-      if ( course != null )
-      {
-        PlaningCourse window = new PlaningCourse( course );
-        window.ShowDialog();
-      }
+            if (course != null)
+            {
+                PlaningCourse window = new PlaningCourse(course);
+                window.ShowDialog();
+            }
+        }
     }
-  }
 }

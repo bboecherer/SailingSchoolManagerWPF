@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class BuMaterialControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuMaterialControl"/> class.
+        /// </summary>
         public BuMaterialControl()
         {
             InitializeComponent();

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
+    /// <summary>
+    ///  The Unit Enum
+    /// </summary>
     public enum Unit
     {
+        /// <summary>
+        /// useable values are STK, STD, TAG
+        /// </summary>
         STK, STD, TAG
     }
 }

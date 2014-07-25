@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class DocumentControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentControl"/> class.
+        /// </summary>
         public DocumentControl()
         {
             InitializeComponent();

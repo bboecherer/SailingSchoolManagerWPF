@@ -8,62 +8,120 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-  public class BlockedTimeSpan
-  {
-    [Key]
-    public virtual int BlockedTimeSpanId { get; set; }
-    public virtual DateTime StartDate { get; set; }
-    public virtual DateTime EndDate { get; set; }
-
-    public virtual Course Course { get; set; }
-
-    public virtual Instructor Instructor { get; set; }
-
-    public virtual String Reason { get; set; }
-
-
-    public override string ToString()
+    /// <summary>
+    /// The BlockedTimeSpan Model
+    /// </summary>
+    public class BlockedTimeSpan
     {
-      StringBuilder builder = new StringBuilder();
+        /// <summary>
+        /// Gets or sets the blocked time span identifier.
+        /// </summary>
+        /// <value>
+        /// The blocked time span identifier.
+        /// </value>
+        [Key]
+        public virtual int BlockedTimeSpanId { get; set; }
+        /// <summary>
+        /// Gets or sets the start date.
+        /// </summary>
+        /// <value>
+        /// The start date.
+        /// </value>
+        public virtual DateTime StartDate { get; set; }
+        /// <summary>
+        /// Gets or sets the end date.
+        /// </summary>
+        /// <value>
+        /// The end date.
+        /// </value>
+        public virtual DateTime EndDate { get; set; }
 
-      builder.Append( "Von " + StartDate.ToShortDateString() + " bis " + this.EndDate.ToShortDateString() );
+        /// <summary>
+        /// Gets or sets the course.
+        /// </summary>
+        /// <value>
+        /// The course.
+        /// </value>
+        public virtual Course Course { get; set; }
 
-      if ( this.Course != null )
-      {
-        builder.Append( string.Format( ", Kurs {0}", this.Course.Label ) );
-      }
-      else
-      {
-        builder.Append( ", privat" );
+        /// <summary>
+        /// Gets or sets the instructor.
+        /// </summary>
+        /// <value>
+        /// The instructor.
+        /// </value>
+        public virtual Instructor Instructor { get; set; }
 
-      }
+        /// <summary>
+        /// Gets or sets the reason.
+        /// </summary>
+        /// <value>
+        /// The reason.
+        /// </value>
+        public virtual String Reason { get; set; }
 
-      return builder.ToString();
+
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.Append("Von " + StartDate.ToShortDateString() + " bis " + this.EndDate.ToShortDateString());
+
+            if (this.Course != null)
+            {
+                builder.Append(string.Format(", Kurs {0}", this.Course.Label));
+            }
+            else
+            {
+                builder.Append(", privat");
+
+            }
+
+            return builder.ToString();
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            BlockedTimeSpan blocked;
+            try
+            {
+                blocked = (BlockedTimeSpan)obj;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            if (BlockedTimeSpanId != blocked.BlockedTimeSpanId)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ this.BlockedTimeSpanId;
+        }
     }
-
-    public override bool Equals( object obj )
-    {
-      BlockedTimeSpan blocked;
-      try
-      {
-        blocked = (BlockedTimeSpan) obj;
-      }
-      catch ( Exception )
-      {
-        return false;
-      }
-
-      if ( BlockedTimeSpanId != blocked.BlockedTimeSpanId )
-      {
-        return false;
-      }
-
-      return true;
-    }
-
-    public override int GetHashCode()
-    {
-      return base.GetHashCode() ^ this.BlockedTimeSpanId;
-    }
-  }
 }

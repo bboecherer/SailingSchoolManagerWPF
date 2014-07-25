@@ -7,13 +7,41 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
+    /// <summary>
+    /// The CourseMaterialTyp Model
+    /// </summary>
     public class CourseMaterialTyp
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         [Key]
         public virtual int Id { get; set; }
+        /// <summary>
+        /// Gets or sets the material typ.
+        /// </summary>
+        /// <value>
+        /// The material typ.
+        /// </value>
         public virtual MaterialTyp MaterialTyp { get; set; }
+        /// <summary>
+        /// Gets or sets the amount.
+        /// </summary>
+        /// <value>
+        /// The amount.
+        /// </value>
         public virtual int Amount { get; set; }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
         public override bool Equals(object obj)
         {
             try
@@ -34,6 +62,12 @@ namespace SealingSchoolWPF.Model
             return true;
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
         public override int GetHashCode()
         {
             return base.GetHashCode() ^ this.Id;

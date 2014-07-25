@@ -16,26 +16,34 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-  /// <summary>
-  /// Interaction logic for InstructorListView.xaml
-  /// </summary>
-  public partial class InstructorListView : UserControl
-  {
-    public InstructorListView()
+    /// <summary>
+    /// Interaction logic for InstructorListView.xaml
+    /// </summary>
+    public partial class InstructorListView : UserControl
     {
-      InitializeComponent();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InstructorListView"/> class.
+        /// </summary>
+        public InstructorListView()
+        {
+            InitializeComponent();
+        }
 
-    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
-    {
-      var grid = sender as DataGrid;
-      var instructor = (SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel) grid.SelectedItem;
+        /// <summary>
+        /// Handles the MouseDoubleClick event of the DataGrid control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var instructor = (SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel)grid.SelectedItem;
 
-      if ( instructor != null )
-      {
-        UpdateInstructor window = new UpdateInstructor( instructor );
-        window.ShowDialog();
-      }
+            if (instructor != null)
+            {
+                UpdateInstructor window = new UpdateInstructor(instructor);
+                window.ShowDialog();
+            }
+        }
     }
-  }
 }

@@ -24,8 +24,15 @@ namespace SealingSchoolWPF.Pages.Courses.Update
     /// </summary>
     public partial class UpdateCourse : ModernWindow
     {
+        /// <summary>
+        /// The view model
+        /// </summary>
         UpdateCourseViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateCourse"/> class.
+        /// </summary>
+        /// <param name="course">The course.</param>
         public UpdateCourse(SealingSchoolWPF.ViewModel.Course.CourseViewModel course)
         {
             InitializeComponent();
@@ -33,6 +40,11 @@ namespace SealingSchoolWPF.Pages.Courses.Update
             this.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Gets the course data from model.
+        /// </summary>
+        /// <param name="course">The course.</param>
+        /// <returns></returns>
         private Model.Course GetCourseDataFromModel(CourseViewModel course)
         {
             Model.Course c = new Model.Course();
@@ -55,6 +67,11 @@ namespace SealingSchoolWPF.Pages.Courses.Update
             return c;
         }
 
+        /// <summary>
+        /// Handles the Closing event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             viewModel.Close();

@@ -22,6 +22,9 @@ namespace SealingSchoolWPF.Pages.General
     /// </summary>
     public partial class Instructors : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Instructors"/> class.
+        /// </summary>
         public Instructors()
         {
             InitializeComponent();
@@ -30,17 +33,30 @@ namespace SealingSchoolWPF.Pages.General
             instructorList.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Handles the Click event of the Button control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             BindDataContext();
         }
 
+        /// <summary>
+        /// Handles the 1 event of the Button_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             CreateInstructor window = new CreateInstructor();
             window.ShowDialog();
         }
 
+        /// <summary>
+        /// Binds the data context.
+        /// </summary>
         private void BindDataContext()
         {
             var viewModel = new InstructorListViewModel();
@@ -48,11 +64,21 @@ namespace SealingSchoolWPF.Pages.General
             instructorList.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Handles the IsVisibleChanged event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             BindDataContext();
         }
 
+        /// <summary>
+        /// Handles the MouseEnter event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void UserControl_MouseEnter(object sender, MouseEventArgs e)
         {
             BindDataContext();

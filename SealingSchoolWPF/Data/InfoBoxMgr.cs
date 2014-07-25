@@ -7,11 +7,24 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for InfoBox
+    /// </summary>
     public class InfoBoxMgr
     {
 
+        /// <summary>
+        /// Gets or sets the boxes.
+        /// </summary>
+        /// <value>
+        /// The boxes.
+        /// </value>
         public IList<InfoBox> Boxes { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<InfoBox></returns>
         public IList<InfoBox> GetAll()
         {
             Boxes = new List<InfoBox>();
@@ -26,6 +39,10 @@ namespace SealingSchoolWPF.Data
             return Boxes;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(InfoBox entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -35,6 +52,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(InfoBox entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -44,6 +65,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(InfoBox entity)
         {
             using (var ctx = new SchoolDataContext())

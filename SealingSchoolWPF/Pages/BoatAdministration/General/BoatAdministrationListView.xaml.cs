@@ -17,26 +17,34 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-  /// <summary>
-  /// Interaction logic for MaterialListView.xaml
-  /// </summary>
-  public partial class BoatAdministrationListView : UserControl
-  {
-    public BoatAdministrationListView()
+    /// <summary>
+    /// Interaction logic for MaterialListView.xaml
+    /// </summary>
+    public partial class BoatAdministrationListView : UserControl
     {
-      InitializeComponent();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BoatAdministrationListView"/> class.
+        /// </summary>
+        public BoatAdministrationListView()
+        {
+            InitializeComponent();
+        }
 
-    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
-    {
-      var grid = sender as DataGrid;
-      var boat = (SealingSchoolWPF.ViewModel.BoatAdministrationViewModel.BoatAdministrationViewModel) grid.SelectedItem;
+        /// <summary>
+        /// Handles the MouseDoubleClick event of the DataGrid control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var boat = (SealingSchoolWPF.ViewModel.BoatAdministrationViewModel.BoatAdministrationViewModel)grid.SelectedItem;
 
-      if ( boat != null )
-      {
-        AdministrateBoat window = new AdministrateBoat( boat );
-        window.ShowDialog();
-      }
+            if (boat != null)
+            {
+                AdministrateBoat window = new AdministrateBoat(boat);
+                window.ShowDialog();
+            }
+        }
     }
-  }
 }

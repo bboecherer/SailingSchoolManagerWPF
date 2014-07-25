@@ -16,16 +16,19 @@ using SealingSchoolWPF.ViewModel.Invoicing;
 
 namespace SealingSchoolWPF.Pages.Invoicing.Workflows
 {
-  /// <summary>
-  /// Interaction logic for CreateTAPage3.xaml
-  /// </summary>
-  public partial class CreateInvoicePage3 : UserControl
-  {
-    public CreateInvoicePage3()
+    /// <summary>
+    /// Interaction logic for CreateTAPage3.xaml
+    /// </summary>
+    public partial class CreateInvoicePage3 : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateInvoiceViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateInvoicePage3"/> class.
+        /// </summary>
+        public CreateInvoicePage3()
+        {
+            InitializeComponent();
+            var viewModel = CreateInvoiceViewModel.Instance;
+            this.DataContext = viewModel;
+        }
     }
-  }
 }

@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Instructor.Create
     /// </summary>
     public partial class Bankdata : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Bankdata"/> class.
+        /// </summary>
         public Bankdata()
         {
             InitializeComponent();

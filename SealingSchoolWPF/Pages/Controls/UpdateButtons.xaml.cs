@@ -23,17 +23,20 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Controls
 {
-  /// <summary>
-  /// Interaction logic for ButtonsToWork.xaml
-  /// </summary>
-  public partial class UpdateButtons : UserControl
-  {
-    public UpdateButtons()
+    /// <summary>
+    /// Interaction logic for ButtonsToWork.xaml
+    /// </summary>
+    public partial class UpdateButtons : UserControl
     {
-      InitializeComponent();
-      var viewModel = UpdateCourseViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateButtons"/> class.
+        /// </summary>
+        public UpdateButtons()
+        {
+            InitializeComponent();
+            var viewModel = UpdateCourseViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-  }
+    }
 }

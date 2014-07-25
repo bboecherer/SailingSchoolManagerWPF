@@ -22,8 +22,15 @@ namespace SealingSchoolWPF.Pages.Material.Update
     /// </summary>
     public partial class UpdateMaterial : ModernWindow
     {
+        /// <summary>
+        /// The view model
+        /// </summary>
         UpdateMaterialViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateMaterial"/> class.
+        /// </summary>
+        /// <param name="material">The material.</param>
         public UpdateMaterial(MaterialViewModel material)
         {
             InitializeComponent();
@@ -32,6 +39,11 @@ namespace SealingSchoolWPF.Pages.Material.Update
         }
 
 
+        /// <summary>
+        /// Gets the material data from model.
+        /// </summary>
+        /// <param name="material">The material.</param>
+        /// <returns></returns>
         private Model.Material GetMaterialDataFromModel(MaterialViewModel material)
         {
 
@@ -48,6 +60,11 @@ namespace SealingSchoolWPF.Pages.Material.Update
             mat.BoatTyps = material.BoatTyps;
             return mat;
         }
+        /// <summary>
+        /// Handles the Closed event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closed(object sender, EventArgs e)
         {
             viewModel.Close();

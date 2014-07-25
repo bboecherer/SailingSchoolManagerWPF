@@ -22,17 +22,20 @@ using SealingSchoolWPF.ViewModel.Invoicing;
 
 namespace SealingSchoolWPF.Pages.Invoicing.Controls
 {
-  /// <summary>
-  /// Interaction logic for ButtonsToWork.xaml
-  /// </summary>
-  public partial class CreateInvoiceButtons : UserControl
-  {
-    public CreateInvoiceButtons()
+    /// <summary>
+    /// Interaction logic for ButtonsToWork.xaml
+    /// </summary>
+    public partial class CreateInvoiceButtons : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateInvoiceViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateInvoiceButtons"/> class.
+        /// </summary>
+        public CreateInvoiceButtons()
+        {
+            InitializeComponent();
+            var viewModel = CreateInvoiceViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-  }
+    }
 }

@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
     /// </summary>
     public partial class Qualification : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Qualification"/> class.
+        /// </summary>
         public Qualification()
         {
             InitializeComponent();
@@ -29,13 +32,15 @@ namespace SealingSchoolWPF.Pages.BusinessUnit
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the Button control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = QualificationListViewModel.Instance;
             var obj = ((FrameworkElement)sender).DataContext as QualificationViewModel;
-            //var grid = sender as DataGrid;
-            //var quali = (SealingSchoolWPF.Model.Qualification)grid.SelectedItem;
-
             viewModel.ExecuteDeleteCommand(obj.Id);
         }
     }

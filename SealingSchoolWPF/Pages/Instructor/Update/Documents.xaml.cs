@@ -22,10 +22,13 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
     /// </summary>
     public partial class Documents : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Documents"/> class.
+        /// </summary>
         public Documents()
         {
             InitializeComponent();
-            var viewModel = UpdateInstructorViewModel.Instance; 
+            var viewModel = UpdateInstructorViewModel.Instance;
             this.DataContext = viewModel;
         }
     }

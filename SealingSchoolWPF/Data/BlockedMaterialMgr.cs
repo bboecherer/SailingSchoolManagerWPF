@@ -9,11 +9,27 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for Blocked Materials.
+    /// </summary>
     public class BlockedMaterialMgr
     {
+        /// <summary>
+        /// Gets or sets the blocked materials.
+        /// </summary>
+        /// <value>
+        /// The blocked materials.
+        /// </value>
         public IList<BlockedMaterial> BlockedMaterials { get; set; }
+        /// <summary>
+        /// The mat MGR
+        /// </summary>
         public MaterialMgr matMgr = new MaterialMgr();
 
+        /// <summary>
+        /// returns a List of all existing Blocked Material
+        /// </summary>
+        /// <returns>IList of BlockedMaterial</returns>
         public IList<BlockedMaterial> GetAll()
         {
             BlockedMaterials = new List<BlockedMaterial>();
@@ -36,6 +52,11 @@ namespace SealingSchoolWPF.Data
             return BlockedMaterials;
         }
 
+
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(BlockedMaterial entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -46,6 +67,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(BlockedMaterial entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -73,6 +98,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(BlockedMaterial entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -88,6 +117,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>BlockedMaterial</returns>
         public BlockedMaterial GetById(int id)
         {
             BlockedMaterial BlockedMaterial;
@@ -98,7 +132,13 @@ namespace SealingSchoolWPF.Data
             return BlockedMaterial;
         }
 
-
+        /// <summary>
+        /// Loads the useable material per boat typ.
+        /// </summary>
+        /// <param name="BoatTyp">The boat typ.</param>
+        /// <param name="StartDate">The start date.</param>
+        /// <param name="EndDate">The end date.</param>
+        /// <returns>IList<Material></returns>
         public IList<Material> LoadUseableMaterialPerBoatTyp(BoatTyp BoatTyp, DateTime StartDate, DateTime EndDate)
         {
             IList<Material> Materials;
@@ -149,15 +189,6 @@ namespace SealingSchoolWPF.Data
             }
             return Materials;
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

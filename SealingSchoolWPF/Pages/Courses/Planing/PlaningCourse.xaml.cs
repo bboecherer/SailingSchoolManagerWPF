@@ -17,23 +17,35 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Planing
 {
-  /// <summary>
-  /// Interaction logic for CreateStudent.xaml
-  /// </summary>
-  public partial class PlaningCourse : ModernWindow
-  {
-    UpdateCoursePlaningViewModel viewModel;
-
-    public PlaningCourse( SealingSchoolWPF.Model.CoursePlaning course )
+    /// <summary>
+    /// Interaction logic for CreateStudent.xaml
+    /// </summary>
+    public partial class PlaningCourse : ModernWindow
     {
-      InitializeComponent();
-      viewModel = new UpdateCoursePlaningViewModel( course );
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// The view model
+        /// </summary>
+        UpdateCoursePlaningViewModel viewModel;
 
-    private void ModernWindow_Closed_1( object sender, EventArgs e )
-    {
-      viewModel.Close();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlaningCourse"/> class.
+        /// </summary>
+        /// <param name="course">The course.</param>
+        public PlaningCourse(SealingSchoolWPF.Model.CoursePlaning course)
+        {
+            InitializeComponent();
+            viewModel = new UpdateCoursePlaningViewModel(course);
+            this.DataContext = viewModel;
+        }
+
+        /// <summary>
+        /// Handles the 1 event of the ModernWindow_Closed control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void ModernWindow_Closed_1(object sender, EventArgs e)
+        {
+            viewModel.Close();
+        }
     }
-  }
 }

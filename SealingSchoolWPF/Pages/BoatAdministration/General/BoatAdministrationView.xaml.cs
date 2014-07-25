@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.BoatAdministration.General
     /// </summary>
     public partial class BoatAdministrationView : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BoatAdministrationView"/> class.
+        /// </summary>
         public BoatAdministrationView()
         {
             InitializeComponent();
@@ -28,6 +31,11 @@ namespace SealingSchoolWPF.Pages.BoatAdministration.General
             boatAdministrationList.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Handles the Click event of the Button control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = new BoatAdministrationListViewModel();
@@ -35,6 +43,6 @@ namespace SealingSchoolWPF.Pages.BoatAdministration.General
             boatAdministrationList.DataContext = viewModel;
         }
 
-      
+
     }
 }

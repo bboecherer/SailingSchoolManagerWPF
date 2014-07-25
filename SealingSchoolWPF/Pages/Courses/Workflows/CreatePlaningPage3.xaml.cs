@@ -16,16 +16,19 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Course.Workflows
 {
-  /// <summary>
-  /// Interaction logic for CreateNewStudent.xaml
-  /// </summary>
-  public partial class CreatePlaningPage3 : UserControl
-  {
-    public CreatePlaningPage3()
+    /// <summary>
+    /// Interaction logic for CreateNewStudent.xaml
+    /// </summary>
+    public partial class CreatePlaningPage3 : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateCoursePlaningViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePlaningPage3"/> class.
+        /// </summary>
+        public CreatePlaningPage3()
+        {
+            InitializeComponent();
+            var viewModel = CreateCoursePlaningViewModel.Instance;
+            this.DataContext = viewModel;
+        }
     }
-  }
 }

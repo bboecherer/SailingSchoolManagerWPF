@@ -17,21 +17,29 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Controls
 {
-  /// <summary>
-  /// Interaction logic for QualificationControl.xaml
-  /// </summary>
-  public partial class StudentControl : UserControl
-  {
-    public StudentControl()
+    /// <summary>
+    /// Interaction logic for QualificationControl.xaml
+    /// </summary>
+    public partial class StudentControl : UserControl
     {
-      InitializeComponent();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StudentControl"/> class.
+        /// </summary>
+        public StudentControl()
+        {
+            InitializeComponent();
+        }
 
-    private void Buttontest_Click( object sender, RoutedEventArgs e )
-    {
-      var viewModel = CreateTAViewModel.Instance;
-      var obj = ( (FrameworkElement) sender ).DataContext as SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel;
-      viewModel.ExecuteDeleteCommand( obj );
+        /// <summary>
+        /// Handles the Click event of the Buttontest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = CreateTAViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel;
+            viewModel.ExecuteDeleteCommand(obj);
+        }
     }
-  }
 }

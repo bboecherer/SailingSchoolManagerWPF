@@ -16,16 +16,19 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Workflows
 {
-  /// <summary>
-  /// Interaction logic for CreateTAPage1.xaml
-  /// </summary>
-  public partial class CreateTAPage1 : UserControl
-  {
-    public CreateTAPage1()
+    /// <summary>
+    /// Interaction logic for CreateTAPage1.xaml
+    /// </summary>
+    public partial class CreateTAPage1 : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateTAViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTAPage1"/> class.
+        /// </summary>
+        public CreateTAPage1()
+        {
+            InitializeComponent();
+            var viewModel = CreateTAViewModel.Instance;
+            this.DataContext = viewModel;
+        }
     }
-  }
 }

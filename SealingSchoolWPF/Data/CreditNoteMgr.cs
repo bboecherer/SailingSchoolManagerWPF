@@ -9,10 +9,23 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for CreditNote
+    /// </summary>
     public class CreditNoteMgr : IPersistenceMgr<CreditNote>
     {
+        /// <summary>
+        /// Gets or sets the credit notes.
+        /// </summary>
+        /// <value>
+        /// The credit notes.
+        /// </value>
         public IList<CreditNote> CreditNotes { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<CreditNote></returns>
         public IList<CreditNote> GetAll()
         {
             CreditNotes = new List<CreditNote>();
@@ -27,6 +40,10 @@ namespace SealingSchoolWPF.Data
             return CreditNotes;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(CreditNote entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -36,6 +53,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(CreditNote entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -49,6 +70,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(CreditNote entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -62,6 +87,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>CreditNote</returns>
         public CreditNote GetById(int id)
         {
             CreditNote CreditNote;

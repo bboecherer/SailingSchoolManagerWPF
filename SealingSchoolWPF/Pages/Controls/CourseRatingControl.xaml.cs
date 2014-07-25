@@ -15,14 +15,17 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages.Controls
 {
-  /// <summary>
-  /// Interaction logic for BankControl.xaml
-  /// </summary>
-  public partial class CourseRatingControl : UserControl
-  {
-    public CourseRatingControl()
+    /// <summary>
+    /// Interaction logic for BankControl.xaml
+    /// </summary>
+    public partial class CourseRatingControl : UserControl
     {
-      InitializeComponent();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CourseRatingControl"/> class.
+        /// </summary>
+        public CourseRatingControl()
+        {
+            InitializeComponent();
+        }
     }
-  }
 }

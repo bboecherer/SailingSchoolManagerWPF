@@ -9,10 +9,23 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for Invoice
+    /// </summary>
     public class InvoiceMgr : IPersistenceMgr<Invoice>
     {
+        /// <summary>
+        /// Gets or sets the invoices.
+        /// </summary>
+        /// <value>
+        /// The invoices.
+        /// </value>
         public IList<Invoice> Invoices { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<Invoice></returns>
         public IList<Invoice> GetAll()
         {
             Invoices = new List<Invoice>();
@@ -27,6 +40,10 @@ namespace SealingSchoolWPF.Data
             return Invoices;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(Invoice entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -36,6 +53,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(Invoice entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -49,6 +70,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(Invoice entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -66,6 +91,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Invoice</returns>
         public Invoice GetById(int id)
         {
             Invoice invoice;
@@ -76,6 +106,11 @@ namespace SealingSchoolWPF.Data
             return invoice;
         }
 
+        /// <summary>
+        /// Gets the by status.
+        /// </summary>
+        /// <param name="paymentStatus">The payment status.</param>
+        /// <returnsIList<Invoice>></returns>
         public IList<Invoice> GetByStatus(PaymentStatus paymentStatus)
         {
             Invoices = new List<Invoice>();
@@ -90,6 +125,6 @@ namespace SealingSchoolWPF.Data
             return Invoices;
         }
 
-      
+
     }
 }

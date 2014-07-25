@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.General
     /// </summary>
     public partial class InfoBox : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InfoBox"/> class.
+        /// </summary>
         public InfoBox()
         {
             InitializeComponent();

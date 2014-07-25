@@ -18,8 +18,11 @@ namespace SealingSchoolWPF.Pages.Controls
     /// <summary>
     /// Interaction logic for PriceControl.xaml
     /// </summary>
-    public partial class CreateTAStudentControl  : UserControl
+    public partial class CreateTAStudentControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTAStudentControl"/> class.
+        /// </summary>
         public CreateTAStudentControl()
         {
             InitializeComponent();

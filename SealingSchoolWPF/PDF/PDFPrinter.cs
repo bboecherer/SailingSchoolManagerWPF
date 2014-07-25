@@ -9,13 +9,34 @@ using SealingSchoolWPF.Data;
 
 namespace SealingSchoolWPF.PDF
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PDFPrinter
     {
+        /// <summary>
+        /// The creator
+        /// </summary>
         PDFCreator creator = new PDFCreator();
+        /// <summary>
+        /// The ta MGR
+        /// </summary>
         private TrainingActivityMgr taMgr = new TrainingActivityMgr();
+        /// <summary>
+        /// The inv MGR
+        /// </summary>
         private InvoiceMgr invMgr = new InvoiceMgr();
+        /// <summary>
+        /// The credit MGR
+        /// </summary>
         private CreditNoteMgr creditMgr = new CreditNoteMgr();
 
+        /// <summary>
+        /// Creates the invoice PDF.
+        /// </summary>
+        /// <param name="invoiceName">Name of the invoice.</param>
+        /// <param name="ta">The ta.</param>
+        /// <param name="invoiceId">The invoice identifier.</param>
         public void createInvoicePDF(String invoiceName, TrainingActivity ta, int invoiceId)
         {
             Document pdfdoc = new Document();
@@ -73,6 +94,12 @@ namespace SealingSchoolWPF.PDF
             pdfdoc.Close();
         }
 
+        /// <summary>
+        /// Creates the ta PDF.
+        /// </summary>
+        /// <param name="invoiceName">Name of the invoice.</param>
+        /// <param name="ta">The ta.</param>
+        /// <param name="invoiceId">The invoice identifier.</param>
         public void createTaPDF(String invoiceName, TrainingActivity ta, int invoiceId)
         {
             Document pdfdoc = new Document();
@@ -123,6 +150,11 @@ namespace SealingSchoolWPF.PDF
             pdfdoc.Close();
         }
 
+        /// <summary>
+        /// Creates the credit note PDF.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="cn">The cn.</param>
         public void createCreditNotePDF(string name, CreditNote cn)
         {
             Document pdfdoc = new Document();

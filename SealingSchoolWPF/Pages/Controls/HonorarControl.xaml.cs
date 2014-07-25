@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class HonorarControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HonorarControl"/> class.
+        /// </summary>
         public HonorarControl()
         {
             InitializeComponent();

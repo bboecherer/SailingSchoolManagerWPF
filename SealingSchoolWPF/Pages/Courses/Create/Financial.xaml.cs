@@ -17,16 +17,19 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Create
 {
-  /// <summary>
-  /// Interaction logic for CreateNewStudent.xaml
-  /// </summary>
-  public partial class Financial : UserControl
-  {
-    public Financial()
+    /// <summary>
+    /// Interaction logic for CreateNewStudent.xaml
+    /// </summary>
+    public partial class Financial : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateCourseViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Financial"/> class.
+        /// </summary>
+        public Financial()
+        {
+            InitializeComponent();
+            var viewModel = CreateCourseViewModel.Instance;
+            this.DataContext = viewModel;
+        }
     }
-  }
 }

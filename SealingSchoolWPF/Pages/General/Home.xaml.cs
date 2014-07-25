@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages
     /// </summary>
     public partial class Home : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Home"/> class.
+        /// </summary>
         public Home()
         {
             InitializeComponent();

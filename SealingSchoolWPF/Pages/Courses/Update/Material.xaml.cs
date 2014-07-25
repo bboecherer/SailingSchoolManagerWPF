@@ -17,23 +17,31 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Update
 {
-  /// <summary>
-  /// Interaction logic for CreateNewStudent.xaml
-  /// </summary>
-  public partial class Material : UserControl
-  {
-    public Material()
+    /// <summary>
+    /// Interaction logic for CreateNewStudent.xaml
+    /// </summary>
+    public partial class Material : UserControl
     {
-      InitializeComponent();
-      var viewModel = UpdateCourseViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Material"/> class.
+        /// </summary>
+        public Material()
+        {
+            InitializeComponent();
+            var viewModel = UpdateCourseViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-    private void Buttontest_Click( object sender, RoutedEventArgs e )
-    {
-      var viewModel = UpdateCourseViewModel.Instance;
-      var obj = ( (FrameworkElement) sender ).DataContext as CourseMaterialTypViewModel;
-      viewModel.ExecuteMatDeleteCommand( obj );
+        /// <summary>
+        /// Handles the Click event of the Buttontest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = UpdateCourseViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as CourseMaterialTypViewModel;
+            viewModel.ExecuteMatDeleteCommand(obj);
+        }
     }
-  }
 }

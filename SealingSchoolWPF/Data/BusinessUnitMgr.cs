@@ -7,13 +7,25 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for BusinessUnit
+    /// </summary>
     public class BusinessUnitMgr : IPersistenceMgr<BusinessUnit>
     {
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public IList<BusinessUnit> GetAll()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(BusinessUnit entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -23,21 +35,41 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
         public void Create(BusinessUnit entity)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
         public void Update(BusinessUnit entity)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public BusinessUnit GetById(int id)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Gets the bu.
+        /// </summary>
+        /// <returns></returns>
         internal BusinessUnit GetBu()
         {
             BusinessUnit bu = null;
@@ -47,7 +79,7 @@ namespace SealingSchoolWPF.Data
                 {
                     bu = ctx.BusinessUnits.FirstOrDefault<BusinessUnit>();
                 }
-                catch (Exception )
+                catch (Exception)
                 { }
 
             }

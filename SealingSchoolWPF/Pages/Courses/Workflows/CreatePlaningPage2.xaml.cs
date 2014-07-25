@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Courses.Workflows
     /// </summary>
     public partial class CreatePlaningPage2 : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePlaningPage2"/> class.
+        /// </summary>
         public CreatePlaningPage2()
         {
             InitializeComponent();

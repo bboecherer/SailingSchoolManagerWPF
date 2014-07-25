@@ -10,10 +10,23 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for BoatTyp
+    /// </summary>
     public class BoatTypMgr : IPersistenceMgr<BoatTyp>
     {
+        /// <summary>
+        /// Gets or sets the boat typs.
+        /// </summary>
+        /// <value>
+        /// The boat typs.
+        /// </value>
         public IList<BoatTyp> BoatTyps { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<BoatTyp></returns>
         public IList<BoatTyp> GetAll()
         {
             BoatTyps = new List<BoatTyp>();
@@ -22,13 +35,17 @@ namespace SealingSchoolWPF.Data
             {
                 foreach (BoatTyp i in ctx.BoatTyps)
                 {
-       
+
                     BoatTyps.Add(i);
                 }
             }
             return BoatTyps;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(BoatTyp entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -39,13 +56,17 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(BoatTyp entity)
         {
             using (var ctx = new SchoolDataContext())
             {
                 try
                 {
-                  
+
                     ctx.BoatTyps.Add(entity);
                     ctx.SaveChanges();
                 }
@@ -64,11 +85,21 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
         public void Update(BoatTyp entity)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>BoatTyp</returns>
         public BoatTyp GetById(int id)
         {
             BoatTyp BoatTyp;

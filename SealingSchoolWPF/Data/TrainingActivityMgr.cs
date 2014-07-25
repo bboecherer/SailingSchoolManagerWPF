@@ -9,14 +9,26 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for TrainingActivity
+    /// </summary>
   public class TrainingActivityMgr
   {
 
+      /// <summary>
+      /// Deletes the specified entity.
+      /// </summary>
+      /// <param name="entity">The entity.</param>
+      /// <exception cref="System.NotImplementedException"></exception>
     public void Delete( TrainingActivity entity )
     {
-
+        throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Creates the specified entity.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
     public void Create( TrainingActivity entity )
     {
       using ( var ctx = new SchoolDataContext() )
@@ -56,6 +68,10 @@ namespace SealingSchoolWPF.Data
       }
     }
 
+    /// <summary>
+    /// Updates the specified entity.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
     public void Update( TrainingActivity entity )
     {
       using ( var ctx = new SchoolDataContext() )
@@ -72,6 +88,10 @@ namespace SealingSchoolWPF.Data
     }
 
 
+    /// <summary>
+    /// Gets all.
+    /// </summary>
+    /// <returns>IList<TrainingActivity></returns>
     public IList<TrainingActivity> GetAll()
     {
       IList<TrainingActivity> tas = new List<TrainingActivity>();
@@ -94,6 +114,11 @@ namespace SealingSchoolWPF.Data
 
     }
 
+    /// <summary>
+    /// Gets the by status.
+    /// </summary>
+    /// <param name="status">The status.</param>
+    /// <returns>IList<TrainingActivity></returns>
     public IList<TrainingActivity> GetByStatus( TrainingActivityStatus status )
     {
       IList<TrainingActivity> tas = new List<TrainingActivity>();
@@ -115,6 +140,11 @@ namespace SealingSchoolWPF.Data
       return tas;
     }
 
+    /// <summary>
+    /// Gets the by identifier.
+    /// </summary>
+    /// <param name="taId">The ta identifier.</param>
+    /// <returns>TrainingActivity</returns>
     public TrainingActivity GetById( int taId )
     {
       using ( var ctx = new SchoolDataContext() )
@@ -128,6 +158,11 @@ namespace SealingSchoolWPF.Data
       }
     }
 
+    /// <summary>
+    /// Gets the by course planing.
+    /// </summary>
+    /// <param name="p">The p.</param>
+    /// <returns>List<TrainingActivity></returns>
     public List<TrainingActivity> GetByCoursePlaning( int p )
     {
       List<TrainingActivity> tas = new List<TrainingActivity>();

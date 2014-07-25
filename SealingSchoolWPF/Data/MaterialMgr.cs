@@ -9,12 +9,26 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for Material
+    /// </summary>
     public class MaterialMgr : IPersistenceMgr<Material>
     {
+        /// <summary>
+        /// Gets or sets the materials.
+        /// </summary>
+        /// <value>
+        /// The materials.
+        /// </value>
         public IList<Material> Materials { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<Material></returns>
         public IList<Material> GetAll()
         {
             Materials = new List<Material>();
@@ -39,6 +53,10 @@ namespace SealingSchoolWPF.Data
             return Materials;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(Material entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -48,6 +66,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(Material entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -94,6 +116,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(Material entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -167,6 +193,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Material</returns>
         public Material GetById(int id)
         {
             Material material;
@@ -187,6 +218,11 @@ namespace SealingSchoolWPF.Data
             return material;
         }
 
+        /// <summary>
+        /// Gets all for boot typ.
+        /// </summary>
+        /// <param name="BoatTyp">The boat typ.</param>
+        /// <returns>Material</returns>
         public IList<Material> GetAllForBootTyp(BoatTyp BoatTyp)
         {
             Materials = new List<Material>();

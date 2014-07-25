@@ -22,6 +22,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class CourseQualificationListViewControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CourseQualificationListViewControl"/> class.
+        /// </summary>
         public CourseQualificationListViewControl()
         {
             InitializeComponent();

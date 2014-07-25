@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// The DataContext
+    /// </summary>
     class SchoolDataContext : DbContext
     {
         public SchoolDataContext()

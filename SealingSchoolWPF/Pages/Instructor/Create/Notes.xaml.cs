@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Instructor.Create
     /// </summary>
     public partial class Notes : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Notes"/> class.
+        /// </summary>
         public Notes()
         {
             InitializeComponent();

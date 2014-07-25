@@ -9,12 +9,28 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for CoursePlanning
+    /// </summary>
     public class CoursePlaningMgr : IPersistenceMgr<CoursePlaning>
     {
+        /// <summary>
+        /// Gets or sets the courses.
+        /// </summary>
+        /// <value>
+        /// The courses.
+        /// </value>
         public IList<CoursePlaning> Courses { get; set; }
+        /// <summary>
+        /// The block mat MGR
+        /// </summary>
         public BlockedMaterialMgr blockMatMgr = new BlockedMaterialMgr();
 
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<CoursePlaning></returns>
         public IList<CoursePlaning> GetAll()
         {
             Courses = new List<CoursePlaning>();
@@ -40,6 +56,10 @@ namespace SealingSchoolWPF.Data
             return Courses;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(CoursePlaning entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -49,11 +69,20 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(CoursePlaning entity)
         {
             CreateWithAnswer(entity);
         }
 
+        /// <summary>
+        /// Creates the with answer.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <returns>Boolean</returns>
         public Boolean CreateWithAnswer(CoursePlaning entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -170,6 +199,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(CoursePlaning entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -184,6 +217,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>CoursePlaning</returns>
         public CoursePlaning GetById(int id)
         {
             CoursePlaning course;
@@ -194,6 +232,11 @@ namespace SealingSchoolWPF.Data
             return course;
         }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <param name="courseStatus">The course status.</param>
+        /// <returns>IEnumerable<CoursePlaning></returns>
         public IEnumerable<CoursePlaning> GetAll(CourseStatus courseStatus)
         {
             var courseList = new List<CoursePlaning>();
@@ -214,6 +257,13 @@ namespace SealingSchoolWPF.Data
             return courseList;
         }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <param name="courseStatus">The course status.</param>
+        /// <param name="startDate">The start date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <returns>IEnumerable<CoursePlaning></returns>
         public IEnumerable<CoursePlaning> GetAll(CourseStatus courseStatus, DateTime? startDate, DateTime? endDate)
         {
             var courseList = new List<CoursePlaning>();
@@ -237,6 +287,11 @@ namespace SealingSchoolWPF.Data
             return courseList;
         }
 
+        /// <summary>
+        /// Gets the instructor reference.
+        /// </summary>
+        /// <param name="instructorId">The instructor identifier.</param>
+        /// <returns>IEnumerable<CoursePlaning></returns>
         public IEnumerable<CoursePlaning> GetInstructorReference(int instructorId)
         {
             var courseList = new List<CoursePlaning>();
@@ -262,6 +317,11 @@ namespace SealingSchoolWPF.Data
             return courseList;
         }
 
+        /// <summary>
+        /// Gets the by status.
+        /// </summary>
+        /// <param name="courseStatus">The course status.</param>
+        /// <returns>IEnumerable<CoursePlaning></returns>
         internal IEnumerable<CoursePlaning> GetByStatus(CourseStatus courseStatus)
         {
             var courseList = new List<CoursePlaning>();
@@ -280,10 +340,6 @@ namespace SealingSchoolWPF.Data
             }
             return courseList;
         }
-
-
-
-
 
     }
 }

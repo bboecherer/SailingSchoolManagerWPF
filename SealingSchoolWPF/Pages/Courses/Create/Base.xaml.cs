@@ -17,25 +17,31 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Create
 {
-  /// <summary>
-  /// Interaction logic for CreateNewStudent.xaml
-  /// </summary>
-  public partial class Base : UserControl
-  {
-    public Base()
+    /// <summary>
+    /// Interaction logic for CreateNewStudent.xaml
+    /// </summary>
+    public partial class Base : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateCourseViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Base"/> class.
+        /// </summary>
+        public Base()
+        {
+            InitializeComponent();
+            var viewModel = CreateCourseViewModel.Instance;
+            this.DataContext = viewModel;
+        }
+
+        /// <summary>
+        /// Wird bei einer Überschreibung in einer abgeleiteten Klasse stets aufgerufen, wenn <see cref="M:System.Windows.FrameworkElement.ApplyTemplate" /> von Anwendungscode oder internem Prozesscode aufgerufen wird.
+        /// </summary>
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            var frame = (ModernFrame)GetTemplateChild("ContentFrame");
+
+        }
+
     }
-
-    public override void OnApplyTemplate()
-    {
-      base.OnApplyTemplate();
-
-      var frame = (ModernFrame) GetTemplateChild( "ContentFrame" );
-
-    }
-
-  }
 }

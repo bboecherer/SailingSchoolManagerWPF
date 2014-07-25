@@ -17,23 +17,34 @@ using SealingSchoolWPF.ViewModel.Invoicing;
 
 namespace SealingSchoolWPF.Pages.Invoicing.Workflows
 {
-  /// <summary>
-  /// Interaction logic for CreateTrainingActivitiesWF.xaml
-  /// </summary>
-  public partial class CreateMultipleInvoiceWF : ModernWindow
-  {
-    CreateMultipleInvoiceViewModel viewModel;
-
-    public CreateMultipleInvoiceWF()
+    /// <summary>
+    /// Interaction logic for CreateTrainingActivitiesWF.xaml
+    /// </summary>
+    public partial class CreateMultipleInvoiceWF : ModernWindow
     {
-      InitializeComponent();
-      viewModel = CreateMultipleInvoiceViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// The view model
+        /// </summary>
+        CreateMultipleInvoiceViewModel viewModel;
 
-    private void ModernWindow_Closing( object sender, System.ComponentModel.CancelEventArgs e )
-    {
-      viewModel.Close();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateMultipleInvoiceWF"/> class.
+        /// </summary>
+        public CreateMultipleInvoiceWF()
+        {
+            InitializeComponent();
+            viewModel = CreateMultipleInvoiceViewModel.Instance;
+            this.DataContext = viewModel;
+        }
+
+        /// <summary>
+        /// Handles the Closing event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+        private void ModernWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            viewModel.Close();
+        }
     }
-  }
 }

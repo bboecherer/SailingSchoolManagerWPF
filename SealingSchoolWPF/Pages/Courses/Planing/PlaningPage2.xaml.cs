@@ -16,23 +16,31 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Planing
 {
-  /// <summary>
-  /// Interaction logic for CreateNewStudent.xaml
-  /// </summary>
-  public partial class PlaningPage2 : UserControl
-  {
-    public PlaningPage2()
+    /// <summary>
+    /// Interaction logic for CreateNewStudent.xaml
+    /// </summary>
+    public partial class PlaningPage2 : UserControl
     {
-      InitializeComponent();
-      var viewModel = UpdateCoursePlaningViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlaningPage2"/> class.
+        /// </summary>
+        public PlaningPage2()
+        {
+            InitializeComponent();
+            var viewModel = UpdateCoursePlaningViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-    private void Buttontest_Click( object sender, RoutedEventArgs e )
-    {
-      var viewModel = UpdateCoursePlaningViewModel.Instance;
-      var obj = ( (FrameworkElement) sender ).DataContext as SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel;
-      viewModel.ExecuteDeleteCommand( obj );
+        /// <summary>
+        /// Handles the Click event of the Buttontest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = UpdateCoursePlaningViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel;
+            viewModel.ExecuteDeleteCommand(obj);
+        }
     }
-  }
 }

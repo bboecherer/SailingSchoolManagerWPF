@@ -22,18 +22,26 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
     /// </summary>
     public partial class BlockedTimes : UserControl
     {
-      public BlockedTimes()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BlockedTimes"/> class.
+        /// </summary>
+        public BlockedTimes()
         {
             InitializeComponent();
             var viewModel = UpdateInstructorViewModel.Instance;
             this.DataContext = viewModel;
         }
 
-        private void Buttontest_Click( object sender, RoutedEventArgs e )
+        /// <summary>
+        /// Handles the Click event of the Buttontest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
         {
-          var viewModel = UpdateInstructorViewModel.Instance;
-          var obj = ( (FrameworkElement) sender ).DataContext as SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel;
-          viewModel.ExecuteDeleteBlockCommand( obj );
+            var viewModel = UpdateInstructorViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel;
+            viewModel.ExecuteDeleteBlockCommand(obj);
         }
     }
 }

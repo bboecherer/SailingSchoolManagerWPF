@@ -16,16 +16,19 @@ using SealingSchoolWPF.ViewModel.InstructorViewModel;
 
 namespace SealingSchoolWPF.Pages.Instructor.Update
 {
-  /// <summary>
-  /// Interaction logic for Rating.xaml
-  /// </summary>
-  public partial class Rating : UserControl
-  {
-    public Rating()
+    /// <summary>
+    /// Interaction logic for Rating.xaml
+    /// </summary>
+    public partial class Rating : UserControl
     {
-      InitializeComponent();
-      var viewModel = UpdateInstructorViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Rating"/> class.
+        /// </summary>
+        public Rating()
+        {
+            InitializeComponent();
+            var viewModel = UpdateInstructorViewModel.Instance;
+            this.DataContext = viewModel;
+        }
     }
-  }
 }

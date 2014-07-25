@@ -27,6 +27,9 @@ namespace SealingSchoolWPF.Pages.Invoicing.Controls
     /// </summary>
     public partial class InvoiceButtons : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvoiceButtons"/> class.
+        /// </summary>
         public InvoiceButtons()
         {
             this.InitializeComponent();

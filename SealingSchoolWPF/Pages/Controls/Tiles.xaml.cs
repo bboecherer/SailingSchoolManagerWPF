@@ -16,48 +16,81 @@ using SealingSchoolWPF.ViewModel.General;
 
 namespace SealingSchoolWPF.Pages.Controls
 {
-  /// <summary>
-  /// Interaction logic for Tiles.xaml
-  /// </summary>
-  public partial class Tiles : UserControl
-  {
-    public Tiles()
+    /// <summary>
+    /// Interaction logic for Tiles.xaml
+    /// </summary>
+    public partial class Tiles : UserControl
     {
-      InitializeComponent();
-      var viewModel = new LiveTilesViewModel();
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tiles"/> class.
+        /// </summary>
+        public Tiles()
+        {
+            InitializeComponent();
+            var viewModel = new LiveTilesViewModel();
+            this.DataContext = viewModel;
+        }
 
-    private void UserControl_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
-    {
-      this.DataContext = null;
-      var viewModel = new LiveTilesViewModel();
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Handles the IsVisibleChanged event of the UserControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void UserControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            this.DataContext = null;
+            var viewModel = new LiveTilesViewModel();
+            this.DataContext = viewModel;
+        }
 
-    private void Tile_Click( object sender, RoutedEventArgs e )
-    {
-      //Courses
-    }
+        /// <summary>
+        /// Handles the Click event of the Tile control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Tile_Click(object sender, RoutedEventArgs e)
+        {
+            //Courses
+        }
 
-    private void Tile_Click_1( object sender, RoutedEventArgs e )
-    {
-      //Invoices
-    }
+        /// <summary>
+        /// Handles the 1 event of the Tile_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Tile_Click_1(object sender, RoutedEventArgs e)
+        {
+            //Invoices
+        }
 
-    private void Tile_Click_2( object sender, RoutedEventArgs e )
-    {
-      //Students
-    }
+        /// <summary>
+        /// Handles the 2 event of the Tile_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Tile_Click_2(object sender, RoutedEventArgs e)
+        {
+            //Students
+        }
 
-    private void Tile_Click_3( object sender, RoutedEventArgs e )
-    {
-      //CreditNote
-    }
+        /// <summary>
+        /// Handles the 3 event of the Tile_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Tile_Click_3(object sender, RoutedEventArgs e)
+        {
+            //CreditNote
+        }
 
-    private void Tile_Click_4( object sender, RoutedEventArgs e )
-    {
-      //Instructor
+        /// <summary>
+        /// Handles the 4 event of the Tile_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Tile_Click_4(object sender, RoutedEventArgs e)
+        {
+            //Instructor
+        }
     }
-  }
 }

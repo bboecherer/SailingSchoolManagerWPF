@@ -15,14 +15,17 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages.Controls
 {
-  /// <summary>
-  /// Interaction logic for PriceControl.xaml
-  /// </summary>
-  public partial class CreateTACourseControl : UserControl
-  {
-    public CreateTACourseControl()
+    /// <summary>
+    /// Interaction logic for PriceControl.xaml
+    /// </summary>
+    public partial class CreateTACourseControl : UserControl
     {
-      InitializeComponent();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTACourseControl"/> class.
+        /// </summary>
+        public CreateTACourseControl()
+        {
+            InitializeComponent();
+        }
     }
-  }
 }

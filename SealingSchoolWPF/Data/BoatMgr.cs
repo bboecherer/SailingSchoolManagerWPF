@@ -10,10 +10,23 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for Boats
+    /// </summary>
     public class BoatMgr : IPersistenceMgr<Boat>
     {
+        /// <summary>
+        /// Gets or sets the boats.
+        /// </summary>
+        /// <value>
+        /// The boats.
+        /// </value>
         public IList<Boat> Boats { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList of Boats</returns>
         public IList<Boat> GetAll()
         {
             Boats = new List<Boat>();
@@ -32,6 +45,10 @@ namespace SealingSchoolWPF.Data
             return Boats;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(Boat entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -42,6 +59,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(Boat entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -73,6 +94,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(Boat entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -124,6 +149,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Boat</returns>
         public Boat GetById(int id)
         {
             Boat Boat;

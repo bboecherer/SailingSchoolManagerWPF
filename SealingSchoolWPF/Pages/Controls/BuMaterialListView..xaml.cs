@@ -7,6 +7,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class BuMaterialListView : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuMaterialListView"/> class.
+        /// </summary>
         public BuMaterialListView()
         {
             InitializeComponent();

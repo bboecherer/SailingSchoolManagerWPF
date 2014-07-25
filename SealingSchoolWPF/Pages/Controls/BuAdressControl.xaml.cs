@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class BuAdressControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuAdressControl"/> class.
+        /// </summary>
         public BuAdressControl()
         {
             InitializeComponent();

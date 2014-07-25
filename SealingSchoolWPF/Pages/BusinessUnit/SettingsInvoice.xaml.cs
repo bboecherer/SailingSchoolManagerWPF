@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Content
     /// </summary>
     public partial class SettingsInvoice : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingsInvoice"/> class.
+        /// </summary>
         public SettingsInvoice()
         {
             InitializeComponent();

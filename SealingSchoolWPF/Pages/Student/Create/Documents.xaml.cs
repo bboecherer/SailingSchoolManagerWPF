@@ -21,10 +21,13 @@ namespace SealingSchoolWPF.Pages.Student.Create
     /// </summary>
     public partial class Documents : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Documents"/> class.
+        /// </summary>
         public Documents()
         {
             InitializeComponent();
-            var viewModel = CreateStudentViewModel.Instance; 
+            var viewModel = CreateStudentViewModel.Instance;
             this.DataContext = viewModel;
         }
     }

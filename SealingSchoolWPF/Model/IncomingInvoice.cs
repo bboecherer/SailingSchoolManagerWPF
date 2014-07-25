@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
+    /// <summary>
+    /// The IncomingInvoice Model
+    /// </summary>
     public class IncomingInvoice : SealingSchoolObject
     {
+        /// <summary>
+        /// Gets or sets the incoming invoice identifier.
+        /// </summary>
+        /// <value>
+        /// The incoming invoice identifier.
+        /// </value>
         [Key]
         public int IncomingInvoiceId { get; set; }
     }

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Model
 {
-  public enum TrainingActivityStatus
-  {
-    GESTARTET, ABGEBROCHEN, BEENDET, ANGEMELDET, RECHNUNG_GESTELLT
-  }
+    /// <summary>
+    /// The TrainingActivityStatus Enum
+    /// </summary>
+    public enum TrainingActivityStatus
+    {
+        /// <summary>
+        /// useable values are GESTARTET, ABGEBROCHEN, BEENDET, ANGEMELDET, RECHNUNG_GESTELLT
+        /// </summary>
+        GESTARTET, ABGEBROCHEN, BEENDET, ANGEMELDET, RECHNUNG_GESTELLT
+    }
 }

@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Pages.Instructor.Create
     /// </summary>
     public partial class Documents : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Documents"/> class.
+        /// </summary>
         public Documents()
         {
             InitializeComponent();

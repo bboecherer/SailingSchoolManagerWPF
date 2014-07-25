@@ -22,8 +22,15 @@ namespace SealingSchoolWPF.Pages.MaterialAdministration.Administration
     /// </summary>
     public partial class AdministrateMaterial : ModernWindow
     {
+        /// <summary>
+        /// The view model
+        /// </summary>
         UpdateMaterialAdministrationViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdministrateMaterial"/> class.
+        /// </summary>
+        /// <param name="material">The material.</param>
         public AdministrateMaterial(SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel.MaterialAdministrationViewModel material)
         {
             InitializeComponent();
@@ -32,6 +39,11 @@ namespace SealingSchoolWPF.Pages.MaterialAdministration.Administration
         }
 
 
+        /// <summary>
+        /// Gets the material data from model.
+        /// </summary>
+        /// <param name="material">The material.</param>
+        /// <returns></returns>
         private Model.Material GetMaterialDataFromModel(MaterialAdministrationViewModel material)
         {
 
@@ -47,6 +59,11 @@ namespace SealingSchoolWPF.Pages.MaterialAdministration.Administration
             mat.MaterialTyp = material.MaterialTyp;
             return mat;
         }
+        /// <summary>
+        /// Handles the Closed event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closed(object sender, EventArgs e)
         {
             viewModel.Close();

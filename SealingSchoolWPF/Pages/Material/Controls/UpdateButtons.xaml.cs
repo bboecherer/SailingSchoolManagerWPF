@@ -25,6 +25,9 @@ namespace SealingSchoolWPF.Pages.Material.Controls
     /// </summary>
     public partial class UpdateButtons : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateButtons"/> class.
+        /// </summary>
         public UpdateButtons()
         {
             InitializeComponent();

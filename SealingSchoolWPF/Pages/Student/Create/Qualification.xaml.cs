@@ -22,6 +22,9 @@ namespace SealingSchoolWPF.Pages.Student.Create
     /// </summary>
     public partial class Qualification : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Qualification"/> class.
+        /// </summary>
         public Qualification()
         {
             InitializeComponent();
@@ -29,11 +32,16 @@ namespace SealingSchoolWPF.Pages.Student.Create
             this.DataContext = viewModel;
         }
 
-        private void Buttontest_Click( object sender, RoutedEventArgs e )
+        /// <summary>
+        /// Handles the Click event of the Buttontest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Buttontest_Click(object sender, RoutedEventArgs e)
         {
-          var viewModel = CreateStudentViewModel.Instance;
-          var obj = ( (FrameworkElement) sender ).DataContext as QualificationViewModel;
-          viewModel.ExecuteDeleteCommand( obj );
+            var viewModel = CreateStudentViewModel.Instance;
+            var obj = ((FrameworkElement)sender).DataContext as QualificationViewModel;
+            viewModel.ExecuteDeleteCommand(obj);
         }
     }
 }

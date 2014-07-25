@@ -21,6 +21,9 @@ namespace SealingSchoolWPF.Content
     /// </summary>
     public partial class BusinessUnitSettings : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BusinessUnitSettings"/> class.
+        /// </summary>
         public BusinessUnitSettings()
         {
             InitializeComponent();

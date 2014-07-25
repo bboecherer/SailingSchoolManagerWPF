@@ -22,8 +22,14 @@ namespace SealingSchoolWPF.Pages.Material.Create
     /// </summary>
     public partial class CreateMaterial : ModernWindow
     {
+        /// <summary>
+        /// The view model
+        /// </summary>
         CreateMaterialViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateMaterial"/> class.
+        /// </summary>
         public CreateMaterial()
         {
             InitializeComponent();
@@ -31,6 +37,11 @@ namespace SealingSchoolWPF.Pages.Material.Create
             this.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Handles the Closed event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closed(object sender, EventArgs e)
         {
             viewModel.Close();

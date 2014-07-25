@@ -23,8 +23,14 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
     public partial class CreateCreditNoteWF : ModernWindow
     {
 
+        /// <summary>
+        /// The view model
+        /// </summary>
         CreateCreditNoteViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCreditNoteWF"/> class.
+        /// </summary>
         public CreateCreditNoteWF()
         {
             InitializeComponent();
@@ -34,6 +40,11 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
             this.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Handles the 1 event of the ModernWindow_Closing control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {
             viewModel.Close();

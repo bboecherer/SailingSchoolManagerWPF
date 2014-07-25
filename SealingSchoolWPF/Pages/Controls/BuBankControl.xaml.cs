@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class BuBankControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuBankControl"/> class.
+        /// </summary>
         public BuBankControl()
         {
             InitializeComponent();

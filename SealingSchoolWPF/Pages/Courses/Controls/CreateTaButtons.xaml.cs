@@ -22,17 +22,20 @@ using SealingSchoolWPF.ViewModel.Course;
 
 namespace SealingSchoolWPF.Pages.Courses.Controls
 {
-  /// <summary>
-  /// Interaction logic for ButtonsToWork.xaml
-  /// </summary>
-  public partial class CreateTaButtons : UserControl
-  {
-    public CreateTaButtons()
+    /// <summary>
+    /// Interaction logic for ButtonsToWork.xaml
+    /// </summary>
+    public partial class CreateTaButtons : UserControl
     {
-      InitializeComponent();
-      var viewModel = CreateTAViewModel.Instance;
-      this.DataContext = viewModel;
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTaButtons"/> class.
+        /// </summary>
+        public CreateTaButtons()
+        {
+            InitializeComponent();
+            var viewModel = CreateTAViewModel.Instance;
+            this.DataContext = viewModel;
+        }
 
-  }
+    }
 }

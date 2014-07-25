@@ -9,10 +9,23 @@ using System.Threading.Tasks;
 
 namespace SealingSchoolWPF.Data
 {
+    /// <summary>
+    /// Entity Manager for course
+    /// </summary>
     public class CourseMgr : IPersistenceMgr<Course>
     {
+        /// <summary>
+        /// Gets or sets the courses.
+        /// </summary>
+        /// <value>
+        /// The courses.
+        /// </value>
         public IList<Course> Courses { get; set; }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns>IList<Course></returns>
         public IList<Course> GetAll()
         {
             Courses = new List<Course>();
@@ -44,6 +57,10 @@ namespace SealingSchoolWPF.Data
             return Courses;
         }
 
+        /// <summary>
+        /// Deletes the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Delete(Course entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -53,6 +70,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Creates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Create(Course entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -117,6 +138,10 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Updates the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         public void Update(Course entity)
         {
             using (var ctx = new SchoolDataContext())
@@ -188,6 +213,11 @@ namespace SealingSchoolWPF.Data
             }
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Course</returns>
         public Course GetById(int id)
         {
             Course course;

@@ -17,16 +17,19 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages.Instructor.Update
 {
-  /// <summary>
-  /// Interaction logic for Qualification.xaml
-  /// </summary>
-  public partial class References : UserControl
-  {
-    public References()
+    /// <summary>
+    /// Interaction logic for Qualification.xaml
+    /// </summary>
+    public partial class References : UserControl
     {
-      InitializeComponent();
-      var viewModel = UpdateInstructorViewModel.Instance;
-      this.DataContext = viewModel;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="References"/> class.
+        /// </summary>
+        public References()
+        {
+            InitializeComponent();
+            var viewModel = UpdateInstructorViewModel.Instance;
+            this.DataContext = viewModel;
+        }
     }
-  }
 }

@@ -17,26 +17,34 @@ using System.Windows.Shapes;
 
 namespace SealingSchoolWPF.Pages
 {
-  /// <summary>
-  /// Interaction logic for MaterialListView.xaml
-  /// </summary>
-  public partial class BoatListView : UserControl
-  {
-    public BoatListView()
+    /// <summary>
+    /// Interaction logic for MaterialListView.xaml
+    /// </summary>
+    public partial class BoatListView : UserControl
     {
-      InitializeComponent();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BoatListView"/> class.
+        /// </summary>
+        public BoatListView()
+        {
+            InitializeComponent();
+        }
 
-    private void DataGrid_MouseDoubleClick( object sender, MouseButtonEventArgs e )
-    {
-      var grid = sender as DataGrid;
-      var boat = (BoatViewModel) grid.SelectedItem;
+        /// <summary>
+        /// Handles the MouseDoubleClick event of the DataGrid control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var boat = (BoatViewModel)grid.SelectedItem;
 
-      if ( boat != null )
-      {
-        UpdateBoat window = new UpdateBoat( boat );
-        window.ShowDialog();
-      }
+            if (boat != null)
+            {
+                UpdateBoat window = new UpdateBoat(boat);
+                window.ShowDialog();
+            }
+        }
     }
-  }
 }

@@ -22,8 +22,14 @@ namespace SealingSchoolWPF.Pages.Courses.Create
     /// </summary>
     public partial class CreateCourse : ModernWindow
     {
+        /// <summary>
+        /// The view model
+        /// </summary>
         CreateCourseViewModel viewModel;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCourse"/> class.
+        /// </summary>
         public CreateCourse()
         {
             InitializeComponent();
@@ -31,6 +37,11 @@ namespace SealingSchoolWPF.Pages.Courses.Create
             this.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Handles the Closed event of the ModernWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ModernWindow_Closed(object sender, EventArgs e)
         {
             viewModel.Close();

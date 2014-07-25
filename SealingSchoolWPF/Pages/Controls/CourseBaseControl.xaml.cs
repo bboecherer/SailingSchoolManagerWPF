@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages.Controls
     /// </summary>
     public partial class CourseBaseControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CourseBaseControl"/> class.
+        /// </summary>
         public CourseBaseControl()
         {
             InitializeComponent();

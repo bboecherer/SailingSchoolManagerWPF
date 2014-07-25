@@ -20,6 +20,9 @@ namespace SealingSchoolWPF.Pages.Invoicing.Workflows
     /// </summary>
     public partial class CreateCreditNotePage3 : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCreditNotePage3"/> class.
+        /// </summary>
         public CreateCreditNotePage3()
         {
             InitializeComponent();

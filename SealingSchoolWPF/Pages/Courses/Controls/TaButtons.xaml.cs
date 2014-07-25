@@ -26,6 +26,9 @@ namespace SealingSchoolWPF.Pages.Courses.Controls
     /// </summary>
     public partial class TaButtons : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaButtons"/> class.
+        /// </summary>
         public TaButtons()
         {
             this.InitializeComponent();
