@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.Boat.Create;
-using SealingSchoolWPF.ViewModel.Boat;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Pages.Boat.Create;
+using SailingSchoolWPF.ViewModel.Boat;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Boat.Controls
+namespace SailingSchoolWPF.Pages.Boat.Controls
 {
     /// <summary>
     /// Interaction logic for ButtonsToWork.xaml

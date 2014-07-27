@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Courses.Planing
+namespace SailingSchoolWPF.Pages.Courses.Planing
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml
@@ -39,7 +39,7 @@ namespace SealingSchoolWPF.Pages.Courses.Planing
         private void Buttontest_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = UpdateCoursePlaningViewModel.Instance;
-            var obj = ((FrameworkElement)sender).DataContext as SealingSchoolWPF.ViewModel.Instructor.InstructorViewModel;
+            var obj = ((FrameworkElement)sender).DataContext as SailingSchoolWPF.ViewModel.Instructor.InstructorViewModel;
             viewModel.ExecuteDeleteCommand(obj);
         }
     }

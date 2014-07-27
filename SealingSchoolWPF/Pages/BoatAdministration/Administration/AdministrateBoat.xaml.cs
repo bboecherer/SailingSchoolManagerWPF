@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.BoatAdministrationViewModel;
+using SailingSchoolWPF.ViewModel.BoatAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.BoatAdministration.Administration
+namespace SailingSchoolWPF.Pages.BoatAdministration.Administration
 {
     /// <summary>
     /// Interaction logic for AdministrateBoat.xaml
@@ -31,7 +31,7 @@ namespace SealingSchoolWPF.Pages.BoatAdministration.Administration
         /// Initializes a new instance of the <see cref="AdministrateBoat"/> class.
         /// </summary>
         /// <param name="boat">The boat.</param>
-        public AdministrateBoat(SealingSchoolWPF.ViewModel.BoatAdministrationViewModel.BoatAdministrationViewModel boat)
+        public AdministrateBoat(SailingSchoolWPF.ViewModel.BoatAdministrationViewModel.BoatAdministrationViewModel boat)
         {
             InitializeComponent();
             viewModel = new UpdateBoatAdministrationViewModel(GetBoatDataFromModel(boat));

@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SailingSchoolWPF.ViewModel.BusinessUnit
 {
-    public class QualificationListViewModel : ViewModel<SealingSchoolWPF.Model.Qualification>
+    /// <summary>
+    /// ViewModel for QualificationsList
+    /// @Author Benjamin Böcherer
+    /// </summary>
+    public class QualificationListViewModel : ViewModel<SailingSchoolWPF.Model.Qualification>
     {
         #region ctor
-        public QualificationListViewModel(SealingSchoolWPF.Model.Qualification model)
+        public QualificationListViewModel(SailingSchoolWPF.Model.Qualification model)
             : base(model)
         {
             BindDataGrid();
@@ -30,7 +34,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     if (instance == null)
                     {
-                        instance = new QualificationListViewModel(new SealingSchoolWPF.Model.Qualification());
+                        instance = new QualificationListViewModel(new SailingSchoolWPF.Model.Qualification());
 
                     }
                     return instance;
@@ -154,7 +158,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void ExecuteAddCommand()
         {
-            SealingSchoolWPF.Model.Qualification qualification = new Model.Qualification();
+            SailingSchoolWPF.Model.Qualification qualification = new Model.Qualification();
             qualification.ShortName = this.ShortName;
             qualification.Name = this.Name;
             qualification.Description = this.Description;
@@ -175,14 +179,14 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         #region helpers
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
+            IList<SailingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
             qualifications = new ObservableCollection<QualificationViewModel>(qualificationsList.Select(q => new QualificationViewModel(q)));
         }
 
         private void ReBindDataGrid()
         {
             this.qualifications.Clear();
-            IList<SealingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
+            IList<SailingSchoolWPF.Model.Qualification> qualificationsList = qualiMgr.GetAll();
             Qualifications = new ObservableCollection<QualificationViewModel>(qualificationsList.Select(q => new QualificationViewModel(q)));
         }
 

@@ -1,7 +1,7 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Resources.Language;
+using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Resources.Language;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 
-namespace SealingSchoolWPF
+namespace SailingSchoolWPF
 {
   /// <summary>
   /// Interaction logic for MainWindow.xaml

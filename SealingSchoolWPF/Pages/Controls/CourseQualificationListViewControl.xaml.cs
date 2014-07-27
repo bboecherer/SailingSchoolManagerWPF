@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.Student.Update;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
+﻿using SailingSchoolWPF.Pages.Student.Update;
+using SailingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Controls
+namespace SailingSchoolWPF.Pages.Controls
 {
     /// <summary>
     /// Interaction logic for StudentListView.xaml

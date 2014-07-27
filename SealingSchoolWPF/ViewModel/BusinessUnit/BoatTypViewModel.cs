@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SailingSchoolWPF.ViewModel.BusinessUnit
 {
-    public class BoatTypViewModel : ViewModel<SealingSchoolWPF.Model.BoatTyp>
+    /// <summary>
+    /// ViewModel for boat typ
+    /// @Author Stefan Müller
+    /// </summary>
+    public class BoatTypViewModel : ViewModel<SailingSchoolWPF.Model.BoatTyp>
     {
 
-        public BoatTypViewModel(SealingSchoolWPF.Model.BoatTyp model)
+        public BoatTypViewModel(SailingSchoolWPF.Model.BoatTyp model)
             : base(model)
         {
         }
@@ -29,7 +33,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     if (instance == null)
                     {
-                        instance = new BoatTypViewModel(new SealingSchoolWPF.Model.BoatTyp());
+                        instance = new BoatTypViewModel(new SailingSchoolWPF.Model.BoatTyp());
                     }
                     return instance;
                 }
@@ -118,7 +122,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void ExecuteAddCommand()
         {
-            SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
+            SailingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
             boatTyp.Name = this.Name;
             boatTyp.Description = this.Description;
             boatTyp.CrewAmount = this.CrewAmount;

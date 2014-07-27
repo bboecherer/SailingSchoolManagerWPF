@@ -1,10 +1,10 @@
 ﻿using AS.IBAN;
 using AS.IBAN.Helper;
 using AS.IBAN.Model;
-using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,8 +16,12 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.StudentViewModel
+namespace SailingSchoolWPF.ViewModel.StudentViewModel
 {
+    /// <summary>
+    /// ViewModel for Student creation
+    /// @Author Benjamin Böcherer
+    /// </summary>
     public class CreateStudentViewModel : ViewModel<Student>
     {
         #region ctor
@@ -39,7 +43,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new CreateStudentViewModel(new SealingSchoolWPF.Model.Student());
+                        instance = new CreateStudentViewModel(new SailingSchoolWPF.Model.Student());
                     }
                     return instance;
                 }
@@ -274,9 +278,9 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
 
         private List<QualificationViewModel> dummy = new List<QualificationViewModel>();
 
-        private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
+        private IList<SailingSchoolWPF.Model.Qualification> GetQualificationTypNames()
         {
-            QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
+            QualificationTypNames = new List<SailingSchoolWPF.Model.Qualification>();
             foreach (Model.Qualification quali in qualiMgr.GetAll())
             {
                 QualificationTypNames.Add(quali);
@@ -284,9 +288,9 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             return QualificationTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.Qualification> QualificationTypNames;
+        private IList<SailingSchoolWPF.Model.Qualification> QualificationTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.Qualification> QualificationValues
+        public IEnumerable<SailingSchoolWPF.Model.Qualification> QualificationValues
         {
             get
             {
@@ -294,8 +298,8 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             }
         }
 
-        private SealingSchoolWPF.Model.Qualification _qualificationTyp;
-        public SealingSchoolWPF.Model.Qualification QualificationTyp
+        private SailingSchoolWPF.Model.Qualification _qualificationTyp;
+        public SailingSchoolWPF.Model.Qualification QualificationTyp
         {
             get
             {
@@ -458,7 +462,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
             if (this.QualificationTyp == null)
                 return;
 
-            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            SailingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
             QualificationViewModel quali = new QualificationViewModel(origQauli);
             if (this.qualifications == null)
             {
@@ -477,13 +481,13 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
         #endregion
 
         #region helpers
-        private IList<SealingSchoolWPF.Model.Qualification> prepareQualifications(IList<QualificationViewModel> list)
+        private IList<SailingSchoolWPF.Model.Qualification> prepareQualifications(IList<QualificationViewModel> list)
         {
-            IList<SealingSchoolWPF.Model.Qualification> qualiList = new List<SealingSchoolWPF.Model.Qualification>();
+            IList<SailingSchoolWPF.Model.Qualification> qualiList = new List<SailingSchoolWPF.Model.Qualification>();
 
             foreach (QualificationViewModel q in list)
             {
-                SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+                SailingSchoolWPF.Model.Qualification quali = new Model.Qualification();
                 quali.QualificationId = q.Id;
                 qualiList.Add(quali);
             }
@@ -526,7 +530,7 @@ namespace SealingSchoolWPF.ViewModel.StudentViewModel
                 Model.Qualifications = new List<Model.Qualification>();
             }
 
-            foreach (SealingSchoolWPF.Model.Qualification q in prepareQualifications(dummy))
+            foreach (SailingSchoolWPF.Model.Qualification q in prepareQualifications(dummy))
             {
                 Model.Qualifications.Add(q);
             }

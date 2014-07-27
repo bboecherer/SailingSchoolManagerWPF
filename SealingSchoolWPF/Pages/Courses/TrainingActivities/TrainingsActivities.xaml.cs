@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.Pages.Courses.Workflows;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.Pages.Courses.Workflows;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.TrainingActivities
+namespace SailingSchoolWPF.Pages.TrainingActivities
 {
     /// <summary>
     /// Interaction logic for TrainingsActivities.xaml

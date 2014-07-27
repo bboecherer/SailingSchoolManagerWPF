@@ -12,11 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.Pages.Invoicing.Workflows;
-using SealingSchoolWPF.ViewModel.Invoicing;
-using SealingSchoolWPF.Pages.Invoicing.Update;
+using SailingSchoolWPF.Pages.Invoicing.Workflows;
+using SailingSchoolWPF.ViewModel.Invoicing;
+using SailingSchoolWPF.Pages.Invoicing.Update;
 
-namespace SealingSchoolWPF.Pages
+namespace SailingSchoolWPF.Pages
 {
     /// <summary>
     /// Interaction logic for Invoices.xaml
@@ -82,7 +82,7 @@ namespace SealingSchoolWPF.Pages
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var grid = sender as DataGrid;
-            var invoice = (SealingSchoolWPF.Model.Invoice)grid.SelectedItem;
+            var invoice = (SailingSchoolWPF.Model.Invoice)grid.SelectedItem;
 
             if (invoice != null)
             {

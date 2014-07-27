@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Courses.Workflows
+namespace SailingSchoolWPF.Pages.Courses.Workflows
 {
     /// <summary>
     /// Interaction logic for CreateTAPage3.xaml

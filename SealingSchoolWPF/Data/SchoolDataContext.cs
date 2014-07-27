@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,15 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// The DataContext
+    /// @Author Benjamin Böcherer
     /// </summary>
     class SchoolDataContext : DbContext
     {
         public SchoolDataContext()
-      : base( "SchoolContext" )
+            : base("SchoolContext")
         {
         }
 
@@ -32,8 +33,6 @@ namespace SealingSchoolWPF.Data
         public DbSet<InfoBox> InfoBoxes { get; set; }
         public DbSet<BusinessUnit> BusinessUnits { get; set; }
         public DbSet<Vat> Vats { get; set; }
-        public DbSet<PdfTemplate> PdfTemplates { get; set; }
-        public DbSet<MailTemplate> MailTemplates { get; set; }
         public DbSet<Fee> Fees { get; set; }
         public DbSet<GeneralFee> GeneralFees { get; set; }
         public DbSet<Qualification> Qualifications { get; set; }
@@ -47,6 +46,6 @@ namespace SealingSchoolWPF.Data
         public DbSet<TrainingActivity> TrainingActivities { get; set; }
         public DbSet<CourseMaterialTyp> CourseMaterialTyps { get; set; }
         public DbSet<BlockedMaterial> BlockedMaterials { get; set; }
-        
+
     }
 }

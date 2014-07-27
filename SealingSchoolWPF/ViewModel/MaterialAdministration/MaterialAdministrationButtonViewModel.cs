@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages;
-using SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
+﻿using SailingSchoolWPF.Pages;
+using SailingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.MaterialAdministration
+namespace SailingSchoolWPF.ViewModel.MaterialAdministration
 {
     class MaterialAdministrationButtonViewModel : ViewModel
     {

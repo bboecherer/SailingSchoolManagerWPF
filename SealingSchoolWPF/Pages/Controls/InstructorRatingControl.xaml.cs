@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Controls
+namespace SailingSchoolWPF.Pages.Controls
 {
     /// <summary>
     /// Interaction logic for BankControl.xaml

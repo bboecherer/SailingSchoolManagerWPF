@@ -1,31 +1,20 @@
-namespace SealingSchoolWPF.Migrations
+namespace SailingSchoolWPF.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SealingSchoolWPF.Data.SchoolDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SailingSchoolWPF.Data.SchoolDataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(SealingSchoolWPF.Data.SchoolDataContext context)
+        protected override void Seed(SailingSchoolWPF.Data.SchoolDataContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+           
         }
     }
 }

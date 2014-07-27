@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Pages.Courses.Update;
+﻿using SailingSchoolWPF.Pages.Courses.Update;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Courses.General
+namespace SailingSchoolWPF.Pages.Courses.General
 {
     /// <summary>
     /// Interaction logic for InstructorListView.xaml
@@ -37,7 +37,7 @@ namespace SealingSchoolWPF.Pages.Courses.General
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var grid = sender as DataGrid;
-            var course = (SealingSchoolWPF.ViewModel.Course.CourseViewModel)grid.SelectedItem;
+            var course = (SailingSchoolWPF.ViewModel.Course.CourseViewModel)grid.SelectedItem;
 
             if (course != null)
             {

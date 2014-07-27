@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
+﻿using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Controls
+namespace SailingSchoolWPF.Pages.Controls
 {
     /// <summary>
     /// Interaction logic for QualificationControl.xaml
@@ -38,7 +38,7 @@ namespace SealingSchoolWPF.Pages.Controls
         private void Buttontest_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = CreateTAViewModel.Instance;
-            var obj = ((FrameworkElement)sender).DataContext as SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel;
+            var obj = ((FrameworkElement)sender).DataContext as SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel;
             viewModel.ExecuteDeleteCommand(obj);
         }
     }

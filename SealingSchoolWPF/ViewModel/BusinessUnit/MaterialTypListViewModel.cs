@@ -1,16 +1,20 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SailingSchoolWPF.ViewModel.BusinessUnit
 {
-    public class MaterialTypListViewModel : ViewModel<SealingSchoolWPF.Model.MaterialTyp>
+    /// <summary>
+    /// ViewModel for material typ list
+    /// @Author Stefan Müller
+    /// </summary>
+    public class MaterialTypListViewModel : ViewModel<SailingSchoolWPF.Model.MaterialTyp>
     {
 
-        public MaterialTypListViewModel(SealingSchoolWPF.Model.MaterialTyp model)
+        public MaterialTypListViewModel(SailingSchoolWPF.Model.MaterialTyp model)
             : base(model)
         {
             BindDataGrid();
@@ -27,7 +31,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     if (instance == null)
                     {
-                        instance = new MaterialTypListViewModel(new SealingSchoolWPF.Model.MaterialTyp());
+                        instance = new MaterialTypListViewModel(new SailingSchoolWPF.Model.MaterialTyp());
 
                     }
                     return instance;
@@ -55,7 +59,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.MaterialTyp> matTypList = matTypMgr.GetAll();
+            IList<SailingSchoolWPF.Model.MaterialTyp> matTypList = matTypMgr.GetAll();
             matTyps = new ObservableCollection<MaterialTypViewModel>(matTypList.Select(q => new MaterialTypViewModel(q)));
         }
 
@@ -125,7 +129,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void ExecuteAddCommand()
         {
-            SealingSchoolWPF.Model.MaterialTyp matTyp = new Model.MaterialTyp();
+            SailingSchoolWPF.Model.MaterialTyp matTyp = new Model.MaterialTyp();
             matTyp.Name = this.Name;
             matTyp.Description = this.Description;
             matTypMgr.Create(matTyp);
@@ -137,7 +141,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         private void ReBindDataGrid()
         {
             this.matTyps.Clear();
-            IList<SealingSchoolWPF.Model.MaterialTyp> matTypList = matTypMgr.GetAll();
+            IList<SailingSchoolWPF.Model.MaterialTyp> matTypList = matTypMgr.GetAll();
             MatTyps = new ObservableCollection<MaterialTypViewModel>(matTypList.Select(q => new MaterialTypViewModel(q)));
         }
 

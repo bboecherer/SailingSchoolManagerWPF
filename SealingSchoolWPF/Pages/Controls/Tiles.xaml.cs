@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.General;
+using SailingSchoolWPF.ViewModel.General;
 
-namespace SealingSchoolWPF.Pages.Controls
+namespace SailingSchoolWPF.Pages.Controls
 {
     /// <summary>
     /// Interaction logic for Tiles.xaml

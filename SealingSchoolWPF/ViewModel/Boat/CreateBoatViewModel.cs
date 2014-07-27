@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,12 +9,16 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Boat
+namespace SailingSchoolWPF.ViewModel.Boat
 {
-    public class CreateBoatViewModel : ViewModel<SealingSchoolWPF.Model.Boat>
+    /// <summary>
+    /// ViewModel for boat creation
+    /// @Author Stefan Müller
+    /// </summary>
+    public class CreateBoatViewModel : ViewModel<SailingSchoolWPF.Model.Boat>
     {
 
-        public CreateBoatViewModel(SealingSchoolWPF.Model.Boat model)
+        public CreateBoatViewModel(SailingSchoolWPF.Model.Boat model)
             : base(model)
         {
         }
@@ -30,7 +34,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
                 {
                     if (instance == null)
                     {
-                        instance = new CreateBoatViewModel(new SealingSchoolWPF.Model.Boat());
+                        instance = new CreateBoatViewModel(new SailingSchoolWPF.Model.Boat());
                     }
                     return instance;
                 }
@@ -167,9 +171,9 @@ namespace SealingSchoolWPF.ViewModel.Boat
 
 
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        private IList<SailingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
-            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            BoatTypNames = new List<SailingSchoolWPF.Model.BoatTyp>();
             foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
             {
                 BoatTypNames.Add(boatTyp);
@@ -177,9 +181,9 @@ namespace SealingSchoolWPF.ViewModel.Boat
             return BoatTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+        private IList<SailingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
+        public IEnumerable<SailingSchoolWPF.Model.BoatTyp> BoatTypValues
         {
             get
             {
@@ -187,8 +191,8 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        private SealingSchoolWPF.Model.BoatTyp _boatTyp;
-        public SealingSchoolWPF.Model.BoatTyp BoatTyp
+        private SailingSchoolWPF.Model.BoatTyp _boatTyp;
+        public SailingSchoolWPF.Model.BoatTyp BoatTyp
         {
             get
             {

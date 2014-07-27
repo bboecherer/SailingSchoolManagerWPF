@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.ViewModel
+namespace SailingSchoolWPF.ViewModel
 {
     /// <summary>
     /// Interface for ViewModel.
+    /// @Author Benjamin Böcherer
     /// </summary>
     public interface IViewModel : INotifyPropertyChanged
     {

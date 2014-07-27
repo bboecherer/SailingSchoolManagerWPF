@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Course
+namespace SailingSchoolWPF.ViewModel.Course
 {
-    public class CourseMaterialTypViewModel : ViewModel<SealingSchoolWPF.Model.CourseMaterialTyp>
+    /// <summary>
+    /// ViewModel for course material
+    /// @Author Stefan Müller
+    /// </summary>
+    public class CourseMaterialTypViewModel : ViewModel<SailingSchoolWPF.Model.CourseMaterialTyp>
     {
 
-        public CourseMaterialTypViewModel(SealingSchoolWPF.Model.CourseMaterialTyp model)
+        public CourseMaterialTypViewModel(SailingSchoolWPF.Model.CourseMaterialTyp model)
             : base(model)
         {
         }
@@ -29,7 +33,7 @@ namespace SealingSchoolWPF.ViewModel.Course
                 {
                     if (instance == null)
                     {
-                        instance = new CourseMaterialTypViewModel(new SealingSchoolWPF.Model.CourseMaterialTyp());
+                        instance = new CourseMaterialTypViewModel(new SailingSchoolWPF.Model.CourseMaterialTyp());
                     }
                     return instance;
                 }

@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
+﻿using SailingSchoolWPF.ViewModel.BusinessUnit;
+using SailingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Student.Update
+namespace SailingSchoolWPF.Pages.Student.Update
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml

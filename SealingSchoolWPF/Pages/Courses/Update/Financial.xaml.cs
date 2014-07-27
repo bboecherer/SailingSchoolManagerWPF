@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Courses.Update
+namespace SailingSchoolWPF.Pages.Courses.Update
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml

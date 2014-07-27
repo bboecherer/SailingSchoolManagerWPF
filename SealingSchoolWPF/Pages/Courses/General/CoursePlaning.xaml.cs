@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Pages.Courses.Planing;
+﻿using SailingSchoolWPF.Pages.Courses.Planing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages
+namespace SailingSchoolWPF.Pages
 {
     /// <summary>
     /// Interaction logic for TrainingsActivities.xaml
@@ -35,7 +35,7 @@ namespace SealingSchoolWPF.Pages
         /// </summary>
         private void BindDataContext()
         {
-            var viewModel = SealingSchoolWPF.ViewModel.Course.CoursePlaningViewModel.Instance;
+            var viewModel = SailingSchoolWPF.ViewModel.Course.CoursePlaningViewModel.Instance;
             this.DataContext = viewModel;
         }
 
@@ -91,7 +91,7 @@ namespace SealingSchoolWPF.Pages
         private void DataGrid_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
             var grid = sender as DataGrid;
-            var course = (SealingSchoolWPF.Model.CoursePlaning)grid.SelectedItem;
+            var course = (SailingSchoolWPF.Model.CoursePlaning)grid.SelectedItem;
 
             if (course != null)
             {

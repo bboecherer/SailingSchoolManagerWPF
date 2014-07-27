@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.MaterialAdministration.Administration;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Pages.MaterialAdministration.Administration;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,13 +12,13 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
+namespace SailingSchoolWPF.ViewModel.MaterialAdministrationViewModel
 {
-    public class UpdateMaterialAdministrationViewModel : ViewModel<SealingSchoolWPF.Model.Material>
+    public class UpdateMaterialAdministrationViewModel : ViewModel<SailingSchoolWPF.Model.Material>
     {
-        public SealingSchoolWPF.Model.Material MaterialDummy { get; set; }
+        public SailingSchoolWPF.Model.Material MaterialDummy { get; set; }
 
-        public UpdateMaterialAdministrationViewModel(SealingSchoolWPF.Model.Material model)
+        public UpdateMaterialAdministrationViewModel(SailingSchoolWPF.Model.Material model)
             : base(model)
         {
             instance = this;
@@ -36,7 +36,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new UpdateMaterialAdministrationViewModel(new SealingSchoolWPF.Model.Material());
+                        instance = new UpdateMaterialAdministrationViewModel(new SailingSchoolWPF.Model.Material());
                     }
                     return instance;
                 }
@@ -160,16 +160,16 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
                 }
             }
         }
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        private IList<SailingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
         {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            MaterialTypNames = new List<SailingSchoolWPF.Model.MaterialTyp>();
             foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
             {
                 MaterialTypNames.Add(inst);
             }
             return MaterialTypNames;
         }
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+        private IList<SailingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
         public IEnumerable<MaterialTyp> MaterialTypTypeValues
         {

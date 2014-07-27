@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Model
+namespace SailingSchoolWPF.Model
 {
     /// <summary>
     /// The BoatTyp Model
+    /// @Author Stefan Müller
     /// </summary>
     public class BoatTyp : SealingSchoolObject
     {

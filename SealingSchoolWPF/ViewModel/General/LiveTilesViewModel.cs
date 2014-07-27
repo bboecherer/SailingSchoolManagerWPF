@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using FirstFloor.ModernUI.Presentation;
-using SealingSchoolWPF.Model;
+using SailingSchoolWPF.Model;
 
-namespace SealingSchoolWPF.ViewModel.General
+namespace SailingSchoolWPF.ViewModel.General
 {
+    /// <summary>
+    /// ViewModel for Live Tiles
+    /// @Author Benjamin Böcherer
+    /// </summary>
     public class LiveTilesViewModel : ViewModel
     {
         #region properties

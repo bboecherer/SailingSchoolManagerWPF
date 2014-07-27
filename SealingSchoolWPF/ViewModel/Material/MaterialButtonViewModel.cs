@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Pages;
-using SealingSchoolWPF.Pages.Material.Create;
-using SealingSchoolWPF.ViewModel.Material;
+﻿using SailingSchoolWPF.Pages;
+using SailingSchoolWPF.Pages.Material.Create;
+using SailingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Material
+namespace SailingSchoolWPF.ViewModel.Material
 {
     class MaterialButtonViewModel : ViewModel
     {

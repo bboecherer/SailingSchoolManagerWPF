@@ -1,16 +1,20 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.ViewModel.Course
+namespace SailingSchoolWPF.ViewModel.Course
 {
-  public class BlockedTimesViewModel : ViewModel<SealingSchoolWPF.Model.BlockedTimeSpan>
+    /// <summary>
+    /// ViewModel for BlockedTimes
+    /// @Author Benjamin Böcherer
+    /// </summary>
+  public class BlockedTimesViewModel : ViewModel<SailingSchoolWPF.Model.BlockedTimeSpan>
   {
     #region ctor
-    public BlockedTimesViewModel( SealingSchoolWPF.Model.BlockedTimeSpan model )
+    public BlockedTimesViewModel( SailingSchoolWPF.Model.BlockedTimeSpan model )
       : base( model )
     {
     }
@@ -76,7 +80,7 @@ namespace SealingSchoolWPF.ViewModel.Course
       }
     }
 
-    public SealingSchoolWPF.Model.Course Course
+    public SailingSchoolWPF.Model.Course Course
     {
       get
       {

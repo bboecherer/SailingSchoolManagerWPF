@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Pages;
-using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
+﻿using SailingSchoolWPF.Pages;
+using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.StudentVM
+namespace SailingSchoolWPF.ViewModel.StudentVM
 {
+    /// <summary>
+    /// ViewModel for Student Buttons
+    /// @Author Benjamin Böcherer
+    /// </summary>
     class StudentButtonViewModel : ViewModel
     {
         #region commands

@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace SealingSchoolWPF.ViewModel
+namespace SailingSchoolWPF.ViewModel
 {
     /// <summary>
-    /// A simple view model for configuring theme, font and accent colors.
+    /// ViewModel for configuration the theme
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class SettingsAppearanceViewModel
         : NotifyPropertyChanged

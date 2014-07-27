@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Content
+namespace SailingSchoolWPF.Content
 {
     /// <summary>
     /// Interaction logic for SettingsInvoice.xaml

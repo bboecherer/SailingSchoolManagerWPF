@@ -1,7 +1,7 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.Instructor.Create;
-using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Pages.Instructor.Create;
+using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,9 +18,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Invoicing;
+using SailingSchoolWPF.ViewModel.Invoicing;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Controls
+namespace SailingSchoolWPF.Pages.Invoicing.Controls
 {
     /// <summary>
     /// Interaction logic for ButtonsToWork.xaml

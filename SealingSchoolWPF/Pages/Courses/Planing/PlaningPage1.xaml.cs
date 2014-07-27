@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Course.Planing
+namespace SailingSchoolWPF.Pages.Course.Planing
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml

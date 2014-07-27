@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +9,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.ViewModel
+namespace SailingSchoolWPF.ViewModel
 {
+    /// <summary>
+    /// Abstract ViewModel 
+    /// @Author Benjamin Böcherer
+    /// </summary>
     public abstract class ViewModel : IViewModel
     {
         public InstructorMgr instructorMgr = new InstructorMgr();

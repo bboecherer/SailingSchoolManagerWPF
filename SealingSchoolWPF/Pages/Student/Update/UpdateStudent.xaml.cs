@@ -1,6 +1,6 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Student.Update
+namespace SailingSchoolWPF.Pages.Student.Update
 {
     /// <summary>
     /// Interaction logic for CreateStudent.xaml
@@ -32,7 +32,7 @@ namespace SealingSchoolWPF.Pages.Student.Update
         /// Initializes a new instance of the <see cref="UpdateStudent"/> class.
         /// </summary>
         /// <param name="student">The student.</param>
-        public UpdateStudent(SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel student)
+        public UpdateStudent(SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel student)
         {
             //      Model.Student stud = GetStudentDataFromModel(student);
             InitializeComponent();

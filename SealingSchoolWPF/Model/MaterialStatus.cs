@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Model
+namespace SailingSchoolWPF.Model
 {
     /// <summary>
     /// The MaterialStatus Enum
+    /// @Author Stefan Müller
     /// </summary>
     public enum MaterialStatus
     {

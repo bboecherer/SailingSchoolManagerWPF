@@ -9,10 +9,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Model
+namespace SailingSchoolWPF.Model
 {
     /// <summary>
     /// The Instructor Model
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class Instructor : SealingSchoolObject, IDataErrorInfo
     {

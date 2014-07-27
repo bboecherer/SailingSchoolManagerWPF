@@ -1,9 +1,9 @@
-﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
-using SealingSchoolWPF.ViewModel.Material;
+﻿using SailingSchoolWPF.ViewModel.BusinessUnit;
+using SailingSchoolWPF.ViewModel.Material;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SealingSchoolWPF.Pages.Material.Create
+namespace SailingSchoolWPF.Pages.Material.Create
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml

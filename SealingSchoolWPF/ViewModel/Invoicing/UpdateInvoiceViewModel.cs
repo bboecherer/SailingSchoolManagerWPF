@@ -1,7 +1,7 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,14 +13,18 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.Course
+namespace SailingSchoolWPF.ViewModel.Course
 {
-    public class UpdateInvoiceViewModel : ViewModel<SealingSchoolWPF.Model.Invoice>
+    /// <summary>
+    /// ViewModel for update invoice
+    /// @Author Benjamin Böcherer
+    /// </summary>
+    public class UpdateInvoiceViewModel : ViewModel<SailingSchoolWPF.Model.Invoice>
     {
-        static SealingSchoolWPF.Model.Invoice modelDummy = new SealingSchoolWPF.Model.Invoice();
+        static SailingSchoolWPF.Model.Invoice modelDummy = new SailingSchoolWPF.Model.Invoice();
 
         #region ctor
-        public UpdateInvoiceViewModel(SealingSchoolWPF.Model.Invoice model)
+        public UpdateInvoiceViewModel(SailingSchoolWPF.Model.Invoice model)
             : base(model)
         {
             modelDummy.InvoiceId = model.InvoiceId;

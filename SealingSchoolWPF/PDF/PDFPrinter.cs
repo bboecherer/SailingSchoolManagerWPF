@@ -1,16 +1,17 @@
 ﻿using iTextSharp.text;
-using SealingSchoolWPF.Model;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SealingSchoolWPF.Data;
+using SailingSchoolWPF.Data;
 
-namespace SealingSchoolWPF.PDF
+namespace SailingSchoolWPF.PDF
 {
     /// <summary>
-    /// 
+    /// Class for PDF prints
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class PDFPrinter
     {

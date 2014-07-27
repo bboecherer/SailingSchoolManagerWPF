@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.Boat.Create;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Pages.Boat.Create;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,8 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Boat
+namespace SailingSchoolWPF.ViewModel.Boat
 {
+    /// <summary>
+    /// ViewModel for boat list
+    /// @Author Stefan Müller
+    /// </summary>
     class BoatListViewModel : ViewModel
     {
 
@@ -58,7 +62,7 @@ namespace SealingSchoolWPF.ViewModel.Boat
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Boat> boats = boatMgr.GetAll();
+            IList<SailingSchoolWPF.Model.Boat> boats = boatMgr.GetAll();
             boat = new ObservableCollection<BoatViewModel>(boats.Select(p => new BoatViewModel(p)));
         }
 

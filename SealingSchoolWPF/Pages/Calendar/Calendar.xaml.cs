@@ -13,10 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.General;
+using SailingSchoolWPF.ViewModel.General;
 using Telerik.Windows.Controls.ScheduleView;
 
-namespace SealingSchoolWPF.Pages
+namespace SailingSchoolWPF.Pages
 {
     /// <summary>
     /// Interaction logic for Calendar.xaml

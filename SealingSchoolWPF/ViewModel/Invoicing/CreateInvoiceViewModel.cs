@@ -1,18 +1,22 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using SealingSchoolWPF.PDF;
+using SailingSchoolWPF.PDF;
 
-namespace SealingSchoolWPF.ViewModel.Invoicing
+namespace SailingSchoolWPF.ViewModel.Invoicing
 {
-  public class CreateInvoiceViewModel : ViewModel<SealingSchoolWPF.Model.Invoice>
+    /// <summary>
+    /// ViewModel for invoice creation
+    /// @Author Benjamin Böcherer
+    /// </summary>
+  public class CreateInvoiceViewModel : ViewModel<SailingSchoolWPF.Model.Invoice>
   {
     #region ctor
-    public CreateInvoiceViewModel( SealingSchoolWPF.Model.Invoice model )
+    public CreateInvoiceViewModel( SailingSchoolWPF.Model.Invoice model )
       : base( model )
     {
       GetTrainingActivityTypNames();
@@ -29,7 +33,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         {
           if ( instance == null )
           {
-            instance = new CreateInvoiceViewModel( new SealingSchoolWPF.Model.Invoice() );
+            instance = new CreateInvoiceViewModel( new SailingSchoolWPF.Model.Invoice() );
           }
           return instance;
         }
@@ -57,11 +61,11 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     }
 
 
-    private IList<SealingSchoolWPF.Model.TrainingActivity> GetTrainingActivityTypNames()
+    private IList<SailingSchoolWPF.Model.TrainingActivity> GetTrainingActivityTypNames()
     {
-      CourseTypNames = new List<SealingSchoolWPF.Model.TrainingActivity>();
+      CourseTypNames = new List<SailingSchoolWPF.Model.TrainingActivity>();
 
-      foreach ( SealingSchoolWPF.Model.TrainingActivity course in trainingActivityMgr.GetByStatus( TrainingActivityStatus.BEENDET ) )
+      foreach ( SailingSchoolWPF.Model.TrainingActivity course in trainingActivityMgr.GetByStatus( TrainingActivityStatus.BEENDET ) )
       {
         CourseTypNames.Add( course );
         coursesList.Add( course );
@@ -72,10 +76,10 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       return CourseTypNames;
     }
 
-    private IList<SealingSchoolWPF.Model.TrainingActivity> CourseTypNames;
+    private IList<SailingSchoolWPF.Model.TrainingActivity> CourseTypNames;
 
-    private IEnumerable<SealingSchoolWPF.Model.TrainingActivity> _trainingActivityValues;
-    public IEnumerable<SealingSchoolWPF.Model.TrainingActivity> TrainingActivityValues
+    private IEnumerable<SailingSchoolWPF.Model.TrainingActivity> _trainingActivityValues;
+    public IEnumerable<SailingSchoolWPF.Model.TrainingActivity> TrainingActivityValues
     {
       get
       {
@@ -88,8 +92,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       }
     }
 
-    private SealingSchoolWPF.Model.TrainingActivity _trainingActivityTyp;
-    public SealingSchoolWPF.Model.TrainingActivity TrainingActivityTyp
+    private SailingSchoolWPF.Model.TrainingActivity _trainingActivityTyp;
+    public SailingSchoolWPF.Model.TrainingActivity TrainingActivityTyp
     {
       get
       {
@@ -135,8 +139,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     //  return this.StartDate == null && this.EndDate == null;
     //}
 
-    private ObservableCollection<SealingSchoolWPF.ViewModel.Course.CourseViewModel> _courses;
-    public ObservableCollection<SealingSchoolWPF.ViewModel.Course.CourseViewModel> Courses
+    private ObservableCollection<SailingSchoolWPF.ViewModel.Course.CourseViewModel> _courses;
+    public ObservableCollection<SailingSchoolWPF.ViewModel.Course.CourseViewModel> Courses
     {
       get
       {
@@ -152,8 +156,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       }
     }
 
-    private SealingSchoolWPF.Model.Course _course;
-    public SealingSchoolWPF.Model.Course Course
+    private SailingSchoolWPF.Model.Course _course;
+    public SailingSchoolWPF.Model.Course Course
     {
       get
       {
@@ -294,9 +298,9 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     //  }
     //}
 
-    private IList<SealingSchoolWPF.Model.Student> GetStudentTypNames()
+    private IList<SailingSchoolWPF.Model.Student> GetStudentTypNames()
     {
-      StudentTypNames = new List<SealingSchoolWPF.Model.Student>();
+      StudentTypNames = new List<SailingSchoolWPF.Model.Student>();
       foreach ( Model.Student quali in studentMgr.GetAll() )
       {
         StudentTypNames.Add( quali );
@@ -304,9 +308,9 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       return StudentTypNames;
     }
 
-    private IList<SealingSchoolWPF.Model.Student> StudentTypNames;
+    private IList<SailingSchoolWPF.Model.Student> StudentTypNames;
 
-    public IEnumerable<SealingSchoolWPF.Model.Student> StudentValues
+    public IEnumerable<SailingSchoolWPF.Model.Student> StudentValues
     {
       get
       {
@@ -314,8 +318,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       }
     }
 
-    private SealingSchoolWPF.Model.Student _studentTyp;
-    public SealingSchoolWPF.Model.Student StudentTyp
+    private SailingSchoolWPF.Model.Student _studentTyp;
+    public SailingSchoolWPF.Model.Student StudentTyp
     {
       get
       {
@@ -328,8 +332,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       }
     }
 
-    private ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> _students;
-    public ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> Students
+    private ObservableCollection<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> _students;
+    public ObservableCollection<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> Students
     {
       get
       {
@@ -429,18 +433,18 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       if ( this.StudentTyp == null )
         return;
 
-      SealingSchoolWPF.Model.Course course = courseMgr.GetById( this.TrainingActivityTyp.Course.CourseId );
+      SailingSchoolWPF.Model.Course course = courseMgr.GetById( this.TrainingActivityTyp.Course.CourseId );
 
-      SealingSchoolWPF.Model.Student origStud = this.StudentTyp;
-      SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud =
-          new SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel( origStud );
+      SailingSchoolWPF.Model.Student origStud = this.StudentTyp;
+      SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud =
+          new SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel( origStud );
 
       if ( this.Students == null )
       {
-        this.Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
+        this.Students = new ObservableCollection<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
       }
 
-      foreach ( SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in dummy )
+      foreach ( SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in dummy )
       {
         if ( q.Id == stud.Id )
           return;
@@ -450,7 +454,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       this.ReBindDataGrid();
     }
 
-    public void ExecuteDeleteCommand( SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud )
+    public void ExecuteDeleteCommand( SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel stud )
     {
       this.ErrorLabel = string.Empty;
       this.dummy.Remove( stud );
@@ -464,16 +468,16 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
       instance = null;
     }
 
-    private List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> dummy =
-        new List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
+    private List<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> dummy =
+        new List<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
 
-    private IList<SealingSchoolWPF.Model.Student> prepareStudents( IList<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> list )
+    private IList<SailingSchoolWPF.Model.Student> prepareStudents( IList<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel> list )
     {
-      IList<SealingSchoolWPF.Model.Student> studList = new List<SealingSchoolWPF.Model.Student>();
+      IList<SailingSchoolWPF.Model.Student> studList = new List<SailingSchoolWPF.Model.Student>();
 
-      foreach ( SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in list )
+      foreach ( SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel q in list )
       {
-        SealingSchoolWPF.Model.Student stud = new Model.Student();
+        SailingSchoolWPF.Model.Student stud = new Model.Student();
         stud.StudentId = Convert.ToInt32( q.Id );
         studList.Add( stud );
       }
@@ -526,13 +530,13 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
     private void ReBindDataGrid()
     {
       this.Students.Clear();
-      Students = new ObservableCollection<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>( dummy );
+      Students = new ObservableCollection<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>( dummy );
       this.ErrorLabel = String.Empty;
     }
 
-    private ObservableCollection<SealingSchoolWPF.Model.Invoice> GetInvoices()
+    private ObservableCollection<SailingSchoolWPF.Model.Invoice> GetInvoices()
     {
-      IList<SealingSchoolWPF.Model.Invoice> invs = invoiceMgr.GetAll();
+      IList<SailingSchoolWPF.Model.Invoice> invs = invoiceMgr.GetAll();
       invoices = new ObservableCollection<Invoice>( invs );
       return invoices;
     }

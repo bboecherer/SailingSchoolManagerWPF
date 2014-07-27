@@ -1,18 +1,22 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using SealingSchoolWPF.PDF;
+using SailingSchoolWPF.PDF;
 
-namespace SealingSchoolWPF.ViewModel.Invoicing
+namespace SailingSchoolWPF.ViewModel.Invoicing
 {
-    public class CreateCreditNoteViewModel : ViewModel<SealingSchoolWPF.Model.CreditNote>
+    /// <summary>
+    /// ViewModel for Creditnote creation
+    /// @Author Benjamin Böcherer
+    /// </summary>
+    public class CreateCreditNoteViewModel : ViewModel<SailingSchoolWPF.Model.CreditNote>
     {
         #region ctor
-        public CreateCreditNoteViewModel(SealingSchoolWPF.Model.CreditNote model)
+        public CreateCreditNoteViewModel(SailingSchoolWPF.Model.CreditNote model)
             : base(model)
         {
             GetInvoiceTypNames();
@@ -29,7 +33,7 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
                 {
                     if (instance == null)
                     {
-                        instance = new CreateCreditNoteViewModel(new SealingSchoolWPF.Model.CreditNote());
+                        instance = new CreateCreditNoteViewModel(new SailingSchoolWPF.Model.CreditNote());
                     }
                     return instance;
                 }
@@ -57,11 +61,11 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
         }
 
 
-        private IList<SealingSchoolWPF.Model.Invoice> GetInvoiceTypNames()
+        private IList<SailingSchoolWPF.Model.Invoice> GetInvoiceTypNames()
         {
-            InvoiceTypNames = new List<SealingSchoolWPF.Model.Invoice>();
+            InvoiceTypNames = new List<SailingSchoolWPF.Model.Invoice>();
 
-            foreach (SealingSchoolWPF.Model.Invoice inv in invoiceMgr.GetByStatus(PaymentStatus.GEZAHLT))
+            foreach (SailingSchoolWPF.Model.Invoice inv in invoiceMgr.GetByStatus(PaymentStatus.GEZAHLT))
             {
                 InvoiceTypNames.Add(inv);
                 invoiceList.Add(inv);
@@ -72,10 +76,10 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
             return InvoiceTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.Invoice> InvoiceTypNames;
+        private IList<SailingSchoolWPF.Model.Invoice> InvoiceTypNames;
 
-        private IEnumerable<SealingSchoolWPF.Model.Invoice> _invoiceValues;
-        public IEnumerable<SealingSchoolWPF.Model.Invoice> InvoiceValues
+        private IEnumerable<SailingSchoolWPF.Model.Invoice> _invoiceValues;
+        public IEnumerable<SailingSchoolWPF.Model.Invoice> InvoiceValues
         {
             get
             {
@@ -88,8 +92,8 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
             }
         }
 
-        private SealingSchoolWPF.Model.Invoice _invoiceTyp;
-        public SealingSchoolWPF.Model.Invoice InvoiceTyp
+        private SailingSchoolWPF.Model.Invoice _invoiceTyp;
+        public SailingSchoolWPF.Model.Invoice InvoiceTyp
         {
             get
             {
@@ -266,9 +270,9 @@ namespace SealingSchoolWPF.ViewModel.Invoicing
             this.ErrorLabel = String.Empty;
         }
 
-        private ObservableCollection<SealingSchoolWPF.Model.CreditNote> GetCreditNotes()
+        private ObservableCollection<SailingSchoolWPF.Model.CreditNote> GetCreditNotes()
         {
-            IList<SealingSchoolWPF.Model.CreditNote> invs = this.creditNoteMgr.GetAll();
+            IList<SailingSchoolWPF.Model.CreditNote> invs = this.creditNoteMgr.GetAll();
             creditNotes = new ObservableCollection<CreditNote>(invs);
             return creditNotes;
         }

@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Pages.Material.Create;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Data;
+﻿using SailingSchoolWPF.Pages.Material.Create;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Material
+namespace SailingSchoolWPF.ViewModel.Material
 {
-    public class MaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
+    public class MaterialViewModel : ViewModel<SailingSchoolWPF.Model.Material>
     {
-        public MaterialViewModel(SealingSchoolWPF.Model.Material model)
+        public MaterialViewModel(SailingSchoolWPF.Model.Material model)
             : base(model)
         {
         }
@@ -115,16 +115,16 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        private IList<SailingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
         {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            MaterialTypNames = new List<SailingSchoolWPF.Model.MaterialTyp>();
             foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
             {
                 MaterialTypNames.Add(inst);
             }
             return MaterialTypNames;
         }
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+        private IList<SailingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
         public IEnumerable<MaterialTyp> MaterialTypTypeValues
         {

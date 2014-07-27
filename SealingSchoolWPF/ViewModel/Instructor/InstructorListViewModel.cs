@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.Instructor.Create;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Pages.Instructor.Create;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,8 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Instructor
+namespace SailingSchoolWPF.ViewModel.Instructor
 {
+    /// <summary>
+    /// ViewModel for instructor list
+    /// @Author Benjamin Böcherer
+    /// </summary>
     class InstructorListViewModel : ViewModel
     {
         #region ctor
@@ -60,7 +64,7 @@ namespace SealingSchoolWPF.ViewModel.Instructor
         #region helpers
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Instructor> studs = instructorMgr.GetAll();
+            IList<SailingSchoolWPF.Model.Instructor> studs = instructorMgr.GetAll();
             instructors = new ObservableCollection<InstructorViewModel>(studs.Select(p => new InstructorViewModel(p)));
         }
         #endregion

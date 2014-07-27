@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Pages.Student.Create;
+﻿using SailingSchoolWPF.Pages.Student.Create;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.StudentViewModel
+namespace SailingSchoolWPF.ViewModel.StudentViewModel
 {
-    public class StudentViewModel : ViewModel<SealingSchoolWPF.Model.Student>
+    /// <summary>
+    /// ViewModel for Student
+    /// @Author Benjamin Böcherer
+    /// </summary>
+    public class StudentViewModel : ViewModel<SailingSchoolWPF.Model.Student>
     {
         #region ctor
-        public StudentViewModel(SealingSchoolWPF.Model.Student model)
+        public StudentViewModel(SailingSchoolWPF.Model.Student model)
             : base(model)
         {
         }

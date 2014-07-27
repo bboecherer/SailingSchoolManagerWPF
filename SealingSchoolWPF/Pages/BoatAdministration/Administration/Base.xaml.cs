@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.ViewModel.BoatAdministrationViewModel;
+﻿using SailingSchoolWPF.ViewModel.BoatAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.BoatAdministration.Administration
+namespace SailingSchoolWPF.Pages.BoatAdministration.Administration
 {
     /// <summary>
     /// Interaction logic for UpdateMaterial.xaml

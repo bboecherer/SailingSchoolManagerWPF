@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.BoatAdministration.Administration;
-using SealingSchoolWPF.ViewModel.BoatAdministrationViewModel;
+﻿using SailingSchoolWPF.Pages.BoatAdministration.Administration;
+using SailingSchoolWPF.ViewModel.BoatAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages
+namespace SailingSchoolWPF.Pages
 {
     /// <summary>
     /// Interaction logic for MaterialListView.xaml
@@ -38,7 +38,7 @@ namespace SealingSchoolWPF.Pages
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var grid = sender as DataGrid;
-            var boat = (SealingSchoolWPF.ViewModel.BoatAdministrationViewModel.BoatAdministrationViewModel)grid.SelectedItem;
+            var boat = (SailingSchoolWPF.ViewModel.BoatAdministrationViewModel.BoatAdministrationViewModel)grid.SelectedItem;
 
             if (boat != null)
             {

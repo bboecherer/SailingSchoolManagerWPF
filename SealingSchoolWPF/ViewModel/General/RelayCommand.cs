@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel
+namespace SailingSchoolWPF.ViewModel
 {
     /// <summary>
     /// A simple relay Command for easy use of the Command pattern.
+    /// @Author Benjamin Böcherer
     /// </summary>
     /// <remarks></remarks>
     [Serializable]

@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Pages.Courses.Create;
-using SealingSchoolWPF.ViewModel.Course;
-using SealingSchoolWPF.ViewModel.Instructor;
+﻿using SailingSchoolWPF.Pages.Courses.Create;
+using SailingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Instructor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Courses.General
+namespace SailingSchoolWPF.Pages.Courses.General
 {
     /// <summary>
     /// Interaction logic for Instructors.xaml

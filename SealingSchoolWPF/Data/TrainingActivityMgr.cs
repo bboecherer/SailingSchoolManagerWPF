@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// Entity Manager for TrainingActivity
+    /// @Author Benjamin Böcherer
     /// </summary>
   public class TrainingActivityMgr
   {

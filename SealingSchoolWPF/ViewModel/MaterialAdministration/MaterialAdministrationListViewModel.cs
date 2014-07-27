@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Data;
+﻿using SailingSchoolWPF.Data;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
+namespace SailingSchoolWPF.ViewModel.MaterialAdministrationViewModel
 {
     class MaterialAdministrationListViewModel : ViewModel
     {
@@ -57,7 +57,7 @@ namespace SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Material> mats = matMgr.GetAll();
+            IList<SailingSchoolWPF.Model.Material> mats = matMgr.GetAll();
             materials = new ObservableCollection<MaterialAdministrationViewModel>(mats.Select(p => new MaterialAdministrationViewModel(p)));
         }
 

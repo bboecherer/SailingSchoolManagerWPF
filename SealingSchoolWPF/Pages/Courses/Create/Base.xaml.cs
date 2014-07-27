@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Courses.Create
+namespace SailingSchoolWPF.Pages.Courses.Create
 {
     /// <summary>
     /// Interaction logic for CreateNewStudent.xaml

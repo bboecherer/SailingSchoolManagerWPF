@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace SealingSchoolWPF.Pages.Controls
+namespace SailingSchoolWPF.Pages.Controls
 {
     /// <summary>
     /// Interaction logic for StudentListView.xaml

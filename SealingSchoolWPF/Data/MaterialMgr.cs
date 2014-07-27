@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,10 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// Entity Manager for Material
+    /// @Author Stefan Müller
     /// </summary>
     public class MaterialMgr : IPersistenceMgr<Material>
     {

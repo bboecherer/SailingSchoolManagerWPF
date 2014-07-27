@@ -1,6 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using SealingSchoolWPF.Model;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.PDF
+namespace SailingSchoolWPF.PDF
 {
     /// <summary>
-    /// 
+    /// PDF Creator
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class PDFCreator
     {

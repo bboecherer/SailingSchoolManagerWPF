@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
-using SealingSchoolWPF.ViewModel.InstructorViewModel;
+using SailingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.InstructorViewModel;
 
-namespace SealingSchoolWPF.Pages.Courses.Update
+namespace SailingSchoolWPF.Pages.Courses.Update
 {
     /// <summary>
     /// Interaction logic for Rating.xaml

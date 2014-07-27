@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.MaterialAdministration.Administration;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Pages.MaterialAdministration.Administration;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,13 +12,17 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
+namespace SailingSchoolWPF.ViewModel.BoatAdministrationViewModel
 {
-    public class UpdateBoatAdministrationViewModel : ViewModel<SealingSchoolWPF.Model.Boat>
+    /// <summary>
+    /// ViewModel for boat administration update
+    /// @Author Stefan Müller
+    /// </summary>
+    public class UpdateBoatAdministrationViewModel : ViewModel<SailingSchoolWPF.Model.Boat>
     {
-        public SealingSchoolWPF.Model.Boat BoatDummy { get; set; }
-        
-        public UpdateBoatAdministrationViewModel(SealingSchoolWPF.Model.Boat model)
+        public SailingSchoolWPF.Model.Boat BoatDummy { get; set; }
+
+        public UpdateBoatAdministrationViewModel(SailingSchoolWPF.Model.Boat model)
             : base(model)
         {
             instance = this;
@@ -36,7 +40,7 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new UpdateBoatAdministrationViewModel(new SealingSchoolWPF.Model.Boat());
+                        instance = new UpdateBoatAdministrationViewModel(new SailingSchoolWPF.Model.Boat());
                     }
                     return instance;
                 }
@@ -160,16 +164,16 @@ namespace SealingSchoolWPF.ViewModel.BoatAdministrationViewModel
                 }
             }
         }
-        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        private IList<SailingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
-            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            BoatTypNames = new List<SailingSchoolWPF.Model.BoatTyp>();
             foreach (Model.BoatTyp inst in boatTypMgr.GetAll())
             {
                 BoatTypNames.Add(inst);
             }
             return BoatTypNames;
         }
-        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+        private IList<SailingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
         public IEnumerable<BoatTyp> BoatTypValues
         {

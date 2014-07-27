@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.Material;
+using SailingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Material.Update
+namespace SailingSchoolWPF.Pages.Material.Update
 {
     /// <summary>
     /// Interaction logic for UpdateMaterial.xaml

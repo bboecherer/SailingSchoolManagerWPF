@@ -1,13 +1,17 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.ViewModel.General
+namespace SailingSchoolWPF.ViewModel.General
 {
+    /// <summary>
+    /// ViewModel for InfoBox
+    /// @Author Benjamin Böcherer
+    /// </summary>
     public class InfoBoxViewModel : ViewModel
     {
         InfoBoxMgr boxMgr = new InfoBoxMgr();

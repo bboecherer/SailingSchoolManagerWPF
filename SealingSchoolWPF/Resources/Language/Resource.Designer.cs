@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SealingSchoolWPF.Resources.Language {
+namespace SailingSchoolWPF.Resources.Language {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SealingSchoolWPF.Resources.Language {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SealingSchoolWPF.Resources.Language.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SailingSchoolWPF.Resources.Language.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.Courses.Create;
-using SealingSchoolWPF.Pages.Student.Create;
+﻿using SailingSchoolWPF.Pages.Courses.Create;
+using SailingSchoolWPF.Pages.Student.Create;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Course
+namespace SailingSchoolWPF.ViewModel.Course
 {
+    /// <summary>
+    /// ViewModel for course buttons
+    /// @Author Benjamin Böcherer
+    /// </summary>
     class CourseButtonViewModel : ViewModel
     {
         #region commands

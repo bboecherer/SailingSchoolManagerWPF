@@ -1,10 +1,10 @@
 ﻿using AS.IBAN;
 using AS.IBAN.Helper;
 using AS.IBAN.Model;
-using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,8 +16,12 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.InstructorViewModel
+namespace SailingSchoolWPF.ViewModel.InstructorViewModel
 {
+    /// <summary>
+    /// ViewModel for instructor update
+    /// @Author Benjamin Böcherer
+    /// </summary>
     public class UpdateInstructorViewModel : ViewModel<Model.Instructor>
     {
         public Model.Instructor InstructorDummy { get; set; }
@@ -41,7 +45,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 {
                     if (instance == null)
                     {
-                        instance = new UpdateInstructorViewModel(new SealingSchoolWPF.Model.Instructor());
+                        instance = new UpdateInstructorViewModel(new SailingSchoolWPF.Model.Instructor());
                     }
                     return instance;
                 }
@@ -302,9 +306,9 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
+        private IList<SailingSchoolWPF.Model.Qualification> GetQualificationTypNames()
         {
-            QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
+            QualificationTypNames = new List<SailingSchoolWPF.Model.Qualification>();
             foreach (Model.Qualification quali in qualiMgr.GetAll())
             {
                 QualificationTypNames.Add(quali);
@@ -312,9 +316,9 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             return QualificationTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.Qualification> QualificationTypNames;
+        private IList<SailingSchoolWPF.Model.Qualification> QualificationTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.Qualification> QualificationValues
+        public IEnumerable<SailingSchoolWPF.Model.Qualification> QualificationValues
         {
             get
             {
@@ -322,8 +326,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private SealingSchoolWPF.Model.Qualification _qualificationTyp;
-        public SealingSchoolWPF.Model.Qualification QualificationTyp
+        private SailingSchoolWPF.Model.Qualification _qualificationTyp;
+        public SailingSchoolWPF.Model.Qualification QualificationTyp
         {
             get
             {
@@ -370,8 +374,8 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             }
         }
 
-        private ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> _blockedTimes;
-        public ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> BlockedTimes
+        private ObservableCollection<SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> _blockedTimes;
+        public ObservableCollection<SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> BlockedTimes
         {
             get
             {
@@ -483,7 +487,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
                 this.list = new List<BlockedTimeSpan>();
             }
 
-            SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel model = new Course.BlockedTimesViewModel(new BlockedTimeSpan());
+            SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel model = new Course.BlockedTimesViewModel(new BlockedTimeSpan());
             model.StartDate = this.StartDatePicker.ToShortDateString();
             model.EndDate = this.EndDatePicker.ToShortDateString();
 
@@ -513,7 +517,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             if (this.QualificationTyp == null)
                 return;
 
-            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            SailingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
             QualificationViewModel quali = new QualificationViewModel(origQauli);
 
             foreach (QualificationViewModel q in prepared)
@@ -525,7 +529,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
             this.prepared.Add(quali);
         }
 
-        public void ExecuteDeleteBlockCommand(SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel obj)
+        public void ExecuteDeleteBlockCommand(SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel obj)
         {
             if (this.blockedDummyList != null)
             {
@@ -545,7 +549,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         {
             if (blockedDummyList != null)
             {
-                BlockedTimes = new ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>(blockedDummyList);
+                BlockedTimes = new ObservableCollection<SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>(blockedDummyList);
             }
         }
 
@@ -555,9 +559,9 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         }
 
-        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
+        private SailingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
         {
-            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+            SailingSchoolWPF.Model.Qualification quali = new Model.Qualification();
             quali.QualificationId = q.Id;
             return quali;
         }
@@ -650,7 +654,7 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
         }
 
 
-        private ObservableCollection<QualificationViewModel> prepareQualifications(ICollection<SealingSchoolWPF.Model.Qualification> collection)
+        private ObservableCollection<QualificationViewModel> prepareQualifications(ICollection<SailingSchoolWPF.Model.Qualification> collection)
         {
             ObservableCollection<QualificationViewModel> list = new ObservableCollection<QualificationViewModel>();
 
@@ -678,11 +682,11 @@ namespace SealingSchoolWPF.ViewModel.InstructorViewModel
 
         private ObservableCollection<Course.BlockedTimesViewModel> prepareBlockTimes(IList<BlockedTimeSpan> list)
         {
-            ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> blockList = new ObservableCollection<SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>();
+            ObservableCollection<SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel> blockList = new ObservableCollection<SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel>();
 
-            foreach (SealingSchoolWPF.Model.BlockedTimeSpan b in list)
+            foreach (SailingSchoolWPF.Model.BlockedTimeSpan b in list)
             {
-                SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel blockView = new SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel(b);
+                SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel blockView = new SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel(b);
                 blockList.Add(blockView);
             }
 

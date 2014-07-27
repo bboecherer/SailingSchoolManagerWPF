@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.MaterialAdministration.Administration;
-using SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Pages.MaterialAdministration.Administration;
+using SailingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.MaterialAdministration.Controls
+namespace SailingSchoolWPF.Pages.MaterialAdministration.Controls
 {
     /// <summary>
     /// Interaction logic for ButtonsToWork.xaml

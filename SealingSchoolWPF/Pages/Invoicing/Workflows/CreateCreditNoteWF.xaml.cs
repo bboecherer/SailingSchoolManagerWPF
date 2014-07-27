@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.Invoicing;
+using SailingSchoolWPF.ViewModel.Invoicing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Workflows
+namespace SailingSchoolWPF.Pages.Invoicing.Workflows
 {
     /// <summary>
     /// Interaction logic for CreateTrainingActivitiesWF.xaml

@@ -1,7 +1,7 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,8 +13,12 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SealingSchoolWPF.ViewModel.Course
+namespace SailingSchoolWPF.ViewModel.Course
 {
+    /// <summary>
+    /// ViewModel for update course
+    /// @Author Benjamin Böcherer
+    /// </summary>
     public class UpdateCourseViewModel : ViewModel<Model.Course>
     {
         public Model.Course CourseDummy { get; set; }
@@ -38,7 +42,7 @@ namespace SealingSchoolWPF.ViewModel.Course
                 {
                     if (instance == null)
                     {
-                        instance = new UpdateCourseViewModel(new SealingSchoolWPF.Model.Course());
+                        instance = new UpdateCourseViewModel(new SailingSchoolWPF.Model.Course());
                     }
                     return instance;
                 }
@@ -229,9 +233,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-        private IList<SealingSchoolWPF.Model.Qualification> GetQualificationTypNames()
+        private IList<SailingSchoolWPF.Model.Qualification> GetQualificationTypNames()
         {
-            QualificationTypNames = new List<SealingSchoolWPF.Model.Qualification>();
+            QualificationTypNames = new List<SailingSchoolWPF.Model.Qualification>();
             foreach (Model.Qualification quali in qualiMgr.GetAll())
             {
                 QualificationTypNames.Add(quali);
@@ -239,9 +243,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             return QualificationTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.Qualification> QualificationTypNames;
+        private IList<SailingSchoolWPF.Model.Qualification> QualificationTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.Qualification> QualificationValues
+        public IEnumerable<SailingSchoolWPF.Model.Qualification> QualificationValues
         {
             get
             {
@@ -249,8 +253,8 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-        private SealingSchoolWPF.Model.Qualification _qualificationTyp;
-        public SealingSchoolWPF.Model.Qualification QualificationTyp
+        private SailingSchoolWPF.Model.Qualification _qualificationTyp;
+        public SailingSchoolWPF.Model.Qualification QualificationTyp
         {
             get
             {
@@ -280,9 +284,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        private IList<SailingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
         {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            MaterialTypNames = new List<SailingSchoolWPF.Model.MaterialTyp>();
             foreach (Model.MaterialTyp matTyp in matTypMgr.GetAll())
             {
                 MaterialTypNames.Add(matTyp);
@@ -290,9 +294,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             return MaterialTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+        private IList<SailingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.MaterialTyp> MaterialTypValues
+        public IEnumerable<SailingSchoolWPF.Model.MaterialTyp> MaterialTypValues
         {
             get
             {
@@ -342,9 +346,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             }
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        private IList<SailingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
-            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            BoatTypNames = new List<SailingSchoolWPF.Model.BoatTyp>();
             foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
             {
                 BoatTypNames.Add(boatTyp);
@@ -352,9 +356,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             return BoatTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+        private IList<SailingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
+        public IEnumerable<SailingSchoolWPF.Model.BoatTyp> BoatTypValues
         {
             get
             {
@@ -363,7 +367,7 @@ namespace SealingSchoolWPF.ViewModel.Course
         }
 
 
-        public SealingSchoolWPF.Model.BoatTyp BoatTyp
+        public SailingSchoolWPF.Model.BoatTyp BoatTyp
         {
             get
             {
@@ -448,7 +452,7 @@ namespace SealingSchoolWPF.ViewModel.Course
         {
             if (this.QualificationTyp == null)
                 return;
-            SealingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
+            SailingSchoolWPF.Model.Qualification origQauli = this.QualificationTyp;
             QualificationViewModel quali = new QualificationViewModel(origQauli);
 
             foreach (QualificationViewModel q in prepared)
@@ -504,9 +508,9 @@ namespace SealingSchoolWPF.ViewModel.Course
             instance = null;
         }
 
-        private SealingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
+        private SailingSchoolWPF.Model.Qualification prepareQualiToSave(QualificationViewModel q)
         {
-            SealingSchoolWPF.Model.Qualification quali = new Model.Qualification();
+            SailingSchoolWPF.Model.Qualification quali = new Model.Qualification();
             quali.QualificationId = q.Id;
             return quali;
         }
@@ -536,7 +540,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             return prepared;
         }
 
-        private ObservableCollection<QualificationViewModel> prepareQualifications(ICollection<SealingSchoolWPF.Model.Qualification> collection)
+        private ObservableCollection<QualificationViewModel> prepareQualifications(ICollection<SailingSchoolWPF.Model.Qualification> collection)
         {
             ObservableCollection<QualificationViewModel> list = new ObservableCollection<QualificationViewModel>();
 
@@ -551,13 +555,13 @@ namespace SealingSchoolWPF.ViewModel.Course
 
 
 
-        private IList<SealingSchoolWPF.Model.CourseMaterialTyp> prepareMaterialTyps(IList<CourseMaterialTypViewModel> list)
+        private IList<SailingSchoolWPF.Model.CourseMaterialTyp> prepareMaterialTyps(IList<CourseMaterialTypViewModel> list)
         {
-            IList<SealingSchoolWPF.Model.CourseMaterialTyp> matTypList = new List<SealingSchoolWPF.Model.CourseMaterialTyp>();
+            IList<SailingSchoolWPF.Model.CourseMaterialTyp> matTypList = new List<SailingSchoolWPF.Model.CourseMaterialTyp>();
 
             foreach (CourseMaterialTypViewModel m in list)
             {
-                SealingSchoolWPF.Model.CourseMaterialTyp matTyp = new Model.CourseMaterialTyp();
+                SailingSchoolWPF.Model.CourseMaterialTyp matTyp = new Model.CourseMaterialTyp();
                 matTyp.Id = m.Id;
                 matTyp.MaterialTyp = m.MaterialTyp;
                 matTyp.Amount = m.MatAmount;
@@ -581,7 +585,7 @@ namespace SealingSchoolWPF.ViewModel.Course
             return preparedMat;
         }
 
-        private ObservableCollection<CourseMaterialTypViewModel> prepareMatTyps(ICollection<SealingSchoolWPF.Model.CourseMaterialTyp> collection)
+        private ObservableCollection<CourseMaterialTypViewModel> prepareMatTyps(ICollection<SailingSchoolWPF.Model.CourseMaterialTyp> collection)
         {
             ObservableCollection<CourseMaterialTypViewModel> list = new ObservableCollection<CourseMaterialTypViewModel>();
 

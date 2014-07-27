@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SailingSchoolWPF.ViewModel.BusinessUnit
 {
-    public class MaterialTypViewModel : ViewModel<SealingSchoolWPF.Model.MaterialTyp>
+    /// <summary>
+    /// ViewModel for material typ
+    /// @Author Stefan Müller
+    /// </summary>
+    public class MaterialTypViewModel : ViewModel<SailingSchoolWPF.Model.MaterialTyp>
     {
 
-        public MaterialTypViewModel(SealingSchoolWPF.Model.MaterialTyp model)
+        public MaterialTypViewModel(SailingSchoolWPF.Model.MaterialTyp model)
             : base(model)
         {
         }
@@ -29,14 +33,14 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     if (instance == null)
                     {
-                        instance = new MaterialTypViewModel(new SealingSchoolWPF.Model.MaterialTyp());
+                        instance = new MaterialTypViewModel(new SailingSchoolWPF.Model.MaterialTyp());
                     }
                     return instance;
                 }
             }
         }
 
-        
+
 
         public int Id
         {
@@ -102,7 +106,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void ExecuteAddCommand()
         {
-            SealingSchoolWPF.Model.MaterialTyp matTyp = new Model.MaterialTyp();
+            SailingSchoolWPF.Model.MaterialTyp matTyp = new Model.MaterialTyp();
             matTyp.Name = this.Name;
             matTyp.Description = this.Description;
             matTypMgr.Create(matTyp);

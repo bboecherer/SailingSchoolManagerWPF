@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Invoicing;
+using SailingSchoolWPF.ViewModel.Invoicing;
 
-namespace SealingSchoolWPF.Pages.Controls
+namespace SailingSchoolWPF.Pages.Controls
 {
     /// <summary>
     /// Interaction logic for PriceControl.xaml
@@ -36,7 +36,7 @@ namespace SealingSchoolWPF.Pages.Controls
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         void OnChecked(object sender, RoutedEventArgs e)
         {
-            var dummyList = new List<SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
+            var dummyList = new List<SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel>();
 
             var viewModel = CreateMultipleInvoiceViewModel.Instance;
             var gridCell = sender as DataGridCell;
@@ -48,7 +48,7 @@ namespace SealingSchoolWPF.Pages.Controls
             }
 
             DataGridRow row = parent as DataGridRow;
-            var student = row.Item as SealingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel;
+            var student = row.Item as SailingSchoolWPF.ViewModel.StudentViewModel.StudentViewModel;
 
 
         }

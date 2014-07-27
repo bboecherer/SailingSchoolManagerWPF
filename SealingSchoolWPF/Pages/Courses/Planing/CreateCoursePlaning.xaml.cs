@@ -13,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Courses.Planing
+namespace SailingSchoolWPF.Pages.Courses.Planing
 {
     /// <summary>
     /// Interaction logic for CreateStudent.xaml
@@ -33,7 +33,7 @@ namespace SealingSchoolWPF.Pages.Courses.Planing
         public CreateCoursePlaning()
         {
             InitializeComponent();
-            viewModel = new CreateCoursePlaningViewModel(new SealingSchoolWPF.Model.CoursePlaning());
+            viewModel = new CreateCoursePlaningViewModel(new SailingSchoolWPF.Model.CoursePlaning());
             this.DataContext = viewModel;
         }
 

@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.ViewModel.BusinessUnit;
-using SealingSchoolWPF.ViewModel.InstructorViewModel;
+﻿using SailingSchoolWPF.ViewModel.BusinessUnit;
+using SailingSchoolWPF.ViewModel.InstructorViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Instructor.Update
+namespace SailingSchoolWPF.Pages.Instructor.Update
 {
     /// <summary>
     /// Interaction logic for Qualification.xaml
@@ -40,7 +40,7 @@ namespace SealingSchoolWPF.Pages.Instructor.Update
         private void Buttontest_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = UpdateInstructorViewModel.Instance;
-            var obj = ((FrameworkElement)sender).DataContext as SealingSchoolWPF.ViewModel.Course.BlockedTimesViewModel;
+            var obj = ((FrameworkElement)sender).DataContext as SailingSchoolWPF.ViewModel.Course.BlockedTimesViewModel;
             viewModel.ExecuteDeleteBlockCommand(obj);
         }
     }

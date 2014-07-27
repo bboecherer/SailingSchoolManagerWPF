@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.InstructorViewModel;
+using SailingSchoolWPF.ViewModel.InstructorViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Instructor.Create
+namespace SailingSchoolWPF.Pages.Instructor.Create
 {
     /// <summary>
     /// Interaction logic for CreateStudent.xaml
@@ -33,7 +33,7 @@ namespace SealingSchoolWPF.Pages.Instructor.Create
         public CreateInstructor()
         {
             InitializeComponent();
-            viewModel = new CreateInstructorViewModel(new SealingSchoolWPF.Model.Instructor());
+            viewModel = new CreateInstructorViewModel(new SailingSchoolWPF.Model.Instructor());
             this.DataContext = viewModel;
         }
 

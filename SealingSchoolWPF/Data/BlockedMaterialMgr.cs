@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// Entity Manager for Blocked Materials.
+    /// @Author Stefan Müller
     /// </summary>
     public class BlockedMaterialMgr
     {
@@ -21,6 +22,7 @@ namespace SealingSchoolWPF.Data
         /// The blocked materials.
         /// </value>
         public IList<BlockedMaterial> BlockedMaterials { get; set; }
+     
         /// <summary>
         /// The mat MGR
         /// </summary>

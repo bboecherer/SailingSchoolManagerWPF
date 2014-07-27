@@ -13,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Course;
+using SailingSchoolWPF.ViewModel.Course;
 
-namespace SealingSchoolWPF.Pages.Courses.Planing
+namespace SailingSchoolWPF.Pages.Courses.Planing
 {
     /// <summary>
     /// Interaction logic for CreateStudent.xaml
@@ -31,7 +31,7 @@ namespace SealingSchoolWPF.Pages.Courses.Planing
         /// Initializes a new instance of the <see cref="PlaningCourse"/> class.
         /// </summary>
         /// <param name="course">The course.</param>
-        public PlaningCourse(SealingSchoolWPF.Model.CoursePlaning course)
+        public PlaningCourse(SailingSchoolWPF.Model.CoursePlaning course)
         {
             InitializeComponent();
             viewModel = new UpdateCoursePlaningViewModel(course);

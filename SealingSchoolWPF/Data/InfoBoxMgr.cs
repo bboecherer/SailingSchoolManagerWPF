@@ -1,14 +1,15 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// Entity Manager for InfoBox
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class InfoBoxMgr
     {

@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
+using SailingSchoolWPF.ViewModel.MaterialAdministrationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.MaterialAdministration.Administration
+namespace SailingSchoolWPF.Pages.MaterialAdministration.Administration
 {
     /// <summary>
     /// Interaction logic for UpdateMaterial.xaml
@@ -31,7 +31,7 @@ namespace SealingSchoolWPF.Pages.MaterialAdministration.Administration
         /// Initializes a new instance of the <see cref="AdministrateMaterial"/> class.
         /// </summary>
         /// <param name="material">The material.</param>
-        public AdministrateMaterial(SealingSchoolWPF.ViewModel.MaterialAdministrationViewModel.MaterialAdministrationViewModel material)
+        public AdministrateMaterial(SailingSchoolWPF.ViewModel.MaterialAdministrationViewModel.MaterialAdministrationViewModel material)
         {
             InitializeComponent();
             viewModel = new UpdateMaterialAdministrationViewModel(GetMaterialDataFromModel(material));

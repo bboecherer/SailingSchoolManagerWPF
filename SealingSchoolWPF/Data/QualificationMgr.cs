@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// Entity Manager for Qualification
@@ -15,6 +15,7 @@ namespace SealingSchoolWPF.Data
     {
         /// <summary>
         /// Gets all.
+        /// @Author Benjamin Böcherer
         /// </summary>
         /// <returns>IList<Qualification></returns>
         public IList<Qualification> GetAll()

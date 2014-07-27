@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.ViewModel.BusinessUnit;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.ViewModel.BusinessUnit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,12 +9,12 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Material
+namespace SailingSchoolWPF.ViewModel.Material
 {
-    public class CreateMaterialViewModel : ViewModel<SealingSchoolWPF.Model.Material>
+    public class CreateMaterialViewModel : ViewModel<SailingSchoolWPF.Model.Material>
     {
 
-        public CreateMaterialViewModel(SealingSchoolWPF.Model.Material model)
+        public CreateMaterialViewModel(SailingSchoolWPF.Model.Material model)
             : base(model)
         {
         }
@@ -30,7 +30,7 @@ namespace SealingSchoolWPF.ViewModel.Material
                 {
                     if (instance == null)
                     {
-                        instance = new CreateMaterialViewModel(new SealingSchoolWPF.Model.Material());
+                        instance = new CreateMaterialViewModel(new SailingSchoolWPF.Model.Material());
                     }
                     return instance;
                 }
@@ -165,9 +165,9 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
+        private IList<SailingSchoolWPF.Model.MaterialTyp> GetMaterialTypNames()
         {
-            MaterialTypNames = new List<SealingSchoolWPF.Model.MaterialTyp>();
+            MaterialTypNames = new List<SailingSchoolWPF.Model.MaterialTyp>();
             foreach (Model.MaterialTyp inst in matTypMgr.GetAll())
             {
                 MaterialTypNames.Add(inst);
@@ -175,7 +175,7 @@ namespace SealingSchoolWPF.ViewModel.Material
             return MaterialTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
+        private IList<SailingSchoolWPF.Model.MaterialTyp> MaterialTypNames;
 
         public IEnumerable<MaterialTyp> MaterialTypTypeValues
         {
@@ -199,9 +199,9 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        private IList<SailingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
-            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            BoatTypNames = new List<SailingSchoolWPF.Model.BoatTyp>();
             foreach (Model.BoatTyp boatTyp in boatTypMgr.GetAll())
             {
                 BoatTypNames.Add(boatTyp);
@@ -209,9 +209,9 @@ namespace SealingSchoolWPF.ViewModel.Material
             return BoatTypNames;
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+        private IList<SailingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
-        public IEnumerable<SealingSchoolWPF.Model.BoatTyp> BoatTypValues
+        public IEnumerable<SailingSchoolWPF.Model.BoatTyp> BoatTypValues
         {
             get
             {
@@ -219,8 +219,8 @@ namespace SealingSchoolWPF.ViewModel.Material
             }
         }
 
-        private SealingSchoolWPF.Model.BoatTyp _boatTyp;
-        public SealingSchoolWPF.Model.BoatTyp BoatTyp
+        private SailingSchoolWPF.Model.BoatTyp _boatTyp;
+        public SailingSchoolWPF.Model.BoatTyp BoatTyp
         {
             get
             {
@@ -366,7 +366,7 @@ namespace SealingSchoolWPF.ViewModel.Material
             if (this.BoatTyp == null)
                 return;
 
-            SealingSchoolWPF.Model.BoatTyp origBoatType = this.BoatTyp;
+            SailingSchoolWPF.Model.BoatTyp origBoatType = this.BoatTyp;
             BoatTypViewModel boatTyp = new BoatTypViewModel(origBoatType);
             if (this._boatTyps == null)
             {
@@ -391,13 +391,13 @@ namespace SealingSchoolWPF.ViewModel.Material
 
         private List<BoatTypViewModel> dummy = new List<BoatTypViewModel>();
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
+        private IList<SailingSchoolWPF.Model.BoatTyp> prepareBoatTyps(IList<BoatTypViewModel> list)
         {
-            IList<SealingSchoolWPF.Model.BoatTyp> boatTypList = new List<SealingSchoolWPF.Model.BoatTyp>();
+            IList<SailingSchoolWPF.Model.BoatTyp> boatTypList = new List<SailingSchoolWPF.Model.BoatTyp>();
 
             foreach (BoatTypViewModel b in list)
             {
-                SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
+                SailingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
                 boatTyp.BoatTypID = b.Id;
                 boatTypList.Add(boatTyp);
             }
@@ -426,7 +426,7 @@ namespace SealingSchoolWPF.ViewModel.Material
                 Model.BoatTyps = new List<Model.BoatTyp>();
             }
 
-            foreach (SealingSchoolWPF.Model.BoatTyp q in prepareBoatTyps(dummy))
+            foreach (SailingSchoolWPF.Model.BoatTyp q in prepareBoatTyps(dummy))
             {
                 Model.BoatTyps.Add(q);
             }

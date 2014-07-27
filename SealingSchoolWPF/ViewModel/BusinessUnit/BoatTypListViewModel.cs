@@ -1,16 +1,20 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SailingSchoolWPF.ViewModel.BusinessUnit
 {
-    public class BoatTypListViewModel : ViewModel<SealingSchoolWPF.Model.BoatTyp>
+    /// <summary>
+    /// ViewModel for boat typ list
+    /// @Author Stefan Müller
+    /// </summary>
+    public class BoatTypListViewModel : ViewModel<SailingSchoolWPF.Model.BoatTyp>
     {
 
-        public BoatTypListViewModel(SealingSchoolWPF.Model.BoatTyp model)
+        public BoatTypListViewModel(SailingSchoolWPF.Model.BoatTyp model)
             : base(model)
         {
             BindDataGrid();
@@ -29,7 +33,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     if (instance == null)
                     {
-                        instance = new BoatTypListViewModel(new SealingSchoolWPF.Model.BoatTyp());
+                        instance = new BoatTypListViewModel(new SailingSchoolWPF.Model.BoatTyp());
 
                     }
                     return instance;
@@ -57,7 +61,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.BoatTyp> boatTypList = BoatTypMgr.GetAll();
+            IList<SailingSchoolWPF.Model.BoatTyp> boatTypList = BoatTypMgr.GetAll();
             boatTyps = new ObservableCollection<BoatTypViewModel>(boatTypList.Select(q => new BoatTypViewModel(q)));
         }
 
@@ -141,7 +145,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
 
         private void ExecuteAddCommand()
         {
-            SealingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
+            SailingSchoolWPF.Model.BoatTyp boatTyp = new Model.BoatTyp();
             boatTyp.Name = this.Name;
             boatTyp.Description = this.Description;
             boatTyp.CrewAmount = this.CrewAmount;
@@ -154,7 +158,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
         private void ReBindDataGrid()
         {
             this.boatTyps.Clear();
-            IList<SealingSchoolWPF.Model.BoatTyp> boatTypList = BoatTypMgr.GetAll();
+            IList<SailingSchoolWPF.Model.BoatTyp> boatTypList = BoatTypMgr.GetAll();
             BoatTyps = new ObservableCollection<BoatTypViewModel>(boatTypList.Select(q => new BoatTypViewModel(q)));
         }
 

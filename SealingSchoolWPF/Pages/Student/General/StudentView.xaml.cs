@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.Student.Create;
-using SealingSchoolWPF.ViewModel.StudentViewModel;
+﻿using SailingSchoolWPF.Pages.Student.Create;
+using SailingSchoolWPF.ViewModel.StudentViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Student.General
+namespace SailingSchoolWPF.Pages.Student.General
 {
     /// <summary>
     /// Interaction logic for StudentView.xaml

@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Model
+namespace SailingSchoolWPF.Model
 {
     /// <summary>
     /// The Qualification Model
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class Qualification : SealingSchoolObject
     {

@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.Instructor.Create;
-using SealingSchoolWPF.ViewModel.Instructor;
+﻿using SailingSchoolWPF.Pages.Instructor.Create;
+using SailingSchoolWPF.ViewModel.Instructor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.General
+namespace SailingSchoolWPF.Pages.General
 {
     /// <summary>
     /// Interaction logic for Instructors.xaml

@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.ViewModel.Boat;
+﻿using SailingSchoolWPF.ViewModel.Boat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Boat.Create
+namespace SailingSchoolWPF.Pages.Boat.Create
 {
     /// <summary>
     /// Interaction logic for CreateNewMaterial.xaml

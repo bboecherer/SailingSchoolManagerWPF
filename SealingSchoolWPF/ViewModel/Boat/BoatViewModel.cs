@@ -1,6 +1,6 @@
-﻿using SealingSchoolWPF.Pages.Boat.Create;
-using SealingSchoolWPF.Model;
-using SealingSchoolWPF.Data;
+﻿using SailingSchoolWPF.Pages.Boat.Create;
+using SailingSchoolWPF.Model;
+using SailingSchoolWPF.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Boat
+namespace SailingSchoolWPF.ViewModel.Boat
 {
-    public class BoatViewModel : ViewModel<SealingSchoolWPF.Model.Boat>
+    /// <summary>
+    /// ViewModel for boat
+    /// @Author Stefan Müller
+    /// </summary>
+    public class BoatViewModel : ViewModel<SailingSchoolWPF.Model.Boat>
     {
-        public BoatViewModel(SealingSchoolWPF.Model.Boat model)
+        public BoatViewModel(SailingSchoolWPF.Model.Boat model)
             : base(model)
         {
         }
@@ -115,16 +119,16 @@ namespace SealingSchoolWPF.ViewModel.Boat
             }
         }
 
-        private IList<SealingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
+        private IList<SailingSchoolWPF.Model.BoatTyp> GetBoatTypNames()
         {
-            BoatTypNames = new List<SealingSchoolWPF.Model.BoatTyp>();
+            BoatTypNames = new List<SailingSchoolWPF.Model.BoatTyp>();
             foreach (Model.BoatTyp inst in boatTypMgr.GetAll())
             {
                 BoatTypNames.Add(inst);
             }
             return BoatTypNames;
         }
-        private IList<SealingSchoolWPF.Model.BoatTyp> BoatTypNames;
+        private IList<SailingSchoolWPF.Model.BoatTyp> BoatTypNames;
 
         public IEnumerable<BoatTyp> BoatTypTypeValues
         {

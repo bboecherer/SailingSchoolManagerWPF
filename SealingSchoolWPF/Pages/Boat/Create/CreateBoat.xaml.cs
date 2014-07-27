@@ -1,5 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using SealingSchoolWPF.ViewModel.Boat;
+using SailingSchoolWPF.ViewModel.Boat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Boat.Create
+namespace SailingSchoolWPF.Pages.Boat.Create
 {
     /// <summary>
     /// Interaction logic for CreateMaterial.xaml
@@ -33,7 +33,7 @@ namespace SealingSchoolWPF.Pages.Boat.Create
         public CreateBoat()
         {
             InitializeComponent();
-            viewModel = new CreateBoatViewModel(new SealingSchoolWPF.Model.Boat());
+            viewModel = new CreateBoatViewModel(new SailingSchoolWPF.Model.Boat());
             this.DataContext = viewModel;
         }
 

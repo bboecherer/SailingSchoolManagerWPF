@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Pages.Material.Create;
-using SealingSchoolWPF.ViewModel.Material;
+﻿using SailingSchoolWPF.Pages.Material.Create;
+using SailingSchoolWPF.ViewModel.Material;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SealingSchoolWPF.Pages.Material.General
+namespace SailingSchoolWPF.Pages.Material.General
 {
     /// <summary>
     /// Interaction logic for MaterialView.xaml

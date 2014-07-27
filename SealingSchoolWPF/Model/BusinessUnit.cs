@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Model
+namespace SailingSchoolWPF.Model
 {
     /// <summary>
     /// The BusinessUnit Model
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class BusinessUnit : SealingSchoolObject
     {
@@ -45,17 +46,6 @@ namespace SealingSchoolWPF.Model
         /// </summary>
         public HashSet<GeneralFee> generalFees = new HashSet<GeneralFee>();
 
-        // Die Emailvorlagen, die für diese Geschäftseinheit definiert werden.
-        /// <summary>
-        /// The mail templates
-        /// </summary>
-        public List<MailTemplate> mailTemplates = new List<MailTemplate>();
-
-        // Die pdf-Vorlagen, die für diese Geschäftseinheit definiert werden.
-        /// <summary>
-        /// The PDF templates
-        /// </summary>
-        public List<PdfTemplate> pdfTemplates = new List<PdfTemplate>();
 
         // Email Adress des Admin Accounts
         /// <summary>

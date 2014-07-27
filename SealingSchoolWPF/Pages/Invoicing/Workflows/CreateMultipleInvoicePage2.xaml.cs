@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SealingSchoolWPF.ViewModel.Invoicing;
+using SailingSchoolWPF.ViewModel.Invoicing;
 
-namespace SealingSchoolWPF.Pages.Invoicing.Workflows
+namespace SailingSchoolWPF.Pages.Invoicing.Workflows
 {
     /// <summary>
     /// Interaction logic for CreateTAPage2.xaml

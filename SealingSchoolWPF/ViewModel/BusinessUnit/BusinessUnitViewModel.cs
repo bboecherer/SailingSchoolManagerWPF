@@ -1,20 +1,24 @@
-﻿using SealingSchoolWPF.Data;
+﻿using SailingSchoolWPF.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SealingSchoolWPF.Model;
+using SailingSchoolWPF.Model;
 
-namespace SealingSchoolWPF.ViewModel.BusinessUnit
+namespace SailingSchoolWPF.ViewModel.BusinessUnit
 {
-    public class BusinessUnitViewModel : ViewModel<SealingSchoolWPF.Model.BusinessUnit>
+    /// <summary>
+    /// ViewModel for BusinessUnit
+    /// @Author Benjamin Böcherer
+    /// </summary>
+    public class BusinessUnitViewModel : ViewModel<SailingSchoolWPF.Model.BusinessUnit>
     {
         private static BusinessUnitMgr mgr = new BusinessUnitMgr();
-        private static SealingSchoolWPF.Model.BusinessUnit bu = mgr.GetBu();
+        private static SailingSchoolWPF.Model.BusinessUnit bu = mgr.GetBu();
 
         #region Ctor
-        public BusinessUnitViewModel(SealingSchoolWPF.Model.BusinessUnit model)
+        public BusinessUnitViewModel(SailingSchoolWPF.Model.BusinessUnit model)
             : base(model)
         {
         }
@@ -30,7 +34,7 @@ namespace SealingSchoolWPF.ViewModel.BusinessUnit
                 {
                     if (instance == null)
                     {
-                        instance = new BusinessUnitViewModel(new SealingSchoolWPF.Model.BusinessUnit());
+                        instance = new BusinessUnitViewModel(new SailingSchoolWPF.Model.BusinessUnit());
                     }
                     return instance;
                 }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 
-namespace SealingSchoolWPF.ViewModel
+namespace SailingSchoolWPF.ViewModel
 {
     /// <summary>
     /// Represents an actionable item displayed by a View.
+    /// @Author Benjamin Böcherer
     /// </summary>
     public class CommandViewModel : ViewModel
     {

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Model
+namespace SailingSchoolWPF.Model
 {
     /// <summary>
     /// The TrainingActivityStatus Enum
+    /// @Author Benjamin Böcherer
     /// </summary>
     public enum TrainingActivityStatus
     {

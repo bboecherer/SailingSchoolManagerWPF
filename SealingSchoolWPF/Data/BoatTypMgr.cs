@@ -1,4 +1,4 @@
-﻿using SealingSchoolWPF.Model;
+﻿using SailingSchoolWPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,10 +8,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SealingSchoolWPF.Data
+namespace SailingSchoolWPF.Data
 {
     /// <summary>
     /// Entity Manager for BoatTyp
+    /// @Author Stefan Müller
     /// </summary>
     public class BoatTypMgr : IPersistenceMgr<BoatTyp>
     {

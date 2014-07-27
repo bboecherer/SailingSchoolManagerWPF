@@ -1,5 +1,5 @@
-﻿using SealingSchoolWPF.Data;
-using SealingSchoolWPF.Pages.Material.Create;
+﻿using SailingSchoolWPF.Data;
+using SailingSchoolWPF.Pages.Material.Create;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SealingSchoolWPF.ViewModel.Material
+namespace SailingSchoolWPF.ViewModel.Material
 {
     class MaterialListViewModel : ViewModel
     {
@@ -58,7 +58,7 @@ namespace SealingSchoolWPF.ViewModel.Material
 
         private void BindDataGrid()
         {
-            IList<SealingSchoolWPF.Model.Material> mats = matMgr.GetAll();
+            IList<SailingSchoolWPF.Model.Material> mats = matMgr.GetAll();
             materials = new ObservableCollection<MaterialViewModel>(mats.Select(p => new MaterialViewModel(p)));
         }
 

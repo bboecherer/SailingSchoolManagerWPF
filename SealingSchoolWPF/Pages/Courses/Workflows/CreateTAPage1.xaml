@@ -1,4 +1,4 @@
-﻿<UserControl xmlns:Controls="clr-namespace:SealingSchoolWPF.Pages.Controls"  x:Class="SealingSchoolWPF.Pages.Courses.Workflows.CreateTAPage1"
+﻿<UserControl xmlns:Controls="clr-namespace:SailingSchoolWPF.Pages.Controls"  x:Class="SailingSchoolWPF.Pages.Courses.Workflows.CreateTAPage1"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
